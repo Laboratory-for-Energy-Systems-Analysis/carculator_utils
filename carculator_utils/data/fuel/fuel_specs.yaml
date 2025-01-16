@@ -1,7 +1,7 @@
 hydrogen - electrolysis - PEM:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, gaseous, 30 bar, from PEM electrolysis, from grid electricity
       - RER
@@ -12,7 +12,7 @@ hydrogen - electrolysis - PEM:
 hydrogen - electrolysis - SOEC:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, gaseous, 1 bar, from SOEC electrolysis, from grid electricity
       - CH
@@ -23,7 +23,7 @@ hydrogen - electrolysis - SOEC:
 hydrogen - electrolysis - AEC:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, gaseous, 20 bar, from AEC electrolysis, from grid electricity
       - CH
@@ -34,7 +34,7 @@ hydrogen - electrolysis - AEC:
 hydrogen - pyrolysis:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, gaseous, 100 bar, from methane pyrolysis
       - RER
@@ -45,7 +45,7 @@ hydrogen - pyrolysis:
 hydrogen - thermochemical water splitting:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, gaseous, 25 bar, from thermochemical water splitting, at solar tower
       - RER
@@ -56,7 +56,7 @@ hydrogen - thermochemical water splitting:
 hydrogen - smr - natural gas:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, steam methane reforming
       - RER
@@ -67,7 +67,7 @@ hydrogen - smr - natural gas:
 hydrogen - smr - natural gas with CCS:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, steam methane reforming, with CCS
       - RER
@@ -78,7 +78,7 @@ hydrogen - smr - natural gas with CCS:
 hydrogen - smr - biogas:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, steam methane reforming, from biomethane
       - RER
@@ -89,7 +89,7 @@ hydrogen - smr - biogas:
 hydrogen - smr - biogas with CCS:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, steam methane reforming, from biomethane, with CCS
       - RER
@@ -100,7 +100,7 @@ hydrogen - smr - biogas with CCS:
 hydrogen - coal gasification:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, gaseous, from coal gasification
       - RER
@@ -111,7 +111,7 @@ hydrogen - coal gasification:
 hydrogen - coal gasification with CCS:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, gaseous, from coal gasification, with CCS
       - RER
@@ -122,7 +122,7 @@ hydrogen - coal gasification with CCS:
 hydrogen - wood gasification:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, gaseous, 25 bar, from gasification of woody biomass in entrained flow gasifier, at gasification plant
       - RER
@@ -133,7 +133,7 @@ hydrogen - wood gasification:
 hydrogen - wood gasification with CCS:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, gaseous, 25 bar, from gasification of woody biomass in entrained flow gasifier, with CCS, at gasification plant
       - RER
@@ -144,7 +144,7 @@ hydrogen - wood gasification with CCS:
 hydrogen - atr - natural gas:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, auto-thermal reforming
       - RER
@@ -155,7 +155,7 @@ hydrogen - atr - natural gas:
 hydrogen - atr - natural gas with CCS:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, auto-thermal reforming, with CCS
       - RER
@@ -166,7 +166,7 @@ hydrogen - atr - natural gas with CCS:
 hydrogen - atr - biogas:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, auto-thermal reforming, from biomethane
       - RER
@@ -177,7 +177,7 @@ hydrogen - atr - biogas:
 hydrogen - atr - biogas with CCS:
   lhv: 120
   co2: 0
-  density: 0.042
+  density: 0.0000899 # kg/L
   name:
       - hydrogen production, auto-thermal reforming, from biomethane, with CCS
       - RER
@@ -188,7 +188,7 @@ hydrogen - atr - biogas with CCS:
 petrol:
   lhv: 42.6
   co2: 3.14
-  density: 0.75
+  density: 0.75 # kg/L
   name:
       - petrol production, low-sulfur
       - Europe without Switzerland
@@ -199,7 +199,7 @@ petrol:
 petrol - bioethanol - wheat straw:
   lhv: 26.5
   co2: 1.96
-  density: 0.785
+  density: 0.785 # kg/L
   name:
       - ethanol, from wheat straw, at fuelling station
       - RER
@@ -210,7 +210,7 @@ petrol - bioethanol - wheat straw:
 petrol - bioethanol - maize starch:
   lhv: 26.5
   co2: 1.96
-  density: 0.785
+  density: 0.785 # kg/L
   name:
       - ethanol, from corn starch, at fuelling station
       - RER
@@ -221,7 +221,7 @@ petrol - bioethanol - maize starch:
 petrol - bioethanol - sugarbeet:
   lhv: 26.5
   co2: 1.96
-  density: 0.785
+  density: 0.785 # kg/L
   name:
       - ethanol, from sugarbeet, at fuelling station
       - RER
@@ -232,7 +232,7 @@ petrol - bioethanol - sugarbeet:
 petrol - bioethanol - forest residues:
   lhv: 26.5
   co2: 1.96
-  density: 0.785
+  density: 0.785 # kg/L
   name:
       - ethanol, from forest residues, at fuelling station
       - RER
@@ -243,7 +243,7 @@ petrol - bioethanol - forest residues:
 petrol - synthetic - methanol - electrolysis - economic allocation:
   lhv: 42.4
   co2: 3.14
-  density: 0.75
+  density: 0.75 # kg/L
   name:
       - gasoline production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, economic allocation, at fuelling station
       - RER
@@ -254,7 +254,7 @@ petrol - synthetic - methanol - electrolysis - economic allocation:
 petrol - synthetic - methanol - cement - economic allocation:
   lhv: 42.4
   co2: 3.14
-  density: 0.75
+  density: 0.75 # kg/L
   name:
       - gasoline production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, economic allocation, at fuelling station
       - RER
@@ -265,7 +265,7 @@ petrol - synthetic - methanol - cement - economic allocation:
 petrol - synthetic - methanol - electrolysis - energy allocation:
   lhv: 42.4
   co2: 3.14
-  density: 0.75
+  density: 0.75 # kg/L
   name:
       - gasoline production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, economic allocation, at fuelling station
       - RER
@@ -276,7 +276,7 @@ petrol - synthetic - methanol - electrolysis - energy allocation:
 petrol - synthetic - methanol - cement - energy allocation:
   lhv: 42.4
   co2: 3.14
-  density: 0.75
+  density: 0.75 # kg/L
   name:
       - gasoline production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, energy allocation, at fuelling station
       - RER
@@ -287,7 +287,7 @@ petrol - synthetic - methanol - cement - energy allocation:
 petrol - synthetic - methanol - coal - economic allocation:
   lhv: 42.4
   co2: 3.14
-  density: 0.75
+  density: 0.75 # kg/L
   name:
       - gasoline production, synthetic, from methanol, hydrogen from coal gasification, economic allocation, at fuelling station
       - RER
@@ -298,7 +298,7 @@ petrol - synthetic - methanol - coal - economic allocation:
 petrol - synthetic - methanol - coal - energy allocation:
   lhv: 42.4
   co2: 3.14
-  density: 0.75
+  density: 0.75 # kg/L
   name:
       - gasoline production, synthetic, from methanol, hydrogen from coal gasification, energy allocation, at fuelling station
       - RER
@@ -309,7 +309,7 @@ petrol - synthetic - methanol - coal - energy allocation:
 petrol - synthetic - methanol - coal with CCS - economic allocation:
   lhv: 42.4
   co2: 3.14
-  density: 0.75
+  density: 0.75 # kg/L
   name:
       - gasoline production, synthetic, from methanol, hydrogen from coal gasification, with CCS, economic allocation, at fuelling station
       - RER
@@ -320,7 +320,7 @@ petrol - synthetic - methanol - coal with CCS - economic allocation:
 petrol - synthetic - methanol - coal with CCS - energy allocation:
   lhv: 42.4
   co2: 3.14
-  density: 0.75
+  density: 0.75 # kg/L
   name:
       - gasoline production, synthetic, from methanol, hydrogen from coal gasification, with CCS, energy allocation, at fuelling station
       - RER
@@ -331,7 +331,7 @@ petrol - synthetic - methanol - coal with CCS - energy allocation:
 diesel:
   lhv: 43
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
       - diesel production, low-sulfur, petroleum refinery operation
       - Europe without Switzerland
@@ -342,7 +342,7 @@ diesel:
 diesel - biodiesel - cooking oil:
   lhv: 38
   co2: 2.79
-  density: 0.88
+  density: 0.88 # kg/L
   name:
       - biodiesel, from used cooking oil, at fuelling station
       - RER
@@ -353,7 +353,7 @@ diesel - biodiesel - cooking oil:
 diesel - biodiesel - algae:
   lhv: 38
   co2: 2.79
-  density: 0.88
+  density: 0.88 # kg/L
   name:
       - biodiesel, from algae, at fuelling station
       - RER
@@ -364,7 +364,7 @@ diesel - biodiesel - algae:
 diesel - biodiesel - rapeseed oil:
   lhv: 38
   co2: 2.79
-  density: 0.88
+  density: 0.88 # kg/L
   name:
       - biodiesel, from rapeseed oil, at fuelling station
       - RER
@@ -375,7 +375,7 @@ diesel - biodiesel - rapeseed oil:
 diesel - biodiesel - palm oil:
   lhv: 38
   co2: 2.79
-  density: 0.88
+  density: 0.88 # kg/L
   name:
       - biodiesel, from palm oil, at fuelling station
       - ID
@@ -386,7 +386,7 @@ diesel - biodiesel - palm oil:
 diesel - synthetic - FT - coal - economic allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from coal gasification, economic allocation, at fuelling station
     - RER
@@ -397,7 +397,7 @@ diesel - synthetic - FT - coal - economic allocation:
 diesel - synthetic - FT - coal - energy allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from coal gasification, energy allocation, at fuelling station
     - RER
@@ -408,7 +408,7 @@ diesel - synthetic - FT - coal - energy allocation:
 diesel - synthetic - FT - coal with CCS - economic allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from coal gasification, with CCS, economic allocation, at fuelling station
     - RER
@@ -419,7 +419,7 @@ diesel - synthetic - FT - coal with CCS - economic allocation:
 diesel - synthetic - FT - coal with CCS - energy allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from coal gasification, with CCS, energy allocation, at fuelling station
     - RER
@@ -430,7 +430,7 @@ diesel - synthetic - FT - coal with CCS - energy allocation:
 diesel - synthetic - FT - electrolysis - economic allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from electrolysis, economic allocation, at fuelling station
     - RER
@@ -441,7 +441,7 @@ diesel - synthetic - FT - electrolysis - economic allocation:
 diesel - synthetic - FT - electrolysis - energy allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from electrolysis, energy allocation, at fuelling station
     - RER
@@ -452,7 +452,7 @@ diesel - synthetic - FT - electrolysis - energy allocation:
 diesel - synthetic - FT - wood - economic allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from wood gasification, economic allocation, at fuelling station
     - RER
@@ -463,7 +463,7 @@ diesel - synthetic - FT - wood - economic allocation:
 diesel - synthetic - FT - wood - energy allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from wood gasification, energy allocation, at fuelling station
     - RER
@@ -474,7 +474,7 @@ diesel - synthetic - FT - wood - energy allocation:
 diesel - synthetic - FT - wood with CCS - economic allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from wood gasification, with CCS, economic allocation, at fuelling station
     - RER
@@ -485,7 +485,7 @@ diesel - synthetic - FT - wood with CCS - economic allocation:
 diesel - synthetic - FT - wood with CCS - energy allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from Fischer Tropsch process, hydrogen from wood gasification, with CCS, energy allocation, at fuelling station
     - RER
@@ -496,7 +496,7 @@ diesel - synthetic - FT - wood with CCS - energy allocation:
 diesel - synthetic - methanol - coal - economic allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from methanol, hydrogen from coal gasification, economic allocation, at fuelling station
     - RER
@@ -507,7 +507,7 @@ diesel - synthetic - methanol - coal - economic allocation:
 diesel - synthetic - methanol - coal - energy allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from methanol, hydrogen from coal gasification, energy allocation, at fuelling station
     - RER
@@ -518,7 +518,7 @@ diesel - synthetic - methanol - coal - energy allocation:
 diesel - synthetic - methanol - coal with CCS - economic allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from methanol, hydrogen from coal gasification, with CCS, economic allocation, at fuelling station
     - RER
@@ -529,7 +529,7 @@ diesel - synthetic - methanol - coal with CCS - economic allocation:
 diesel - synthetic - methanol - coal with CCS - energy allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from methanol, hydrogen from coal gasification, with CCS, energy allocation, at fuelling station
     - RER
@@ -540,7 +540,7 @@ diesel - synthetic - methanol - coal with CCS - energy allocation:
 diesel - synthetic - methanol - electrolysis - economic allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, economic allocation, at fuelling station
     - RER
@@ -551,7 +551,7 @@ diesel - synthetic - methanol - electrolysis - economic allocation:
 diesel - synthetic - methanol - electrolysis - energy allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, energy allocation, at fuelling station
     - RER
@@ -562,7 +562,7 @@ diesel - synthetic - methanol - electrolysis - energy allocation:
 diesel - synthetic - methanol - cement - economic allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from methanol, hydrogen from electrolysis, CO2 from DAC, economic allocation, at fuelling station
     - RER
@@ -573,7 +573,7 @@ diesel - synthetic - methanol - cement - economic allocation:
 diesel - synthetic - methanol - cement - energy allocation:
   lhv: 43.3
   co2: 3.15
-  density: 0.83
+  density: 0.83 # kg/L
   name:
     - diesel production, synthetic, from methanol, hydrogen from electrolysis, CO2 from DAC, energy allocation, at fuelling station
     - RER
@@ -584,7 +584,7 @@ diesel - synthetic - methanol - cement - energy allocation:
 methane:
   lhv: 47.5
   co2: 2.68
-  density: 0.639
+  density: 0.000717 # kg/L
   name:
       - market for natural gas, high pressure, vehicle grade
       - GLO
@@ -595,7 +595,7 @@ methane:
 methane - biomethane - sewage sludge:
   lhv: 47.5
   co2: 2.68
-  density: 0.639
+  density: 0.000717 # kg/L
   name:
       - biomethane, gaseous, 5 bar, from sewage sludge fermentation, at fuelling station
       - RER
@@ -606,7 +606,7 @@ methane - biomethane - sewage sludge:
 methane - synthetic - coal:
   lhv: 47.5
   co2: 2.68
-  density: 0.639
+  density: 0.000717 # kg/L
   name:
       - methane, synthetic, gaseous, 5 bar, from coal-based hydrogen, at fuelling station
       - RER
@@ -617,7 +617,7 @@ methane - synthetic - coal:
 methane - synthetic - electrochemical:
   lhv: 47.5
   co2: 2.68
-  density: 0.639
+  density: 0.000717 # kg/L
   name:
       - methane, synthetic, gaseous, 5 bar, from electrochemical methanation and carbon from atmosphere, at fuelling station
       - RER
@@ -628,7 +628,7 @@ methane - synthetic - electrochemical:
 methane - synthetic - electrochemical - cement:
   lhv: 47.5
   co2: 2.68
-  density: 0.639
+  density: 0.000717 # kg/L
   name:
       - methane, synthetic, gaseous, 5 bar, from electrochemical methanation and carbon from cement plant, at fuelling station
       - RER
@@ -639,7 +639,7 @@ methane - synthetic - electrochemical - cement:
 methane - synthetic - electrochemical - MSWI:
   lhv: 47.5
   co2: 2.68
-  density: 0.639
+  density: 0.000717 # kg/L
   name:
       - methane, synthetic, gaseous, 5 bar, from electrochemical methanation and carbon from MSWI plant, at fuelling station
       - RER
@@ -650,7 +650,7 @@ methane - synthetic - electrochemical - MSWI:
 methane - synthetic - biological:
   lhv: 47.5
   co2: 2.68
-  density: 0.639
+  density: 0.000717 # kg/L
   name:
       - biomethane, gaseous, 5 bar, from sewage sludge fermentation, at fuelling station
       - RER
@@ -661,7 +661,7 @@ methane - synthetic - biological:
 kerosene:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, petroleum refinery operation
     - Europe without Switzerland
@@ -672,7 +672,7 @@ kerosene:
 kerosene - coal - economic allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, from methanol, hydrogen from coal gasification, economic allocation, at fuelling station
     - RER
@@ -683,7 +683,7 @@ kerosene - coal - economic allocation:
 kerosene - coal - energy allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, from methanol, hydrogen from coal gasification, energy allocation, at fuelling station
     - RER
@@ -694,7 +694,7 @@ kerosene - coal - energy allocation:
 kerosene - coal with CCS - economic allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, from methanol, hydrogen from coal gasification, with CCS, economic allocation, at fuelling station
     - RER
@@ -705,7 +705,7 @@ kerosene - coal with CCS - economic allocation:
 kerosene - coal with CCS - energy allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, from methanol, hydrogen from coal gasification, with CCS, energy allocation, at fuelling station
     - RER
@@ -716,7 +716,7 @@ kerosene - coal with CCS - energy allocation:
 kerosene - wood - economic allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, economic allocation
     - RER
@@ -727,7 +727,7 @@ kerosene - wood - economic allocation:
 kerosene - wood - energy allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, energy allocation
     - RER
@@ -738,7 +738,7 @@ kerosene - wood - energy allocation:
 kerosene - wood with CCS - economic allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, with CCS, economic allocation
     - RER
@@ -749,7 +749,7 @@ kerosene - wood with CCS - economic allocation:
 kerosene - wood with CCS - energy allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, with CCS, energy allocation
     - RER
@@ -760,7 +760,7 @@ kerosene - wood with CCS - energy allocation:
 kerosene - electrolysis - economic allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, from methanol, hydrogen from electrolysis, CO2 from DAC, economic allocation, at fuelling station
     - RER
@@ -771,7 +771,7 @@ kerosene - electrolysis - economic allocation:
 kerosene - electrolysis - energy allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, synthetic, from methanol, hydrogen from electrolysis, CO2 from DAC, energy allocation, at fuelling station
     - RER
@@ -782,7 +782,7 @@ kerosene - electrolysis - energy allocation:
 kerosene - forest residues:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, via Fischer-Tropsch, from forest residues, energy allocation
     - RER
@@ -793,7 +793,7 @@ kerosene - forest residues:
 kerosene - forest biomass - energy allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, via Fischer-Tropsch, from forest product (non-residual), energy allocation
     - RER
@@ -804,7 +804,7 @@ kerosene - forest biomass - energy allocation:
 kerosene - forest biomass with CCS - energy allocation:
   lhv: 43.0
   co2: 3.16
-  density: 0.82
+  density: 0.82 # kg/L
   name:
     - kerosene production, via Fischer-Tropsch, from forest product (non-residual), with carbon capture and storage, energy allocation
     - RER

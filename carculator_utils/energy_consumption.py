@@ -366,15 +366,25 @@ class EnergyConsumptionModel:
 
         efficiency = _c(efficiency)
 
-        if auxiliary_energy.shape[0] == 1:
+        if efficiency.shape[0] != auxiliary_energy.shape[0]:
+            efficiency = efficiency.T
+
+        try:
+            auxiliary_energy /= _o(efficiency)
+            # zero-out values when efficiency is zero
+            auxiliary_energy = np.where(efficiency == 0, 0, auxiliary_energy)
+        except:
+            auxiliary_energy = auxiliary_energy / _o(efficiency).T
+            # zero-out values when efficiency is zero
+            auxiliary_energy = np.where(_o(efficiency).T == 0, 0, auxiliary_energy)
+
+        if auxiliary_energy.shape[0] != self.velocity.shape[0]:
             auxiliary_energy = np.resize(
                 auxiliary_energy, (self.velocity.shape[0], *auxiliary_energy.shape[1:])
             )
 
-        try:
-            auxiliary_energy /= _o(efficiency)
-        except ValueError:
-            auxiliary_energy /= _o(efficiency).T[None, ...]
+        # clip negative values to zero
+        auxiliary_energy = np.where(auxiliary_energy < 0, 0, auxiliary_energy)
 
         return auxiliary_energy
 
@@ -423,7 +433,7 @@ class EnergyConsumptionModel:
                         dtype=float,
                     ),
                 ),
-                0.00,
+                0.0,
                 1.0,
             )
 
