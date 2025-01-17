@@ -409,7 +409,7 @@ class VehicleModel:
 
             # we flag vehicles that are not compliant
             self["TtW energy"] = np.where(
-                (self["is_compliant"] == 0), 0, self["TtW energy"]
+                (self["driving mass"] < self["gross mass"]), 0, self["TtW energy"]
             )
 
     def calculate_ttw_energy(self) -> None:
