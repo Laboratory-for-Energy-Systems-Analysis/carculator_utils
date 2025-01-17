@@ -407,10 +407,10 @@ class VehicleModel:
                         / distance
                     ).T
 
-                    # we flag vehicles that are not compliant
-                    self["TtW energy"] = np.where(
-                        (self["is_compliant"] == 0), 0, self["TtW energy"]
-                    )
+            # we flag vehicles that are not compliant
+            self["TtW energy"] = np.where(
+                (self["is_compliant"] == 0), 0, self["TtW energy"]
+            )
 
     def calculate_ttw_energy(self) -> None:
         """
