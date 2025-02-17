@@ -197,7 +197,6 @@ class VehicleModel:
                 & (year in self.array.year.values)
                 & (size in self.array["size"].values)
             ):
-
                 cell_params = self.array.loc[
                     dict(
                         powertrain=pwt,
@@ -647,22 +646,6 @@ class VehicleModel:
                     dict(powertrain=pwt, size=size, year=year, parameter="curb mass")
                 ] = target_mass
 
-    def set_vehicle_masses(self) -> None:
-        """
-        Define ``curb mass``, ``driving mass``, and ``total cargo mass``.
-
-            * `curb mass <https://en.wikipedia.org/wiki/Curb_weight>`__
-            is the mass of the vehicle and fuel, without people or cargo.
-            * ``total cargo mass`` is the mass of the cargo and passengers.
-            * ``driving mass`` is the ``curb mass`` plus ``total cargo mass``.
-
-        .. note::
-            driving mass = total cargo mass + driving mass
-
-        """
-
-        pass
-
     def override_power(self):
         if self.power:
             for key, power in self.power.items():
@@ -974,6 +957,72 @@ class VehicleModel:
                     / self.array.loc[
                         dict(
                             parameter="battery cell mass share",
+                            powertrain=pwt,
+                            size=size,
+                            year=year,
+                        )
+                    ]
+                )
+
+                # redefine `glider base mass` as the difference
+                # between the `curb mass` and all other components' masses
+                curb_mass_includes = [
+                    "fuel mass",
+                    "charger mass",
+                    "converter mass",
+                    "inverter mass",
+                    "power distribution unit mass",
+                    "combustion engine mass",
+                    "electric engine mass",
+                    "powertrain mass",
+                    "fuel cell stack mass",
+                    "fuel cell ancillary BoP mass",
+                    "fuel cell essential BoP mass",
+                    "battery cell mass",
+                    "battery BoP mass",
+                    "fuel tank mass",
+                ]
+
+                print(
+                    self.array.loc[
+                        dict(
+                            parameter="glider base mass",
+                            powertrain=pwt,
+                            size=size,
+                            year=year,
+                        )
+                    ]
+                )
+
+                self.array.loc[
+                    dict(
+                        parameter="glider base mass",
+                        powertrain=pwt,
+                        size=size,
+                        year=year,
+                    )
+                ] = self.array.loc[
+                    dict(
+                        parameter="curb mass",
+                        powertrain=pwt,
+                        size=size,
+                        year=year,
+                    )
+                ] - self.array.loc[
+                    dict(
+                        parameter=curb_mass_includes,
+                        powertrain=pwt,
+                        size=size,
+                        year=year,
+                    )
+                ].sum(
+                    dim="parameter"
+                )
+
+                print(
+                    self.array.loc[
+                        dict(
+                            parameter="glider base mass",
                             powertrain=pwt,
                             size=size,
                             year=year,
@@ -1481,9 +1530,9 @@ class VehicleModel:
         ) as stream:
             list_noise_emissions = yaml.safe_load(stream)
 
-        self.array.loc[dict(parameter=list_noise_emissions)] = (
-            nem.get_sound_power_per_compartment()
-        )
+        self.array.loc[
+            dict(parameter=list_noise_emissions)
+        ] = nem.get_sound_power_per_compartment()
 
     def calculate_cost_impacts(self, sensitivity=False) -> xr.DataArray:
         """
