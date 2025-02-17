@@ -400,8 +400,9 @@ class Inventory:
             )
         else:
             # ton kilometers
+            load_factor = self.array.sel(parameter="cargo mass") / 1000
             load_factor = np.resize(
-                self.array[self.array_inputs["cargo mass"]].values / 1000,
+                load_factor.values,
                 (
                     1,
                     len(self.scope["size"]),
