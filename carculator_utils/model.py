@@ -989,17 +989,6 @@ class VehicleModel:
                     "fuel tank mass",
                 ]
 
-                print(
-                    self.array.loc[
-                        dict(
-                            parameter="glider base mass",
-                            powertrain=pwt,
-                            size=size,
-                            year=year,
-                        )
-                    ]
-                )
-
                 self.array.loc[
                     dict(
                         parameter="glider base mass",
@@ -1023,17 +1012,6 @@ class VehicleModel:
                     )
                 ].sum(
                     dim="parameter"
-                )
-
-                print(
-                    self.array.loc[
-                        dict(
-                            parameter="glider base mass",
-                            powertrain=pwt,
-                            size=size,
-                            year=year,
-                        )
-                    ]
                 )
 
         self.set_battery_properties()
