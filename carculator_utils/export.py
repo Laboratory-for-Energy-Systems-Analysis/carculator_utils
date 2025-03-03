@@ -1020,7 +1020,6 @@ class ExportInventory:
                 csvFile,
                 delimiter=";",
                 quoting=csv.QUOTE_NONE,
-                quotechar="",
                 escapechar="\\",
             )
             for row in rows:
