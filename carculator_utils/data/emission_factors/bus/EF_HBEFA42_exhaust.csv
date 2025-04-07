@@ -1,682 +1,74 @@
 ﻿component,powertrain,size,euro_class,value
-Nitrogen oxides,ICEV-g,13m-coach-double,2,11.62235641
-Nitrogen oxides,ICEV-g,13m-coach-double,1,11.43112278
-Nitrogen oxides,ICEV-d,13m-coach-double,2,11.41239166
-Nitrogen oxides,ICEV-d,13m-coach-double,5,11.148386
-Nitrogen oxides,ICEV-d,13m-coach-double,1,10.98483849
-Nitrogen oxides,ICEV-d,13m-coach-double,4,10.94161034
-Nitrogen oxides,ICEV-g,13m-coach,2,10.10150337
-Nitrogen oxides,ICEV-d,13m-coach,2,9.919013977
-Nitrogen oxides,ICEV-g,13m-coach,1,9.868753433
-Nitrogen oxides,ICEV-d,13m-coach,5,9.570486069
-Nitrogen oxides,ICEV-d,13m-coach,1,9.483465195
-Nitrogen oxides,ICEV-d,13m-coach,4,9.399634361
-Nitrogen oxides,ICEV-g,13m-coach-double,3,9.140799522
-Nitrogen oxides,ICEV-d,13m-coach-double,3,9.008223534
-Nitrogen oxides,ICEV-d,13m-coach-double,6,8.377319336
-Nitrogen oxides,ICEV-g,13m-coach,3,7.944385529
-Nitrogen oxides,ICEV-d,13m-coach,3,7.829161167
-Nitrogen oxides,ICEV-d,13m-coach,6,7.108923912
-Nitrogen oxides,ICEV-g,13m-coach-double,4,3.397946835
-Nitrogen oxides,ICEV-g,13m-coach,4,3.125019789
-Carbon monoxide,ICEV-d,13m-coach-double,4,3.038818121
-Carbon monoxide,ICEV-d,13m-coach,4,2.975002289
-Nitrogen dioxide,ICEV-g,13m-coach-double,2,2.905589104
-Nitrogen dioxide,ICEV-g,13m-coach-double,1,2.857780695
-Carbon monoxide,ICEV-d,13m-coach-double,5,2.791426897
-Carbon monoxide,ICEV-d,13m-coach,5,2.784600735
-Carbon monoxide,ICEV-g,13m-coach-double,1,2.58578825
-Nitrogen dioxide,ICEV-g,13m-coach,2,2.525375843
-Carbon monoxide,ICEV-d,13m-coach-double,1,2.481357098
-Nitrogen dioxide,ICEV-g,13m-coach,1,2.467188358
-Nitrogen dioxide,ICEV-d,13m-coach-double,6,2.345649481
-Carbon monoxide,ICEV-g,13m-coach-double,3,2.298843145
-Nitrogen dioxide,ICEV-g,13m-coach-double,3,2.285199881
-Carbon monoxide,ICEV-g,13m-coach,1,2.284344673
-Carbon monoxide,ICEV-d,13m-coach-double,3,2.257223129
-Carbon monoxide,ICEV-d,13m-coach,1,2.192087889
-Carbon monoxide,ICEV-g,13m-coach,3,2.056438208
-Carbon monoxide,ICEV-d,13m-coach,3,2.019206762
-Nitrogen dioxide,ICEV-d,13m-coach,6,1.990498662
-Nitrogen dioxide,ICEV-g,13m-coach,3,1.986096382
-Carbon monoxide,ICEV-g,13m-coach-double,2,1.868514657
-Carbon monoxide,ICEV-d,13m-coach-double,2,1.821611881
-Carbon monoxide,ICEV-g,13m-coach,2,1.678317547
-Carbon monoxide,ICEV-d,13m-coach,2,1.636188984
-Nitrogen dioxide,ICEV-d,13m-coach-double,4,1.525568008
-Nitrogen dioxide,ICEV-d,13m-coach,4,1.369709611
-Nitrogen oxides,ICEV-g,13m-coach-double,5,1.325439095
-Nitrogen dioxide,ICEV-d,13m-coach-double,5,1.189281344
-Nitrogen oxides,ICEV-g,13m-coach,5,1.135801911
-Nitrogen dioxide,ICEV-d,13m-coach,5,1.093756795
-Hydrocarbon,ICEV-g,13m-coach-double,1,0.963507533
-Nitrogen oxides,ICEV-g,13m-city-double,2,0.942984564
-Nitrogen oxides,ICEV-g,18m,2,0.942984564
-Nitrogen oxides,ICEV-g,9m,2,0.905252423
-Nitrogen oxides,ICEV-g,13m-city,2,0.905252423
-Methane,ICEV-g,13m-coach-double,1,0.886426985
-Hydrocarbon,ICEV-g,13m-coach,1,0.860369384
-Hydrocarbon,ICEV-d,13m-coach-double,1,0.859047472
-Nitrogen dioxide,ICEV-g,13m-coach-double,4,0.849486709
-Non-methane hydrocarbon,ICEV-d,13m-coach-double,1,0.838430345
-Nitrogen dioxide,ICEV-d,13m-coach-double,2,0.798867464
-Methane,ICEV-g,13m-coach,1,0.791539848
-Nitrogen dioxide,ICEV-g,13m-coach,4,0.781254947
-Nitrogen oxides,ICEV-g,18m,3,0.770671513
-Nitrogen oxides,ICEV-g,13m-city-double,3,0.770671513
-Nitrogen dioxide,ICEV-d,13m-coach-double,1,0.768938661
-Hydrocarbon,ICEV-d,13m-coach,1,0.767091155
-Nitrogen oxides,ICEV-g,9m,3,0.762339809
-Nitrogen oxides,ICEV-g,13m-city,3,0.762339809
-Non-methane hydrocarbon,ICEV-d,13m-coach,1,0.748681009
-Carbon monoxide,ICEV-g,13m-coach-double,5,0.728833675
-Nitrogen dioxide,ICEV-d,13m-coach,2,0.69433099
-Nitrogen dioxide,ICEV-d,13m-coach,1,0.663842618
-Nitrogen oxides,ICEV-g,9m,4,0.647724785
-Nitrogen oxides,ICEV-g,13m-city,4,0.647724785
-Nitrogen oxides,ICEV-g,13m-city-double,4,0.630859682
-Nitrogen oxides,ICEV-g,18m,4,0.630859682
-Nitrogen dioxide,ICEV-d,13m-coach-double,3,0.630575597
-Carbon monoxide,ICEV-g,13m-coach,5,0.624555767
-Carbon monoxide,ICEV-g,13m-coach-double,6,0.62162298
-Particulate matters 2.5,ICEV-g,13m-coach-double,1,0.595431387
-Hydrocarbon,ICEV-g,13m-coach-double,2,0.561326861
-Nitrogen dioxide,ICEV-d,13m-coach,3,0.548041284
-Carbon monoxide,ICEV-g,13m-coach,6,0.533761084
-Hydrocarbon,ICEV-d,13m-coach-double,2,0.525200009
-Particulate matters 2.5,ICEV-g,13m-coach,1,0.521555305
-Particulate matters 2.5,ICEV-d,13m-coach-double,1,0.520888627
-Methane,ICEV-g,13m-coach-double,2,0.516420722
-Non-methane hydrocarbon,ICEV-d,13m-coach-double,2,0.512595236
-Hydrocarbon,ICEV-g,13m-coach,2,0.503070176
-Hydrocarbon,ICEV-g,13m-coach-double,3,0.498879403
-Hydrocarbon,ICEV-d,13m-coach-double,3,0.481400847
-Carbon monoxide,ICEV-g,13m-coach,4,0.472539425
-Hydrocarbon,ICEV-d,13m-coach,2,0.470692754
-Non-methane hydrocarbon,ICEV-d,13m-coach-double,3,0.469847232
-Methane,ICEV-g,13m-coach,2,0.462824583
-Non-methane hydrocarbon,ICEV-d,13m-coach,2,0.459396124
-Methane,ICEV-g,13m-coach-double,3,0.458969057
-Particulate matters 2.5,ICEV-d,13m-coach,1,0.456261158
-Hydrocarbon,ICEV-g,13m-coach,3,0.454975903
-Carbon monoxide,ICEV-g,13m-coach-double,4,0.449442059
-Hydrocarbon,ICEV-d,13m-coach,3,0.439035535
-Non-methane hydrocarbon,ICEV-d,13m-coach,3,0.428498685
-Hydrocarbon,ICEV-g,13m-city-double,2,0.425562602
-Hydrocarbon,ICEV-g,18m,2,0.425562602
-Methane,ICEV-g,13m-coach,3,0.41857785
-Nitrogen oxides,ICEV-g,13m-coach-double,6,0.412655622
-Nitrogen oxides,ICEV-d,13m-city-double,2,0.392312521
-Nitrogen oxides,ICEV-d,18m,2,0.392312521
-Methane,ICEV-g,18m,2,0.391517607
-Methane,ICEV-g,13m-city-double,2,0.391517607
-Nitrogen oxides,ICEV-d,9m,2,0.37661469
-Nitrogen oxides,ICEV-d,13m-city,2,0.37661469
-Nitrogen oxides,ICEV-d,18m,1,0.364909367
-Nitrogen oxides,ICEV-d,13m-city-double,1,0.364909367
-Hydrocarbon,ICEV-g,13m-city-double,3,0.359162045
-Hydrocarbon,ICEV-g,18m,3,0.359162045
-Nitrogen oxides,ICEV-g,13m-coach,6,0.354329735
-Nitrogen oxides,ICEV-d,13m-city,1,0.352808356
-Nitrogen oxides,ICEV-d,9m,1,0.352808356
-Hydrocarbon,ICEV-g,13m-coach-double,5,0.343881965
-Nitrogen dioxide,ICEV-g,13m-coach-double,5,0.331359774
-Methane,ICEV-g,18m,3,0.330429099
-Methane,ICEV-g,13m-city-double,3,0.330429099
-Nitrogen oxides,ICEV-d,18m,3,0.321787638
-Nitrogen oxides,ICEV-d,13m-city-double,3,0.321787638
-Hydrocarbon,ICEV-g,13m-city,2,0.319218382
-Hydrocarbon,ICEV-g,9m,2,0.319218382
-Nitrogen oxides,ICEV-d,9m,3,0.318308773
-Nitrogen oxides,ICEV-d,13m-city,3,0.318308773
-Methane,ICEV-g,13m-coach-double,5,0.316371411
-Nitrogen oxides,ICEV-d,18m,0,0.297023716
-Nitrogen oxides,ICEV-d,13m-city-double,0,0.297023716
-Hydrocarbon,ICEV-g,13m-coach,5,0.294681042
-Methane,ICEV-g,13m-city,2,0.29368092
-Methane,ICEV-g,9m,2,0.29368092
-Nitrogen dioxide,ICEV-g,13m-coach,5,0.283950478
-Methane,ICEV-g,13m-coach,5,0.271106571
-Hydrocarbon,ICEV-g,13m-city,3,0.263082593
-Hydrocarbon,ICEV-g,9m,3,0.263082593
-Carbon monoxide,ICEV-d,13m-coach-double,6,0.258233607
-Hydrocarbon,ICEV-g,13m-coach-double,4,0.25032869
-Carbon monoxide,ICEV-d,13m-coach,6,0.244870484
-Methane,ICEV-g,13m-city,3,0.242036001
-Methane,ICEV-g,9m,3,0.242036001
-Nitrogen dioxide,ICEV-g,18m,2,0.235746141
-Nitrogen dioxide,ICEV-g,13m-city-double,2,0.235746141
-Nitrogen oxides,ICEV-d,9m,0,0.231275009
-Nitrogen oxides,ICEV-d,13m-city,0,0.231275009
-Methane,ICEV-g,13m-coach-double,4,0.230302393
-Particulate matters 2.5,ICEV-g,13m-coach-double,3,0.22968629
-Particulate matters 2.5,ICEV-d,13m-coach-double,3,0.226481259
-Nitrogen dioxide,ICEV-g,9m,2,0.226313106
-Nitrogen dioxide,ICEV-g,13m-city,2,0.226313106
-Hydrocarbon,ICEV-g,13m-coach,4,0.217845887
-Particulate matters 2.5,ICEV-g,13m-coach-double,2,0.21581836
-Carbon monoxide,ICEV-g,13m-city,3,0.211065975
-Carbon monoxide,ICEV-g,9m,3,0.211065975
-Particulate matters 2.5,ICEV-d,13m-coach-double,2,0.206879184
-Carbon monoxide,ICEV-g,9m,2,0.206866872
-Carbon monoxide,ICEV-g,13m-city,2,0.206866872
-Particulate matters 2.5,ICEV-g,13m-coach,3,0.204868734
-Particulate matters 2.5,ICEV-d,13m-coach,3,0.202010006
-Methane,ICEV-g,13m-coach,4,0.200418219
-Carbon monoxide,ICEV-g,18m,3,0.193363755
-Carbon monoxide,ICEV-g,13m-city-double,3,0.193363755
-Nitrogen dioxide,ICEV-g,18m,3,0.192667878
-Nitrogen dioxide,ICEV-g,13m-city-double,3,0.192667878
-Nitrogen dioxide,ICEV-g,13m-city,3,0.190584952
-Nitrogen dioxide,ICEV-g,9m,3,0.190584952
-Particulate matters 2.5,ICEV-g,13m-coach,2,0.187757641
-Particulate matters 2.5,ICEV-d,13m-coach,2,0.17998074
-Carbon monoxide,ICEV-g,18m,2,0.173170226
-Carbon monoxide,ICEV-g,13m-city-double,2,0.173170226
-Hydrocarbon,ICEV-g,13m-coach-double,6,0.164714128
-Nitrogen dioxide,ICEV-g,9m,4,0.161931196
-Nitrogen dioxide,ICEV-g,13m-city,4,0.161931196
-Nitrogen dioxide,ICEV-g,18m,4,0.15771492
-Nitrogen dioxide,ICEV-g,13m-city-double,4,0.15771492
-Methane,ICEV-g,13m-coach-double,6,0.151537001
-Hydrocarbon,ICEV-g,13m-coach,6,0.141432971
-Nitrogen oxides,ICEV-d,13m-city-double,5,0.133289421
-Nitrogen oxides,ICEV-d,18m,5,0.133289421
-Nitrogen oxides,ICEV-d,13m-city,5,0.13088603
-Nitrogen oxides,ICEV-d,9m,5,0.13088603
-Methane,ICEV-g,13m-coach,6,0.13011834
-Nitrogen oxides,ICEV-d,13m-city-double,4,0.129505554
-Nitrogen oxides,ICEV-d,18m,4,0.129505554
-Nitrogen oxides,ICEV-d,9m,4,0.126523929
-Nitrogen oxides,ICEV-d,13m-city,4,0.126523929
-Hydrocarbon,ICEV-d,13m-coach-double,5,0.125164345
-Carbon monoxide,ICEV-d,13m-city,0,0.123453401
-Carbon monoxide,ICEV-d,9m,0,0.123453401
-Non-methane hydrocarbon,ICEV-d,13m-coach-double,5,0.122160397
-Hydrocarbon,ICEV-d,13m-coach,5,0.108922943
-Carbon monoxide,ICEV-g,13m-city-double,4,0.108101542
-Carbon monoxide,ICEV-g,18m,4,0.108101542
-Carbon monoxide,ICEV-d,13m-city,1,0.106495208
-Carbon monoxide,ICEV-d,9m,1,0.106495208
-Non-methane hydrocarbon,ICEV-d,13m-coach,5,0.106308796
-Carbon monoxide,ICEV-g,9m,4,0.10464252
-Carbon monoxide,ICEV-g,13m-city,4,0.10464252
-Nitrogen dioxide,ICEV-g,13m-coach-double,6,0.103163905
-Nitrogen dioxide,ICEV-d,18m,2,0.09807813
-Nitrogen dioxide,ICEV-d,13m-city-double,2,0.09807813
-Carbon monoxide,ICEV-d,18m,0,0.096552333
-Carbon monoxide,ICEV-d,13m-city-double,0,0.096552333
-Nitrogen dioxide,ICEV-d,13m-city-double,3,0.096536291
-Nitrogen dioxide,ICEV-d,18m,3,0.096536291
-Nitrogen dioxide,ICEV-d,13m-city,3,0.095492633
-Nitrogen dioxide,ICEV-d,9m,3,0.095492633
-Carbon monoxide,ICEV-d,9m,3,0.095124091
-Carbon monoxide,ICEV-d,13m-city,3,0.095124091
-Nitrogen oxides,ICEV-g,18m,5,0.094725032
-Nitrogen oxides,ICEV-g,13m-city-double,5,0.094725032
-Nitrogen oxides,ICEV-g,13m-city,5,0.094725025
-Nitrogen oxides,ICEV-g,9m,5,0.094725025
-Carbon monoxide,ICEV-d,18m,1,0.094663117
-Carbon monoxide,ICEV-d,13m-city-double,1,0.094663117
-Nitrogen dioxide,ICEV-d,13m-city,2,0.094153673
-Nitrogen dioxide,ICEV-d,9m,2,0.094153673
-Carbon monoxide,ICEV-d,9m,2,0.092567261
-Carbon monoxide,ICEV-d,13m-city,2,0.092567261
-Nitrogen dioxide,ICEV-d,18m,1,0.091227342
-Nitrogen dioxide,ICEV-d,13m-city-double,1,0.091227342
-Nitrogen dioxide,ICEV-g,13m-coach,6,0.088582434
-Nitrogen dioxide,ICEV-d,13m-city,1,0.088202089
-Nitrogen dioxide,ICEV-d,9m,1,0.088202089
-Carbon monoxide,ICEV-d,18m,3,0.087145982
-Carbon monoxide,ICEV-d,13m-city-double,3,0.087145982
-Nitrogen oxides,ICEV-d,18m,6,0.080545571
-Nitrogen oxides,ICEV-d,13m-city-double,6,0.080545571
-Carbon monoxide,ICEV-d,18m,2,0.077488936
-Carbon monoxide,ICEV-d,13m-city-double,2,0.077488936
-Non-methane hydrocarbon,ICEV-g,13m-coach-double,1,0.0770806
-Nitrogen oxides,ICEV-d,13m-city,6,0.075477491
-Nitrogen oxides,ICEV-d,9m,6,0.075477491
-Hydrocarbon,ICEV-d,13m-coach-double,4,0.069460995
-Non-methane hydrocarbon,ICEV-g,13m-coach,1,0.068829551
-Non-methane hydrocarbon,ICEV-d,13m-coach-double,4,0.067793928
-Particulate matters 2.5,ICEV-d,13m-coach-double,4,0.062355071
-Particulate matters 2.5,ICEV-d,13m-coach-double,5,0.062340822
-Hydrocarbon,ICEV-d,13m-coach,4,0.060006935
-Hydrocarbon,ICEV-g,13m-city-double,4,0.058805866
-Hydrocarbon,ICEV-g,18m,4,0.058805866
-Non-methane hydrocarbon,ICEV-d,13m-coach,4,0.058566771
-Particulate matters 2.5,ICEV-d,13m-coach,5,0.058432166
-Particulate matters 2.5,ICEV-d,13m-coach,4,0.058071751
-Particulate matters 2.5,ICEV-g,13m-coach-double,4,0.054450836
-Methane,ICEV-g,18m,4,0.054101399
-Methane,ICEV-g,13m-city-double,4,0.054101399
-Carbon monoxide,ICEV-g,13m-city,5,0.052087488
-Carbon monoxide,ICEV-g,9m,5,0.052087488
-Carbon monoxide,ICEV-g,13m-city-double,5,0.052087485
-Carbon monoxide,ICEV-g,18m,5,0.052087485
-Hydrocarbon,ICEV-g,9m,4,0.050247575
-Hydrocarbon,ICEV-g,13m-city,4,0.050247575
-Hydrocarbon,ICEV-d,13m-city,0,0.050119494
-Hydrocarbon,ICEV-d,9m,0,0.050119494
-Particulate matters 2.5,ICEV-g,13m-coach,4,0.049982052
-Non-methane hydrocarbon,ICEV-d,9m,0,0.048916625
-Non-methane hydrocarbon,ICEV-d,13m-city,0,0.048916625
-Methane,ICEV-g,9m,4,0.046227773
-Methane,ICEV-g,13m-city,4,0.046227773
-Carbon monoxide,ICEV-g,13m-city-double,6,0.045409837
-Carbon monoxide,ICEV-g,13m-city,6,0.045409837
-Carbon monoxide,ICEV-g,9m,6,0.045409837
-Carbon monoxide,ICEV-g,18m,6,0.045409837
-Non-methane hydrocarbon,ICEV-g,13m-coach-double,2,0.044906147
-Carbon monoxide,ICEV-d,9m,4,0.044752812
-Carbon monoxide,ICEV-d,13m-city,4,0.044752812
-Carbon monoxide,ICEV-d,18m,4,0.044141488
-Carbon monoxide,ICEV-d,13m-city-double,4,0.044141488
-Hydrocarbon,ICEV-d,13m-coach-double,6,0.041874636
-Carbon monoxide,ICEV-d,13m-city,5,0.04148555
-Carbon monoxide,ICEV-d,9m,5,0.04148555
-Carbon monoxide,ICEV-d,18m,5,0.041254346
-Carbon monoxide,ICEV-d,13m-city-double,5,0.041254346
-Non-methane hydrocarbon,ICEV-d,13m-coach-double,6,0.040869646
-Non-methane hydrocarbon,ICEV-g,13m-coach,2,0.040245615
-Non-methane hydrocarbon,ICEV-g,13m-coach-double,3,0.03991035
-Dinitrogen oxide,ICEV-d,13m-coach,5,0.037825439
-Dinitrogen oxide,ICEV-d,13m-coach-double,5,0.037825439
-Hydrocarbon,ICEV-d,13m-coach,6,0.036838766
-Non-methane hydrocarbon,ICEV-g,13m-coach,3,0.036398072
-Dinitrogen oxide,ICEV-d,13m-coach,6,0.0363838
-Dinitrogen oxide,ICEV-d,13m-coach-double,6,0.0363838
-Non-methane hydrocarbon,ICEV-d,13m-coach,6,0.035954636
-Non-methane hydrocarbon,ICEV-g,18m,2,0.034045007
-Non-methane hydrocarbon,ICEV-g,13m-city-double,2,0.034045007
-Nitrogen dioxide,ICEV-d,18m,5,0.033322355
-Nitrogen dioxide,ICEV-d,13m-city-double,5,0.033322355
-Carbon monoxide,ICEV-d,13m-city-double,6,0.033276816
-Carbon monoxide,ICEV-d,18m,6,0.033276816
-Hydrocarbon,ICEV-d,13m-city-double,0,0.033061946
-Hydrocarbon,ICEV-d,18m,0,0.033061946
-Nitrogen dioxide,ICEV-d,9m,5,0.032721507
-Nitrogen dioxide,ICEV-d,13m-city,5,0.032721507
-Nitrogen dioxide,ICEV-d,18m,4,0.032376389
-Nitrogen dioxide,ICEV-d,13m-city-double,4,0.032376389
-Non-methane hydrocarbon,ICEV-d,18m,0,0.032268459
-Non-methane hydrocarbon,ICEV-d,13m-city-double,0,0.032268459
-Carbon monoxide,ICEV-d,9m,6,0.031753066
-Carbon monoxide,ICEV-d,13m-city,6,0.031753066
-Nitrogen dioxide,ICEV-d,13m-city,4,0.031630982
-Nitrogen dioxide,ICEV-d,9m,4,0.031630982
-Nitrogen oxides,ICEV-g,13m-city-double,6,0.030144679
-Nitrogen oxides,ICEV-g,18m,6,0.030144679
-Nitrogen oxides,ICEV-g,13m-city,6,0.030144677
-Nitrogen oxides,ICEV-g,9m,6,0.030144677
-Hydrocarbon,ICEV-d,18m,1,0.02875761
-Hydrocarbon,ICEV-d,13m-city-double,1,0.02875761
-Non-methane hydrocarbon,ICEV-g,18m,3,0.028732964
-Non-methane hydrocarbon,ICEV-g,13m-city-double,3,0.028732964
-Non-methane hydrocarbon,ICEV-d,13m-city-double,1,0.028067428
-Non-methane hydrocarbon,ICEV-d,18m,1,0.028067428
-Non-methane hydrocarbon,ICEV-g,13m-coach-double,5,0.027510557
-Non-methane hydrocarbon,ICEV-g,9m,2,0.02553747
-Non-methane hydrocarbon,ICEV-g,13m-city,2,0.02553747
-Hydrocarbon,ICEV-g,18m,5,0.024576181
-Hydrocarbon,ICEV-g,13m-city-double,5,0.024576181
-Hydrocarbon,ICEV-g,9m,5,0.024576179
-Hydrocarbon,ICEV-g,13m-city,5,0.024576179
-Nitrogen dioxide,ICEV-g,18m,5,0.023681258
-Nitrogen dioxide,ICEV-g,13m-city-double,5,0.023681258
-Nitrogen dioxide,ICEV-g,9m,5,0.023681256
-Nitrogen dioxide,ICEV-g,13m-city,5,0.023681256
-Non-methane hydrocarbon,ICEV-g,13m-coach,5,0.023574483
-Methane,ICEV-g,9m,5,0.022610087
-Methane,ICEV-g,13m-city,5,0.022610087
-Methane,ICEV-g,18m,5,0.022610086
-Methane,ICEV-g,13m-city-double,5,0.022610086
-Nitrogen dioxide,ICEV-d,18m,6,0.022552759
-Nitrogen dioxide,ICEV-d,13m-city-double,6,0.022552759
-Hydrocarbon,ICEV-d,9m,1,0.021230525
-Hydrocarbon,ICEV-d,13m-city,1,0.021230525
-Nitrogen dioxide,ICEV-d,13m-city,6,0.021133698
-Nitrogen dioxide,ICEV-d,9m,6,0.021133698
-Non-methane hydrocarbon,ICEV-g,13m-city,3,0.021046608
-Non-methane hydrocarbon,ICEV-g,9m,3,0.021046608
-Nitrogen dioxide,ICEV-d,13m-city-double,0,0.020791661
-Nitrogen dioxide,ICEV-d,18m,0,0.020791661
-Non-methane hydrocarbon,ICEV-d,13m-city,1,0.020720993
-Non-methane hydrocarbon,ICEV-d,9m,1,0.020720993
-Methane,ICEV-d,13m-coach-double,1,0.020617139
-Non-methane hydrocarbon,ICEV-g,13m-coach-double,4,0.020026295
-Particulate matters 2.5,ICEV-d,9m,0,0.018981233
-Particulate matters 2.5,ICEV-d,13m-city,0,0.018981233
-Methane,ICEV-d,13m-coach,1,0.018410189
-Particulate matters 2.5,ICEV-d,18m,1,0.018344536
-Particulate matters 2.5,ICEV-d,13m-city-double,1,0.018344536
-Hydrocarbon,ICEV-d,18m,2,0.018275932
-Hydrocarbon,ICEV-d,13m-city-double,2,0.018275932
-Non-methane hydrocarbon,ICEV-d,13m-city-double,2,0.017837311
-Non-methane hydrocarbon,ICEV-d,18m,2,0.017837311
-Particulate matters 2.5,ICEV-d,9m,1,0.0177441
-Particulate matters 2.5,ICEV-d,13m-city,1,0.0177441
-Non-methane hydrocarbon,ICEV-g,13m-coach,4,0.017427672
-Nitrogen dioxide,ICEV-d,9m,0,0.016189252
-Nitrogen dioxide,ICEV-d,13m-city,0,0.016189252
-Hydrocarbon,ICEV-d,13m-city-double,3,0.015907756
-Hydrocarbon,ICEV-d,18m,3,0.015907756
-Non-methane hydrocarbon,ICEV-d,13m-city-double,3,0.01552597
-Non-methane hydrocarbon,ICEV-d,18m,3,0.01552597
-Benzene,ICEV-d,13m-coach-double,1,0.014346092
-Particulate matters 2.5,ICEV-d,18m,0,0.013948896
-Particulate matters 2.5,ICEV-d,13m-city-double,0,0.013948896
-Hydrocarbon,ICEV-d,13m-city,2,0.013708943
-Hydrocarbon,ICEV-d,9m,2,0.013708943
-Particulate matters 2.5,ICEV-d,13m-coach-double,6,0.013707838
-Non-methane hydrocarbon,ICEV-d,9m,2,0.013379928
-Non-methane hydrocarbon,ICEV-d,13m-city,2,0.013379928
-Non-methane hydrocarbon,ICEV-g,13m-coach-double,6,0.013177129
-Dinitrogen oxide,ICEV-d,13m-coach-double,4,0.013020847
-Dinitrogen oxide,ICEV-d,13m-coach,4,0.013020847
-Benzene,ICEV-d,13m-coach,1,0.012810422
-Methane,ICEV-d,13m-coach-double,2,0.012604801
-Particulate matters 2.5,ICEV-d,13m-coach,6,0.012423153
-Ammonia,ICEV-d,13m-coach-double,6,0.012394339
-Hydrocarbon,ICEV-g,13m-city-double,6,0.012032441
-Hydrocarbon,ICEV-g,13m-city,6,0.012032441
-Hydrocarbon,ICEV-g,18m,6,0.012032441
-Hydrocarbon,ICEV-g,9m,6,0.012032441
-Hydrocarbon,ICEV-d,13m-city,3,0.011652271
-Hydrocarbon,ICEV-d,9m,3,0.011652271
-Methane,ICEV-d,13m-coach-double,3,0.011553621
-Non-methane hydrocarbon,ICEV-d,9m,3,0.011372617
-Non-methane hydrocarbon,ICEV-d,13m-city,3,0.011372617
-Non-methane hydrocarbon,ICEV-g,13m-coach,6,0.011314638
-Methane,ICEV-d,13m-coach,2,0.011296626
-Methane,ICEV-g,13m-city-double,6,0.011069846
-Methane,ICEV-g,18m,6,0.011069846
-Methane,ICEV-g,9m,6,0.011069845
-Methane,ICEV-g,13m-city,6,0.011069845
-Ammonia,ICEV-d,13m-coach,5,0.011
-Ammonia,ICEV-d,13m-coach-double,5,0.011
-Ammonia,ICEV-d,13m-coach,6,0.010802997
-Methane,ICEV-d,13m-coach,3,0.010536853
-Particulate matters 2.5,ICEV-d,13m-city,2,0.010247204
-Particulate matters 2.5,ICEV-d,9m,2,0.010247204
-Particulate matters 2.5,ICEV-d,13m-city-double,2,0.008789285
-Particulate matters 2.5,ICEV-d,18m,2,0.008789285
-Benzene,ICEV-d,13m-coach-double,2,0.00877084
-Dinitrogen oxide,ICEV-d,13m-coach-double,1,0.008648003
-Dinitrogen oxide,ICEV-d,13m-coach,1,0.008648003
-Dinitrogen oxide,ICEV-d,13m-coach-double,2,0.008400653
-Dinitrogen oxide,ICEV-d,13m-coach,2,0.008400653
-Benzene,ICEV-d,13m-coach-double,3,0.008039394
-Particulate matters 2.5,ICEV-d,13m-city-double,3,0.008011221
-Particulate matters 2.5,ICEV-d,18m,3,0.008011221
-Benzene,ICEV-d,13m-coach,2,0.007860568
-Nitrogen dioxide,ICEV-g,13m-city-double,6,0.00753617
-Nitrogen dioxide,ICEV-g,18m,6,0.00753617
-Nitrogen dioxide,ICEV-g,13m-city,6,0.007536169
-Nitrogen dioxide,ICEV-g,9m,6,0.007536169
-Particulate matters 2.5,ICEV-d,9m,3,0.007429126
-Particulate matters 2.5,ICEV-d,13m-city,3,0.007429126
-Benzene,ICEV-d,13m-coach,3,0.007331893
-Particulate matters 2.5,ICEV-g,13m-coach-double,5,0.005686893
-Particulate matters 2.5,ICEV-g,13m-coach-double,6,0.005563615
-Particulate matters 2.5,ICEV-g,13m-coach,5,0.00487324
-Particulate matters 2.5,ICEV-g,13m-coach,6,0.004777239
-Dinitrogen oxide,ICEV-d,13m-coach-double,3,0.00475265
-Dinitrogen oxide,ICEV-d,13m-coach,3,0.00475265
-Non-methane hydrocarbon,ICEV-g,13m-city-double,4,0.004704469
-Non-methane hydrocarbon,ICEV-g,18m,4,0.004704469
-Non-methane hydrocarbon,ICEV-g,13m-city,4,0.004019806
-Non-methane hydrocarbon,ICEV-g,9m,4,0.004019806
-Methane,ICEV-d,13m-coach-double,5,0.003003944
-Ammonia,ICEV-d,13m-coach-double,1,0.0029
-Ammonia,ICEV-d,13m-coach,1,0.0029
-Ammonia,ICEV-d,13m-coach-double,4,0.0029
-Ammonia,ICEV-d,13m-coach,4,0.0029
-Ammonia,ICEV-d,13m-coach-double,3,0.0029
-Ammonia,ICEV-d,13m-coach,3,0.0029
-Ammonia,ICEV-d,13m-coach-double,2,0.0029
-Ammonia,ICEV-d,13m-coach,2,0.0029
-Methane,ICEV-d,13m-coach,5,0.002614151
-Benzene,ICEV-d,13m-coach-double,5,0.002090244
-Non-methane hydrocarbon,ICEV-g,18m,5,0.001966094
-Non-methane hydrocarbon,ICEV-g,13m-city,5,0.001966094
-Non-methane hydrocarbon,ICEV-g,13m-city-double,5,0.001966094
-Non-methane hydrocarbon,ICEV-g,9m,5,0.001966094
-Particulate matters 2.5,ICEV-g,9m,2,0.001940835
-Particulate matters 2.5,ICEV-g,13m-city,2,0.001940835
-Benzene,ICEV-d,13m-coach,5,0.001819013
-Methane,ICEV-d,13m-coach-double,4,0.001667064
-Particulate matters 2.5,ICEV-g,18m,2,0.001664703
-Particulate matters 2.5,ICEV-g,13m-city-double,2,0.001664703
-Particulate matters 2.5,ICEV-g,13m-city-double,3,0.001475071
-Particulate matters 2.5,ICEV-g,18m,3,0.001475071
-Hydrocarbon,ICEV-d,13m-city-double,5,0.001472121
-Hydrocarbon,ICEV-d,18m,5,0.001472121
-Methane,ICEV-d,13m-coach,4,0.001440166
-Non-methane hydrocarbon,ICEV-d,18m,5,0.00143679
-Non-methane hydrocarbon,ICEV-d,13m-city-double,5,0.00143679
-Particulate matters 2.5,ICEV-g,9m,3,0.001367893
-Particulate matters 2.5,ICEV-g,13m-city,3,0.001367893
-Hydrocarbon,ICEV-d,9m,5,0.001219288
-Hydrocarbon,ICEV-d,13m-city,5,0.001219288
-Methane,ICEV-d,13m-city,0,0.001202868
-Methane,ICEV-d,9m,0,0.001202868
-Non-methane hydrocarbon,ICEV-d,13m-city,5,0.001190026
-Non-methane hydrocarbon,ICEV-d,9m,5,0.001190026
-Benzene,ICEV-d,13m-coach-double,4,0.001159999
-Methane,ICEV-d,13m-coach-double,6,0.001004991
-Benzene,ICEV-d,13m-coach,4,0.001002116
-Non-methane hydrocarbon,ICEV-g,18m,6,0.000962595
-Non-methane hydrocarbon,ICEV-g,13m-city-double,6,0.000962595
-Non-methane hydrocarbon,ICEV-g,9m,6,0.000962595
-Non-methane hydrocarbon,ICEV-g,13m-city,6,0.000962595
-Dinitrogen oxide,ICEV-d,9m,5,0.000939846
-Dinitrogen oxide,ICEV-d,13m-city,5,0.000939846
-Hydrocarbon,ICEV-d,13m-city-double,4,0.00090019
-Hydrocarbon,ICEV-d,18m,4,0.00090019
-Methane,ICEV-d,13m-coach,6,0.00088413
-Non-methane hydrocarbon,ICEV-d,18m,4,0.000878585
-Non-methane hydrocarbon,ICEV-d,13m-city-double,4,0.000878585
-Benzene,ICEV-d,13m-city,0,0.000836996
-Benzene,ICEV-d,9m,0,0.000836996
-Particulate matters 2.5,ICEV-d,18m,5,0.000831055
-Particulate matters 2.5,ICEV-d,13m-city-double,5,0.000831055
-Particulate matters 2.5,ICEV-d,13m-city-double,4,0.000822497
-Particulate matters 2.5,ICEV-d,18m,4,0.000822497
-Methane,ICEV-d,18m,0,0.000793487
-Methane,ICEV-d,13m-city-double,0,0.000793487
-Hydrocarbon,ICEV-d,9m,4,0.000769566
-Hydrocarbon,ICEV-d,13m-city,4,0.000769566
-Particulate matters 2.5,ICEV-d,9m,5,0.000751447
-Particulate matters 2.5,ICEV-d,13m-city,5,0.000751447
-Non-methane hydrocarbon,ICEV-d,13m-city,4,0.000751096
-Non-methane hydrocarbon,ICEV-d,9m,4,0.000751096
-Particulate matters 2.5,ICEV-d,13m-city,4,0.000744867
-Particulate matters 2.5,ICEV-d,9m,4,0.000744867
-Dinitrogen oxide,ICEV-d,9m,6,0.000719359
-Dinitrogen oxide,ICEV-d,13m-city,6,0.000719359
-Benzene,ICEV-d,13m-coach-double,6,0.000699306
-Methane,ICEV-d,13m-city-double,1,0.000690183
-Methane,ICEV-d,18m,1,0.000690183
-Particulate matters 2.5,ICEV-d,13m-city-double,6,0.00067035
-Particulate matters 2.5,ICEV-d,18m,6,0.00067035
-Dinitrogen oxide,ICEV-d,13m-city-double,5,0.000651216
-Dinitrogen oxide,ICEV-d,18m,5,0.000651216
-Hydrocarbon,ICEV-d,13m-city,6,0.000617224
-Hydrocarbon,ICEV-d,9m,6,0.000617224
-Benzene,ICEV-d,13m-coach,6,0.000615207
-Non-methane hydrocarbon,ICEV-d,13m-city,6,0.000602411
-Non-methane hydrocarbon,ICEV-d,9m,6,0.000602411
-Dinitrogen oxide,ICEV-d,13m-city,1,0.00059101
-Dinitrogen oxide,ICEV-d,9m,1,0.00059101
-Particulate matters 2.5,ICEV-d,9m,6,0.000575158
-Particulate matters 2.5,ICEV-d,13m-city,6,0.000575158
-Benzene,ICEV-d,13m-city-double,0,0.000552135
-Benzene,ICEV-d,18m,0,0.000552135
-Dinitrogen oxide,ICEV-d,13m-city-double,6,0.000525287
-Dinitrogen oxide,ICEV-d,18m,6,0.000525287
-Methane,ICEV-d,9m,1,0.000509533
-Methane,ICEV-d,13m-city,1,0.000509533
-Benzene,ICEV-d,18m,1,0.000480252
-Benzene,ICEV-d,13m-city-double,1,0.000480252
-Hydrocarbon,ICEV-d,18m,6,0.000450707
-Hydrocarbon,ICEV-d,13m-city-double,6,0.000450707
-Non-methane hydrocarbon,ICEV-d,18m,6,0.00043989
-Non-methane hydrocarbon,ICEV-d,13m-city-double,6,0.00043989
-Methane,ICEV-d,13m-city-double,2,0.000438622
-Methane,ICEV-d,18m,2,0.000438622
-Dinitrogen oxide,ICEV-d,18m,1,0.000415811
-Dinitrogen oxide,ICEV-d,13m-city-double,1,0.000415811
-Particulate matters 2.5,ICEV-g,13m-city-double,5,0.000406425
-Particulate matters 2.5,ICEV-g,13m-city-double,6,0.000406425
-Particulate matters 2.5,ICEV-g,9m,6,0.000406425
-Particulate matters 2.5,ICEV-g,9m,5,0.000406425
-Particulate matters 2.5,ICEV-g,13m-city,6,0.000406425
-Particulate matters 2.5,ICEV-g,13m-city,5,0.000406425
-Particulate matters 2.5,ICEV-g,18m,5,0.000406425
-Particulate matters 2.5,ICEV-g,18m,6,0.000406425
-Dinitrogen oxide,ICEV-d,9m,2,0.00040429
-Dinitrogen oxide,ICEV-d,13m-city,2,0.00040429
-Methane,ICEV-d,18m,3,0.000381786
-Methane,ICEV-d,13m-city-double,3,0.000381786
-Particulate matters 2.5,ICEV-g,13m-city-double,4,0.000376194
-Particulate matters 2.5,ICEV-g,18m,4,0.000376194
-Particulate matters 2.5,ICEV-g,13m-city,4,0.000354762
-Particulate matters 2.5,ICEV-g,9m,4,0.000354762
-Benzene,ICEV-d,9m,1,0.00035455
-Benzene,ICEV-d,13m-city,1,0.00035455
-Methane,ICEV-d,13m-city,2,0.000329015
-Methane,ICEV-d,9m,2,0.000329015
-Benzene,ICEV-d,13m-city-double,2,0.000305208
-Benzene,ICEV-d,18m,2,0.000305208
-Dinitrogen oxide,ICEV-d,13m-city,4,0.000287451
-Dinitrogen oxide,ICEV-d,9m,4,0.000287451
-Dinitrogen oxide,ICEV-d,9m,0,0.000287059
-Dinitrogen oxide,ICEV-d,13m-city,0,0.000287059
-Dinitrogen oxide,ICEV-d,18m,2,0.000282326
-Dinitrogen oxide,ICEV-d,13m-city-double,2,0.000282326
-Methane,ICEV-d,9m,3,0.000279655
-Methane,ICEV-d,13m-city,3,0.000279655
-Benzene,ICEV-d,13m-city-double,3,0.00026566
-Benzene,ICEV-d,18m,3,0.00026566
-Dinitrogen oxide,ICEV-d,9m,3,0.000253557
-Dinitrogen oxide,ICEV-d,13m-city,3,0.000253557
-Benzene,ICEV-d,13m-city,2,0.000228939
-Benzene,ICEV-d,9m,2,0.000228939
-Ammonia,ICEV-d,13m-city,5,0.000206847
-Ammonia,ICEV-d,9m,5,0.000206847
-Dinitrogen oxide,ICEV-d,18m,0,0.000202381
-Dinitrogen oxide,ICEV-d,13m-city-double,0,0.000202381
-Dinitrogen oxide,ICEV-d,18m,4,0.000197982
-Dinitrogen oxide,ICEV-d,13m-city-double,4,0.000197982
-Benzene,ICEV-d,13m-city,3,0.000194593
-Benzene,ICEV-d,9m,3,0.000194593
-Dinitrogen oxide,ICEV-d,18m,3,0.000178576
-Dinitrogen oxide,ICEV-d,13m-city-double,3,0.000178576
-Ammonia,ICEV-d,9m,6,0.000158321
-Ammonia,ICEV-d,13m-city,6,0.000158321
-Ammonia,ICEV-d,9m,2,0.000150501
-Ammonia,ICEV-d,13m-city,2,0.000150501
-Ammonia,ICEV-d,13m-city,3,0.000145963
-Ammonia,ICEV-d,9m,3,0.000145963
-Ammonia,ICEV-d,18m,5,0.000143323
-Ammonia,ICEV-d,13m-city-double,5,0.000143323
-Ammonia,ICEV-d,13m-city,1,0.000142827
-Ammonia,ICEV-d,9m,1,0.000142827
-Ammonia,ICEV-d,18m,6,0.000142813
-Ammonia,ICEV-d,13m-city-double,6,0.000142813
-Ammonia,ICEV-d,18m,2,0.000105099
-Ammonia,ICEV-d,13m-city-double,2,0.000105099
-Ammonia,ICEV-d,13m-city-double,3,0.0001028
-Ammonia,ICEV-d,18m,3,0.0001028
-Ammonia,ICEV-d,18m,1,0.000100488
-Ammonia,ICEV-d,13m-city-double,1,0.000100488
-Ammonia,ICEV-d,13m-city,4,5.2e-05
-Ammonia,ICEV-d,9m,4,5.2e-05
-Ammonia,ICEV-d,9m,0,4.78e-05
-Ammonia,ICEV-d,13m-city,0,4.78e-05
-Ammonia,ICEV-d,18m,4,3.58e-05
-Ammonia,ICEV-d,13m-city-double,4,3.58e-05
-Methane,ICEV-d,18m,5,3.53e-05
-Methane,ICEV-d,13m-city-double,5,3.53e-05
-Ammonia,ICEV-d,13m-city-double,0,3.37e-05
-Ammonia,ICEV-d,18m,0,3.37e-05
-Methane,ICEV-d,9m,5,2.93e-05
-Methane,ICEV-d,13m-city,5,2.93e-05
-Benzene,ICEV-d,13m-city-double,5,2.46e-05
-Benzene,ICEV-d,18m,5,2.46e-05
-Methane,ICEV-d,18m,4,2.16e-05
-Methane,ICEV-d,13m-city-double,4,2.16e-05
-Benzene,ICEV-d,9m,5,2.04e-05
-Benzene,ICEV-d,13m-city,5,2.04e-05
-Methane,ICEV-d,13m-city,4,1.85e-05
-Methane,ICEV-d,9m,4,1.85e-05
-Benzene,ICEV-d,18m,4,1.5e-05
-Benzene,ICEV-d,13m-city-double,4,1.5e-05
-Methane,ICEV-d,13m-city,6,1.48e-05
-Methane,ICEV-d,9m,6,1.48e-05
-Benzene,ICEV-d,13m-city,4,1.29e-05
-Benzene,ICEV-d,9m,4,1.29e-05
-Methane,ICEV-d,13m-city-double,6,1.08e-05
-Methane,ICEV-d,18m,6,1.08e-05
-Benzene,ICEV-d,9m,6,1.03e-05
-Benzene,ICEV-d,13m-city,6,1.03e-05
-Benzene,ICEV-d,18m,6,7.53e-06
-Benzene,ICEV-d,13m-city-double,6,7.53e-06
-Benzene,ICEV-g,13m-city-double,4,0.0
-Benzene,ICEV-g,13m-city-double,2,0.0
-Benzene,ICEV-g,13m-city-double,3,0.0
-Benzene,ICEV-g,9m,5,0.0
-Benzene,ICEV-g,9m,6,0.0
-Benzene,ICEV-g,9m,4,0.0
-Lead,ICEV-d,13m-city-double,0,0.0
-Benzene,ICEV-g,13m-city-double,5,0.0
-Benzene,ICEV-g,13m-city-double,6,0.0
-Lead,ICEV-d,9m,0,0.0
-Benzene,ICEV-g,9m,2,0.0
-Lead,ICEV-d,18m,4,0.0
-Lead,ICEV-d,13m-coach-double,5,0.0
-Lead,ICEV-d,13m-coach,5,0.0
-Lead,ICEV-d,9m,1,0.0
-Lead,ICEV-d,13m-city-double,1,0.0
-Lead,ICEV-d,18m,5,0.0
-Lead,ICEV-d,18m,3,0.0
-Benzene,ICEV-g,9m,3,0.0
-Lead,ICEV-d,9m,6,0.0
-Lead,ICEV-g,13m-city-double,6,0.0
-Toluene,ICEV-d,9m,1,0.0
-Acetone,ICEV-d,9m,1,0.0
-Benzaldehyde,ICEV-d,9m,1,0.0
-Acetaldehyde,ICEV-d,9m,1,0.0
-Formaldehyde,ICEV-d,9m,1,0.0
-o-Xylene,ICEV-d,9m,1,0.0
-Lead,ICEV-d,13m-coach,6,0.0
-Lead,ICEV-d,13m-coach-double,6,0.0
-m-Xylene,ICEV-d,9m,1,0.0
-1-Pentene,ICEV-d,9m,1,0.0
-Acrolein,ICEV-d,9m,1,0.0
-Propene,ICEV-d,9m,1,0.0
-Ethene,ICEV-d,9m,1,0.0
-Heptane,ICEV-d,9m,1,0.0
-Cyclohexane,ICEV-d,9m,1,0.0
-Hexane,ICEV-d,9m,1,0.0
-Pentane,ICEV-d,9m,1,0.0
-Butane,ICEV-d,9m,1,0.0
-Propane,ICEV-d,9m,1,0.0
-Methyl ethyl ketone,ICEV-d,9m,1,0.0
-Styrene,ICEV-d,9m,1,0.0
+Benzene,BEV,9m,1,0.0
 Lead,ICEV-g,13m-city-double,5,0.0
-Lead,ICEV-g,9m,2,0.0
 Lead,ICEV-g,13m-city-double,4,0.0
 Lead,ICEV-g,13m-city-double,3,0.0
-Lead,ICEV-d,9m,2,0.0
 Lead,ICEV-g,13m-city-double,2,0.0
 Lead,ICEV-g,9m,6,0.0
 Lead,ICEV-g,9m,5,0.0
 Lead,ICEV-g,9m,4,0.0
 Lead,ICEV-g,9m,3,0.0
+Lead,ICEV-g,9m,2,0.0
+Lead,ICEV-d,9m,3,0.0
+Lead,ICEV-d,13m-city-double,3,0.0
+Lead,ICEV-d,13m-city,3,0.0
+Lead,ICEV-d,13m-city,2,0.0
+Lead,ICEV-d,13m-city,1,0.0
+Lead,ICEV-g,13m-city-double,6,0.0
+Lead,ICEV-d,13m-city,0,0.0
+Benzene,ICEV-g,13m-city,5,0.0
+Benzene,ICEV-g,13m-city,4,0.0
+Benzene,ICEV-g,13m-city,3,0.0
+Benzene,ICEV-g,13m-city,2,0.0
+Lead,ICEV-g,13m-city,6,0.0
+Lead,ICEV-g,13m-city,5,0.0
+Lead,ICEV-d,18m,6,0.0
+Lead,ICEV-g,13m-city,4,0.0
+Lead,ICEV-g,13m-city,3,0.0
+Lead,ICEV-g,13m-city,2,0.0
+Lead,ICEV-d,9m,4,0.0
+Lead,ICEV-d,13m-city-double,4,0.0
+Lead,ICEV-d,13m-city-double,6,0.0
+Lead,ICEV-d,9m,6,0.0
+Benzene,ICEV-g,13m-city,6,0.0
+Lead,ICEV-d,18m,2,0.0
+Benzene,ICEV-g,9m,2,0.0
+Benzene,ICEV-g,9m,4,0.0
+Lead,ICEV-d,18m,1,0.0
+Lead,ICEV-d,13m-city-double,0,0.0
+Lead,ICEV-d,9m,0,0.0
+Lead,ICEV-d,18m,0,0.0
+Benzene,ICEV-g,18m,6,0.0
+Benzene,ICEV-g,18m,5,0.0
+Lead,ICEV-d,9m,1,0.0
+Lead,ICEV-d,18m,4,0.0
+Lead,ICEV-d,13m-city-double,1,0.0
+Benzene,ICEV-g,18m,4,0.0
+Benzene,ICEV-g,18m,3,0.0
+Benzene,ICEV-g,18m,2,0.0
+Lead,ICEV-g,18m,6,0.0
+Lead,ICEV-g,18m,5,0.0
+Benzene,ICEV-g,9m,3,0.0
+Lead,ICEV-g,18m,4,0.0
+Lead,ICEV-g,18m,2,0.0
+Lead,ICEV-d,13m-city,6,0.0
+Lead,ICEV-d,9m,2,0.0
+Lead,ICEV-d,13m-city-double,2,0.0
+Lead,ICEV-d,13m-city,5,0.0
+Lead,ICEV-d,13m-city,4,0.0
+Lead,ICEV-d,18m,5,0.0
+Benzene,ICEV-g,13m-city-double,6,0.0
+Benzene,ICEV-g,13m-city-double,5,0.0
+Benzene,ICEV-g,13m-city-double,4,0.0
+Benzene,ICEV-g,13m-city-double,3,0.0
+Benzene,ICEV-g,13m-city-double,2,0.0
+Benzene,ICEV-g,9m,6,0.0
+Benzene,ICEV-g,9m,5,0.0
+Lead,ICEV-g,18m,3,0.0
+Lead,ICEV-d,13m-city-double,5,0.0
+Lead,ICEV-d,9m,5,0.0
+Lead,ICEV-g,13m-coach,2,0.0
 Cadmium,ICEV-d,9m,1,0.0
-PAH polycyclic aromatic hydrocarbons,ICEV-d,9m,1,0.0
 Mercury,ICEV-d,9m,1,0.0
 Chromium VI,ICEV-d,9m,1,0.0
 Chromium,ICEV-d,9m,1,0.0
@@ -685,76 +77,684 @@ Copper,ICEV-d,9m,1,0.0
 Zinc,ICEV-d,9m,1,0.0
 Selenium,ICEV-d,9m,1,0.0
 Arsenic,ICEV-d,9m,1,0.0
-Lead,ICEV-d,18m,2,0.0
-Lead,ICEV-g,18m,3,0.0
-Lead,ICEV-d,13m-city-double,2,0.0
-Lead,ICEV-d,13m-coach-double,3,0.0
-Lead,ICEV-d,9m,5,0.0
-Benzene,ICEV-g,13m-coach,6,0.0
-Benzene,ICEV-g,13m-coach,5,0.0
+PAH polycyclic aromatic hydrocarbons,ICEV-d,9m,1,0.0
+Styrene,ICEV-d,9m,1,0.0
+Acrolein,ICEV-d,9m,1,0.0
+Methyl ethyl ketone,ICEV-d,9m,1,0.0
+Acetone,ICEV-d,9m,1,0.0
+Lead,ICEV-d,13m-coach-double,6,0.0
+Benzaldehyde,ICEV-d,9m,1,0.0
+Formaldehyde,ICEV-d,9m,1,0.0
+o-Xylene,ICEV-d,9m,1,0.0
+m-Xylene,ICEV-d,9m,1,0.0
+Toluene,ICEV-d,9m,1,0.0
+1-Pentene,ICEV-d,9m,1,0.0
+Propene,ICEV-d,9m,1,0.0
+Ethene,ICEV-d,9m,1,0.0
+Heptane,ICEV-d,9m,1,0.0
+Cyclohexane,ICEV-d,9m,1,0.0
+Hexane,ICEV-d,9m,1,0.0
+Pentane,ICEV-d,9m,1,0.0
+Butane,ICEV-d,9m,1,0.0
+Propane,ICEV-d,9m,1,0.0
+Ethane,ICEV-d,9m,1,0.0
+Acetaldehyde,ICEV-d,9m,1,0.0
+Lead,ICEV-g,13m-coach,1,0.0
+Lead,ICEV-d,13m-coach,6,0.0
+Lead,ICEV-d,13m-coach,5,0.0
 Benzene,ICEV-g,13m-coach,4,0.0
 Benzene,ICEV-g,13m-coach,3,0.0
-Lead,ICEV-d,13m-coach,3,0.0
 Benzene,ICEV-g,13m-coach,2,0.0
-Benzene,ICEV-g,13m-coach-double,1,0.0
 Benzene,ICEV-g,13m-coach,1,0.0
 Lead,ICEV-g,13m-coach-double,6,0.0
 Lead,ICEV-g,13m-coach-double,5,0.0
+Benzene,ICEV-g,13m-coach,5,0.0
 Lead,ICEV-g,13m-coach-double,4,0.0
-Lead,ICEV-g,13m-coach-double,3,0.0
 Lead,ICEV-g,13m-coach-double,2,0.0
-Lead,ICEV-d,13m-city-double,5,0.0
-Benzene,ICEV-g,13m-coach-double,2,0.0
+Lead,ICEV-g,13m-coach-double,1,0.0
 Lead,ICEV-g,13m-coach,6,0.0
-Lead,ICEV-d,13m-coach,2,0.0
-Lead,ICEV-d,13m-coach-double,1,0.0
-Lead,ICEV-d,13m-coach,1,0.0
-Lead,ICEV-g,13m-city,2,0.0
-Lead,ICEV-g,13m-city,3,0.0
-Lead,ICEV-g,13m-city,4,0.0
-Lead,ICEV-g,13m-city,5,0.0
+Lead,ICEV-g,13m-coach,5,0.0
+Lead,ICEV-g,13m-coach,4,0.0
+Lead,ICEV-g,13m-coach,3,0.0
+Lead,ICEV-g,13m-coach-double,3,0.0
+Lead,ICEV-d,13m-coach-double,5,0.0
+Benzene,ICEV-g,13m-coach,6,0.0
+Benzene,ICEV-g,13m-coach-double,2,0.0
+Lead,ICEV-d,13m-coach-double,4,0.0
+Lead,ICEV-d,13m-coach,4,0.0
+Lead,ICEV-d,13m-coach-double,3,0.0
+Lead,ICEV-d,13m-coach,3,0.0
 Lead,ICEV-d,13m-coach-double,2,0.0
-Benzene,ICEV-g,13m-coach-double,3,0.0
-Lead,ICEV-g,13m-city,6,0.0
-Benzene,ICEV-g,13m-city,2,0.0
-Benzene,ICEV-g,13m-city,3,0.0
+Lead,ICEV-d,13m-coach,2,0.0
+Benzene,ICEV-g,13m-coach-double,1,0.0
+Lead,ICEV-d,13m-coach-double,1,0.0
 Benzene,ICEV-g,13m-coach-double,6,0.0
 Benzene,ICEV-g,13m-coach-double,5,0.0
 Benzene,ICEV-g,13m-coach-double,4,0.0
-Lead,ICEV-g,13m-coach-double,1,0.0
-Lead,ICEV-g,13m-coach,5,0.0
-Lead,ICEV-d,18m,1,0.0
-Lead,ICEV-g,18m,5,0.0
-Lead,ICEV-g,18m,2,0.0
-Lead,ICEV-d,13m-city-double,6,0.0
-Lead,ICEV-d,18m,6,0.0
-Lead,ICEV-g,18m,4,0.0
-Lead,ICEV-d,13m-city-double,3,0.0
-Lead,ICEV-d,9m,3,0.0
-Lead,ICEV-g,18m,6,0.0
-Lead,ICEV-d,13m-city,5,0.0
-Benzene,ICEV-g,18m,2,0.0
-Benzene,ICEV-g,18m,3,0.0
-Benzene,ICEV-g,18m,4,0.0
-Benzene,ICEV-g,18m,5,0.0
-Benzene,ICEV-g,18m,6,0.0
-Lead,ICEV-d,18m,0,0.0
-Lead,ICEV-d,13m-city,6,0.0
-Lead,ICEV-d,13m-coach-double,4,0.0
-Lead,ICEV-g,13m-coach,4,0.0
-Lead,ICEV-d,13m-city,0,0.0
-Lead,ICEV-g,13m-coach,3,0.0
-Lead,ICEV-g,13m-coach,2,0.0
-Lead,ICEV-g,13m-coach,1,0.0
-Benzene,ICEV-g,13m-city,4,0.0
-Benzene,ICEV-g,13m-city,5,0.0
-Benzene,ICEV-g,13m-city,6,0.0
-Lead,ICEV-d,13m-city,1,0.0
-Lead,ICEV-d,13m-coach,4,0.0
-Lead,ICEV-d,13m-city,2,0.0
-Lead,ICEV-d,13m-city-double,4,0.0
-Lead,ICEV-d,9m,4,0.0
-Lead,ICEV-d,13m-city,3,0.0
-Lead,ICEV-d,13m-city,4,0.0
-Ethane,ICEV-d,9m,1,0.0
-Benzene,BEV,9m,1,0.0
+Benzene,ICEV-g,13m-coach-double,3,0.0
+Lead,ICEV-d,13m-coach,1,0.0
+Lead,ICEV-d,18m,3,0.0
+Benzene,ICEV-d,13m-city,4,2.66e-07
+Benzene,ICEV-d,9m,4,2.66e-07
+Benzene,ICEV-d,13m-city,5,2.74e-07
+Benzene,ICEV-d,9m,5,2.74e-07
+Benzene,ICEV-d,13m-city-double,4,3.26e-07
+Benzene,ICEV-d,18m,4,3.26e-07
+Benzene,ICEV-d,18m,5,3.36e-07
+Benzene,ICEV-d,13m-city-double,5,3.36e-07
+Methane,ICEV-d,9m,4,3.82e-07
+Methane,ICEV-d,13m-city,4,3.82e-07
+Methane,ICEV-d,9m,5,3.93e-07
+Methane,ICEV-d,13m-city,5,3.93e-07
+Methane,ICEV-d,13m-city-double,4,4.69e-07
+Methane,ICEV-d,18m,4,4.69e-07
+Methane,ICEV-d,13m-city-double,5,4.82e-07
+Methane,ICEV-d,18m,5,4.82e-07
+Benzene,ICEV-d,13m-city,6,3.7e-06
+Benzene,ICEV-d,9m,6,3.7e-06
+Benzene,ICEV-d,18m,6,4.19e-06
+Benzene,ICEV-d,13m-city-double,6,4.19e-06
+Methane,ICEV-d,13m-city,6,5.32e-06
+Methane,ICEV-d,9m,6,5.32e-06
+Methane,ICEV-d,13m-city-double,6,6.03e-06
+Methane,ICEV-d,18m,6,6.03e-06
+Non-methane hydrocarbon,ICEV-d,13m-city,4,1.55e-05
+Non-methane hydrocarbon,ICEV-d,9m,4,1.55e-05
+Hydrocarbon,ICEV-d,9m,4,1.59e-05
+Hydrocarbon,ICEV-d,13m-city,4,1.59e-05
+Non-methane hydrocarbon,ICEV-d,13m-city,5,1.6e-05
+Non-methane hydrocarbon,ICEV-d,9m,5,1.6e-05
+Hydrocarbon,ICEV-d,9m,5,1.64e-05
+Hydrocarbon,ICEV-d,13m-city,5,1.64e-05
+Non-methane hydrocarbon,ICEV-d,18m,4,1.91e-05
+Non-methane hydrocarbon,ICEV-d,13m-city-double,4,1.91e-05
+Hydrocarbon,ICEV-d,18m,4,1.95e-05
+Hydrocarbon,ICEV-d,13m-city-double,4,1.95e-05
+Non-methane hydrocarbon,ICEV-d,13m-city-double,5,1.96e-05
+Non-methane hydrocarbon,ICEV-d,18m,5,1.96e-05
+Hydrocarbon,ICEV-d,18m,5,2.01e-05
+Hydrocarbon,ICEV-d,13m-city-double,5,2.01e-05
+Particulate matters 2.5,ICEV-d,9m,4,2.98e-05
+Particulate matters 2.5,ICEV-d,9m,5,2.98e-05
+Particulate matters 2.5,ICEV-d,13m-city,4,2.98e-05
+Particulate matters 2.5,ICEV-d,13m-city,5,2.98e-05
+Ammonia,ICEV-d,13m-city-double,6,3.05e-05
+Ammonia,ICEV-d,18m,6,3.05e-05
+Particulate matters 2.5,ICEV-d,9m,6,3.14e-05
+Particulate matters 2.5,ICEV-d,13m-city,6,3.14e-05
+Particulate matters 2.5,ICEV-d,13m-city-double,4,3.29e-05
+Particulate matters 2.5,ICEV-d,18m,4,3.29e-05
+Particulate matters 2.5,ICEV-d,13m-city-double,5,3.32e-05
+Particulate matters 2.5,ICEV-d,18m,5,3.32e-05
+Ammonia,ICEV-d,18m,0,3.37e-05
+Ammonia,ICEV-d,13m-city-double,0,3.37e-05
+Ammonia,ICEV-d,18m,4,3.58e-05
+Ammonia,ICEV-d,13m-city-double,4,3.58e-05
+Particulate matters 2.5,ICEV-d,18m,6,3.62e-05
+Particulate matters 2.5,ICEV-d,13m-city-double,6,3.62e-05
+Ammonia,ICEV-d,13m-city,6,4.17e-05
+Ammonia,ICEV-d,9m,6,4.17e-05
+Ammonia,ICEV-d,13m-city,0,4.78e-05
+Ammonia,ICEV-d,9m,0,4.78e-05
+Ammonia,ICEV-d,9m,4,5.2e-05
+Ammonia,ICEV-d,13m-city,4,5.2e-05
+Benzene,ICEV-d,13m-city,3,6.42e-05
+Benzene,ICEV-d,9m,3,6.42e-05
+Benzene,ICEV-d,13m-city,2,7.56e-05
+Benzene,ICEV-d,9m,2,7.56e-05
+Benzene,ICEV-d,18m,3,8.77e-05
+Benzene,ICEV-d,13m-city-double,3,8.77e-05
+Methane,ICEV-d,13m-city,3,9.23e-05
+Methane,ICEV-d,9m,3,9.23e-05
+Ammonia,ICEV-d,13m-city-double,1,0.000100488
+Ammonia,ICEV-d,18m,1,0.000100488
+Benzene,ICEV-d,13m-city-double,2,0.000100719
+Benzene,ICEV-d,18m,2,0.000100719
+Ammonia,ICEV-d,18m,3,0.0001028
+Ammonia,ICEV-d,13m-city-double,3,0.0001028
+Ammonia,ICEV-d,18m,2,0.000105099
+Ammonia,ICEV-d,13m-city-double,2,0.000105099
+Methane,ICEV-d,13m-city,2,0.000108575
+Methane,ICEV-d,9m,2,0.000108575
+Benzene,ICEV-d,9m,1,0.000117001
+Benzene,ICEV-d,13m-city,1,0.000117001
+Methane,ICEV-d,13m-city-double,3,0.000125989
+Methane,ICEV-d,18m,3,0.000125989
+Ammonia,ICEV-d,13m-city,1,0.000142827
+Ammonia,ICEV-d,9m,1,0.000142827
+Ammonia,ICEV-d,18m,5,0.000143323
+Ammonia,ICEV-d,13m-city-double,5,0.000143323
+Methane,ICEV-d,13m-city-double,2,0.000144745
+Methane,ICEV-d,18m,2,0.000144745
+Ammonia,ICEV-d,9m,3,0.000145963
+Ammonia,ICEV-d,13m-city,3,0.000145963
+Ammonia,ICEV-d,13m-city,2,0.000150501
+Ammonia,ICEV-d,9m,2,0.000150501
+Benzene,ICEV-d,13m-city-double,1,0.000158483
+Benzene,ICEV-d,18m,1,0.000158483
+Methane,ICEV-d,9m,1,0.000168146
+Methane,ICEV-d,13m-city,1,0.000168146
+Dinitrogen oxide,ICEV-d,18m,6,0.000168349
+Dinitrogen oxide,ICEV-d,13m-city-double,6,0.000168349
+Dinitrogen oxide,ICEV-d,18m,3,0.000178576
+Dinitrogen oxide,ICEV-d,13m-city-double,3,0.000178576
+Dinitrogen oxide,ICEV-d,13m-city-double,4,0.000197982
+Dinitrogen oxide,ICEV-d,18m,4,0.000197982
+Dinitrogen oxide,ICEV-d,13m-city-double,0,0.000202381
+Dinitrogen oxide,ICEV-d,18m,0,0.000202381
+Ammonia,ICEV-d,13m-city,5,0.000206847
+Ammonia,ICEV-d,9m,5,0.000206847
+Non-methane hydrocarbon,ICEV-d,13m-city,6,0.000216372
+Non-methane hydrocarbon,ICEV-d,9m,6,0.000216372
+Hydrocarbon,ICEV-d,9m,6,0.000221692
+Hydrocarbon,ICEV-d,13m-city,6,0.000221692
+Methane,ICEV-d,13m-city-double,1,0.00022776
+Methane,ICEV-d,18m,1,0.00022776
+Dinitrogen oxide,ICEV-d,13m-city,6,0.000230547
+Dinitrogen oxide,ICEV-d,9m,6,0.000230547
+Non-methane hydrocarbon,ICEV-d,18m,6,0.00024503
+Non-methane hydrocarbon,ICEV-d,13m-city-double,6,0.00024503
+Hydrocarbon,ICEV-d,18m,6,0.000251055
+Hydrocarbon,ICEV-d,13m-city-double,6,0.000251055
+Dinitrogen oxide,ICEV-d,13m-city,3,0.000253557
+Dinitrogen oxide,ICEV-d,9m,3,0.000253557
+Dinitrogen oxide,ICEV-d,18m,2,0.000282326
+Dinitrogen oxide,ICEV-d,13m-city-double,2,0.000282326
+Dinitrogen oxide,ICEV-d,13m-city,0,0.000287059
+Dinitrogen oxide,ICEV-d,9m,0,0.000287059
+Dinitrogen oxide,ICEV-d,13m-city,4,0.000287451
+Dinitrogen oxide,ICEV-d,9m,4,0.000287451
+Particulate matters 2.5,ICEV-g,9m,4,0.000354762
+Particulate matters 2.5,ICEV-g,13m-city,4,0.000354762
+Particulate matters 2.5,ICEV-g,13m-city-double,4,0.000376194
+Particulate matters 2.5,ICEV-g,18m,4,0.000376194
+Benzene,ICEV-d,13m-coach,6,0.000380253
+Dinitrogen oxide,ICEV-d,9m,2,0.00040429
+Dinitrogen oxide,ICEV-d,13m-city,2,0.00040429
+Particulate matters 2.5,ICEV-g,13m-city-double,5,0.000406425
+Particulate matters 2.5,ICEV-g,18m,5,0.000406425
+Particulate matters 2.5,ICEV-g,9m,6,0.000406425
+Particulate matters 2.5,ICEV-g,9m,5,0.000406425
+Particulate matters 2.5,ICEV-g,13m-city-double,6,0.000406425
+Particulate matters 2.5,ICEV-g,13m-city,5,0.000406425
+Particulate matters 2.5,ICEV-g,13m-city,6,0.000406425
+Particulate matters 2.5,ICEV-g,18m,6,0.000406425
+Nitrogen dioxide,ICEV-d,13m-city,6,0.000406451
+Nitrogen dioxide,ICEV-d,9m,6,0.000406451
+Benzene,ICEV-d,13m-coach,4,0.000413596
+Dinitrogen oxide,ICEV-d,18m,1,0.000415811
+Dinitrogen oxide,ICEV-d,13m-city-double,1,0.000415811
+Benzene,ICEV-d,13m-coach,5,0.000423478
+Benzene,ICEV-d,13m-coach-double,6,0.000430658
+Benzene,ICEV-d,13m-coach-double,4,0.000491486
+Benzene,ICEV-d,13m-coach-double,5,0.000504947
+Nitrogen dioxide,ICEV-d,13m-city-double,6,0.000536456
+Nitrogen dioxide,ICEV-d,18m,6,0.000536456
+Methane,ICEV-d,13m-coach,6,0.000546471
+Benzene,ICEV-d,18m,0,0.000552135
+Benzene,ICEV-d,13m-city-double,0,0.000552135
+Dinitrogen oxide,ICEV-d,13m-city,1,0.00059101
+Dinitrogen oxide,ICEV-d,9m,1,0.00059101
+Methane,ICEV-d,13m-coach,4,0.00059439
+Methane,ICEV-d,13m-coach,5,0.000608591
+Methane,ICEV-d,13m-coach-double,6,0.00061891
+Dinitrogen oxide,ICEV-d,18m,5,0.000651216
+Dinitrogen oxide,ICEV-d,13m-city-double,5,0.000651216
+Methane,ICEV-d,13m-coach-double,4,0.000706327
+Methane,ICEV-d,13m-coach-double,5,0.000725673
+Methane,ICEV-d,13m-city-double,0,0.000793487
+Methane,ICEV-d,18m,0,0.000793487
+Benzene,ICEV-d,13m-city,0,0.000836996
+Benzene,ICEV-d,9m,0,0.000836996
+Dinitrogen oxide,ICEV-d,13m-city,5,0.000939846
+Dinitrogen oxide,ICEV-d,9m,5,0.000939846
+Non-methane hydrocarbon,ICEV-g,13m-city-double,6,0.000962595
+Non-methane hydrocarbon,ICEV-g,18m,6,0.000962595
+Non-methane hydrocarbon,ICEV-g,13m-city,6,0.000962595
+Non-methane hydrocarbon,ICEV-g,9m,6,0.000962595
+Methane,ICEV-d,13m-city,0,0.001202868
+Methane,ICEV-d,9m,0,0.001202868
+Particulate matters 2.5,ICEV-g,13m-city,3,0.001367893
+Particulate matters 2.5,ICEV-g,9m,3,0.001367893
+Nitrogen oxides,ICEV-d,13m-city,6,0.00145161
+Nitrogen oxides,ICEV-d,9m,6,0.00145161
+Particulate matters 2.5,ICEV-g,13m-city-double,3,0.001475071
+Particulate matters 2.5,ICEV-g,18m,3,0.001475071
+Particulate matters 2.5,ICEV-g,13m-city-double,2,0.001664703
+Particulate matters 2.5,ICEV-g,18m,2,0.001664703
+Carbon monoxide,ICEV-d,13m-city-double,6,0.001766666
+Carbon monoxide,ICEV-d,18m,6,0.001766666
+Carbon monoxide,ICEV-d,13m-city,6,0.001865179
+Carbon monoxide,ICEV-d,9m,6,0.001865179
+Nitrogen oxides,ICEV-d,13m-city-double,6,0.001915915
+Nitrogen oxides,ICEV-d,18m,6,0.001915915
+Particulate matters 2.5,ICEV-d,13m-city,3,0.001931572
+Particulate matters 2.5,ICEV-d,9m,3,0.001931572
+Particulate matters 2.5,ICEV-g,13m-city,2,0.001940835
+Particulate matters 2.5,ICEV-g,9m,2,0.001940835
+Non-methane hydrocarbon,ICEV-g,18m,5,0.001966094
+Non-methane hydrocarbon,ICEV-g,13m-city-double,5,0.001966094
+Non-methane hydrocarbon,ICEV-g,9m,5,0.001966094
+Non-methane hydrocarbon,ICEV-g,13m-city,5,0.001966094
+Particulate matters 2.5,ICEV-d,18m,3,0.002082917
+Particulate matters 2.5,ICEV-d,13m-city-double,3,0.002082917
+Particulate matters 2.5,ICEV-d,13m-city-double,2,0.002285214
+Particulate matters 2.5,ICEV-d,18m,2,0.002285214
+Carbon monoxide,ICEV-d,13m-city,5,0.002389746
+Carbon monoxide,ICEV-d,9m,5,0.002389746
+Carbon monoxide,ICEV-d,13m-city-double,5,0.002523763
+Carbon monoxide,ICEV-d,18m,5,0.002523763
+Particulate matters 2.5,ICEV-d,9m,2,0.002664273
+Particulate matters 2.5,ICEV-d,13m-city,2,0.002664273
+Carbon monoxide,ICEV-d,13m-city,4,0.002724506
+Carbon monoxide,ICEV-d,9m,4,0.002724506
+Carbon monoxide,ICEV-d,18m,4,0.002813158
+Carbon monoxide,ICEV-d,13m-city-double,4,0.002813158
+Ammonia,ICEV-d,13m-coach-double,1,0.0029
+Ammonia,ICEV-d,13m-coach-double,4,0.0029
+Ammonia,ICEV-d,13m-coach,4,0.0029
+Ammonia,ICEV-d,13m-coach,2,0.0029
+Ammonia,ICEV-d,13m-coach,1,0.0029
+Ammonia,ICEV-d,13m-coach-double,2,0.0029
+Ammonia,ICEV-d,13m-coach-double,3,0.0029
+Ammonia,ICEV-d,13m-coach,3,0.0029
+Nitrogen dioxide,ICEV-d,9m,5,0.003043236
+Nitrogen dioxide,ICEV-d,13m-city,5,0.003043236
+Particulate matters 2.5,ICEV-d,13m-coach,6,0.00315794
+Nitrogen dioxide,ICEV-d,18m,5,0.003655497
+Nitrogen dioxide,ICEV-d,13m-city-double,5,0.003655497
+Particulate matters 2.5,ICEV-d,13m-coach-double,6,0.003693544
+Non-methane hydrocarbon,ICEV-d,13m-city,3,0.003752964
+Non-methane hydrocarbon,ICEV-d,9m,3,0.003752964
+Hydrocarbon,ICEV-d,9m,3,0.00384525
+Hydrocarbon,ICEV-d,13m-city,3,0.00384525
+Non-methane hydrocarbon,ICEV-g,13m-city,4,0.004019806
+Non-methane hydrocarbon,ICEV-g,9m,4,0.004019806
+Nitrogen dioxide,ICEV-d,13m-city,4,0.004303594
+Nitrogen dioxide,ICEV-d,9m,4,0.004303594
+Non-methane hydrocarbon,ICEV-d,9m,2,0.004415376
+Non-methane hydrocarbon,ICEV-d,13m-city,2,0.004415376
+Hydrocarbon,ICEV-d,13m-city,2,0.004523951
+Hydrocarbon,ICEV-d,9m,2,0.004523951
+Particulate matters 2.5,ICEV-d,13m-city,1,0.004613466
+Particulate matters 2.5,ICEV-d,9m,1,0.004613466
+Non-methane hydrocarbon,ICEV-g,18m,4,0.004704469
+Non-methane hydrocarbon,ICEV-g,13m-city-double,4,0.004704469
+Dinitrogen oxide,ICEV-d,13m-coach,3,0.00475265
+Dinitrogen oxide,ICEV-d,13m-coach-double,3,0.00475265
+Particulate matters 2.5,ICEV-d,13m-city-double,1,0.004769579
+Particulate matters 2.5,ICEV-d,18m,1,0.004769579
+Particulate matters 2.5,ICEV-g,13m-coach,6,0.004777239
+Particulate matters 2.5,ICEV-g,13m-coach,5,0.00487324
+Nitrogen dioxide,ICEV-d,13m-city-double,4,0.005070966
+Nitrogen dioxide,ICEV-d,18m,4,0.005070966
+Non-methane hydrocarbon,ICEV-d,13m-city-double,3,0.005123571
+Non-methane hydrocarbon,ICEV-d,18m,3,0.005123571
+Hydrocarbon,ICEV-d,18m,3,0.00524956
+Hydrocarbon,ICEV-d,13m-city-double,3,0.00524956
+Particulate matters 2.5,ICEV-g,13m-coach-double,6,0.005563615
+Particulate matters 2.5,ICEV-g,13m-coach-double,5,0.005686893
+Non-methane hydrocarbon,ICEV-d,13m-city-double,2,0.005886312
+Non-methane hydrocarbon,ICEV-d,18m,2,0.005886312
+Hydrocarbon,ICEV-d,18m,2,0.006031058
+Hydrocarbon,ICEV-d,13m-city-double,2,0.006031058
+Non-methane hydrocarbon,ICEV-d,9m,1,0.006837928
+Non-methane hydrocarbon,ICEV-d,13m-city,1,0.006837928
+Hydrocarbon,ICEV-d,9m,1,0.007006073
+Hydrocarbon,ICEV-d,13m-city,1,0.007006073
+Benzene,ICEV-d,13m-coach,3,0.007331893
+Nitrogen dioxide,ICEV-g,9m,6,0.007536169
+Nitrogen dioxide,ICEV-g,13m-city,6,0.007536169
+Nitrogen dioxide,ICEV-g,18m,6,0.00753617
+Nitrogen dioxide,ICEV-g,13m-city-double,6,0.00753617
+Benzene,ICEV-d,13m-coach,2,0.007860568
+Benzene,ICEV-d,13m-coach-double,3,0.008039394
+Dinitrogen oxide,ICEV-d,13m-coach,2,0.008400653
+Dinitrogen oxide,ICEV-d,13m-coach-double,2,0.008400653
+Dinitrogen oxide,ICEV-d,13m-coach-double,1,0.008648003
+Dinitrogen oxide,ICEV-d,13m-coach,1,0.008648003
+Benzene,ICEV-d,13m-coach-double,2,0.00877084
+Non-methane hydrocarbon,ICEV-d,18m,1,0.009262251
+Non-methane hydrocarbon,ICEV-d,13m-city-double,1,0.009262251
+Hydrocarbon,ICEV-d,18m,1,0.009490012
+Hydrocarbon,ICEV-d,13m-city-double,1,0.009490012
+Methane,ICEV-d,13m-coach,3,0.010536853
+Ammonia,ICEV-d,13m-coach,6,0.010802997
+Ammonia,ICEV-d,13m-coach-double,5,0.011
+Ammonia,ICEV-d,13m-coach,5,0.011
+Methane,ICEV-g,13m-city,6,0.011069845
+Methane,ICEV-g,9m,6,0.011069845
+Methane,ICEV-g,13m-city-double,6,0.011069846
+Methane,ICEV-g,18m,6,0.011069846
+Methane,ICEV-d,13m-coach,2,0.011296626
+Non-methane hydrocarbon,ICEV-g,13m-coach,6,0.011314638
+Methane,ICEV-d,13m-coach-double,3,0.011553621
+Hydrocarbon,ICEV-g,13m-city,6,0.012032441
+Hydrocarbon,ICEV-g,9m,6,0.012032441
+Hydrocarbon,ICEV-g,18m,6,0.012032441
+Hydrocarbon,ICEV-g,13m-city-double,6,0.012032441
+Ammonia,ICEV-d,13m-coach-double,6,0.012394339
+Methane,ICEV-d,13m-coach-double,2,0.012604801
+Benzene,ICEV-d,13m-coach,1,0.012810422
+Dinitrogen oxide,ICEV-d,13m-coach,4,0.013020847
+Dinitrogen oxide,ICEV-d,13m-coach-double,4,0.013020847
+Non-methane hydrocarbon,ICEV-g,13m-coach-double,6,0.013177129
+Particulate matters 2.5,ICEV-d,13m-city-double,0,0.013948896
+Particulate matters 2.5,ICEV-d,18m,0,0.013948896
+Benzene,ICEV-d,13m-coach-double,1,0.014346092
+Nitrogen dioxide,ICEV-d,13m-city,0,0.016189252
+Nitrogen dioxide,ICEV-d,9m,0,0.016189252
+Non-methane hydrocarbon,ICEV-g,13m-coach,4,0.017427672
+Methane,ICEV-d,13m-coach,1,0.018410189
+Particulate matters 2.5,ICEV-d,9m,0,0.018981233
+Particulate matters 2.5,ICEV-d,13m-city,0,0.018981233
+Non-methane hydrocarbon,ICEV-g,13m-coach-double,4,0.020026295
+Methane,ICEV-d,13m-coach-double,1,0.020617139
+Nitrogen dioxide,ICEV-d,18m,0,0.020791661
+Nitrogen dioxide,ICEV-d,13m-city-double,0,0.020791661
+Non-methane hydrocarbon,ICEV-g,13m-city,3,0.021046608
+Non-methane hydrocarbon,ICEV-g,9m,3,0.021046608
+Non-methane hydrocarbon,ICEV-d,13m-coach,6,0.022223143
+Nitrogen dioxide,ICEV-d,13m-city,3,0.022281614
+Nitrogen dioxide,ICEV-d,9m,3,0.022281614
+Nitrogen dioxide,ICEV-d,18m,3,0.022525133
+Nitrogen dioxide,ICEV-d,13m-city-double,3,0.022525133
+Methane,ICEV-g,13m-city-double,5,0.022610086
+Methane,ICEV-g,18m,5,0.022610086
+Methane,ICEV-g,13m-city,5,0.022610087
+Methane,ICEV-g,9m,5,0.022610087
+Hydrocarbon,ICEV-d,13m-coach,6,0.022769615
+Non-methane hydrocarbon,ICEV-g,13m-coach,5,0.023574483
+Nitrogen dioxide,ICEV-g,13m-city,5,0.023681256
+Nitrogen dioxide,ICEV-g,9m,5,0.023681256
+Nitrogen dioxide,ICEV-g,18m,5,0.023681258
+Nitrogen dioxide,ICEV-g,13m-city-double,5,0.023681258
+Non-methane hydrocarbon,ICEV-d,13m-coach,4,0.024171848
+Hydrocarbon,ICEV-g,13m-city,5,0.024576179
+Hydrocarbon,ICEV-g,9m,5,0.024576179
+Hydrocarbon,ICEV-g,18m,5,0.024576181
+Hydrocarbon,ICEV-g,13m-city-double,5,0.024576181
+Nitrogen dioxide,ICEV-d,13m-city,1,0.024696586
+Nitrogen dioxide,ICEV-d,9m,1,0.024696586
+Non-methane hydrocarbon,ICEV-d,13m-coach,5,0.024749387
+Hydrocarbon,ICEV-d,13m-coach,4,0.024766238
+Non-methane hydrocarbon,ICEV-d,13m-coach-double,6,0.025169002
+Hydrocarbon,ICEV-d,13m-coach,5,0.025357978
+Non-methane hydrocarbon,ICEV-g,9m,2,0.02553747
+Non-methane hydrocarbon,ICEV-g,13m-city,2,0.02553747
+Nitrogen dioxide,ICEV-d,18m,1,0.025543655
+Nitrogen dioxide,ICEV-d,13m-city-double,1,0.025543655
+Carbon monoxide,ICEV-d,18m,2,0.025571351
+Carbon monoxide,ICEV-d,13m-city-double,2,0.025571351
+Hydrocarbon,ICEV-d,13m-coach-double,6,0.025787912
+Nitrogen dioxide,ICEV-d,9m,2,0.026363028
+Nitrogen dioxide,ICEV-d,13m-city,2,0.026363028
+Nitrogen dioxide,ICEV-d,18m,2,0.027461876
+Nitrogen dioxide,ICEV-d,13m-city-double,2,0.027461876
+Non-methane hydrocarbon,ICEV-g,13m-coach-double,5,0.027510557
+Non-methane hydrocarbon,ICEV-d,13m-coach-double,4,0.028723957
+Non-methane hydrocarbon,ICEV-g,13m-city-double,3,0.028732964
+Non-methane hydrocarbon,ICEV-g,18m,3,0.028732964
+Carbon monoxide,ICEV-d,13m-city-double,3,0.028758176
+Carbon monoxide,ICEV-d,18m,3,0.028758176
+Hydrocarbon,ICEV-d,13m-coach-double,4,0.029430283
+Non-methane hydrocarbon,ICEV-d,13m-coach-double,5,0.029510694
+Nitrogen oxides,ICEV-g,9m,6,0.030144677
+Nitrogen oxides,ICEV-g,13m-city,6,0.030144677
+Nitrogen oxides,ICEV-g,18m,6,0.030144679
+Nitrogen oxides,ICEV-g,13m-city-double,6,0.030144679
+Hydrocarbon,ICEV-d,13m-coach-double,5,0.030236365
+Carbon monoxide,ICEV-d,13m-city,2,0.030547196
+Carbon monoxide,ICEV-d,9m,2,0.030547196
+Carbon monoxide,ICEV-d,18m,1,0.03123883
+Carbon monoxide,ICEV-d,13m-city-double,1,0.03123883
+Carbon monoxide,ICEV-d,9m,3,0.031390952
+Carbon monoxide,ICEV-d,13m-city,3,0.031390952
+Non-methane hydrocarbon,ICEV-d,18m,0,0.032268459
+Non-methane hydrocarbon,ICEV-d,13m-city-double,0,0.032268459
+Hydrocarbon,ICEV-d,13m-city-double,0,0.033061946
+Hydrocarbon,ICEV-d,18m,0,0.033061946
+Particulate matters 2.5,ICEV-d,13m-coach,5,0.033618409
+Non-methane hydrocarbon,ICEV-g,13m-city-double,2,0.034045007
+Non-methane hydrocarbon,ICEV-g,18m,2,0.034045007
+Carbon monoxide,ICEV-d,13m-city,1,0.035143419
+Carbon monoxide,ICEV-d,9m,1,0.035143419
+Dinitrogen oxide,ICEV-d,13m-coach,6,0.0363838
+Dinitrogen oxide,ICEV-d,13m-coach-double,6,0.0363838
+Non-methane hydrocarbon,ICEV-g,13m-coach,3,0.036398072
+Dinitrogen oxide,ICEV-d,13m-coach,5,0.037825439
+Dinitrogen oxide,ICEV-d,13m-coach-double,5,0.037825439
+Non-methane hydrocarbon,ICEV-g,13m-coach-double,3,0.03991035
+Non-methane hydrocarbon,ICEV-g,13m-coach,2,0.040245615
+Particulate matters 2.5,ICEV-d,13m-coach-double,5,0.041640576
+Nitrogen oxides,ICEV-d,13m-city,5,0.043474791
+Nitrogen oxides,ICEV-d,9m,5,0.043474791
+Non-methane hydrocarbon,ICEV-g,13m-coach-double,2,0.044906147
+Carbon monoxide,ICEV-g,13m-city-double,6,0.045409837
+Carbon monoxide,ICEV-g,18m,6,0.045409837
+Carbon monoxide,ICEV-g,9m,6,0.045409837
+Carbon monoxide,ICEV-g,13m-city,6,0.045409837
+Methane,ICEV-g,9m,4,0.046227773
+Methane,ICEV-g,13m-city,4,0.046227773
+Non-methane hydrocarbon,ICEV-d,9m,0,0.048916625
+Non-methane hydrocarbon,ICEV-d,13m-city,0,0.048916625
+Particulate matters 2.5,ICEV-d,13m-coach,4,0.049959712
+Particulate matters 2.5,ICEV-g,13m-coach,4,0.049982052
+Hydrocarbon,ICEV-d,13m-city,0,0.050119494
+Hydrocarbon,ICEV-d,9m,0,0.050119494
+Hydrocarbon,ICEV-g,13m-city,4,0.050247575
+Hydrocarbon,ICEV-g,9m,4,0.050247575
+Carbon monoxide,ICEV-g,13m-city-double,5,0.052087485
+Carbon monoxide,ICEV-g,18m,5,0.052087485
+Carbon monoxide,ICEV-g,13m-city,5,0.052087488
+Carbon monoxide,ICEV-g,9m,5,0.052087488
+Nitrogen oxides,ICEV-d,18m,5,0.052221392
+Nitrogen oxides,ICEV-d,13m-city-double,5,0.052221392
+Methane,ICEV-g,18m,4,0.054101399
+Methane,ICEV-g,13m-city-double,4,0.054101399
+Particulate matters 2.5,ICEV-d,13m-coach-double,4,0.054426499
+Particulate matters 2.5,ICEV-g,13m-coach-double,4,0.054450836
+Hydrocarbon,ICEV-g,13m-city-double,4,0.058805866
+Hydrocarbon,ICEV-g,18m,4,0.058805866
+Nitrogen oxides,ICEV-d,13m-city,4,0.061479912
+Nitrogen oxides,ICEV-d,9m,4,0.061479912
+Nitrogen dioxide,ICEV-d,13m-coach,6,0.064984418
+Non-methane hydrocarbon,ICEV-g,13m-coach,1,0.068829551
+Nitrogen dioxide,ICEV-d,13m-coach-double,6,0.072293177
+Nitrogen oxides,ICEV-d,13m-city-double,4,0.072442377
+Nitrogen oxides,ICEV-d,18m,4,0.072442377
+Non-methane hydrocarbon,ICEV-g,13m-coach-double,1,0.0770806
+Nitrogen dioxide,ICEV-g,13m-coach,6,0.088582434
+Nitrogen oxides,ICEV-g,13m-city,5,0.094725025
+Nitrogen oxides,ICEV-g,9m,5,0.094725025
+Nitrogen oxides,ICEV-g,18m,5,0.094725032
+Nitrogen oxides,ICEV-g,13m-city-double,5,0.094725032
+Carbon monoxide,ICEV-d,18m,0,0.096552333
+Carbon monoxide,ICEV-d,13m-city-double,0,0.096552333
+Nitrogen dioxide,ICEV-g,13m-coach-double,6,0.103163905
+Carbon monoxide,ICEV-g,13m-city,4,0.10464252
+Carbon monoxide,ICEV-g,9m,4,0.10464252
+Carbon monoxide,ICEV-g,13m-city-double,4,0.108101542
+Carbon monoxide,ICEV-g,18m,4,0.108101542
+Carbon monoxide,ICEV-d,13m-coach-double,6,0.109746948
+Carbon monoxide,ICEV-d,9m,0,0.123453401
+Carbon monoxide,ICEV-d,13m-city,0,0.123453401
+Methane,ICEV-g,13m-coach,6,0.13011834
+Hydrocarbon,ICEV-g,13m-coach,6,0.141432971
+Methane,ICEV-g,13m-coach-double,6,0.151537001
+Nitrogen dioxide,ICEV-g,13m-city-double,4,0.15771492
+Nitrogen dioxide,ICEV-g,18m,4,0.15771492
+Nitrogen dioxide,ICEV-g,13m-city,4,0.161931196
+Nitrogen dioxide,ICEV-g,9m,4,0.161931196
+Carbon monoxide,ICEV-d,13m-coach,6,0.163017035
+Hydrocarbon,ICEV-g,13m-coach-double,6,0.164714128
+Carbon monoxide,ICEV-g,13m-city-double,2,0.173170226
+Carbon monoxide,ICEV-g,18m,2,0.173170226
+Particulate matters 2.5,ICEV-d,13m-coach,2,0.17998074
+Particulate matters 2.5,ICEV-g,13m-coach,2,0.187757641
+Nitrogen dioxide,ICEV-g,13m-city,3,0.190584952
+Nitrogen dioxide,ICEV-g,9m,3,0.190584952
+Nitrogen dioxide,ICEV-g,13m-city-double,3,0.192667878
+Nitrogen dioxide,ICEV-g,18m,3,0.192667878
+Carbon monoxide,ICEV-g,13m-city-double,3,0.193363755
+Carbon monoxide,ICEV-g,18m,3,0.193363755
+Methane,ICEV-g,13m-coach,4,0.200418219
+Particulate matters 2.5,ICEV-d,13m-coach,3,0.202010006
+Particulate matters 2.5,ICEV-g,13m-coach,3,0.204868734
+Carbon monoxide,ICEV-g,13m-city,2,0.206866872
+Carbon monoxide,ICEV-g,9m,2,0.206866872
+Particulate matters 2.5,ICEV-d,13m-coach-double,2,0.206879184
+Carbon monoxide,ICEV-g,13m-city,3,0.211065975
+Carbon monoxide,ICEV-g,9m,3,0.211065975
+Particulate matters 2.5,ICEV-g,13m-coach-double,2,0.21581836
+Hydrocarbon,ICEV-g,13m-coach,4,0.217845887
+Nitrogen dioxide,ICEV-g,9m,2,0.226313106
+Nitrogen dioxide,ICEV-g,13m-city,2,0.226313106
+Particulate matters 2.5,ICEV-d,13m-coach-double,3,0.226481259
+Particulate matters 2.5,ICEV-g,13m-coach-double,3,0.22968629
+Methane,ICEV-g,13m-coach-double,4,0.230302393
+Nitrogen oxides,ICEV-d,9m,0,0.231275009
+Nitrogen oxides,ICEV-d,13m-city,0,0.231275009
+Nitrogen oxides,ICEV-d,13m-coach,6,0.232087195
+Nitrogen dioxide,ICEV-g,18m,2,0.235746141
+Nitrogen dioxide,ICEV-g,13m-city-double,2,0.235746141
+Methane,ICEV-g,13m-city,3,0.242036001
+Methane,ICEV-g,9m,3,0.242036001
+Hydrocarbon,ICEV-g,13m-coach-double,4,0.25032869
+Nitrogen oxides,ICEV-d,13m-coach-double,6,0.258189917
+Hydrocarbon,ICEV-g,13m-city,3,0.263082593
+Hydrocarbon,ICEV-g,9m,3,0.263082593
+Nitrogen dioxide,ICEV-d,13m-coach,5,0.27049163
+Methane,ICEV-g,13m-coach,5,0.271106571
+Nitrogen dioxide,ICEV-g,13m-coach,5,0.283950478
+Methane,ICEV-g,9m,2,0.29368092
+Methane,ICEV-g,13m-city,2,0.29368092
+Hydrocarbon,ICEV-g,13m-coach,5,0.294681042
+Nitrogen oxides,ICEV-d,18m,0,0.297023716
+Nitrogen oxides,ICEV-d,13m-city-double,0,0.297023716
+Nitrogen dioxide,ICEV-d,13m-coach-double,5,0.310847938
+Methane,ICEV-g,13m-coach-double,5,0.316371411
+Nitrogen oxides,ICEV-d,9m,3,0.318308773
+Nitrogen oxides,ICEV-d,13m-city,3,0.318308773
+Hydrocarbon,ICEV-g,13m-city,2,0.319218382
+Hydrocarbon,ICEV-g,9m,2,0.319218382
+Nitrogen oxides,ICEV-d,18m,3,0.321787638
+Nitrogen oxides,ICEV-d,13m-city-double,3,0.321787638
+Methane,ICEV-g,13m-city-double,3,0.330429099
+Methane,ICEV-g,18m,3,0.330429099
+Nitrogen dioxide,ICEV-g,13m-coach-double,5,0.331359774
+Hydrocarbon,ICEV-g,13m-coach-double,5,0.343881965
+Nitrogen oxides,ICEV-d,9m,1,0.352808356
+Nitrogen oxides,ICEV-d,13m-city,1,0.352808356
+Nitrogen oxides,ICEV-g,13m-coach,6,0.354329735
+Nitrogen dioxide,ICEV-d,13m-coach,4,0.358264506
+Hydrocarbon,ICEV-g,13m-city-double,3,0.359162045
+Hydrocarbon,ICEV-g,18m,3,0.359162045
+Nitrogen oxides,ICEV-d,18m,1,0.364909367
+Nitrogen oxides,ICEV-d,13m-city-double,1,0.364909367
+Nitrogen oxides,ICEV-d,9m,2,0.37661469
+Nitrogen oxides,ICEV-d,13m-city,2,0.37661469
+Methane,ICEV-g,13m-city-double,2,0.391517607
+Methane,ICEV-g,18m,2,0.391517607
+Nitrogen oxides,ICEV-d,13m-city-double,2,0.392312521
+Nitrogen oxides,ICEV-d,18m,2,0.392312521
+Nitrogen oxides,ICEV-g,13m-coach-double,6,0.412655622
+Nitrogen dioxide,ICEV-d,13m-coach-double,4,0.413641632
+Methane,ICEV-g,13m-coach,3,0.41857785
+Hydrocarbon,ICEV-g,18m,2,0.425562602
+Hydrocarbon,ICEV-g,13m-city-double,2,0.425562602
+Non-methane hydrocarbon,ICEV-d,13m-coach,3,0.428498685
+Hydrocarbon,ICEV-d,13m-coach,3,0.439035535
+Carbon monoxide,ICEV-g,13m-coach-double,4,0.449442059
+Hydrocarbon,ICEV-g,13m-coach,3,0.454975903
+Particulate matters 2.5,ICEV-d,13m-coach,1,0.456261158
+Methane,ICEV-g,13m-coach-double,3,0.458969057
+Non-methane hydrocarbon,ICEV-d,13m-coach,2,0.459396124
+Methane,ICEV-g,13m-coach,2,0.462824583
+Non-methane hydrocarbon,ICEV-d,13m-coach-double,3,0.469847232
+Hydrocarbon,ICEV-d,13m-coach,2,0.470692754
+Carbon monoxide,ICEV-g,13m-coach,4,0.472539425
+Hydrocarbon,ICEV-d,13m-coach-double,3,0.481400847
+Hydrocarbon,ICEV-g,13m-coach-double,3,0.498879403
+Hydrocarbon,ICEV-g,13m-coach,2,0.503070176
+Non-methane hydrocarbon,ICEV-d,13m-coach-double,2,0.512595236
+Methane,ICEV-g,13m-coach-double,2,0.516420722
+Particulate matters 2.5,ICEV-d,13m-coach-double,1,0.520888627
+Particulate matters 2.5,ICEV-g,13m-coach,1,0.521555305
+Hydrocarbon,ICEV-d,13m-coach-double,2,0.525200009
+Carbon monoxide,ICEV-g,13m-coach,6,0.533761084
+Nitrogen dioxide,ICEV-d,13m-coach,3,0.548041284
+Hydrocarbon,ICEV-g,13m-coach-double,2,0.561326861
+Particulate matters 2.5,ICEV-g,13m-coach-double,1,0.595431387
+Carbon monoxide,ICEV-g,13m-coach-double,6,0.62162298
+Carbon monoxide,ICEV-g,13m-coach,5,0.624555767
+Nitrogen dioxide,ICEV-d,13m-coach-double,3,0.630575597
+Nitrogen oxides,ICEV-g,18m,4,0.630859682
+Nitrogen oxides,ICEV-g,13m-city-double,4,0.630859682
+Nitrogen oxides,ICEV-g,9m,4,0.647724785
+Nitrogen oxides,ICEV-g,13m-city,4,0.647724785
+Nitrogen dioxide,ICEV-d,13m-coach,1,0.663842618
+Nitrogen dioxide,ICEV-d,13m-coach,2,0.69433099
+Carbon monoxide,ICEV-g,13m-coach-double,5,0.728833675
+Non-methane hydrocarbon,ICEV-d,13m-coach,1,0.748681009
+Nitrogen oxides,ICEV-g,9m,3,0.762339809
+Nitrogen oxides,ICEV-g,13m-city,3,0.762339809
+Hydrocarbon,ICEV-d,13m-coach,1,0.767091155
+Nitrogen dioxide,ICEV-d,13m-coach-double,1,0.768938661
+Nitrogen oxides,ICEV-g,18m,3,0.770671513
+Nitrogen oxides,ICEV-g,13m-city-double,3,0.770671513
+Nitrogen dioxide,ICEV-g,13m-coach,4,0.781254947
+Methane,ICEV-g,13m-coach,1,0.791539848
+Nitrogen dioxide,ICEV-d,13m-coach-double,2,0.798867464
+Non-methane hydrocarbon,ICEV-d,13m-coach-double,1,0.838430345
+Nitrogen dioxide,ICEV-g,13m-coach-double,4,0.849486709
+Hydrocarbon,ICEV-d,13m-coach-double,1,0.859047472
+Hydrocarbon,ICEV-g,13m-coach,1,0.860369384
+Methane,ICEV-g,13m-coach-double,1,0.886426985
+Carbon monoxide,ICEV-d,13m-coach-double,5,0.898884118
+Nitrogen oxides,ICEV-g,13m-city,2,0.905252423
+Nitrogen oxides,ICEV-g,9m,2,0.905252423
+Nitrogen oxides,ICEV-g,13m-city-double,2,0.942984564
+Nitrogen oxides,ICEV-g,18m,2,0.942984564
+Carbon monoxide,ICEV-d,13m-coach,5,0.94507885
+Hydrocarbon,ICEV-g,13m-coach-double,1,0.963507533
+Nitrogen oxides,ICEV-g,13m-coach,5,1.135801911
+Carbon monoxide,ICEV-d,13m-coach,4,1.193456411
+Carbon monoxide,ICEV-d,13m-coach-double,4,1.296883345
+Nitrogen oxides,ICEV-g,13m-coach-double,5,1.325439095
+Carbon monoxide,ICEV-d,13m-coach,2,1.636188984
+Carbon monoxide,ICEV-g,13m-coach,2,1.678317547
+Carbon monoxide,ICEV-d,13m-coach-double,2,1.821611881
+Carbon monoxide,ICEV-g,13m-coach-double,2,1.868514657
+Nitrogen dioxide,ICEV-g,13m-coach,3,1.986096382
+Carbon monoxide,ICEV-d,13m-coach,3,2.019206762
+Carbon monoxide,ICEV-g,13m-coach,3,2.056438208
+Carbon monoxide,ICEV-d,13m-coach,1,2.192087889
+Carbon monoxide,ICEV-d,13m-coach-double,3,2.257223129
+Carbon monoxide,ICEV-g,13m-coach,1,2.284344673
+Nitrogen dioxide,ICEV-g,13m-coach-double,3,2.285199881
+Carbon monoxide,ICEV-g,13m-coach-double,3,2.298843145
+Nitrogen dioxide,ICEV-g,13m-coach,1,2.467188358
+Carbon monoxide,ICEV-d,13m-coach-double,1,2.481357098
+Nitrogen dioxide,ICEV-g,13m-coach,2,2.525375843
+Carbon monoxide,ICEV-g,13m-coach-double,1,2.58578825
+Nitrogen dioxide,ICEV-g,13m-coach-double,1,2.857780695
+Nitrogen dioxide,ICEV-g,13m-coach-double,2,2.905589104
+Nitrogen oxides,ICEV-g,13m-coach,4,3.125019789
+Nitrogen oxides,ICEV-g,13m-coach-double,4,3.397946835
+Nitrogen oxides,ICEV-d,13m-coach,5,3.86416626
+Nitrogen oxides,ICEV-d,13m-coach-double,5,4.440684795
+Nitrogen oxides,ICEV-d,13m-coach,4,5.118064404
+Nitrogen oxides,ICEV-d,13m-coach-double,4,5.909165859
+Nitrogen oxides,ICEV-d,13m-coach,3,7.829161167
+Nitrogen oxides,ICEV-g,13m-coach,3,7.944385529
+Nitrogen oxides,ICEV-d,13m-coach-double,3,9.008223534
+Nitrogen oxides,ICEV-g,13m-coach-double,3,9.140799522
+Nitrogen oxides,ICEV-d,13m-coach,1,9.483465195
+Nitrogen oxides,ICEV-g,13m-coach,1,9.868753433
+Nitrogen oxides,ICEV-d,13m-coach,2,9.919013977
+Nitrogen oxides,ICEV-g,13m-coach,2,10.10150337
+Nitrogen oxides,ICEV-d,13m-coach-double,1,10.98483849
+Nitrogen oxides,ICEV-d,13m-coach-double,2,11.41239166
+Nitrogen oxides,ICEV-g,13m-coach-double,1,11.43112278
+Nitrogen oxides,ICEV-g,13m-coach-double,2,11.62235641
