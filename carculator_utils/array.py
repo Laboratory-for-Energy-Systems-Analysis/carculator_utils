@@ -179,6 +179,8 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
     df = df.reset_index()
     if input_parameters.iterations:
         df = df[df["value"].isin(range(input_parameters.iterations))]
+    else:
+        df = df[df["value"] == 0]
 
     # Ensure index is correctly set
     df.set_index(["size", "powertrain", "parameter", "year", "value"], inplace=True)

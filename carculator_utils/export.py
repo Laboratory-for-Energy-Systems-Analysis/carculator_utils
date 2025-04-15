@@ -278,9 +278,7 @@ class ExportInventory:
 
                 else:
                     raise ValueError(
-                        "Inventory export not "
-                        "implemented for "
-                        "stochastic analyses."
+                        f"Inventory export not implemented for stochastic analyses. Got {self.array[:, row, col, idx_year]}"
                     )
 
                 exc = {
