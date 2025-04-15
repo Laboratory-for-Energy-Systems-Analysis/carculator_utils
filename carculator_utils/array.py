@@ -167,7 +167,6 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
         axis=1,
     )
 
-
     df = df.drop(cols, axis=1).join(df1.droplevel(1))
     df[cols] = df[cols].apply(lambda x: x.ffill())
 

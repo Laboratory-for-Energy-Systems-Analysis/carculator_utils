@@ -798,14 +798,21 @@ class Inventory:
 
         else:
             use_year = (
-                self.array.sel(parameter="lifetime kilometers")
-                / self.array.sel(parameter="kilometers per year")
-            ).mean(dim=["combined_dim", "value"]).values.astype(int).tolist()
+                (
+                    self.array.sel(parameter="lifetime kilometers")
+                    / self.array.sel(parameter="kilometers per year")
+                )
+                .mean(dim=["combined_dim", "value"])
+                .values.astype(int)
+                .tolist()
+            )
 
             # create an array that contain integers starting from self.scope["year"]
             # to self.scope["year"] + use_year, e.g., 2020, 2021, 2022, ..., 2035
 
-            use_year = [(int(y), int(y + u)) for y, u in zip(self.scope["year"], use_year)]
+            use_year = [
+                (int(y), int(y + u)) for y, u in zip(self.scope["year"], use_year)
+            ]
 
             if self.vm.country not in self.bs.electricity_mix.country.values:
                 print(
@@ -1397,9 +1404,14 @@ class Inventory:
         sum_renew = self.define_renewable_rate_in_mix()
 
         use_year = (
-            self.array.sel(parameter="lifetime kilometers")
-            / self.array.sel(parameter="kilometers per year")
-        ).mean(dim=["combined_dim", "value"]).values.astype(int).tolist()
+            (
+                self.array.sel(parameter="lifetime kilometers")
+                / self.array.sel(parameter="kilometers per year")
+            )
+            .mean(dim=["combined_dim", "value"])
+            .values.astype(int)
+            .tolist()
+        )
 
         # create an array that contain integers starting from self.scope["year"]
         # to self.scope["year"] + use_year, e.g., 2020, 2021, 2022, ..., 2035
