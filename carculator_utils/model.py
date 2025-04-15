@@ -672,9 +672,7 @@ class VehicleModel:
         if self.power:
             self.override_power()
 
-        self["combustion power share"] = self["combustion power share"].clip(
-            0, 1
-        )
+        self["combustion power share"] = self["combustion power share"].clip(0, 1)
         self["combustion power"] = self["power"] * self["combustion power share"]
         self["electric power"] = self["power"] * (
             np.array(1) - self["combustion power share"]
