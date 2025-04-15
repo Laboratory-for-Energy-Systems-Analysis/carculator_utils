@@ -673,7 +673,7 @@ class VehicleModel:
             self.override_power()
 
         self["combustion power share"] = self["combustion power share"].clip(
-            min=0, max=1
+            0, 1
         )
         self["combustion power"] = self["power"] * self["combustion power share"]
         self["electric power"] = self["power"] * (

@@ -167,14 +167,30 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
         axis=1,
     )
 
+
     df = df.drop(cols, axis=1).join(df1.droplevel(1))
     df[cols] = df[cols].apply(lambda x: x.ffill())
+
+    df = df.explode("data", ignore_index=False)
+    df["value"] = df.groupby(["size", "powertrain", "parameter", "year"]).cumcount()
+
     df.set_index(["size", "powertrain", "parameter", "year", "value"], inplace=True)
     df.dropna(inplace=True)
     df = df[~df.index.duplicated(keep="first")]
+    df = df.reset_index()
+    if input_parameters.iterations:
+        df = df[df["value"].isin(range(input_parameters.iterations))]
+
+    # Ensure index is correctly set
+    df.set_index(["size", "powertrain", "parameter", "year", "value"], inplace=True)
+
+    # Create the DataArray
     array = xr.DataArray.from_series(df["data"])
+
+    # Optional: cast types
     array = array.astype("float32")
-    array.coords["year"] = array.coords["year"].astype(int)
+    array.coords["year"] = array.coords["year"].astype("int")
+    array = array.dropna("value", how="all")
     array = array.fillna(0.0)
 
     if sensitivity:
