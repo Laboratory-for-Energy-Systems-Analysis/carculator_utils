@@ -987,9 +987,7 @@ class VehicleModel:
                     "fuel tank mass",
                 ]
 
-                print(
-                    curb_mass_includes
-                )
+                print(curb_mass_includes)
 
                 self.array.loc[
                     dict(
