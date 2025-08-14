@@ -990,6 +990,7 @@ class VehicleModel:
                 print(
                     curb_mass_includes
                 )
+
                 print()
                 print(
                     [
