@@ -988,11 +988,7 @@ class VehicleModel:
                 ]
 
                 print(
-                    [
-                        p
-                        for p in curb_mass_includes
-                        if p not in self.array.coords["parameter"].values
-                    ]
+                    curb_mass_includes
                 )
 
 
