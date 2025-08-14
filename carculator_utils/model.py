@@ -991,7 +991,6 @@ class VehicleModel:
                     curb_mass_includes
                 )
 
-
                 self.array.loc[
                     dict(
                         parameter="glider base mass",
