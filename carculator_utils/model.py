@@ -994,6 +994,7 @@ class VehicleModel:
                     ]
                 )
 
+
                 self.array.loc[
                     dict(
                         parameter="glider base mass",
