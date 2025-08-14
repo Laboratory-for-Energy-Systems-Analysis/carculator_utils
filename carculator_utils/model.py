@@ -988,8 +988,7 @@ class VehicleModel:
                 ]
 
                 curb_mass_includes = [
-                    p for p in curb_mass_includes
-                    if p in self.array.parameter.values
+                    p for p in curb_mass_includes if p in self.array.parameter.values
                 ]
 
                 self.array.loc[
