@@ -987,14 +987,13 @@ class VehicleModel:
                     "fuel tank mass",
                 ]
 
-                print(
-                    curb_mass_includes
-                )
+                print(curb_mass_includes)
 
                 print()
                 print(
                     [
-                        p for p in curb_mass_includes
+                        p
+                        for p in curb_mass_includes
                         if p not in self.array.parameter.values
                     ]
                 )
