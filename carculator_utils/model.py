@@ -987,6 +987,13 @@ class VehicleModel:
                     "fuel tank mass",
                 ]
 
+                print(
+                    [
+                        p for p in curb_mass_includes
+                        if p not in self.array.coords["parameter"].values
+                    ]
+                )
+
                 self.array.loc[
                     dict(
                         parameter="glider base mass",
