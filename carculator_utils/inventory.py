@@ -722,7 +722,13 @@ class Inventory:
             new_B[: initial_B.shape[0], : initial_B.shape[1]] = initial_B
             B[f, :, :] = new_B
 
-        years = [2020,] if self.scenario == "static" else [2005, 2010, 2020, 2030, 2040, 2050]
+        years = (
+            [
+                2020,
+            ]
+            if self.scenario == "static"
+            else [2005, 2010, 2020, 2030, 2040, 2050]
+        )
 
         return xr.DataArray(
             B,
