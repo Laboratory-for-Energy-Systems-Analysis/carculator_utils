@@ -713,29 +713,21 @@ class Inventory:
         if self.scenario != "static":
             filepaths = sorted(filepaths, key=lambda x: int(x[-8:-4]))
 
-        B = np.zeros((len(filepaths), len(self.impact_categories), len(self.inputs)))
+        n_files = max(1, len(filepaths))  # guarantees the first dimension
+        B = np.zeros((n_files, len(self.impact_categories), len(self.inputs)))
 
         for f, filepath in enumerate(filepaths):
             initial_B = sparse.load_npz(filepath).toarray()
-
-            new_B = np.zeros(
-                (
-                    initial_B.shape[0],
-                    len(self.inputs),
-                )
-            )
-
-            new_B[0 : initial_B.shape[0], 0 : initial_B.shape[1]] = initial_B
+            new_B = np.zeros((initial_B.shape[0], len(self.inputs)))
+            new_B[: initial_B.shape[0], : initial_B.shape[1]] = initial_B
             B[f, :, :] = new_B
+
+        years = [2020,] if self.scenario == "static" else [2005, 2010, 2020, 2030, 2040, 2050]
 
         return xr.DataArray(
             B,
             coords=[
-                (
-                    [2005, 2010, 2020, 2030, 2040, 2050]
-                    if self.scenario != "static"
-                    else [2020]
-                ),
+                np.asarray(years, dtype=int),
                 np.asarray(list(self.impact_categories.keys()), dtype="object"),
                 np.asarray(list(self.inputs.keys()), dtype="object"),
             ],
