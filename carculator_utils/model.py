@@ -1026,7 +1026,6 @@ class VehicleModel:
                     dim="parameter"
                 )
 
-
     def override_range(self):
         """
         Set storage size or range for each powertrain.
