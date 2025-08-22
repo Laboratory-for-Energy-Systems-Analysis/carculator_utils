@@ -979,12 +979,20 @@ class VehicleModel:
                     "combustion engine mass",
                     "electric engine mass",
                     "powertrain mass",
+                    "transmission mass",
                     "fuel cell stack mass",
                     "fuel cell ancillary BoP mass",
                     "fuel cell essential BoP mass",
                     "battery cell mass",
                     "battery BoP mass",
                     "fuel tank mass",
+                    "suspension mass",
+                    "braking system mass",
+                    "wheels and tires mass",
+                    "cabin mass",
+                    "electrical system mass",
+                    "other components mass",
+                    "transmission mass",
                 ]
 
                 curb_mass_includes = [
