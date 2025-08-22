@@ -968,6 +968,8 @@ class VehicleModel:
                     ]
                 )
 
+                self.set_battery_properties()
+
                 # redefine `glider base mass` as the difference
                 # between the `curb mass` and all other components' masses
                 curb_mass_includes = [
@@ -978,8 +980,8 @@ class VehicleModel:
                     "power distribution unit mass",
                     "combustion engine mass",
                     "electric engine mass",
+                    "exhaust system mass",
                     "powertrain mass",
-                    "transmission mass",
                     "fuel cell stack mass",
                     "fuel cell ancillary BoP mass",
                     "fuel cell essential BoP mass",
@@ -1024,7 +1026,6 @@ class VehicleModel:
                     dim="parameter"
                 )
 
-        self.set_battery_properties()
 
     def override_range(self):
         """
