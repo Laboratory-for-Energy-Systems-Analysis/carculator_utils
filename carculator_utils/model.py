@@ -816,7 +816,6 @@ class VehicleModel:
                             "charger mass",
                             "inverter mass",
                             "power distribution unit mass",
-                            "electric engine mass",
                         ],
                         powertrain=pwt,
                     )
@@ -836,7 +835,6 @@ class VehicleModel:
                             "charger mass",
                             "inverter mass",
                             "power distribution unit mass",
-                            "electric engine mass",
                         ],
                         powertrain="PHEV-e",
                     )
