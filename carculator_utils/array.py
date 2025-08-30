@@ -53,9 +53,13 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
         if "year" not in scope:
             scope["year"] = input_parameters.years
 
-    # Make sure to include PHEV-e and PHEV-c-d if
-    # PHEV-d is listed
-
+    # Always include PHEV-e because parameters (e.g., electric engine efficiency) are required for ICEV and HEV
+    if not "PHEV-e" in scope["powertrain"]:
+        scope["powertrain"].append("PHEV-e")
+    
+    # Make sure to include PHEV-e as well as PHEV-c-d and/or PHEV-c-p if
+    # PHEV-d and/or PHEV-p is listed
+    
     missing_pwts = [
         ("PHEV-d", "PHEV-e", "PHEV-c-d"),
         ("PHEV-p", "PHEV-e", "PHEV-c-p"),
