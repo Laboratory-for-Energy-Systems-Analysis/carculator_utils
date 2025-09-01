@@ -1331,7 +1331,10 @@ class VehicleModel:
         with open(self.DATA_DIR / "purchase_cost_params.yaml", "r") as stream:
             purchase_cost_params = yaml.safe_load(stream)["purchase"]
 
-        self["purchase cost"] = self[purchase_cost_params].sum(axis=2)
+        # if purchase cost is zero, we claculate it
+        if np.all(self["purchase cost"]) == 0:
+            self["purchase cost"] = self[purchase_cost_params].sum(axis=2)
+
         # per km
         amortisation_factor = self["interest rate"] + (
             self["interest rate"]
@@ -1524,9 +1527,9 @@ class VehicleModel:
         ) as stream:
             list_noise_emissions = yaml.safe_load(stream)
 
-        self.array.loc[dict(parameter=list_noise_emissions)] = (
-            nem.get_sound_power_per_compartment()
-        )
+        self.array.loc[
+            dict(parameter=list_noise_emissions)
+        ] = nem.get_sound_power_per_compartment()
 
     def calculate_cost_impacts(self, sensitivity=False) -> xr.DataArray:
         """
