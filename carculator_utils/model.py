@@ -942,6 +942,16 @@ class VehicleModel:
         for key, val in self.energy_storage["capacity"].items():
             pwt, size, year = key
             if val:
+
+                self.array.loc[
+                    dict(
+                        parameter="electric energy stored",
+                        powertrain=pwt,
+                        size=size,
+                        year=year,
+                    )
+                ] = val
+
                 self.array.loc[
                     dict(
                         parameter="energy battery mass",
