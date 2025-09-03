@@ -184,6 +184,7 @@ class VehicleModel:
                 "battery cell energy density",
                 "battery cell mass share",
                 "battery cycle life",
+                "energy battery cost per kWh",
             ]
             if p in self.array.parameter.values
         ]
@@ -1258,9 +1259,12 @@ class VehicleModel:
     def set_power_battery_properties(self):
         _ = lambda x: np.where(x == 0, 1, x)
 
-        self["battery power"] = self["electric power"] * (
-            self["combustion power share"] > 0
-        )
+        # battery power to start up combustion engine
+        # we assume the battery needs to deliver about 3%
+        # of the engine rated shaft power to start it
+        # for cars, it's more 2-5%, while for trucks, it's 1-3%
+
+        self["battery power"] = 0.03 * self["combustion power"]
 
         self["battery cell mass"] += (
             self["battery power"]
@@ -1527,9 +1531,9 @@ class VehicleModel:
         ) as stream:
             list_noise_emissions = yaml.safe_load(stream)
 
-        self.array.loc[dict(parameter=list_noise_emissions)] = (
-            nem.get_sound_power_per_compartment()
-        )
+        self.array.loc[
+            dict(parameter=list_noise_emissions)
+        ] = nem.get_sound_power_per_compartment()
 
     def calculate_cost_impacts(self, sensitivity=False) -> xr.DataArray:
         """
