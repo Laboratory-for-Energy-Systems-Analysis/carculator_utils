@@ -960,82 +960,98 @@ class VehicleModel:
                         year=year,
                     )
                 ] = (
-                    val
-                    / self.array.loc[
-                        dict(
-                            parameter="battery cell energy density",
-                            powertrain=pwt,
-                            size=size,
-                            year=year,
-                        )
-                    ]
-                    / self.array.loc[
-                        dict(
-                            parameter="battery cell mass share",
-                            powertrain=pwt,
-                            size=size,
-                            year=year,
-                        )
-                    ]
+                        val
+                        / self.array.loc[
+                            dict(
+                                parameter="battery cell energy density",
+                                powertrain=pwt,
+                                size=size,
+                                year=year,
+                            )
+                        ]
+                        / self.array.loc[
+                            dict(
+                                parameter="battery cell mass share",
+                                powertrain=pwt,
+                                size=size,
+                                year=year,
+                            )
+                        ]
                 )
 
                 self.set_battery_properties()
 
-                # redefine `glider base mass` as the difference
-                # between the `curb mass` and all other components' masses
-                curb_mass_includes = [
-                    "fuel mass",
-                    "charger mass",
-                    "converter mass",
-                    "inverter mass",
-                    "power distribution unit mass",
-                    "combustion engine mass",
-                    "electric engine mass",
-                    "exhaust system mass",
-                    "powertrain mass",
-                    "fuel cell stack mass",
-                    "fuel cell ancillary BoP mass",
-                    "fuel cell essential BoP mass",
-                    "battery cell mass",
-                    "battery BoP mass",
-                    "fuel tank mass",
-                    "suspension mass",
-                    "braking system mass",
-                    "wheels and tires mass",
-                    "cabin mass",
-                    "electrical system mass",
-                    "other components mass",
-                    "transmission mass",
-                ]
-
-                curb_mass_includes = [
-                    p for p in curb_mass_includes if p in self.array.parameter.values
-                ]
-
-                self.array.loc[
-                    dict(
-                        parameter="glider base mass",
-                        powertrain=pwt,
-                        size=size,
-                        year=year,
-                    )
-                ] = self.array.loc[
-                    dict(
-                        parameter="curb mass",
-                        powertrain=pwt,
-                        size=size,
-                        year=year,
-                    )
-                ] - self.array.loc[
-                    dict(
-                        parameter=curb_mass_includes,
-                        powertrain=pwt,
-                        size=size,
-                        year=year,
-                    )
-                ].sum(
-                    dim="parameter"
-                )
+                # # redefine `glider base mass` as the difference
+                # # between the `curb mass` and all other components' masses
+                # curb_mass_includes = [
+                #     "fuel mass",
+                #     "charger mass",
+                #     "converter mass",
+                #     "inverter mass",
+                #     "power distribution unit mass",
+                #     "combustion engine mass",
+                #     "electric engine mass",
+                #     "exhaust system mass",
+                #     "powertrain mass",
+                #     "fuel cell stack mass",
+                #     "fuel cell ancillary BoP mass",
+                #     "fuel cell essential BoP mass",
+                #     "battery cell mass",
+                #     "battery BoP mass",
+                #     "fuel tank mass",
+                #     "suspension mass",
+                #     "braking system mass",
+                #     "wheels and tires mass",
+                #     "cabin mass",
+                #     "electrical system mass",
+                #     "other components mass",
+                #     "transmission mass",
+                # ]
+                #
+                # curb_mass_includes = [
+                #     p for p in curb_mass_includes if p in self.array.parameter.values
+                # ]
+                #
+                # self.array.loc[
+                #     dict(
+                #         parameter="curb mass",
+                #         powertrain=pwt,
+                #         size=size,
+                #         year=year,
+                #     )
+                # ] -= self.array.loc[
+                #     dict(
+                #         parameter="energy battery mass",
+                #         powertrain=pwt,
+                #         size=size,
+                #         year=year,
+                #     )
+                # ]
+                #
+                # self.array.loc[
+                #     dict(
+                #         parameter="glider base mass",
+                #         powertrain=pwt,
+                #         size=size,
+                #         year=year,
+                #     )
+                # ] = self.array.loc[
+                #         dict(
+                #             parameter="curb mass",
+                #             powertrain=pwt,
+                #             size=size,
+                #             year=year,
+                #         )
+                #     ] - self.array.loc[
+                #         dict(
+                #             parameter=curb_mass_includes,
+                #             powertrain=pwt,
+                #             size=size,
+                #             year=year,
+                #         )
+                #     ].sum(
+                #     dim="parameter"
+                # )
 
     def override_range(self):
         """
