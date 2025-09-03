@@ -960,23 +960,23 @@ class VehicleModel:
                         year=year,
                     )
                 ] = (
-                        val
-                        / self.array.loc[
-                            dict(
-                                parameter="battery cell energy density",
-                                powertrain=pwt,
-                                size=size,
-                                year=year,
-                            )
-                        ]
-                        / self.array.loc[
-                            dict(
-                                parameter="battery cell mass share",
-                                powertrain=pwt,
-                                size=size,
-                                year=year,
-                            )
-                        ]
+                    val
+                    / self.array.loc[
+                        dict(
+                            parameter="battery cell energy density",
+                            powertrain=pwt,
+                            size=size,
+                            year=year,
+                        )
+                    ]
+                    / self.array.loc[
+                        dict(
+                            parameter="battery cell mass share",
+                            powertrain=pwt,
+                            size=size,
+                            year=year,
+                        )
+                    ]
                 )
 
                 self.set_battery_properties()
