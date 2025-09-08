@@ -186,11 +186,16 @@ class VehicleModel:
                 "battery cycle life",
                 "energy battery cost per kWh",
             ]
-            if f"{p}, {val}" in self.array.parameter.values
+            if p in self.array.parameter.values
         ]
 
         for key, val in self.energy_storage["electric"].items():
             pwt, size, year = key
+            parameters = [
+                f"{p}, {val}"
+                for p in l_parameters
+                if f"{p}, {val}" in self.array.parameter.values
+            ]
 
             if (
                 (val is not None)
@@ -203,7 +208,7 @@ class VehicleModel:
                         powertrain=pwt,
                         size=size,
                         year=year,
-                        parameter=[f"{p}, {val}" for p in l_parameters],
+                        parameter=parameters,
                     )
                 ]
 
@@ -212,7 +217,7 @@ class VehicleModel:
                         powertrain=pwt,
                         size=size,
                         year=year,
-                        parameter=l_parameters,
+                        parameter=parameters,
                     )
                 ] = cell_params.values
 
