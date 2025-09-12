@@ -197,6 +197,8 @@ class VehicleModel:
                 if f"{p}, {val}" in self.array.parameter.values
             ]
 
+            print(f"parameters: {parameters}")
+
             if (
                 (val is not None)
                 & (pwt in self.array.powertrain.values)
@@ -212,12 +214,14 @@ class VehicleModel:
                     )
                 ]
 
+                print(f"cell_params: {cell_params}")
+
                 self.array.loc[
                     dict(
                         powertrain=pwt,
                         size=size,
                         year=year,
-                        parameter=parameters,
+                        parameter=l_parameters,
                     )
                 ] = cell_params.values
 
@@ -1561,9 +1565,9 @@ class VehicleModel:
         ) as stream:
             list_noise_emissions = yaml.safe_load(stream)
 
-        self.array.loc[dict(parameter=list_noise_emissions)] = (
-            nem.get_sound_power_per_compartment()
-        )
+        self.array.loc[
+            dict(parameter=list_noise_emissions)
+        ] = nem.get_sound_power_per_compartment()
 
     def calculate_cost_impacts(self, sensitivity=False) -> xr.DataArray:
         """

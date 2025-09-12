@@ -1356,9 +1356,7 @@ class Inventory:
                 for x, y in self.rev_inputs.items()
                 if y[0].startswith(f"{self.vm.vehicle_type}, ")
             ],
-        ] = self.array.sel(parameter=["battery cell mass", "battery BoP mass"]).sum(
-            dim="parameter"
-        ) * (
+        ] = self.array.sel(parameter="energy battery mass") * (
             1 + self.array.sel(parameter="battery lifetime replacements")
         )
 
