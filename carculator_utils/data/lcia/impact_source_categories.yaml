@@ -48,6 +48,7 @@ energy chain:
   - catenary
   - pantograph
   - charger
+  - ev charger
 
 maintenance:
   - maintenance,
