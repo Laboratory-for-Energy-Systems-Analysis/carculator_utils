@@ -41,6 +41,9 @@ energy chain:
   - fuel supply for
   - electricity supply for electric vehicles
   - electricity supply for fuel preparation
+
+
+charger:
   - overhead
   - charging station, 500W
   - charging station, 100W
