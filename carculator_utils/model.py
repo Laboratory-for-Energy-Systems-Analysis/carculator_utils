@@ -197,8 +197,6 @@ class VehicleModel:
                 if f"{p}, {val}" in self.array.parameter.values
             ]
 
-            print(f"parameters: {parameters}")
-
             if (
                 (val is not None)
                 & (pwt in self.array.powertrain.values)
@@ -213,8 +211,6 @@ class VehicleModel:
                         parameter=parameters,
                     )
                 ]
-
-                print(f"cell_params: {cell_params}")
 
                 self.array.loc[
                     dict(
