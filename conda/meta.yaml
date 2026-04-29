@@ -14,10 +14,12 @@ build:
     - CONDA_BLD_PATH
 
 requirements:
-  build:
+  host:
     - python
+    - pip
     - setuptools
   run:
+    - python
     - scipy
     - pyprind
     - pandas
@@ -26,7 +28,7 @@ requirements:
     - klausen
     - xlrd
     - numexpr
-    - bw2io
+    - bw2io<=0.8.12
     - pycountry
     - wurst
     - pyyaml
