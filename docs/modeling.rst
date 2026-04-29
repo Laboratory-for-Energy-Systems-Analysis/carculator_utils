@@ -2024,9 +2024,9 @@ As described earlier, the tool chooses between several
 characterization matrices ``B``, which contain pre-calculated values for
 activities for a given year, depending on the year of production of the
 vehicle as well as the REMIND climate scenario considered (i.e.,
-"SSP2-Baseline", "SSP2-PkBudg1150" or "SSP2-PkBudg500"). Midpoint and
+"SSP2-NPi", "SSP2-PkBudg1000" or "SSP2-PkBudg650"). Midpoint and
 endpoint (i.e., human health, ecosystem impacts and resources use)
-indicators include those of the ReCiPe 2008 v.1.13 impact assessment
+indicators include those of the ReCiPe 2016 (H) impact assessment
 method, as well as those of EF 3.1. Additionally, it is possible to
 export the inventories in a format compatible with the LCA framework
 `Brightway2 <https://brightway.dev/>`_ or `SimaPro <https://simapro.com/>`_,

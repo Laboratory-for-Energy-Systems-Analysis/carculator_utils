@@ -49,7 +49,7 @@ def check_func_unit(func_unit):
 
 def check_scenario(scenario):
     """Check if scenario is a valid scenario."""
-    valid_scenarios = ["SSP2-NPi", "SSP2-PkBudg1150", "SSP2-PkBudg500", "static"]
+    valid_scenarios = ["SSP2-NPi", "SSP2-PkBudg1000", "SSP2-PkBudg650", "static"]
     if scenario not in valid_scenarios:
         raise ValueError(
             f"Scenario must be one of " f"{valid_scenarios}, " f"not {scenario}"
@@ -204,8 +204,8 @@ class Inventory:
     :ivar background_configuration: dictionary that contains choices for background system
     :ivar scenario: IAM energy scenario to use (
         "SSP2-NPi": Nationally implemented policies, limits temperature increase by 2100 to 3.3 degrees Celsius,
-        "SSP2-PkBudg1150": limits temperature increase by 2100 to 2 degrees Celsius,
-        "SSP2-PkBudg500": limits temperature increase by 2100 to 1.5 degrees Celsius,
+        "SSP2-PkBudg1000": limits temperature increase by 2100 to 2 degrees Celsius,
+        "SSP2-PkBudg650": limits temperature increase by 2100 to 1.5 degrees Celsius,
         "static": no forward-looking modification of the background inventories).
         "SSP2-NPi" selected by default.)
     :ivar method: impact assessment method to use ("recipe" or "ef" for Environmental Footprint 3.1)
