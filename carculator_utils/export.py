@@ -1005,14 +1005,15 @@ class ExportInventory:
         filename: str = None,
         export_format: str = "file",
     ):
+        exports = []
+        base_filename = filename or safe_filename(
+            f"carculator_export_{datetime.date.today()}"
+        )
+
         for year in self.vm.array.coords["year"].values:
-            filename = filename or safe_filename(
-                f"carculator_export_{datetime.date.today()}"
-            )
+            year_filename = f"{base_filename}_{year}_simapro.csv"
 
-            filename += f"_{year}_simapro.csv"
-
-            filepath_export = self.get_export_filepath(filename, directory)
+            filepath_export = self.get_export_filepath(year_filename, directory)
 
             list_act = self.write_lci(
                 ecoinvent_version=ecoinvent_version,
@@ -1028,8 +1029,8 @@ class ExportInventory:
                     writer = csv.writer(csvFile, delimiter=";")
                     for row in rows:
                         writer.writerow(row)
-                csvFile.close()
-                return filepath_export
+                exports.append(filepath_export)
+                continue
 
             # string format
             csvFile = io.StringIO()
@@ -1042,7 +1043,9 @@ class ExportInventory:
             for row in rows:
                 writer.writerow(row)
             csvFile.seek(0)
-            return csvFile.read()
+            exports.append(csvFile.read())
+
+        return exports[0] if len(exports) == 1 else exports
 
     def write_bw2_lci(
         self,
