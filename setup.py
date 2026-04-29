@@ -44,6 +44,8 @@ setup(
         "carculator_utils": package_files(os.path.join("carculator_utils", "data"))
     },
     install_requires=[
+        "scipy",
+        "pyprind",
         "pandas",
         "xarray>=2024.1.0",
         "numpy<2.0.0",
