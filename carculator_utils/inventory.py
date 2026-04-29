@@ -2,6 +2,7 @@
 inventory.py contains InventoryCalculation which provides all methods to solve inventories.
 """
 
+import ast
 import csv
 import itertools
 import re
@@ -144,7 +145,7 @@ def get_dict_input() -> dict:
         raw = list(reader)
         for _r, r in enumerate(raw):
             if len(r) == 3:
-                r[1] = eval(r[1])
+                r[1] = ast.literal_eval(r[1])
             raw[_r] = tuple(r)
 
         return {j: i for i, j in enumerate(list(raw))}
