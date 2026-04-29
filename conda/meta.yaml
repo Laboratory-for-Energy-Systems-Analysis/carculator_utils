@@ -8,12 +8,16 @@ source:
 build:
   noarch: python
   number: 0
-  script: python -m pip install --no-deps --ignore-installed .
+  script: {{ PYTHON }} -m pip install --no-deps --ignore-installed .
   script_env:
     - VERSION
     - CONDA_BLD_PATH
 
 requirements:
+  build:
+    - python
+    - pip
+    - setuptools
   host:
     - python
     - pip
