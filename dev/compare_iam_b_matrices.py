@@ -27,7 +27,6 @@ from typing import Iterable
 import numpy as np
 from scipy import sparse
 
-
 LEGACY_COMPARISON_SCENARIOS = {
     "SSP2-PkBudg1000": "SSP2-PkBudg1150",
     "SSP2-PkBudg650": "SSP2-PkBudg500",

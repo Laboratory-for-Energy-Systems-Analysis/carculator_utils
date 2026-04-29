@@ -37,7 +37,6 @@ warnings.filterwarnings("ignore", message="pkg_resources is deprecated as an API
 import numpy as np
 from scipy import sparse
 
-
 PROJECT = "ecoinvent-3.12-cutoff"
 STATIC_DB = "ecoinvent-3.12-cutoff"
 BIOSPHERE_DB = "ecoinvent-3.12-biosphere"
@@ -520,9 +519,9 @@ def main(argv: Iterable[str] | None = None) -> int:
                 "category": entry.category.category,
                 "type": entry.category.type,
                 "source": entry.category.source,
-                "brightway_method": list(entry.brightway_method)
-                if entry.brightway_method
-                else None,
+                "brightway_method": (
+                    list(entry.brightway_method) if entry.brightway_method else None
+                ),
                 "reason": entry.reason,
             }
             for entry in method_entries
