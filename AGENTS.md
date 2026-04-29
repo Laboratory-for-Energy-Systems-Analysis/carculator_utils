@@ -118,6 +118,16 @@ The repository ships substantial package data. Be conservative when editing file
 - For changes to bundled data loaders, include at least a smoke test that the loader returns the expected type and core dimensions/keys.
 - Existing tests for `VehicleInputParameters` use fixture JSON directly; be careful when changing defaults or import behavior.
 
+## Downstream Contracts
+
+This package mostly provides parent classes and shared utilities for downstream packages such as `carculator`, `carculator_truck`, `carculator_two_wheeler`, and `carculator_bus`.
+
+- Treat `VehicleModel`, `Inventory`, and `VehicleInputParameters` as inherited APIs, not only local implementation details.
+- Keep parent constructors permissive enough for downstream subclasses; avoid calling overridable hooks before shared parent attributes are initialized.
+- Preserve hook methods such as `set_all()`, `set_battery_chemistry()`, and `fill_in_A_matrix()` unless all downstream subclasses are checked.
+- Maintain the core `xarray.DataArray` contract: dimensions `size`, `powertrain`, `parameter`, `year`, and `value`.
+- When a parent class expects downstream data files, fail with explicit errors and document which subclass attributes or arguments should provide them.
+
 ## Documentation Guidance
 
 - Update `docs/` for user-facing API or workflow changes.
