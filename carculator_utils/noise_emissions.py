@@ -241,16 +241,12 @@ class NoiseEmissionsModel:
         # propulsion noise, in dB, for each second of the driving_cycles
         propulsion = self.propulsion_noise()
 
-        # sum of rolling and propulsion noise sources
-
-        total_noise = np.where(
+        # Convert each source from dB to Watts (or J/s) before summing.
+        sound_power = np.where(
             _(self.velocity) > 0,
-            np.log10((10 ** (rolling / 10))) + np.log10((10 ** (propulsion / 10))),
+            (10**-12) * (10 ** (rolling / 10) + 10 ** (propulsion / 10)),
             0,
         )
-
-        # convert dBs to Watts (or J/s)
-        sound_power = (10**-12) * (10 ** (total_noise / 10))
 
         # If the driving_cycles selected is one of the driving_cycles for
         # which carculator_utils has specifications,
@@ -260,18 +256,32 @@ class NoiseEmissionsModel:
         # user (passed directly as an array), we used
         # speed levels to compartmentalize emissions.
 
-        distance = (self.velocity / 3600).sum(axis=0)
+        distance = _(np.asarray((self.velocity / 3600).sum(axis=0)))
 
-        urban_noise = np.where(_(self.velocity) <= 50, sound_power, 0).sum(axis=0) / _(
-            distance
+        urban_power = np.where(_(self.velocity) <= 50, sound_power, 0).sum(axis=0)
+        urban_noise = np.divide(
+            urban_power,
+            distance,
+            out=np.zeros_like(urban_power, dtype=float),
+            where=distance != 0,
         )
 
-        suburban_noise = np.where(
+        suburban_power = np.where(
             (_(self.velocity) > 50) & (_(self.velocity) <= 80), sound_power, 0
-        ).sum(axis=0) / _(distance)
+        ).sum(axis=0)
+        suburban_noise = np.divide(
+            suburban_power,
+            distance,
+            out=np.zeros_like(suburban_power, dtype=float),
+            where=distance != 0,
+        )
 
-        rural_noise = np.where(_(self.velocity) > 80, sound_power, 0).sum(axis=0) / _(
-            distance
+        rural_power = np.where(_(self.velocity) > 80, sound_power, 0).sum(axis=0)
+        rural_noise = np.divide(
+            rural_power,
+            distance,
+            out=np.zeros_like(rural_power, dtype=float),
+            where=distance != 0,
         )
 
         res = np.concatenate(

@@ -79,15 +79,27 @@ class ParticulatesEmissionsModel:
         road_pm10, road_pm25 = self.get_road_wear_emissions()
         dust_pm10, dust_pm25 = self.get_resuspended_road_dust()
 
-        urban_share = self.velocity.where(self.velocity < 50, 0).sum(
-            dim="second"
-        ) / self.velocity.sum(dim="second")
-        suburban_share = self.velocity.where(
-            (self.velocity > 50) & (self.velocity <= 80), 0
-        ).sum(dim="second") / self.velocity.sum(dim="second")
-        rural_share = self.velocity.where(self.velocity > 80, 0).sum(
-            dim="second"
-        ) / self.velocity.sum(dim="second")
+        total_velocity = self.velocity.sum(dim="second")
+        urban_share = xr.where(
+            total_velocity != 0,
+            self.velocity.where(self.velocity < 50, 0).sum(dim="second")
+            / total_velocity,
+            0,
+        )
+        suburban_share = xr.where(
+            total_velocity != 0,
+            self.velocity.where((self.velocity > 50) & (self.velocity <= 80), 0).sum(
+                dim="second"
+            )
+            / total_velocity,
+            0,
+        )
+        rural_share = xr.where(
+            total_velocity != 0,
+            self.velocity.where(self.velocity > 80, 0).sum(dim="second")
+            / total_velocity,
+            0,
+        )
 
         tire_wear = (tire_pm10_urban + tire_pm25_urban) * urban_share.T
         tire_wear += (tire_pm10_rural + tire_pm25_rural) * suburban_share.T

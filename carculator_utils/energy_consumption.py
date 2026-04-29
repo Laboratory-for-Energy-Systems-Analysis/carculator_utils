@@ -194,9 +194,10 @@ class EnergyConsumptionModel:
             idx = vehicle_size.index("Micro")
             self.cycle[:, idx] = np.clip(self.cycle[:, idx], 0, 90)
 
-        assert len(self.cycle) == len(
-            self.gradient
-        ), "The length of the driving_cycles and the gradient must be the same."
+        if len(self.cycle) != len(self.gradient):
+            raise ValueError(
+                "The length of the driving_cycles and the gradient must be the same."
+            )
 
         # Unit conversion km/h to m/s
         self.velocity = np.where(np.isnan(self.cycle), 0, (self.cycle * 1000) / 3600)
@@ -225,9 +226,8 @@ class EnergyConsumptionModel:
                 self.ambient_temperature = np.resize(self.ambient_temperature, (12,))
             else:
                 self.ambient_temperature = np.array(self.ambient_temperature)
-                assert (
-                    len(self.ambient_temperature) == 12
-                ), "Ambient temperature must be a 12-month array"
+                if len(self.ambient_temperature) != 12:
+                    raise ValueError("Ambient temperature must be a 12-month array")
         else:
             self.ambient_temperature = np.resize(
                 get_country_temperature(self.country), (12,)
@@ -238,9 +238,8 @@ class EnergyConsumptionModel:
                 self.indoor_temperature = np.resize(self.indoor_temperature, (12,))
             else:
                 self.indoor_temperature = np.array(self.indoor_temperature)
-                assert (
-                    len(self.indoor_temperature) == 12
-                ), "Indoor temperature must be a 12-month array"
+                if len(self.indoor_temperature) != 12:
+                    raise ValueError("Indoor temperature must be a 12-month array")
 
         # use ambient temperature if provided, otherwise
         # monthly temperature average (12 values)
@@ -305,7 +304,10 @@ class EnergyConsumptionModel:
         driving_time = np.zeros_like(self.velocity)
 
         for i in range(self.velocity.shape[-1]):
-            last_index = np.where(self.velocity[..., i] > 0)[0][-1]
+            driving_indices = np.where(self.velocity[..., i] > 0)[0]
+            if len(driving_indices) == 0:
+                continue
+            last_index = driving_indices[-1]
             driving_time[:last_index, ..., i] = 1
 
         return driving_time
