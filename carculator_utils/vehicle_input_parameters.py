@@ -6,8 +6,11 @@ from klausen import NamedParameters
 
 def load_parameters(obj):
     if isinstance(obj, (str, Path)):
-        assert Path(obj).exists(), f"Can't find this filepath {obj}."
-        return json.load(open(obj))
+        filepath = Path(obj)
+        if not filepath.exists():
+            raise FileNotFoundError(f"Can't find this filepath {filepath}.")
+        with open(filepath, encoding="utf-8") as file:
+            return json.load(file)
     else:
         # Already in correct form, just return
         return obj
@@ -50,6 +53,20 @@ class VehicleInputParameters(NamedParameters):
     def __init__(self, parameters=None, extra=None, limit=None):
         """Create a `klausen <https://github.com/cmutel/klausen>`__ model with the car input parameters."""
         super().__init__(None)
+
+        if parameters is None and not self.DEFAULT.exists():
+            raise FileNotFoundError(
+                "No default vehicle parameter file is packaged with "
+                f"{self.__class__.__name__}. Pass `parameters` explicitly or "
+                "override DEFAULT in a downstream input-parameter subclass."
+            )
+
+        if extra is None and not self.EXTRA.exists():
+            raise FileNotFoundError(
+                "No default extra-parameter file is packaged with "
+                f"{self.__class__.__name__}. Pass `extra` explicitly or "
+                "override EXTRA in a downstream input-parameter subclass."
+            )
 
         parameters = load_parameters(self.DEFAULT if parameters is None else parameters)
         extra = set(load_parameters(self.EXTRA if extra is None else extra))

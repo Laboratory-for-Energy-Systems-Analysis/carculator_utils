@@ -14,6 +14,8 @@ from .hot_emissions import HotEmissionsModel
 from .noise_emissions import NoiseEmissionsModel
 from .particulates_emissions import ParticulatesEmissionsModel
 
+REQUIRED_ARRAY_DIMS = ("size", "powertrain", "parameter", "year", "value")
+
 
 def finite(array, mask_value=0):
     return np.where(np.isfinite(array), array, mask_value)
@@ -25,6 +27,21 @@ def load_default_specs_for_fuels():
     """
     with open(Path(__file__).parent / "data" / "fuel" / "default_fuels.yaml") as file:
         return yaml.load(file, Loader=yaml.FullLoader)
+
+
+def validate_vehicle_array(array: xr.DataArray) -> None:
+    """
+    Validate the shared vehicle model array contract.
+    """
+    if not isinstance(array, xr.DataArray):
+        raise TypeError("VehicleModel expects `array` to be an xarray.DataArray.")
+
+    missing = [dim for dim in REQUIRED_ARRAY_DIMS if dim not in array.dims]
+    if missing:
+        raise ValueError(
+            "VehicleModel array is missing required dimensions: "
+            f"{', '.join(missing)}."
+        )
 
 
 class VehicleModel:
@@ -78,6 +95,7 @@ class VehicleModel:
         :param target_range: dictionary with target range for each powertrain-size-year combination
 
         """
+        validate_vehicle_array(array)
         self.array = array
         self.country = country
 
@@ -93,9 +111,6 @@ class VehicleModel:
         self.energy_target = energy_target or {2025: 0.85, 2030: 0.7, 2050: 0.6}
         self.payload = payload or {}
         self.annual_mileage = annual_mileage or {}
-
-        self.set_battery_chemistry()
-        self.set_battery_preferences()
         self.energy = None
         self.electric_utility_factor = electric_utility_factor
         self.drop_hybrids = drop_hybrids
@@ -121,6 +136,9 @@ class VehicleModel:
 
         self.ambient_temperature = ambient_temperature
         self.indoor_temperature = indoor_temperature
+
+        self.set_battery_chemistry()
+        self.set_battery_preferences()
 
     def __call__(self, key: Union[str, List]):
         """
@@ -172,9 +190,23 @@ class VehicleModel:
         self.array.loc[{"parameter": key}] = value
 
     def set_all(self):
+        """
+        Extension hook for downstream vehicle packages.
+
+        Subclasses normally override this method to populate all calculated
+        vehicle parameters. The base implementation intentionally does
+        nothing to keep partial parent models instantiable.
+        """
         pass
 
     def set_battery_chemistry(self):
+        """
+        Extension hook for downstream battery chemistry defaults.
+
+        Subclasses can populate ``self.energy_storage`` before battery
+        preferences are applied. The base implementation intentionally does
+        nothing.
+        """
         pass
 
     def set_battery_preferences(self):
@@ -189,7 +221,7 @@ class VehicleModel:
             if p in self.array.parameter.values
         ]
 
-        for key, val in self.energy_storage["electric"].items():
+        for key, val in self.energy_storage.get("electric", {}).items():
             pwt, size, year = key
             parameters = [
                 f"{p}, {val}"
@@ -198,10 +230,12 @@ class VehicleModel:
             ]
 
             if (
-                (val is not None)
-                & (pwt in self.array.powertrain.values)
-                & (year in self.array.year.values)
-                & (size in self.array["size"].values)
+                val is not None
+                and pwt in self.array.powertrain.values
+                and year in self.array.year.values
+                and size in self.array["size"].values
+                and l_parameters
+                and len(parameters) == len(l_parameters)
             ):
                 cell_params = self.array.loc[
                     dict(
