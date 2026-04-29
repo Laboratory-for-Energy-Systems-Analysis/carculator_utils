@@ -7,6 +7,12 @@ DEFAULT = Path(__file__, "..").resolve() / "fixtures" / "default_test.json"
 EXTRA = Path(__file__, "..").resolve() / "fixtures" / "extra_test.json"
 
 
+def test_importing_vehicle_input_parameters_does_not_import_export():
+    import sys
+
+    assert "carculator_utils.export" not in sys.modules
+
+
 def test_can_pass_directly():
     d, e = json.load(open(DEFAULT)), set(json.load(open(EXTRA)))
     e.remove("foobazzle")

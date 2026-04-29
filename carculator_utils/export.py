@@ -3,22 +3,41 @@ export.py contains the class Export, which offers methods to export the inventor
 in different formats.
 """
 
+from __future__ import annotations
+
 import csv
 import datetime
 import io
 import json
 import os
 import uuid
-from typing import Dict, List, Tuple, Union
+from typing import TYPE_CHECKING, Dict, List, Tuple, Union
 
-import bw2io
 import numpy as np
 import pyprind
 import xarray as xr
 import yaml
-from bw2io.export.excel import create_valid_worksheet_name, safe_filename, xlsxwriter
 
 from . import DATA_DIR, __version__
+
+if TYPE_CHECKING:
+    import bw2io
+
+
+def safe_filename(name: str) -> str:
+    """Return a filename-safe string without requiring bw2io at import time."""
+    return "".join(
+        char if char.isalnum() or char in " -_." else "_" for char in str(name)
+    ).strip()
+
+
+def create_valid_worksheet_name(name: str) -> str:
+    """Return an Excel worksheet name within Excel's length and character limits."""
+    invalid_characters = set("[]:*?/\\")
+    worksheet_name = "".join(
+        "_" if char in invalid_characters else char for char in str(name)
+    )[:31]
+    return worksheet_name or "Sheet1"
 
 
 def load_references() -> list[dict]:
@@ -1070,6 +1089,8 @@ class ExportInventory:
                 d["database"] = f"{self.db_name}_{year}"
 
             if export_format == "bw2io":
+                import bw2io
+
                 lci = bw2io.importers.base_lci.LCIImporter(self.db_name)
                 lci.data = data
                 # remove keys with empty values
@@ -1079,6 +1100,8 @@ class ExportInventory:
 
             formatted_data = self.format_data_for_lci_for_bw2(data)
             output = io.BytesIO() if export_format == "string" else filepath_export
+            import xlsxwriter
+
             workbook = xlsxwriter.Workbook(output, {"in_memory": True})
 
             bold = workbook.add_format({"bold": True})

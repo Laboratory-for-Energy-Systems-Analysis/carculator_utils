@@ -21,7 +21,6 @@ from scipy import sparse
 
 from . import DATA_DIR
 from .background_systems import BackgroundSystemModel
-from .export import ExportInventory
 
 warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 
@@ -1892,6 +1891,8 @@ class Inventory:
 
         if self.func_unit != "vkm":
             self.change_functional_unit()
+
+        from .export import ExportInventory
 
         lci = ExportInventory(
             array=self.A,
