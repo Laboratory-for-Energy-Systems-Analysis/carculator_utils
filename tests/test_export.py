@@ -16,9 +16,9 @@ def test_simapro_export_returns_each_year_as_string():
         )
     )
     exporter.write_lci = lambda ecoinvent_version, year: [{"year": year}]
-    exporter.format_data_for_lci_for_simapro = (
-        lambda data, ei_version: [["year", data[0]["year"]]]
-    )
+    exporter.format_data_for_lci_for_simapro = lambda data, ei_version: [
+        ["year", data[0]["year"]]
+    ]
 
     result = exporter.write_simapro_lci(
         ecoinvent_version="3.10", export_format="string"
