@@ -363,6 +363,9 @@ of electricity-producing technologies as well as the electricity mixes in the fu
 are built upon REMIND outputs.
 The library used to create hybrid versions of the ecoinvent database from PIK's REMIND is called
 `premise <https://github.com/romainsacchi/premise>`_.
+The supported background scenarios are ``SSP2-NPi``, ``SSP2-PkBudg1000``, ``SSP2-PkBudg650``
+and ``static``. For ``SSP2-PkBudg1000`` and ``SSP2-PkBudg650``, historical years 2005, 2010
+and 2020 use the ``SSP2-NPi`` background matrices.
 This means that, as it is, the inventory cannot properly link to ecoinvent 3.6 or 3.7 unless some transformation is performed
 before. These transformations are in fact performed when exporting the inventory. Hence, when doing:
 

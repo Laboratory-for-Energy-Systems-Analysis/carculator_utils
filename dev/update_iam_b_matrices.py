@@ -46,7 +46,9 @@ METHOD_PREFIX = "ecoinvent-3.12"
 YEARS = (2005, 2010, 2020, 2030, 2040, 2050)
 HISTORICAL_YEARS = (2005, 2010, 2020)
 OUTPUT_SCENARIOS = ("SSP2-NPi", "SSP2-PkBudg1000", "SSP2-PkBudg650")
-LEGACY_SCENARIOS = {
+LEGACY_INPUT_SCENARIOS = {
+    # Used only as a fallback when regenerating from a checkout that still has
+    # the pre-2026 scenario filenames.
     "SSP2-NPi": "SSP2-NPi",
     "SSP2-PkBudg1000": "SSP2-PkBudg1150",
     "SSP2-PkBudg650": "SSP2-PkBudg500",
@@ -126,7 +128,7 @@ def existing_matrix_path(
     if scenario == "static":
         return current_path
 
-    legacy = LEGACY_SCENARIOS[scenario]
+    legacy = LEGACY_INPUT_SCENARIOS[scenario]
     return iam_dir / f"B_matrix_{method}_{indicator}_remind_{legacy}_{year}.npz"
 
 

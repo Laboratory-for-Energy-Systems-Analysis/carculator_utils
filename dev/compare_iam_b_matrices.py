@@ -2,8 +2,8 @@
 
 The default reference is ``HEAD~1``. To compare the current committed IAM
 update against the values that preceded it in this branch, use
-``--ref f6da67f^``. New scenario filenames are mapped back to the legacy names
-so that:
+``--ref f6da67f^``. Current scenario filenames are mapped back to the legacy
+pre-2026 names only when reading matrices from the comparison ref:
 
 * ``SSP2-PkBudg1000`` is compared with ``SSP2-PkBudg1150``;
 * ``SSP2-PkBudg650`` is compared with ``SSP2-PkBudg500``.
@@ -28,7 +28,7 @@ import numpy as np
 from scipy import sparse
 
 
-SCENARIO_REPLACEMENTS = {
+LEGACY_COMPARISON_SCENARIOS = {
     "SSP2-PkBudg1000": "SSP2-PkBudg1150",
     "SSP2-PkBudg650": "SSP2-PkBudg500",
 }
@@ -67,7 +67,7 @@ def parse_matrix_name(path: Path) -> MatrixInfo:
 
 def previous_matrix_path(current_path: Path) -> Path:
     previous_name = current_path.name
-    for current, legacy in SCENARIO_REPLACEMENTS.items():
+    for current, legacy in LEGACY_COMPARISON_SCENARIOS.items():
         previous_name = previous_name.replace(current, legacy)
     return current_path.with_name(previous_name)
 
