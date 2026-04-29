@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 *.xml
 *.iml
+.DS_Store
 
 # C extensions
 *.so
