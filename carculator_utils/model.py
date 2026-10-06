@@ -1,3 +1,4 @@
+from copy import deepcopy
 from itertools import product
 from pathlib import Path
 from typing import Dict, List, Union
@@ -12,6 +13,7 @@ from .driving_cycles import detect_vehicle_type
 from .energy_consumption import get_default_driving_cycle_name
 from .hot_emissions import HotEmissionsModel
 from .noise_emissions import NoiseEmissionsModel
+from .numerical import iterate_until_converged
 from .particulates_emissions import ParticulatesEmissionsModel
 
 REQUIRED_ARRAY_DIMS = ("size", "powertrain", "parameter", "year", "value")
@@ -42,6 +44,16 @@ def validate_vehicle_array(array: xr.DataArray) -> None:
             "VehicleModel array is missing required dimensions: "
             f"{', '.join(missing)}."
         )
+
+    if set(array.dims) != set(REQUIRED_ARRAY_DIMS):
+        raise ValueError("VehicleModel array has unsupported dimensions.")
+    for dim in REQUIRED_ARRAY_DIMS:
+        if dim not in array.coords or not array.sizes[dim]:
+            raise ValueError(
+                f"VehicleModel requires nonempty labelled {dim!r} coordinates."
+            )
+        if not array.get_index(dim).is_unique:
+            raise ValueError(f"VehicleModel requires unique {dim!r} coordinates.")
 
 
 class VehicleModel:
@@ -80,6 +92,7 @@ class VehicleModel:
         fuel_blend: dict = None,
         ambient_temperature: float = None,
         indoor_temperature: float = 20,
+        max_iterations: int = 100,
     ) -> None:
         """
         :param array: multi-dimensional numpy-like array that contains parameters' value(s)
@@ -95,8 +108,16 @@ class VehicleModel:
         :param target_range: dictionary with target range for each powertrain-size-year combination
 
         """
+        if (
+            not isinstance(max_iterations, int)
+            or isinstance(max_iterations, bool)
+            or max_iterations < 1
+        ):
+            raise ValueError("max_iterations must be a positive integer.")
+        self.max_iterations = max_iterations
         validate_vehicle_array(array)
-        self.array = array
+        self.array = array.transpose(*REQUIRED_ARRAY_DIMS).copy(deep=True)
+        self._selection_stack = []
         self.country = country
 
         self.vehicle_type = detect_vehicle_type(list(self.array.coords["size"].values))
@@ -107,28 +128,44 @@ class VehicleModel:
         )
 
         self.gradient = gradient
-        self.energy_storage = energy_storage or {}
-        self.energy_target = energy_target or {2025: 0.85, 2030: 0.7, 2050: 0.6}
-        self.payload = payload or {}
-        self.annual_mileage = annual_mileage or {}
+        self.energy_storage = (
+            deepcopy(energy_storage) if energy_storage is not None else {}
+        )
+        self.energy_target = (
+            deepcopy(energy_target)
+            if energy_target is not None
+            else {2025: 0.85, 2030: 0.7, 2050: 0.6}
+        )
+        self.payload = deepcopy(payload) if payload is not None else {}
+        self.annual_mileage = (
+            deepcopy(annual_mileage) if annual_mileage is not None else {}
+        )
         self.energy = None
-        self.electric_utility_factor = electric_utility_factor
+        self.electric_utility_factor = deepcopy(electric_utility_factor)
         self.drop_hybrids = drop_hybrids
-        self.energy_consumption = energy_consumption or None
-        self.engine_efficiency = engine_efficiency or None
-        self.transmission_efficiency = transmission_efficiency or None
+        self.energy_consumption = (
+            deepcopy(energy_consumption) if energy_consumption is not None else None
+        )
+        self.engine_efficiency = (
+            deepcopy(engine_efficiency) if engine_efficiency is not None else None
+        )
+        self.transmission_efficiency = (
+            deepcopy(transmission_efficiency)
+            if transmission_efficiency is not None
+            else None
+        )
 
         # a range to reach can be defined by the user
-        self.target_range = target_range
+        self.target_range = deepcopy(target_range)
         # a curb mass to reach can be defined by the user
-        self.target_mass = target_mass
+        self.target_mass = deepcopy(target_mass)
         # overrides the engine/motor power
-        self.power = power
+        self.power = deepcopy(power)
 
         self.bs = BackgroundSystemModel()
 
         if fuel_blend:
-            self.fuel_blend = self.check_fuel_blend(fuel_blend)
+            self.fuel_blend = self.check_fuel_blend(deepcopy(fuel_blend))
         else:
             self.fuel_blend = self.bs.define_fuel_blends(
                 self.array.powertrain.values, self.country, self.array.year.values
@@ -162,7 +199,9 @@ class VehicleModel:
         if isinstance(key, str):
             key = [key]
 
-        self.__cache = self.array
+        if not hasattr(self, "_selection_stack"):
+            self._selection_stack = []
+        self._selection_stack.append(self.array)
         self.array = self.array.loc[
             dict(powertrain=[k for k in key if k in self.array.powertrain])
         ]
@@ -172,8 +211,7 @@ class VehicleModel:
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        self.array = self.__cache
-        del self.__cache
+        self.array = self._selection_stack.pop()
 
     def __getitem__(self, key: Union[str, List]) -> xr.DataArray:
         """
@@ -188,6 +226,15 @@ class VehicleModel:
 
     def __setitem__(self, key, value):
         self.array.loc[{"parameter": key}] = value
+
+    def iterate_sizing(self, parameter, rtol, mask=None):
+        """Iterate sizing with per-vehicle/sample convergence diagnostics."""
+        return iterate_until_converged(
+            lambda: self[parameter] if mask is None else self[parameter].where(mask, 0),
+            label=parameter,
+            rtol=rtol,
+            max_iterations=self.max_iterations,
+        )
 
     def set_all(self):
         """
@@ -210,50 +257,51 @@ class VehicleModel:
         pass
 
     def set_battery_preferences(self):
-        l_parameters = [
-            p
-            for p in [
-                "battery cell energy density",
-                "battery cell mass share",
-                "battery cycle life",
-                "energy battery cost per kWh",
-            ]
-            if p in self.array.parameter.values
-        ]
+        """Apply physical chemistry data independently of optional cost data.
 
-        for key, val in self.energy_storage.get("electric", {}).items():
-            pwt, size, year = key
-            parameters = [
-                f"{p}, {val}"
-                for p in l_parameters
-                if f"{p}, {val}" in self.array.parameter.values
-            ]
-
-            if (
-                val is not None
-                and pwt in self.array.powertrain.values
-                and year in self.array.year.values
-                and size in self.array["size"].values
-                and l_parameters
-                and len(parameters) == len(l_parameters)
+        Generic battery costs are retained when a chemistry-specific cost is
+        absent. ``battery_cost_fallbacks`` records those selections. Missing
+        physical properties are errors, rather than silently leaving zeroes.
+        """
+        physical = (
+            "battery cell energy density",
+            "battery cell mass share",
+            "battery cycle life",
+        )
+        cost = "energy battery cost per kWh"
+        labels = set(self.array.parameter.values)
+        fallbacks = []
+        for key, chemistry in self.energy_storage.get("electric", {}).items():
+            if not isinstance(key, tuple) or len(key) != 3:
+                raise ValueError(
+                    "Battery selection keys must be (powertrain, size, year)."
+                )
+            powertrain, size, year = key
+            if chemistry is None or any(
+                value not in self.array[dim].values
+                for dim, value in (
+                    ("powertrain", powertrain),
+                    ("size", size),
+                    ("year", year),
+                )
             ):
-                cell_params = self.array.loc[
-                    dict(
-                        powertrain=pwt,
-                        size=size,
-                        year=year,
-                        parameter=parameters,
+                continue
+            selection = dict(powertrain=powertrain, size=size, year=year)
+            for parameter in (*physical, cost):
+                if parameter not in labels:
+                    continue
+                source = f"{parameter}, {chemistry}"
+                if source not in labels:
+                    if parameter == cost:
+                        fallbacks.append((key, chemistry))
+                        continue
+                    raise ValueError(
+                        f"Missing {parameter!r} for chemistry {chemistry!r} at {key!r}."
                     )
-                ]
-
-                self.array.loc[
-                    dict(
-                        powertrain=pwt,
-                        size=size,
-                        year=year,
-                        parameter=l_parameters,
-                    )
-                ] = cell_params.values
+                self.array.loc[dict(selection, parameter=parameter)] = self.array.sel(
+                    dict(selection, parameter=source)
+                ).values
+        self.battery_cost_fallbacks = fallbacks
 
     def adjust_cost(self) -> None:
         """

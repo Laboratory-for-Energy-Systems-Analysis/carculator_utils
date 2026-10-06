@@ -42,6 +42,7 @@ unit:
   kilowatt hour: kWh
   kilometer: km
   ton kilometer: tkm
+  passenger kilometer: personkm
   megajoule: MJ
   unit: p
   square meter: m2

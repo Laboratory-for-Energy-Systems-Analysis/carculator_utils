@@ -1,6 +1,9 @@
 import json
+from copy import deepcopy
 from pathlib import Path
 
+import numpy as np
+import stats_arrays as sa
 from klausen import NamedParameters
 
 
@@ -68,8 +71,15 @@ class VehicleInputParameters(NamedParameters):
                 "override EXTRA in a downstream input-parameter subclass."
             )
 
-        parameters = load_parameters(self.DEFAULT if parameters is None else parameters)
-        extra = set(load_parameters(self.EXTRA if extra is None else extra))
+        parameters = deepcopy(
+            load_parameters(self.DEFAULT if parameters is None else parameters)
+        )
+        extra = load_parameters(self.EXTRA if extra is None else extra)
+        if not isinstance(extra, (list, tuple, set)) or not all(
+            isinstance(x, str) for x in extra
+        ):
+            raise ValueError("extra must be a sequence of parameter-name strings.")
+        extra = set(extra)
 
         if not isinstance(parameters, dict):
             raise ValueError(
@@ -98,6 +108,29 @@ class VehicleInputParameters(NamedParameters):
 
         self.years = sorted({o["year"] for o in parameters.values()})
         self.add_vehicle_parameters(parameters)
+
+    def stochastic(self, iterations=1000, seed=None):
+        """Sample with a local RNG; an explicit seed makes runs reproducible.
+
+        Existing ``stochastic(n)`` calls retain their unseeded behavior. Sampling
+        never resets or consumes NumPy's process-wide random state.
+        """
+        if (
+            isinstance(iterations, bool)
+            or not isinstance(iterations, (int, np.integer))
+            or iterations < 1
+        ):
+            raise ValueError("iterations must be a positive integer.")
+        keys = sorted(
+            key
+            for key in self.data
+            if self.data[key].get("kind") in ("distribution", None)
+        )
+        parameters = sa.UncertaintyBase.from_dicts(*[self.data[key] for key in keys])
+        rng = sa.MCRandomNumberGenerator(parameters, seed=seed)
+        samples = rng.generate(iterations)
+        self.iterations = int(iterations)
+        self.values = {key: row.reshape((-1,)) for key, row in zip(keys, samples)}
 
     def add_vehicle_parameters(self, parameters):
         """

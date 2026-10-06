@@ -8,6 +8,7 @@ import itertools
 import re
 import warnings
 from collections import defaultdict
+from copy import copy
 from datetime import datetime
 from functools import lru_cache
 from pathlib import Path
@@ -223,6 +224,10 @@ class Inventory:
         indicator: str = "midpoint",
         functional_unit: str = "vkm",
     ) -> None:
+        if method not in ("recipe", "ef"):
+            raise ValueError("method must be 'recipe' or 'ef'.")
+        if indicator not in ("midpoint", "endpoint"):
+            raise ValueError("indicator must be 'midpoint' or 'endpoint'.")
         self.vm = vm
 
         self.scope = {
@@ -381,39 +386,24 @@ class Inventory:
         return list(idx_cats.keys()), list_ind
 
     def get_load_factor(self):
-        # If the FU is in passenger-km, we normalize the results by
-        # the number of passengers
+        """Return loads aligned with result size/powertrain/year/sample axes."""
         if self.func_unit == "vkm":
-            load_factor = 1
-        elif self.func_unit == "pkm":
-            load_factor = self.array.sel(parameter="average passengers")
-            load_factor = np.resize(
-                load_factor.values,
-                (
-                    1,
-                    len(self.scope["size"]),
-                    len(self.scope["powertrain"]),
-                    len(self.scope["year"]),
-                    1,
-                    1,
-                ),
+            return 1
+        parameter = "average passengers" if self.func_unit == "pkm" else "cargo mass"
+        load = self.vm.array.sel(parameter=parameter).transpose(
+            "size", "powertrain", "year", "value"
+        )
+        if self.func_unit == "tkm":
+            load = load / 1000
+        active = self.vm.array.sel(parameter="TtW energy").transpose(*load.dims) > 0
+        invalid = (~np.isfinite(load) | (load <= 0)) & active
+        if bool(invalid.any()):
+            raise ValueError(
+                f"{self.func_unit} requires finite, positive {parameter} for active vehicles."
             )
-        else:
-            # ton kilometers
-            load_factor = self.array.sel(parameter="cargo mass") / 1000
-            load_factor = np.resize(
-                load_factor.values,
-                (
-                    1,
-                    len(self.scope["size"]),
-                    len(self.scope["powertrain"]),
-                    len(self.scope["year"]),
-                    1,
-                    1,
-                ),
-            )
-
-        return load_factor
+        # Unavailable vehicles contribute zero; avoid dividing that zero by zero.
+        values = load.where(active, 1).values
+        return values[None, :, :, :, None, :]
 
     def calculate_impacts(self, sensitivity=False):
         if self.scenario != "static":
@@ -546,29 +536,15 @@ class Inventory:
         # reshape the array to match the dimensions of the results table
         arr = arr.transpose(0, 3, 4, 5, 2, 1)
 
+        load_factor = self.get_load_factor()
         if sensitivity:
             results[...] = arr.sum(axis=-2)
-            results /= results.sel(value="reference")
-        else:
-            results[...] = arr
-
-        load_factor = self.get_load_factor()
-
-        # check that load_factor has the same number of dimensions
-        # otherwise, resize it
-        if isinstance(load_factor, np.ndarray):
-            if load_factor.ndim > results.ndim:
-                load_factor = np.resize(
-                    load_factor,
-                    (
-                        1,
-                        len(self.scope["size"]),
-                        len(self.scope["powertrain"]),
-                        len(self.scope["year"]),
-                        1,
-                    ),
-                )
-
+            if isinstance(load_factor, np.ndarray):
+                load_factor = np.squeeze(load_factor, axis=4)
+            results = results / load_factor
+            reference = results.sel(value="reference")
+            return results / reference.where(reference != 0)
+        results[...] = arr
         return results / load_factor
 
     def add_additional_activities(self):
@@ -1837,35 +1813,36 @@ class Inventory:
         self.A[:, idx, idx] = 1
 
     def change_functional_unit(self) -> None:
-        load_factor = self.get_load_factor()
-        idx_cars = self.find_input_indices((f"transport, {self.vm.vehicle_type}, ",))
-        idx_others = [i for i in range(self.A.shape[1]) if i not in idx_cars]
-
-        self.A[
-            np.ix_(
-                np.arange(self.iterations),
-                idx_others,
-                idx_cars,
+        """Convert this inventory once. Exports call this on a private copy."""
+        if (
+            self.func_unit == "vkm"
+            or getattr(self, "_converted_func_unit", None) == self.func_unit
+        ):
+            return
+        if getattr(self, "_converted_func_unit", None) is not None:
+            raise ValueError(
+                "Use a fresh inventory when changing an already converted functional unit."
             )
-        ] *= 1 / np.squeeze(load_factor).reshape(
-            -1, len(idx_cars), len(self.scope["year"])
+        factor = self.get_load_factor()[0, :, :, :, 0, :]
+        factor = factor.transpose(3, 0, 1, 2).reshape(
+            self.iterations, -1, len(self.scope["year"])
         )
-
-        # iterate through self.inputs and change the unit
-        keys_to_modify = {
-            key: value
-            for key, value in self.inputs.items()
-            if key[0].startswith(f"transport, {self.vm.vehicle_type}")
-        }
-
-        for key, value in keys_to_modify.items():
-            new_key = list(key)
-            new_key[2] = self.func_unit
-            del self.inputs[key]
-            self.inputs[tuple(new_key)] = value
-
-        # update self.rev_inputs
-        self.rev_inputs = {v: k for k, v in self.inputs.items()}
+        indices = self.find_input_indices((f"transport, {self.vm.vehicle_type}, ",))
+        others = [i for i in range(self.A.shape[1]) if i not in indices]
+        self.A[np.ix_(np.arange(self.iterations), others, indices)] /= factor[
+            :, None, :, :
+        ]
+        new_inputs = {}
+        for key, value in self.inputs.items():
+            if key[0].startswith(f"transport, {self.vm.vehicle_type}, "):
+                unit = {"pkm": "passenger kilometer", "tkm": "ton kilometer"}[
+                    self.func_unit
+                ]
+                key = (*key[:2], unit, *key[3:])
+            new_inputs[key] = value
+        self.inputs = new_inputs
+        self.rev_inputs = {value: key for key, value in new_inputs.items()}
+        self._converted_func_unit = self.func_unit
 
     def export_lci(
         self,
@@ -1890,15 +1867,24 @@ class Inventory:
         if ecoinvent_version not in ["3.9", "3.10"]:
             raise ValueError("ecoinvent_version must be either '3.9' or '3.10'")
 
-        if self.func_unit != "vkm":
-            self.change_functional_unit()
+        if software not in ("brightway2", "simapro"):
+            raise ValueError("software must be 'brightway2' or 'simapro'.")
+        if format not in ("file", "string", "bw2io") or (
+            software == "simapro" and format == "bw2io"
+        ):
+            raise ValueError("Unsupported inventory export format for this software.")
+        export = copy(self)
+        export.A = self.A.copy()
+        export.inputs = self.inputs.copy()
+        export.rev_inputs = self.rev_inputs.copy()
+        export.change_functional_unit()
 
         from .export import ExportInventory
 
         lci = ExportInventory(
-            array=self.A,
+            array=export.A,
             vehicle_model=self.vm,
-            indices=self.rev_inputs,
+            indices=export.rev_inputs,
             db_name=f"{filename}_{self.vm.vehicle_type}_{datetime.now().strftime('%Y%m%d')}",
         )
 

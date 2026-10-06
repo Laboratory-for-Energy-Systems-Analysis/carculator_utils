@@ -137,7 +137,7 @@ class NoiseEmissionsModel:
         _nz = lambda x: np.where(x < 1, 1, x)
 
         array = np.repeat(
-            np.log10(_nz(_(self.velocity) / 70), where=(_(self.velocity) > 0)),
+            np.log10(_nz(_(self.velocity) / 70)),
             8,
             axis=-1,
         )
@@ -181,7 +181,7 @@ class NoiseEmissionsModel:
         _nz = lambda x: np.where(x < 1, 1, x)
 
         array = np.repeat(
-            np.log10(_nz((_(self.velocity) - 70) / 70), where=(_(self.velocity) > 0)),
+            np.log10(_nz((_(self.velocity) - 70) / 70)),
             8,
             axis=-1,
         )
@@ -237,14 +237,14 @@ class NoiseEmissionsModel:
         """
 
         # rolling noise, in dB, for each second of the driving_cycles
-        rolling = self.rolling_noise()
+        rolling = np.asarray(self.rolling_noise(), dtype=np.float64)
         # propulsion noise, in dB, for each second of the driving_cycles
-        propulsion = self.propulsion_noise()
+        propulsion = np.asarray(self.propulsion_noise(), dtype=np.float64)
 
         # Convert each source from dB to Watts (or J/s) before summing.
         sound_power = np.where(
             _(self.velocity) > 0,
-            (10**-12) * (10 ** (rolling / 10) + 10 ** (propulsion / 10)),
+            10.0 ** (rolling / 10 - 12) + 10.0 ** (propulsion / 10 - 12),
             0,
         )
 

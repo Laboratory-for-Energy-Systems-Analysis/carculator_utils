@@ -1092,18 +1092,29 @@ class ExportInventory:
                 d["database"] = f"{self.db_name}_{year}"
 
             if export_format == "bw2io":
-                import bw2io
+                try:
+                    import bw2io
+                except ImportError as exc:
+                    raise ImportError(
+                        "Brightway export requires carculator_utils[brightway]."
+                    ) from exc
 
                 lci = bw2io.importers.base_lci.LCIImporter(self.db_name)
                 lci.data = data
                 # remove keys with empty values
                 lci.data = [{k: v for k, v in d.items() if v} for d in lci.data]
                 lci.db_name = f"{self.db_name}_{year}"
-                return lci
+                importers.append(lci)
+                continue
 
             formatted_data = self.format_data_for_lci_for_bw2(data)
             output = io.BytesIO() if export_format == "string" else filepath_export
-            import xlsxwriter
+            try:
+                import xlsxwriter
+            except ImportError as exc:
+                raise ImportError(
+                    "Excel export requires carculator_utils[excel]."
+                ) from exc
 
             workbook = xlsxwriter.Workbook(output, {"in_memory": True})
 
@@ -1131,12 +1142,13 @@ class ExportInventory:
 
             if export_format == "file":
                 workbook.close()
+                importers.append(filepath_export)
             else:
                 # return string
                 workbook.close()
                 output.seek(0)
                 importers.append(output.read())
 
-        if export_format == "file":
-            return filepath_export
+        if export_format in ("file", "bw2io") and len(importers) == 1:
+            return importers[0]
         return importers

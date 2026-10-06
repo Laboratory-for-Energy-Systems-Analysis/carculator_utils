@@ -39,19 +39,36 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
             "The argument passed is not an object of the TruckInputParameter class"
         )
 
-    if scope is None:
-        scope = {
-            "size": input_parameters.sizes,
-            "powertrain": input_parameters.powertrains,
-            "year": input_parameters.years,
-        }
-    else:
-        if "size" not in scope:
-            scope["size"] = input_parameters.sizes
-        if "powertrain" not in scope:
-            scope["powertrain"] = input_parameters.powertrains
-        if "year" not in scope:
-            scope["year"] = input_parameters.years
+    # Own the scope: PHEV expansion must not alter caller input or parameter metadata.
+    scope = {} if scope is None else dict(scope)
+    for dimension, defaults in (
+        ("size", input_parameters.sizes),
+        ("powertrain", input_parameters.powertrains),
+        ("year", input_parameters.years),
+    ):
+        values = scope.get(dimension, defaults)
+        if isinstance(values, (str, bytes)) or not hasattr(values, "__iter__"):
+            raise ValueError(f"scope[{dimension!r}] must be a nonempty sequence.")
+        scope[dimension] = list(values)
+        if not scope[dimension] or len(set(scope[dimension])) != len(scope[dimension]):
+            raise ValueError(
+                f"scope[{dimension!r}] must contain unique, nonempty values."
+            )
+
+    if sensitivity:
+        if input_parameters.iterations:
+            raise ValueError(
+                "Sensitivity requires static parameters; call .static() first."
+            )
+        mappings, reference = fill_xarray_from_input_parameters(
+            input_parameters, scope=scope
+        )
+        labels = ["reference"] + input_parameters.input_parameters
+        array = reference.isel(value=0, drop=True).expand_dims(value=labels)
+        array = array.transpose(*reference.dims).copy(deep=True)
+        for parameter in labels[1:]:
+            array.loc[dict(parameter=parameter, value=parameter)] *= 1.1
+        return mappings, array
 
     # Make sure to include PHEV-e and PHEV-c-d if
     # PHEV-d is listed
@@ -168,7 +185,9 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
     )
 
     df = df.drop(cols, axis=1).join(df1.droplevel(1))
-    df[cols] = df[cols].apply(lambda x: x.ffill())
+    # Object columns contain numeric coordinates mixed with strings. Infer
+    # their types before filling so pandas does not silently downcast them.
+    df[cols] = df[cols].infer_objects().ffill()
 
     df = df.explode("data", ignore_index=False)
     df["value"] = df.groupby(["size", "powertrain", "parameter", "year"]).cumcount()
@@ -200,4 +219,10 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
         for param in params[1:]:
             array.loc[dict(parameter=param, value=param)] *= 1.1
 
-    return (size_dict, powertrain_dict, parameter_dict, year_dict), array
+    # xarray sorts coordinates when building from a Series; mapping indices must
+    # describe that actual ordering, rather than the requested scope order.
+    mappings = tuple(
+        {label: index for index, label in enumerate(array[dim].values.tolist())}
+        for dim in ("size", "powertrain", "parameter", "year")
+    )
+    return mappings, array
