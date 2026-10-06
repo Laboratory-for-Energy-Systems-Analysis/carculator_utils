@@ -132,3 +132,6 @@ venv.bak/
 
 # IntelliJ
 /out/
+
+# Local agent guidance
+AGENTS.md
