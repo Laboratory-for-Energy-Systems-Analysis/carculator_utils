@@ -45,3 +45,35 @@ def iterate_until_converged(
         if converged.all():
             return
         previous = current.copy()
+
+
+def capital_recovery_factor(rate, years):
+    """Annual payment per unit of capital, for end-of-year payments.
+
+    ``rate`` is the annual fractional interest rate and ``years`` the positive
+    lifetime in years. Scalars, numpy arrays and labelled xarray arrays are
+    supported. The zero-rate limit is ``1 / years``; log1p/expm1 avoid loss of
+    precision near zero interest. Invalid financial inputs raise ValueError.
+    """
+    import xarray as xr
+
+    rate = (
+        rate.astype(float) if hasattr(rate, "astype") else np.asarray(rate, dtype=float)
+    )
+    years = (
+        years.astype(float)
+        if hasattr(years, "astype")
+        else np.asarray(years, dtype=float)
+    )
+    if np.any(~np.isfinite(rate)) or np.any(rate <= -1):
+        raise ValueError("Annual interest rate must be finite and greater than -1.")
+    if np.any(~np.isfinite(years)) or np.any(years <= 0):
+        raise ValueError("Lifetime in years must be positive and finite.")
+    safe_rate = rate + (rate == 0)
+    factor = safe_rate / -np.expm1(-years * np.log1p(safe_rate))
+    where = (
+        xr.where
+        if isinstance(rate, xr.DataArray) or isinstance(years, xr.DataArray)
+        else np.where
+    )
+    return where(rate == 0, 1 / years, factor)

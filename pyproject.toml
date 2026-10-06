@@ -23,7 +23,7 @@ classifiers = [
 Homepage = "https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils"
 
 [project.optional-dependencies]
-test = ["pytest>=8", "pytest-cov", "openpyxl", "xlsxwriter"]
+test = ["pytest>=8", "pytest-cov", "hypothesis>=6", "openpyxl", "xlsxwriter"]
 docs = ["sphinx", "sphinx-rtd-theme"]
 excel = ["xlsxwriter"]
 # Legacy bw2io compares tuple versions and cannot import current bw2data.
