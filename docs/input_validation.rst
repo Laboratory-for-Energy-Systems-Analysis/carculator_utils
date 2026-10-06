@@ -1,5 +1,5 @@
-Input validation
-================
+Input validation and family verification
+========================================
 
 These contracts are shared by ``carculator``, ``carculator_truck``,
 ``carculator_bus``, and ``carculator_two_wheeler``.
@@ -68,3 +68,46 @@ inventory index. An unresolved supplier raises ``KeyError`` naming the category,
 component, fuel type, and supplier before the large inventory matrices are
 allocated. A fuel specification alone does not guarantee a corresponding
 inventory supplier; missing mappings require a justified data update.
+
+Testing the vehicle family
+--------------------------
+
+The ``family`` pytest marker covers small real models from all four vehicle
+packages: sizing and mass balance, coordinate and caller-data preservation,
+sample-specific functional-unit normalization, and repeatable static exports
+for multiple years. It also covers car PHEVs, bus charging modes, human and
+electric bicycles, and multi-year fuel blends. Static exports use one value
+sample; multi-sample inventories are tested through LCIA.
+
+Install all sibling checkouts into a Python 3.11 or 3.12 environment:
+
+.. code-block:: bash
+
+    python -m pip install -e ".[test,excel,brightway]" \
+      -e ../carculator -e ../carculator_truck \
+      -e ../carculator_bus -e ../carculator_two_wheeler
+    python -m pytest tests/test_vehicle_family.py
+
+Absent sibling packages are skipped during an ordinary utils-only test run.
+Set the environment variable ``CARCULATOR_REQUIRE_FAMILY=1`` to make missing
+packages fail. The family CI job requires all four packages on Python 3.11 and
+3.12 and runs the existing artifact verifier:
+
+.. code-block:: bash
+
+    python scripts/verify_installation.py \
+      --repositories . ../carculator ../carculator_truck \
+        ../carculator_bus ../carculator_two_wheeler \
+      --output /tmp/carculator-family-verification --run-tests
+
+The output directory must not already exist. The verifier builds wheels and
+source distributions, checks bundled resource hashes, runs all suites against
+installed wheels, and compares offline model results from wheel and rebuilt
+source-distribution installations. Dependency installation requires network
+access.
+
+CI uses the candidate utils revision and the siblings' default branches.
+Repository variables ``CARCULATOR_REF``, ``CARCULATOR_TRUCK_REF``,
+``CARCULATOR_BUS_REF``, and ``CARCULATOR_TWO_WHEELER_REF`` can select branches,
+tags, or commit hashes for coordinated compatibility checks. Existing
+utils-only jobs retain the Linux, macOS, and Windows matrix.

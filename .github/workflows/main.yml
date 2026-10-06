@@ -37,3 +37,60 @@ jobs:
             verification/*-freeze.txt
             verification/*-tests.xml
           if-no-files-found: error
+  family:
+    name: Vehicle family (Python ${{ matrix.python }})
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12']
+    env:
+      CARCULATOR_REQUIRE_FAMILY: '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          path: carculator_utils
+          persist-credentials: false
+      - uses: actions/checkout@v7
+        with:
+          repository: Laboratory-for-Energy-Systems-Analysis/carculator
+          ref: ${{ vars.CARCULATOR_REF || 'master' }}
+          path: carculator
+          persist-credentials: false
+      - uses: actions/checkout@v7
+        with:
+          repository: Laboratory-for-Energy-Systems-Analysis/carculator_truck
+          ref: ${{ vars.CARCULATOR_TRUCK_REF || 'master' }}
+          path: carculator_truck
+          persist-credentials: false
+      - uses: actions/checkout@v7
+        with:
+          repository: Laboratory-for-Energy-Systems-Analysis/carculator_bus
+          ref: ${{ vars.CARCULATOR_BUS_REF || 'master' }}
+          path: carculator_bus
+          persist-credentials: false
+      - uses: actions/checkout@v7
+        with:
+          repository: Laboratory-for-Energy-Systems-Analysis/carculator_two_wheeler
+          ref: ${{ vars.CARCULATOR_TWO_WHEELER_REF || 'main' }}
+          path: carculator_two_wheeler
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify the candidate utils with all vehicle packages
+        run: >-
+          python carculator_utils/scripts/verify_installation.py
+          --repositories carculator_utils carculator carculator_truck carculator_bus carculator_two_wheeler
+          --output verification-family --run-tests
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: family-verification-${{ matrix.python }}
+          path: |
+            verification-family/report.json
+            verification-family/installation.log
+            verification-family/*-freeze.txt
+            verification-family/*-tests.xml
+          if-no-files-found: error
