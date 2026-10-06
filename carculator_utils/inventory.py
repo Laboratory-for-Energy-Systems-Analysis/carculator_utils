@@ -197,6 +197,24 @@ def format_array(array):
     return reshaped_dataarray
 
 
+def validate_fuel_mappings(fuel_blend, inputs):
+    """Reject unresolved fuel suppliers before allocating inventory matrices.
+
+    :param fuel_blend: Completed model fuel specifications.
+    :param inputs: Activity labels mapped to inventory indices.
+    :raises KeyError: A selected fuel supplier is absent from the inventory.
+    """
+    for fuel, components in fuel_blend.items():
+        for role in ("primary", "secondary"):
+            component = components[role]
+            supplier = tuple(component["name"])
+            if supplier not in inputs:
+                raise KeyError(
+                    f"Fuel blend {fuel!r}, {role} fuel {component['type']!r}: "
+                    f"supplier {supplier!r} is absent from the inventory index."
+                )
+
+
 class Inventory:
     """
     Build and solve the inventory for results characterization and inventory export
@@ -250,6 +268,7 @@ class Inventory:
         self.background_configuration.update(background_configuration or {})
 
         self.inputs = get_dict_input()
+        validate_fuel_mappings(self.vm.fuel_blend, self.inputs)
 
         self.bs = BackgroundSystemModel()
         self.add_additional_activities()

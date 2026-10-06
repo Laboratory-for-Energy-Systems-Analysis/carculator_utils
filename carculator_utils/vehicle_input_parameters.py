@@ -1,5 +1,7 @@
 import json
 from copy import deepcopy
+from itertools import product
+from numbers import Integral, Real
 from pathlib import Path
 
 import numpy as np
@@ -17,6 +19,64 @@ def load_parameters(obj):
     else:
         # Already in correct form, just return
         return obj
+
+
+def validate_parameters(parameters, *, check_duplicates=False):
+    """Validate vehicle parameter records without changing their values.
+
+    :param parameters: Mapping from record identifiers to parameter definitions.
+    :param check_duplicates: Reject overlapping name/size/powertrain/year cells.
+        Disabled by default to preserve precedence in existing bundled data.
+    :raises ValueError: A record is malformed, nonfinite, or has invalid bounds.
+    """
+    if not isinstance(parameters, dict):
+        raise ValueError("Parameters must be a dictionary of parameter records.")
+
+    cells = {}
+    for identifier, record in parameters.items():
+        context = f"Parameter record {identifier!r}"
+        if not isinstance(record, dict):
+            raise ValueError(f"{context} must be a dictionary.")
+        name = record.get("name")
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError(f"{context}: name must be a nonempty string.")
+        context += f" ({name!r})"
+        for field in ("sizes", "powertrain"):
+            labels = record.get(field)
+            if (
+                not isinstance(labels, (list, tuple))
+                or not labels
+                or not all(isinstance(x, str) and x.strip() for x in labels)
+            ):
+                raise ValueError(f"{context}: {field} must be nonempty string labels.")
+            if len(labels) != len(set(labels)):
+                raise ValueError(f"{context}: {field} contains duplicate labels.")
+        year = record.get("year")
+        if isinstance(year, (bool, np.bool_)) or not isinstance(year, Integral):
+            raise ValueError(f"{context}: year must be an integer.")
+        if "amount" not in record:
+            raise ValueError(f"{context}: amount is required.")
+        for field in ("amount", "loc", "minimum", "maximum", "scale", "shape"):
+            if field not in record:
+                continue
+            value = record[field]
+            if (
+                isinstance(value, (bool, np.bool_))
+                or not isinstance(value, Real)
+                or not np.isfinite(value)
+            ):
+                raise ValueError(f"{context}: {field} must be a finite number.")
+        if record.get("minimum", -np.inf) > record.get("maximum", np.inf):
+            raise ValueError(f"{context}: minimum must not exceed maximum.")
+        if check_duplicates:
+            for size, powertrain in product(record["sizes"], record["powertrain"]):
+                cell = (name, size, powertrain, year)
+                if cell in cells:
+                    raise ValueError(
+                        f"{context}: duplicate cell {cell!r}, "
+                        f"already defined by record {cells[cell]!r}."
+                    )
+                cells[cell] = identifier
 
 
 class VehicleInputParameters(NamedParameters):
@@ -81,18 +141,7 @@ class VehicleInputParameters(NamedParameters):
             raise ValueError("extra must be a sequence of parameter-name strings.")
         extra = set(extra)
 
-        if not isinstance(parameters, dict):
-            raise ValueError(
-                "Parameters are not correct type (expected `dict`, got `{}`)".format(
-                    type(parameters)
-                )
-            )
-        if not isinstance(extra, set):
-            raise ValueError(
-                "Extra parameters are not correct type (expected `set`, got `{}`)".format(
-                    type(extra)
-                )
-            )
+        validate_parameters(parameters)
         self.sizes = sorted(
             {size for o in parameters.values() for size in o.get("sizes", [])}
         )

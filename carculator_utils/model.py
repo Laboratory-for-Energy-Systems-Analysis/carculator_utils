@@ -1215,65 +1215,72 @@ class VehicleModel:
         )
 
     def check_fuel_blend(self, fuel_blend: dict) -> dict:
+        """Validate and complete fuel shares without modifying caller data.
+
+        Shares may be scalars or one-dimensional arrays with one entry per model
+        year. Primary and secondary shares must sum to one for every year.
+        """
+        if not isinstance(fuel_blend, dict):
+            raise ValueError("fuel_blend must be a dictionary.")
+        fuel_blend = deepcopy(fuel_blend)
         default_specs = load_default_specs_for_fuels()
+        n_years = self.array.sizes["year"]
+
+        def validate_component(fuel, role, component):
+            context = f"Fuel blend {fuel!r}, {role}"
+            if not isinstance(component, dict):
+                raise ValueError(f"{context} must be a dictionary.")
+            fuel_type = component.get("type")
+            if not isinstance(fuel_type, str) or fuel_type not in self.bs.fuel_specs:
+                raise ValueError(f"{context}: unknown fuel type {fuel_type!r}.")
+            if "share" not in component:
+                raise ValueError(f"{context}: share is required.")
+            try:
+                share = np.asarray(component["share"])
+            except (TypeError, ValueError) as exc:
+                raise ValueError(f"{context}: share must be numeric.") from exc
+            if share.dtype.kind not in "iuf":
+                raise ValueError(f"{context}: share must be numeric.")
+            if share.ndim > 1 or share.size not in (1, n_years):
+                raise ValueError(
+                    f"{context}: share must be scalar or have one entry per "
+                    f"model year ({self.array.year.values.tolist()})."
+                )
+            if not np.isfinite(share).all() or ((share < 0) | (share > 1)).any():
+                raise ValueError(f"{context}: shares must be finite and within [0, 1].")
+            component["share"] = np.broadcast_to(share, (n_years,)).astype(float)
+            specification = self.bs.fuel_specs[fuel_type]
+            component.setdefault("name", tuple(specification["name"]))
+            component.setdefault("CO2", specification["co2"])
+            component.setdefault("biogenic share", specification["biogenic_share"])
+            return component
+
         for fuel, specs in fuel_blend.items():
-            if "primary" not in specs:
-                raise ValueError(f"Primary fuel not specified for {fuel}")
-
-            primary = specs["primary"]
-
-            if "share" not in primary:
-                raise ValueError(f"Primary fuel share not specified for {fuel}")
-
-            if not isinstance(primary["share"], np.ndarray):
-                primary["share"] = np.array(primary["share"])
-
-            if "type" not in primary:
-                raise ValueError(f"Primary fuel type not specified for {fuel}")
-
-            primary.setdefault(
-                "name", tuple(self.bs.fuel_specs[primary["type"]]["name"])
-            )
-            primary.setdefault("CO2", self.bs.fuel_specs[primary["type"]]["co2"])
-            primary.setdefault(
-                "biogenic share", self.bs.fuel_specs[primary["type"]]["biogenic_share"]
-            )
-
-            secondary = specs.get(
-                "secondary",
-                {
-                    "type": (
-                        default_specs[fuel]["secondary"]
-                        if default_specs[fuel]["secondary"] != primary["type"]
-                        else [
-                            f
-                            for f in default_specs[fuel]["all"]
-                            if f != primary["type"]
-                        ][0]
-                    ),
-                    "share": np.array([1]) - primary["share"],
-                },
-            )
-            specs["secondary"] = secondary
-
-            if "share" not in secondary:
-                raise ValueError(f"Secondary fuel share not specified for {fuel}")
-
-            if not isinstance(secondary["share"], np.ndarray):
-                secondary["share"] = np.array(secondary["share"])
-
-            if "type" not in secondary:
-                raise ValueError(f"Secondary fuel type not specified for {fuel}")
-
-            secondary.setdefault(
-                "name", tuple(self.bs.fuel_specs[secondary["type"]]["name"])
-            )
-            secondary.setdefault("CO2", self.bs.fuel_specs[secondary["type"]]["co2"])
-            secondary.setdefault(
-                "biogenic share",
-                self.bs.fuel_specs[secondary["type"]]["biogenic_share"],
-            )
-
+            if fuel not in default_specs:
+                raise ValueError(f"Unknown fuel blend category {fuel!r}.")
+            if not isinstance(specs, dict) or "primary" not in specs:
+                raise ValueError(f"Primary fuel not specified for {fuel}.")
+            primary = validate_component(fuel, "primary", specs["primary"])
+            if "secondary" not in specs:
+                secondary_type = default_specs[fuel]["secondary"]
+                if secondary_type == primary["type"]:
+                    secondary_type = next(
+                        candidate
+                        for candidate in default_specs[fuel]["all"]
+                        if candidate != primary["type"]
+                    )
+                specs["secondary"] = {
+                    "type": secondary_type,
+                    "share": 1 - primary["share"],
+                }
+            secondary = validate_component(fuel, "secondary", specs["secondary"])
+            if not np.allclose(
+                primary["share"] + secondary["share"], 1, rtol=0, atol=1e-7
+            ):
+                raise ValueError(
+                    f"Fuel blend {fuel!r}: primary and secondary shares "
+                    "must sum to one for every model year."
+                )
         return fuel_blend
 
     def set_average_lhv(self) -> None:

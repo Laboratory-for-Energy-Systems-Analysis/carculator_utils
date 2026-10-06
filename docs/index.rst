@@ -68,6 +68,7 @@ User's Guide
 
    installation
    usage
+   input_validation
    modeling
    structure
    validity
