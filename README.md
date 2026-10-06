@@ -2,6 +2,9 @@
 
 
 Base classes and functions for the carculator package suite.
+
+Python **3.12** is required (`>=3.12,<3.13`).
+
 Provides base classes to:
 
 * carculator

@@ -7,13 +7,12 @@ name = "carculator_utils"
 dynamic = ["version"]
 description = "Shared vehicle life cycle assessment calculations and inventories"
 readme = "README.md"
-requires-python = ">=3.11,<3.13"
+requires-python = ">=3.12,<3.13"
 license = {file = "LICENSE"}
 authors = [{name = "Romain Sacchi", email = "romain.sacchi@psi.ch"}]
 dependencies = ["numpy>=1.26.4,<2", "pandas>=2.2.3", "scipy>=1.11", "xarray>=2024.1.0", "numexpr", "klausen", "stats_arrays>=0.6", "PyYAML", "pyprind", "pycountry"]
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Scientific/Engineering",
     "License :: OSI Approved :: BSD License",

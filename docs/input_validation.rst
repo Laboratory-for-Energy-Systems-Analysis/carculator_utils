@@ -79,7 +79,7 @@ for multiple years. It also covers car PHEVs, bus charging modes, human and
 electric bicycles, and multi-year fuel blends. Static exports use one value
 sample; multi-sample inventories are tested through LCIA.
 
-Install all sibling checkouts into a Python 3.11 or 3.12 environment:
+Install all sibling checkouts into a Python 3.12 environment:
 
 .. code-block:: bash
 
@@ -90,8 +90,8 @@ Install all sibling checkouts into a Python 3.11 or 3.12 environment:
 
 Absent sibling packages are skipped during an ordinary utils-only test run.
 Set the environment variable ``CARCULATOR_REQUIRE_FAMILY=1`` to make missing
-packages fail. The family CI job requires all four packages on Python 3.11 and
-3.12 and runs the existing artifact verifier:
+packages fail. The family CI job requires all four packages on Python 3.12
+and runs the existing artifact verifier:
 
 .. code-block:: bash
 
