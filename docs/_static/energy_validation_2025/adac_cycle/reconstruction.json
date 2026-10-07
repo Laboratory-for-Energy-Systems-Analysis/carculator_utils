@@ -1,0 +1,57 @@
+{
+  "source_url": "https://assets.adac.de/image/upload/v1721027897/ADAC-eV/KOR/Text/PDF/ecotest-methodik-ab-04-2021_pg5juw.pdf",
+  "pdf_sha256": "dc745309546ab8a9f70194750947b09fdd8d36d593084528c3b5adef3aaada58",
+  "source_page": 3,
+  "source_figure": 3,
+  "image_sha256": "78eb8738df451170efc5f71afbf27f2985cafcfc99932032c469930d8572fa43",
+  "numerical_wltc_source": "carculator_utils/data/driving_cycles/car.csv",
+  "numerical_wltc_sha256": "595797fb8cef651d4f4eaf0df0c08b4e419db77d9421b179ee5ef5edc619ca2f",
+  "join_second": 1767,
+  "x0": 61.5,
+  "x_pixels_per_second": 0.4713157894736842,
+  "y0": 600.0,
+  "y_pixels_per_kmh": 3.9285714285714284,
+  "moving_prefix_median_absolute_error_kmh": 0.922832535885064,
+  "moving_prefix_p95_absolute_error_kmh": 8.358801913875617,
+  "variants": {
+    "wltc_reference": {
+      "samples": 1801,
+      "distance_km": 23.26238888888889,
+      "max_speed_kmh": 131.3,
+      "sha256": "8e55b301e39f22a65379e41bd9c39b5d6646eea7bd1f3b21a9dcd113ece4b1a5"
+    },
+    "adac_graph_nominal": {
+      "samples": 1961,
+      "distance_km": 28.431836838118027,
+      "max_speed_kmh": 131.3,
+      "sha256": "e5588a2641f38e4973087391d77a19318ecbeee7789008370a53220930bc5217"
+    },
+    "adac_tail_short": {
+      "samples": 1951,
+      "distance_km": 28.157520387321977,
+      "max_speed_kmh": 131.3,
+      "sha256": "38a56bfe1bde472c27973cccdc5c30b5c5d8fc145854893b09bdf2e08abe697b"
+    },
+    "adac_tail_long": {
+      "samples": 1971,
+      "distance_km": 28.706447804928988,
+      "max_speed_kmh": 131.3,
+      "sha256": "6e076ee1295ad4217ecbb0344610cd3147e3ea536b3bf35779646e0ed16215b3"
+    },
+    "adac_tail_gentle_acceleration": {
+      "samples": 2033,
+      "distance_km": 30.59872429226474,
+      "max_speed_kmh": 131.3,
+      "sha256": "3946cc6ecb8f656b3a5d7fd792d7e1e104bfaded1221a0f2969c2cadb09f5148"
+    }
+  },
+  "status": "Graph reconstruction, not original ADAC or measured vehicle speed data",
+  "limitations": [
+    "Manual axis calibration; raster resolves roughly 2.1 seconds per pixel",
+    "Numerical WLTC prefix preserved; agreement with graph checked, not proof of exact ADAC trace",
+    "Sharp motorway accelerations may exceed vehicle power; inspect run diagnostics",
+    "Tail +/-5% timing is an illustrative sensitivity, not a statistical confidence interval",
+    "Gentle-acceleration probe retimes the ending to at most 0.25 m/s2 positive acceleration; preserves waypoints, changes time/distance, is not an ADAC test trace",
+    "No temperature, HVAC, road-load or SOC matching is implied"
+  ]
+}

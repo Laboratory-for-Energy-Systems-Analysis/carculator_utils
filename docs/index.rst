@@ -75,6 +75,7 @@ User's Guide
    energy_validation_2025
    energy_measurements
    energy_model_repairs
+   adac_cycle_comparison
 
 API Reference
 -------------

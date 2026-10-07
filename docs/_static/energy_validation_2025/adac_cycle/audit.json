@@ -1,0 +1,10 @@
+{
+  "source_2019_url": "https://www.adac.de/-/media/pdf/tet/ecotest/ecotest-methodik-ab-02-2019.pdf",
+  "source_2019_sha256": "9f0ed65c8e183837ff8968be58fe64570c70d1a587d40fb93fbea7e5d6372044",
+  "2019_2021_figure_check": "Visually matching electric-cycle diagram; embedded images differ in encoding and width (1007 vs 1008), not asserted byte-identical",
+  "cycle_files_verified": 5,
+  "full_runs": 24,
+  "numerical_wltc_prefix_preserved": true,
+  "no_power_exceedances_in_gentle_probe": true,
+  "original_adac_numerical_trace_obtained": false
+}

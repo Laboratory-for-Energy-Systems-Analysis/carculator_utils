@@ -3,6 +3,10 @@ Additional measured fuel and electricity consumption
 
 Collected 6 October 2026 to extend :doc:`energy_validation_2025`.
 
+For the subsequent mini-BEV cycle-only reconstruction experiment, see
+:doc:`adac_cycle_comparison`. Those approximate traces do not replace this
+original WLTC comparison snapshot.
+
 Latest corrected-model snapshot
 --------------------------------
 

@@ -1,0 +1,222 @@
+[
+  {
+    "observation_id": "adac_spring65_combined",
+    "vehicle": "Dacia Spring Electric 65 Expression",
+    "variant": "named_wltc",
+    "reported_kWh_100km": 16.7,
+    "model_kWh_100km": 13.281183594813257,
+    "error_pct": -20.47195452207631,
+    "distance_km": 23.262388888888886,
+    "power_exceeded_seconds": 0,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6497-dacia-spring-electric-65-expression/dacia-spring-electric-65-expression.pdf"
+  },
+  {
+    "observation_id": "adac_spring65_combined",
+    "vehicle": "Dacia Spring Electric 65 Expression",
+    "variant": "wltc_reference",
+    "reported_kWh_100km": 16.7,
+    "model_kWh_100km": 13.281183594813253,
+    "error_pct": -20.47195452207632,
+    "distance_km": 23.26238888888889,
+    "power_exceeded_seconds": 0,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6497-dacia-spring-electric-65-expression/dacia-spring-electric-65-expression.pdf"
+  },
+  {
+    "observation_id": "adac_spring65_combined",
+    "vehicle": "Dacia Spring Electric 65 Expression",
+    "variant": "adac_graph_nominal",
+    "reported_kWh_100km": 16.7,
+    "model_kWh_100km": 14.69606585387038,
+    "error_pct": -11.999605665446822,
+    "distance_km": 28.431836838333332,
+    "power_exceeded_seconds": 11,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6497-dacia-spring-electric-65-expression/dacia-spring-electric-65-expression.pdf"
+  },
+  {
+    "observation_id": "adac_spring65_combined",
+    "vehicle": "Dacia Spring Electric 65 Expression",
+    "variant": "adac_tail_short",
+    "reported_kWh_100km": 16.7,
+    "model_kWh_100km": 14.65152689142675,
+    "error_pct": -12.266306039360774,
+    "distance_km": 28.157520387777783,
+    "power_exceeded_seconds": 10,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6497-dacia-spring-electric-65-expression/dacia-spring-electric-65-expression.pdf"
+  },
+  {
+    "observation_id": "adac_spring65_combined",
+    "vehicle": "Dacia Spring Electric 65 Expression",
+    "variant": "adac_tail_long",
+    "reported_kWh_100km": 16.7,
+    "model_kWh_100km": 14.734586952064689,
+    "error_pct": -11.768940406798267,
+    "distance_km": 28.70644780388889,
+    "power_exceeded_seconds": 12,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6497-dacia-spring-electric-65-expression/dacia-spring-electric-65-expression.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_red_combined",
+    "vehicle": "Fiat 500e RED 23.8 kWh",
+    "variant": "named_wltc",
+    "reported_kWh_100km": 15.9,
+    "model_kWh_100km": 14.18526908634315,
+    "error_pct": -10.784471155074538,
+    "distance_km": 23.262388888888886,
+    "power_exceeded_seconds": 0,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6353-fiat-500e-238-kwh-red/fiat-500e-238-kwh-red.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_red_combined",
+    "vehicle": "Fiat 500e RED 23.8 kWh",
+    "variant": "wltc_reference",
+    "reported_kWh_100km": 15.9,
+    "model_kWh_100km": 14.185269086343148,
+    "error_pct": -10.784471155074549,
+    "distance_km": 23.26238888888889,
+    "power_exceeded_seconds": 0,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6353-fiat-500e-238-kwh-red/fiat-500e-238-kwh-red.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_red_combined",
+    "vehicle": "Fiat 500e RED 23.8 kWh",
+    "variant": "adac_graph_nominal",
+    "reported_kWh_100km": 15.9,
+    "model_kWh_100km": 15.592563827309238,
+    "error_pct": -1.933560834533099,
+    "distance_km": 28.431836838333332,
+    "power_exceeded_seconds": 7,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6353-fiat-500e-238-kwh-red/fiat-500e-238-kwh-red.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_red_combined",
+    "vehicle": "Fiat 500e RED 23.8 kWh",
+    "variant": "adac_tail_short",
+    "reported_kWh_100km": 15.9,
+    "model_kWh_100km": 15.5508543475681,
+    "error_pct": -2.1958846064899396,
+    "distance_km": 28.157520387777783,
+    "power_exceeded_seconds": 7,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6353-fiat-500e-238-kwh-red/fiat-500e-238-kwh-red.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_red_combined",
+    "vehicle": "Fiat 500e RED 23.8 kWh",
+    "variant": "adac_tail_long",
+    "reported_kWh_100km": 15.9,
+    "model_kWh_100km": 15.626990079473968,
+    "error_pct": -1.7170435253209604,
+    "distance_km": 28.70644780388889,
+    "power_exceeded_seconds": 7,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6353-fiat-500e-238-kwh-red/fiat-500e-238-kwh-red.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_prima_combined",
+    "vehicle": "Fiat 500e La Prima 42 kWh",
+    "variant": "named_wltc",
+    "reported_kWh_100km": 17.1,
+    "model_kWh_100km": 14.881240438019178,
+    "error_pct": -12.975202116846917,
+    "distance_km": 23.262388888888886,
+    "power_exceeded_seconds": 0,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6342-fiat-500e-42-kwh-la-prima/fiat-500e-42-kwh-la-prima.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_prima_combined",
+    "vehicle": "Fiat 500e La Prima 42 kWh",
+    "variant": "wltc_reference",
+    "reported_kWh_100km": 17.1,
+    "model_kWh_100km": 14.881240438019173,
+    "error_pct": -12.975202116846951,
+    "distance_km": 23.26238888888889,
+    "power_exceeded_seconds": 0,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6342-fiat-500e-42-kwh-la-prima/fiat-500e-42-kwh-la-prima.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_prima_combined",
+    "vehicle": "Fiat 500e La Prima 42 kWh",
+    "variant": "adac_graph_nominal",
+    "reported_kWh_100km": 17.1,
+    "model_kWh_100km": 16.283035956970476,
+    "error_pct": -4.777567503096636,
+    "distance_km": 28.431836838333332,
+    "power_exceeded_seconds": 6,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6342-fiat-500e-42-kwh-la-prima/fiat-500e-42-kwh-la-prima.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_prima_combined",
+    "vehicle": "Fiat 500e La Prima 42 kWh",
+    "variant": "adac_tail_short",
+    "reported_kWh_100km": 17.1,
+    "model_kWh_100km": 16.24331970769444,
+    "error_pct": -5.009826270792761,
+    "distance_km": 28.157520387777783,
+    "power_exceeded_seconds": 5,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6342-fiat-500e-42-kwh-la-prima/fiat-500e-42-kwh-la-prima.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_prima_combined",
+    "vehicle": "Fiat 500e La Prima 42 kWh",
+    "variant": "adac_tail_long",
+    "reported_kWh_100km": 17.1,
+    "model_kWh_100km": 16.31553996322617,
+    "error_pct": -4.587485595168617,
+    "distance_km": 28.70644780388889,
+    "power_exceeded_seconds": 5,
+    "source_url": "https://assets.adac.de/image/upload/Autodatenbank/Autotest/at6342-fiat-500e-42-kwh-la-prima/fiat-500e-42-kwh-la-prima.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_cabrio_combined",
+    "vehicle": "Fiat 500e Cabrio Icon 42 kWh",
+    "variant": "named_wltc",
+    "reported_kWh_100km": 17.4,
+    "model_kWh_100km": 14.978203005416974,
+    "error_pct": -13.918373532086347,
+    "distance_km": 23.262388888888886,
+    "power_exceeded_seconds": 0,
+    "source_url": "https://assets.adac.de/image/upload/v1628669629/ADAC-eV/KOR/Text/PDF/Fiat_500e_Cabrio_Icon_i33k5k.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_cabrio_combined",
+    "vehicle": "Fiat 500e Cabrio Icon 42 kWh",
+    "variant": "wltc_reference",
+    "reported_kWh_100km": 17.4,
+    "model_kWh_100km": 14.97820300541697,
+    "error_pct": -13.91837353208637,
+    "distance_km": 23.26238888888889,
+    "power_exceeded_seconds": 0,
+    "source_url": "https://assets.adac.de/image/upload/v1628669629/ADAC-eV/KOR/Text/PDF/Fiat_500e_Cabrio_Icon_i33k5k.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_cabrio_combined",
+    "vehicle": "Fiat 500e Cabrio Icon 42 kWh",
+    "variant": "adac_graph_nominal",
+    "reported_kWh_100km": 17.4,
+    "model_kWh_100km": 16.37927093398946,
+    "error_pct": -5.86625900006057,
+    "distance_km": 28.431836838333332,
+    "power_exceeded_seconds": 6,
+    "source_url": "https://assets.adac.de/image/upload/v1628669629/ADAC-eV/KOR/Text/PDF/Fiat_500e_Cabrio_Icon_i33k5k.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_cabrio_combined",
+    "vehicle": "Fiat 500e Cabrio Icon 42 kWh",
+    "variant": "adac_tail_short",
+    "reported_kWh_100km": 17.4,
+    "model_kWh_100km": 16.33980482593659,
+    "error_pct": -6.0930757130081,
+    "distance_km": 28.157520387777783,
+    "power_exceeded_seconds": 6,
+    "source_url": "https://assets.adac.de/image/upload/v1628669629/ADAC-eV/KOR/Text/PDF/Fiat_500e_Cabrio_Icon_i33k5k.pdf"
+  },
+  {
+    "observation_id": "adac_fiat500_cabrio_combined",
+    "vehicle": "Fiat 500e Cabrio Icon 42 kWh",
+    "variant": "adac_tail_long",
+    "reported_kWh_100km": 17.4,
+    "model_kWh_100km": 16.411530781491578,
+    "error_pct": -5.680857577634601,
+    "distance_km": 28.70644780388889,
+    "power_exceeded_seconds": 5,
+    "source_url": "https://assets.adac.de/image/upload/v1628669629/ADAC-eV/KOR/Text/PDF/Fiat_500e_Cabrio_Icon_i33k5k.pdf"
+  }
+]
