@@ -512,3 +512,82 @@ def test_unavailable_historical_bus_does_not_block_active_bus_sizing():
     assert model["is_available"].sel(year=2025).item() == 1
     assert model["TtW energy"].sel(year=2025).item() > 0
     assert model["driving mass"].sel(year=2025).item() < 30000
+
+
+@pytest.mark.parametrize(
+    "package,prefix,size,powertrain",
+    [
+        ("carculator", "Car", "Medium", "BEV"),
+        ("carculator_bus", "Bus", "13m-city", "BEV-depot"),
+        ("carculator_truck", "Truck", "7.5t", "BEV"),
+        ("carculator_two_wheeler", "TwoWheeler", "Bicycle <25", "BEV"),
+    ],
+)
+def test_historical_availability_masks_all_reported_energy(
+    package, prefix, size, powertrain
+):
+    module = load_vehicle_package(package)
+    inputs = getattr(module, prefix + "InputParameters")()
+    inputs.static()
+    _, array = module.fill_xarray_from_input_parameters(
+        inputs,
+        scope={"size": [size], "powertrain": [powertrain], "year": [2010, 2025]},
+    )
+    model = getattr(module, prefix + "Model")(array)
+    model.set_all()
+    for parameter in ["TtW energy", "electricity consumption", "fuel consumption"]:
+        assert (model[parameter].sel(year=2010) == 0).all()
+    assert (model.battery_terminal_energy.sel(year=2010) == 0).all()
+    assert (model["TtW energy"].sel(year=2025) > 0).all()
+    assert (model["electricity consumption"].sel(year=2025) > 0).all()
+    # Zero net stored energy is not an availability policy: a valid vehicle
+    # can recover enough terminal energy to offset its battery losses.
+    model.array.loc[dict(parameter="TtW energy", year=2025)] = 0
+    model.battery_terminal_energy.loc[dict(year=2025)] = -1
+    model.remove_energy_consumption_from_unavailable_vehicles()
+    assert (model.battery_terminal_energy.sel(year=2025) == -1).all()
+
+
+@pytest.mark.parametrize(
+    "package,prefix,size,powertrain,overweight",
+    [
+        ("carculator", "Car", "Micro", "ICEV-p", False),
+        ("carculator_two_wheeler", "TwoWheeler", "Moped <4kW", "BEV", False),
+        ("carculator_truck", "Truck", "7.5t", "ICEV-d", True),
+        ("carculator_bus", "Bus", "13m-city", "ICEV-d", True),
+    ],
+)
+def test_unavailable_or_overweight_policy_clears_stale_supply_outputs(
+    package, prefix, size, powertrain, overweight
+):
+    module = load_vehicle_package(package)
+    inputs = getattr(module, prefix + "InputParameters")()
+    inputs.static()
+    _, array = module.fill_xarray_from_input_parameters(
+        inputs, scope={"size": [size], "powertrain": [powertrain], "year": [2025]}
+    )
+    model = getattr(module, prefix + "Model")(array)
+    reported = {
+        "TtW energy": 1000,
+        "TtW energy, combustion mode": 1000,
+        "TtW energy, electric mode": 1000,
+        "auxiliary energy": 10,
+        "electricity consumption": 0.2,
+        "fuel consumption": 0.05,
+    }
+    for parameter, value in reported.items():
+        if parameter in model.array.parameter.values:
+            model[parameter] = value
+    model.battery_terminal_energy = xr.ones_like(model["TtW energy"])
+    if overweight:
+        model["driving mass"] = 20000
+        model["gross mass"] = 18000
+        model["is_compliant"] = 1
+        model["is_available"] = 1
+    model.remove_energy_consumption_from_unavailable_vehicles()
+    for parameter in reported:
+        if parameter in model.array.parameter.values:
+            assert (model[parameter] == 0).all(), parameter
+    assert (model.battery_terminal_energy == 0).all()
+    if overweight:
+        assert (model["driving mass"] == 20000).all()

@@ -789,6 +789,30 @@ class VehicleModel:
         self.regeneration_credit = -credit / xr.where(distance > 0, distance, 1)
         return self.regeneration_credit.transpose("size", "powertrain", "year", "value")
 
+    def mask_energy_outputs(self, available: xr.DataArray) -> None:
+        """Apply vehicle availability consistently to reported energy demands.
+
+        ``available`` expresses technology and mass policy, not whether net
+        energy happens to be zero. Retain the second-by-second energy trace
+        for diagnostics; mask reported supply and battery-terminal outputs.
+        """
+        for parameter in (
+            "TtW energy",
+            "TtW energy, combustion mode",
+            "TtW energy, electric mode",
+            "auxiliary energy",
+            "electricity consumption",
+            "fuel consumption",
+        ):
+            if parameter in self.array.parameter.values:
+                self[parameter] = self[parameter].where(available, 0)
+        if hasattr(self, "battery_terminal_energy"):
+            # PHEV aggregation can remove intermediate powertrain coordinates.
+            # Report terminal demand only for the retained public vehicle grid.
+            self.battery_terminal_energy = self.battery_terminal_energy.reindex_like(
+                available, fill_value=0
+            ).where(available, 0)
+
     def set_battery_energy_balance(self, *, include_recuperation=True) -> None:
         """Convert electric-mode TtW demand from reusable DC to stored kJ/km.
 
