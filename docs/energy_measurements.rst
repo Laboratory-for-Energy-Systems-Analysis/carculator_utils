@@ -3,12 +3,17 @@ Additional measured fuel and electricity consumption
 
 Collected 6 October 2026 to extend :doc:`energy_validation_2025`.
 
+The subsequent :doc:`temporal_energy` update preserves these 40 model outputs
+exactly while revising neighboring-year inputs. Its packaged provenance adds
+shared temporal uncertainty metadata; the input exports below are the preserved
+2025 snapshot, not a replacement for current package data.
+
 For the subsequent mini-BEV cycle-only reconstruction experiment, see
 :doc:`adac_cycle_comparison`. Those approximate traces do not replace this
 original WLTC comparison snapshot.
 
-Latest corrected-model snapshot
---------------------------------
+Preserved corrected-model comparison snapshot
+----------------------------------------------
 
 The ``calibrated_2025`` snapshot uses shared commit ``032ebc6`` and the
 recorded matching sibling commits. It includes the shaft/load, regeneration,

@@ -1,0 +1,56 @@
+{
+  "runs": 40,
+  "changed_cases": [
+    "nrel_mt45_diesel_nycc_x3",
+    "nrel_mt45_diesel_ocbc"
+  ],
+  "max_relative_energy_difference": 5.9841768599774365e-06,
+  "max_driving_mass_difference_kg": 0.07058074763335753,
+  "adac_runs": 24,
+  "adac_max_kWh_100km_difference": 0.0,
+  "focused_tests": {
+    "passed": 140,
+    "files": [
+      "test_energy_physics.py",
+      "test_energy_2025.py",
+      "test_temporal_energy.py",
+      "test_base_contracts.py"
+    ]
+  },
+  "documentation": {
+    "carculator_utils": {
+      "returncode": 0,
+      "warnings": 18,
+      "errors": 0,
+      "log": "/private/tmp/carculator-cleanup-doc-builds/carculator_utils.log"
+    },
+    "carculator": {
+      "returncode": 0,
+      "warnings": 41,
+      "errors": 0,
+      "log": "/private/tmp/carculator-cleanup-doc-builds/carculator.log"
+    },
+    "carculator_bus": {
+      "returncode": 0,
+      "warnings": 7,
+      "errors": 0,
+      "log": "/private/tmp/carculator-cleanup-doc-builds/carculator_bus.log"
+    },
+    "carculator_truck": {
+      "returncode": 0,
+      "warnings": 9,
+      "errors": 0,
+      "log": "/private/tmp/carculator-cleanup-doc-builds/carculator_truck.log"
+    },
+    "carculator_two_wheeler": {
+      "returncode": 0,
+      "warnings": 8,
+      "errors": 0,
+      "log": "/private/tmp/carculator-cleanup-doc-builds/carculator_two_wheeler.log"
+    }
+  },
+  "source_cleanup": "AST comparison confirms only docstring changes in the four modified shared runtime modules. No default parameter records changed.",
+  "audit_cleanup": "The runner now supplies cycle and zero-gradient arrays through the public constructor instead of patching the energy-model constructor. Two MT-45 cases stop at slightly different mass-matching iterations; both remain within 0.1 kg and energy differences are below 0.0006%. All 24 ADAC cases reproduce exactly.",
+  "legacy_documentation_warnings": "Fresh builds have no errors or failed module imports. Remaining warnings are legacy docstring fields, references and markup outside the revised validation sections.",
+  "runner_sha256": "37d4ddbe92e47dede241b62ab0ec22435fb15486f7fb2925fed1d66694da3f82"
+}
