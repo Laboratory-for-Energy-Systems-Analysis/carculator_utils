@@ -787,7 +787,7 @@ For example, the numeric 50 with qualifier “almost” is not an exact 50% resu
 The only absolute unit conversion here is kWh/km multiplied by 100.
 
 Reproducing the current comparison
----------------------------------
+-----------------------------------
 
 Use Python 3.12 with matching editable installs of all five repositories and
 Matplotlib. Run the following from the shared repository, using a fresh output
