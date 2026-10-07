@@ -1817,24 +1817,60 @@ class VehicleModel:
         # we need the vehicle's lifetime, annual mileage
         # as well as its instant fuel consumption
 
-        energy_consumption = self.energy.sel(
-            parameter=["motive energy", "auxiliary energy", "recuperated energy"],
-            size=self.array.coords["size"].values,
-            powertrain=self.array.coords["powertrain"].values,
-        ).sum(dim="parameter")
+        # Distribute completed cycle fuel demand over positive fuel-input
+        # samples. Regenerative electricity is not negative fuel combustion;
+        # its avoided fuel is already accounted for in TtW energy. This also
+        # preserves energy overrides and optional combustion-control losses.
+        components = ["motive energy", "auxiliary energy"]
+        if "combustion control energy" in self.energy.parameter:
+            components.append("combustion control energy")
+        gross = (
+            self.energy.sel(
+                parameter=components,
+                size=self.array.coords["size"],
+                powertrain=self.array.coords["powertrain"],
+            )
+            .sum("parameter")
+            .clip(min=0)
+        )
+        distance = self.energy.sel(parameter="velocity").sum("second") / 1000
+        target = (
+            xr.where(self["combustion power share"] > 0, self["TtW energy"], 0)
+            * distance
+        )
+        total = gross.sum("second")
+        if bool(((target > 0) & (total <= 0)).any()):
+            raise ValueError(
+                "Positive combustion energy requires a positive fuel-input trace."
+            )
+        energy_consumption = (gross * target / xr.where(total > 0, total, 1)).transpose(
+            "second", "value", "year", "powertrain", "size"
+        )
 
         hot_emissions = hem.get_hot_emissions(
             euro_class=list_euro_classes,
             lifetime_km=self["lifetime kilometers"],
             energy_consumption=energy_consumption,
             yearly_km=self["kilometers per year"],
-        ).values
-
-        self.array.loc[
-            dict(
-                parameter=list_direct_emissions,
+        )
+        aliases = {
+            "Hydrocarbon": "Hydrocarbons",
+            "Particulate matters 2.5": "Particulate matters",
+            "PAH polycyclic aromatic hydrocarbons": "PAH, polycyclic aromatic hydrocarbons",
+            "PAHs": "PAH, polycyclic aromatic hydrocarbons",
+        }
+        labels = []
+        for component in hot_emissions.component.values:
+            substance, compartment = component.rsplit(", ", 1)
+            labels.append(
+                f"{aliases.get(substance, substance)} direct emissions, {compartment}"
             )
-        ] = hot_emissions
+        hot_emissions = hot_emissions.assign_coords(component=labels).rename(
+            component="parameter"
+        )
+        self.array.loc[dict(parameter=list_direct_emissions)] = hot_emissions.sel(
+            parameter=list_direct_emissions
+        )
 
     def set_particulates_emission(self) -> None:
         """

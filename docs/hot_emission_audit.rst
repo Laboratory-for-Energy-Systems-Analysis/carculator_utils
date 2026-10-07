@@ -1,11 +1,11 @@
 Hot-pollutant inventory audit
 =============================
 
-The 2026-10-07 audit of shared runtime commit ``161d4c2`` **does not confirm
-correct propagation of all hot pollutants into inventories**. All four vehicle
-families completed sizing, inventory construction and LCIA, but the labelled
-pollutant and mass-conservation checks exposed the defects below. This audit
-does not change production code or emission factors.
+The original 2026-10-07 audit of shared runtime commit ``161d4c2`` found six
+pollutant-accounting defects. The repairs described below now pass all 34,518
+scalar checks on completed runs across the four vehicle families. Ethene is
+retained as generic NMVOC because the bundled inventory has no species-specific
+Ethene flow; this conserves mass without claiming species-specific LCIA.
 
 Scope and result
 ----------------
@@ -25,39 +25,48 @@ mode outputs using the electric utility factor.
 
 .. list-table:: Scalar audit checks
    :header-rows: 1
-   :widths: 65 15 20
+   :widths: 55 15 15 15
 
    * - Check
      - Checked
-     - Failed
+     - Failed before
+     - Failed after
    * - Coefficients to six principal pollutant outputs, including additions
      - 2,592
+     - 0
      - 0
    * - Documented passenger-car lifetime-average NOx deterioration
      - 12
      - 12
+     - 0
    * - Emission energy versus completed combustion fuel energy
      - 90
      - 74
+     - 0
    * - Labelled hot-model output to vehicle parameters
      - 16,236
      - 408
+     - 0
    * - NMHC mass before and after speciation
      - 144
      - 90
+     - 0
    * - Vehicle parameters to inventory, retaining all mapping entries
      - 15,444
      - 84
+     - 0
 
 These are accounting checks, not independent empirical observations. The six
 principal pollutants are CO, NOx, PM2.5, NH3, N2O and methane. Their unit checks
 retain the current deterioration tables and manual NH3/N2O multipliers; a pass
 does not validate those assumptions against the licensed HBEFA source data.
 
-Confirmed defects
------------------
+Original defects
+----------------
 
-1. **Chromium species are interchanged.** ``set_hot_emissions()`` assigns a
+The following descriptions record the original failing implementation.
+
+1. **Chromium species were interchanged.** ``set_hot_emissions()`` assigns a
    positional array to separately sorted parameter names. Appending
    ``direct emissions`` changes the relative ordering of ``Chromium`` and
    ``Chromium VI``. Consequently, chromium VI is approximately 500 times its
@@ -105,15 +114,41 @@ Confirmed defects
    distinguishing endpoint factors from lifetime-average factors and keeping
    sample/year coordinates intact.
 
-Repair priorities and limits
-----------------------------
+Implemented repairs and limits
+------------------------------
 
-First replace positional pollutant assignment with explicit name alignment,
-restore NMHC mass conservation and preserve parent emissions where no species
-profile exists. Then reconcile the fuel-energy boundary and deterioration
-policy. Resolve Ethene using a scientifically justified inventory/LCIA mapping.
-Re-run the audit after each change and evaluate the effect on toxicity,
-photochemical ozone formation and particulate-related impacts.
+* Hot-model output is mapped to vehicle parameters by explicit pollutant names
+  and documented aliases, preserving chromium oxidation states.
+* Hybrid powertrain names are mapped to their combustion category before
+  selecting NMHC species. Named fractions plus the unspeciated remainder sum
+  to the original NMHC mass. Missing profiles, including gas, leave the parent
+  mass in generic NMVOC rather than inventing a species distribution.
+* Many-to-one inventory mappings now sum all contributing parameters. Ethane
+  retains its own flow; Ethene joins the generic NMVOC flow. This is an explicit
+  aggregation approximation, not an Ethane proxy or a new Ethene-specific
+  characterization factor. A future species-specific implementation still
+  requires consistent biosphere, A/B matrix and export mappings.
+* The positive motive/auxiliary fuel-input profile, including optional
+  combustion-control losses, is normalized to the completed combustion fuel
+  energy. Hybrid recovery thus reduces fuel demand without creating negative
+  pollutant emissions during braking. This proportional distribution preserves
+  cycle totals and existing user energy overrides; it is not a validated
+  second-by-second hybrid engine dispatch model. The calibrated fuel-energy
+  calculations themselves are unchanged.
+* Deterioration is evaluated independently for each size, powertrain, year and
+  sample. With endpoint factor ``f`` at reference mileage ``K`` and lifetime
+  ``L``, the lifetime-average factor is ``1 + (max(f, 1) - 1) * L / (2*K)``.
+  Reference mileage remains 200,000 km for cars and 890,000 km for heavy
+  vehicles. This implements linear deterioration from unity and the documented
+  half-lifetime averaging convention, with linear extrapolation beyond the
+  reference mileage. The original powertrain-specific endpoint tables are
+  retained, including any unity factors for hybrid powertrains.
+
+These repairs change pollutant inventories and their LCIA results, particularly
+toxicity and NMVOC-related impacts. They do not recalibrate HBEFA-derived
+coefficients or change the earlier fuel-blend/CO2 accounting fixes. Regression
+coverage includes the complete audit, independent per-sample deterioration
+expectations and the Ethane/generic-NMVOC mapping contract.
 
 The files are named ``EF_HBEFA42_*``, while several legacy docstrings and
 documentation passages refer to HBEFA 4.1. This audit establishes propagation
@@ -133,5 +168,12 @@ The script writes every scalar comparison to ``checks.csv`` and the scope,
 counts, failure examples and source-file SHA-256 hashes to ``summary.json``.
 Exit status 1 means that accounting checks failed; a traceback means the audit
 could not complete. Runtime exceptions are not converted into passing checks.
-The recorded result is available as
-:download:`summary.json <_static/hot_emission_audit/summary.json>`.
+The original failing result is retained as
+:download:`baseline summary <_static/hot_emission_audit/summary.json>`.
+The repaired result, with updated source hashes, is available as
+:download:`repaired summary <_static/hot_emission_audit/repaired_summary.json>`.
+
+The family installation verifier also passed 455 tests with one pre-existing
+expected failure, checked bundled resources in wheels and source distributions,
+and completed offline model/LCIA smoke runs from both artifact types. See the
+:download:`installation verification report <_static/hot_emission_audit/installation_verification.json>`.

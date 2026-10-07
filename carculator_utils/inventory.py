@@ -86,10 +86,17 @@ def get_exhaust_emission_flows() -> dict:
         "rural": "low population density, long-term",
     }
 
+    grouped = defaultdict(list)
+    for pollutant, flow in flows.items():
+        for compartment, biosphere_compartment in d_comp.items():
+            grouped[(flow, ("air", biosphere_compartment), "kilogram")].append(
+                f"{pollutant} direct emissions, {compartment}"
+            )
+    # Retain the scalar mapping for one-to-one flows. Many-to-one mappings
+    # must preserve every contributing parameter instead of overwriting it.
     return {
-        (v, ("air", d_comp[comp]), "kilogram"): f"{k} direct emissions, {comp}"
-        for k, v in flows.items()
-        for comp in ["urban", "suburban", "rural"]
+        flow: names[0] if len(names) == 1 else tuple(names)
+        for flow, names in grouped.items()
     }
 
 
@@ -1637,19 +1644,13 @@ class Inventory:
         )
 
     def add_exhaust_emissions(self) -> None:
-        # Exhaust emissions
-        # Non-fuel based emissions
-        self.A[
-            np.ix_(
-                np.arange(self.iterations),
-                [self.inputs[i] for i in self.exhaust_emissions],
-                self.find_input_indices((f"transport, {self.vm.vehicle_type}, ",)),
-            )
-        ] = (
-            self.array.sel(parameter=list(self.exhaust_emissions.values())) * -1
-        ).transpose(
-            "value", "parameter", "combined_dim", "year"
-        )
+        columns = self.find_input_indices((f"transport, {self.vm.vehicle_type}, ",))
+        for flow, parameters in self.exhaust_emissions.items():
+            names = [parameters] if isinstance(parameters, str) else list(parameters)
+            emissions = self.array.sel(parameter=names).sum("parameter")
+            self.A[:, self.inputs[flow], columns, :] = -emissions.transpose(
+                "value", "combined_dim", "year"
+            ).values
 
     def add_noise_emissions(self) -> None:
         # Noise emissions

@@ -16,7 +16,9 @@ exhaust:
   Cyclohexane: Cyclohexane
   Dinitrogen oxide: Dinitrogen monoxide
   Ethane: Ethane
-  Ethene: Ethane
+  # No species-specific Ethene flow is bundled. Retain its mass as generic
+  # NMVOC, with generic characterization, rather than misidentifying it as Ethane.
+  Ethene: NMVOC, non-methane volatile organic compounds
   Formaldehyde: Formaldehyde
   Heptane: Heptane
   Hexane: Hexane

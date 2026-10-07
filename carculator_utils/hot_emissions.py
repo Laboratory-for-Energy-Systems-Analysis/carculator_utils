@@ -88,37 +88,19 @@ def get_mileage_degradation_factor(
     if corr is None:
         return None
 
-    corr = corr.fillna(1.0)
-    corr = corr.expand_dims({"km": 2}).copy()
-
-    if vehicle_type == "car":
-        max_km = 200000
-    elif vehicle_type in ["bus", "truck"]:
-        max_km = 890000
-    else:
-        max_km = 200000
-
-    corr = corr.assign_coords({"km": np.array([0, max_km])})
-
+    # Tables contain endpoint factors at the reference mileage. Linear
+    # deterioration from unity has its lifetime mean at half the lifetime.
+    reference_km = 890000 if vehicle_type in ("bus", "truck") else 200000
+    corr = corr.reindex(powertrain=lifetime_km.powertrain, fill_value=1.0)
     corr = corr.sel(
-        powertrain=[
-            p for p in lifetime_km.powertrain.values if p in corr.powertrain.values
-        ],
-        euro_class=euro_class,
+        euro_class=xr.DataArray(
+            euro_class, dims="year", coords={"year": lifetime_km.year}
+        )
+    ).drop_vars("euro_class")
+    corr = corr.clip(min=1)
+    return (1 + (corr - 1) * lifetime_km / (2 * reference_km)).transpose(
+        "value", "year", "powertrain", "size", "component"
     )
-
-    corr = corr.expand_dims({"size": len(lifetime_km.coords["size"])})
-    corr = corr.assign_coords({"size": lifetime_km.coords["size"].values})
-
-    corr = corr.transpose("euro_class", "powertrain", "size", "component", "km")
-
-    corr = corr.interp(
-        km=lifetime_km.max(), method="linear", kwargs={"fill_value": "extrapolate"}
-    )
-
-    corr.values = np.where(corr < 1, 1.0, corr)
-
-    return corr
 
 
 def get_driving_cycle_compartments(cycle_name, vehicle_type) -> dict:
@@ -368,7 +350,11 @@ class HotEmissionsModel:
 
         nmhc = self.nmhc_species.sel(
             powertrain=[
-                MAP_PWT[pt] if pt in self.nmhc_species.powertrain.values else "BEV"
+                (
+                    MAP_PWT[pt]
+                    if MAP_PWT[pt] in self.nmhc_species.powertrain.values
+                    else "BEV"
+                )
                 for pt in emissions.powertrain.values
             ]
         )
@@ -394,8 +380,13 @@ class HotEmissionsModel:
             nmhc.values * emissions.sel(component=["Non-methane hydrocarbon"]).values
         )
 
-        emissions.loc[dict(component="Non-methane hydrocarbon")] *= nmhc.sum(
-            dim="component"
+        # Unspecified NMHC stays in the generic flow, including powertrains
+        # without a speciation profile. Named species must not be counted twice.
+        species_share = nmhc.sum(dim="component")
+        if bool(((species_share < 0) | (species_share > 1)).any()):
+            raise ValueError("NMHC species mass fractions must sum to [0, 1].")
+        emissions.loc[dict(component="Non-methane hydrocarbon")] *= (
+            1 - species_share
         ).values
 
         # Heavy metals emissions are dependent of fuel consumption

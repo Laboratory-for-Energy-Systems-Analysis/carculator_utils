@@ -2,7 +2,8 @@
 
 This diagnoses accounting defects without recalibrating emission factors. The
 reference calculation retains the existing NH3/N2O multipliers and deterioration
-table values so their scientific validity is not implied by a passing check.
+endpoint values and the documented linear lifetime-average deterioration policy.
+Their scientific validity is not implied by a passing check.
 """
 
 import argparse
@@ -205,13 +206,15 @@ def audit(output):
                 "truck": {"Ammonia": 10, "Dinitrogen oxide": 10},
             }
             grams *= multiplier.get(model.vehicle_type, {}).get(component, 1)
-            # Match the current table selection, not an assumed mileage policy.
-            grams *= max(
+            endpoint = max(
                 1,
                 factor(
                     degradation, powertrain=pt, component=component, euro_class=euro
                 ),
             )
+            reference_km = 890000 if model.vehicle_type in ("bus", "truck") else 200000
+            lifetime = float(arguments["lifetime_km"].sel(**selection))
+            grams *= 1 + (endpoint - 1) * lifetime / (2 * reference_km)
             yearly = float(arguments["yearly_km"].sel(**selection))
             grams[0] += (
                 factor(extra, **keys, type="cold start") * distance * 2.3 * 365 / yearly
@@ -310,7 +313,7 @@ def audit(output):
                     expected = 1 + (endpoint - 1) * lifetime.values / (2 * 200000)
                     actual = correction.sel(
                         size=size, powertrain=pt, component="Nitrogen oxides"
-                    ).isel(euro_class=yi)
+                    ).isel(year=yi)
                     check(
                         name,
                         "documented_mileage_degradation",
