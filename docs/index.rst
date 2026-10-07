@@ -72,6 +72,9 @@ User's Guide
    modeling
    structure
    validity
+   energy_validation_2025
+   energy_measurements
+   energy_model_repairs
 
 API Reference
 -------------
