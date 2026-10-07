@@ -64,13 +64,15 @@ Fuel-blend inventory checks
 ``tests/test_fuel_blend_inventory.py`` completes parameter loading, vehicle
 sizing, inventory construction and LCIA for all four vehicle families. It
 uses Medium cars, 13m-city buses, 40t long-haul trucks and Motorcycle 11-35kW
-two-wheelers. The 16 runs cover 22 family/powertrain combinations, three years
-(2020, 2025 and 2030), and two passenger-load samples: 528 vehicle/year/sample
-cases across the four blend configurations.
+two-wheelers. The 20 matrix runs cover 22 family/powertrain combinations,
+three years (2020, 2025 and 2030), and two passenger-load samples: 660 vehicle/year/sample
+cases across five blend configurations.
 
 The configurations are country defaults, fossil/biofuel blends, selected
-synthetic-fuel blends, and two blend components sharing one supplier. Explicit
-blends use primary mass shares of 100%, 65% and 0% in successive years. These
+synthetic-fuel blends, two blend components sharing one supplier, and a scalar
+primary-only specification with its automatically completed secondary fuel.
+Explicit two-component blends use primary mass shares of 100%, 65% and 0% in successive
+years; primary-only specifications use 65% in all three years. These
 are accounting stress tests, not recommendations for engine fuel compatibility.
 Hydrogen from natural-gas reforming and PEM electrolysis is included for fuel
 cell vehicles; BEVs provide zero-fuel and zero-tailpipe-CO2 controls. Passenger
@@ -88,6 +90,25 @@ Independent expectations check:
 * fossil and non-fossil tailpipe CO2 equal burned mass times the corresponding
   share-weighted fuel carbon factors; and
 * other fuel inputs are zero and completed impact results are finite.
+
+The checks also verify that caller-supplied blend dictionaries are unchanged
+and that their requested types and shares survive model construction. Twelve
+additional runs export static inventories through the public Brightway 3.10
+export API: 36 annual exports containing 99 fuel-supply datasets and 198
+transport datasets. The exported component quantities must total one kg per kg
+of blend, preserve zero/100% endpoints and merged suppliers, and match the
+transport fuel and fossil/non-fossil CO2 exchanges. Export must leave the
+original inventory matrix and supplier index unchanged. No Brightway database
+is written. These export checks require the optional Brightway dependencies.
+
+For example, a 65% petrol / 35% sugarbeet-ethanol mass blend exports 0.65 kg
+petrol and 0.35 kg ethanol per kg of fuel supply. Using the bundled fuel
+properties, each kg burned produces 2.041 kg fossil CO2 and 0.686 kg non-fossil
+CO2; vehicle exchanges scale those factors by actual burned fuel per km.
+
+All 32 matrix/export tests passed with no skips on the latest repaired runtime.
+The :download:`verification summary <_static/fuel_blend_verification/summary.json>`
+records the scope, command and source hashes.
 
 The audit exposed and repaired two shared inventory defects. A second component
 pointing to the same supplier overwrote the first component's exchange. PHEV

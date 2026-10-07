@@ -1,0 +1,39 @@
+{
+  "runtime_commit": "84bfc28c55a5028ca969bdb8ebcb9d3557fd50b8",
+  "tests": 32,
+  "passed": 32,
+  "failed": 0,
+  "skipped": 0,
+  "years": [
+    2020,
+    2025,
+    2030
+  ],
+  "families": [
+    "carculator",
+    "carculator_bus",
+    "carculator_truck",
+    "carculator_two_wheeler"
+  ],
+  "blend_modes": [
+    "default",
+    "bio",
+    "synthetic",
+    "same-supplier",
+    "primary-only"
+  ],
+  "matrix_cases": 660,
+  "export_format": "Brightway 3.10 importer datasets (no database write)",
+  "annual_exports": 36,
+  "exported_fuel_supply_datasets_checked": 99,
+  "exported_transport_datasets_checked": 198,
+  "source_sha256": {
+    "tests/test_fuel_blend_inventory.py": "1011d75d803d29fccabdff94b0dadf2be5f93fbad2d0e9d762142b369474df09",
+    "carculator_utils/model.py": "f45b095501997cb6299cbc3c14868e7b5cce68d2486912c65dd6594539746090",
+    "carculator_utils/inventory.py": "719a43980c02e4c2ceb9f6507ac5852d5b1cf5063d4364fb8475002be52fab10",
+    "carculator_utils/export.py": "0cdede7c8b59d20ff6f5c0dcf9627a48553f87166a94c4c64cc7445b0c404d3a",
+    "carculator_utils/data/fuel/fuel_specs.yaml": "ad4b2791d2b9ec0f89b4554289baa02236194bf4ca777e138d61bb27c892ec2e"
+  },
+  "command": "CARCULATOR_REQUIRE_FAMILY=1 python -m pytest tests/test_fuel_blend_inventory.py",
+  "limitations": "Verifies requested fuel shares, supplier quantities and fossil/non-fossil tailpipe CO2 against bundled properties; does not independently validate upstream emission factors."
+}
