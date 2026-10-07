@@ -77,6 +77,7 @@ User's Guide
    energy_model_repairs
    adac_cycle_comparison
    truck_energy_diagnostics
+   petrol_car_energy_diagnostics
 
 API Reference
 -------------

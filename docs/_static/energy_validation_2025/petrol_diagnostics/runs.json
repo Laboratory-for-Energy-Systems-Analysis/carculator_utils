@@ -1,0 +1,2014 @@
+[
+  {
+    "variant": "baseline",
+    "run": {
+      "case": "golf_baseline",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2161.6017947467226,
+      "fuel consumption": 0.06791637783657249,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 2.1249979734420776,
+      "engine efficiency": 0.32336524442578013,
+      "transmission efficiency": 0.8000000000000002,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 428.36470145152884,
+      "range": 838.8142229040745,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.8173912763595581,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.750332423654851e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2161.6017947467226,
+      "ttw_kWh_100km": 60.04449429852007,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 5.096480106404779,
+      "fuel_L_100km": 6.791637783657249,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.791637783657248,
+      "fuel_without_input_cap_L_100km": 6.791637783657248,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 465.53206784561706,
+      "motive energy kJ/km": 1799.559769759314,
+      "recuperated energy kJ/km": -23.829387837699084,
+      "auxiliary energy kJ/km": 428.36470145152884,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1093,
+          "distance_km": 18.213,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.654121011533928,
+            "auxiliary energy": 0.23915406409566461
+          },
+          "auxiliary_service_kJ": 396.1042933994998
+        },
+        "moving_nontraction": {
+          "seconds": 473,
+          "distance_km": 5.049388888888888,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.7393932174079176
+          },
+          "auxiliary_service_kJ": 171.41567317288508
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.36735180991725297
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 9.83279635924843
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.8119615240315445
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.8364094696645115
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 7.05541193446763
+        }
+      },
+      "fuel_before_regeneration_L_100km": 7.000020102954764,
+      "regeneration_credit_L_100km": 0.20838231929751494,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "no_hybrid",
+    "run": {
+      "case": "golf_no_hybrid",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2238.926907376951,
+      "fuel consumption": 0.07034589171762727,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.32317462825523063,
+      "transmission efficiency": 0.8000000000000002,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 438.30571397235127,
+      "range": 809.8443605793217,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.752627600988213e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2238.926907376951,
+      "ttw_kWh_100km": 62.192414093804196,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 5.2787920841257465,
+      "fuel_L_100km": 7.034589171762727,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 7.034589171762727,
+      "fuel_without_input_cap_L_100km": 7.034589171762727,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 465.53206784561706,
+      "motive energy kJ/km": 1800.6211934045998,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 438.30571397235127,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1093,
+          "distance_km": 18.213,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.657455948131091,
+            "auxiliary energy": 0.24201014644012225
+          },
+          "auxiliary_service_kJ": 396.1042933994998
+        },
+        "moving_nontraction": {
+          "seconds": 473,
+          "distance_km": 5.049388888888888,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.758351999310151
+          },
+          "auxiliary_service_kJ": 171.41567317288508
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.3767710778813646
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 9.986923015233735
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.869007412714382
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.866356744002975
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 7.036215310218427
+        }
+      },
+      "fuel_before_regeneration_L_100km": 7.034589171762727,
+      "regeneration_credit_L_100km": 0.0,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "transmission_90pct",
+    "run": {
+      "case": "golf_transmission_90pct",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": 0.9,
+      "TtW energy": 2049.311956811627,
+      "fuel consumption": 0.06438829089709018,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.3216342974170326,
+      "transmission efficiency": 0.9000000000000001,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 441.09462017878195,
+      "range": 884.776143359609,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.514872511240623e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2049.311956811627,
+      "ttw_kWh_100km": 56.92533213365631,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 4.831730638404506,
+      "fuel_L_100km": 6.438829089709018,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.438829089709017,
+      "fuel_without_input_cap_L_100km": 6.438829089709017,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 465.53206784561706,
+      "motive energy kJ/km": 1608.2173366328454,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 441.09462017878195,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1093,
+          "distance_km": 18.213,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.052933271221703,
+            "auxiliary energy": 0.2507727412957996
+          },
+          "auxiliary_service_kJ": 396.1042933994998
+        },
+        "moving_nontraction": {
+          "seconds": 473,
+          "distance_km": 5.049388888888888,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.758351999310151
+          },
+          "auxiliary_service_kJ": 171.41567317288508
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.3767710778813646
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 9.58991649084433
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.38614069674178
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.374633037085686
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 6.210675747850603
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.438829089709017,
+      "regeneration_credit_L_100km": -8.881784197001252e-16,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "transmission_95pct",
+    "run": {
+      "case": "golf_transmission_95pct",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": 0.95,
+      "TtW energy": 1972.3012905444943,
+      "fuel consumption": 0.06196865675339369,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.32032383846291873,
+      "transmission efficiency": 0.9499999999999998,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 442.4939618785929,
+      "range": 919.3231979217327,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 4.001229719799437e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 1972.3012905444943,
+      "ttw_kWh_100km": 54.78614695956929,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 4.650160041282843,
+      "fuel_L_100km": 6.196865675339369,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.196865675339368,
+      "fuel_without_input_cap_L_100km": 6.196865675339368,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 465.53206784561706,
+      "motive energy kJ/km": 1529.8073286659014,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 442.4939618785929,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1093,
+          "distance_km": 18.213,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 4.806573199713916,
+            "auxiliary energy": 0.2551693984339371
+          },
+          "auxiliary_service_kJ": 396.1042933994998
+        },
+        "moving_nontraction": {
+          "seconds": 473,
+          "distance_km": 5.049388888888888,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.758351999310151
+          },
+          "auxiliary_service_kJ": 171.41567317288508
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.3767710778813646
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 9.427012900756862
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.188741524184719
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.174139044857186
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 5.877433688054249
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.196865675339368,
+      "regeneration_credit_L_100km": -8.881784197001252e-16,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "rolling_minus_20pct",
+    "run": {
+      "case": "golf_rolling_minus_20pct",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{\"rolling resistance coefficient\": 0.8}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2174.4028880243222,
+      "fuel consumption": 0.06831858137372514,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.32255960118289095,
+      "transmission efficiency": 0.8000000000000002,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 446.82293524497936,
+      "range": 833.8759756412921,
+      "rolling resistance coefficient": 0.006920000165700913,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.9983087226721735e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2174.4028880243222,
+      "ttw_kWh_100km": 60.40008022289784,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 5.126661667776569,
+      "fuel_L_100km": 6.831858137372514,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.831858137372514,
+      "fuel_without_input_cap_L_100km": 6.831858137372514,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 445.79800046405,
+      "motive energy kJ/km": 1727.5799527793429,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 446.82293524497936,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1072,
+          "distance_km": 17.971388888888885,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.427964257847857,
+            "auxiliary energy": 0.23510189750119023
+          },
+          "auxiliary_service_kJ": 388.49387239182414
+        },
+        "moving_nontraction": {
+          "seconds": 494,
+          "distance_km": 5.291,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.7920209041421026
+          },
+          "auxiliary_service_kJ": 179.02609418056073
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.3767710778813646
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 9.872479336273743
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.7089375054973495
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.6705263517080775
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 6.769820105937107
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.831858137372514,
+      "regeneration_credit_L_100km": 0.0,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "drag_minus_20pct",
+    "run": {
+      "case": "golf_drag_minus_20pct",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{\"aerodynamic drag coefficient\": 0.8}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2113.132966275813,
+      "fuel consumption": 0.06639351304448804,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.32260933481466414,
+      "transmission efficiency": 0.8000000000000002,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 445.19225167913544,
+      "range": 858.0540640961552,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.23165216445922854,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 4.241707473336581e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2113.132966275813,
+      "ttw_kWh_100km": 58.69813795210592,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 4.9822035450681526,
+      "fuel_L_100km": 6.6393513044488035,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.639351304448804,
+      "fuel_without_input_cap_L_100km": 6.639351304448804,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 430.47459555706376,
+      "motive energy kJ/km": 1667.9407145966773,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 445.19225167913544,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1080,
+          "distance_km": 17.974888888888888,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.24058094589174,
+            "auxiliary energy": 0.242804625993387
+          },
+          "auxiliary_service_kJ": 391.3930803947482
+        },
+        "moving_nontraction": {
+          "seconds": 486,
+          "distance_km": 5.2875,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.7791946546823116
+          },
+          "auxiliary_service_kJ": 176.1268861776367
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.3767710778813646
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 9.950880879543769
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.756436677955356
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.58470460778829
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 6.2449455345009515
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.639351304448804,
+      "regeneration_credit_L_100km": 8.881784197001252e-16,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "source_drag_coefficient",
+    "run": {
+      "case": "golf_source_drag_coefficient",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"aerodynamic drag coefficient\": 0.28, \"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2217.6181810809317,
+      "fuel consumption": 0.06967638287938813,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.3231716570829241,
+      "transmission efficiency": 0.8000000000000002,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 439.5355047844586,
+      "range": 817.6260210875107,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.363285255434962e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2217.6181810809317,
+      "ttw_kWh_100km": 61.60050503002588,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 5.228551794760512,
+      "fuel_L_100km": 6.967638287938812,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.9676382879388115,
+      "fuel_without_input_cap_L_100km": 6.9676382879388115,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 459.7007399433376,
+      "motive energy kJ/km": 1778.0826762964732,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 439.5355047844586,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1091,
+          "distance_km": 18.18058333333333,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.586641127033528,
+            "auxiliary energy": 0.24266752134882108
+          },
+          "auxiliary_service_kJ": 395.3794913987687
+        },
+        "moving_nontraction": {
+          "seconds": 475,
+          "distance_km": 5.0818055555555555,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.7615585616750986
+          },
+          "auxiliary_service_kJ": 172.1404751736161
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.3767710778813646
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 9.980871417395763
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.850415326985349
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.818932311772398
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 6.901636452564588
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.9676382879388115,
+      "regeneration_credit_L_100km": -8.881784197001252e-16,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "auxiliary_half",
+    "run": {
+      "case": "golf_auxiliary_half",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2218.881825709986,
+      "fuel consumption": 0.06971608592103372,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.32084023507055737,
+      "transmission efficiency": 0.8000000000000002,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 405.1595390427615,
+      "range": 817.1603862266763,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.877878626539043e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2218.881825709986,
+      "ttw_kWh_100km": 61.63560626972183,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 5.231531131532526,
+      "fuel_L_100km": 6.9716085921033715,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.971608592103371,
+      "fuel_without_input_cap_L_100km": 6.971608592103371,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 465.53206784561706,
+      "motive energy kJ/km": 1813.7222866672248,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 405.1595390427615,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1093,
+          "distance_km": 18.213,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.698618885831225,
+            "auxiliary energy": 0.13786662908063038
+          },
+          "auxiliary_service_kJ": 198.0521466997499
+        },
+        "moving_nontraction": {
+          "seconds": 473,
+          "distance_km": 5.049388888888888,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.758351999310151
+          },
+          "auxiliary_service_kJ": 85.70783658644254
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.3767710778813646
+          },
+          "auxiliary_service_kJ": 42.58211754294714
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 9.903353827109301
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.799114455625799
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.805683380808793
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 6.982935542475209
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.971608592103371,
+      "regeneration_credit_L_100km": -8.881784197001252e-16,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "mass_minus_75kg",
+    "run": {
+      "case": "golf_mass_minus_75kg",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 50, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1421,
+      "energy_input_driving_mass_kg": 1421.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2184.3272257856224,
+      "fuel consumption": 0.06863039878376444,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1421.0,
+      "curb mass": 1296.0,
+      "cargo mass": 50.0,
+      "total cargo mass": 125.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.32286435491083787,
+      "transmission efficiency": 0.8000000000000002,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 438.0492857912588,
+      "range": 830.0873185501728,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 4.320628735649095e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2184.3272257856224,
+      "ttw_kWh_100km": 60.67575627182285,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 5.150060607439104,
+      "fuel_L_100km": 6.863039878376444,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.863039878376444,
+      "fuel_without_input_cap_L_100km": 6.863039878376444,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 451.0487204730457,
+      "motive energy kJ/km": 1746.2779399943634,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 438.0492857912588,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1094,
+          "distance_km": 18.23558333333333,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.486712338440912,
+            "auxiliary energy": 0.24280774392648977
+          },
+          "auxiliary_service_kJ": 396.4666943998653
+        },
+        "moving_nontraction": {
+          "seconds": 472,
+          "distance_km": 5.026805555555556,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.7567487181276769
+          },
+          "auxiliary_service_kJ": 171.0532721725196
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.3767710778813646
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 9.81591062274457
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.676900363745573
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.713318728594611
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 6.8602571140468305
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.863039878376444,
+      "regeneration_credit_L_100km": 0.0,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "mass_plus_75kg",
+    "run": {
+      "case": "golf_mass_plus_75kg",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 200, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1571,
+      "energy_input_driving_mass_kg": 1571.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2294.56019801028,
+      "fuel consumption": 0.07209386009743136,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1571.0,
+      "curb mass": 1296.0,
+      "cargo mass": 200.0,
+      "total cargo mass": 275.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.3233893220947772,
+      "transmission efficiency": 0.8000000000000002,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 439.113890141105,
+      "range": 790.2090915988257,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.6070192547144514e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2294.56019801028,
+      "ttw_kWh_100km": 63.73778327806334,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 5.4099605350659985,
+      "fuel_L_100km": 7.209386009743136,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 7.2093860097431355,
+      "fuel_without_input_cap_L_100km": 7.2093860097431355,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 480.025218948056,
+      "motive energy kJ/km": 1855.4463078691754,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 439.113890141105,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1090,
+          "distance_km": 18.16102777777778,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.829713539606015,
+            "auxiliary energy": 0.23973954939818504
+          },
+          "auxiliary_service_kJ": 395.01709039840324
+        },
+        "moving_nontraction": {
+          "seconds": 476,
+          "distance_km": 5.101361111111111,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.7631618428575727
+          },
+          "auxiliary_service_kJ": 172.5028761739816
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.3767710778813646
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 10.160816405421503
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 7.064261953931512
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 6.022238800857452
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 7.215966030385786
+        }
+      },
+      "fuel_before_regeneration_L_100km": 7.2093860097431355,
+      "regeneration_credit_L_100km": -8.881784197001252e-16,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel."
+    }
+  },
+  {
+    "variant": "stop_start_probe",
+    "run": {
+      "case": "golf_stop_start_probe",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2130.642492662483,
+      "fuel consumption": 0.06694365304377309,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.3242478211942998,
+      "transmission efficiency": 0.7999999999999998,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 335.9809814034171,
+      "range": 851.0026134993417,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.1041110636280467e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2130.642492662483,
+      "ttw_kWh_100km": 59.18451368506898,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 5.023486335043208,
+      "fuel_L_100km": 6.694365304377309,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.6943653043773095,
+      "fuel_without_input_cap_L_100km": 6.6943653043773095,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 465.53206784561706,
+      "motive energy kJ/km": 1794.6615112590662,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 335.9809814034171,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1093,
+          "distance_km": 18.213,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.638730944045434,
+            "auxiliary energy": 0.2972823610217249
+          },
+          "auxiliary_service_kJ": 396.1042933994998
+        },
+        "moving_nontraction": {
+          "seconds": 473,
+          "distance_km": 5.049388888888888,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.758351999310151
+          },
+          "auxiliary_service_kJ": 171.41567317288508
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.0
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 8.228919541354266
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.532990587213636
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.745024836195168
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 7.035282800095596
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.6943653043773095,
+      "regeneration_credit_L_100km": 8.881784197001252e-16,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel.",
+      "control_probe": {
+        "engine_off_stop_seconds": 235,
+        "fuel_cut_seconds": 0,
+        "buffer_round_trip_efficiency": 0.75,
+        "reverse_transmission_efficiency": 0.8,
+        "mechanical_reserve_kW": 0.0,
+        "auxiliary_service_kJ": 652.6842016582792,
+        "engine_funded_service_and_buffer_losses_kJ": 681.0722800202439,
+        "kinetic_funded_service_kJ": 0.0,
+        "buffer_loss_kJ": 28.38807836196476,
+        "caveat": "Engineering sensitivity, not Golf ECU calibration; absent restart fuel, RPM/gear thresholds, thermal constraints and finite buffer sizing"
+      }
+    }
+  },
+  {
+    "variant": "stop_start_overrun_probe",
+    "run": {
+      "case": "golf_stop_start_overrun_probe",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 1909.6900698008299,
+      "fuel consumption": 0.06000144552366114,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.32424782119429973,
+      "transmission efficiency": 0.7999999999999999,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 115.0285585417637,
+      "range": 949.4641870749373,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.1041110636280467e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 1909.6900698008299,
+      "ttw_kWh_100km": 53.046946383356385,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 4.502539493532884,
+      "fuel_L_100km": 6.000144552366114,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.000144552366114,
+      "fuel_without_input_cap_L_100km": 6.000144552366114,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 465.53206784561706,
+      "motive energy kJ/km": 1794.6615112590662,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 115.0285585417637,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1093,
+          "distance_km": 18.213,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.638730944045434,
+            "auxiliary energy": 0.2972823610217249
+          },
+          "auxiliary_service_kJ": 396.1042933994998
+        },
+        "moving_nontraction": {
+          "seconds": 473,
+          "distance_km": 5.049388888888888,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.06413124729895567
+          },
+          "auxiliary_service_kJ": 171.41567317288508
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.0
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 6.264396051488651
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 5.63114922965182
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.244813352035425
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 6.768692559592874
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.000144552366114,
+      "regeneration_credit_L_100km": 0.0,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel.",
+      "control_probe": {
+        "engine_off_stop_seconds": 235,
+        "fuel_cut_seconds": 433,
+        "buffer_round_trip_efficiency": 0.75,
+        "reverse_transmission_efficiency": 0.8,
+        "mechanical_reserve_kW": 0.0,
+        "auxiliary_service_kJ": 652.6842016582792,
+        "engine_funded_service_and_buffer_losses_kJ": 524.1526468619792,
+        "kinetic_funded_service_kJ": 156.9196331582648,
+        "buffer_loss_kJ": 28.38807836196476,
+        "caveat": "Engineering sensitivity, not Golf ECU calibration; absent restart fuel, RPM/gear thresholds, thermal constraints and finite buffer sizing"
+      }
+    }
+  },
+  {
+    "variant": "stop_start_overrun_reserve5kw",
+    "run": {
+      "case": "golf_stop_start_overrun_reserve5kw",
+      "vehicle": "car",
+      "size": "Lower medium",
+      "powertrain": "ICEV-p",
+      "year": 2025,
+      "cycle": "WLTC",
+      "cycle_profile": null,
+      "cycle_profile_sha256": null,
+      "constructor_cycle": "WLTC",
+      "temperature_C": null,
+      "sort_adapter": false,
+      "input_overrides": "{\"average passenger mass\": 75, \"average passengers\": 1, \"cargo mass\": 125, \"combustion power share\": 1.0, \"electric motor power share\": 0.0}",
+      "input_factors": "{}",
+      "requested_curb_mass_kg": 1296,
+      "requested_power_kW": 85,
+      "requested_driving_mass_kg": 1496,
+      "energy_input_driving_mass_kg": 1496.0,
+      "sizing_rtol_override": 1e-08,
+      "requested_range_km": null,
+      "requested_battery_capacity_kWh": null,
+      "requested_engine_efficiency": null,
+      "requested_transmission_efficiency": null,
+      "TtW energy": 2036.7504700145753,
+      "fuel consumption": 0.06399361566802114,
+      "fuel mass": 42.75,
+      "electricity consumption": 0.0,
+      "driving mass": 1496.0,
+      "curb mass": 1296.0,
+      "cargo mass": 125.0,
+      "total cargo mass": 200.0,
+      "average passengers": 1.0,
+      "average passenger mass": 75.0,
+      "power": 85.0,
+      "electric power": 0.0,
+      "engine efficiency": 0.32424782119429973,
+      "transmission efficiency": 0.7999999999999999,
+      "fuel density per kg": 0.750405170115,
+      "LHV fuel MJ per kg": 42.4136217471,
+      "auxiliary energy": 242.08895875550894,
+      "range": 890.2329256246837,
+      "rolling resistance coefficient": 0.00865000020712614,
+      "aerodynamic drag coefficient": 0.28956520557403564,
+      "frontal area": 2.252173900604248,
+      "battery charge efficiency": 0.8544347882270813,
+      "battery discharge efficiency": 0.8834782838821411,
+      "charger efficiency": 0.0,
+      "recuperation efficiency": 0.0,
+      "auxiliary power demand": 362.40100036550757,
+      "distance_km": 23.262388888888886,
+      "stored_seconds": 3144,
+      "finite_seconds": 1801,
+      "last_motion_second": 1794,
+      "mean_speed_finite_kph": 46.498945030538586,
+      "mean_speed_through_last_motion_kph": 46.65437325905292,
+      "trailing_zero_seconds": 6,
+      "stopped_seconds_through_last_motion": 229,
+      "motive_input_removed_pct": 3.1041110636280467e-15,
+      "cap_active_seconds": 0,
+      "wheel_power_exceeds_rating_seconds": 0,
+      "ttw_without_input_cap_kJ_km": 2036.7504700145753,
+      "ttw_kWh_100km": 56.576401944849316,
+      "battery_terminal_kWh_100km": null,
+      "electricity_kWh_100km": 0.0,
+      "fuel_kg_100km": 4.802114005163533,
+      "fuel_L_100km": 6.399361566802114,
+      "fuel_reporting_unit": "L/100 km",
+      "fuel_from_energy_L_100km": 6.399361566802114,
+      "fuel_without_input_cap_L_100km": 6.399361566802114,
+      "energy_finite": true,
+      "positive_consumption": true,
+      "eligible_for_comparison": true,
+      "engine_efficiency_next_iteration_max_change": 0.0,
+      "engine_efficiency_next_iteration_mean_change": 0.0,
+      "motive energy at wheels kJ/km": 465.53206784561706,
+      "motive energy kJ/km": 1794.6615112590662,
+      "recuperated energy kJ/km": 0.0,
+      "auxiliary energy kJ/km": 242.08895875550894,
+      "heating energy kJ/km": 0.0,
+      "cooling energy kJ/km": 0.0
+    },
+    "accounting": {
+      "states": {
+        "traction": {
+          "seconds": 1093,
+          "distance_km": 18.213,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 5.638730944045434,
+            "auxiliary energy": 0.2972823610217249
+          },
+          "auxiliary_service_kJ": 396.1042933994998
+        },
+        "moving_nontraction": {
+          "seconds": 473,
+          "distance_km": 5.049388888888888,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.46334826173495464
+          },
+          "auxiliary_service_kJ": 171.41567317288508
+        },
+        "stopped": {
+          "seconds": 235,
+          "distance_km": 0.0,
+          "fuel_equivalent_L_per_100km_whole_cycle": {
+            "motive energy": 0.0,
+            "auxiliary energy": 0.0
+          },
+          "auxiliary_service_kJ": 85.16423508589428
+        }
+      },
+      "wltc_phases": {
+        "low": {
+          "seconds_slice": [
+            0,
+            590
+          ],
+          "distance_km": 3.094527777777778,
+          "fuel_before_regeneration_L_100km": 7.770932470097251
+        },
+        "medium": {
+          "seconds_slice": [
+            590,
+            1023
+          ],
+          "distance_km": 4.755888888888888,
+          "fuel_before_regeneration_L_100km": 6.085990957813431
+        },
+        "high": {
+          "seconds_slice": [
+            1023,
+            1478
+          ],
+          "distance_km": 7.157833333333333,
+          "fuel_before_regeneration_L_100km": 5.474076948941974
+        },
+        "extra_high": {
+          "seconds_slice": [
+            1478,
+            1801
+          ],
+          "distance_km": 8.254138888888889,
+          "fuel_before_regeneration_L_100km": 6.868099089949821
+        }
+      },
+      "fuel_before_regeneration_L_100km": 6.399361566802114,
+      "regeneration_credit_L_100km": 0.0,
+      "note": "WLTC phases are not ADAC urban/rural/motorway results; auxiliary fuel includes effective low-load engine losses, not only incremental accessory fuel.",
+      "control_probe": {
+        "engine_off_stop_seconds": 235,
+        "fuel_cut_seconds": 184,
+        "buffer_round_trip_efficiency": 0.75,
+        "reverse_transmission_efficiency": 0.8,
+        "mechanical_reserve_kW": 5.0,
+        "auxiliary_service_kJ": 652.6842016582792,
+        "engine_funded_service_and_buffer_losses_kJ": 614.3904959529905,
+        "kinetic_funded_service_kJ": 66.6817840672534,
+        "buffer_loss_kJ": 28.38807836196476,
+        "caveat": "Engineering sensitivity, not Golf ECU calibration; absent restart fuel, RPM/gear thresholds, thermal constraints and finite buffer sizing"
+      }
+    }
+  }
+]
