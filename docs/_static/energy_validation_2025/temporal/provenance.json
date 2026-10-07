@@ -1,0 +1,18 @@
+{
+  "carculator": {
+    "default_parameters_sha256": "6f2c81ffc962a5a1517e18bb261197de5160326c3564aa9fe62b3f1d71e758f4",
+    "temporal_provenance_sha256": "99e1b274b70d51c673631f51281bea22d58f7f711da265b8e046f020890be004"
+  },
+  "carculator_bus": {
+    "default_parameters_sha256": "132b0f7eeadc5160b6f4f707bb61811796dd35d14cf66f2a7a061113cef16078",
+    "temporal_provenance_sha256": "750c8ba28ac06068a747d81601f7b4a46070da60637eff0518bd5e947a6fe923"
+  },
+  "carculator_truck": {
+    "default_parameters_sha256": "d20b2e9c04cba02e80c2a23f46a70db2fc27f7af613e835716884bb9f3a8ce26",
+    "temporal_provenance_sha256": "eed6ca32bc8f34cae90e146b9399127e3cd5d03743e222a0ffd10a892872a8c3"
+  },
+  "carculator_two_wheeler": {
+    "default_parameters_sha256": "97fc5f8b462fc7a2e1229393d05d1403821e0faf004176fb4727f4f8a547ee3d",
+    "temporal_provenance_sha256": "381ad8dbd66667d11725613dbd31a5c2ab0c2153c25eef23b48fbc48a0b4fe7c"
+  }
+}

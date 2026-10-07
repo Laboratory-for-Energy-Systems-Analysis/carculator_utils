@@ -79,6 +79,7 @@ User's Guide
    truck_energy_diagnostics
    petrol_car_energy_diagnostics
    combustion_controls
+   temporal_energy
 
 API Reference
 -------------
