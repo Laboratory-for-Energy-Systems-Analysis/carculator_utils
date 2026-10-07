@@ -106,6 +106,28 @@ def test_explicit_efficiency_overrides_take_precedence_over_maps():
     )
 
 
+@pytest.mark.parametrize("eta,expected", [(None, 0.2), (0.4, 0.4)])
+def test_map_correction_preserves_shaft_work_and_corrects_all_fuel_input(eta, expected):
+    maps = {"gasoline": {"engine": {0: 0.25, 1: 0.25}}}
+    _, result = calculate(
+        eta=eta, maps=maps, engine_efficiency_factor=0.8, aux_power=1000
+    )
+    np.testing.assert_allclose(result.sel(parameter="engine efficiency"), expected)
+    np.testing.assert_allclose(
+        result.sel(parameter="motive energy"), wheel_power_kw() / expected
+    )
+    np.testing.assert_allclose(result.sel(parameter="auxiliary energy"), 1 / expected)
+    np.testing.assert_allclose(
+        result.sel(parameter="power load"), (wheel_power_kw() + 1) / 20
+    )
+
+
+@pytest.mark.parametrize("factor", [0, -0.1, 1.1, np.nan, np.inf])
+def test_invalid_engine_map_correction_is_rejected(factor):
+    with pytest.raises(ValueError, match="Engine efficiency factor"):
+        calculate(engine_efficiency_factor=factor)
+
+
 def test_load_dependent_transmission_converges_to_analytical_root():
     # eta_transmission = .8 + .1 * load; load * eta_transmission = P_wheel / P_rated.
     maps = {
@@ -222,16 +244,17 @@ def test_fuel_cell_auxiliaries_use_fuel_cell_conversion():
     np.testing.assert_allclose(result.sel(parameter="auxiliary energy"), 2)
 
 
-def test_masked_efficiency_cells_retain_their_load_map():
+@pytest.mark.parametrize("factor", [1.0, 0.8])
+def test_masked_efficiency_cells_retain_their_load_map(factor):
     efficiency = np.ma.array(np.full((6, 1, 1, 1, 1), 0.5), mask=False)
     efficiency.mask[3:] = True
     maps = {"gasoline": {"engine": {0: 0.25, 1: 0.25}, "transmission": {0: 1, 1: 1}}}
-    _, result = calculate(eta=efficiency, maps=maps)
+    _, result = calculate(eta=efficiency, maps=maps, engine_efficiency_factor=factor)
     np.testing.assert_allclose(
         result.sel(parameter="motive energy")[:3], wheel_power_kw() / 0.5
     )
     np.testing.assert_allclose(
-        result.sel(parameter="motive energy")[3:], wheel_power_kw() / 0.25
+        result.sel(parameter="motive energy")[3:], wheel_power_kw() / (0.25 * factor)
     )
 
 
@@ -333,3 +356,14 @@ def test_custom_cycle_broadcasts_sizes_without_mutating_input():
 def test_invalid_custom_speed_rejected(speed):
     with pytest.raises(ValueError, match="(cycle|speeds)"):
         EnergyConsumptionModel("car", ["Medium"], ["BEV"], speed, None)
+
+
+def test_named_car_cycle_keeps_terminal_stops_but_excludes_nan_padding():
+    model = EnergyConsumptionModel("car", ["Medium"], ["BEV"], "WLTC 3.1", None)
+    speed = model.cycle[:, 0]
+    finite = np.isfinite(speed)
+    moving = np.flatnonzero(speed > 0)
+    # The packaged low-speed phase includes a final idle period.
+    assert np.flatnonzero(finite)[-1] > moving[-1]
+    np.testing.assert_array_equal(model.driving_time[:, 0, 0, 0, 0], finite)
+    assert not model.driving_time[~finite].any()

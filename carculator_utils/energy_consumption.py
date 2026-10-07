@@ -254,11 +254,14 @@ class EnergyConsumptionModel:
         # Unit conversion km/h to m/s
         self.velocity = np.where(np.isnan(self.cycle), 0, (self.cycle * 1000) / 3600)
         self.velocity = self.velocity[:, None, None, None, :]
-        self.driving_time = (
-            np.ones_like(self.velocity)
-            if self.cycle_name == "custom"
-            else self.find_last_driving_second()
-        )
+        if self.cycle_name == "custom":
+            self.driving_time = np.ones_like(self.velocity)
+        elif vehicle_type == "car":
+            # Car resources delimit each trace with NaN padding. Finite
+            # terminal zero-speed samples are real idle/auxiliary demand.
+            self.driving_time = np.isfinite(self.cycle)[:, None, None, None, :]
+        else:
+            self.driving_time = self.find_last_driving_second()
 
         # Model acceleration as difference in velocity between
         # time steps (1 second)
@@ -523,6 +526,7 @@ class EnergyConsumptionModel:
         heating_consumption: Union[xr.DataArray, np.array] = None,
         electric_motor_efficiency: Union[xr.DataArray, np.array, float] = 0.9,
         combustion_engine_power: Union[xr.DataArray, np.array, None] = None,
+        engine_efficiency_factor: Union[xr.DataArray, np.array, float] = 1.0,
     ) -> DataArray:
         """
         Calculate energy used and recuperated for a given vehicle per km driven.
@@ -533,6 +537,8 @@ class EnergyConsumptionModel:
         :param frontal_area: Frontal area of vehicle (m2)
         :param sizes: size classes of the vehicles
         :param electric_motor_power: Electric motor power (watts). Optional.
+        :param engine_efficiency_factor: Multiplicative map correction in (0, 1].
+            Applies before fuel conversion; explicit efficiency overrides take precedence.
         :returns: net motive energy (in kJ/km)
 
         Power to overcome rolling resistance is calculated by:
@@ -612,6 +618,13 @@ class EnergyConsumptionModel:
         fixed_engine, engine_mask = efficiency_override(
             engine_efficiency, motive_energy_at_wheels.shape
         )
+        if (
+            np.any(~np.isfinite(engine_efficiency_factor))
+            or np.any(engine_efficiency_factor <= 0)
+            or np.any(engine_efficiency_factor > 1)
+        ):
+            raise ValueError("Engine efficiency factor must be finite and in (0, 1].")
+        map_factor = np.asarray(engine_efficiency_factor).T
         fixed_transmission, transmission_mask = efficiency_override(
             transmission_efficiency, motive_energy_at_wheels.shape
         )
@@ -655,16 +668,9 @@ class EnergyConsumptionModel:
         # Transmission efficiency depends on shaft load. Solve that relationship
         # per sample, rather than iterating a mean fuel-input load a fixed number
         # of times. Explicit efficiency inputs are overrides, not map seeds.
+        _t = lambda x: x.T if x.shape[-4:] != motive_energy_at_wheels.shape[-4:] else x
         for iteration in range(100):
             previous_load = engine_load.copy()
-            if not engine_mask.all():
-                engine_efficiency = self.calculate_efficiency(
-                    engine_efficiency, engine_load, "engine"
-                )
-                engine_efficiency = np.where(
-                    engine_mask, fixed_engine, engine_efficiency
-                )
-
             if not transmission_mask.all():
                 transmission_efficiency = self.calculate_efficiency(
                     transmission_efficiency, engine_load, "transmission"
@@ -672,23 +678,6 @@ class EnergyConsumptionModel:
                 transmission_efficiency = np.where(
                     transmission_mask, fixed_transmission, transmission_efficiency
                 )
-
-            if fuel_cell_system_efficiency is None:
-                fuel_cell_system_efficiency = np.ones_like(engine_efficiency)
-
-            fuel_cell_system_efficiency = xr.where(
-                fuel_cell_system_efficiency == 0, 1, fuel_cell_system_efficiency
-            )
-
-            _t = lambda x: (
-                x.T if x.shape[-4:] != motive_energy_at_wheels.shape[-4:] else x
-            )
-
-            motive_energy = motive_energy_at_wheels / (
-                _t(_o(_c(engine_efficiency)))
-                * _t(_o(_c(transmission_efficiency)))
-                * _t(_o(_c(fuel_cell_system_efficiency)))
-            )
 
             shaft_power = (
                 motive_energy_at_wheels
@@ -712,6 +701,26 @@ class EnergyConsumptionModel:
             raise ConvergenceError(
                 "Energy efficiency: shaft load did not converge after 100 iterations."
             )
+
+        # Fuel/motor efficiency does not enter the mechanical load equation.
+        # Evaluate it once at the converged load, not at every solver iteration.
+        if not engine_mask.all():
+            engine_efficiency = self.calculate_efficiency(
+                engine_efficiency, engine_load, "engine"
+            )
+            engine_efficiency = np.where(
+                engine_mask, fixed_engine, engine_efficiency * map_factor
+            )
+        if fuel_cell_system_efficiency is None:
+            fuel_cell_system_efficiency = np.ones_like(engine_efficiency)
+        fuel_cell_system_efficiency = xr.where(
+            fuel_cell_system_efficiency == 0, 1, fuel_cell_system_efficiency
+        )
+        motive_energy = motive_energy_at_wheels / (
+            _t(_o(_c(engine_efficiency)))
+            * _t(_o(_c(transmission_efficiency)))
+            * _t(_o(_c(fuel_cell_system_efficiency)))
+        )
 
         # Preserve the demand of the requested speed trace. The engine rating is
         # a mechanical-output limit, not a limit on chemical/electrical input.

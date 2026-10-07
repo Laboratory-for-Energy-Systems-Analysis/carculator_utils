@@ -76,7 +76,9 @@ def test_native_2025_defaults_cover_existing_cells_and_sample(package, prefix):
     [
         ("carculator", "Car", "Medium", "ICEV-p"),
         ("carculator_bus", "Bus", "13m-city", "ICEV-d"),
+        ("carculator_bus", "Bus", "13m-city", "ICEV-g"),
         ("carculator_truck", "Truck", "7.5t", "ICEV-d"),
+        ("carculator_truck", "Truck", "7.5t", "ICEV-g"),
         ("carculator_two_wheeler", "TwoWheeler", "Bicycle <25", "BEV"),
         ("carculator_two_wheeler", "TwoWheeler", "Bicycle <25", "Human"),
         ("carculator_two_wheeler", "TwoWheeler", "Moped <4kW", "ICEV-p"),
@@ -156,6 +158,48 @@ def test_efficiency_overrides_reach_each_vehicle_family(
     np.testing.assert_allclose(
         model.energy.sel(parameter="transmission efficiency"), 0.9
     )
+
+
+@pytest.mark.parametrize(
+    "package,prefix,size",
+    [
+        ("carculator_bus", "Bus", "13m-city"),
+        ("carculator_truck", "Truck", "7.5t"),
+    ],
+)
+def test_cng_correction_changes_fuel_input_at_fixed_mechanical_demand(
+    package, prefix, size
+):
+    module = load_vehicle_package(package)
+    inputs = getattr(module, prefix + "InputParameters")()
+    inputs.static()
+    _, array = module.fill_xarray_from_input_parameters(
+        inputs,
+        scope={"size": [size], "powertrain": ["ICEV-g", "ICEV-d"], "year": [2025]},
+    )
+    model = getattr(module, prefix + "Model")(array)
+    model.set_all()
+    model["CNG engine efficiency correction factor"] = 0
+    model.calculate_ttw_energy()
+    original = model.energy.copy(deep=True)
+    original_total = model["TtW energy"].copy(deep=True)
+    model["CNG engine efficiency correction factor"] = 0.2
+    model.calculate_ttw_energy()
+    for powertrain, fuel_ratio in [("ICEV-g", 1.25), ("ICEV-d", 1.0)]:
+        np.testing.assert_allclose(
+            model["TtW energy"].sel(powertrain=powertrain),
+            original_total.sel(powertrain=powertrain) * fuel_ratio,
+        )
+        for parameter, ratio in [
+            ("engine efficiency", 1 / fuel_ratio),
+            ("motive energy", fuel_ratio),
+            ("auxiliary energy", fuel_ratio),
+            ("power load", 1),
+        ]:
+            selection = dict(powertrain=powertrain, parameter=parameter)
+            np.testing.assert_allclose(
+                model.energy.sel(**selection), original.sel(**selection) * ratio
+            )
 
 
 @pytest.mark.parametrize(
@@ -409,3 +453,62 @@ def test_bus_peak_occupancy_assumption_does_not_erase_valid_consumption():
     assert model["is_compliant"].item() == 0
     assert model["TtW energy"].item() == 0
     assert model["electricity consumption"].item() == 0
+
+
+@pytest.mark.parametrize(
+    "package,prefix,size,powertrain",
+    [
+        ("carculator", "Car", "Medium", "BEV"),
+        ("carculator_truck", "Truck", "7.5t", "BEV"),
+        ("carculator_two_wheeler", "TwoWheeler", "Moped <4kW", "BEV"),
+    ],
+)
+@pytest.mark.parametrize(
+    "kwargs", [{"ambient_temperature": -5}, {"indoor_temperature": 25}]
+)
+def test_unsupported_temperature_is_not_silently_ignored(
+    package, prefix, size, powertrain, kwargs
+):
+    module = load_vehicle_package(package)
+    inputs = getattr(module, prefix + "InputParameters")()
+    inputs.static()
+    _, array = module.fill_xarray_from_input_parameters(
+        inputs, scope={"size": [size], "powertrain": [powertrain], "year": [2025]}
+    )
+    with pytest.raises(ValueError, match="supported only by bus HVAC"):
+        getattr(module, prefix + "Model")(array, **kwargs)
+
+
+@pytest.mark.parametrize("temperature", [np.nan, np.inf, -273.15, [20, 21]])
+def test_bus_rejects_invalid_temperature_before_calculation(temperature):
+    module = load_vehicle_package("carculator_bus")
+    inputs = module.BusInputParameters()
+    inputs.static()
+    _, array = module.fill_xarray_from_input_parameters(
+        inputs,
+        scope={"size": ["13m-city"], "powertrain": ["BEV-depot"], "year": [2025]},
+    )
+    with pytest.raises(ValueError, match="Ambient temperature"):
+        module.BusModel(array, ambient_temperature=temperature)
+
+
+def test_unavailable_historical_bus_does_not_block_active_bus_sizing():
+    module = load_vehicle_package("carculator_bus")
+    inputs = module.BusInputParameters()
+    inputs.static()
+    _, array = module.fill_xarray_from_input_parameters(
+        inputs,
+        scope={
+            "size": ["13m-coach"],
+            "powertrain": ["BEV-depot"],
+            "year": [2000, 2025],
+        },
+    )
+    model = module.BusModel(array.astype(float), max_iterations=20)
+    model.set_all()
+    assert model["is_available"].sel(year=2000).item() == 0
+    assert model["TtW energy"].sel(year=2000).item() == 0
+    assert model["electricity consumption"].sel(year=2000).item() == 0
+    assert model["is_available"].sel(year=2025).item() == 1
+    assert model["TtW energy"].sel(year=2025).item() > 0
+    assert model["driving mass"].sel(year=2025).item() < 30000

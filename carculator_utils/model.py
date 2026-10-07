@@ -19,6 +19,16 @@ from .particulates_emissions import ParticulatesEmissionsModel
 REQUIRED_ARRAY_DIMS = ("size", "powertrain", "parameter", "year", "value")
 
 
+def validate_temperature(value, name):
+    """Normalize a Celsius scalar or twelve monthly values without mutation."""
+    temperature = np.asarray(value, dtype=float)
+    if temperature.shape not in ((), (12,)) or not np.isfinite(temperature).all():
+        raise ValueError(f"{name} must be a finite scalar or twelve monthly values.")
+    if np.any(temperature <= -273.15):
+        raise ValueError(f"{name} must be above absolute zero in degrees Celsius.")
+    return float(temperature) if temperature.ndim == 0 else temperature.copy()
+
+
 def finite(array, mask_value=0):
     return np.where(np.isfinite(array), array, mask_value)
 
@@ -111,6 +121,10 @@ class VehicleModel:
         :param transmission_efficiency: Fixed transmission efficiencies, with
             the same key and value contract as ``engine_efficiency``.
         :param target_range: dictionary with target range for each powertrain-size-year combination
+        :param ambient_temperature: Celsius scalar or twelve monthly values for
+            bus HVAC only. Other families use annual-average thermal-demand
+            inputs and reject temperature overrides rather than ignoring them.
+        :param indoor_temperature: Bus cabin setpoint in Celsius, default 20.
 
         """
         if (
@@ -126,6 +140,21 @@ class VehicleModel:
         self.country = country
 
         self.vehicle_type = detect_vehicle_type(list(self.array.coords["size"].values))
+        indoor_temperature = validate_temperature(
+            indoor_temperature, "Indoor temperature"
+        )
+        if ambient_temperature is not None:
+            ambient_temperature = validate_temperature(
+                ambient_temperature, "Ambient temperature"
+            )
+        if self.vehicle_type != "bus" and (
+            ambient_temperature is not None
+            or np.any(np.asarray(indoor_temperature) != 20)
+        ):
+            raise ValueError(
+                "Temperature overrides are supported only by bus HVAC. "
+                "Other vehicle families use annual-average thermal-demand inputs."
+            )
         self.cycle = (
             cycle
             if type(cycle) in [np.ndarray, str, list]
