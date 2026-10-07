@@ -6,6 +6,7 @@ array with speed levels (in km/h) for each
 second of driving.
 """
 
+import json
 import sys
 from pathlib import Path
 from typing import List, Tuple
@@ -16,6 +17,22 @@ import yaml
 from . import DATA_DIR
 
 FILEPATH_DC_SPECS = DATA_DIR / "driving_cycles" / "dc_specs.yaml"
+
+
+def get_source_cycle_durations(vehicle_type: str, name: str) -> dict:
+    """Return verified one-second sample counts by size, excluding padding.
+
+    Missing sizes have no verified source duration and retain the caller's
+    legacy duration convention.
+    """
+    path = DATA_DIR / "driving_cycles" / "vecto_cycle_provenance.json"
+    with path.open() as stream:
+        records = json.load(stream)["records"]
+    return {
+        record["size"]: record["duration_seconds"]
+        for record in records
+        if record["vehicle_type"] == vehicle_type and record["cycle"] == name
+    }
 
 
 def detect_vehicle_type(vehicle_sizes: List[str]) -> str:
@@ -101,17 +118,18 @@ def get_data(
 def get_standard_driving_cycle_and_gradient(
     vehicle_type: str, vehicle_sizes: List[str], name: str
 ) -> Tuple[np.ndarray, np.ndarray]:
-    """Get driving_cycles and gradient data as a Pandas `Series`.
+    """Return bundled speed and road grade arrays, with one row per second.
 
-    Driving cycles are given as km/h per second up to 3200 seconds.
+    Speed is in km/h. Road grade is dimensionless rise/run, not degrees or
+    radians. The energy model converts grade to angle using ``arctan``.
+    Arrays can contain padding; source durations identify verified VECTO traces.
 
     :param name: The name of the driving_cycles.
     e.g., WLTC (Worldwide harmonized Light vehicles Test Cycles)
     :type name: str
 
-    :returns: A pandas DataFrame object with driving time
-    (in seconds) as index, and velocity (in km/h) as values.
-    :rtype: panda.Series
+    :returns: Speed and grade arrays with columns in requested size order.
+    :rtype: tuple[numpy.ndarray, numpy.ndarray]
 
     """
 

@@ -20,6 +20,7 @@ from xarray import DataArray
 from . import DATA_DIR
 from .driving_cycles import (
     get_driving_cycle_specs,
+    get_source_cycle_durations,
     get_standard_driving_cycle_and_gradient,
 )
 from .numerical import ConvergenceError
@@ -210,12 +211,13 @@ class EnergyConsumptionModel:
                 vehicle_type, vehicle_size, self.cycle_name
             )
 
-        # Bundled gradients retain their historical radian interpretation.
-        # Public gradient overrides have always been documented in degrees.
+        # Bundled gradients are rise/run (VECTO percent grade divided by 100).
+        # Public numeric gradient overrides are documented in degrees.
         if isinstance(gradient, str):
             _, self.gradient = get_standard_driving_cycle_and_gradient(
                 vehicle_type, vehicle_size, gradient
             )
+            self.gradient = np.arctan(self.gradient)
         elif gradient is not None:
             slope = np.asarray(gradient, dtype=float)
             if slope.ndim == 1:
@@ -236,6 +238,8 @@ class EnergyConsumptionModel:
                 raise ValueError(
                     "Gradient columns must match the vehicle sizes."
                 ) from exc
+        else:
+            self.gradient = np.arctan(self.gradient)
 
         self.country = country
         self.vehicle_type = vehicle_type
@@ -262,6 +266,17 @@ class EnergyConsumptionModel:
             self.driving_time = np.isfinite(self.cycle)[:, None, None, None, :]
         else:
             self.driving_time = self.find_last_driving_second()
+            durations = get_source_cycle_durations(vehicle_type, self.cycle_name)
+            for column, size in enumerate(vehicle_size):
+                if size in durations:
+                    duration = durations[size]
+                    if not 0 < duration <= len(self.cycle):
+                        raise ValueError(
+                            "Source cycle duration exceeds the bundled trace."
+                        )
+                    self.driving_time[:, 0, 0, 0, column] = (
+                        np.arange(len(self.cycle)) < duration
+                    )
 
         # Model acceleration as difference in velocity between
         # time steps (1 second)
