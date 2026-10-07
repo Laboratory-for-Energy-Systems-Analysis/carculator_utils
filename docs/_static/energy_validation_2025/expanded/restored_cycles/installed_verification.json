@@ -1,0 +1,150 @@
+{
+  "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 17:06:14) [Clang 19.1.7 ]",
+  "artifacts": [
+    {
+      "name": "carculator_utils-1.3.6.dev0-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "e7c88814c6db056914d38e8d98e4b57acb12851fabe2fbcdc3c09c8726dcde81",
+      "resources": 121
+    },
+    {
+      "name": "carculator_utils-1.3.6.dev0-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "e7c88814c6db056914d38e8d98e4b57acb12851fabe2fbcdc3c09c8726dcde81",
+      "resources": 121
+    },
+    {
+      "name": "carculator-1.9.6.dev0-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "612c9bdda21f54df13ad68cfea589ee0c5500f5c281c1fe2d2e2226bf0e5ff2d",
+      "resources": 4
+    },
+    {
+      "name": "carculator-1.9.6.dev0-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "b206df0b9ece5715d1bd631af75811b867c7503343d15e7782eb4d10caeb31df",
+      "resources": 4
+    },
+    {
+      "name": "carculator_bus-0.1.1.dev0-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "7aa7db34a0fbe33265289158484cb4e27866bdf9c7cd6f5f3926d95fdf66edc4",
+      "resources": 5
+    },
+    {
+      "name": "carculator_bus-0.1.1.dev0-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "7aa7db34a0fbe33265289158484cb4e27866bdf9c7cd6f5f3926d95fdf66edc4",
+      "resources": 5
+    },
+    {
+      "name": "carculator_truck-0.5.1.dev0-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "f9e3cc5f3f2596885fe56215f95c458c1d2405432bbae754a32d24f5b5c3cba5",
+      "resources": 4
+    },
+    {
+      "name": "carculator_truck-0.5.1.dev0-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "dc14177e9350261287a459a342e07962c1d95fbd16d43685b79c314f0dd5209a",
+      "resources": 4
+    },
+    {
+      "name": "carculator_two_wheeler-0.1.1.dev0-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "0c2d9bea9388ecf95b63f9e290bca2e96be11c89969b2fd0617930faff07ca61",
+      "resources": 3
+    },
+    {
+      "name": "carculator_two_wheeler-0.1.1.dev0-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "0c2d9bea9388ecf95b63f9e290bca2e96be11c89969b2fd0617930faff07ca61",
+      "resources": 3
+    }
+  ],
+  "results": [
+    {
+      "package": "carculator",
+      "version": "1.9.6.dev0",
+      "ttw_energy": 697.5230102539062,
+      "climate_change": 0.13953095230019796
+    },
+    {
+      "package": "carculator_bus",
+      "version": "0.1.1.dev0",
+      "ttw_energy": 4849.9755859375,
+      "climate_change": 0.5274867739551121
+    },
+    {
+      "package": "carculator_truck",
+      "version": "0.5.1.dev0",
+      "ttw_energy": 5928.7763671875,
+      "climate_change": 1.4358816294162606
+    },
+    {
+      "package": "carculator_two_wheeler",
+      "version": "0.1.1.dev0",
+      "ttw_energy": 29.314733505249023,
+      "climate_change": 0.02337600427077058
+    }
+  ],
+  "repository_commits": {
+    "carculator_utils": "d655b441cad09f2e4ffe9ddf0c46e2562f0c9017",
+    "carculator": "cceccdb2b8146ce9d7dadddf68df8011a2035a7b",
+    "carculator_bus": "5eb75c4e7d197e0ba8642e59210cf2bdb658a604",
+    "carculator_truck": "d83138fa2d884902a2e3dda70c34b9436f438b63",
+    "carculator_two_wheeler": "a01b27652885efcbece80c5aeed99a1a51780d0b"
+  },
+  "test_suites": {
+    "carculator-tests.xml": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "48",
+      "time": "63.911",
+      "timestamp": "2026-10-07T11:05:37.190445+02:00",
+      "hostname": "Mac-129129071195.psi.ch"
+    },
+    "carculator_truck-tests.xml": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "54",
+      "time": "62.686",
+      "timestamp": "2026-10-07T11:09:03.856323+02:00",
+      "hostname": "Mac-129129071195.psi.ch"
+    },
+    "carculator_bus-tests.xml": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "30",
+      "time": "142.146",
+      "timestamp": "2026-10-07T11:06:41.394779+02:00",
+      "hostname": "Mac-129129071195.psi.ch"
+    },
+    "carculator_two_wheeler-tests.xml": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "1",
+      "tests": "19",
+      "time": "5.056",
+      "timestamp": "2026-10-07T11:10:06.841518+02:00",
+      "hostname": "Mac-129129071195.psi.ch"
+    },
+    "carculator_utils-tests.xml": {
+      "name": "pytest",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "tests": "233",
+      "time": "34.193",
+      "timestamp": "2026-10-07T11:05:02.769072+02:00",
+      "hostname": "Mac-129129071195.psi.ch"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "run_utc": "2026-10-06T21:26:09.987992+00:00",
+  "python": "3.12.13",
+  "numpy": "1.26.4",
+  "xarray": "2026.9.0",
+  "packages": {
+    "carculator_utils": {
+      "version": "(1, 3, 6, 'dev0')",
+      "path": "/Users/romain/GitHub/carculator_utils/carculator_utils",
+      "git_head": "db6857ea9a7fa17c27fa5d5ea7bb24dd32054d71",
+      "sha256": {
+        "__init__.py": "d604814b3ef0d58266b05a16504ce52f2231b890faa01196c420e8bc8eb02d9d",
+        "_version.py": "da1f03541c0ba9ec5db7dcb845adb7cddbde2a8c9ff812c3c603a7a540391c0b",
+        "array.py": "c6fb5baeb8992b3f14e80c1a0ed524b761199481eb32cfed8bccfb362b459bac",
+        "background_systems.py": "29b37ea059f9dd5526324869e6ea6784d826d3fbe9e990690f2a38ba608dd6c0",
+        "data/driving_cycles/bus.csv": "7ccd4b9f5df58641aa658ad7a049e82589b5f99d96f4401481ef412e8a817192",
+        "data/driving_cycles/car.csv": "595797fb8cef651d4f4eaf0df0c08b4e419db77d9421b179ee5ef5edc619ca2f",
+        "data/driving_cycles/dc_specs.yaml": "9419ed3f7b5c1a8a755a2f5e3d20a68fe6e22710a4b63818097cac0b2b0323bc",
+        "data/driving_cycles/truck.csv": "948016e95f2a6f957dc094c7c583e4edb051305409acaf8ec3c98b08a0b94fcc",
+        "data/driving_cycles/two-wheeler.csv": "df9f7c0e1c19acced084b75d9c34b2a04388d93e99f6a166b8ea98c8729d4b90",
+        "data/efficiency/bus.yaml": "96a1e85547a3b72fcddbc1f2b3bc772a502e7ed4552272415149365fafc089e8",
+        "data/efficiency/car.yaml": "b3236d1ab3902e7ba78b308e24516515f70274899502547ebaab3b84710fd82a",
+        "data/efficiency/truck.yaml": "13bfd14151c1c39c19e35a4e80d3db23be62c06d42cae08338a3ee28df854c02",
+        "data/gradient/bus.csv": "ae662f2e143fbddf078d258b7affa326cad1df4f17a876668c218737675f848a",
+        "data/gradient/car.csv": "48d912f9e177e488504d3b37dcd1fbb23de5ed02fd6dc5b392bf2963e3a24532",
+        "data/gradient/truck.csv": "bc8daff1d72bdc06bd4a3f6135412b39e815ffa2e05e6f2376b5f2d3f26aee80",
+        "data/gradient/two-wheeler.csv": "6357ecfbe43e4ca87f94d5bd14d536c4cb92b382fb8647502a90dc94728492de",
+        "data/purchase_cost_params.yaml": "52446dbd9bc38bb91cb4decd0a66ed4a7b4ef13b75c99fd8dc2aacc0ee06099d",
+        "driving_cycles.py": "b77a860f8bd455b1e473f31e80929ce0c2c7d0e2b36186529fcbbba84a327345",
+        "energy_consumption.py": "6d06bf8c0fadda4fb798631ae5c47d3d0cb139763eba6280b1c7c2ba322bc95c",
+        "export.py": "0cdede7c8b59d20ff6f5c0dcf9627a48553f87166a94c4c64cc7445b0c404d3a",
+        "hot_emissions.py": "23a928abeeda8dde4546a5808a2eb21ef9ce0599e08161e3bb9737895861e161",
+        "inventory.py": "67f051dce76fc08622be8d602e8168d6a149544c85c2ccf88b13fa38e2d62a53",
+        "model.py": "d3757da25ea0fde6728481a6085590a70e0321e574c12138c41545c10e663934",
+        "noise_emissions.py": "a847b6b4a4b9af9ba0932e895b266549759be8742611938d22768740f61c0a28",
+        "numerical.py": "b8fba137d82f46ffe04d1230f8bcc8ef05f5986bfc3528b45bd2746880c2575b",
+        "particulates_emissions.py": "e864b2c4f751b80f31db80bd8aedd36bfc8d6c073bf6059e507fa880d7cc7cda",
+        "utils.py": "2a1f32afafe2bb12dbbac8fe6e5ef339a02f39828ba817c47319f0662d4aea91",
+        "vehicle_input_parameters.py": "e2265d4f32257a8aa99e94a0737258ec01ff982a00049a94fe279f11b5258d2b"
+      }
+    },
+    "carculator": {
+      "version": "(1, 9, 6, 'dev0')",
+      "path": "/Users/romain/GitHub/carculator/carculator",
+      "git_head": "78bce47b14a0ff656bf6e0f4935c93f67f316750",
+      "sha256": {
+        "__init__.py": "c508a261a04610d986d01f3cdab5c2d0fee92f3cf960ccf55fa092ec5fb1a565",
+        "_version.py": "5256b3718b64c485c34bdc1dff0ae02b7e61122df442153e064ac652724adf12",
+        "car_input_parameters.py": "66ae4723c0cfbdf6b1e185b7e0007a2c73c9ff4a20359c290b0133f500698c7d",
+        "data/default_parameters.json": "ef8a1a3ac23a509fed29d5b9823aab1569efc2de49a5fd0ee863024ffccf8920",
+        "data/defaults_2025_provenance.json": "62fdafb8a052907e517e4bbb174aa5bf6be5031cff026f28e831803d8e2cbfe4",
+        "data/extra_parameters.json": "41112d667148ab0014cc7390d406fceb0a6ce321e22421a28415a2282a3bc527",
+        "data/purchase_cost_params.yaml": "52446dbd9bc38bb91cb4decd0a66ed4a7b4ef13b75c99fd8dc2aacc0ee06099d",
+        "inventory.py": "525c1e6546997aee9d7e1ef2e4a24c4f2b7df332d00a5c0799ce2a6a8091d65e",
+        "model.py": "47a1baab946243c6479f726a4db30d27ed3bdaa23cd4fc9996069a00e787cf9b"
+      }
+    },
+    "carculator_bus": {
+      "version": "(0, 1, 1, 'dev0')",
+      "path": "/Users/romain/GitHub/carculator_bus/carculator_bus",
+      "git_head": "bd65bab0a42ecd83cb79619ba471598a17246a99",
+      "sha256": {
+        "__init__.py": "8eb206ca9167ea35eb063898db64e3c0246eeaa65f5ba9f512f66f522e874b20",
+        "_version.py": "973bb2af8689a4f3c5c1544583abb1a263d4b3449f3c190787ff77bc0a2c2a0e",
+        "bus_input_parameters.py": "6a6a88bcfdcb182ace8b773f312b1a278b91fc651df4c715eb49f27855a48930",
+        "data/default_parameters.json": "67dff33bcdfe6699a08845b1da195f7ab4cd53037cdac5b8ce681304cacfdc88",
+        "data/defaults_2025_provenance.json": "737e0fd5261970b01f74ecc3ac99cbbb7bbae1cf2e1489f979d391bf793ea316",
+        "data/extra_parameters.json": "460df07a82da5bd0ae7d50561d3005653da5b50d392319c3d29b98472ef7fe94",
+        "data/purchase_cost_params.yaml": "52446dbd9bc38bb91cb4decd0a66ed4a7b4ef13b75c99fd8dc2aacc0ee06099d",
+        "driving_cycles.py": "4555512cde6b300f5411dabdc5310fbb49ee71a165af525905957a50b9e14094",
+        "inventory.py": "2a260c47b75a3bbed520d25a97e595d7c9f39acc11ec1fce1317ea83468a3fa2",
+        "model.py": "9a3546edbb7b8c2c2e49065809c27623c7b1a789d29ca7f599a015b04efe5633"
+      }
+    },
+    "carculator_truck": {
+      "version": "(0, 5, 1, 'dev0')",
+      "path": "/Users/romain/GitHub/carculator_truck/carculator_truck",
+      "git_head": "79c676554b80be405e933eee162bbe50facf1dc5",
+      "sha256": {
+        "__init__.py": "61a1102ebfff30ea34325af0c94a9a83d6e53c278ed63135f095c4f89dc02783",
+        "_version.py": "c8e5a3ee4a6fee3661230df2ff1e8e11cde2310a66eae6ab2be8fe91e6bd7001",
+        "data/default_parameters.json": "ef417d3ee57cdabeb1cb79678f7650e54fef58c430909a13ec11bbde881b6cec",
+        "data/defaults_2025_provenance.json": "3c4e3ae913ecf003653e969f64a49e6d86ea3ae52ddf4ede5df285fa80337024",
+        "data/extra_parameters.json": "752d513d80ad4def88c05960c3990a9dd276a8759f4f236ecbe64903dcd28c0f",
+        "data/payloads.yaml": "3e08a544e63a48f1a7af2d00b48d44136cbc5b94297344ab9db1bd80ce37b5bb",
+        "driving_cycles.py": "6a35a20f7497c686a56c0176138c6da9a44e83b42c2fa6577c2c1537c13386e8",
+        "inventory.py": "dbb0de20aa73987e6800db21205eca8926a47d877303f927096e904e680b3bc0",
+        "model.py": "c2e2b1b4e72a72d140464323bdd957bea74419b241bd413636bd957492036d8a",
+        "truck_input_parameters.py": "1c3739140a3f1751b3e79e73aa6e99b54d8c314071197b79fb9db331092fa16a"
+      }
+    },
+    "carculator_two_wheeler": {
+      "version": "(0, 1, 1, 'dev0')",
+      "path": "/Users/romain/GitHub/carculator_two_wheeler/carculator_two_wheeler",
+      "git_head": "bef053a0b33d7a998a1a9b4f05f253fd5e50ed06",
+      "sha256": {
+        "__init__.py": "315fa0111aab3adcdd9b224e7197f3954d1b7e4b2a8398a55cdb0b6be8d0c5a5",
+        "_version.py": "973bb2af8689a4f3c5c1544583abb1a263d4b3449f3c190787ff77bc0a2c2a0e",
+        "data/default_parameters.json": "dde265d1bf21f887d81afe15d137742f4fd949f5a17cd1e36678ae6bd8b1a8ca",
+        "data/defaults_2025_provenance.json": "2e6e66d24773ace55ca1e3b7b8fff0dba099a0918639bfe5be9b0c6e8fb99b05",
+        "data/extra_parameters.json": "76da5d186463c021ba7096bef0df0fa33a42cf51ed63620fff8652c5ecbe83a5",
+        "inventory.py": "513ff732d8146c0670e5b849962d1dcea7000b89297f31632bfc0cdcfe7e183c",
+        "model.py": "100d3e13b8eafb0b535ab7ff330593f3e94c4e407025bee768a8a919ae81d231",
+        "two_wheelers_input_parameters.py": "46ae20507aad8ccad2a6a91c07245a6e42f0b675527a3785fc7545ae31876d6c"
+      }
+    }
+  },
+  "catalog_sha256": "78d37e068889e3d6a373f9ab34f9cd140d3cd73f9aa65e0d01c6817e5f500b0c",
+  "runner_sha256": {
+    "validate_energy_measurements.py": "0000cfa5915630ac81a7105575a5c68c3708ac2e706af29b2e8a289bbc0d70d7",
+    "validate_energy_2025.py": "a08efda042beeac2e92afe67da846ce7774581c5bdd20e05372ec2597ac0a624"
+  },
+  "mass_tolerance_kg": 0.1,
+  "numerical_note": "Benchmark-only sizing tolerance 1e-8; full set_all() calls with original physics and availability rules. Capture driving mass passed to the final energy calculation, as well as the final stored mass. No efficiency fitting."
+}

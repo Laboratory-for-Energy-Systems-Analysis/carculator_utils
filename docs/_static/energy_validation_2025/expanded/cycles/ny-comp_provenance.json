@@ -1,0 +1,12 @@
+{
+  "source_url": "https://nrel.sitefinity.cloud/docs/libraries/transportation/csv/ny-comp.csv",
+  "source_page": "https://nrel.sitefinity.cloud/transportation/drive-cycle-tool",
+  "raw_sha256": "e9faef09d5a97599350d89c205182609b37d6045274780b11431e67f5773699f",
+  "converted_sha256": "83614711133806b1cf5b88623f667a9921da3fc2e9fba2c0ef55a9124664cd24",
+  "conversion": "mph * 1.609344; seconds unchanged",
+  "sample_count": 1030,
+  "elapsed_seconds": 1029.0,
+  "distance_miles": 2.5051722222222224,
+  "max_speed_mph": 36.0,
+  "note": "Reference cycle; actual tracking unavailable. NY Bus and NY Composite are distinct from NYCC."
+}

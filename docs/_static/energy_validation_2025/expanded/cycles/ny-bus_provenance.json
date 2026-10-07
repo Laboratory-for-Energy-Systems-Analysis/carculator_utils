@@ -1,0 +1,17 @@
+{
+  "source_url": "https://nrel.sitefinity.cloud/docs/libraries/transportation/csv/ny-bus.csv",
+  "source_page": "https://nrel.sitefinity.cloud/transportation/drive-cycle-tool",
+  "raw_sha256": "a35f2b929ed3e0fe4606e8181ca844a05e5966157caefcc10b6d3ee8bdf6cde5",
+  "converted_sha256": "17f45346a141151da4e100c9f26f6ca3567093c3f9136320c1f7a4eadd4ac240",
+  "conversion": "10 Hz source interpolated at integer seconds, then mph * 1.609344",
+  "sample_count": 601,
+  "elapsed_seconds": 600.0,
+  "distance_miles": 0.6147777777777778,
+  "max_speed_mph": 30.8,
+  "note": "Distance, maximum speed and positive squared-speed change preserved. Time-step acceleration still follows one-second model numerics. NY Bus differs from NYCC.",
+  "raw_sample_count": 6001,
+  "raw_distance_miles": 0.6147777777777779,
+  "positive_squared_speed_change_raw": 3769.8000000000006,
+  "positive_squared_speed_change_resampled": 3769.8000000000006,
+  "maximum_reconstruction_error_mph": 0.04000000000012349
+}

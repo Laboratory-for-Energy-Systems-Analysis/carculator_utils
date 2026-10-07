@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="475.2pt" viewBox="0 0 864 475.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-06T23:19:32.473458</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.7, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 475.2 
+L 864 475.2 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 250.56 332.64 
+L 829.44 332.64 
+L 829.44 137.808 
+L 250.56 137.808 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 250.56 332.64 
+L 250.56 137.808 
+" clip-path="url(#p6bb714253a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m25d4540b21" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m25d4540b21" x="250.56" y="332.64" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="250.56" y="347.998281" transform="rotate(-0 250.56 347.998281)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 341.043397 332.64 
+L 341.043397 137.808 
+" clip-path="url(#p6bb714253a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m25d4540b21" x="341.043397" y="332.64" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="341.043397" y="347.998281" transform="rotate(-0 341.043397 347.998281)">10</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 431.526794 332.64 
+L 431.526794 137.808 
+" clip-path="url(#p6bb714253a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m25d4540b21" x="431.526794" y="332.64" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="431.526794" y="347.998281" transform="rotate(-0 431.526794 347.998281)">20</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 522.010191 332.64 
+L 522.010191 137.808 
+" clip-path="url(#p6bb714253a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m25d4540b21" x="522.010191" y="332.64" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="522.010191" y="347.998281" transform="rotate(-0 522.010191 347.998281)">30</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 612.493588 332.64 
+L 612.493588 137.808 
+" clip-path="url(#p6bb714253a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m25d4540b21" x="612.493588" y="332.64" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="612.493588" y="347.998281" transform="rotate(-0 612.493588 347.998281)">40</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 702.976985 332.64 
+L 702.976985 137.808 
+" clip-path="url(#p6bb714253a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m25d4540b21" x="702.976985" y="332.64" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="702.976985" y="347.998281" transform="rotate(-0 702.976985 347.998281)">50</text>
+     </g>
+    </g>
+    <g id="xtick_7">
+     <g id="line2d_13">
+      <path d="M 793.460382 332.64 
+L 793.460382 137.808 
+" clip-path="url(#p6bb714253a)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_14">
+      <g>
+       <use xlink:href="#m25d4540b21" x="793.460382" y="332.64" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_7">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="793.460382" y="347.998281" transform="rotate(-0 793.460382 347.998281)">60</text>
+     </g>
+    </g>
+    <g id="text_8">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283c48" x="540" y="362.644219" transform="rotate(-0 540 362.644219)">kWh/100 km</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_15"/>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(120.41 175.870964)">Smith Newton Step Van</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(165.256875 187.068777)">7.5t · 5,976 kg</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(127.305312 198.266589)">Net DC battery output</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_16"/>
+     <g id="text_10">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(120.41 281.299536)">Smith Newton Step Van</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(165.256875 292.497348)">7.5t · 5,976 kg</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(173.2475 303.695161)">AC grid input</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 250.56 146.664 
+L 645.698805 146.664 
+L 645.698805 180.401143 
+L 250.56 180.401143 
+z
+" clip-path="url(#p6bb714253a)" style="fill: #176b87"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 250.56 252.092571 
+L 645.698805 252.092571 
+L 645.698805 285.829714 
+L 250.56 285.829714 
+z
+" clip-path="url(#p6bb714253a)" style="fill: #176b87"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 645.698805 146.664 
+L 645.698805 146.664 
+L 645.698805 180.401143 
+L 645.698805 180.401143 
+z
+" clip-path="url(#p6bb714253a)" style="fill: #a7d3e0"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 645.698805 252.092571 
+L 715.429169 252.092571 
+L 715.429169 285.829714 
+L 645.698805 285.829714 
+z
+" clip-path="url(#p6bb714253a)" style="fill: #a7d3e0"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 250.56 184.618286 
+L 655.371189 184.618286 
+L 655.371189 218.355429 
+L 250.56 218.355429 
+z
+" clip-path="url(#p6bb714253a)" style="fill: #ce7138"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 250.56 290.046857 
+L 745.329231 290.046857 
+L 745.329231 323.784 
+L 250.56 323.784 
+z
+" clip-path="url(#p6bb714253a)" style="fill: #ce7138"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 250.56 332.64 
+L 829.44 332.64 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="652.625574" y="166.291946" transform="rotate(-0 652.625574 166.291946)">43.7</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="662.297958" y="204.246232" transform="rotate(-0 662.297958 204.246232)">44.7</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="722.355938" y="271.720518" transform="rotate(-0 722.355938 271.720518)">51.4</text>
+   </g>
+   <g id="text_14">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="752.256" y="309.674804" transform="rotate(-0 752.256 309.674804)">54.7</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="250.56" y="124.808" transform="rotate(-0 250.56 124.808)">OCBC · official reference trace; reported driving mass matched</text>
+   </g>
+  </g>
+  <g id="text_16">
+   <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="25.92" y="33.445031" transform="rotate(-0 25.92 33.445031)">Delivery truck · battery and grid boundaries</text>
+  </g>
+  <g id="text_17">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #283c48" transform="translate(25.92 392.510437)">Two meter boundaries for one test and one model run; not independent tests.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #283c48" transform="translate(25.92 405.987781)">DC compares onboard energy; AC includes the light charging-loss segment.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #283c48" transform="translate(25.92 419.465125)">2025 class model vs 2013 vehicle. Road load, auxiliaries and efficiencies differ.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #283c48" transform="translate(25.92 432.942469)">Source explicitly sets 13,175 lb; its curb-plus-half-payload description conflicts with its specifications.</text>
+  </g>
+  <g id="legend_1">
+   <g id="patch_10">
+    <path d="M 29.772 65.778281 
+L 51.772 65.778281 
+L 51.772 58.078281 
+L 29.772 58.078281 
+z
+" style="fill: #176b87; stroke: #176b87; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="60.572" y="65.778281" transform="rotate(-0 60.572 65.778281)">Model onboard</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 164.566688 65.778281 
+L 186.566688 65.778281 
+L 186.566688 58.078281 
+L 164.566688 58.078281 
+z
+" style="fill: #a7d3e0; stroke: #a7d3e0; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="195.366688" y="65.778281" transform="rotate(-0 195.366688 65.778281)">Model charging losses</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 339.217469 65.778281 
+L 361.217469 65.778281 
+L 361.217469 58.078281 
+L 339.217469 58.078281 
+z
+" style="fill: #ce7138; stroke: #ce7138; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="370.017469" y="65.778281" transform="rotate(-0 370.017469 65.778281)">Published measurement</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p6bb714253a">
+   <rect x="250.56" y="137.808" width="578.88" height="194.832"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,35 @@
+[
+  {
+    "fuel": "gasoline",
+    "max_abs_difference": 1.3877787807814457e-15,
+    "table4_Willans_coefficients": [
+      0.1181,
+      2.1153,
+      3.9871
+    ],
+    "transmission_split": 0.8,
+    "peak_pseudo_engine_efficiency": 0.358390785906131
+  },
+  {
+    "fuel": "diesel",
+    "max_abs_difference": 1.3600232051658168e-15,
+    "table4_Willans_coefficients": [
+      0.0544,
+      1.5247,
+      5.2731
+    ],
+    "transmission_split": 0.8,
+    "peak_pseudo_engine_efficiency": 0.481508160600305
+  },
+  {
+    "fuel": "electric",
+    "max_abs_difference": 4.9960036108132044e-15,
+    "table4_Willans_coefficients": [
+      0.0046,
+      1.0607,
+      0.4495
+    ],
+    "transmission_split": 0.85,
+    "peak_pseudo_engine_efficiency": 1.02155219748647
+  }
+]

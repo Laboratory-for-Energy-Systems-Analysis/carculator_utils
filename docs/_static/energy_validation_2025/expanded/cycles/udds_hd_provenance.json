@@ -1,0 +1,11 @@
+{
+  "source_url": "https://nrel.sitefinity.cloud/docs/libraries/transportation/csv/016_udds-hd.csv",
+  "source_page": "https://nrel.sitefinity.cloud/transportation/drive-cycle-tool",
+  "raw_sha256": "51af422fa69814e0a2cff56df0729b647b79b5fcdfd8fb70f6fda76e34317040",
+  "converted_sha256": "806cccc2ce8c278b312e4b39692cdf5e8d1b82eaa5fcbf2d14c75aa4dcd81f41",
+  "conversion": "mph * 1.609344; seconds unchanged",
+  "sample_count": 1061,
+  "distance_miles": 5.552016666666666,
+  "max_speed_mph": 58.0,
+  "note": "Reference trace; actual speed tracking unavailable. Source report labels duration 1060 seconds; compare retained profile endpoints."
+}

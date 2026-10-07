@@ -1,0 +1,26 @@
+Finding solutions for trucks...
+Long haul driving cycle is selected. 
+Vehicles will be designed to achieve a minimal range of {800} km.
+
+
+'-' vehicle with driving mass superior to the permissible gross weight.
+'/' vehicle not available for the specified year.
++-------------------+------+
+| Payload (in tons) | 40t  |
++-------------------+------+
+|     BEV, 2025     | 13.8 |
++-------------------+------+
+Mass iteration: final=29417.980928, energy input=29417.980928, target=40000.000000 kg
+Finding solutions for trucks...
+Long haul driving cycle is selected. 
+Vehicles will be designed to achieve a minimal range of {800} km.
+
+
+'-' vehicle with driving mass superior to the permissible gross weight.
+'/' vehicle not available for the specified year.
++-------------------+------+
+| Payload (in tons) | 40t  |
++-------------------+------+
+|     BEV, 2025     | 24.4 |
++-------------------+------+
+Mass iteration: final=40000.000000, energy input=40000.000000, target=40000.000000 kg

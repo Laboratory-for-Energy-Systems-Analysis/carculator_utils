@@ -1,0 +1,26 @@
+{
+  "carculator": {
+    "git_head": "3f23ed39716ae60519758335d2d90f0d7c6497ef",
+    "default_parameters_sha256": "7733923d5b3e9e9c5367fb12efe7f6bb38f0ecc57a620b75897fb61f6006786d",
+    "provenance_sha256": "0523c4239dec3d08a7d22d0ac1830419590a4475ab965f874458eb8482655ed4",
+    "record_count": 261
+  },
+  "carculator_bus": {
+    "git_head": "8ec4c117216b88872e7ce2b4b3a872c5e2a44fbc",
+    "default_parameters_sha256": "321cb0b56f19e6374d7e825367e04dc146764e16965947395e5b776f96a700f4",
+    "provenance_sha256": "5d7cffb6999db242f44d772b3812b653d188e1e954962d3f5f8d3cb382e757b8",
+    "record_count": 258
+  },
+  "carculator_truck": {
+    "git_head": "b71f7b12966d890538c6d5559b8ab185d05a8c8d",
+    "default_parameters_sha256": "f37bf362783996af6161709ba0712cb5c5c131d0150fcc28dfa3fac50f8867ea",
+    "provenance_sha256": "10a0baa4e3fa4d2950cea01cc1461f1de9a6335bdbfff94f587bd7c6bfda6a89",
+    "record_count": 407
+  },
+  "carculator_two_wheeler": {
+    "git_head": "33fca5429398bd2f09ef835ee250adec1307fdcc",
+    "default_parameters_sha256": "81ca634f356c30ff62c7c0327cfc37a30e5c46df18cc5da6e3ee7e177db67d58",
+    "provenance_sha256": "242f5f107e11e964750b69ddc69f4433010bfbba284525b7dd6a6849e4d20b80",
+    "record_count": 221
+  }
+}

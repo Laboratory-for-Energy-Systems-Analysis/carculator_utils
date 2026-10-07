@@ -1,0 +1,99 @@
+{
+  "catalog_sha256": "8dabf56218b8bde17be053566c5fc75f37476c169a45da662a4173f8c80fe479",
+  "comparisons_sha256": "9d02c779717116fea0d957f1fb53cad9009523ef9da7216833babaf3dc3eb334",
+  "runs_sha256": "6c9826107318e83dd33ac82dcea9db34bae09333314be26d2cf50e33d1fa1f14",
+  "model_hash_source": "recorded commits",
+  "checkout_line_ending_normalizations": [
+    "carculator_utils/data/gradient/car.csv"
+  ],
+  "hydrogen_context_plot_audited": false,
+  "checked_model_files": 66,
+  "complete_model_runs": 40,
+  "paired_values": 41,
+  "excluded_values": 77,
+  "maximum_driving_mass_error_kg": 0.04734318696137052,
+  "coverage": {
+    "car": {
+      "datasets": 20,
+      "source_values": 67,
+      "paired_values": 19,
+      "paired_vehicles": 18,
+      "model_sizes": [
+        "Large",
+        "Large SUV",
+        "Lower medium",
+        "Medium",
+        "Medium SUV",
+        "Mini",
+        "Small",
+        "Van"
+      ],
+      "model_powertrains": [
+        "BEV",
+        "FCEV",
+        "HEV-p",
+        "ICEV-d",
+        "ICEV-g",
+        "ICEV-p",
+        "PHEV-c-p",
+        "PHEV-e"
+      ]
+    },
+    "bus": {
+      "datasets": 8,
+      "source_values": 30,
+      "paired_values": 16,
+      "paired_vehicles": 5,
+      "model_sizes": [
+        "13m-city"
+      ],
+      "model_powertrains": [
+        "BEV-depot",
+        "HEV-d",
+        "ICEV-d"
+      ]
+    },
+    "truck": {
+      "datasets": 7,
+      "source_values": 21,
+      "paired_values": 6,
+      "paired_vehicles": 4,
+      "model_sizes": [
+        "40t",
+        "7.5t"
+      ],
+      "model_powertrains": [
+        "BEV",
+        "ICEV-d"
+      ]
+    }
+  },
+  "electricity_boundary_counts": {
+    "included": 15,
+    "unknown": 5,
+    "excluded": 1
+  },
+  "cycle_match_counts": {
+    "different: model WLTC; measurement ADAC Ecotest combined": 19,
+    "named SORT cycle matched; actual test speed trace not available": 3,
+    "different: generic Long haul versus actual road route": 2,
+    "OCBC reference trace matches published cycle metrics; actual speed tracking unavailable": 2,
+    "Official reference cycle; actual dynamometer tracking differs": 2,
+    "Official reference at one-second resolution; actual dynamometer tracking unavailable": 6,
+    "Official reference trace; actual speed tracking unavailable": 2,
+    "Reference cycles; actual speed tracking unavailable": 5
+  },
+  "datasets_without_source_content_hash": [
+    "adac_id3_gtx",
+    "adac_ioniq6",
+    "adac_ev3",
+    "adac_golf_petrol",
+    "adac_corolla_hybrid",
+    "icct_byd_sort",
+    "gyor_byd_fleet",
+    "eactros_summer",
+    "volvo_fh_electric",
+    "eactros_winter"
+  ],
+  "interpretation": "Artifact consistency passed. Numerical eligibility is not physical validation. Do not pool residuals across fuel units, charging boundaries, vehicles, repeated cycles or mismatched routes."
+}

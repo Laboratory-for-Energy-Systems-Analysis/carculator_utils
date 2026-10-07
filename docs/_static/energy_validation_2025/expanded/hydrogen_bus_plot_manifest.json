@@ -1,0 +1,11 @@
+{
+  "catalog_sha256": "ab70984ddc80519380d67e8674de86ae741fd6c47b57c7287fff50862e697165",
+  "observation_ids": [
+    "schatz_humboldt_xhe40_2025_trinidad_light",
+    "schatz_humboldt_xhe40_2025_trinidad_loaded",
+    "schatz_humboldt_xhe40_2025_berry_light",
+    "schatz_humboldt_xhe40_2025_berry_loaded",
+    "schatz_humboldt_xhe40_2025_ukiah_loaded"
+  ],
+  "note": "Measurements only; not model validation."
+}

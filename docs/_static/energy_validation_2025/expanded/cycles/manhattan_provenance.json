@@ -1,0 +1,22 @@
+{
+  "source_url": "https://nrel.sitefinity.cloud/docs/libraries/transportation/csv/018_manhattan-bus-cycle-10hz.csv",
+  "source_page": "https://nrel.sitefinity.cloud/transportation/drive-cycle-tool",
+  "raw_sha256": "01d02dcc3fa6c2192f0fe0e777346ebc3c6db03d985244946020ca24248f4570",
+  "converted_sha256": "abeea1e7222da266dfb40ea1bc82d25564e1f1a2c58e4d2a80d8a8cb2d493926",
+  "conversion": "Linear interpolation at integer seconds, then mph * 1.609344; trailing fractional stopped interval omitted",
+  "raw_sample_period_s": 0.10000000000002274,
+  "raw_sample_count": 10892,
+  "sample_count": 1090,
+  "raw_elapsed_seconds": 1089.1,
+  "elapsed_seconds": 1089,
+  "raw_distance_miles": 2.065944444444445,
+  "distance_miles": 2.0660555555555558,
+  "distance_change_pct": 0.0053782235727384275,
+  "raw_max_speed_mph": 25.4,
+  "max_speed_mph": 25.2,
+  "positive_squared_speed_change_raw": 9508.82,
+  "positive_squared_speed_change_resampled": 9247.3,
+  "positive_squared_speed_change_pct": -2.7502886793524417,
+  "maximum_reconstruction_error_mph": 0.5800000000000018,
+  "note": "Reference trace, not actual dynamometer tracking. Sampling alters acceleration; summary checks do not prove dynamic equivalence."
+}

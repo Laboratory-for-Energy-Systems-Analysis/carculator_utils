@@ -1,0 +1,27 @@
+Vehicle,Size,Powertrain,Cycle,Driving mass (kg),Fuel (L/100 km),Electricity (kWh/100 km),Status
+car,Lower medium,ICEV-p,WLTC,1495,6.21,-,Eligible
+car,Lower medium,ICEV-d,WLTC,1516,5.50,-,Eligible
+car,Lower medium,HEV-p,WLTC,1519,6.08,-,Eligible
+car,Lower medium,BEV,WLTC,1673,-,18.02,Eligible
+car,Medium,ICEV-p,WLTC,1709,7.04,-,Eligible
+car,Medium,ICEV-d,WLTC,1733,6.08,-,Eligible
+car,Medium,HEV-p,WLTC,1715,6.87,-,Eligible
+car,Medium,BEV,WLTC,1896,-,19.24,Eligible
+bus,13m-city,ICEV-d,bus,12131,29.23,-,Eligible
+bus,13m-city,HEV-d,bus,12138,28.42,-,Eligible
+bus,13m-city,BEV-depot,bus,12811,-,124.95,Eligible
+bus,18m,ICEV-d,bus,16442,32.40,-,Eligible
+bus,18m,HEV-d,bus,16485,32.48,-,Eligible
+bus,18m,BEV-depot,bus,17428,-,152.83,Eligible
+truck,18t,ICEV-d,Urban delivery,11507,21.94,-,Eligible
+truck,18t,ICEV-d,Regional delivery,12055,17.35,-,Eligible
+truck,18t,ICEV-d,Long haul,16336,17.74,-,Eligible
+truck,18t,BEV,Urban delivery,11046,-,77.65,Eligible
+truck,18t,BEV,Regional delivery,12649,-,81.98,Eligible
+truck,18t,BEV,Long haul,19425,-,-,Exceeds gross mass
+truck,40t,ICEV-d,Urban delivery,22427,33.30,-,Eligible
+truck,40t,ICEV-d,Regional delivery,24034,26.10,-,Eligible
+truck,40t,ICEV-d,Long haul,27628,24.61,-,Eligible
+truck,40t,BEV,Urban delivery,22529,-,132.60,Eligible
+truck,40t,BEV,Regional delivery,26085,-,139.57,Eligible
+truck,40t,BEV,Long haul,32977,-,152.83,Eligible

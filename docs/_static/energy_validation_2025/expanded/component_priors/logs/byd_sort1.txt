@@ -1,0 +1,65 @@
+Finding solutions for buses...
+
+Number of passengers on board
+'X' BEV with driving mass when fully occupied superior to the permissible gross weight.
+'*' buses that do not comply wih energy reduction target.
+'/' vehicles not available for the specified year or charging strategy.
+'O' electric vehicles that do not have enough time to charge batteries overnight.
++-----------------+----------+
+|                 | 13m-city |
++-----------------+----------+
+| BEV-depot, 2025 |   10.0   |
++-----------------+----------+
+Mass iteration: final=11619.990641, energy input=11619.990735, target=16675.000000 kg
+Finding solutions for buses...
+
+Number of passengers on board
+'X' BEV with driving mass when fully occupied superior to the permissible gross weight.
+'*' buses that do not comply wih energy reduction target.
+'/' vehicles not available for the specified year or charging strategy.
+'O' electric vehicles that do not have enough time to charge batteries overnight.
++-----------------+----------+
+|                 | 13m-city |
++-----------------+----------+
+| BEV-depot, 2025 |   77.4   |
++-----------------+----------+
+Mass iteration: final=16861.247693, energy input=16861.247724, target=16675.000000 kg
+Finding solutions for buses...
+
+Number of passengers on board
+'X' BEV with driving mass when fully occupied superior to the permissible gross weight.
+'*' buses that do not comply wih energy reduction target.
+'/' vehicles not available for the specified year or charging strategy.
+'O' electric vehicles that do not have enough time to charge batteries overnight.
++-----------------+----------+
+|                 | 13m-city |
++-----------------+----------+
+| BEV-depot, 2025 |   74.9   |
++-----------------+----------+
+Mass iteration: final=16667.622508, energy input=16667.622545, target=16675.000000 kg
+Finding solutions for buses...
+
+Number of passengers on board
+'X' BEV with driving mass when fully occupied superior to the permissible gross weight.
+'*' buses that do not comply wih energy reduction target.
+'/' vehicles not available for the specified year or charging strategy.
+'O' electric vehicles that do not have enough time to charge batteries overnight.
++-----------------+----------+
+|                 | 13m-city |
++-----------------+----------+
+| BEV-depot, 2025 |   75.0   |
++-----------------+----------+
+Mass iteration: final=16675.271050, energy input=16675.271088, target=16675.000000 kg
+Finding solutions for buses...
+
+Number of passengers on board
+'X' BEV with driving mass when fully occupied superior to the permissible gross weight.
+'*' buses that do not comply wih energy reduction target.
+'/' vehicles not available for the specified year or charging strategy.
+'O' electric vehicles that do not have enough time to charge batteries overnight.
++-----------------+----------+
+|                 | 13m-city |
++-----------------+----------+
+| BEV-depot, 2025 |   75.0   |
++-----------------+----------+
+Mass iteration: final=16674.990042, energy input=16674.990079, target=16675.000000 kg

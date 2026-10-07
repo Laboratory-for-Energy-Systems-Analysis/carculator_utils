@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="864pt" height="460.8pt" viewBox="0 0 864 460.8" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-06T22:50:26.169975</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.7, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 460.8 
+L 864 460.8 
+L 864 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 250.56 331.776 
+L 829.44 331.776 
+L 829.44 129.024 
+L 250.56 129.024 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <path d="M 250.56 331.776 
+L 250.56 129.024 
+" clip-path="url(#pb56fe77cb4)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_2">
+      <defs>
+       <path id="m7acda38a0f" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m7acda38a0f" x="250.56" y="331.776" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="250.56" y="347.134281" transform="rotate(-0 250.56 347.134281)">0</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_3">
+      <path d="M 356.329964 331.776 
+L 356.329964 129.024 
+" clip-path="url(#pb56fe77cb4)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m7acda38a0f" x="356.329964" y="331.776" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="356.329964" y="347.134281" transform="rotate(-0 356.329964 347.134281)">20</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_5">
+      <path d="M 462.099929 331.776 
+L 462.099929 129.024 
+" clip-path="url(#pb56fe77cb4)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m7acda38a0f" x="462.099929" y="331.776" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="462.099929" y="347.134281" transform="rotate(-0 462.099929 347.134281)">40</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_7">
+      <path d="M 567.869893 331.776 
+L 567.869893 129.024 
+" clip-path="url(#pb56fe77cb4)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_8">
+      <g>
+       <use xlink:href="#m7acda38a0f" x="567.869893" y="331.776" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="567.869893" y="347.134281" transform="rotate(-0 567.869893 347.134281)">60</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_9">
+      <path d="M 673.639858 331.776 
+L 673.639858 129.024 
+" clip-path="url(#pb56fe77cb4)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_10">
+      <g>
+       <use xlink:href="#m7acda38a0f" x="673.639858" y="331.776" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="673.639858" y="347.134281" transform="rotate(-0 673.639858 347.134281)">80</text>
+     </g>
+    </g>
+    <g id="xtick_6">
+     <g id="line2d_11">
+      <path d="M 779.409822 331.776 
+L 779.409822 129.024 
+" clip-path="url(#pb56fe77cb4)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.18; stroke-width: 0.8; stroke-linecap: square"/>
+     </g>
+     <g id="line2d_12">
+      <g>
+       <use xlink:href="#m7acda38a0f" x="779.409822" y="331.776" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle" x="779.409822" y="347.134281" transform="rotate(-0 779.409822 347.134281)">100</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #283c48" x="540" y="361.780219" transform="rotate(-0 540 361.780219)">L/100 km</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_13"/>
+     <g id="text_8">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(116.019375 168.904107)">Freightliner MT-45 diesel</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(165.256875 180.10192)">7.5t · 5,216 kg</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(145.177187 191.299732)">NYCC x3 reference</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_14"/>
+     <g id="text_9">
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(116.019375 278.618393)">Freightliner MT-45 diesel</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(165.256875 289.816205)">7.5t · 5,216 kg</text>
+      <text style="font-size: 10px; font-family: 'DejaVu Sans'" transform="translate(210.036562 301.014018)">OCBC</text>
+     </g>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 250.56 138.24 
+L 745.329231 138.24 
+L 745.329231 173.348571 
+L 250.56 173.348571 
+z
+" clip-path="url(#pb56fe77cb4)" style="fill: #176b87"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 250.56 247.954286 
+L 359.376375 247.954286 
+L 359.376375 283.062857 
+L 250.56 283.062857 
+z
+" clip-path="url(#pb56fe77cb4)" style="fill: #176b87"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 250.56 177.737143 
+L 455.154063 177.737143 
+L 455.154063 212.845714 
+L 250.56 212.845714 
+z
+" clip-path="url(#pb56fe77cb4)" style="fill: #ce7138"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 250.56 287.451429 
+L 381.225116 287.451429 
+L 381.225116 322.56 
+L 250.56 322.56 
+z
+" clip-path="url(#pb56fe77cb4)" style="fill: #ce7138"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 250.56 331.776 
+L 829.44 331.776 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="752.256" y="158.553661" transform="rotate(-0 752.256 158.553661)">93.6</text>
+   </g>
+   <g id="text_11">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="462.080833" y="198.050804" transform="rotate(-0 462.080833 198.050804)">38.7</text>
+   </g>
+   <g id="text_12">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="366.303144" y="268.267946" transform="rotate(-0 366.303144 268.267946)">20.6</text>
+   </g>
+   <g id="text_13">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="388.151885" y="307.765089" transform="rotate(-0 388.151885 307.765089)">24.7</text>
+   </g>
+   <g id="text_14">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="250.56" y="116.024" transform="rotate(-0 250.56 116.024)">Reported driving mass matched; reference cycle profiles</text>
+   </g>
+  </g>
+  <g id="text_15">
+   <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="25.92" y="32.869031" transform="rotate(-0 25.92 32.869031)">Diesel delivery truck · published test cycles</text>
+  </g>
+  <g id="text_16">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #283c48" transform="translate(25.92 390.062437)">Two cycles on one diesel truck; historical measurements from 2009.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #283c48" transform="translate(25.92 403.539781)">Actual speed tracking, road load, conditioning and fuel properties differ.</text>
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #283c48" transform="translate(25.92 417.017125)">The model's propulsion-input clipping remains; agreement cannot establish robust physics.</text>
+  </g>
+  <g id="legend_1">
+   <g id="patch_8">
+    <path d="M 29.772 64.338281 
+L 51.772 64.338281 
+L 51.772 56.638281 
+L 29.772 56.638281 
+z
+" style="fill: #176b87; stroke: #176b87; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_17">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="60.572" y="64.338281" transform="rotate(-0 60.572 64.338281)">2025 model</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 148.315906 64.338281 
+L 170.315906 64.338281 
+L 170.315906 56.638281 
+L 148.315906 56.638281 
+z
+" style="fill: #ce7138; stroke: #ce7138; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_18">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #283c48" x="179.115906" y="64.338281" transform="rotate(-0 179.115906 64.338281)">NREL dynamometer measurement</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb56fe77cb4">
+   <rect x="250.56" y="129.024" width="578.88" height="202.752"/>
+  </clipPath>
+ </defs>
+</svg>

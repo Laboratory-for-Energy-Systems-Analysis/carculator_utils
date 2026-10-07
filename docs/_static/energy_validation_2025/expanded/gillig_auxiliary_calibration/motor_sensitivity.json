@@ -1,0 +1,104 @@
+[
+  {
+    "motor_rating_kW": 169.47798516495,
+    "auxiliary_W": 7290.639180180244,
+    "predictions": [
+      {
+        "observation_id": "gillig_ocbc",
+        "role": "training",
+        "reported_kWh_100km": 140.98912351865107,
+        "baseline_kWh_100km": 127.16793153459744,
+        "slope_kWh_100km_per_W": 0.005773626318707214,
+        "baseline_auxiliary_W": 5000.0,
+        "predicted_kWh_100km": 140.393226191948
+      },
+      {
+        "observation_id": "gillig_hd-udds",
+        "role": "training",
+        "reported_kWh_100km": 130.052990535274,
+        "baseline_kWh_100km": 122.1730193368614,
+        "slope_kWh_100km_per_W": 0.0037783222263315487,
+        "baseline_auxiliary_W": 5000.0,
+        "predicted_kWh_100km": 130.8277922638423
+      },
+      {
+        "observation_id": "gillig_manhattan",
+        "role": "held-out cycle",
+        "reported_kWh_100km": 188.8347053209258,
+        "baseline_kWh_100km": 160.31735914731325,
+        "slope_kWh_100km_per_W": 0.010430830131886816,
+        "baseline_auxiliary_W": 5000.0,
+        "predicted_kWh_100km": 184.21062732921786
+      }
+    ],
+    "full_run_matches_linear_prediction": true
+  },
+  {
+    "motor_rating_kW": 262.5,
+    "auxiliary_W": 8279.74471795241,
+    "predictions": [
+      {
+        "observation_id": "gillig_ocbc",
+        "role": "training",
+        "reported_kWh_100km": 140.98912351865107,
+        "baseline_kWh_100km": 120.91787439944672,
+        "slope_kWh_100km_per_W": 0.005773626318707214,
+        "baseline_auxiliary_W": 5000.0,
+        "predicted_kWh_100km": 139.85389482165772
+      },
+      {
+        "observation_id": "gillig_hd-udds",
+        "role": "training",
+        "reported_kWh_100km": 130.052990535274,
+        "baseline_kWh_100km": 119.13711305022368,
+        "slope_kWh_100km_per_W": 0.0037783222263315487,
+        "baseline_auxiliary_W": 5000.0,
+        "predicted_kWh_100km": 131.52904541475675
+      },
+      {
+        "observation_id": "gillig_manhattan",
+        "role": "held-out cycle",
+        "reported_kWh_100km": 188.8347053209258,
+        "baseline_kWh_100km": 159.67729657817,
+        "slope_kWh_100km_per_W": 0.010430830131886816,
+        "baseline_auxiliary_W": 5000.0,
+        "predicted_kWh_100km": 193.8877566070846
+      }
+    ],
+    "full_run_matches_linear_prediction": true
+  },
+  {
+    "motor_rating_kW": 562.5,
+    "auxiliary_W": 8393.132456835921,
+    "predictions": [
+      {
+        "observation_id": "gillig_ocbc",
+        "role": "training",
+        "reported_kWh_100km": 140.98912351865107,
+        "baseline_kWh_100km": 120.23871502788349,
+        "slope_kWh_100km_per_W": 0.005773626318707214,
+        "baseline_auxiliary_W": 5000.0,
+        "predicted_kWh_100km": 139.82939388353103
+      },
+      {
+        "observation_id": "gillig_hd-udds",
+        "role": "training",
+        "reported_kWh_100km": 130.052990535274,
+        "baseline_kWh_100km": 118.74055441481835,
+        "slope_kWh_100km_per_W": 0.0037783222263315487,
+        "baseline_auxiliary_W": 5000.0,
+        "predicted_kWh_100km": 131.5609021933685
+      },
+      {
+        "observation_id": "gillig_manhattan",
+        "role": "held-out cycle",
+        "reported_kWh_100km": 188.8347053209258,
+        "baseline_kWh_100km": 159.67729657817,
+        "slope_kWh_100km_per_W": 0.010430830131886816,
+        "baseline_auxiliary_W": 5000.0,
+        "predicted_kWh_100km": 195.07048485041727
+      }
+    ],
+    "full_run_matches_linear_prediction": true
+  }
+]

@@ -1,0 +1,200 @@
+{
+  "verified": 24,
+  "cycles": [
+    {
+      "vehicle_type": "bus",
+      "size": "9m",
+      "cycle": "bus",
+      "duration_seconds": 8072,
+      "distance_km": 39.54955230555555,
+      "net_elevation_m": -0.04016156524481573
+    },
+    {
+      "vehicle_type": "bus",
+      "size": "13m-city",
+      "cycle": "bus",
+      "duration_seconds": 8132,
+      "distance_km": 39.55043941666666,
+      "net_elevation_m": -0.004051961399269999
+    },
+    {
+      "vehicle_type": "bus",
+      "size": "13m-coach",
+      "cycle": "bus",
+      "duration_seconds": 17837,
+      "distance_km": 275.17551958333337,
+      "net_elevation_m": 0.0041817167096382946
+    },
+    {
+      "vehicle_type": "bus",
+      "size": "13m-city-double",
+      "cycle": "bus",
+      "duration_seconds": 8058,
+      "distance_km": 39.54963833333333,
+      "net_elevation_m": 0.006298939585370533
+    },
+    {
+      "vehicle_type": "bus",
+      "size": "13m-coach-double",
+      "cycle": "bus",
+      "duration_seconds": 17918,
+      "distance_km": 275.17584152777783,
+      "net_elevation_m": 0.0248501163437993
+    },
+    {
+      "vehicle_type": "bus",
+      "size": "18m",
+      "cycle": "bus",
+      "duration_seconds": 8073,
+      "distance_km": 39.55212594444445,
+      "net_elevation_m": -0.035466699682359604
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "3.5t",
+      "cycle": "Urban delivery",
+      "duration_seconds": 3224,
+      "distance_km": 27.8152655,
+      "net_elevation_m": 0.03431334006406672
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "7.5t",
+      "cycle": "Urban delivery",
+      "duration_seconds": 3225,
+      "distance_km": 27.81558683333333,
+      "net_elevation_m": -0.006600089160732736
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "18t",
+      "cycle": "Urban delivery",
+      "duration_seconds": 3281,
+      "distance_km": 27.816132972222224,
+      "net_elevation_m": -0.0003102713266628365
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "26t",
+      "cycle": "Urban delivery",
+      "duration_seconds": 3342,
+      "distance_km": 27.814844666666666,
+      "net_elevation_m": 0.03454977607843279
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "40t",
+      "cycle": "Urban delivery",
+      "duration_seconds": 3301,
+      "distance_km": 27.814881083333333,
+      "net_elevation_m": 0.025976821156274088
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "60t",
+      "cycle": "Urban delivery",
+      "duration_seconds": 3415,
+      "distance_km": 27.815628416666666,
+      "net_elevation_m": 0.050574070561479445
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "3.5t",
+      "cycle": "Regional delivery",
+      "duration_seconds": 1567,
+      "distance_km": 25.836301555555558,
+      "net_elevation_m": -0.01975129647145124
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "7.5t",
+      "cycle": "Regional delivery",
+      "duration_seconds": 1567,
+      "distance_km": 25.83582844444444,
+      "net_elevation_m": -0.018855994808870236
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "18t",
+      "cycle": "Regional delivery",
+      "duration_seconds": 1598,
+      "distance_km": 25.83562186111111,
+      "net_elevation_m": 0.0010855179924078584
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "26t",
+      "cycle": "Regional delivery",
+      "duration_seconds": 1639,
+      "distance_km": 25.83538683333333,
+      "net_elevation_m": 0.010562964424020826
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "40t",
+      "cycle": "Regional delivery",
+      "duration_seconds": 1615,
+      "distance_km": 25.836166000000002,
+      "net_elevation_m": -0.006358020836762179
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "60t",
+      "cycle": "Regional delivery",
+      "duration_seconds": 1674,
+      "distance_km": 25.83574872222222,
+      "net_elevation_m": 0.006671290678111674
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "3.5t",
+      "cycle": "Long haul",
+      "duration_seconds": 5199,
+      "distance_km": 108.19081266666667,
+      "net_elevation_m": 0.025979580943896963
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "7.5t",
+      "cycle": "Long haul",
+      "duration_seconds": 5200,
+      "distance_km": 108.19089477777779,
+      "net_elevation_m": 0.028450059306109665
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "18t",
+      "cycle": "Long haul",
+      "duration_seconds": 5353,
+      "distance_km": 108.19073999999999,
+      "net_elevation_m": 0.032083618530634794
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "26t",
+      "cycle": "Long haul",
+      "duration_seconds": 5601,
+      "distance_km": 108.1908858611111,
+      "net_elevation_m": 0.03633070534627336
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "40t",
+      "cycle": "Long haul",
+      "duration_seconds": 5454,
+      "distance_km": 108.19104916666667,
+      "net_elevation_m": 0.04005866305155337
+    },
+    {
+      "vehicle_type": "truck",
+      "size": "60t",
+      "cycle": "Long haul",
+      "duration_seconds": 5788,
+      "distance_km": 108.1908896111111,
+      "net_elevation_m": 0.05264608521513736
+    }
+  ],
+  "unresolved": [
+    "32t truck traces retained: no matching primary VECTO source available in the repository. Their legacy duration convention is retained."
+  ]
+}

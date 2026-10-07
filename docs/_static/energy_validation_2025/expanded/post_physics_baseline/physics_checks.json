@@ -1,0 +1,90 @@
+[
+  {
+    "check": "rolling_and_drag",
+    "expected": 12.603446502057615,
+    "actual": 12.603446502057617,
+    "unit": "kW",
+    "passed": true,
+    "explanation": "1500 kg, 100 km/h, Crr=.01, Cd=.3, A=2.2 m2; flat, steady speed"
+  },
+  {
+    "check": "unconstrained_energy_conversion",
+    "expected": 50.41378600823046,
+    "actual": 50.41378600823047,
+    "unit": "kW",
+    "passed": true,
+    "explanation": "At sufficient rated power, wheel power / efficiency recovers input power"
+  },
+  {
+    "check": "engine_load_uses_shaft_power",
+    "expected": 0.012603446502057615,
+    "actual": 0.01260344650205761,
+    "unit": "fraction",
+    "passed": true,
+    "explanation": "Shaft output / rated shaft power, with unit transmission efficiency"
+  },
+  {
+    "check": "fuel_input_cap",
+    "expected": 50.41378600823046,
+    "actual": 50.41378600823047,
+    "unit": "kW",
+    "passed": true,
+    "explanation": "Wheel demand is below 20 kW shaft rating; fuel input must be wheel/.25"
+  },
+  {
+    "check": "gradient_documented_degrees",
+    "expected": 7.133671131239637,
+    "actual": 7.133671131239636,
+    "unit": "kW",
+    "passed": true,
+    "explanation": "Public docstring specifies degrees"
+  },
+  {
+    "check": "zero_recuperation",
+    "expected": 0,
+    "actual": 0.0,
+    "unit": "kJ",
+    "passed": true,
+    "explanation": "Zero recuperation efficiency must disable recovery"
+  },
+  {
+    "check": "auxiliaries_during_stop",
+    "expected": 2,
+    "actual": 2.0,
+    "unit": "kJ",
+    "passed": true,
+    "explanation": "A specified constant 1 kW auxiliary load for two stopped seconds"
+  },
+  {
+    "check": "zero_hvac_preserves_auxiliary_boundary",
+    "expected": 4,
+    "actual": 4.0,
+    "unit": "kW",
+    "passed": true,
+    "explanation": "1 kW / .25 generation efficiency should remain 4 kW when zero HVAC is supplied"
+  },
+  {
+    "check": "last_moving_second_active",
+    "expected": 1,
+    "actual": 1.0,
+    "unit": "boolean",
+    "passed": true,
+    "explanation": "Final moving second belongs to operating time"
+  },
+  {
+    "check": "nonfinite_mass_rejected",
+    "expected": true,
+    "actual": true,
+    "unit": "boolean",
+    "passed": true,
+    "explanation": "An active vehicle with NaN mass should fail explicitly"
+  },
+  {
+    "check": "bus_public_custom_cycle",
+    "expected": true,
+    "actual": true,
+    "unit": "boolean",
+    "passed": true,
+    "explanation": "Custom numpy cycle accepted"
+  }
+]

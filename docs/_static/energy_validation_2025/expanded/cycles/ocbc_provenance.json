@@ -1,0 +1,12 @@
+{
+  "source_url": "https://nrel.sitefinity.cloud/docs/libraries/transportation/csv/017_orange-county-bus-octa.csv",
+  "source_page": "https://nrel.sitefinity.cloud/transportation/drive-cycle-tool",
+  "raw_sha256": "e974256f317daaf40f3d6abce1e860899e361a61b7fd1254996cc306bb7d21b7",
+  "converted_sha256": "8eac87ed43c519056a5e40b35b08501f2ec70bc8a9f99c9e265eebfbd9b30308",
+  "conversion": "mph * 1.609344 = km/h; seconds unchanged",
+  "sample_count": 1910,
+  "elapsed_seconds": 1909,
+  "distance_miles": 6.540622222222223,
+  "max_speed_mph": 40.63,
+  "note": "Official reference cycle; actual dynamometer speed tracking is unavailable. Endpoints are zero."
+}

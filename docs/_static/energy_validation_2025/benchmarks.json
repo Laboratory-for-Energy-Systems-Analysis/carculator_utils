@@ -1,0 +1,84 @@
+{
+  "accessed": "2026-10-06",
+  "purpose": "Independent observations for an audit, not calibration targets or CI acceptance bands.",
+  "benchmarks": [
+    {
+      "id": "golf-petrol-2025",
+      "cases": ["baseline-car-Lower_medium-ICEV-p-WLTC", "golf-petrol"],
+      "metric": "fuel_L_100km",
+      "unit": "L/100 km",
+      "reported_min": 5.3,
+      "reported_max": 5.4,
+      "vehicle": "Golf MY2025 1.5 TSI 85 kW, six-speed manual",
+      "source": "https://cenniki.volkswagen.pl/Golf-2025.html",
+      "location": "Technical data, 1.5 TSI 85 kW, combined consumption",
+      "comparability": "WLTC/WLTP cycle family; generic car versus a specific homologated product",
+      "conditions": "Minimum published mass 1307 kg; WLTP test mass and measured road-load coefficients unavailable. Adjusted run uses 1307 kg as curb mass plus 75 kg driver; this is an assumption, not exact homologation mass. Default model road loads, auxiliaries and fuel blend retained."
+    },
+    {
+      "id": "golf-diesel-2025",
+      "cases": ["baseline-car-Lower_medium-ICEV-d-WLTC", "golf-diesel"],
+      "metric": "fuel_L_100km",
+      "unit": "L/100 km",
+      "reported_min": 4.3,
+      "reported_max": 4.4,
+      "vehicle": "Golf MY2025 2.0 TDI 85 kW, six-speed manual",
+      "source": "https://cenniki.volkswagen.pl/Golf-2025.html",
+      "location": "Technical data, 2.0 TDI 85 kW, combined consumption",
+      "comparability": "WLTC/WLTP cycle family; generic car versus a specific homologated product",
+      "conditions": "Minimum published mass 1387 kg; adjusted run assumes this is curb mass and adds 75 kg driver, with 85 kW power. Exact homologation mass, coast-down coefficients, cold-start and vehicle control are not matched."
+    },
+    {
+      "id": "corolla-hybrid-my25",
+      "cases": ["baseline-car-Lower_medium-HEV-p-WLTC", "corolla-hybrid"],
+      "metric": "fuel_L_100km",
+      "unit": "L/100 km",
+      "reported_min": 4.4,
+      "reported_max": 4.7,
+      "vehicle": "Toyota Corolla MY25 hatchback 1.8 hybrid, 103 kW",
+      "source": "https://www.toyota.co.uk/content/dam/toyota/nmsc/united-kingdom/brochure/corolla.pdf",
+      "location": "PDF pages 2 and 4; November 2025 MY25 brochure",
+      "comparability": "WLTC/WLTP cycle family; generic HEV does not reproduce Toyota hybrid control",
+      "conditions": "Published curb mass 1345-1410 kg; adjusted run takes midpoint 1377.5 kg plus 75 kg driver, 103 kW system power. Default electric/combustion shares, road loads and efficiency maps retained."
+    },
+    {
+      "id": "sort2-diesel-2017",
+      "cases": ["bus-ICEV-d-SORT2", "bus-diesel-SORT2-approx-test-load"],
+      "metric": "fuel_L_100km",
+      "unit": "L/100 km",
+      "reported_min": 39.4,
+      "reported_max": 39.4,
+      "vehicle": "Anonymized A2 12 m diesel city bus, 209 kW",
+      "source": "https://www.combustion-engines.eu/pdf-116726-45973?filename=Studies+of+energy+use+by.pdf",
+      "location": "Gis et al. 2017, DOI 10.19206/CE-2017-323, table 1, printed page 137",
+      "comparability": "Historical 2017 measurement; approximate SORT2 cycle; 13 m model class versus 12 m bus",
+      "conditions": "Published curb mass 10600 kg; nominal SORT load 3200 kg has vehicle-dependent corrections not fully specified. Adjusted run assumes 13800 kg total, 209 kW, 20 C, HVAC off. Actual HVAC state unspecified. Shipped trace is 938 m versus nominal 920 m; it is not the measured speed trace."
+    },
+    {
+      "id": "sort2-electric-2017",
+      "cases": ["bus-BEV-depot-SORT2", "bus-BEV-depot-SORT2-no-hvac"],
+      "metric": "ttw_kWh_100km",
+      "unit": "kWh/100 km onboard",
+      "reported_min": 94.9,
+      "reported_max": 94.9,
+      "vehicle": "Anonymized A3 12 m battery-electric city bus",
+      "source": "https://www.combustion-engines.eu/pdf-116726-45973?filename=Studies+of+energy+use+by.pdf",
+      "location": "Gis et al. 2017, DOI 10.19206/CE-2017-323, table 1, printed page 137",
+      "comparability": "Historical measurement; approximate SORT2 cycle; mass, auxiliaries and battery boundary not fully matched",
+      "conditions": "Electrical consumption measured onboard with WT1800E, not at AC plug. Compare model TtW/36, not electricity consumption*100. Exact test load and battery configuration unclear. No-HVAC case is a sensitivity assumption, not the documented test state."
+    },
+    {
+      "id": "green-truck-2025",
+      "cases": ["baseline-truck-40t-ICEV-d-Long_haul", "truck-31t"],
+      "metric": "fuel_L_100km",
+      "unit": "L/100 km",
+      "reported_min": 21.2,
+      "reported_max": 21.59,
+      "vehicle": "Volvo FH Aero, Scania 420 R Super, DAF XF430, Green Truck 2025",
+      "source": "https://www.volvotrucks.nl/content/dam/volvo-trucks/markets/netherlands/magazine-online/2025/green-truck/Trucker%20No%208%202025%20Supertest%20Volvo%20FH%20Aero%20English%20Doppelseiten.pdf",
+      "location": "PDF page 8, Green Truck 2025 comparison table and route",
+      "comparability": "Cross-route context only; VECTO-derived Long haul is not the published road-test route",
+      "conditions": "342.8 km route, 31 t test combination mass, 79.79-80.18 km/h; fuel excludes AdBlue. Adjusted model uses payload to match 31000 kg within 1 kg, keeping default power, road load and efficiencies. Model route is about 108 km at about 67 km/h including stored zeros."
+    }
+  ]
+}

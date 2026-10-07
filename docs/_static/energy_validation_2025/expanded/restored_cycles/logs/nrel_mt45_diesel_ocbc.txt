@@ -1,0 +1,39 @@
+Finding solutions for trucks...
+Urban delivery driving cycle is selected. 
+Vehicles will be designed to achieve a minimal range of {150} km.
+
+
+'-' vehicle with driving mass superior to the permissible gross weight.
+'/' vehicle not available for the specified year.
++-------------------+------+
+| Payload (in tons) | 7.5t |
++-------------------+------+
+|    ICEV-d, 2025   | 1.8  |
++-------------------+------+
+Mass iteration: final=5598.931516, energy input=5598.931497, target=5216.312255 kg
+Finding solutions for trucks...
+Urban delivery driving cycle is selected. 
+Vehicles will be designed to achieve a minimal range of {150} km.
+
+
+'-' vehicle with driving mass superior to the permissible gross weight.
+'/' vehicle not available for the specified year.
++-------------------+------+
+| Payload (in tons) | 7.5t |
++-------------------+------+
+|    ICEV-d, 2025   | 1.4  |
++-------------------+------+
+Mass iteration: final=5215.004048, energy input=5215.004030, target=5216.312255 kg
+Finding solutions for trucks...
+Urban delivery driving cycle is selected. 
+Vehicles will be designed to achieve a minimal range of {150} km.
+
+
+'-' vehicle with driving mass superior to the permissible gross weight.
+'/' vehicle not available for the specified year.
++-------------------+------+
+| Payload (in tons) | 7.5t |
++-------------------+------+
+|    ICEV-d, 2025   | 1.4  |
++-------------------+------+
+Mass iteration: final=5216.316734, energy input=5216.316716, target=5216.312255 kg

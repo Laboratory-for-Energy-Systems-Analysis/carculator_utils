@@ -1,0 +1,22 @@
+{
+  "source_url": "https://nrel.sitefinity.cloud/docs/libraries/transportation/csv/019_central-business-district-cbd.csv",
+  "source_page": "https://nrel.sitefinity.cloud/transportation/drive-cycle-tool",
+  "raw_sha256": "525095c211bb1a05eca7f65271aefe7052da2b88a9d1542a2b7974ab27c9b2ef",
+  "converted_sha256": "5b87d7f01c286c4c60b8c29cb54b4ed71bb6d8459a87b4811a27124679e20bb6",
+  "conversion": "Linear interpolation at integer seconds, then mph * 1.609344; trailing fractional stopped interval omitted",
+  "raw_sample_period_s": 1.0,
+  "raw_sample_count": 561,
+  "sample_count": 561,
+  "raw_elapsed_seconds": 560.0,
+  "elapsed_seconds": 560,
+  "raw_distance_miles": 2.0455555555555556,
+  "distance_miles": 2.0455555555555556,
+  "distance_change_pct": 0.0,
+  "raw_max_speed_mph": 20.0,
+  "max_speed_mph": 20.0,
+  "positive_squared_speed_change_raw": 5600.0,
+  "positive_squared_speed_change_resampled": 5600.0,
+  "positive_squared_speed_change_pct": 0.0,
+  "maximum_reconstruction_error_mph": 0.0,
+  "note": "Reference trace, not actual dynamometer tracking. Sampling alters acceleration; summary checks do not prove dynamic equivalence."
+}

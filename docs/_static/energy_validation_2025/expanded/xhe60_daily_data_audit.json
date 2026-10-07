@@ -1,0 +1,9 @@
+{
+  "source_url": "https://rosap.ntl.bts.gov/view/dot/64117/dot_64117_DS1.pdf",
+  "source_sha256": "2da69fbe2c03b7f36a20ea5fc670f54a8fc8ba5c66bbfff729b00addb1f18321",
+  "locator": "Appendix, printed pp15-16",
+  "daily_entries": 63,
+  "entries_consistent_with_constant_4_6_mile_per_kg_at_0_1kg_rounding": 63,
+  "max_absolute_difference_kg": 0.04782608695652257,
+  "interpretation": "All daily hydrogen values are consistent with calculating mileage / 4.6 and rounding to 0.1 kg. This does not prove the authors method, but does not establish independent daily metering. Only aggregate service consumption is cataloged."
+}

@@ -1,0 +1,1 @@
+Mass iteration: final=1680.000000, energy input=1680.000000, target=1680.000000 kg
