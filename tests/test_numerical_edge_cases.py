@@ -30,7 +30,9 @@ def test_energy_model_accepts_all_zero_custom_cycle():
         gradient=None,
     )
 
-    assert np.all(model.driving_time == 0)
+    # Explicit custom samples represent operating time, even while stationary.
+    assert np.all(model.driving_time == 1)
+    assert np.all(model.velocity == 0)
 
 
 def test_energy_model_rejects_mismatched_cycle_and_gradient_lengths():

@@ -22,6 +22,7 @@ from .driving_cycles import (
     get_driving_cycle_specs,
     get_standard_driving_cycle_and_gradient,
 )
+from .numerical import ConvergenceError
 
 MONTHLY_AVG_TEMP = "monthly_avg_temp.csv"
 
@@ -118,6 +119,22 @@ def convert_to_xr(data):
     )
 
 
+def efficiency_override(value, shape):
+    """Broadcast fixed efficiencies; masked cells retain load-map behaviour."""
+    if value is None:
+        return np.ones(shape), np.zeros(shape, dtype=bool)
+    if isinstance(value, xr.DataArray):
+        value = value.transpose("size", "powertrain", "year", "value").values
+    values = np.ma.asarray(value, dtype=float)
+    fixed = ~np.ma.getmaskarray(values)
+    data = np.ma.getdata(values)
+    if np.any(fixed & (~np.isfinite(data) | (data < 0) | (data > 1))):
+        raise ValueError("Fixed efficiencies must be finite and between zero and one.")
+    if values.ndim == 4:
+        data, fixed = data.T[None, ...], fixed.T[None, ...]
+    return np.broadcast_to(data, shape).copy(), np.broadcast_to(fixed, shape)
+
+
 class EnergyConsumptionModel:
     """
     Calculate energy consumption of a vehicle for a
@@ -134,11 +151,14 @@ class EnergyConsumptionModel:
     at t_2 and velocity at t_0, divided by 2.
     See for example: http://www.unece.org/fileadmin/DAM/trans/doc/2012/wp29grpe/WLTP-DHC-12-07e.xls
 
-    :param cycle: Driving cycle. Pandas Series of second-by-second speeds (km/h) or name (str)
+    :param cycle: Named cycle or array of second-by-second speeds (km/h).
+        Every custom-array sample is an operating second, including terminal
+        stops. Trim storage padding before supplying a custom array.
     :type cycle: np.ndarray
     :param rho_air: Mass per unit volume of air. Set to (1.225 kg/m3) by default.
     :type rho_air: float
-    :param gradient: Road gradient per second of driving, in degrees.
+    :param gradient: User-supplied road gradient per second, in degrees,
+        overriding the gradient of either a named or custom cycle.
     None by default. Should be passed as an array of length equal
     to the length of the driving_cycles.
     :type gradient: numpy.ndarray
@@ -170,20 +190,52 @@ class EnergyConsumptionModel:
 
         self.rho_air = rho_air
 
-        if isinstance(cycle, np.ndarray):
+        if isinstance(cycle, (np.ndarray, list, tuple)):
             self.cycle_name = "custom"
-            self.cycle = cycle.reshape(-1, 1)
-
-            if gradient is not None:
-                self.gradient = gradient.reshape(-1, 1)
-            else:
-                self.gradient = np.zeros_like(self.cycle)
+            speed = np.asarray(cycle, dtype=float)
+            if speed.ndim != 1 or not speed.size:
+                raise ValueError("A custom driving cycle must be a nonempty 1-D array.")
+            if not np.isfinite(speed).all() or np.any(speed < 0):
+                raise ValueError(
+                    "Custom driving speeds must be finite and nonnegative."
+                )
+            self.cycle = np.broadcast_to(
+                speed[:, None], (len(speed), len(vehicle_size))
+            ).copy()
+            self.gradient = np.zeros_like(self.cycle)
 
         else:
             self.cycle_name = cycle
             self.cycle, self.gradient = get_standard_driving_cycle_and_gradient(
                 vehicle_type, vehicle_size, self.cycle_name
             )
+
+        # Bundled gradients retain their historical radian interpretation.
+        # Public gradient overrides have always been documented in degrees.
+        if isinstance(gradient, str):
+            _, self.gradient = get_standard_driving_cycle_and_gradient(
+                vehicle_type, vehicle_size, gradient
+            )
+        elif gradient is not None:
+            slope = np.asarray(gradient, dtype=float)
+            if slope.ndim == 1:
+                slope = slope[:, None]
+            if slope.ndim != 2 or len(slope) != len(self.cycle):
+                raise ValueError(
+                    "The length of the driving_cycles and the gradient must be the same."
+                )
+            if not np.isfinite(slope).all() or np.any(np.abs(slope) >= 90):
+                raise ValueError(
+                    "Gradient must be finite and strictly between -90 and 90 degrees."
+                )
+            try:
+                self.gradient = np.broadcast_to(
+                    np.deg2rad(slope), self.cycle.shape
+                ).copy()
+            except ValueError as exc:
+                raise ValueError(
+                    "Gradient columns must match the vehicle sizes."
+                ) from exc
 
         self.country = country
         self.vehicle_type = vehicle_type
@@ -202,7 +254,11 @@ class EnergyConsumptionModel:
         # Unit conversion km/h to m/s
         self.velocity = np.where(np.isnan(self.cycle), 0, (self.cycle * 1000) / 3600)
         self.velocity = self.velocity[:, None, None, None, :]
-        self.driving_time = self.find_last_driving_second()
+        self.driving_time = (
+            np.ones_like(self.velocity)
+            if self.cycle_name == "custom"
+            else self.find_last_driving_second()
+        )
 
         # Model acceleration as difference in velocity between
         # time steps (1 second)
@@ -308,7 +364,7 @@ class EnergyConsumptionModel:
             if len(driving_indices) == 0:
                 continue
             last_index = driving_indices[-1]
-            driving_time[:last_index, ..., i] = 1
+            driving_time[: last_index + 1, ..., i] = 1
 
         return driving_time
 
@@ -350,13 +406,15 @@ class EnergyConsumptionModel:
             )
 
             return (
-                aux_power.T.values * np.where(self.velocity > 0, 1, 0),
+                aux_power.T.values / _o(efficiency) * self.driving_time,
                 (p_cooling / _o(heat_pump_cop_cooling) * cooling_consumption).T.values
+                / _o(efficiency)
                 * self.driving_time,
                 (p_heating / _o(heat_pump_cop_heating) * heating_consumption).T.values
+                / _o(efficiency)
                 * self.driving_time,
-                p_battery_cooling.T * self.driving_time,
-                p_battery_heating.T * self.driving_time,
+                p_battery_cooling.T / _o(efficiency) * self.driving_time,
+                p_battery_heating.T / _o(efficiency) * self.driving_time,
             )
 
         _c = lambda x: x.values if isinstance(x, xr.DataArray) else x
@@ -463,6 +521,8 @@ class EnergyConsumptionModel:
         heat_pump_cop_heating: Union[xr.DataArray, np.array] = None,
         cooling_consumption: Union[xr.DataArray, np.array] = None,
         heating_consumption: Union[xr.DataArray, np.array] = None,
+        electric_motor_efficiency: Union[xr.DataArray, np.array, float] = 0.9,
+        combustion_engine_power: Union[xr.DataArray, np.array, None] = None,
     ) -> DataArray:
         """
         Calculate energy used and recuperated for a given vehicle per km driven.
@@ -499,11 +559,33 @@ class EnergyConsumptionModel:
         _c = lambda x: x.values if isinstance(x, xr.DataArray) else x
         _o = lambda x: np.where((x == 0) | (x == np.nan), 1, x)
 
+        if np.any(~np.isfinite(driving_mass)) or np.any(driving_mass < 0):
+            raise ValueError("Driving mass must be finite and nonnegative.")
+        for name, value in (
+            ("rolling resistance coefficient", rr_coef),
+            ("drag coefficient", drag_coef),
+            ("frontal area", frontal_area),
+            ("electric motor power", electric_motor_power),
+            ("engine power", engine_power),
+            ("auxiliary power", aux_power),
+            ("recuperation efficiency", recuperation_efficiency),
+            ("battery charge efficiency", battery_charge_eff),
+            ("battery discharge efficiency", battery_discharge_eff),
+            ("electric motor efficiency", electric_motor_efficiency),
+        ):
+            if np.any(~np.isfinite(value)) or np.any(value < 0):
+                raise ValueError(f"{name} must be finite and nonnegative.")
+            if "efficiency" in name and np.any(value > 1):
+                raise ValueError(f"{name} must not exceed one.")
+
         # Calculate the energy used for each second of the drive cycle
         ones = np.ones_like(self.velocity)
 
         # Resistance from the tire rolling: rolling resistance coefficient * driving mass * 9.81
-        rolling_resistance = _c((driving_mass * rr_coef * 9.81).T) * (self.velocity > 0)
+        slope = np.nan_to_num(self.gradient)[:, None, None, None, :]
+        rolling_resistance = (
+            _c((driving_mass * rr_coef * 9.81).T) * np.cos(slope) * (self.velocity > 0)
+        )
 
         # Resistance from the drag: frontal area * drag coefficient * air density * 1/2 * velocity^2
         air_resistance = _c((frontal_area * drag_coef * self.rho_air / 2).T) * np.power(
@@ -512,9 +594,7 @@ class EnergyConsumptionModel:
 
         # Resistance from road gradient: driving mass * 9.81 * sin(gradient)
         gradient_resistance = (
-            _c((driving_mass * 9.81).T)
-            * np.sin(np.nan_to_num(self.gradient)[:, None, None, None, :])
-            * (self.velocity > 0)
+            _c((driving_mass * 9.81).T) * np.sin(slope) * (self.velocity > 0)
         )
 
         # Inertia: driving mass * acceleration
@@ -529,29 +609,69 @@ class EnergyConsumptionModel:
         # determining efficiencies
         engine_load = np.ones_like(motive_energy_at_wheels)
 
-        if engine_efficiency is None:
-            engine_efficiency = np.ones_like(motive_energy_at_wheels)
+        fixed_engine, engine_mask = efficiency_override(
+            engine_efficiency, motive_energy_at_wheels.shape
+        )
+        fixed_transmission, transmission_mask = efficiency_override(
+            transmission_efficiency, motive_energy_at_wheels.shape
+        )
+        engine_efficiency = fixed_engine.copy()
+        transmission_efficiency = fixed_transmission.copy()
 
-        if transmission_efficiency is None:
-            transmission_efficiency = np.ones_like(motive_energy_at_wheels)
-
-        engine_load_iterations = [0, engine_load.mean()]
-
-        # we loop while the last three iterations are roughly equal
-        # or while len(engine_load_iterations) < 10
-
-        while len(engine_load_iterations) < 10:
-            engine_efficiency = self.calculate_efficiency(
-                engine_efficiency, engine_load, "engine"
+        combustion = np.array(
+            [p.startswith(("ICEV", "HEV", "PHEV-c")) for p in self.powertrains]
+        )[None, None, None, :, None]
+        rated_engine_power = _c(engine_power).T
+        if combustion_engine_power is not None:
+            if np.any(~np.isfinite(combustion_engine_power)) or np.any(
+                combustion_engine_power < 0
+            ):
+                raise ValueError(
+                    "Combustion engine power must be finite and nonnegative."
+                )
+            rated_engine_power = np.where(
+                combustion, _c(combustion_engine_power).T, rated_engine_power
             )
+        # Auxiliary parameters describe loads delivered to the services. For
+        # combustion vehicles these loads also contribute to engine shaft load;
+        # electric auxiliaries bypass the traction motor/transmission.
+        auxiliary_outputs = self.aux_energy_per_km(
+            aux_power,
+            np.ones_like(motive_energy_at_wheels),
+            hvac_power,
+            battery_cooling_unit,
+            battery_heating_unit,
+            heat_pump_cop_cooling,
+            heat_pump_cop_heating,
+            cooling_consumption,
+            heating_consumption,
+        )
+        auxiliary_output_power = (
+            sum(auxiliary_outputs)
+            if isinstance(auxiliary_outputs, tuple)
+            else auxiliary_outputs
+        ) * self.driving_time
 
-            transmission_efficiency = self.calculate_efficiency(
-                transmission_efficiency, engine_load, "transmission"
-            )
+        # Transmission efficiency depends on shaft load. Solve that relationship
+        # per sample, rather than iterating a mean fuel-input load a fixed number
+        # of times. Explicit efficiency inputs are overrides, not map seeds.
+        for iteration in range(100):
+            previous_load = engine_load.copy()
+            if not engine_mask.all():
+                engine_efficiency = self.calculate_efficiency(
+                    engine_efficiency, engine_load, "engine"
+                )
+                engine_efficiency = np.where(
+                    engine_mask, fixed_engine, engine_efficiency
+                )
 
-            recuperation_efficiency = xr.where(
-                recuperation_efficiency == 0, 1, recuperation_efficiency
-            )
+            if not transmission_mask.all():
+                transmission_efficiency = self.calculate_efficiency(
+                    transmission_efficiency, engine_load, "transmission"
+                )
+                transmission_efficiency = np.where(
+                    transmission_mask, fixed_transmission, transmission_efficiency
+                )
 
             if fuel_cell_system_efficiency is None:
                 fuel_cell_system_efficiency = np.ones_like(engine_efficiency)
@@ -570,28 +690,65 @@ class EnergyConsumptionModel:
                 * _t(_o(_c(fuel_cell_system_efficiency)))
             )
 
-            engine_load = np.clip(
-                (motive_energy / (_o(_c(engine_power)).T * 1000)) * self.velocity, 0, 1
+            shaft_power = (
+                motive_energy_at_wheels
+                / _t(_o(_c(transmission_efficiency)))
+                * self.velocity
+            ) + auxiliary_output_power * combustion
+            engine_load = np.clip(shaft_power / (_o(rated_engine_power) * 1000), 0, 1)
+            engine_load *= self.driving_time
+            if not np.isfinite(engine_load).all():
+                raise ConvergenceError("Energy efficiency: non-finite shaft load.")
+            if np.allclose(engine_load, previous_load, rtol=1e-8, atol=1e-10):
+                self.efficiency_iterations = iteration + 1
+                break
+            # Near zero load, heavy-vehicle maps have eta_transmission ~ load.
+            # Direct iteration then alternates between x and demand / x.
+            # Under-relaxation damps this oscillation without changing the root.
+            engine_load = np.where(
+                engine_load == 0, 0, 0.5 * (previous_load + engine_load)
+            )
+        else:
+            raise ConvergenceError(
+                "Energy efficiency: shaft load did not converge after 100 iterations."
             )
 
-            # add a minimum 5% engine load when the vehicle is idling
-            engine_load = np.where(self.velocity == 0, 0.05, engine_load)
-            engine_load *= self.driving_time
-            engine_load_iterations.append(engine_load.mean())
+        # Preserve the demand of the requested speed trace. The engine rating is
+        # a mechanical-output limit, not a limit on chemical/electrical input.
+        # A trace exceeding that rating is a feasibility diagnostic; clipping
+        # its input would hide the unmet wheel demand and destroy energy balance.
+        self.shaft_power_demand_kw = shaft_power / 1000
+        self.power_deficit_kw = np.maximum(
+            self.shaft_power_demand_kw - _c(engine_power).T, 0
+        )
 
         negative_motive_energy = xr.where(total_resistance > 0, 0, total_resistance)
+        # Braking power reaches the motor shaft through the transmission.
+        # Apply its mechanical power limit before generator/storage losses.
+        regenerative_shaft_power = np.minimum(
+            -negative_motive_energy * self.velocity * _c(recuperation_efficiency).T,
+            _c(electric_motor_power).T * 1000,
+        )
+        self.regenerative_shaft_power_kw = regenerative_shaft_power / 1000
         recuperated_energy = (
-            negative_motive_energy
-            * _c(recuperation_efficiency).T[None, ...]
-            * _c(battery_charge_eff).T[None, ...]
-            * _c(battery_discharge_eff).T[None, ...]
-            * (_c(electric_motor_power).T[None, ...] > 0)
+            -regenerative_shaft_power
+            * np.asarray(_c(electric_motor_efficiency)).T
+            * _c(battery_charge_eff).T
+            * _c(battery_discharge_eff).T
+        )
+
+        auxiliary_efficiency = np.where(combustion, _t(_c(engine_efficiency)), 1.0)
+        fuel_cell = np.array([p == "FCEV" for p in self.powertrains])[
+            None, None, None, :, None
+        ]
+        auxiliary_efficiency = np.where(
+            fuel_cell, _t(_c(fuel_cell_system_efficiency)), auxiliary_efficiency
         )
 
         if hvac_power is None:
             auxiliary_energy = self.aux_energy_per_km(
                 aux_power,
-                engine_efficiency,
+                auxiliary_efficiency,
                 hvac_power,
                 battery_cooling_unit,
                 battery_heating_unit,
@@ -615,7 +772,7 @@ class EnergyConsumptionModel:
                 battery_heating,
             ) = self.aux_energy_per_km(
                 aux_power,
-                engine_efficiency,
+                auxiliary_efficiency,
                 hvac_power,
                 battery_cooling_unit,
                 battery_heating_unit,
@@ -625,7 +782,7 @@ class EnergyConsumptionModel:
                 heating_consumption,
             )
 
-        auxiliary_energy = np.where(self.velocity > 0, auxiliary_energy, 0)
+        auxiliary_energy = auxiliary_energy * self.driving_time
 
         # if first dimension is 1, resize it to the length of the driving_cycles
         if auxiliary_energy.shape[0] == 1:
@@ -669,17 +826,13 @@ class EnergyConsumptionModel:
         )
 
         all_arrays[..., :-4] /= 1000
-        all_arrays[..., :-9] *= _(self.velocity)
+        # Resistances (columns 0:7) are forces; recuperation is already power.
+        all_arrays[..., :7] *= _(self.velocity)
 
-        all_arrays[..., 5] = np.where(
-            all_arrays[..., 5] > _(engine_power).T * 1,
-            _(engine_power).T * 1,
-            all_arrays[..., 5],
-        )
-        all_arrays[..., 7] = np.where(
-            all_arrays[..., 7] < _(electric_motor_power).T * -1,
-            _(electric_motor_power).T * -1,
-            all_arrays[..., 7],
-        )
-
-        return convert_to_xr(all_arrays).fillna(0)
+        if not np.isfinite(all_arrays).all():
+            index = tuple(np.argwhere(~np.isfinite(all_arrays))[0])
+            raise ValueError(
+                "Non-finite energy result at "
+                f"(second, value, year, powertrain, size, parameter)={index}."
+            )
+        return convert_to_xr(all_arrays)
