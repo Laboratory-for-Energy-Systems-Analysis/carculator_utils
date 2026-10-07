@@ -4,10 +4,16 @@
 # in this case, these estimates is for the tank-to-wheel, not the transmission
 # and the engine separately. Hence, the efficiency is the product of the
 # engine and transmission efficiency.
+# The source load axis is wheel power / rated engine power. Engine values
+# were divided by the reference transmission efficiency below; the engine
+# query load must therefore be shaft load multiplied by that same reference.
+# Source: Hjelkrem et al., equations (2), (6), Table 4 (Willans coefficients).
+# These are effective component priors, not measured engine maps.
 # also, we do not have coefficient for compressed gas engine
 # so we use the diesel engine efficiency for this case.
 
 gasoline:
+  engine_map_reference_transmission_efficiency: 0.8
   transmission:
     0: .8
     0.1: .8
@@ -125,6 +131,7 @@ gasoline:
     1: 0.200948476810545
 
 diesel:
+  engine_map_reference_transmission_efficiency: 0.8
   transmission:
     0: .8
     0.1: .8
@@ -243,6 +250,7 @@ diesel:
     
 
 compressed gas:
+  engine_map_reference_transmission_efficiency: 0.8
   transmission:
     0: .8
     0.1: .8
@@ -360,6 +368,7 @@ compressed gas:
     1: 0.15525375605412
 
 electric:
+  engine_map_reference_transmission_efficiency: 0.85
   transmission:
     0: .85
     0.1: .85

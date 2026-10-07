@@ -497,9 +497,23 @@ class EnergyConsumptionModel:
             if pwt not in pwts:
                 continue
 
+            coefficients = self.efficiency_coefficients[pwts[pwt]]
+            query_load = engine_load[:, :, :, p]
+            if efficiency_type == "engine":
+                # An engine table obtained by splitting a wheel-efficiency
+                # curve needs the inverse transformation on its load axis:
+                # eta_engine(s) = eta_TTW(eta_trans_ref * s) / eta_trans_ref.
+                # The reference split is fixed even if actual transmission
+                # efficiency is overridden. Shaft load itself is unchanged.
+                reference = coefficients.get(
+                    "engine_map_reference_transmission_efficiency", 1.0
+                )
+                if not np.isfinite(reference) or not 0 < reference <= 1:
+                    raise ValueError("Efficiency-map reference must be in (0, 1].")
+                query_load = query_load * reference
             efficiency[:, :, :, p] = np.clip(
                 np.interp(
-                    engine_load[:, :, :, p],
+                    query_load,
                     np.fromiter(
                         self.efficiency_coefficients[pwts[pwt]][efficiency_type].keys(),
                         dtype=float,

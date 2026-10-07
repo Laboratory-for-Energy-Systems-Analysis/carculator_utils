@@ -4,7 +4,10 @@ import numpy as np
 import pytest
 import xarray as xr
 
-from carculator_utils.energy_consumption import EnergyConsumptionModel
+from carculator_utils.energy_consumption import (
+    EnergyConsumptionModel,
+    get_efficiency_coefficients,
+)
 
 
 def scalar(value):
@@ -141,6 +144,65 @@ def test_load_dependent_transmission_converges_to_analytical_root():
         rtol=1e-8,
     )
     assert model.efficiency_iterations < 100
+
+
+@pytest.mark.parametrize("wheel_load", [0.04, 0.16, 0.32])
+@pytest.mark.parametrize(
+    "powertrain,coefficients",
+    [("ICEV-p", (0.1181, 2.1153, 3.9871)), ("ICEV-d", (0.0544, 1.5247, 5.2731))],
+)
+def test_split_car_map_reproduces_published_wheel_efficiency(
+    wheel_load, powertrain, coefficients
+):
+    a, b, c = coefficients  # Hjelkrem et al., Table 4, Willans approximation.
+    ttw_efficiency = wheel_load / (a + b * wheel_load + c * wheel_load**2)
+    _, result = calculate(
+        eta=None,
+        transmission=None,
+        maps=get_efficiency_coefficients("car"),
+        powertrain=powertrain,
+        engine_power=wheel_power_kw() / wheel_load,
+    )
+    np.testing.assert_allclose(
+        result.sel(parameter="motive energy"), wheel_power_kw() / ttw_efficiency
+    )
+    np.testing.assert_allclose(result.sel(parameter="power load"), wheel_load / 0.8)
+    np.testing.assert_allclose(
+        result.sel(parameter="engine efficiency"), ttw_efficiency / 0.8
+    )
+
+
+def test_split_map_keeps_auxiliary_demand_at_stationary_samples():
+    _, result = calculate(
+        speed=[0, 0, 36, 36, 0, 0],
+        eta=None,
+        transmission=None,
+        maps=get_efficiency_coefficients("car"),
+        aux_power=1250,
+        engine_power=100,
+    )
+    # 1.25 kW at the shaft corresponds to 1 kW at the reference wheels:
+    # utility .01; eta_TTW=.01/(a+b*.01+c*.01**2).
+    eta = (0.01 / (0.1181 + 2.1153 * 0.01 + 3.9871 * 0.01**2)) / 0.8
+    np.testing.assert_allclose(
+        result.sel(parameter="auxiliary energy")[[0, 1, 5]], 1.25 / eta
+    )
+
+
+def test_transmission_override_does_not_redefine_the_reference_engine_map():
+    _, result = calculate(
+        eta=None,
+        transmission=0.9,
+        maps=get_efficiency_coefficients("car"),
+        engine_power=wheel_power_kw() / 0.09,
+    )
+    # Shaft load .1 corresponds to source-map utilization .08 even when the
+    # actual transmission is .9: its reference split remains .8.
+    eta = (0.08 / (0.1181 + 2.1153 * 0.08 + 3.9871 * 0.08**2)) / 0.8
+    np.testing.assert_allclose(result.sel(parameter="engine efficiency"), eta)
+    np.testing.assert_allclose(
+        result.sel(parameter="motive energy"), wheel_power_kw() / (eta * 0.9)
+    )
 
 
 def test_low_load_transmission_map_does_not_oscillate():
