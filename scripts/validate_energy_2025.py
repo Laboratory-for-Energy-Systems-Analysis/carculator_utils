@@ -115,6 +115,7 @@ def run_case(
     transmission_efficiency=None,
     cycle_profile=None,
     cycle_label=None,
+    combustion_controls=None,
 ):
     """Run set_all(), retaining default fuel blends and all sizing steps."""
     package, prefix = PACKAGES[kind]
@@ -147,6 +148,9 @@ def run_case(
     ]:
         if value is not None:
             kwargs[name] = {key: value}
+
+    if combustion_controls is not None:
+        kwargs["combustion_controls"] = {key: combustion_controls}
 
     energy_masses = []
     custom_speed = None
@@ -374,6 +378,26 @@ def run_case(
         "cooling energy",
     ]:
         row[name + " kJ/km"] = float(get(name).sum() / distance)
+    if "combustion control energy" in energy.parameter:
+        row["combustion control energy kJ/km"] = float(
+            get("combustion control energy").sum() / distance
+        )
+        row["shaft_power_deficit_max_kW"] = float(model.ecm.power_deficit_kw.max())
+        row["combustion_controls"] = combustion_controls
+        row["combustion_control_diagnostics"] = [
+            {
+                "key": [str(x) for x in key],
+                "stopped_engine_seconds": int(np.count_nonzero(d["state"] == 2)),
+                "fuel_cut_seconds": int(np.count_nonzero(d["state"] == 3)),
+                "buffer_min_kJ": float(d["buffer_energy_J"].min() / 1000),
+                "buffer_max_kJ": float(d["buffer_energy_J"].max() / 1000),
+                "control_fuel_kJ": float(d["control_fuel_kJ"].sum()),
+                "terminal_recharge_fuel_kJ": d["terminal_recharge_fuel_kJ"],
+                "delivered_service_kJ": d["delivered_service_kJ"],
+                "buffer_losses_kJ": d["buffer_losses_kJ"],
+            }
+            for key, d in model.ecm.combustion_control_diagnostics.items()
+        ]
     print(
         f"{case_id}: {row['fuel_kg_100km'] if gas else row['fuel_L_100km']:.3f} {row['fuel_reporting_unit']}; "
         f"{row['electricity_kWh_100km']:.2f} kWh/100km; "
