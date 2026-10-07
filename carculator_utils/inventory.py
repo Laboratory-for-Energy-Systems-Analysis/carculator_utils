@@ -1076,12 +1076,14 @@ class Inventory:
                         "the fuel blend for {} is not valid.".format(fuel_type)
                     )
 
-                self.A[:, primary_fuel_activity_index, fuel_market_index, y] = (
-                    -1 * primary_share
+                # Two fuel labels can resolve to the same supplier. Accumulate
+                # their mass shares instead of overwriting the first exchange.
+                suppliers = {primary_fuel_activity_index: primary_share}
+                suppliers[secondary_fuel_activity_index] = (
+                    suppliers.get(secondary_fuel_activity_index, 0) + secondary_share
                 )
-                self.A[:, secondary_fuel_activity_index, fuel_market_index, y] = (
-                    -1 * secondary_share
-                )
+                for supplier, share in suppliers.items():
+                    self.A[:, supplier, fuel_market_index, y] = -share
 
     def find_input_requirement(
         self,
@@ -1507,53 +1509,19 @@ class Inventory:
             d for d in self.array.coords["combined_dim"].values if powertrain_short in d
         ]
 
-        _ = lambda x: np.where(x == 0, 1, x)
-
-        self.A[
-            :,
-            self.inputs[("Carbon dioxide, fossil", ("air",), "kilogram")],
-            self.find_input_indices(contains=tuple(idx)),
-        ] = (
-            self.array.sel(
-                parameter="fuel mass",
-                combined_dim=array_idx,
-            )
-            * fossil_co2
-            / _(
-                self.array.sel(
-                    parameter=RANGE_PARAM[self.vm.vehicle_type],
-                    combined_dim=array_idx,
-                )
-            )
-            * -1
-        )
-
-        self.A[
-            :,
-            self.inputs[
-                (
-                    "Carbon dioxide, non-fossil",
-                    ("air",),
-                    "kilogram",
-                )
-            ],
-            self.find_input_indices(
-                contains=tuple(idx),
-            ),
-        ] = (
-            self.array.sel(
-                parameter="fuel mass",
-                combined_dim=array_idx,
-            )
-            * biogenic_co2
-            / _(
-                self.array.sel(
-                    parameter=RANGE_PARAM[self.vm.vehicle_type],
-                    combined_dim=array_idx,
-                )
-            )
-            * -1
-        )
+        # Use the same burned fuel quantity as the fuel-supply exchange.
+        # In a PHEV, fuel consumption is utility-factor weighted, whereas
+        # fuel mass / combined range is not the fuel burned per driven km.
+        burned_fuel = self.array.sel(
+            parameter="fuel consumption", combined_dim=array_idx
+        ) * self.array.sel(parameter="fuel density per kg", combined_dim=array_idx)
+        columns = self.find_input_indices(contains=tuple(idx))
+        for label, intensity in (
+            ("fossil", fossil_co2),
+            ("non-fossil", biogenic_co2),
+        ):
+            row = self.inputs[(f"Carbon dioxide, {label}", ("air",), "kilogram")]
+            self.A[:, row, columns] = -burned_fuel * intensity
 
     def add_sulphur_emissions(self, fuel, powertrain_short, powertrains) -> None:
         # Fuel-based SO2 emissions
