@@ -9,6 +9,7 @@ import xarray as xr
 import yaml
 
 from .background_systems import BackgroundSystemModel
+from .combustion_controls import validate_control_keys
 from .driving_cycles import detect_vehicle_type
 from .energy_consumption import get_default_driving_cycle_name
 from .hot_emissions import HotEmissionsModel
@@ -103,6 +104,7 @@ class VehicleModel:
         ambient_temperature: float = None,
         indoor_temperature: float = 20,
         max_iterations: int = 100,
+        combustion_controls: dict = None,
     ) -> None:
         """
         :param array: multi-dimensional numpy-like array that contains parameters' value(s)
@@ -120,6 +122,8 @@ class VehicleModel:
             in (0, 1]. Unspecified cells retain their default efficiency model.
         :param transmission_efficiency: Fixed transmission efficiencies, with
             the same key and value contract as ``engine_efficiency``.
+        :param combustion_controls: Opt-in conventional petrol-car controls keyed
+            by (powertrain, size, year). See combustion control documentation.
         :param target_range: dictionary with target range for each powertrain-size-year combination
         :param ambient_temperature: Celsius scalar or twelve monthly values for
             bus HVAC only. Other families use annual-average thermal-demand
@@ -140,6 +144,13 @@ class VehicleModel:
         self.country = country
 
         self.vehicle_type = detect_vehicle_type(list(self.array.coords["size"].values))
+        validate_control_keys(combustion_controls, self.array, self.vehicle_type)
+        if combustion_controls and energy_consumption:
+            raise ValueError(
+                "Combustion controls cannot be combined with a consumption override."
+            )
+        self.combustion_controls = deepcopy(combustion_controls)
+
         indoor_temperature = validate_temperature(
             indoor_temperature, "Indoor temperature"
         )

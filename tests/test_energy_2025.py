@@ -620,3 +620,91 @@ def test_bus_auxiliary_calibration_is_scoped_and_samples_engineering_bounds():
     ).values
     assert np.all((values >= 6225) & (values <= 10375))
     assert np.ptp(values) > 0
+
+
+def test_combustion_controls_are_scoped_and_account_for_control_fuel():
+    module = load_vehicle_package("carculator")
+    inputs = module.CarInputParameters()
+    inputs.static()
+    _, array = module.fill_xarray_from_input_parameters(
+        inputs,
+        scope={
+            "size": ["Small", "Lower medium"],
+            "powertrain": ["ICEV-p", "BEV"],
+            "year": [2025, 2030],
+        },
+    )
+    array = array.reindex(value=[0, 1], method="ffill").astype(float)
+    array.loc[dict(parameter="combustion power share", powertrain="ICEV-p")] = 1
+    array.loc[dict(parameter="electric motor power share", powertrain="ICEV-p")] = 0
+    cycle = np.array([0, 0, 10, 20, 30, 20, 10, 0, 0, 0] * 3)
+    baseline = module.CarModel(array, cycle=cycle)
+    baseline.set_all()
+    key = ("ICEV-p", "Lower medium", 2025)
+    controls = {
+        key: {
+            "start_stop": True,
+            "warmup_seconds": 0,
+            "stop_delay_seconds": 0,
+            "minimum_on_seconds": 0,
+        }
+    }
+    model = module.CarModel(array, cycle=cycle, combustion_controls=controls)
+    controls[key]["start_stop"] = False
+    assert model.combustion_controls[key]["start_stop"] is True
+    model.set_all()
+    assert len(model.ecm.combustion_control_diagnostics) == 2
+    for pwt in ["BEV", "ICEV-p"]:
+        for size in ["Small", "Lower medium"]:
+            for year in [2025, 2030]:
+                cell = dict(powertrain=pwt, size=size, year=year)
+                if (pwt, size, year) == key:
+                    energy = model.energy.sel(cell)
+                    distance = energy.sel(parameter="velocity").sum("second") / 1000
+                    total = (
+                        energy.sel(
+                            parameter=[
+                                "motive energy",
+                                "auxiliary energy",
+                                "combustion control energy",
+                            ]
+                        ).sum(["parameter", "second"])
+                        / distance
+                    )
+                    np.testing.assert_allclose(model["TtW energy"].sel(cell), total)
+                    assert (
+                        energy.sel(parameter="combustion control energy").sum("second")
+                        > 0
+                    ).all()
+                else:
+                    np.testing.assert_allclose(
+                        model["TtW energy"].sel(cell),
+                        baseline["TtW energy"].sel(cell),
+                        rtol=1e-10,
+                    )
+                    assert (
+                        model.energy.sel(cell).sel(
+                            parameter="combustion control energy"
+                        )
+                        == 0
+                    ).all()
+
+
+def test_combustion_controls_reject_hybrid_assistance_and_bad_scope():
+    module = load_vehicle_package("carculator")
+    inputs = module.CarInputParameters()
+    inputs.static()
+    _, array = module.fill_xarray_from_input_parameters(
+        inputs,
+        scope={"size": ["Lower medium"], "powertrain": ["ICEV-p"], "year": [2025]},
+    )
+    with pytest.raises(ValueError, match="outside the model scope"):
+        module.CarModel(
+            array, combustion_controls={("ICEV-p", "Small", 2025): {"start_stop": True}}
+        )
+    model = module.CarModel(
+        array,
+        combustion_controls={("ICEV-p", "Lower medium", 2025): {"start_stop": True}},
+    )
+    with pytest.raises(ValueError, match="zero electric motor power"):
+        model.set_all()

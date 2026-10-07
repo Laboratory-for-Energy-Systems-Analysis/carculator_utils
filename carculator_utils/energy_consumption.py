@@ -18,6 +18,7 @@ from numpy import ndarray
 from xarray import DataArray
 
 from . import DATA_DIR
+from .combustion_controls import schedule_controls, validate_control_keys
 from .driving_cycles import (
     get_driving_cycle_specs,
     get_source_cycle_durations,
@@ -557,6 +558,7 @@ class EnergyConsumptionModel:
         electric_motor_efficiency: Union[xr.DataArray, np.array, float] = 0.9,
         combustion_engine_power: Union[xr.DataArray, np.array, None] = None,
         engine_efficiency_factor: Union[xr.DataArray, np.array, float] = 1.0,
+        combustion_controls: dict = None,
     ) -> DataArray:
         """
         Calculate energy used and recuperated for a given vehicle per km driven.
@@ -568,6 +570,9 @@ class EnergyConsumptionModel:
         :param sizes: size classes of the vehicles
         :param electric_motor_power: Electric motor power (watts). Optional.
         :param engine_efficiency_factor: Multiplicative map correction in (0, 1].
+        :param combustion_controls: Optional conventional petrol-car operating
+            controls keyed by (powertrain, size, year). Control fuel is returned
+            separately as ``combustion control energy`` (kJ per sample).
             Applies before fuel conversion; explicit efficiency overrides take precedence.
         :returns: net motive energy (in kJ/km)
 
@@ -592,6 +597,19 @@ class EnergyConsumptionModel:
 
         """
 
+        controls = validate_control_keys(
+            combustion_controls, driving_mass, self.vehicle_type
+        )
+        controls = {
+            key: config
+            for key, config in controls.items()
+            if config.start_stop or config.deceleration_fuel_cut
+        }
+        self.combustion_control_diagnostics = {}
+        if controls and hvac_power is not None:
+            raise ValueError(
+                "Combustion controls require the scalar car auxiliary path."
+            )
         _c = lambda x: x.values if isinstance(x, xr.DataArray) else x
         _o = lambda x: np.where((x == 0) | (x == np.nan), 1, x)
 
@@ -699,38 +717,108 @@ class EnergyConsumptionModel:
         # per sample, rather than iterating a mean fuel-input load a fixed number
         # of times. Explicit efficiency inputs are overrides, not map seeds.
         _t = lambda x: x.T if x.shape[-4:] != motive_energy_at_wheels.shape[-4:] else x
-        for iteration in range(100):
-            previous_load = engine_load.copy()
-            if not transmission_mask.all():
-                transmission_efficiency = self.calculate_efficiency(
-                    transmission_efficiency, engine_load, "transmission"
+        controlled_cells = np.zeros_like(engine_load, dtype=bool)
+        control_energy_kJ = np.zeros_like(engine_load)
+        for control_pass in range(2 if controls else 1):
+            for iteration in range(100):
+                previous_load = engine_load.copy()
+                if not transmission_mask.all():
+                    transmission_efficiency = self.calculate_efficiency(
+                        transmission_efficiency, engine_load, "transmission"
+                    )
+                    transmission_efficiency = np.where(
+                        transmission_mask, fixed_transmission, transmission_efficiency
+                    )
+
+                shaft_power = (
+                    motive_energy_at_wheels
+                    / _t(_o(_c(transmission_efficiency)))
+                    * self.velocity
+                ) + auxiliary_output_power * combustion
+                engine_load = np.clip(
+                    shaft_power / (_o(rated_engine_power) * 1000), 0, 1
                 )
-                transmission_efficiency = np.where(
-                    transmission_mask, fixed_transmission, transmission_efficiency
+                engine_load *= self.driving_time
+                if not np.isfinite(engine_load).all():
+                    raise ConvergenceError("Energy efficiency: non-finite shaft load.")
+                if np.allclose(engine_load, previous_load, rtol=1e-8, atol=1e-10):
+                    self.efficiency_iterations = iteration + 1
+                    break
+                # Near zero load, heavy-vehicle maps have eta_transmission ~ load.
+                # Direct iteration then alternates between x and demand / x.
+                # Under-relaxation damps this oscillation without changing the root.
+                engine_load = np.where(
+                    engine_load == 0, 0, 0.5 * (previous_load + engine_load)
+                )
+            else:
+                raise ConvergenceError(
+                    "Energy efficiency: shaft load did not converge after 100 iterations."
                 )
 
-            shaft_power = (
-                motive_energy_at_wheels
-                / _t(_o(_c(transmission_efficiency)))
-                * self.velocity
-            ) + auxiliary_output_power * combustion
-            engine_load = np.clip(shaft_power / (_o(rated_engine_power) * 1000), 0, 1)
-            engine_load *= self.driving_time
-            if not np.isfinite(engine_load).all():
-                raise ConvergenceError("Energy efficiency: non-finite shaft load.")
-            if np.allclose(engine_load, previous_load, rtol=1e-8, atol=1e-10):
-                self.efficiency_iterations = iteration + 1
-                break
-            # Near zero load, heavy-vehicle maps have eta_transmission ~ load.
-            # Direct iteration then alternates between x and demand / x.
-            # Under-relaxation damps this oscillation without changing the root.
-            engine_load = np.where(
-                engine_load == 0, 0, 0.5 * (previous_load + engine_load)
-            )
-        else:
-            raise ConvergenceError(
-                "Energy efficiency: shaft load did not converge after 100 iterations."
-            )
+            if controls and control_pass == 0:
+                shape = engine_load.shape
+                auxiliary_output_power = np.broadcast_to(
+                    auxiliary_output_power, shape
+                ).copy()
+                wheel_power = np.broadcast_to(total_resistance * self.velocity, shape)
+                velocity = np.broadcast_to(self.velocity, shape)
+                active = np.broadcast_to(self.driving_time, shape)
+                trans = np.broadcast_to(transmission_efficiency, shape)
+                electric_power = np.broadcast_to(_c(electric_motor_power).T, shape)
+                rated_power = np.broadcast_to(rated_engine_power * 1000, shape)
+                for (pwt, size, year), config in controls.items():
+                    indices = [
+                        list(driving_mass.coords[name].values).index(label)
+                        for name, label in [
+                            ("powertrain", pwt),
+                            ("size", size),
+                            ("year", year),
+                        ]
+                    ]
+                    p, z, y = indices
+                    for v in range(shape[1]):
+                        cell = (slice(None), v, y, p, z)
+                        if np.any(electric_power[cell] != 0):
+                            raise ValueError(
+                                "Combustion controls require zero electric motor power; explicitly remove hybrid assistance."
+                            )
+                        if (
+                            not transmission_mask[cell].all()
+                            and self.efficiency_coefficients is not None
+                        ):
+                            category = self.efficiency_coefficients.get(
+                                "powertrain_categories", {}
+                            ).get(pwt, "gasoline")
+                            values = list(
+                                self.efficiency_coefficients[category][
+                                    "transmission"
+                                ].values()
+                            )
+                            if np.ptp(values) > 1e-10 or min(values) <= 0:
+                                raise ValueError(
+                                    "Combustion controls currently require a constant positive transmission map or override."
+                                )
+                        if np.ptp(trans[cell]) > 1e-10 or np.any(trans[cell] <= 0):
+                            raise ValueError(
+                                "Combustion controls currently require constant positive transmission efficiency."
+                            )
+                        diagnostic = schedule_controls(
+                            velocity[cell],
+                            wheel_power[cell],
+                            auxiliary_output_power[cell],
+                            shaft_power[cell],
+                            float(rated_power[cell][0]),
+                            active[cell],
+                            config,
+                        )
+                        auxiliary_output_power[cell] = diagnostic[
+                            "engine_auxiliary_power_W"
+                        ]
+                        control_energy_kJ[cell] = diagnostic["control_fuel_kJ"]
+                        controlled_cells[cell] = True
+                        self.combustion_control_diagnostics[
+                            (pwt, size, year, driving_mass.coords["value"].values[v])
+                        ] = diagnostic
 
         # Fuel/motor efficiency does not enter the mechanical load equation.
         # Evaluate it once at the converged load, not at every solver iteration.
@@ -821,6 +909,12 @@ class EnergyConsumptionModel:
                 heating_consumption,
             )
 
+        if controls:
+            auxiliary_energy = np.where(
+                controlled_cells,
+                auxiliary_output_power / _t(_o(_c(engine_efficiency))),
+                auxiliary_energy,
+            )
         auxiliary_energy = auxiliary_energy * self.driving_time
 
         # if first dimension is 1, resize it to the length of the driving_cycles
@@ -874,4 +968,11 @@ class EnergyConsumptionModel:
                 "Non-finite energy result at "
                 f"(second, value, year, powertrain, size, parameter)={index}."
             )
-        return convert_to_xr(all_arrays)
+        result = convert_to_xr(all_arrays)
+        if controls:
+            correction = xr.zeros_like(result.isel(parameter=[8])).assign_coords(
+                parameter=["combustion control energy"]
+            )
+            correction.values = control_energy_kJ[..., None]
+            result = xr.concat([result, correction], dim="parameter")
+        return result
