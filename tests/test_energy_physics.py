@@ -205,6 +205,25 @@ def test_transmission_override_does_not_redefine_the_reference_engine_map():
     )
 
 
+@pytest.mark.parametrize("powertrain", ["HEV-p", "PHEV-c-p"])
+@pytest.mark.parametrize("load,eta", [(0.04, 0.33), (0.14, 0.38), (0.6, 0.34)])
+def test_petrol_hybrids_use_sourced_atkinson_component_map(powertrain, load, eta):
+    # Independent operating points from the pinned FASTSim Prius component
+    # map; unlike the ordinary-car aggregate map, its axis is shaft load.
+    _, result = calculate(
+        powertrain=powertrain,
+        eta=None,
+        transmission=None,
+        maps=get_efficiency_coefficients("car"),
+        engine_power=wheel_power_kw() / (0.8 * load),
+    )
+    np.testing.assert_allclose(result.sel(parameter="engine efficiency"), eta)
+    np.testing.assert_allclose(result.sel(parameter="power load"), load)
+    np.testing.assert_allclose(
+        result.sel(parameter="motive energy"), wheel_power_kw() / (eta * 0.8)
+    )
+
+
 def test_low_load_transmission_map_does_not_oscillate():
     maps = {
         "gasoline": {

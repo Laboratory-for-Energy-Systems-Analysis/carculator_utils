@@ -491,6 +491,9 @@ class EnergyConsumptionModel:
             "PHEV-e": "electric",
             "FCEV": "electric",
         }
+        # Vehicle resources can distinguish engine architectures without
+        # changing public powertrain labels or the other families' maps.
+        pwts.update(self.efficiency_coefficients.get("powertrain_categories", {}))
 
         # Calculate efficiency based on engine load
         for p, pwt in enumerate(self.powertrains):
@@ -515,13 +518,11 @@ class EnergyConsumptionModel:
                 np.interp(
                     query_load,
                     np.fromiter(
-                        self.efficiency_coefficients[pwts[pwt]][efficiency_type].keys(),
+                        coefficients[efficiency_type].keys(),
                         dtype=float,
                     ),
                     np.fromiter(
-                        self.efficiency_coefficients[pwts[pwt]][
-                            efficiency_type
-                        ].values(),
+                        coefficients[efficiency_type].values(),
                         dtype=float,
                     ),
                 ),

@@ -485,3 +485,37 @@ electric:
     0.99: 0.778938290704857
     1: 0.776650771214215
 
+
+# Full petrol hybrids use an Atkinson component-map prior rather than an
+# ordinary petrol fleet TTW fit. The shaft-load curve is copied without fitting
+# from FASTSim's 2016 Prius model, not interpreted as a measured 2025 map.
+# Source commit: 63808be8d09cb191047b536a2b9b7f883dbbd0c3
+# Source: python/fastsim/resources/vehdb/2016_TOYOTA_Prius_Two.csv
+# https://github.com/NatLabRockies/fastsim
+# Source SHA256: b269debfd02bbad043e01f422f62e947645a7f4f6c3a32a23f80839dda0c0298
+# The existing effective downstream loss factor (0.8) is retained. It is not
+# FASTSim's mechanical transmission assumption (0.98); this model does not
+# resolve the Prius power-split controller and its electrical circulation.
+# This transfer is an explicit class assumption, not universal calibration.
+powertrain_categories:
+  HEV-p: hybrid gasoline
+  PHEV-c-p: hybrid gasoline
+
+hybrid gasoline:
+  engine_map_reference_transmission_efficiency: 1.0
+  transmission:
+    0: 0.8
+    1: 0.8
+  engine:
+    0: 0.08
+    0.005: 0.10
+    0.015: 0.26
+    0.04: 0.33
+    0.06: 0.355
+    0.10: 0.37
+    0.14: 0.38
+    0.20: 0.38
+    0.40: 0.35
+    0.60: 0.34
+    0.80: 0.33
+    1.00: 0.32
