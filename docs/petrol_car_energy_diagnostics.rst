@@ -134,7 +134,8 @@ restore catalyst operation; instantaneous fuel cut alone is incomplete.
 Next implementation priority
 ----------------------------
 
-Introduce explicit, energy-conserving engine operating modes with opt-in
+The subsequent opt-in implementation is documented in :doc:`combustion_controls`.
+The diagnostic priorities identified here were to introduce explicit, energy-conserving engine operating modes with opt-in
 start-stop and deceleration fuel cut, independently test their transitions,
 and validate against time-resolved fuel/engine-speed evidence. Establish how
 the effective fleet curve already incorporates control losses before replacing

@@ -78,6 +78,7 @@ User's Guide
    adac_cycle_comparison
    truck_energy_diagnostics
    petrol_car_energy_diagnostics
+   combustion_controls
 
 API Reference
 -------------
