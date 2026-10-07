@@ -8,29 +8,21 @@ from .vehicle_input_parameters import VehicleInputParameters as vip
 
 
 def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope=None):
-    """Create an `xarray` labeled array from the sampled input parameters.
+    """Build a labelled vehicle array from static or sampled input parameters.
 
-    This function extracts the parameters' names and values contained in the
-    `parameters` attribute of the :class:`CarInputParameters` class
-    in :mod:`car_input_parameters` and insert them into a
-    multi-dimensional numpy-like array from the *xarray* package
-    (http://xarray.pydata.org/en/stable/).
+    :param input_parameters: A ``VehicleInputParameters`` subclass after
+        ``static()`` or ``stochastic()`` has populated its values.
+    :param sensitivity: Produce a reference and one-at-a-time 10% perturbations.
+        Requires static inputs.
+    :param scope: Optional size, powertrain and native-year selections. The
+        supplied dictionary is not mutated; required PHEV modes are added locally.
+    :returns: ``(mappings, array)``. Mappings are ordered as size, powertrain,
+        parameter and year. The array dimensions are ``size``, ``powertrain``,
+        ``parameter``, ``year`` and ``value``.
 
-
-    :param sensitivity:
-    :param input_parameters: Instance of the :class:`TruckInputParameters` class
-    in :mod:`truck_input_parameters`.
-    :returns: `tuple`, `xarray.DataArray`
-    - tuple (`size_dict`, `powertrain_dict`, `parameter_dict`, `year_dict`)
-    - array
-
-    Dimensions of `array`:
-
-        0. Vehicle size, e.g. "3.5t", "7.5t", etc. str.
-        1. Powertrain, e.g. "ICE-d", "BEV". str.
-        2. Year. int.
-        3. Samples.
-
+    Missing static cells retain the legacy zero convention and overlapping
+    records retain first-entry precedence. Build bracketing native years before
+    using ``array.interp(year=...)`` for annual interpolation.
     """
 
     # Check whether the argument passed is an instance of :class:`TruckInputParameters`

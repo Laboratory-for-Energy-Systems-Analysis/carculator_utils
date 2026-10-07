@@ -156,21 +156,18 @@ class EnergyConsumptionModel:
     :param cycle: Named cycle or array of second-by-second speeds (km/h).
         Every custom-array sample is an operating second, including terminal
         stops. Trim storage padding before supplying a custom array.
-    :type cycle: np.ndarray
-    :param rho_air: Mass per unit volume of air. Set to (1.225 kg/m3) by default.
+    :type cycle: str or numpy.ndarray
+    :param rho_air: Air density, default 1.204 kg/m3 at 23 degrees Celsius.
     :type rho_air: float
     :param gradient: User-supplied road gradient per second, in degrees,
         overriding the gradient of either a named or custom cycle.
-    None by default. Should be passed as an array of length equal
-    to the length of the driving_cycles.
+        None by default. A numeric array must match the cycle length.
     :type gradient: numpy.ndarray
 
-    :ivar rho_air: Mass per unit volume of air. Value of 1.204 at 23C (test temperature for WLTC).
-    :vartype rho_air: float
     :ivar velocity: Time series of speed values, in meters per second.
     :vartype velocity: numpy.ndarray
     :ivar acceleration: Time series of acceleration, calculated as
-    increment in velocity per interval of 1 second, in meter per second^2.
+        increment in velocity per interval of 1 second, in meter per second^2.
     :vartype acceleration: numpy.ndarray
 
     """
@@ -560,7 +557,7 @@ class EnergyConsumptionModel:
         engine_efficiency_factor: Union[xr.DataArray, np.array, float] = 1.0,
         combustion_controls: dict = None,
     ) -> DataArray:
-        """
+        r"""
         Calculate energy used and recuperated for a given vehicle per km driven.
 
         :param driving_mass: Mass of vehicle (kg)
@@ -574,7 +571,9 @@ class EnergyConsumptionModel:
             controls keyed by (powertrain, size, year). Control fuel is returned
             separately as ``combustion control energy`` (kJ per sample).
             Applies before fuel conversion; explicit efficiency overrides take precedence.
-        :returns: net motive energy (in kJ/km)
+        :returns: Labelled per-second energy components and operating traces.
+            Energy components are kJ per one-second sample; the vehicle model
+            integrates them to obtain consumption per kilometre.
 
         Power to overcome rolling resistance is calculated by:
 

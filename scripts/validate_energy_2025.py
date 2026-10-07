@@ -1,12 +1,12 @@
-"""Reproduce the 2025 energy audit with the three vehicle packages installed.
+"""Reproduce the 2025 energy audit with the matching vehicle packages installed.
 
 Run from a Python 3.12 environment with matching source checkouts installed::
 
     python scripts/validate_energy_2025.py --output /tmp/energy-audit
 
 The audit records failures; it does not change the energy model or calibrate inputs
-to consumption observations. Bus SORT cases use an explicit, local constructor
-adapter because BusModel currently rejects numpy custom cycles in set_all().
+to consumption observations. Custom and SORT traces use the public cycle and
+gradient overrides; instrumentation only records mass and tightens audit sizing.
 """
 
 import argparse
@@ -182,23 +182,17 @@ def run_case(
     def tight_sizing(model, parameter, rtol, mask=None):
         return original_sizing(model, parameter, min(rtol, sizing_rtol), mask)
 
-    def ecm_factory(**ecm_kwargs):
-        # Changes only cycle selection. The production physics and sizing run unchanged.
-        ecm_kwargs["cycle"] = (
+    array_cycle = custom_speed is not None or (
+        kind == "bus" and cycle.startswith("SORT")
+    )
+    if array_cycle:
+        kwargs["cycle"] = (
             custom_speed.copy() if custom_speed is not None else sort_cycle(cycle)
         )
-        ecm_kwargs["gradient"] = np.zeros_like(ecm_kwargs["cycle"])
-        return EnergyConsumptionModel(**ecm_kwargs)
-
-    adapter = (
-        patch(package + ".model.EnergyConsumptionModel", side_effect=ecm_factory)
-        if custom_speed is not None or (kind == "bus" and cycle.startswith("SORT"))
-        else contextlib.nullcontext()
-    )
+        kwargs["gradient"] = np.zeros_like(kwargs["cycle"])
     with (output / "logs" / (case_id + ".txt")).open("w") as log:
         with contextlib.ExitStack() as stack:
             stack.enter_context(contextlib.redirect_stdout(log))
-            stack.enter_context(adapter)
             stack.enter_context(
                 patch.object(
                     EnergyConsumptionModel, "motive_energy_per_km", capture_energy_mass
@@ -263,9 +257,9 @@ def run_case(
             if custom_speed is not None
             else None
         ),
-        "constructor_cycle": cycle,
+        "constructor_cycle": "custom array" if array_cycle else cycle,
         "temperature_C": temperature,
-        "sort_adapter": kind == "bus" and cycle.startswith("SORT"),
+        "sort_adapter": False,
         "input_overrides": json.dumps(inputs or {}, sort_keys=True),
         "input_factors": json.dumps(factors or {}, sort_keys=True),
         "requested_curb_mass_kg": curb_mass,

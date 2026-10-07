@@ -53,13 +53,17 @@ def get_electricity_losses() -> Dict[str, float]:
 
 def get_electricity_mix() -> xr.DataArray:
     """
-    Retrieve electricity mixes and shape them into a xarray.
-    Source:
-        * for European countries (`ENTSOE TYNDP 2020 scenarios <https://2020.entsos-tyndp-scenarios.eu/>`_),
-        * for African countries (`TEMBA <http://www.osemosys.org/temba.html>`_ model)
-        * and for other countries (`IEA World Energy outlook 2017 <https://www.iea.org/reports/world-energy-outlook-2017>`_)
+    Retrieve the bundled electricity mixes as a labelled array.
 
-    :returns: An axarray with 'country' and 'year' as dimensions
+    Historical data sources:
+
+    * European countries: `ENTSOE TYNDP 2020 scenarios
+      <https://2020.entsos-tyndp-scenarios.eu/>`_.
+    * African countries: the `TEMBA <http://www.osemosys.org/temba.html>`_ model.
+    * Other countries: `IEA World Energy Outlook 2017
+      <https://www.iea.org/reports/world-energy-outlook-2017>`_.
+
+    :returns: Electricity shares by country, year and generating technology.
     :rtype: xarray.core.dataarray.DataArray
 
     """
@@ -89,8 +93,7 @@ def get_electricity_mix() -> xr.DataArray:
 
 def get_biofuel_share(filepath) -> xr.DataArray:
     """
-    :return: Returns a xarray with share of biodiesel
-    in the fuel blend, per country, per year.
+    :return: Biodiesel shares in the fuel blend, by country and year.
     """
     if not filepath.is_file():
         raise FileNotFoundError(

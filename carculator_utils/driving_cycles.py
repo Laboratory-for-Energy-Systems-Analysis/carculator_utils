@@ -124,8 +124,9 @@ def get_standard_driving_cycle_and_gradient(
     radians. The energy model converts grade to angle using ``arctan``.
     Arrays can contain padding; source durations identify verified VECTO traces.
 
-    :param name: The name of the driving_cycles.
-    e.g., WLTC (Worldwide harmonized Light vehicles Test Cycles)
+    :param vehicle_type: Vehicle family used to select the bundled resource.
+    :param vehicle_sizes: Requested size labels, in output-column order.
+    :param name: Cycle name, for example WLTC.
     :type name: str
 
     :returns: Speed and grade arrays with columns in requested size order.
