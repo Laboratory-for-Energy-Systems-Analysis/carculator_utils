@@ -105,6 +105,11 @@ class VehicleModel:
         :param payload: dictionary with payload for each powertrain-size-year combination
         :param energy_target: dictionary with energy target for each year
         :param energy_consumption: dictionary with energy consumption for each powertrain-size-year combination
+        :param engine_efficiency: Fixed engine efficiencies keyed by
+            ``(powertrain, size, year)``. Values are scalars or one value per sample,
+            in (0, 1]. Unspecified cells retain their default efficiency model.
+        :param transmission_efficiency: Fixed transmission efficiencies, with
+            the same key and value contract as ``engine_efficiency``.
         :param target_range: dictionary with target range for each powertrain-size-year combination
 
         """
@@ -447,6 +452,13 @@ class VehicleModel:
             for key, val in self.energy_consumption.items():
                 pwt, size, year = key
                 if val is not None:
+                    # Overrides use the public stored-energy boundary. The
+                    # trace uses delivered DC until final battery accounting.
+                    trace_value = val
+                    if pwt.startswith("BEV") or pwt == "PHEV-e":
+                        trace_value = val * self["battery discharge efficiency"].sel(
+                            powertrain=pwt, size=size, year=year
+                        )
                     print(
                         f"Overriding TtW energy for {pwt} {size} {year} "
                         f"with {val} kj/km"
@@ -470,7 +482,7 @@ class VehicleModel:
                             parameter="motive energy",
                         )
                     ] = (
-                        val * distance / self.energy.shape[0]  # kj/km  # km  # seconds
+                        trace_value * distance / self.energy.shape[0]
                     )
 
                     self.energy.loc[
@@ -478,7 +490,14 @@ class VehicleModel:
                             powertrain=pwt,
                             size=size,
                             year=year,
-                            parameter=["auxiliary energy", "recuperated energy"],
+                            parameter=[
+                                "auxiliary energy",
+                                "recuperated energy",
+                                "cooling energy",
+                                "heating energy",
+                                "battery cooling energy",
+                                "battery heating energy",
+                            ],
                         )
                     ] = 0
 
@@ -619,10 +638,170 @@ class VehicleModel:
             + self["cooling thermal demand"] * self["cooling energy consumption"]
         )
 
+    def get_energy_efficiency_override(self, parameter, default=None):
+        """Return per-cell fixed efficiencies for the energy model.
+
+        Public override keys are ``(powertrain, size, year)``; each value is a
+        scalar or one value per sample. Unspecified cells retain the supplied
+        default (two-wheelers) or the shared load-dependent map. Explicit electric
+        component priors take precedence over these defaults; user overrides
+        take precedence over component priors.
+        """
+        overrides = getattr(self, parameter.replace(" ", "_"))
+        if overrides is not None and not isinstance(overrides, dict):
+            raise ValueError(f"{parameter} overrides must be a dictionary.")
+        values = xr.zeros_like(self[parameter], dtype=float)
+        mask = xr.ones_like(values, dtype=bool)
+        if default is not None:
+            values[:] = default
+            mask[:] = False
+        component = {
+            "engine efficiency": "electric motor efficiency",
+            "transmission efficiency": "electric transmission efficiency",
+        }[parameter]
+        if component in self.array.parameter:
+            electric = self.array.powertrain.str.startswith("BEV") | (
+                self.array.powertrain.isin(["PHEV-e", "FCEV"])
+            )
+            specified = electric & (self[component] != 0)
+            values = xr.where(specified, self[component], values)
+            mask = xr.where(specified, False, mask)
+        for key, value in (overrides or {}).items():
+            if not isinstance(key, tuple) or len(key) != 3:
+                raise ValueError(
+                    f"{parameter}: expected (powertrain, size, year), got {key!r}."
+                )
+            selection = dict(zip(("powertrain", "size", "year"), key))
+            if any(label not in values.coords[dim] for dim, label in selection.items()):
+                raise ValueError(
+                    f"{parameter}: override coordinate {key!r} is outside the model scope."
+                )
+            value = np.asarray(value, dtype=float)
+            if (
+                value.ndim > 1
+                or not np.isfinite(value).all()
+                or np.any((value <= 0) | (value > 1))
+            ):
+                raise ValueError(
+                    f"{parameter} at {key!r} must be finite and in (0, 1]."
+                )
+            if value.ndim == 1 and value.size != values.sizes["value"]:
+                raise ValueError(
+                    f"{parameter} at {key!r}: expected one value per sample."
+                )
+            values.loc[selection] = value
+            mask.loc[selection] = False
+        dimensions = self[parameter].dims
+        return np.ma.array(
+            values.transpose(*dimensions).values,
+            mask=mask.transpose(*dimensions).values,
+        )
+
     def set_recuperation(self):
-        _ = lambda x: np.where(x == 0, 1, x)
-        self["recuperation efficiency"] = _(
-            self["transmission efficiency"] * (self["combustion power share"] < 1)
+        self["recuperation efficiency"] = self["transmission efficiency"] * (
+            self["electric power"] > 0
+        )
+
+    def get_electric_motor_efficiency(self):
+        """Assumed bidirectional motor efficiency for regenerative energy reuse.
+
+        This is a cycle-average component assumption, not a fitted hybrid
+        fuel efficiency. It can be supplied as an input parameter; 0.9 is the
+        fallback for tables predating the parameter.
+        """
+        if "electric motor efficiency" in self.array.parameter.values:
+            value = self["electric motor efficiency"]
+            return xr.where(value == 0, 0.9, value)
+        return xr.full_like(self["power"], 0.9, dtype=float)
+
+    def get_regeneration_credit(self):
+        """Convert reusable DC electricity to avoided propulsion input (kJ/km).
+
+        Hybrid reuse passes through the electric motor and transmission, then
+        displaces fuel at the cycle's positive-work-weighted conversion ratio.
+        Fuel-cell reuse displaces DC fuel-cell output. Fuel savings cannot exceed
+        positive propulsion input; excess recovered energy receives no fuel credit.
+        """
+        energy = self.energy
+        distance = energy.sel(parameter="velocity").sum("second") / 1000
+        recovered = -energy.sel(parameter="recuperated energy").sum("second")
+        positive_input = energy.sel(parameter="motive energy").sum("second")
+        positive_wheels = energy.sel(parameter="motive energy at wheels").sum("second")
+        # Work weighting avoids charging idle/deceleration samples a fictitious
+        # transmission loss when estimating propulsion displaced by recovery.
+        transmission = energy.sel(parameter="transmission efficiency")
+        wheel_power = energy.sel(parameter="motive energy at wheels")
+        mean_transmission = (transmission * wheel_power).sum("second") / xr.where(
+            positive_wheels > 0, positive_wheels, 1
+        )
+        motor = self.get_electric_motor_efficiency().transpose(
+            "value", "year", "powertrain", "size"
+        )
+        combustion = (self["combustion power share"] > 0).transpose(
+            "value", "year", "powertrain", "size"
+        )
+        fuel_cell = self["fuel cell system efficiency"].transpose(
+            "value", "year", "powertrain", "size"
+        )
+        fuel_per_wheel = positive_input / xr.where(
+            positive_wheels > 0, positive_wheels, 1
+        )
+        credit = xr.where(
+            combustion,
+            recovered * motor * mean_transmission * fuel_per_wheel,
+            recovered,
+        )
+        credit = xr.where(
+            fuel_cell > 0, recovered / xr.where(fuel_cell > 0, fuel_cell, 1), credit
+        )
+        credit = xr.where(
+            combustion | (fuel_cell > 0), np.minimum(credit, positive_input), credit
+        )
+        self.regeneration_credit = -credit / xr.where(distance > 0, distance, 1)
+        return self.regeneration_credit.transpose("size", "powertrain", "year", "value")
+
+    def set_battery_energy_balance(self, *, include_recuperation=True) -> None:
+        """Convert electric-mode TtW demand from reusable DC to stored kJ/km.
+
+        Positive DC demand D and generator output R imply a stored-energy
+        decrease D / eta_discharge - R * eta_charge. The energy trace reports
+        recuperation as R * eta_charge * eta_discharge, so dividing its net DC
+        demand by eta_discharge gives precisely this balance. Terminal demand
+        D - R is retained separately for comparisons with onboard meters.
+
+        Combustion and fuel-cell TtW values already refer to fuel input and
+        are unchanged. Two-wheelers can explicitly omit recuperation until a
+        regenerative drivetrain is specified.
+        """
+        electric = self.array.powertrain.str.startswith("BEV") | (
+            self.array.powertrain == "PHEV-e"
+        )
+        discharge = self["battery discharge efficiency"]
+        charge = self["battery charge efficiency"]
+        active = electric & (self["TtW energy"] != 0)
+        for name, efficiency in (("discharge", discharge), ("charge", charge)):
+            invalid = active & (
+                ~np.isfinite(efficiency) | (efficiency <= 0) | (efficiency > 1)
+            )
+            if bool(invalid.any()):
+                raise ValueError(
+                    f"Active battery vehicles require {name} efficiency in (0, 1]."
+                )
+        safe_discharge = discharge.where(active, 1)
+        safe_charge = charge.where(active, 1)
+        distance = self.energy.sel(parameter="velocity").sum("second") / 1000
+        recovered = (
+            -self.energy.sel(parameter="recuperated energy").sum("second")
+            / xr.where(distance > 0, distance, 1)
+        ).transpose("size", "powertrain", "year", "value")
+        if not include_recuperation:
+            recovered = xr.zeros_like(recovered)
+        positive_dc = self["TtW energy"] + recovered
+        self.battery_terminal_energy = (
+            positive_dc - recovered / (safe_charge * safe_discharge)
+        ).where(electric, 0)
+        self["TtW energy"] = xr.where(
+            electric, self["TtW energy"] / safe_discharge, self["TtW energy"]
         )
 
     def set_battery_fuel_cell_replacements(self) -> None:
@@ -765,6 +944,18 @@ class VehicleModel:
         self["electric power"] = self["power"] * (
             np.array(1) - self["combustion power share"]
         )
+        if "electric motor power share" in self.array.parameter.values:
+            share = self["electric motor power share"]
+            if np.any(~np.isfinite(share)) or np.any(share < 0):
+                raise ValueError(
+                    "Electric motor power share must be finite and nonnegative."
+                )
+            # Hybrid component peak ratings need not sum to the combined system
+            # rating: their peaks can occur at different speeds. Zero retains
+            # the legacy complementary split for records without this input.
+            self["electric power"] = xr.where(
+                share > 0, self["power"] * share, self["electric power"]
+            )
 
     def set_component_masses(self) -> None:
         self["combustion engine mass"] = (
@@ -794,7 +985,7 @@ class VehicleModel:
             self.energy.sel(parameter="recuperated energy").sum(dim="second")
             / _(self.energy.sel(parameter="negative motive energy").sum(dim="second"))
         ).values.T
-        self["share recuperated energy"] *= self["combustion power share"] < 1
+        self["share recuperated energy"] *= self["electric power"] > 0
 
         if "PHEV-d" in self.array.powertrain:
             self.array.loc[
