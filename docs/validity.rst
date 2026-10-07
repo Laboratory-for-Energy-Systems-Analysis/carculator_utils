@@ -13,6 +13,8 @@ comparisons with imperfectly matched cycles or meter boundaries.
 Current evidence
 ----------------
 
+* :doc:`hot_emission_audit` records completed family inventory runs and unresolved
+  pollutant mapping, speciation, energy-boundary and deterioration defects.
 * :doc:`energy_model_repairs` describes adopted accounting repairs and priors.
 * :doc:`energy_measurements` records 40 model runs, 41 paired observations and
   77 exclusions. It distinguishes charging AC, battery-terminal DC and unknown

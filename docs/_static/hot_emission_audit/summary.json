@@ -1,0 +1,334 @@
+{
+  "families": [
+    {
+      "family": "carculator",
+      "size": "Medium",
+      "powertrains": [
+        "ICEV-p",
+        "ICEV-d",
+        "ICEV-g",
+        "HEV-p",
+        "HEV-d",
+        "PHEV-p",
+        "PHEV-d",
+        "FCEV",
+        "BEV"
+      ],
+      "completed_lcia": true
+    },
+    {
+      "family": "carculator_bus",
+      "size": "13m-city",
+      "powertrains": [
+        "ICEV-d",
+        "ICEV-g",
+        "HEV-d",
+        "FCEV",
+        "BEV-depot"
+      ],
+      "completed_lcia": true
+    },
+    {
+      "family": "carculator_truck",
+      "size": "40t",
+      "powertrains": [
+        "ICEV-d",
+        "ICEV-g",
+        "HEV-d",
+        "PHEV-d",
+        "FCEV",
+        "BEV"
+      ],
+      "completed_lcia": true
+    },
+    {
+      "family": "carculator_two_wheeler",
+      "size": "Motorcycle 11-35kW",
+      "powertrains": [
+        "ICEV-p",
+        "BEV"
+      ],
+      "completed_lcia": true
+    }
+  ],
+  "checks": [
+    {
+      "check": "coefficient_to_hot_output",
+      "tested": 2592,
+      "failed": 0
+    },
+    {
+      "check": "documented_mileage_degradation",
+      "tested": 12,
+      "failed": 12
+    },
+    {
+      "check": "emission_energy_vs_fuel_energy",
+      "tested": 90,
+      "failed": 74
+    },
+    {
+      "check": "hot_output_to_vehicle",
+      "tested": 16236,
+      "failed": 408
+    },
+    {
+      "check": "nmhc_mass_conservation",
+      "tested": 144,
+      "failed": 90
+    },
+    {
+      "check": "vehicle_to_inventory",
+      "tested": 15444,
+      "failed": 84
+    }
+  ],
+  "colliding_inventory_mappings": {
+    "Ethane": [
+      "Ethane",
+      "Ethene"
+    ]
+  },
+  "scope": "Bundled-factor propagation; not independent validation against licensed HBEFA source data.",
+  "source_sha256": {
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/car/degradation_EF.csv": "58b931d2f6ce0745b404c8fe8165a0d74b183c72457273e93216cf295fae75de",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/car/rolling_noise_coefficients.csv": "a6778366f3916fbc1cdda9035d0e8a87b58a73b4cd91aa16ba71c2501ac47a56",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/car/NMHC_species.csv": "3ad04c77b303839d8830636212f5488f066c78784bffa3f52477a55686ac1e3d",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/car/EF_HBEFA42_non_exhaust.csv": "bf5f44942f9dbe0a1c7fe4f61887e9c372d2f3165ef03e43c2267ee1aa346b8f",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/car/engine_wear.csv": "b0db6d113b195027d77db1e9b34577114bcce1bf70e2a234f1cf5e0f44233cd6",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/car/propulsion_noise_coefficients.csv": "1ada1db632c8077c2e61fbb5323f20b15eba599c6478ce25558ee57d7362aa92",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/car/EF_HBEFA42_exhaust.csv": "e32b87a5e4c0bd3b29ee4f5424210957d4d4ebe6a90b4cedd8550dbbb3b3505d",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/bus/degradation_EF.csv": "29b8aa5b2466e5e8da5ccca9aa6a2b62481702976c9c377ce11589d68d0098ce",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/bus/rolling_noise_coefficients.csv": "664f4997b81a5b8ab9eb355f00953220101a6d217c4d5bf416a606e493927d13",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/bus/NMHC_species.csv": "ad2cd295ef5e86f17cd1b3b799a3be8c0b1802161c08ca3dd5257c3b093b2160",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/bus/engine_wear.csv": "670ba2653f05ae4d094eb63ada440f081c2c5626907e5713a77bc161c8787013",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/bus/propulsion_noise_coefficients.csv": "41d888457bcf18efc1dd390eeb3586817ff88d3aa2d56bd117fea774eb2c3cb7",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/bus/EF_HBEFA42_exhaust.csv": "d5135dc3cfefc3a58c63a5d9dc7f79c4504b1fb3c9fe0ba294e494c44d53649a",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/two-wheeler/NMHC_species.csv": "04ce9fde6769bd6445087565c023074043ddddd36d695c7e006ab54be90b7e3c",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/two-wheeler/engine_wear.csv": "cc6788d6636906d098d3c0982067545d63cc512315121cf7ee96051e1ab31e0d",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/two-wheeler/propulsion_noise_coefficients.csv": "b1fc101ee3b7deb0350295cbb661d55c31bf6ea6551fd8c9976fec0ba7e93a81",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/two-wheeler/EF_HBEFA42_exhaust.csv": "f76d8312396ca8f7ac65ddbaf4e2abaa4c88c3a370fc802ba2bb8ac12db603f4",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/truck/degradation_EF.csv": "29b8aa5b2466e5e8da5ccca9aa6a2b62481702976c9c377ce11589d68d0098ce",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/truck/rolling_noise_coefficients.csv": "664f4997b81a5b8ab9eb355f00953220101a6d217c4d5bf416a606e493927d13",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/truck/NMHC_species.csv": "ad2cd295ef5e86f17cd1b3b799a3be8c0b1802161c08ca3dd5257c3b093b2160",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/truck/engine_wear.csv": "670ba2653f05ae4d094eb63ada440f081c2c5626907e5713a77bc161c8787013",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/truck/propulsion_noise_coefficients.csv": "41d888457bcf18efc1dd390eeb3586817ff88d3aa2d56bd117fea774eb2c3cb7",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/truck/EF_HBEFA42_exhaust.csv": "d526b8e0fd8cf09db4b977ca5e4c151ae9156ae83b52da1c6709da33e118a091",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/noise_flows.yaml": "8f7a6f5333fc32b4aac1353b24e534fb54e69ed5c2e78119f5e3d9bbe06caeea",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/exhaust_flows.yaml": "f68c0d6e04095f5202d9d6506219041b1b40b236e966c90748c6411503c38c6c",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/euro_classes.yaml": "1a1680bfa05d97a119c66ade7aad8f5cd49ef2bbf83df9ef7d133ee876220a29",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/data/emission_factors/exhaust_and_noise_flows.yaml": "4078c9169cef89d0ccfa6c7f5a02aabbbbc07c0f5692886ffaa466d2074cc521",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/model.py": "6782a764557a60b0007a966909362f558dbb6c8532bb486b7d4f15512365ee3a",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/inventory.py": "74ef02c12853a365bfe5e5a0575bbaa2e57e641870a79b7e49923e9cfe9057fa",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/hot_emissions.py": "23a928abeeda8dde4546a5808a2eb21ef9ce0599e08161e3bb9737895861e161",
+    "/Users/romain/GitHub/carculator_utils/scripts/audit_hot_emission_inventory.py": "65f8610c00567ce2ef77081a8c59b39b8d7c7416f96217fe324bdab55d07b7ff",
+    "/Users/romain/GitHub/carculator/carculator/model.py": "1394aa70f87f80084011cf2440ec26c3f46b023f06b47ef56d44b9127c051b95",
+    "/Users/romain/GitHub/carculator/carculator/inventory.py": "525c1e6546997aee9d7e1ef2e4a24c4f2b7df332d00a5c0799ce2a6a8091d65e",
+    "/Users/romain/GitHub/carculator/carculator/data/default_parameters.json": "6f2c81ffc962a5a1517e18bb261197de5160326c3564aa9fe62b3f1d71e758f4",
+    "/Users/romain/GitHub/carculator/carculator/data/extra_parameters.json": "41112d667148ab0014cc7390d406fceb0a6ce321e22421a28415a2282a3bc527",
+    "/Users/romain/GitHub/carculator_bus/carculator_bus/model.py": "4137274e0fc0f4593543aac6b3d914f56f32a78aa454906c167b678357ec325a",
+    "/Users/romain/GitHub/carculator_bus/carculator_bus/inventory.py": "2a260c47b75a3bbed520d25a97e595d7c9f39acc11ec1fce1317ea83468a3fa2",
+    "/Users/romain/GitHub/carculator_bus/carculator_bus/data/default_parameters.json": "132b0f7eeadc5160b6f4f707bb61811796dd35d14cf66f2a7a061113cef16078",
+    "/Users/romain/GitHub/carculator_bus/carculator_bus/data/extra_parameters.json": "460df07a82da5bd0ae7d50561d3005653da5b50d392319c3d29b98472ef7fe94",
+    "/Users/romain/GitHub/carculator_truck/carculator_truck/model.py": "f52f6621f7d5d02b622b55d8b5926aad21bedc68cdade93b723577b389977730",
+    "/Users/romain/GitHub/carculator_truck/carculator_truck/inventory.py": "dbb0de20aa73987e6800db21205eca8926a47d877303f927096e904e680b3bc0",
+    "/Users/romain/GitHub/carculator_truck/carculator_truck/data/default_parameters.json": "d20b2e9c04cba02e80c2a23f46a70db2fc27f7af613e835716884bb9f3a8ce26",
+    "/Users/romain/GitHub/carculator_truck/carculator_truck/data/extra_parameters.json": "752d513d80ad4def88c05960c3990a9dd276a8759f4f236ecbe64903dcd28c0f",
+    "/Users/romain/GitHub/carculator_two_wheeler/carculator_two_wheeler/model.py": "f4440bceed5c74b337ea8cc1298ca8d29194aa1d8a59038ed08ba7d4590ee90d",
+    "/Users/romain/GitHub/carculator_two_wheeler/carculator_two_wheeler/inventory.py": "513ff732d8146c0670e5b849962d1dcea7000b89297f31632bfc0cdcfe7e183c",
+    "/Users/romain/GitHub/carculator_two_wheeler/carculator_two_wheeler/data/default_parameters.json": "97fc5f8b462fc7a2e1229393d05d1403821e0faf004176fb4727f4f8a547ee3d",
+    "/Users/romain/GitHub/carculator_two_wheeler/carculator_two_wheeler/data/extra_parameters.json": "76da5d186463c021ba7096bef0df0fa33a42cf51ed63620fff8652c5ecbe83a5"
+  },
+  "failure_examples": {
+    "documented_mileage_degradation": [
+      {
+        "family": "carculator",
+        "check": "documented_mileage_degradation",
+        "label": "ICEV-p/2020/NOx",
+        "index": "(0,)",
+        "expected": 1.150000009765625,
+        "actual": 1.3,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "documented_mileage_degradation",
+        "label": "ICEV-p/2020/NOx",
+        "index": "(1,)",
+        "expected": 1.225,
+        "actual": 1.3,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "documented_mileage_degradation",
+        "label": "ICEV-p/2025/NOx",
+        "index": "(0,)",
+        "expected": 1.150000009765625,
+        "actual": 1.3,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "documented_mileage_degradation",
+        "label": "ICEV-p/2025/NOx",
+        "index": "(1,)",
+        "expected": 1.225,
+        "actual": 1.3,
+        "passed": false
+      }
+    ],
+    "emission_energy_vs_fuel_energy": [
+      {
+        "family": "carculator",
+        "check": "emission_energy_vs_fuel_energy",
+        "label": "ICEV-p",
+        "index": "(1, 0)",
+        "expected": 2539.768798828125,
+        "actual": 2602.675733121429,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "emission_energy_vs_fuel_energy",
+        "label": "ICEV-p",
+        "index": "(1, 1)",
+        "expected": 2539.768798828125,
+        "actual": 2602.675733121429,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "emission_energy_vs_fuel_energy",
+        "label": "ICEV-p",
+        "index": "(2, 0)",
+        "expected": 2389.7314453125,
+        "actual": 2492.3023127925976,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "emission_energy_vs_fuel_energy",
+        "label": "ICEV-p",
+        "index": "(2, 1)",
+        "expected": 2389.7314453125,
+        "actual": 2492.3023127925976,
+        "passed": false
+      }
+    ],
+    "hot_output_to_vehicle": [
+      {
+        "family": "carculator",
+        "check": "hot_output_to_vehicle",
+        "label": "ICEV-p/Chromium direct emissions, urban",
+        "index": "(0, 0)",
+        "expected": 1.7286459050498863e-10,
+        "actual": 3.457291690347336e-13,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "hot_output_to_vehicle",
+        "label": "ICEV-p/Chromium direct emissions, urban",
+        "index": "(0, 1)",
+        "expected": 1.7286459050498863e-10,
+        "actual": 3.457291690347336e-13,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "hot_output_to_vehicle",
+        "label": "ICEV-p/Chromium direct emissions, urban",
+        "index": "(1, 0)",
+        "expected": 1.6511010564911002e-10,
+        "actual": 3.302201990584147e-13,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "hot_output_to_vehicle",
+        "label": "ICEV-p/Chromium direct emissions, urban",
+        "index": "(1, 1)",
+        "expected": 1.6511010564911002e-10,
+        "actual": 3.302201990584147e-13,
+        "passed": false
+      }
+    ],
+    "nmhc_mass_conservation": [
+      {
+        "family": "carculator",
+        "check": "nmhc_mass_conservation",
+        "label": "HEV-d/2020/0",
+        "index": "()",
+        "expected": 3.3036972155592315e-06,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "nmhc_mass_conservation",
+        "label": "HEV-d/2020/1",
+        "index": "()",
+        "expected": 3.0724873851539284e-06,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "nmhc_mass_conservation",
+        "label": "HEV-d/2025/0",
+        "index": "()",
+        "expected": 3.224095390492519e-06,
+        "actual": 0.0,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "nmhc_mass_conservation",
+        "label": "HEV-d/2025/1",
+        "index": "()",
+        "expected": 2.9928855600872146e-06,
+        "actual": 0.0,
+        "passed": false
+      }
+    ],
+    "vehicle_to_inventory": [
+      {
+        "family": "carculator",
+        "check": "vehicle_to_inventory",
+        "label": "ICEV-p/Ethane/urban",
+        "index": "(0, 0)",
+        "expected": 9.862244951364119e-06,
+        "actual": 6.856608251837315e-06,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "vehicle_to_inventory",
+        "label": "ICEV-p/Ethane/urban",
+        "index": "(0, 1)",
+        "expected": 8.990264177555218e-06,
+        "actual": 6.250374099181499e-06,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "vehicle_to_inventory",
+        "label": "ICEV-p/Ethane/urban",
+        "index": "(1, 0)",
+        "expected": 9.796848644327838e-06,
+        "actual": 6.811142611695686e-06,
+        "passed": false
+      },
+      {
+        "family": "carculator",
+        "check": "vehicle_to_inventory",
+        "label": "ICEV-p/Ethane/urban",
+        "index": "(1, 1)",
+        "expected": 8.930266631068662e-06,
+        "actual": 6.2086619436740875e-06,
+        "passed": false
+      }
+    ]
+  }
+}

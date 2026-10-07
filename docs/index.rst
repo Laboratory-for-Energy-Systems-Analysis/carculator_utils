@@ -72,6 +72,7 @@ User's Guide
    modeling
    structure
    validity
+   hot_emission_audit
    energy_validation_2025
    energy_measurements
    energy_model_repairs
