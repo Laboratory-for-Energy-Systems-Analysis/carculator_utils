@@ -591,3 +591,32 @@ def test_unavailable_or_overweight_policy_clears_stale_supply_outputs(
     assert (model.battery_terminal_energy == 0).all()
     if overweight:
         assert (model["driving mass"] == 20000).all()
+
+
+def test_bus_auxiliary_calibration_is_scoped_and_samples_engineering_bounds():
+    module = load_vehicle_package("carculator_bus")
+    inputs = module.BusInputParameters()
+    inputs.static()
+    scope = {
+        "year": [2020, 2025, 2030],
+        "size": ["13m-city", "13m-city-double", "18m", "13m-coach"],
+        "powertrain": ["BEV-depot", "BEV-opp", "BEV-motion", "ICEV-d"],
+    }
+    _, array = module.fill_xarray_from_input_parameters(inputs, scope=scope)
+    aux = array.sel(parameter="auxiliary power base demand")
+    bev = ["BEV-depot", "BEV-opp", "BEV-motion"]
+    assert (aux.sel(year=2025, size="13m-city", powertrain=bev) == 8300).all()
+    assert (aux.sel(year=[2020, 2030], size="13m-city", powertrain=bev) == 5000).all()
+    assert (aux.sel(year=2025, size=["13m-city-double", "18m"]) == 5000).all()
+    assert (aux.sel(year=2025, size="13m-city", powertrain="ICEV-d") == 5000).all()
+    assert (aux.sel(year=2025, size="13m-coach") == 3500).all()
+    inputs.stochastic(32, seed=2025)
+    _, sampled = module.fill_xarray_from_input_parameters(inputs, scope=scope)
+    values = sampled.sel(
+        parameter="auxiliary power base demand",
+        year=2025,
+        size="13m-city",
+        powertrain=bev,
+    ).values
+    assert np.all((values >= 6225) & (values <= 10375))
+    assert np.ptp(values) > 0
