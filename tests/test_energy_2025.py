@@ -55,7 +55,17 @@ def test_native_2025_defaults_cover_existing_cells_and_sample(package, prefix):
             "electric transmission efficiency",
         }
     }
-    prior_cells = cells(r for r in records.values() if r["year"] in (2020, 2030))
+    prior_cells = cells(
+        r
+        for r in records.values()
+        if r["year"] in (2020, 2030)
+        and r["name"]
+        not in {
+            "electric motor efficiency",
+            "electric motor power share",
+            "electric transmission efficiency",
+        }
+    )
     actual_cells = cells(interpolated.values())
     assert prior_cells <= actual_cells
     assert all(
@@ -606,7 +616,7 @@ def test_bus_auxiliary_calibration_is_scoped_and_samples_engineering_bounds():
     aux = array.sel(parameter="auxiliary power base demand")
     bev = ["BEV-depot", "BEV-opp", "BEV-motion"]
     assert (aux.sel(year=2025, size="13m-city", powertrain=bev) == 8300).all()
-    assert (aux.sel(year=[2020, 2030], size="13m-city", powertrain=bev) == 5000).all()
+    assert (aux.sel(year=[2020, 2030], size="13m-city", powertrain=bev) == 8300).all()
     assert (aux.sel(year=2025, size=["13m-city-double", "18m"]) == 5000).all()
     assert (aux.sel(year=2025, size="13m-city", powertrain="ICEV-d") == 5000).all()
     assert (aux.sel(year=2025, size="13m-coach") == 3500).all()

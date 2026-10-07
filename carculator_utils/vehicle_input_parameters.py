@@ -163,6 +163,10 @@ class VehicleInputParameters(NamedParameters):
 
         Existing ``stochastic(n)`` calls retain their unseeded behavior. Sampling
         never resets or consumes NumPy's process-wide random state.
+
+        Records with the same optional ``uncertainty_group`` metadata reuse one
+        draw vector. Their sampling distributions must be identical. This
+        represents a shared uncertain assumption, for example across years.
         """
         if (
             isinstance(iterations, bool)
@@ -175,11 +179,27 @@ class VehicleInputParameters(NamedParameters):
             for key in self.data
             if self.data[key].get("kind") in ("distribution", None)
         )
+        groups = {}
+        for key in keys:
+            group = self.metadata[key].get("uncertainty_group")
+            if group is None:
+                continue
+            if not isinstance(group, str) or not group.strip():
+                raise ValueError("uncertainty_group must be a nonempty string.")
+            if group in groups and self.data[key] != self.data[groups[group]]:
+                raise ValueError(
+                    f"Uncertainty group {group!r} requires identical distributions."
+                )
+            groups.setdefault(group, key)
         parameters = sa.UncertaintyBase.from_dicts(*[self.data[key] for key in keys])
         rng = sa.MCRandomNumberGenerator(parameters, seed=seed)
         samples = rng.generate(iterations)
         self.iterations = int(iterations)
         self.values = {key: row.reshape((-1,)) for key, row in zip(keys, samples)}
+        for key in keys:
+            group = self.metadata[key].get("uncertainty_group")
+            if group is not None:
+                self.values[key] = self.values[groups[group]].copy()
 
     def add_vehicle_parameters(self, parameters):
         """
