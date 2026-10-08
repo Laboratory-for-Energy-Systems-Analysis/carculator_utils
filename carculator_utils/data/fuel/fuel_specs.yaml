@@ -648,14 +648,16 @@ methane - synthetic - electrochemical - MSWI:
   biogenic_share: 1
 
 methane - synthetic - biological:
-  lhv: 47.5
-  co2: 2.68
+  # BioCat II LCA (January 2017), Annex I p. 15; see supply_chains.yaml.
+  lhv: 49.9
+  # Complete oxidation, consistent with the production dataset's 2.75 kg CO2/kg.
+  co2: 2.75
   density: 0.000717 # kg/L
   name:
-      - biomethane, gaseous, 5 bar, from sewage sludge fermentation, at fuelling station
+      - methane, synthetic, from biological methanation and carbon from atmosphere, at fuelling station
       - RER
       - kilogram
-      - biomethane, high pressure
+      - methane, high pressure
   biogenic_share: 1
 
 kerosene:

@@ -15,6 +15,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Correct biological synthetic methane's silent sewage-biomethane substitution. Supply the bundled PEM-hydrogen/atmospheric-CO2 methanation route through an explicit delivery activity, with documented distribution proxies and BioCat's 0.314 kWh/kg compression assumption. Align this route's heating value (49.9 MJ/kg) and combustion CO2 (2.75 kg/kg); verify completed car, bus and truck inventories and repeated exports. See [scope and limitations](docs/biological_methane.rst).
 - Correct the shared FCEV cost projection to update the fuel-cell-stack price without overwriting the hydrogen-tank price. Retain the existing curves and sampled factors; car and bus overrides and the normal truck workflow are unaffected.
 - Retain projected-cost uncertainty with seeded input samples for cars, buses and two-wheelers. Preserve factors through selection, interpolation and serialization without global RNG draws; keep static/sensitivity factors deterministic and explicit prices authoritative. Single stochastic samples now retain uncertainty, including `stochastic(1)`; regenerate old stochastic cost results.
 - Validate triangular modes and bounds when loading parameter records, with year and vehicle context in errors. Test sampling of each vehicle family's complete defaults before scope selection, including the repaired truck cost distributions.

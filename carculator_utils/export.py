@@ -19,6 +19,7 @@ import xarray as xr
 import yaml
 
 from . import DATA_DIR, __version__
+from .fuel_supply import load_fuel_supply_recipes
 
 if TYPE_CHECKING:
     import bw2io
@@ -40,7 +41,7 @@ def create_valid_worksheet_name(name: str) -> str:
     return worksheet_name or "Sheet1"
 
 
-def load_references() -> list[dict]:
+def load_references() -> dict:
     """
     Load LCIs to fetch metadata from.
     """
@@ -50,6 +51,9 @@ def load_references() -> list[dict]:
 
     with open(filepath, encoding="utf-8") as f:
         references = json.load(f)
+
+    for recipe in load_fuel_supply_recipes():
+        references[recipe["name"][0]] = recipe["reference"]
 
     return references
 

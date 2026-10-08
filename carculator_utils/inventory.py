@@ -23,6 +23,7 @@ from scipy import sparse
 
 from . import DATA_DIR
 from .background_systems import BackgroundSystemModel
+from .fuel_supply import fill_fuel_suppliers, register_fuel_suppliers
 
 warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 
@@ -275,6 +276,7 @@ class Inventory:
         self.background_configuration.update(background_configuration or {})
 
         self.inputs = get_dict_input()
+        fuel_supply_recipes = register_fuel_suppliers(self.inputs, self.vm.fuel_blend)
         validate_fuel_mappings(self.vm.fuel_blend, self.inputs)
 
         self.bs = BackgroundSystemModel()
@@ -290,6 +292,7 @@ class Inventory:
         self.electricity_technologies = list(self.elec_map.keys())
 
         self.A = self.get_A_matrix()
+        fill_fuel_suppliers(self.A, self.inputs, fuel_supply_recipes)
         # Create electricity and fuel market datasets
         self.mix = self.define_electricity_mix_for_fuel_prep()
         self.create_electricity_mix_for_fuel_prep()

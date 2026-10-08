@@ -1,0 +1,49 @@
+# Foreground suppliers assembled from the bundled inventory, in kg of delivered fuel.
+# Exchanges not replaced below retain the template's delivery assumptions.
+- name:
+    - methane, synthetic, from biological methanation and carbon from atmosphere, at fuelling station
+    - RER
+    - kilogram
+    - methane, high pressure
+  template:
+    - biomethane, gaseous, 5 bar, from sewage sludge fermentation, at fuelling station
+    - RER
+    - kilogram
+    - biomethane, high pressure
+  replacements:
+    - original:
+        - biomethane production, from biogas upgrading, using amine scrubbing
+        - RER
+        - kilogram
+        - biomethane, from biogas upgrading, using amine scrubbing
+      supplier:
+        - methane, from biological methanation, with carbon from atmosphere
+        - RER
+        - kilogram
+        - methane, from biological methanation
+      # Retain the template's 1.02 kg production requirement (distribution allowance).
+    - original:
+        - market group for electricity, medium voltage
+        - RER
+        - kilowatt hour
+        - electricity, medium voltage
+      supplier:
+        - market group for electricity, medium voltage
+        - RER
+        - kilowatt hour
+        - electricity, medium voltage
+      amount: 0.314
+  reference:
+    source: https://carbonstorage.io/media/project_files/Biocat_Life_Cycle_Analysis.pdf
+    comment: >-
+      Per kg of delivered methane: 1.02 kg of the bundled biological-methanation
+      product using PEM hydrogen and atmospheric CO2. Retains the bundled
+      sewage-biomethane delivery activity's distribution allowance, pipeline,
+      station infrastructure, heat and direct emissions as delivery proxies;
+      sewage-sludge gas production is removed. Replaces station electricity
+      with 0.314 kWh/kg for compression to 200 bar (BioCat II LCA, January 2017,
+      Annex I, page 15, Audi AG). The production activity's 1.55 kWh/kg plant
+      electricity is additional, as are electrolysis and direct air capture.
+      Delivery proxies and upstream production inventories are not newly
+      validated. The 2% production allowance is inherited, not an explicitly
+      balanced methane emission. Vehicle pump-to-tank leakage remains separate.
