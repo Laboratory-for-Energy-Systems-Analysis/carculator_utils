@@ -1,6 +1,6 @@
 package:
   name: carculator_utils
-  version: 1.3.6.dev0
+  version: 1.3.6
 source:
   path: ..
 build:

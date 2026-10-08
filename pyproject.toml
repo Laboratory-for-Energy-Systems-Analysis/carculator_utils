@@ -20,10 +20,13 @@ classifiers = [
 
 [project.urls]
 Homepage = "https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils"
+Documentation = "https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/tree/master/docs"
+Changelog = "https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/CHANGELOG.md"
+Issues = "https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/issues"
 
 [project.optional-dependencies]
 test = ["pytest>=8", "pytest-cov", "hypothesis>=6", "openpyxl", "xlsxwriter"]
-docs = ["sphinx", "sphinx-rtd-theme"]
+docs = ["sphinx", "sphinx-immaterial", "sphinx-copybutton", "sphinxcontrib-bibtex"]
 excel = ["xlsxwriter"]
 # Legacy bw2io compares tuple versions and cannot import current bw2data.
 brightway = ["bw2io>=0.8.12,<0.9", "bw2data>=3.6,<4", "bw2calc>=1.8,<2"]

@@ -12,6 +12,8 @@
 #
 import os
 import sys
+from pathlib import Path
+from runpy import run_path
 
 # sys.path.insert(0, os.path.abspath('C:\Users\sacchi_r\Documents\GitHub\coarse\coarse'))
 sys.path.insert(0, os.path.abspath(".."))
@@ -19,12 +21,15 @@ sys.path.insert(0, os.path.abspath(".."))
 
 # -- Project information -----------------------------------------------------
 
-project = "Carculator"
+project = "Carculator utils"
 copyright = "2019, Paul Scherrer Institut"
 author = "Chris Mutel, Brian Cox, Romain Sacchi"
 
 # The full version, including alpha/beta/rc tags
-release = "1.6.8"
+release = run_path(
+    str(Path(__file__).resolve().parents[1] / "carculator_utils" / "_version.py")
+)["VERSION"]
+version = release
 
 
 # -- General configuration ---------------------------------------------------
@@ -61,7 +66,7 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 #
 html_logo = "_static/img/mediumsmall.png"
 html_favicon = "_static/img/favicon.png"
-html_title = "Carculator"
+html_title = "Carculator utils"
 
 html_theme = "sphinx_immaterial"
 
@@ -71,9 +76,8 @@ html_theme_options = {
         "repo": "fontawesome/brands/github",
     },
     "font": {"text": "Fira Sans", "code": "JetBrains Mono"},
-    "site_url": "https://carculator.readthedocs.io",
-    "repo_url": "https://github.com/romainsacchi/carculator",
-    "repo_name": "romainsacchi/carculator",
+    "repo_url": "https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils",
+    "repo_name": "Laboratory-for-Energy-Systems-Analysis/carculator_utils",
     "edit_uri": "blob/master/docs/",
     "globaltoc_collapse": True,
     "features": ["navigation.top", "search.share", "navigation.tracking", "toc.follow"],

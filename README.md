@@ -1,29 +1,100 @@
-# ``carculator_utils``
+# carculator_utils
 
+Shared physics, parameter handling, background systems, inventories and export machinery for the carculator vehicle models.
 
-Base classes and functions for the carculator package suite.
+[![Installed artifacts](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/actions/workflows/main.yml)
+[![PyPI](https://img.shields.io/pypi/v/carculator_utils)](https://pypi.org/project/carculator_utils/)
 
-Python **3.12** is required (`>=3.12,<3.13`).
+Developed at the [Paul Scherrer Institute](https://www.psi.ch/en).
+This checkout prepares **1.3.6**; see [CHANGELOG.md](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/CHANGELOG.md) for release status and changes.
 
-Provides base classes to:
+## Installation
 
-* carculator
-* carculator_bus
-* carculator_truck
-* carculator_two-wheeler
+Use **Python 3.12** (`>=3.12,<3.13`) and a fresh environment. The shared runtime
+requires NumPy `>=1.26.4,<2`.
 
-## Support
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+```
 
-Do not hesitate to contact the development team at [carculator@psi.ch](mailto:carculator@psi.ch).
+On Windows, activate with `.venv\Scripts\activate`. After publication, install
+this release from PyPI:
 
-## Maintainers
+```bash
+python -m pip install "carculator_utils==1.3.6"
+```
 
-* [Romain Sacchi](https://github.com/romainsacchi)
+Before publication, use the matching source checkouts as described under development.
+Core calculations use bundled resources and need no Brightway project, ecoinvent
+installation or network access. Inventory export has optional dependencies:
 
-## Contributing
+```bash
+python -m pip install "carculator_utils[excel,brightway]==1.3.6"
+```
 
-See [contributing](https://github.com/romainsacchi/carculator_utils/blob/master/CONTRIBUTING.md).
+The Brightway extra supports the legacy stack (`bw2io<0.9`, `bw2data<4`,
+`bw2calc<2`). Export currently targets ecoinvent 3.9 and 3.10; importing those
+inventories requires the corresponding background database in the destination tool.
 
-## License
+## Vehicle packages
 
-[BSD-3-Clause](https://github.com/romainsacchi/carculator_utils/blob/master/LICENSE). Copyright 2023 Paul Scherrer Institut.
+| Package | Prepared version |
+| --- | --- |
+| `carculator_utils` | 1.3.6 |
+| `carculator` | 1.9.6 |
+| `carculator_truck` | 0.5.1 |
+| `carculator_bus` | 0.1.1 |
+| `carculator_two_wheeler` | 0.1.1 |
+
+## Quick start
+
+```python
+from carculator_utils.background_systems import BackgroundSystemModel
+
+background = BackgroundSystemModel()
+print(sorted(background.fuel_specs))
+```
+
+This shared package has no standalone default vehicle. Choose a vehicle package from the family table below for complete model/LCIA runs.
+
+## Modelling and validation
+
+The vehicle models include native **2025** parameters and documented temporal
+extensions. These combine engineering priors and selected calibration evidence;
+they are not independent measurements for every vehicle configuration.
+
+`TtW energy` is in kJ/km. For BEVs it is net stored-energy depletion;
+`model.battery_terminal_energy` reports terminal DC separately, while
+`electricity consumption` is grid electricity in kWh/km. Identify the measurement
+boundary before comparing energy outputs. Availability-masked zeroes do not
+represent physically zero consumption.
+
+Supported background scenarios are `SSP2-NPi`, `SSP2-PkBudg1000`,
+`SSP2-PkBudg650`, and `static`. ReCiPe supports midpoint/endpoint and EF midpoint.
+Use fresh model instances for independent cases. `inputs.stochastic(n, seed=...)`
+seeds parameter sampling, not every downstream cost adjustment.
+
+See [validation and limitations](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/docs/validity.rst), [migration notes](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/docs/release.rst)
+and the [documentation](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/tree/master/docs).
+
+## Development and release
+
+Use matching sibling checkouts, especially `carculator_utils` **1.3.6 or newer**:
+
+```bash
+python -m pip install -e ".[test,docs,excel,brightway]"
+python -m pip check
+python -m pytest
+python -m sphinx -b html docs docs/_build/html
+```
+
+The `docs` extra includes the extensions used by this repository.
+See [RELEASING.md](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/RELEASING.md) for artifact verification, release order and publication.
+
+## Support and license
+
+Contact [carculator@psi.ch](mailto:carculator@psi.ch) or open an [issue](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/issues).
+Maintained by [Romain Sacchi](https://github.com/romainsacchi), with contributions
+from the carculator development team. See [contributing](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/CONTRIBUTING.md).
+Licensed under [BSD-3-Clause](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/LICENSE).

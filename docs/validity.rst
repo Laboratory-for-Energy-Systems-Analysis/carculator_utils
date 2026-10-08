@@ -35,9 +35,10 @@ Current evidence
 
 The analytical tests cover shaft/input energy, road load, regenerative recovery,
 auxiliary losses, explicit overrides and battery boundaries. The family artifact
-verification passed 436 tests plus one existing expected failure and offline
-model/LCIA smoke checks. The saved report in :doc:`temporal_energy` identifies
-its runtime and inputs. Empirical residuals remain conditional on source quality
+verification on 2026-10-08 passed 497 tests plus one existing expected
+failure and offline model/LCIA smoke checks. See :doc:`release` for the
+release verification record; :doc:`temporal_energy` retains the historical
+audit runtime and inputs. Empirical residuals remain conditional on source quality
 and matched test settings; no fixed error threshold substitutes for physics.
 
 Driving-cycle checks
