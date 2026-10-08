@@ -29,6 +29,7 @@ User's Guide
    validity
    biological_methane
    methane_leakage
+   electricity_lifetime
    bev_target_range_issue
    hot_emission_audit
    energy_validation_2025

@@ -42,6 +42,9 @@ and matched test settings; no fixed error threshold substitutes for physics.
 Sample identity checks
 ----------------------
 
+The per-vehicle/sample electricity-supply repair and independent-versus-grouped
+calculation checks are documented in :doc:`electricity_lifetime`.
+
 ``tests/test_sample_labels.py`` checks retained and reordered samples through
 completed car, bus, truck and two-wheeler models and inventories in 2025/2030.
 LCIA coordinates keep the actual sample labels, and reordering already completed

@@ -514,12 +514,18 @@ class ExportInventory:
             rows.append([item])
         rows.append([])
 
-        list_own_datasets = []
-
-        for a in data:
-            list_own_datasets.append(
-                f"{a['name'].capitalize()} {{{a.get('location', 'GLO')}}})"
+        own_products = {
+            (
+                a["name"],
+                a.get("location", "GLO"),
+                a["unit"],
+                a["reference product"],
+            ): dict_tech.get(
+                (a["name"], a.get("location", "GLO")),
+                f"{a['name'].capitalize()} {{{a.get('location', 'GLO')}}} | Cut-off U",
             )
+            for a in data
+        }
 
         # We loop through the activities
         for a in data:
@@ -544,6 +550,7 @@ class ExportInventory:
                         "used li-ion",
                     )
                 )
+                and "biomethane" not in a["name"].lower()
                 else "process"
             )
             category = "carculator"
@@ -673,7 +680,7 @@ class ExportInventory:
                                     )
                                 )
                                 or any(
-                                    i in e["name"]
+                                    i.lower() in e["name"].lower()
                                     for i in [
                                         "from municipal waste incineration",
                                         "municipal solid waste, incineration",
@@ -707,7 +714,7 @@ class ExportInventory:
 
                                 exchange_name = f"{e['name'].capitalize()} {{{e.get('location', 'GLO')}}}"
 
-                                if exchange_name not in list_own_datasets:
+                                if tupled not in own_products:
                                     exchange_name = f"{e['reference product'].capitalize()} {{{e.get('location', 'GLO')}}}"
 
                                     if "market" in e["name"]:
@@ -723,7 +730,10 @@ class ExportInventory:
 
                                 rows.append(
                                     [
-                                        f"{dict_tech.get((e['name'], e['location']), exchange_name)} | Cut-off, U",
+                                        own_products.get(
+                                            tupled,
+                                            f"{dict_tech.get((e['name'], e['location']), exchange_name)} | Cut-off, U",
+                                        ),
                                         fields["unit"][e["unit"]],
                                         "{:.3E}".format(e["amount"]),
                                         "undefined",
@@ -870,6 +880,7 @@ class ExportInventory:
                                         i.lower() in e["name"].lower()
                                         for i in (
                                             "anaerobic",
+                                            "biomethane",
                                             "cooking",
                                             "heat",
                                             "manual dismantling",
@@ -908,7 +919,9 @@ class ExportInventory:
 
                                 rows.append(
                                     [
-                                        f"{dataset_name} | Cut-off, U",
+                                        own_products.get(
+                                            tupled, f"{dataset_name} | Cut-off, U"
+                                        ),
                                         fields["unit"][e["unit"]],
                                         "{:.3E}".format(e["amount"]),
                                         "undefined",

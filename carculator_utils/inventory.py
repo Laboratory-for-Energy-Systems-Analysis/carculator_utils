@@ -24,6 +24,7 @@ from scipy import sparse
 from . import DATA_DIR
 from .background_systems import BackgroundSystemModel
 from .fuel_supply import fill_fuel_suppliers, register_fuel_suppliers
+from .inventory_electricity import lifetime_mix, specialize_electricity_supplies
 
 warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 
@@ -314,6 +315,7 @@ class Inventory:
 
         self.fill_in_A_matrix()
         self.remove_non_compliant_vehicles()
+        specialize_electricity_supplies(self)
 
     def get_results_table(self, sensitivity: bool = False) -> xr.DataArray:
         """
@@ -460,62 +462,43 @@ class Inventory:
         # Prepare an array to store the results
         results = self.get_results_table(sensitivity=sensitivity)
 
-        new_arr = np.zeros((self.A.shape[1], self.B.shape[1], self.A.shape[-1]))
-
-        f_vector = np.zeros((np.shape(self.A)[1]))
-
-        # Collect indices of activities contributing to the first level
         idx_car_trspt = [
-            x
-            for x, y in self.rev_inputs.items()
-            if y[0].startswith(f"transport, {self.vm.vehicle_type}, ")
+            i
+            for i, key in self.rev_inputs.items()
+            if key[0].startswith(f"transport, {self.vm.vehicle_type}, ")
         ]
         idx_cars = [
-            x
-            for x, y in self.rev_inputs.items()
-            if y[0].startswith(f"{self.vm.vehicle_type}, ")
-        ]
-
-        idx_others = [
             i
-            for i in self.inputs.values()
-            if not any(i in x for x in [idx_car_trspt, idx_cars])
+            for i, key in self.rev_inputs.items()
+            if key[0].startswith(f"{self.vm.vehicle_type}, ")
         ]
-
-        arr = (
-            self.A[
-                np.ix_(
-                    np.arange(self.iterations),
-                    idx_others,
-                    np.array(idx_cars + idx_car_trspt),
-                )
-            ]
-            .sum(axis=0)
-            .sum(axis=1)
+        vehicle_rows = idx_cars + idx_car_trspt
+        contributing = np.any(self.A[:, :, vehicle_rows, :] != 0, axis=(0, 2))
+        contributing[vehicle_rows, :] = False
+        nonzero_idx = np.argwhere(contributing)
+        # Electricity and fuel supply matrices may differ between samples.
+        # Factor each sample/year once and solve all required suppliers together.
+        new_arr = np.zeros(
+            (B.shape[1], self.iterations, self.A.shape[1], self.A.shape[-1])
         )
-
-        nonzero_idx = np.argwhere(arr)
-
-        # use pyprind to display a progress bar
-        bar = pyprind.ProgBar(len(nonzero_idx), stream=1, title="Calculating impacts")
-
-        for a in nonzero_idx:
-            bar.update()
-
-            if isinstance(self.rev_inputs[a[0]][1], tuple):
-                # it's a biosphere flow, hence no need to calculate LCA
-                new_arr[a[0], :, a[1]] = B[a[1], :, a[0]]
-
-            else:
-                f_vector[:] = 0
-                f_vector[a[0]] = 1
-                X = sparse.linalg.spsolve(
-                    sparse.csr_matrix(self.A[0, ..., a[1]]), f_vector.T
-                )
-                _X = (X * B[a[1]]).sum(axis=-1).T
-                new_arr[a[0], :, a[1]] = _X
-
-        new_arr = new_arr.transpose(1, 0, 2)
+        bar = pyprind.ProgBar(
+            self.iterations * self.A.shape[-1], stream=1, title="Calculating impacts"
+        )
+        for year in range(self.A.shape[-1]):
+            used = np.flatnonzero(contributing[:, year])
+            biosphere = [i for i in used if isinstance(self.rev_inputs[i][1], tuple)]
+            technosphere = [i for i in used if i not in biosphere]
+            demands = np.zeros((self.A.shape[1], len(technosphere)))
+            demands[technosphere, np.arange(len(technosphere))] = 1
+            for sample in range(self.iterations):
+                factors = new_arr[:, sample, :, year]
+                factors[:, biosphere] = B[year][:, biosphere]
+                if technosphere:
+                    solver = sparse.linalg.splu(
+                        sparse.csc_matrix(self.A[sample, :, :, year])
+                    )
+                    factors[:, technosphere] = B[year] @ solver.solve(demands)
+                bar.update()
 
         arr = (
             self.A[:, :, idx_car_trspt].reshape(
@@ -525,7 +508,7 @@ class Inventory:
                 len(self.scope["powertrain"]),
                 len(self.scope["year"]),
             )
-            * new_arr[:, None, :, None, None, :]
+            * new_arr[:, :, :, None, None, :]
             * -1
         )
 
@@ -537,7 +520,7 @@ class Inventory:
                 len(self.scope["powertrain"]),
                 len(self.scope["year"]),
             )
-            * new_arr[:, None, :, None, None, :]
+            * new_arr[:, :, :, None, None, :]
             * self.A[:, idx_cars, idx_car_trspt].reshape(
                 self.iterations,
                 -1,
@@ -768,91 +751,25 @@ class Inventory:
             ]
 
     def define_electricity_mix_for_fuel_prep(self) -> np.ndarray:
+        """Build per-vehicle/sample mixes and return their legacy summary by year.
+
+        ``electricity_mix`` is the labelled array used in the inventories.
+        ``mix`` remains a year/technology summary for existing reporting code.
         """
-        This function defines a fuel mix based either on user-defined mix,
-        or on default mixes for a given country.
-        The mix is calculated as the average mix, weighted by the
-        distribution of annually driven kilometers.
-        :return:
-        """
-        try:
-            losses_to_low = float(self.bs.losses[self.vm.country]["LV"])
-        except KeyError:
-            # If losses for the country are not found, assume EU average
-            losses_to_low = float(self.bs.losses["RER"]["LV"])
-
-        if "custom electricity mix" in self.background_configuration:
-            # If a special electricity mix is specified, we use it
-            mix = self.background_configuration["custom electricity mix"]
-
-            if np.shape(mix)[0] != len(self.scope["year"]):
-                raise ValueError(
-                    "The number of electricity mixes ({}) must match with the "
-                    "number of years ({}).".format(
-                        np.shape(mix)[0], len(self.scope["year"])
-                    )
-                )
-
-            if not np.allclose(np.sum(mix, 1), np.ones(len(self.scope["year"]))):
-                print(
-                    "The sum of the electricity mix share does "
-                    "not equal to 1 for each year."
-                )
-
-        else:
-            use_year = (
-                (
-                    self.array.sel(parameter="lifetime kilometers")
-                    / self.array.sel(parameter="kilometers per year")
-                )
-                .mean(dim=["combined_dim", "value"])
-                .values.astype(int)
-                .tolist()
+        country = self.vm.country
+        if country not in self.bs.electricity_mix.country.values:
+            print(
+                f"The electricity mix for {country} could not be found. "
+                "Average European electricity mix is used instead."
             )
-
-            # create an array that contain integers starting from self.scope["year"]
-            # to self.scope["year"] + use_year, e.g., 2020, 2021, 2022, ..., 2035
-
-            use_year = [
-                (int(y), int(y + u)) for y, u in zip(self.scope["year"], use_year)
-            ]
-
-            if self.vm.country not in self.bs.electricity_mix.country.values:
-                print(
-                    f"The electricity mix for {self.vm.country} could not be found."
-                    "Average European electricity mix is used instead."
-                )
-                country = "RER"
-            else:
-                country = self.vm.country
-
-            mix = [
-                (
-                    self.bs.electricity_mix.sel(
-                        country=country,
-                        variable=self.electricity_technologies,
-                    )
-                    .interp(
-                        year=np.arange(*use_year[y]),
-                        kwargs={"fill_value": "extrapolate"},
-                    )
-                    .mean(axis=0)
-                    .values
-                    if use_year[y][-1] <= 2050
-                    else self.bs.electricity_mix.sel(
-                        country=country,
-                        variable=self.electricity_technologies,
-                    )
-                    .interp(
-                        year=np.arange(year, 2051), kwargs={"fill_value": "extrapolate"}
-                    )
-                    .mean(axis=0)
-                    .values
-                )
-                for y, year in enumerate(self.scope["year"])
-            ]
-
-        return np.clip(mix, 0, 1) / np.clip(mix, 0, 1).sum(axis=1)[:, None]
+            country = "RER"
+        self.electricity_mix = lifetime_mix(
+            self.array,
+            self.bs.electricity_mix.sel(country=country),
+            self.electricity_technologies,
+            self.background_configuration.get("custom electricity mix"),
+        )
+        return self.electricity_mix.mean(("value", "combined_dim")).values
 
     def define_renewable_rate_in_mix(self) -> ndarray[Any, dtype[Any]]:
         """
@@ -970,6 +887,7 @@ class Inventory:
             # If losses for the country are not found, assume EU average
             losses_to_low = float(self.bs.losses["RER"]["LV"])
 
+        self.electricity_losses = losses_to_low
         # Fill the electricity markets for battery charging and hydrogen production
         # Add electricity technology shares
         self.A[
@@ -978,7 +896,12 @@ class Inventory:
                 [self.inputs[self.elec_map[t]] for t in self.electricity_technologies],
                 self.find_input_indices(("electricity supply for fuel preparation",)),
             )
-        ] = (self.mix * -1 * losses_to_low).T[None, :, None, :]
+        ] = (
+            -self.electricity_mix.isel(combined_dim=0)
+            .transpose("value", "technology", "year")
+            .values[:, :, None, :]
+            * losses_to_low
+        )
 
         self.add_electricity_infrastructure(
             "electricity supply for fuel preparation", losses_to_low
@@ -1404,30 +1327,26 @@ class Inventory:
         ] = -1 / self.array.sel(parameter="lifetime kilometers")
 
     def display_renewable_rate_in_mix(self):
-        sum_renew = self.define_renewable_rate_in_mix()
+        for label in self.electricity_mix.combined_dim.values:
+            for year in self.scope["year"]:
+                mix = self.electricity_mix.sel(combined_dim=label, year=year).values
+                renewable = (
+                    mix[:, [3, 4, 5, 8, 9, 10, 11, 14, 18, 19]].sum(axis=1) * 100
+                )
+                hydro = mix[:, [0, 15]].sum(axis=1) * 100
+                nuclear = mix[:, 1] * 100
+                print(
+                    f"\t * {label}, {year}, lifetime electricity shares across samples (%): "
+                    f"non-hydro renew. {renewable.min():.0f}-{renewable.max():.0f}, "
+                    f"hydro {hydro.min():.0f}-{hydro.max():.0f}, "
+                    f"nuclear {nuclear.min():.0f}-{nuclear.max():.0f}."
+                )
 
-        use_year = (
-            (
-                self.array.sel(parameter="lifetime kilometers")
-                / self.array.sel(parameter="kilometers per year")
-            )
-            .mean(dim=["combined_dim", "value"])
-            .values.astype(int)
-            .tolist()
-        )
-
-        # create an array that contain integers starting from self.scope["year"]
-        # to self.scope["year"] + use_year, e.g., 2020, 2021, 2022, ..., 2035
-
-        use_year = [(int(y), int(y + u)) for y, u in zip(self.scope["year"], use_year)]
-
-        for y, year in enumerate(self.scope["year"]):
-            print(
-                f"\t * between {int(np.min(use_year[y]))} and {int(np.max(use_year[y]))}, "
-                f"% of non-hydro renew.: {int(sum_renew[0][y] * 100)}, "
-                f"hydro: {int(sum_renew[1][y] * 100)}, "
-                f"nuclear: {int(sum_renew[2][y] * 100)}.",
-            )
+    def get_vehicle_supply_indices(self, name, columns):
+        """Resolve the original or vehicle-specific supplier for each column."""
+        (original,) = self.find_input_indices((name,), excludes=(" [for ",))
+        mappings = getattr(self, "electricity_supply_indices", {})
+        return [mappings.get(column, {}).get(original, original) for column in columns]
 
     def add_electricity_to_electric_vehicles(self) -> None:
         electric_powertrains = [
@@ -1440,21 +1359,13 @@ class Inventory:
         ]
 
         if any(True for x in electric_powertrains if x in self.scope["powertrain"]):
-            self.A[
-                np.ix_(
-                    np.arange(self.iterations),
-                    self.find_input_indices(
-                        (f"electricity supply for electric vehicles",)
-                    ),
-                    [
-                        x
-                        for x, y in self.rev_inputs.items()
-                        if y[0].startswith(f"transport, {self.vm.vehicle_type}, ")
-                    ],
-                )
-            ] = (
-                self.array.sel(parameter=["electricity consumption"]) * -1
+            columns = self.find_input_indices((f"transport, {self.vm.vehicle_type}, ",))
+            rows = self.get_vehicle_supply_indices(
+                "electricity supply for electric vehicles", columns
             )
+            self.A[:, rows, columns, :] = -self.array.sel(
+                parameter="electricity consumption"
+            ).values
 
     def add_hydrogen_to_fuel_cell_vehicles(self) -> None:
         if "FCEV" in self.scope["powertrain"]:
@@ -1479,11 +1390,11 @@ class Inventory:
                 )
 
             # Fuel supply
-            self.A[
-                :,
-                self.find_input_indices(("fuel supply for hydrogen vehicles",)),
-                self.find_input_indices((f"transport, {self.vm.vehicle_type}, ",)),
-            ] = (
+            columns = self.find_input_indices((f"transport, {self.vm.vehicle_type}, ",))
+            rows = self.get_vehicle_supply_indices(
+                "fuel supply for hydrogen vehicles", columns
+            )
+            self.A[:, rows, columns, :] = (
                 self.array.sel(parameter="fuel consumption")
                 * self.array.sel(parameter="fuel density per kg")
                 * (self.array.sel(parameter="fuel cell power") > 0)
@@ -1583,19 +1494,14 @@ class Inventory:
             self.display_fuel_blend(fuel)
 
             # Fuel supply
-            self.A[
-                :,
-                self.find_input_indices(
-                    (f"fuel supply for {fuel} vehicles",),
-                ),
-                self.find_input_indices(
-                    contains=(
-                        f"transport, {self.vm.vehicle_type}, ",
-                        powertrains_short,
-                    ),
-                    excludes=("BEV",),
-                ),
-            ] = (
+            columns = self.find_input_indices(
+                contains=(f"transport, {self.vm.vehicle_type}, ", powertrains_short),
+                excludes=("BEV",),
+            )
+            rows = self.get_vehicle_supply_indices(
+                f"fuel supply for {fuel} vehicles", columns
+            )
+            self.A[:, rows, columns, :] = (
                 (
                     self.array.sel(
                         parameter="fuel consumption",
@@ -1643,7 +1549,9 @@ class Inventory:
         columns = self.find_input_indices(
             (f"transport, {self.vm.vehicle_type}, ICEV-g, ",)
         )
-        (market,) = self.find_input_indices(("fuel supply for methane vehicles",))
+        markets = self.get_vehicle_supply_indices(
+            "fuel supply for methane vehicles", columns
+        )
         selected = self.array.sel(combined_dim=labels)
         rates = selected.sel(parameter="CNG pump-to-tank leakage").transpose(
             "value", "combined_dim", "year"
@@ -1694,7 +1602,7 @@ class Inventory:
         )
         engine_fuel = np.where(active, engine_fuel, 0)
         lost = engine_fuel * np.where(active, rates.values, 0)
-        self.A[:, market, columns, :] = -(engine_fuel + lost)
+        self.A[:, markets, columns, :] = -(engine_fuel + lost)
         for origin, share in (
             ("fossil", 1 - non_fossil_share),
             ("non-fossil", non_fossil_share),
@@ -1956,6 +1864,15 @@ class Inventory:
             indices=export.rev_inputs,
             db_name=f"{filename}_{self.vm.vehicle_type}_{datetime.now().strftime('%Y%m%d')}",
         )
+
+        for scoped, original in getattr(
+            self, "electricity_supply_originals", {}
+        ).items():
+            source_name = export.rev_inputs[original][0]
+            if source_name in lci.references:
+                lci.references[export.rev_inputs[scoped][0]] = lci.references[
+                    source_name
+                ]
 
         if software == "brightway2":
             return lci.write_bw2_lci(
