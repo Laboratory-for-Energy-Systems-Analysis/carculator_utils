@@ -13,8 +13,9 @@ comparisons with imperfectly matched cycles or meter boundaries.
 Current evidence
 ----------------
 
-* :doc:`bev_target_range_issue` reproduces an unresolved passenger-car sizing
-  defect: target-range battery resizing leaves energy demand at the old mass.
+* :doc:`bev_target_range_issue` records the passenger-car range-sizing repair:
+  battery mass and energy demand now converge together. Sixteen completed runs
+  preserve the original reproduction and the repaired consistency checks.
 * :doc:`hot_emission_audit` records 132 completed vehicle cases and repairs to
   pollutant mapping, speciation, energy-boundary and deterioration accounting;
   all 34,518 scalar checks pass after repair.

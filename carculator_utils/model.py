@@ -1395,62 +1395,30 @@ class VehicleModel:
                 # )
 
     def override_range(self):
+        """Resize only the specified BEVs using their current stored-energy demand.
+
+        The caller must converge vehicle mass and energy demand with this sizing
+        step. Unselected vehicles retain their properties, including FCEV power
+        batteries whose mass calculation differs from energy batteries.
         """
-        Set storage size or range for each powertrain.
-        :return:
-        """
-
-        if self.target_range:
-            for key, val in self.target_range.items():
-                pwt, size, year = key
-
-                if pwt == "BEV" and val is not None:
-                    battery_DoD = self.array.loc[
-                        dict(
-                            powertrain=pwt,
-                            size=size,
-                            year=year,
-                            parameter="battery DoD",
-                        )
-                    ]  # maximum depth of discharge allowed (80%)
-                    TtW = self.array.loc[
-                        dict(
-                            powertrain=pwt, size=size, year=year, parameter="TtW energy"
-                        )
-                    ]  # kj/km
-
-                    energy_stored = val * (TtW / battery_DoD / 3600)
-
-                    self.array.loc[
-                        dict(
-                            parameter="energy battery mass",
-                            powertrain=pwt,
-                            size=size,
-                            year=year,
-                        )
-                    ] = (
-                        np.array(energy_stored)
-                        / self.array.loc[
-                            dict(
-                                parameter="battery cell energy density",
-                                powertrain=pwt,
-                                size=size,
-                                year=year,
-                            )
-                        ]
-                        / self.array.loc[
-                            dict(
-                                parameter="battery cell mass share",
-                                powertrain=pwt,
-                                size=size,
-                                year=year,
-                            )
-                        ]
-                    )
-
-            self.set_battery_properties()
-            self.set_energy_stored_properties()
-            self.set_range()
+        for (pwt, size, year), target in (self.target_range or {}).items():
+            if pwt != "BEV" or target is None:
+                continue
+            selection = dict(powertrain=pwt, size=size, year=year)
+            vehicle = self.array.sel(selection)
+            demand = vehicle.sel(parameter="TtW energy")  # kJ/km
+            depth = vehicle.sel(parameter="battery DoD")
+            capacity = target * demand / depth / 3600  # nominal kWh
+            cell_mass = capacity / vehicle.sel(parameter="battery cell energy density")
+            pack_mass = cell_mass / vehicle.sel(parameter="battery cell mass share")
+            for parameter, value in {
+                "energy battery mass": pack_mass,
+                "battery cell mass": cell_mass,
+                "battery BoP mass": pack_mass - cell_mass,
+                "electric energy stored": capacity,
+                "range": capacity * depth * 3600 / demand,
+            }.items():
+                self.array.loc[dict(parameter=parameter, **selection)] = value
 
     def set_range(self) -> None:
         """

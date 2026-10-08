@@ -46,3 +46,54 @@ def test_base_vehicle_input_parameters_requires_explicit_defaults():
 def test_load_parameters_raises_file_not_found_error():
     with pytest.raises(FileNotFoundError):
         load_parameters(Path("does-not-exist.json"))
+
+
+def test_range_sizing_updates_only_selected_battery_cells():
+    parameters = [
+        "TtW energy",
+        "battery DoD",
+        "battery cell energy density",
+        "battery cell mass share",
+        "energy battery mass",
+        "battery cell mass",
+        "battery BoP mass",
+        "electric energy stored",
+        "range",
+    ]
+    array = minimal_vehicle_array().reindex(
+        parameter=parameters,
+        powertrain=["BEV", "FCEV"],
+        year=[2020, 2025],
+        value=[0, 1],
+        fill_value=1.0,
+    )
+    model = VehicleModel(
+        array,
+        target_range={
+            ("BEV", "Small", 2025): 400,
+            ("BEV", "Small", 2020): None,
+        },
+    )
+    model["TtW energy"] = xr.DataArray(
+        [720, 900], dims="value", coords={"value": [0, 1]}
+    )
+    model["battery DoD"] = 0.8
+    model["battery cell energy density"] = 0.25
+    model["battery cell mass share"] = 0.8
+    before = model.array.copy(deep=True)
+    model.override_range()
+    selected = model.array.sel(powertrain="BEV", size="Small", year=2025)
+    # 400 km at 0.2/0.25 kWh/km uses 80/100 kWh; 80% usable gives
+    # 100/125 kWh nominal, 400/500 kg cells and 500/625 kg packs.
+    for parameter, expected in {
+        "electric energy stored": [100, 125],
+        "battery cell mass": [400, 500],
+        "energy battery mass": [500, 625],
+        "battery BoP mass": [100, 125],
+        "range": [400, 400],
+    }.items():
+        np.testing.assert_allclose(selected.sel(parameter=parameter), expected)
+    xr.testing.assert_identical(
+        model.array.sel(powertrain="FCEV"), before.sel(powertrain="FCEV")
+    )
+    xr.testing.assert_identical(model.array.sel(year=2020), before.sel(year=2020))
