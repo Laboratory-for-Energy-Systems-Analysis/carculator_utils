@@ -34,10 +34,8 @@ Current evidence
   in that catalog.
 
 The analytical tests cover shaft/input energy, road load, regenerative recovery,
-auxiliary losses, explicit overrides and battery boundaries. The family artifact
-verification on 2026-10-08 passed 497 tests plus one existing expected
-failure and offline model/LCIA smoke checks. See :doc:`release` for the
-release verification record; :doc:`temporal_energy` retains the historical
+auxiliary losses, explicit overrides and battery boundaries.
+:doc:`temporal_energy` retains the historical
 audit runtime and inputs. Empirical residuals remain conditional on source quality
 and matched test settings; no fixed error threshold substitutes for physics.
 
@@ -146,3 +144,11 @@ was merely compared, and which measurements are still missing. The shared
 artifact index at ``docs/_static/energy_validation_2025/README.md`` distinguishes
 current results from retained investigation history. Original inputs and
 calibration metadata remain packaged with each vehicle model.
+
+
+Known limitations
+-----------------
+
+* The electrochemical synthetic-methane supplier is absent from the bundled inventory index and raises a visible mapping error.
+* Generic NMVOC characterization is used for ethene where the bundled biosphere index has no exact flow; HBEFA source-version provenance remains incomplete.
+* Seeded parameter draws do not seed every downstream stochastic cost adjustment. Build fresh models for independent runs.

@@ -7,7 +7,7 @@ physics, background systems, inventories and exports used by ``carculator``,
 It does not provide standalone vehicle defaults: use a vehicle package's input,
 model and inventory classes for a complete calculation.
 
-Start with :doc:`installation`, :doc:`release` and :doc:`validity`.
+Start with :doc:`installation`, :doc:`usage` and :doc:`validity`.
 The shared validation pages retain the measurement catalogs, cycle diagnostics,
 energy-accounting repairs and inventory audits. Some older methodology pages
 describe the passenger-car application; the vehicle repositories document their
@@ -20,7 +20,6 @@ User's Guide
    :maxdepth: 2
 
    installation
-   release
    usage
    input_validation
    modeling
@@ -44,6 +43,14 @@ API Reference
    :maxdepth: 2
 
    api
+
+Project information
+-------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   release
 
 .. toctree::
    :maxdepth: 2
