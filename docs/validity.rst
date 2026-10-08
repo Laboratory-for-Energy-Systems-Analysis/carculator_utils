@@ -39,6 +39,25 @@ auxiliary losses, explicit overrides and battery boundaries.
 audit runtime and inputs. Empirical residuals remain conditional on source quality
 and matched test settings; no fixed error threshold substitutes for physics.
 
+Sample identity checks
+----------------------
+
+``tests/test_sample_labels.py`` checks retained and reordered samples through
+completed car, bus, truck and two-wheeler models and inventories in 2025/2030.
+LCIA coordinates keep the actual sample labels, and reordering already completed
+samples reorders their characterized results. Selecting sample 1 before sizing
+gives the same physical outputs, inventory and impacts as relabelling that same
+input draw to zero. Reordered sensitivity runs normalize to the named reference.
+
+Repeated Brightway and SimaPro exports cover one retained numeric or named
+sample, both years, and passenger-/tonne-kilometre normalization. Checks compare
+Brightway energy inputs to consumption divided by load, verify vehicle comments,
+and preserve the original arrays, indices and calculated impacts. SimaPro checks
+cover successful serialization and preservation of the source inventory, not
+supplier linking or metadata fidelity in the destination application. Multi-sample
+exports remain unsupported and fail with selection instructions. These are
+software consistency checks, not additional empirical calibration.
+
 Driving-cycle checks
 --------------------
 

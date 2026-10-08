@@ -50,6 +50,11 @@ xarray. Functional units are ``vkm``, ``pkm`` and ``tkm``. Passenger- and
 cargo-normalized results require finite positive loads for active vehicles.
 Availability-masked zero consumption does not describe a zero-energy vehicle.
 
+Results preserve the model's ``value`` labels and their order, including a
+selected Monte Carlo sample such as ``1`` or reordered sensitivity samples.
+Use ``calculate_impacts(sensitivity=True)`` for ratios to the sample labelled
+``reference``; that reference must be retained but need not be first.
+
 
 Inventory export
 ----------------
@@ -74,6 +79,20 @@ The supported ecoinvent targets are 3.9 and 3.10. Multi-year runs preserve every
 year in the returned exports, and exporting does not change the original
 inventory or calculated impacts. A destination Brightway/ecoinvent setup is
 needed to register and link exported inventories, not for the core calculation.
+
+Exports require exactly one retained ``value`` sample. For a sampled array,
+select it before constructing a fresh model and inventory, for example::
+
+   selected = array.isel(value=[1])  # Retain the second draw and its value label.
+   model = CarModel(selected)       # Or the corresponding vehicle-model class.
+   model.set_all()
+   inventory = InventoryCar(model)
+   importer = inventory.export_lci(format="bw2io")
+
+The brackets retain the ``value`` dimension. Numeric labels other than zero and
+named samples such as ``reference`` are supported; exchange amounts and vehicle
+comments in Brightway describe the same selected sample. Multiple samples raise an error;
+the exporter does not average samples or generate uncertainty distributions.
 
 Reproducibility and interpretation
 ----------------------------------

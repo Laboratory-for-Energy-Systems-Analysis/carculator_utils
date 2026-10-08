@@ -220,14 +220,22 @@ class ExportInventory:
 
     def write_lci(self, ecoinvent_version: str, year: int) -> List[Dict]:
         """
-        Return the inventory as a dictionary
-        If there are several values for one exchange, uncertainty information is generated.
-        If `presamples` is True, returns the inventory as well as a `presamples` matrix.
-        If `presamples` is False, returns the inventory with characterized uncertainty information.
+        Return activities and exchanges for a single retained value sample.
 
-        :returns: a dictionary that contains all the exchanges
-        :rtype: dict
+        Select one sample before constructing the vehicle model and inventory.
+        Its label may be numeric or a sensitivity parameter name.
+
+        :returns: activity dictionaries containing their exchanges
+        :rtype: list[dict]
+        :raises ValueError: if the inventory or model contains multiple samples
         """
+
+        if self.array.shape[0] != 1 or self.vm.array.sizes["value"] != 1:
+            raise ValueError(
+                "Inventory export requires exactly one value sample in both the "
+                "inventory and vehicle model. Select one sample with "
+                "array.isel(value=[index]) before constructing the model and inventory."
+            )
 
         idx_year = self.vm.array.coords["year"].values.tolist().index(year)
 
@@ -295,14 +303,7 @@ class ExportInventory:
                                 tuple_input[4],
                             )
 
-                if len(self.array[:, row, col, idx_year]) == 1:
-                    # No uncertainty, only one value
-                    amount = self.array[0, row, col, idx_year] * mult_factor
-
-                else:
-                    raise ValueError(
-                        f"Inventory export not implemented for stochastic analyses. Got {self.array[:, row, col, idx_year]}"
-                    )
+                amount = self.array[0, row, col, idx_year] * mult_factor
 
                 exc = {
                     "name": tuple_input[0],
@@ -377,13 +378,16 @@ class ExportInventory:
                         if param not in self.vm.array.parameter.values:
                             continue
 
-                        val = self.vm.array.sel(
-                            powertrain=pwt,
-                            size=size,
-                            year=int(year),
-                            value=0,
-                            parameter=param,
-                        ).values.astype(float)
+                        val = (
+                            self.vm.array.sel(
+                                powertrain=pwt,
+                                size=size,
+                                year=int(year),
+                                parameter=param,
+                            )
+                            .isel(value=0)
+                            .item()
+                        )
 
                         if formatting.get("percentage", False):
                             val *= 100

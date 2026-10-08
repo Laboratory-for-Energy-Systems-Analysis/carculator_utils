@@ -324,7 +324,6 @@ class Inventory:
         :return: xarrray.DataArray
         """
 
-        params = [a for a in self.array.value.values]
         response = xr.DataArray(
             np.zeros(
                 (
@@ -342,7 +341,7 @@ class Inventory:
                 self.scope["powertrain"],
                 self.scope["year"],
                 self.list_cat,
-                np.arange(0, self.iterations) if not sensitivity else params,
+                self.array.coords["value"].values.copy(),
             ],
             dims=[
                 "impact_category",
