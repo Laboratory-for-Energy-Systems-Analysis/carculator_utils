@@ -8,6 +8,8 @@ import numpy as np
 import stats_arrays as sa
 from klausen import NamedParameters
 
+from .battery_costs import remember_samples
+
 
 def load_parameters(obj):
     if isinstance(obj, (str, Path)):
@@ -158,6 +160,11 @@ class VehicleInputParameters(NamedParameters):
         self.years = sorted({o["year"] for o in parameters.values()})
         self.add_vehicle_parameters(parameters)
 
+    def static(self):
+        """Load static values and retain references for editable battery costs."""
+        super().static()
+        remember_samples(self)
+
     def stochastic(self, iterations=1000, seed=None):
         """Sample with a local RNG; an explicit seed makes runs reproducible.
 
@@ -200,6 +207,7 @@ class VehicleInputParameters(NamedParameters):
             group = self.metadata[key].get("uncertainty_group")
             if group is not None:
                 self.values[key] = self.values[groups[group]].copy()
+        remember_samples(self)
 
     def add_vehicle_parameters(self, parameters):
         """

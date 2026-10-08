@@ -60,6 +60,10 @@ This shared package has no standalone default vehicle. Choose a vehicle package 
 
 ## Modelling and validation
 
+Explicit battery unit prices now survive chemistry selection and cost adjustment.
+Use `battery_costs` for scoped prices, including zero or values equal to packaged
+defaults; see [battery-cost inputs and precedence](docs/battery_costs.rst).
+
 The vehicle models include native **2025** parameters and documented temporal
 extensions. These combine engineering priors and selected calibration evidence;
 they are not independent measurements for every vehicle configuration.

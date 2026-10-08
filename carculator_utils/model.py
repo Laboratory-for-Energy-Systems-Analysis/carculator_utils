@@ -9,6 +9,7 @@ import xarray as xr
 import yaml
 
 from .background_systems import BackgroundSystemModel
+from .battery_costs import ENERGY_COST, POWER_COST, capture_inputs, is_battery_cost
 from .combustion_controls import validate_control_keys
 from .driving_cycles import detect_vehicle_type
 from .energy_consumption import get_default_driving_cycle_name
@@ -105,6 +106,7 @@ class VehicleModel:
         indoor_temperature: float = 20,
         max_iterations: int = 100,
         combustion_controls: dict = None,
+        battery_costs: dict = None,
     ) -> None:
         """
         :param array: multi-dimensional numpy-like array that contains parameters' value(s)
@@ -129,6 +131,10 @@ class VehicleModel:
             bus HVAC only. Other families use annual-average thermal-demand
             inputs and reject temperature overrides rather than ignoring them.
         :param indoor_temperature: Bus cabin setpoint in Celsius, default 20.
+        :param battery_costs: Explicit battery unit costs, keyed by parameter
+            name and then ``(powertrain, size, year)``. Values are nonnegative
+            scalars or one value per sample. Useful for arrays without input
+            provenance, or to explicitly choose a value equal to a default.
 
         """
         if (
@@ -219,6 +225,9 @@ class VehicleModel:
         self.ambient_temperature = ambient_temperature
         self.indoor_temperature = indoor_temperature
 
+        self._battery_cost_inputs = capture_inputs(self.array)
+        self._set_battery_cost_overrides(battery_costs)
+        self._validate_phev_battery_costs()
         self.set_battery_chemistry()
         self.set_battery_preferences()
 
@@ -347,6 +356,112 @@ class VehicleModel:
                     dict(selection, parameter=source)
                 ).values
         self.battery_cost_fallbacks = fallbacks
+        self.apply_battery_cost_inputs()
+
+    def _set_battery_cost_overrides(self, overrides):
+        """Validate explicit prices, retaining zero and sample-specific values."""
+        if overrides is None:
+            return
+        if not isinstance(overrides, dict):
+            raise ValueError("battery_costs must be a dictionary.")
+        for parameter, cells in overrides.items():
+            if (
+                not isinstance(parameter, str)
+                or not is_battery_cost(parameter)
+                or parameter not in self._battery_cost_inputs
+                or not isinstance(cells, dict)
+            ):
+                raise ValueError(f"Invalid battery_costs parameter {parameter!r}.")
+            values, explicit, _ = self._battery_cost_inputs[parameter]
+            for key, amount in cells.items():
+                if not isinstance(key, tuple) or len(key) != 3:
+                    raise ValueError(
+                        "battery_costs keys must be (powertrain, size, year)."
+                    )
+                selection = dict(zip(("powertrain", "size", "year"), key))
+                if any(v not in values[d].values for d, v in selection.items()):
+                    raise ValueError(f"Unknown battery_costs selection {key!r}.")
+                try:
+                    numeric = np.asarray(amount)
+                    valid = (
+                        numeric.dtype.kind in "iuf"
+                        and numeric.shape in ((), (values.sizes["value"],))
+                        and np.isfinite(numeric).all()
+                        and (numeric >= 0).all()
+                    )
+                except (TypeError, ValueError):
+                    valid = False
+                if not valid:
+                    raise ValueError(
+                        f"battery_costs {parameter!r} at {key!r} must be finite, "
+                        "nonnegative and scalar or one value per sample."
+                    )
+                values.loc[selection] = numeric
+                explicit.loc[selection] = True
+                self.array.loc[dict(selection, parameter=parameter)] = numeric
+
+    def _validate_phev_battery_costs(self):
+        """Reject prices that PHEV aggregation would silently discard."""
+        for parameter, (values, explicit, _) in self._battery_cost_inputs.items():
+            for final, combustion in (("PHEV-p", "PHEV-c-p"), ("PHEV-d", "PHEV-c-d")):
+                if final not in values.powertrain.values:
+                    continue
+                chosen = explicit.sel(powertrain=final, drop=True)
+                if not chosen.any():
+                    continue
+                price = values.sel(powertrain=final, drop=True)
+                for component in ("PHEV-e", combustion):
+                    if (
+                        component not in values.powertrain.values
+                        or (
+                            chosen
+                            & (
+                                ~explicit.sel(powertrain=component, drop=True)
+                                | (values.sel(powertrain=component, drop=True) != price)
+                            )
+                        ).any()
+                    ):
+                        raise ValueError(
+                            f"Explicit {parameter!r} for {final} would be overwritten "
+                            f"by PHEV aggregation. Set prices on PHEV-e and {combustion}; "
+                            "leave the combined PHEV input unchanged, or give it "
+                            "the same explicit price as both components."
+                        )
+
+    def apply_battery_cost_inputs(self, projected=False):
+        """Restore explicit prices after chemistry or automatic cost adjustment.
+
+        Generic explicit prices take precedence over selected-chemistry prices.
+        Generated sensitivity samples perturb the projected default, while
+        ordinary array edits are absolute unit prices. Partial base models
+        without captured inputs keep the permissive legacy hook behavior.
+        """
+        inputs = getattr(self, "_battery_cost_inputs", {})
+        for parameter in (ENERGY_COST, POWER_COST):
+            if parameter not in inputs:
+                continue
+            values, explicit, multiplier = (
+                a.sel({d: self.array[d] for d in a.dims}) for a in inputs[parameter]
+            )
+            prices = self[parameter].reset_coords(drop=True)
+            if projected:
+                prices = prices * multiplier
+            if parameter == ENERGY_COST:
+                for (powertrain, size, year), chemistry in self.energy_storage.get(
+                    "electric", {}
+                ).items():
+                    specific = inputs.get(f"{ENERGY_COST}, {chemistry}")
+                    selection = dict(powertrain=powertrain, size=size, year=year)
+                    if specific is None or any(
+                        v not in prices[d].values for d, v in selection.items()
+                    ):
+                        continue
+                    cost, chosen, factor = (a.sel(selection) for a in specific)
+                    default = prices.sel(selection)
+                    if projected:
+                        default = default * factor
+                    prices.loc[selection] = xr.where(chosen, cost, default)
+            self[parameter] = xr.where(explicit, values, prices)
 
     def adjust_cost(self) -> None:
         """
@@ -441,6 +556,8 @@ class VehicleModel:
                 None,
                 100,
             )
+
+        self.apply_battery_cost_inputs(projected=True)
 
     def drop_hybrid(self) -> None:
         """

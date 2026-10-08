@@ -22,6 +22,7 @@ User's Guide
    installation
    usage
    input_validation
+   battery_costs
    modeling
    structure
    validity
