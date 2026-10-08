@@ -79,10 +79,93 @@ runs independently recover the range-sized solution. Completed inventories
 check grid electricity and chemistry-specific battery exchanges, and calculate
 finite life cycle impacts.
 
-The Python 3.12 source-checkout suites passed 485 tests across all five packages
+The initial range-repair verification passed 485 Python 3.12 source-checkout tests
+across all five packages
 (322 shared, 61 car, 54 truck, 30 bus and 18 two-wheeler), with one existing
 expected failure. Both shared and passenger-car Sphinx builds succeeded. This
 is local verification, not a new installed-artifact or cross-platform CI report.
+
+Capacity and pack-mass inputs
+-----------------------------
+
+The reverse sizing directions have also been checked on completed passenger-car
+runs. For each of LFP, NMC-111, NMC-622 and NMC-811, the tests vary either nominal
+capacity (40, 60 and 80 kWh) or the input ``energy battery mass`` (250, 400 and
+550 kg). Each run covers 2020 and 2025, with static load and an additional
+300 kg cargo sample: 24 model runs and 96 vehicle/year/sample cells. There is
+no fixed target range, curb mass or consumption in these sweeps.
+
+In every tested sequence, increasing capacity increases pack mass, driving mass,
+energy consumption and range. Increasing pack mass increases nominal capacity,
+driving mass, consumption and range. The range increase is less than proportional
+to capacity because moving the heavier vehicle requires more energy per kilometre.
+Recalculating energy at final mass confirms the reported range; battery component
+mass balance and capacity accounting hold within numerical tolerance. All 24
+completed inventories use the corresponding charging demand and chemistry-specific
+pack mass, and produce finite life cycle impacts.
+
+.. list-table:: Medium BEV, NMC-811, 2025, WLTC, static load
+   :header-rows: 1
+
+   * - Input changed
+     - Pack mass (kg)
+     - Nominal capacity (kWh)
+     - Range (km)
+     - Grid electricity (kWh/100 km)
+   * - Capacity: 40 kWh
+     - 190.2
+     - 40.00
+     - 226.1
+     - 15.97
+   * - Capacity: 60 kWh
+     - 285.4
+     - 60.00
+     - 329.9
+     - 16.41
+   * - Capacity: 80 kWh
+     - 380.5
+     - 80.00
+     - 428.2
+     - 16.86
+   * - Pack mass: 250 kg
+     - 250.0
+     - 52.56
+     - 291.9
+     - 16.25
+   * - Pack mass: 400 kg
+     - 400.0
+     - 84.10
+     - 447.7
+     - 16.95
+   * - Pack mass: 550 kg
+     - 550.0
+     - 115.64
+     - 591.1
+     - 17.66
+
+These input directions already propagated correctly for standalone BEVs. The
+follow-up exposed and repaired a mixed-vehicle side effect: a capacity override
+recalculated battery component masses for unrelated vehicles, altering an FCEV's
+cell/pack split. Capacity and range overrides now share a helper that updates only
+their selected cells. A regression reproduces the original failure and confirms
+that other powertrains and unselected years retain their battery properties.
+
+Use ``energy_storage["capacity"]`` to set nominal kWh. To set pack mass, change
+``energy battery mass`` in the input array, in kg including balance of plant,
+before constructing a fresh model. ``electric energy stored`` and ``battery cell
+mass`` are derived outputs and should not be used as substitutes for these inputs.
+A capacity override takes precedence over input pack mass; a target range takes
+precedence over both. Fixed curb mass or consumption can intentionally suppress
+the consumption response, as described above.
+
+All results and input/source provenance are available in the
+:download:`capacity and mass sweeps <_static/bev_battery_input_sweeps.json>`.
+The regression cases are in ``carculator/tests/test_bev_target_range.py``.
+
+After this follow-up, all five source-checkout suites passed: 323 shared,
+72 passenger-car, 54 truck, 30 bus and 18 two-wheeler tests (497 total), plus
+one existing expected failure. Shared and passenger-car documentation builds
+also succeeded, with existing API/documentation warnings.
 
 Original defect
 ---------------

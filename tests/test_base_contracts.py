@@ -48,7 +48,8 @@ def test_load_parameters_raises_file_not_found_error():
         load_parameters(Path("does-not-exist.json"))
 
 
-def test_range_sizing_updates_only_selected_battery_cells():
+@pytest.mark.parametrize("method", ["override_range", "override_battery_capacity"])
+def test_battery_sizing_updates_only_selected_battery_cells(method):
     parameters = [
         "TtW energy",
         "battery DoD",
@@ -69,6 +70,7 @@ def test_range_sizing_updates_only_selected_battery_cells():
     )
     model = VehicleModel(
         array,
+        energy_storage={"capacity": {("BEV", "Small", 2025): 100}},
         target_range={
             ("BEV", "Small", 2025): 400,
             ("BEV", "Small", 2020): None,
@@ -81,17 +83,28 @@ def test_range_sizing_updates_only_selected_battery_cells():
     model["battery cell energy density"] = 0.25
     model["battery cell mass share"] = 0.8
     before = model.array.copy(deep=True)
-    model.override_range()
+    getattr(model, method)()
     selected = model.array.sel(powertrain="BEV", size="Small", year=2025)
     # 400 km at 0.2/0.25 kWh/km uses 80/100 kWh; 80% usable gives
     # 100/125 kWh nominal, 400/500 kg cells and 500/625 kg packs.
-    for parameter, expected in {
+    expected_values = {
         "electric energy stored": [100, 125],
         "battery cell mass": [400, 500],
         "energy battery mass": [500, 625],
         "battery BoP mass": [100, 125],
         "range": [400, 400],
-    }.items():
+    }
+    if method == "override_battery_capacity":
+        # Capacity is fixed at 100 kWh for both samples. Range is calculated
+        # later in the completed pipeline, after energy demand is available.
+        expected_values = {
+            "electric energy stored": [100, 100],
+            "battery cell mass": [400, 400],
+            "energy battery mass": [500, 500],
+            "battery BoP mass": [100, 100],
+            "range": [1, 1],
+        }
+    for parameter, expected in expected_values.items():
         np.testing.assert_allclose(selected.sel(parameter=parameter), expected)
     xr.testing.assert_identical(
         model.array.sel(powertrain="FCEV"), before.sel(powertrain="FCEV")

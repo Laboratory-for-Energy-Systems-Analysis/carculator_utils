@@ -16,6 +16,8 @@ Current evidence
 * :doc:`bev_target_range_issue` records the passenger-car range-sizing repair:
   battery mass and energy demand now converge together. Sixteen completed runs
   preserve the original reproduction and the repaired consistency checks.
+  Capacity and pack-mass sweeps additionally verify both input directions
+  through completed inventories across 96 vehicle/year/sample cells.
 * :doc:`hot_emission_audit` records 132 completed vehicle cases and repairs to
   pollutant mapping, speciation, energy-boundary and deterioration accounting;
   all 34,518 scalar checks pass after repair.

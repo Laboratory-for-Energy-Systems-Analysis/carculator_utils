@@ -1275,124 +1275,31 @@ class VehicleModel:
             np.array(1.0) - self["battery cell mass share"]
         )
 
+    def _set_battery_capacity(self, selection, capacity):
+        """Set nominal capacity (kWh) and pack/component masses (kg) in one cell."""
+        vehicle = self.array.sel(selection)
+        cell_mass = capacity / vehicle.sel(parameter="battery cell energy density")
+        pack_mass = cell_mass / vehicle.sel(parameter="battery cell mass share")
+        for parameter, value in {
+            "energy battery mass": pack_mass,
+            "battery cell mass": cell_mass,
+            "battery BoP mass": pack_mass - cell_mass,
+            "electric energy stored": capacity,
+        }.items():
+            self.array.loc[dict(parameter=parameter, **selection)] = value
+
     def override_battery_capacity(self) -> None:
-        """
-        Override battery capacity.
-        :return:
-        """
+        """Apply nominal-capacity overrides only to their selected vehicles.
 
-        for key, val in self.energy_storage["capacity"].items():
-            pwt, size, year = key
-            if val:
-                self.array.loc[
-                    dict(
-                        parameter="electric energy stored",
-                        powertrain=pwt,
-                        size=size,
-                        year=year,
-                    )
-                ] = val
-
-                self.array.loc[
-                    dict(
-                        parameter="energy battery mass",
-                        powertrain=pwt,
-                        size=size,
-                        year=year,
-                    )
-                ] = (
-                    val
-                    / self.array.loc[
-                        dict(
-                            parameter="battery cell energy density",
-                            powertrain=pwt,
-                            size=size,
-                            year=year,
-                        )
-                    ]
-                    / self.array.loc[
-                        dict(
-                            parameter="battery cell mass share",
-                            powertrain=pwt,
-                            size=size,
-                            year=year,
-                        )
-                    ]
+        Other vehicles retain their existing battery properties, including
+        power batteries whose cell/pack split uses a different sizing method.
+        Vehicle mass, energy demand and range are calculated by the sizing loop.
+        """
+        for (pwt, size, year), capacity in self.energy_storage["capacity"].items():
+            if capacity:
+                self._set_battery_capacity(
+                    dict(powertrain=pwt, size=size, year=year), capacity
                 )
-
-                self.set_battery_properties()
-
-                # # redefine `glider base mass` as the difference
-                # # between the `curb mass` and all other components' masses
-                # curb_mass_includes = [
-                #     "fuel mass",
-                #     "charger mass",
-                #     "converter mass",
-                #     "inverter mass",
-                #     "power distribution unit mass",
-                #     "combustion engine mass",
-                #     "electric engine mass",
-                #     "exhaust system mass",
-                #     "powertrain mass",
-                #     "fuel cell stack mass",
-                #     "fuel cell ancillary BoP mass",
-                #     "fuel cell essential BoP mass",
-                #     "battery cell mass",
-                #     "battery BoP mass",
-                #     "fuel tank mass",
-                #     "suspension mass",
-                #     "braking system mass",
-                #     "wheels and tires mass",
-                #     "cabin mass",
-                #     "electrical system mass",
-                #     "other components mass",
-                #     "transmission mass",
-                # ]
-                #
-                # curb_mass_includes = [
-                #     p for p in curb_mass_includes if p in self.array.parameter.values
-                # ]
-                #
-                # self.array.loc[
-                #     dict(
-                #         parameter="curb mass",
-                #         powertrain=pwt,
-                #         size=size,
-                #         year=year,
-                #     )
-                # ] -= self.array.loc[
-                #     dict(
-                #         parameter="energy battery mass",
-                #         powertrain=pwt,
-                #         size=size,
-                #         year=year,
-                #     )
-                # ]
-                #
-                # self.array.loc[
-                #     dict(
-                #         parameter="glider base mass",
-                #         powertrain=pwt,
-                #         size=size,
-                #         year=year,
-                #     )
-                # ] = self.array.loc[
-                #         dict(
-                #             parameter="curb mass",
-                #             powertrain=pwt,
-                #             size=size,
-                #             year=year,
-                #         )
-                #     ] - self.array.loc[
-                #         dict(
-                #             parameter=curb_mass_includes,
-                #             powertrain=pwt,
-                #             size=size,
-                #             year=year,
-                #         )
-                #     ].sum(
-                #     dim="parameter"
-                # )
 
     def override_range(self):
         """Resize only the specified BEVs using their current stored-energy demand.
@@ -1409,16 +1316,10 @@ class VehicleModel:
             demand = vehicle.sel(parameter="TtW energy")  # kJ/km
             depth = vehicle.sel(parameter="battery DoD")
             capacity = target * demand / depth / 3600  # nominal kWh
-            cell_mass = capacity / vehicle.sel(parameter="battery cell energy density")
-            pack_mass = cell_mass / vehicle.sel(parameter="battery cell mass share")
-            for parameter, value in {
-                "energy battery mass": pack_mass,
-                "battery cell mass": cell_mass,
-                "battery BoP mass": pack_mass - cell_mass,
-                "electric energy stored": capacity,
-                "range": capacity * depth * 3600 / demand,
-            }.items():
-                self.array.loc[dict(parameter=parameter, **selection)] = value
+            self._set_battery_capacity(selection, capacity)
+            self.array.loc[dict(parameter="range", **selection)] = (
+                capacity * depth * 3600 / demand
+            )
 
     def set_range(self) -> None:
         """
