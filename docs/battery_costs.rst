@@ -80,6 +80,32 @@ effective projected default. Custom definitions instead retain their own perturb
 prices. A constructor override is an absolute amount and takes precedence over
 these generated perturbations.
 
+Year and sample alignment
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Automatic cost projections align the ``year`` and ``value`` dimensions by name.
+Within a run, each sampled cost factor applies to its sample across all years.
+The sensitivity reference has the same prices as the static calculation for
+each year, regardless of the number or order of selected years and samples.
+
+This corrects a positional reshaping defect in the shared, car, bus and
+two-wheeler cost hooks. It affected multi-year calculations with multiple samples,
+including sensitivity references. For example, a three-year, two-sample BEV
+calculation assigned EUR 102.57/kWh to the 2025 reference instead of EUR
+134.64/kWh. The corrected default battery prices are EUR 186.49, 134.64 and
+102.57/kWh in 2020, 2025 and 2030, respectively.
+
+The correction also aligns power-battery, hydrogen-tank, fuel-cell-stack and
+CNG powertrain projections where used by the vehicle subclasses. Existing price
+curves, random-factor distributions, cost caps and explicit battery-price
+precedence are retained. Single-sample and single-year results are unchanged;
+multi-year uncertainty and sensitivity cost results should be regenerated.
+Parameter sampling seeds still do not seed the separate global cost RNG.
+Truck models use a separate native cost path and do not call these projections.
+
+Plug-in hybrids
+~~~~~~~~~~~~~~~
+
 Combined ``PHEV-p`` and ``PHEV-d`` results are built from their electric and
 combustion components after costs are calculated. Set prices on ``PHEV-e`` and
 ``PHEV-c-p`` or ``PHEV-c-d``. Leave the combined input unchanged, or explicitly
@@ -95,6 +121,11 @@ The focused shared tests cover labelled selections, interpolated years, custom
 files, per-sample prices, invalid values, zero, chemistry precedence, sensitivity
 and serialization. Completed family tests compare explicit prices with purchase
 and replacement-cost differences calculated from capacity and markup. They also
-check power batteries and PHEVs, preserve static and stochastic default results,
+check power batteries and PHEVs, preserve static and single-year stochastic results,
 and verify identical physical outputs, inventories and LCIA for paired BEV prices.
+Cost-alignment regressions cover unequal year/sample counts, unsorted years,
+labelled sample draws, all affected component curves and completed sensitivity
+references compared with static runs. Paired runs with the pre-fix cost hooks
+also verify that correcting multi-year costs leaves physical outputs,
+inventories and LCIA unchanged.
 These are software contract checks, not empirical validation of the price curve.

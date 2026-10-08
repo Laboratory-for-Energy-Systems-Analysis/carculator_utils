@@ -15,6 +15,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Align automatic component-cost projections by year and sample, correcting mixed-year prices in multi-year uncertainty and sensitivity runs. Keep the price curves, uncertainty draws and explicit battery-cost overrides; verify static reference agreement and unchanged physical/inventory results.
 - Preserve explicit generic and selected-chemistry battery unit costs through chemistry selection and cost projection. Add scoped `battery_costs` constructor inputs, labelled input provenance and effective-default sensitivity; leave existing default price trajectories unchanged. Reject combined-only PHEV prices that aggregation would discard.
 - Separate stored battery energy, terminal DC energy and grid charging electricity; correct regenerative recovery, shaft/input energy balance and regenerative power limits.
 - Restore paired VECTO speed/grade traces and duration conventions; interpret numeric gradient overrides as degrees and validate cycle inputs.

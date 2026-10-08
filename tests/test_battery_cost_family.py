@@ -154,20 +154,28 @@ def test_scoped_sample_prices_preserve_other_years_and_costs(case):
     )
 
 
-def test_default_battery_cost_sensitivity_is_ten_percent(case):
+def test_multiyear_battery_cost_sensitivity_preserves_static_reference(case):
     Input, _, _, size, pwt, _ = case
     ip = Input()
     ip.static()
     _, array = fill_xarray_from_input_parameters(
         ip,
         sensitivity=True,
-        scope={"size": [size], "powertrain": [pwt], "year": [2025]},
+        scope={"size": [size], "powertrain": [pwt], "year": [2020, 2025, 2030]},
     )
     # Keep only the reference and cost perturbation; unrelated sensitivities
     # need not take part in this cost-contract regression.
     array = array.sel(value=["reference", ENERGY_COST])
     model = complete(case, array)
+    static = complete(case, inputs(case, years=(2020, 2025, 2030)))
     reference = model[ENERGY_COST].sel(value="reference")
+    np.testing.assert_allclose(reference, static[ENERGY_COST].squeeze("value"))
+    np.testing.assert_allclose(
+        model.array.sel(value="reference").values,
+        static.array.squeeze("value").values,
+        rtol=1e-6,
+        atol=1e-5,
+    )
     np.testing.assert_allclose(
         model[ENERGY_COST].sel(value=ENERGY_COST), reference * 1.1, rtol=1e-6
     )
