@@ -105,6 +105,26 @@ global generator, as well as multi-year sensitivity costs made before alignment
 was corrected.
 Truck models use a separate native cost path and do not call these projections.
 
+Shared fuel-cell component costs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The shared ``VehicleModel.adjust_cost()`` assigns the hydrogen-tank and
+fuel-cell-stack curves to distinct parameters: ``fuel tank cost per kg``
+(EUR/kg of stored hydrogen) and ``fuel cell cost per kW`` (EUR/kW of stack power).
+Previously, it wrote both curves to the tank parameter, overwriting the tank
+price and leaving the stack input unadjusted. The corrected deterministic 2025
+prices are EUR 625.89/kg and EUR 96.18/kW, respectively, from the existing curves.
+Both curves retain the same general per-sample uncertainty factor.
+
+This correction affects direct use of the shared method and subclasses that
+inherit it. Cars and buses already assign these fields correctly in their own
+cost hooks; the normal truck workflow does not call the shared projection.
+The repair does not change the price assumptions. Regressions check the separate
+fields across years and sample orders, plus completed static, sensitivity and
+seeded FCEV car runs using the shared hook in place of the car override. These
+runs reproduce the existing car costs, physical results and sampled inventory
+and LCIA results.
+
 Plug-in hybrids
 ~~~~~~~~~~~~~~~
 

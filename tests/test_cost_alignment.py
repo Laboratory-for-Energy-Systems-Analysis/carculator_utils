@@ -35,11 +35,14 @@ CURVES = {
 def projection(request):
     name = request.param
     if name == "shared":
-        # The legacy base FCEV hook has a separate parameter-target defect.
-        # Vehicle subclasses use their own correctly targeted FCEV equations.
         return (
             VehicleModel,
-            {"BEV": [ENERGY], "HEV-p": [POWER], "ICEV-g": [POWER, GAS]},
+            {
+                "BEV": [ENERGY],
+                "HEV-p": [POWER],
+                "FCEV": [TANK, STACK, POWER],
+                "ICEV-g": [POWER, GAS],
+            },
             False,
         )
     module = pytest.importorskip(name)
@@ -142,13 +145,16 @@ def test_each_projection_keeps_year_sample_and_vehicle_labels(
     xr.testing.assert_allclose(model.array, expected)
 
 
-@pytest.mark.parametrize("parameter", [ENERGY, POWER])
-def test_shared_projection_is_independent_of_sample_axis_order(parameter):
+@pytest.mark.parametrize(
+    "parameter,pwt",
+    [(ENERGY, "BEV"), (POWER, "HEV-p"), (TANK, "FCEV"), (STACK, "FCEV")],
+)
+def test_shared_projection_is_independent_of_sample_axis_order(parameter, pwt):
     model = VehicleModel.__new__(VehicleModel)
     coords = dict(
         size=["Medium"],
-        powertrain=["BEV", "HEV-p"],
-        parameter=[ENERGY, POWER],
+        powertrain=["BEV", "HEV-p", "FCEV"],
+        parameter=[ENERGY, POWER, TANK, STACK],
         year=[2030, 2020, 2025],
         value=["other", "reference"],
     )
@@ -158,7 +164,6 @@ def test_shared_projection_is_independent_of_sample_axis_order(parameter):
         coords=coords,
     ).transpose("value", "year", "parameter", "powertrain", "size")
     model.adjust_cost()
-    pwt = "BEV" if parameter == ENERGY else "HEV-p"
     a, b, c = CURVES[parameter]
     for year in coords["year"]:
         np.testing.assert_allclose(
@@ -168,8 +173,6 @@ def test_shared_projection_is_independent_of_sample_axis_order(parameter):
 
 
 def test_shared_fcev_years_match_separate_runs():
-    # Test year alignment independently of the legacy base hook's parameter
-    # mapping; correcting that separate mapping must not invalidate this check.
     coords = dict(
         size=["Medium"],
         powertrain=["FCEV"],
@@ -190,3 +193,60 @@ def test_shared_fcev_years_match_separate_runs():
         separate.array = array.sel(year=[year]).copy(deep=True)
         separate.adjust_cost()
         xr.testing.assert_identical(combined.array.sel(year=[year]), separate.array)
+
+
+@pytest.mark.family
+@pytest.mark.parametrize("mode", ["static", "sensitivity", "seeded"])
+def test_shared_fcev_projection_matches_completed_car_costs_and_inventory(mode):
+    """Exercise the inherited hook through a real sizing/cost/LCIA workflow."""
+    car = pytest.importorskip("carculator")
+
+    class SharedCostCar(car.CarModel):
+        adjust_cost = VehicleModel.adjust_cost
+
+    inputs = car.CarInputParameters()
+    if mode == "seeded":
+        inputs.stochastic(3, seed=42)
+    else:
+        inputs.static()
+    _, array = car.fill_xarray_from_input_parameters(
+        inputs,
+        scope={"size": ["Medium"], "powertrain": ["FCEV"], "year": [2020, 2025, 2030]},
+        sensitivity=mode == "sensitivity",
+    )
+    if mode == "sensitivity":
+        array = array.sel(value=[STACK, "reference", TANK])
+    elif mode == "seeded":
+        array = array.sel(value=[2, 0, 1])
+    array = array.sel(year=[2030, 2020, 2025])
+    original = array.copy(deep=True)
+    expected = car.CarModel(array)
+    expected.set_all()
+    actual = SharedCostCar(array)
+    actual.set_all()
+    xr.testing.assert_identical(array, original)
+    xr.testing.assert_identical(actual.array, expected.array)
+    xr.testing.assert_identical(actual.energy, expected.energy)
+
+    # Check the price units in the downstream component-cost calculation:
+    # tank cost uses kg of stored hydrogen, stack cost uses fuel-cell kW,
+    # and both completed component costs include the vehicle markup.
+    for component, amount, price in (
+        ("fuel tank cost", "fuel mass", TANK),
+        ("fuel cell cost", "fuel cell power", STACK),
+    ):
+        np.testing.assert_allclose(
+            actual[component],
+            actual[amount] * actual[price] * actual["markup factor"],
+        )
+        assert (actual[component] > 0).all()
+
+    if mode == "seeded":
+        inventories = [
+            car.InventoryCar(m, scenario="static", functional_unit="vkm")
+            for m in (expected, actual)
+        ]
+        impacts = [inventory.calculate_impacts() for inventory in inventories]
+        np.testing.assert_array_equal(inventories[0].A, inventories[1].A)
+        xr.testing.assert_identical(impacts[0], impacts[1])
+        assert np.isfinite(impacts[1]).all()

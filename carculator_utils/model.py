@@ -482,15 +482,14 @@ class VehicleModel:
         cost_factor, _ = self._get_cost_factors()
         years = self.array.year
 
-        # Correction of hydrogen tank cost, per kg
-        # Correction of fuel cell stack cost, per kW
+        # Hydrogen tank cost per kg of stored hydrogen, and stack cost per kW.
         if "FCEV" in self.array.powertrain:
             self.array.loc[
                 dict(powertrain="FCEV", parameter="fuel tank cost per kg")
             ] = (1.078e58 * np.exp(-6.32e-2 * years) + 3.43e2) * cost_factor
 
             self.array.loc[
-                dict(powertrain="FCEV", parameter="fuel tank cost per kg")
+                dict(powertrain="FCEV", parameter="fuel cell cost per kW")
             ] = (3.15e66 * np.exp(-7.35e-2 * years) + 2.39e1) * cost_factor
 
         # Correction of energy battery system cost, per kWh

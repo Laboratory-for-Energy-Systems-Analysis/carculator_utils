@@ -15,6 +15,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Correct the shared FCEV cost projection to update the fuel-cell-stack price without overwriting the hydrogen-tank price. Retain the existing curves and sampled factors; car and bus overrides and the normal truck workflow are unaffected.
 - Retain projected-cost uncertainty with seeded input samples for cars, buses and two-wheelers. Preserve factors through selection, interpolation and serialization without global RNG draws; keep static/sensitivity factors deterministic and explicit prices authoritative. Single stochastic samples now retain uncertainty, including `stochastic(1)`; regenerate old stochastic cost results.
 - Validate triangular modes and bounds when loading parameter records, with year and vehicle context in errors. Test sampling of each vehicle family's complete defaults before scope selection, including the repaired truck cost distributions.
 - Align automatic component-cost projections by year and sample, correcting mixed-year prices in multi-year uncertainty and sensitivity runs. Keep the price curves, uncertainty draws and explicit battery-cost overrides; verify static reference agreement and unchanged physical/inventory results.
