@@ -1,5 +1,6 @@
 """Malformed inputs fail at the public boundary with useful context."""
 
+import json
 from copy import deepcopy
 from types import SimpleNamespace
 
@@ -71,6 +72,75 @@ def test_non_record_input_is_rejected():
         VehicleInputParameters([], extra=[])
     with pytest.raises(ValueError, match="broken.*dictionary"):
         VehicleInputParameters({"broken": None}, extra=[])
+
+
+@pytest.mark.parametrize("mode", [4.0, 16.0])
+@pytest.mark.parametrize("from_file", [False, True])
+def test_triangular_mode_outside_bounds_has_vehicle_context(tmp_path, mode, from_file):
+    data = records()
+    data["mass-2020"]["loc"] = mode
+    before = deepcopy(data)
+    source = data
+    if from_file:
+        source = tmp_path / "invalid.json"
+        source.write_text(json.dumps(data))
+    with pytest.raises(ValueError) as error:
+        VehicleInputParameters(source, extra=[])
+    message = str(error.value)
+    for expected in ["mass-2020", "mass", "2020", "Small", "BEV", "loc", "5.0", "15.0"]:
+        assert expected in message
+    assert data == before
+
+
+@pytest.mark.parametrize("missing", ["minimum", "loc", "maximum"])
+def test_triangular_distribution_requires_explicit_mode_and_bounds(missing):
+    data = records()
+    del data["mass-2020"][missing]
+    with pytest.raises(ValueError, match=f"mass-2020.*2020.*requires {missing}"):
+        VehicleInputParameters(data, extra=[])
+
+
+def test_degenerate_triangular_distribution_is_rejected():
+    data = records()
+    data["mass-2020"].update(minimum=10, maximum=10)
+    with pytest.raises(ValueError, match="mass-2020.*minimum must be less"):
+        VehicleInputParameters(data, extra=[])
+
+
+@pytest.mark.parametrize("mode", [5.0, 10.0, 15.0])
+def test_triangular_boundary_modes_are_valid_and_amount_is_distinct(mode):
+    data = records()
+    # amount is the static input, while loc is the distribution's mode.
+    data["mass-2020"].update(loc=mode, amount=100)
+    before = deepcopy(data)
+    ip = VehicleInputParameters(data, extra=[])
+    ip.static()
+    assert ip.values["mass-2020"] == 100
+    ip.stochastic(16, seed=42)
+    assert np.isfinite(ip.values["mass-2020"]).all()
+    assert ((ip.values["mass-2020"] >= 5) & (ip.values["mass-2020"] <= 15)).all()
+    assert data == before
+
+
+@pytest.mark.family
+@pytest.mark.parametrize(
+    "package,prefix",
+    [
+        ("carculator", "Car"),
+        ("carculator_bus", "Bus"),
+        ("carculator_truck", "Truck"),
+        ("carculator_two_wheeler", "TwoWheeler"),
+    ],
+)
+def test_complete_packaged_defaults_can_be_sampled(package, prefix):
+    module = pytest.importorskip(package)
+    inputs = getattr(module, prefix + "InputParameters")()
+    # Sample before scope selection, as in the public workflow: invalid future
+    # records must not be hidden by restricting the input dictionary to 2025.
+    inputs.stochastic(3, seed=42)
+    assert inputs.values.keys() == inputs.data.keys()
+    for key, values in inputs.values.items():
+        assert np.isfinite(values).all(), (package, key)
 
 
 def test_duplicate_audit_is_explicit_and_preserves_legacy_precedence():

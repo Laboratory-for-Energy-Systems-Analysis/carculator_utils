@@ -70,6 +70,29 @@ def validate_parameters(parameters, *, check_duplicates=False):
                 raise ValueError(f"{context}: {field} must be a finite number.")
         if record.get("minimum", -np.inf) > record.get("maximum", np.inf):
             raise ValueError(f"{context}: minimum must not exceed maximum.")
+        if record.get("uncertainty_type") == sa.TriangularUncertainty.id:
+            context += (
+                f" (year={year}, sizes={record['sizes']!r}, "
+                f"powertrain={record['powertrain']!r})"
+            )
+            missing = [
+                field for field in ("minimum", "loc", "maximum") if field not in record
+            ]
+            if missing:
+                raise ValueError(
+                    f"{context}: triangular uncertainty requires {', '.join(missing)}."
+                )
+            lower, mode, upper = (record[k] for k in ("minimum", "loc", "maximum"))
+            if lower == upper:
+                raise ValueError(
+                    f"{context}: triangular minimum must be less than maximum. "
+                    "Use uncertainty_type=1 for a deterministic value."
+                )
+            if not lower <= mode <= upper:
+                raise ValueError(
+                    f"{context}: triangular loc (mode) {mode} must lie within "
+                    f"minimum {lower} and maximum {upper}."
+                )
         if check_duplicates:
             for size, powertrain in product(record["sizes"], record["powertrain"]):
                 cell = (name, size, powertrain, year)

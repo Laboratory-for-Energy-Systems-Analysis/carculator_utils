@@ -15,8 +15,21 @@ the record identifier, parameter name when available, and offending field.
   labels in ``sizes`` and ``powertrain``, an integer ``year``, and an ``amount``.
 * ``amount`` and any supplied ``loc``, ``minimum``, ``maximum``, ``scale``, or
   ``shape`` must be finite numbers. Booleans and numeric strings are rejected.
-* ``minimum`` must not exceed ``maximum``. Distribution-specific requirements
-  still apply when sampling uncertain parameters.
+* ``minimum`` must not exceed ``maximum``.
+* Triangular distributions (``uncertainty_type=5``) require explicit ``minimum``,
+  ``loc`` and ``maximum`` values, with ``minimum < maximum`` and
+  ``minimum <= loc <= maximum``. Here ``loc`` is the most likely value;
+  ``amount`` remains the separate static input. A mode equal to either bound is
+  valid. Use ``uncertainty_type=1`` for a deterministic value instead of a
+  zero-width triangle. Errors identify the record, parameter, year, sizes and
+  powertrains. Other distribution-specific requirements still apply on sampling.
+
+Sampling precedes array scope selection, so every supplied record must define a
+valid distribution, including future years outside the intended model scope.
+The family regressions exercise complete packaged defaults before selecting
+vehicles and years. The truck package documents its repaired cost bounds in
+``docs/uncertainty_bounds.rst`` and ships their original records and 2020 anchors
+in ``data/cost_uncertainty_provenance.json``.
 
 Some bundled records overlap after expansion across sizes and powertrains.
 Their existing first-record precedence is preserved. Authors can explicitly
