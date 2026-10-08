@@ -91,8 +91,18 @@ select it before constructing a fresh model and inventory, for example::
 
 The brackets retain the ``value`` dimension. Numeric labels other than zero and
 named samples such as ``reference`` are supported; exchange amounts and vehicle
-comments in Brightway describe the same selected sample. Multiple samples raise an error;
+comments describe the same selected sample. Multiple samples raise an error;
 the exporter does not average samples or generate uncertainty distributions.
+
+SimaPro's ``Comment`` field retains the generated manufacture year and vehicle
+parameters, including consumption and battery capacity where applicable.
+Activity-specific comments and sources take precedence over the reference
+catalog; the catalog supplies only absent fields. A missing source does not
+produce a placeholder citation. File and string exports use the same CSV
+quoting, including empty comments and text containing semicolons or line breaks.
+Parse either with a semicolon-delimited CSV reader using standard double-quote
+escaping, without a backslash escape character. See :doc:`validity` for the
+CSV verification scope.
 
 Reproducibility and interpretation
 ----------------------------------

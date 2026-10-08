@@ -523,11 +523,11 @@ class ExportInventory:
 
         # We loop through the activities
         for a in data:
-            # We fetch the main and sub categories (sub category is in fact a path)
-            comment, source = None, None
-            if a["name"] in self.references:
-                source = self.references.get(a["name"]).get("source")
-                comment = self.references.get(a["name"]).get("comment")
+            # Keep generated vehicle metadata and explicit activity overrides.
+            # Use the reference catalog only for fields absent from the activity.
+            reference = self.references.get(a["name"], {})
+            comment = a.get("comment", reference.get("comment"))
+            source = a.get("source", reference.get("source"))
 
             main_category = (
                 "waste treatment"
@@ -568,13 +568,10 @@ class ExportInventory:
                     rows.append(["Unit process"])
 
                 if item == "Comment":
-                    string = ""
-                    if comment is not None:
-                        string = f"{a['comment']}. "
-
-                    string += f"Originally published in: {source}. "
-
-                    rows.append([string])
+                    parts = [str(comment).strip()] if comment else []
+                    if source:
+                        parts.append(f"Originally published in: {source}.")
+                    rows.append([" ".join(parts)])
 
                 if item == "Category type":
                     rows.append([main_category])
@@ -1042,12 +1039,8 @@ class ExportInventory:
 
             # string format
             csvFile = io.StringIO()
-            writer = csv.writer(
-                csvFile,
-                delimiter=";",
-                quoting=csv.QUOTE_NONE,
-                escapechar="\\",
-            )
+            # Use the same quoting as file exports, including empty comments.
+            writer = csv.writer(csvFile, delimiter=";")
             for row in rows:
                 writer.writerow(row)
             csvFile.seek(0)

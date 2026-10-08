@@ -1,9 +1,128 @@
+import csv
+import io
+from copy import deepcopy
+from pathlib import Path
 from types import SimpleNamespace
 
 import numpy as np
+import pytest
 import xarray as xr
 
 from carculator_utils.export import ExportInventory
+
+
+@pytest.mark.parametrize(
+    "metadata,reference,expected",
+    [
+        (
+            {"comment": "Manufacture year: 2025. Battery capacity: 60 kWh."},
+            {},
+            "Manufacture year: 2025. Battery capacity: 60 kWh.",
+        ),
+        (
+            {"comment": "Selected sample.", "source": "Vehicle-specific source"},
+            {"comment": "Catalog comment.", "source": "Catalog source"},
+            "Selected sample. Originally published in: Vehicle-specific source.",
+        ),
+        (
+            {},
+            {"comment": "Catalog comment.", "source": "Catalog source"},
+            "Catalog comment. Originally published in: Catalog source.",
+        ),
+        (
+            {"comment": "Selected sample."},
+            {"source": "Catalog source"},
+            "Selected sample. Originally published in: Catalog source.",
+        ),
+        (
+            {"source": "Vehicle-specific source"},
+            {"comment": "Catalog comment."},
+            "Catalog comment. Originally published in: Vehicle-specific source.",
+        ),
+        (
+            {"comment": None, "source": ""},
+            {"comment": "Catalog comment.", "source": "Catalog source"},
+            "",
+        ),
+        ({}, {}, ""),
+    ],
+    ids=[
+        "vehicle",
+        "activity-precedence",
+        "catalog",
+        "source-fallback",
+        "comment-fallback",
+        "explicit-empty",
+        "missing",
+    ],
+)
+def test_simapro_preserves_activity_metadata(metadata, reference, expected):
+    exporter = ExportInventory.__new__(ExportInventory)
+    name = "transport, car, example"
+    exporter.references = {name: reference}
+    exporter.flow_map = {}
+    activity = {
+        "name": name,
+        "location": "CH",
+        "unit": "kilometer",
+        "reference product": "transport",
+        "exchanges": [],
+        **metadata,
+    }
+    before = deepcopy(activity)
+    references_before = deepcopy(exporter.references)
+    rows = exporter.format_data_for_lci_for_simapro([activity], "3.10")
+    assert rows[rows.index(["Comment"]) + 1] == [expected]
+    assert activity == before
+    assert exporter.references == references_before
+
+
+@pytest.mark.parametrize("export_format", ["file", "string"])
+@pytest.mark.parametrize("has_metadata", [True, False], ids=["metadata", "empty"])
+def test_simapro_metadata_survives_csv_serialization(
+    export_format, has_metadata, tmp_path
+):
+    exporter = ExportInventory.__new__(ExportInventory)
+    exporter.vm = SimpleNamespace(
+        array=xr.DataArray([0], dims="year", coords={"year": [2025]})
+    )
+    exporter.references = {}
+    exporter.flow_map = {}
+    comment = '"Quoted"; manufacture year: 2025.\nConsumption: 15 kWh/100 km; 90\\%; €.'
+    metadata = (
+        {"comment": comment, "source": "Model-specific evidence"}
+        if has_metadata
+        else {}
+    )
+    exporter.write_lci = lambda **kwargs: [
+        {
+            "name": "transport, car, example",
+            "location": "CH",
+            "unit": "kilometer",
+            "reference product": "transport",
+            "exchanges": [],
+            **metadata,
+        }
+    ]
+    output = exporter.write_simapro_lci(
+        "3.10", directory=tmp_path, export_format=export_format
+    )
+    content = (
+        Path(output).read_text(encoding="utf-8") if export_format == "file" else output
+    )
+    rows = list(
+        csv.reader(
+            io.StringIO(content),
+            delimiter=";",
+        )
+    )
+    assert rows[rows.index(["Comment"]) + 1] == [
+        (
+            comment + " Originally published in: Model-specific evidence."
+            if has_metadata
+            else ""
+        )
+    ]
 
 
 def test_simapro_export_returns_each_year_as_string():

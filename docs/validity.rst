@@ -53,10 +53,15 @@ Repeated Brightway and SimaPro exports cover one retained numeric or named
 sample, both years, and passenger-/tonne-kilometre normalization. Checks compare
 Brightway energy inputs to consumption divided by load, verify vehicle comments,
 and preserve the original arrays, indices and calculated impacts. SimaPro checks
-cover successful serialization and preservation of the source inventory, not
-supplier linking or metadata fidelity in the destination application. Multi-sample
-exports remain unsupported and fail with selection instructions. These are
-software consistency checks, not additional empirical calibration.
+parse the serialized CSV and compare each vehicle's comment with its Brightway
+metadata, including manufacture year and the selected sample's parameters.
+``tests/test_export.py`` additionally checks activity metadata precedence,
+catalog fallback, missing sources, and file/string serialization of comments
+containing semicolons, quotes, line breaks and Unicode.
+These checks cover the exported CSV, not supplier linking or import into the
+SimaPro application. Multi-sample exports remain unsupported and fail with
+selection instructions. These are software consistency checks, not additional
+empirical calibration.
 
 Driving-cycle checks
 --------------------

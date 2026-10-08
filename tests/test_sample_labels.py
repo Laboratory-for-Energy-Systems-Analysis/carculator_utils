@@ -1,7 +1,9 @@
 """Sample identity through completed models, characterization and export."""
 
+import csv
 import importlib
 import importlib.util
+import io
 import os
 from copy import deepcopy
 from types import SimpleNamespace
@@ -170,10 +172,21 @@ def test_selected_sample_exports_preserve_data_and_metadata(family, label, tmp_p
             software="simapro", format="string", directory=tmp_path
         )
         assert len(strings) == 2
-        for content in strings:
+        for year, content, importer in zip(family.scope["year"], strings, exports):
             assert isinstance(content, str)
             assert f"Transport, {model.vehicle_type}," in content
             assert ("tkm" if family.unit == "tkm" else "personkm") in content
+            rows = list(csv.reader(io.StringIO(content), delimiter=";"))
+            # Compare each vehicle's metadata in the serialized CSV with Brightway.
+            for activity in importer.data:
+                if "Manufacture year:" not in activity.get("comment", ""):
+                    continue
+                name = f"{activity['name'].capitalize()} {{{activity['location']}}} | Cut-off U"
+                index = rows.index([name])
+                comment = rows[rows.index(["Comment"], index) + 1][0]
+                assert comment == activity["comment"].strip()
+                assert f"Manufacture year: {year}." in comment
+                assert "Originally published in: None" not in comment
     np.testing.assert_array_equal(inventory.A, before)
     assert inventory.inputs == inputs
     assert inventory.rev_inputs == reverse
