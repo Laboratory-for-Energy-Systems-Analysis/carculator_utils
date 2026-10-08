@@ -128,6 +128,9 @@ class VehicleModel:
         :param combustion_controls: Opt-in conventional petrol-car controls keyed
             by (powertrain, size, year). See combustion control documentation.
         :param target_range: dictionary with target range for each powertrain-size-year combination
+        :param fuel_blend: Fuel-category overrides. Supplied categories replace
+            their defaults; omitted categories retain country/year defaults for
+            the selected powertrains. None or an empty dictionary uses defaults.
         :param ambient_temperature: Celsius scalar or twelve monthly values for
             bus HVAC only. Other families use annual-average thermal-demand
             inputs and reject temperature overrides rather than ignoring them.
@@ -216,12 +219,13 @@ class VehicleModel:
 
         self.bs = BackgroundSystemModel()
 
-        if fuel_blend:
-            self.fuel_blend = self.check_fuel_blend(deepcopy(fuel_blend))
-        else:
-            self.fuel_blend = self.bs.define_fuel_blends(
-                self.array.powertrain.values, self.country, self.array.year.values
-            )
+        self.fuel_blend = self.bs.define_fuel_blends(
+            self.array.powertrain.values, self.country, self.array.year.values
+        )
+        if fuel_blend is not None:
+            # Complete each override on its own: an omitted secondary component
+            # uses the complementary share, not the country default's share.
+            self.fuel_blend.update(self.check_fuel_blend(fuel_blend))
 
         self.ambient_temperature = ambient_temperature
         self.indoor_temperature = indoor_temperature

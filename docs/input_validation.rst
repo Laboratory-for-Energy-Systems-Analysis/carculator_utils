@@ -51,6 +51,14 @@ the two record identifiers. It does not rewrite data or resolve conflicts.
 Fuel blends
 -----------
 
+``fuel_blend`` overrides only the fuel categories supplied. All other fuels
+needed by the selected powertrains retain their country- and year-specific
+defaults. ``None`` or an empty dictionary uses defaults for every selected fuel.
+For example, the diesel override below also works in a comparison containing
+petrol, methane and hydrogen vehicles: those fuels retain their default blends.
+Previously, any nonempty override replaced the entire configuration, so omitted
+categories could cause ``KeyError`` during ``set_all()``.
+
 Each supplied fuel category must have a primary component with a known fuel
 ``type`` and a ``share``. Shares must be finite numbers between zero and one.
 They may be scalars, one-element sequences, or one-dimensional sequences with
@@ -70,11 +78,13 @@ one-element sequences are expanded to all years.
     }
     # Pass fuel_blend=fuel_blend to a vehicle model constructor.
 
-An omitted secondary component is completed with the default secondary fuel and
-the complementary share. If both components are provided, their shares must sum
-to one for every year (absolute tolerance ``1e-7``). The caller's dictionary is
-preserved. Unsupported categories, unknown fuel types, malformed shapes, and
-invalid shares raise contextual ``ValueError`` exceptions.
+Each supplied category replaces its default as a whole. An omitted secondary
+component is completed with the default secondary fuel and the complementary
+share, rather than retaining the country's default share. If both components
+are provided, their shares must sum to one for every year (absolute tolerance
+``1e-7``). The caller's dictionary is preserved. Unsupported categories, unknown
+fuel types, malformed shapes, and invalid shares raise contextual ``ValueError``
+exceptions.
 
 When an inventory is constructed, selected suppliers must exist in the bundled
 inventory index. An unresolved supplier raises ``KeyError`` naming the category,
@@ -89,8 +99,11 @@ The ``family`` pytest marker covers small real models from all four vehicle
 packages: sizing and mass balance, coordinate and caller-data preservation,
 sample-specific functional-unit normalization, and repeatable static exports
 for multiple years. It also covers car PHEVs, bus charging modes, human and
-electric bicycles, and multi-year fuel blends. Static exports use one value
-sample; multi-sample inventories are tested through LCIA.
+electric bicycles, and multi-year fuel blends. Partial fuel overrides are checked
+through completed model, inventory and LCIA runs for all four families, including
+unchanged defaults for omitted fuel categories, suppliers, fuel mass balance and
+fossil/non-fossil tailpipe CO2. Static exports use one value sample; multi-sample
+inventories are tested through LCIA.
 
 Install all sibling checkouts into a Python 3.12 environment:
 

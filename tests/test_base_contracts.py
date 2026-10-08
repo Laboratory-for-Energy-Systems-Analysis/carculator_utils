@@ -1,3 +1,4 @@
+from copy import deepcopy
 from pathlib import Path
 
 import numpy as np
@@ -29,6 +30,64 @@ def test_vehicle_model_accepts_missing_energy_storage():
     model = VehicleModel(minimal_vehicle_array())
 
     assert model.energy_storage == {}
+
+
+@pytest.mark.parametrize("fuel", ["diesel", "petrol", "methane", "hydrogen"])
+def test_partial_fuel_blend_keeps_other_fuels_and_year_order(fuel):
+    array = minimal_vehicle_array().reindex(
+        powertrain=["ICEV-d", "ICEV-p", "ICEV-g", "FCEV"],
+        year=[2030, 2025],
+        fill_value=0,
+    )
+    default = VehicleModel(array, country="DE")
+    source = {
+        fuel: {
+            "primary": {
+                "type": default.fuel_blend[fuel]["primary"]["type"],
+                "share": [0.25, 0.75],
+            }
+        }
+    }
+    before = deepcopy(source)
+    model = VehicleModel(array, country="DE", fuel_blend=source)
+
+    assert source == before
+    assert set(model.fuel_blend) == {"diesel", "petrol", "methane", "hydrogen"}
+    assert model.array.year.values.tolist() == [2030, 2025]
+    np.testing.assert_array_equal(
+        model.fuel_blend[fuel]["primary"]["share"], [0.25, 0.75]
+    )
+    # The supplied category is completed independently of the country default.
+    np.testing.assert_array_equal(
+        model.fuel_blend[fuel]["secondary"]["share"], [0.75, 0.25]
+    )
+    for other in set(default.fuel_blend) - {fuel}:
+        np.testing.assert_equal(model.fuel_blend[other], default.fuel_blend[other])
+
+
+def test_empty_fuel_blend_keeps_defaults():
+    array = minimal_vehicle_array().reindex(
+        powertrain=["ICEV-d", "ICEV-g"], fill_value=0
+    )
+    default = VehicleModel(array)
+    model = VehicleModel(array, fuel_blend={})
+    np.testing.assert_equal(model.fuel_blend, default.fuel_blend)
+
+
+@pytest.mark.parametrize(
+    "source,match",
+    [
+        ({"diesel": {}}, "Primary fuel"),
+        ({"diesel": {"primary": {"type": "diesel", "share": 2}}}, "share"),
+        ([], "dictionary"),
+    ],
+)
+def test_partial_fuel_blend_cannot_hide_invalid_overrides(source, match):
+    array = minimal_vehicle_array().reindex(
+        powertrain=["ICEV-d", "ICEV-g"], fill_value=0
+    )
+    with pytest.raises(ValueError, match=match):
+        VehicleModel(array, fuel_blend=source)
 
 
 def test_vehicle_model_rejects_arrays_missing_required_dimensions():

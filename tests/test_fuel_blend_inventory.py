@@ -88,7 +88,16 @@ POWERTRAIN_FUEL = {
 
 @pytest.mark.parametrize("case", CASES, ids=lambda c: c[0])
 @pytest.mark.parametrize(
-    "blend_mode", ["default", "bio", "synthetic", "same-supplier", "primary-only"]
+    "blend_mode",
+    [
+        "default",
+        "bio",
+        "synthetic",
+        "same-supplier",
+        "primary-only",
+        "partial",
+        "partial-primary",
+    ],
 )
 def test_completed_fuel_blend_inventory(case, blend_mode):
     _completed_fuel_blend_inventory(case, blend_mode)
@@ -130,7 +139,12 @@ def _completed_fuel_blend_inventory(case, blend_mode):
             ).items()
             if fuel in {POWERTRAIN_FUEL.get(pt) for pt in powertrains}
         }
-    if blend_mode == "primary-only":
+    if blend_mode in ("partial", "partial-primary"):
+        # Two-wheelers have only one combustion fuel; retain petrol plus BEV
+        # as the single-fuel compatibility check.
+        fuel = "methane" if "methane" in blends else "petrol"
+        blends = {fuel: blends[fuel]}
+    if blend_mode in ("primary-only", "partial-primary"):
         for components in blends.values():
             components.pop("secondary")
             components["primary"]["share"] = 0.65
@@ -146,7 +160,12 @@ def _completed_fuel_blend_inventory(case, blend_mode):
                     model.fuel_blend[fuel][role]["share"],
                     np.broadcast_to(component["share"], (3,)),
                 )
-    if blend_mode == "primary-only":
+    if blend_mode in ("partial", "partial-primary"):
+        default = getattr(package, prefix + "Model")(array, **kwargs)
+        assert set(model.fuel_blend) == set(default.fuel_blend)
+        for fuel in set(default.fuel_blend) - set(requested):
+            np.testing.assert_equal(model.fuel_blend[fuel], default.fuel_blend[fuel])
+    if blend_mode in ("primary-only", "partial-primary"):
         for fuel in requested:
             np.testing.assert_allclose(
                 model.fuel_blend[fuel]["secondary"]["share"], 0.35
