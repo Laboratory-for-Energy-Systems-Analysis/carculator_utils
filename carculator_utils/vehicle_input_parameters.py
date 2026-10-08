@@ -9,6 +9,7 @@ import stats_arrays as sa
 from klausen import NamedParameters
 
 from .battery_costs import remember_samples
+from .cost_uncertainty import sample_cost_factors
 
 
 def load_parameters(obj):
@@ -187,12 +188,15 @@ class VehicleInputParameters(NamedParameters):
         """Load static values and retain references for editable battery costs."""
         super().static()
         remember_samples(self)
+        self._cost_factors = sample_cost_factors(1, stochastic=False)
 
     def stochastic(self, iterations=1000, seed=None):
         """Sample with a local RNG; an explicit seed makes runs reproducible.
 
         Existing ``stochastic(n)`` calls retain their unseeded behavior. Sampling
         never resets or consumes NumPy's process-wide random state.
+        Projected-cost factors use independent local streams with the same seed
+        and are retained alongside the input samples, including for ``n=1``.
 
         Records with the same optional ``uncertainty_group`` metadata reuse one
         draw vector. Their sampling distributions must be identical. This
@@ -231,6 +235,7 @@ class VehicleInputParameters(NamedParameters):
             if group is not None:
                 self.values[key] = self.values[groups[group]].copy()
         remember_samples(self)
+        self._cost_factors = sample_cost_factors(self.iterations, seed=seed)
 
     def add_vehicle_parameters(self, parameters):
         """

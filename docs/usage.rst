@@ -80,6 +80,8 @@ Reproducibility and interpretation
 
 Record package versions, input overrides, driving cycle, load, geography,
 fuel blend, background scenario, functional unit and energy meter boundary.
-Seeded parameter draws do not seed every downstream cost adjustment.
+``stochastic(n, seed=42)`` also seeds projected-cost factors. Keep the array's
+auxiliary coordinates and build fresh models for independent runs; see
+:doc:`cost_uncertainty` for sample selection and legacy-array behavior.
 See :doc:`validity` for the scope of
 calibration, measurement comparisons and known limitations.

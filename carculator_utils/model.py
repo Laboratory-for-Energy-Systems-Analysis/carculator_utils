@@ -11,6 +11,7 @@ import yaml
 from .background_systems import BackgroundSystemModel
 from .battery_costs import ENERGY_COST, POWER_COST, capture_inputs, is_battery_cost
 from .combustion_controls import validate_control_keys
+from .cost_uncertainty import FCEV_FACTOR, GENERAL_FACTOR, attach_cost_factors
 from .driving_cycles import detect_vehicle_type
 from .energy_consumption import get_default_driving_cycle_name
 from .hot_emissions import HotEmissionsModel
@@ -463,6 +464,14 @@ class VehicleModel:
                     prices.loc[selection] = xr.where(chosen, cost, default)
             self[parameter] = xr.where(explicit, values, prices)
 
+    def _get_cost_factors(self):
+        """Reuse input cost draws; initialize legacy arrays once on this model."""
+        self.array = attach_cost_factors(self.array)
+        return tuple(
+            self.array.coords[name].reset_coords(drop=True)
+            for name in (GENERAL_FACTOR, FCEV_FACTOR)
+        )
+
     def adjust_cost(self) -> None:
         """
         This method adjusts costs of energy storage over time, to correct for the overly optimistic linear
@@ -470,26 +479,8 @@ class VehicleModel:
 
         """
 
-        n_iterations = self.array.sizes["value"]
+        cost_factor, _ = self._get_cost_factors()
         years = self.array.year
-
-        # If uncertainty is not considered, the cost factor equals 1.
-        # Otherwise, a variability of +/-30% is added.
-
-        if n_iterations == 1:
-            cost_factor = 1
-        else:
-            if "reference" in self.array.value.values.tolist():
-                cost_factor = np.ones((n_iterations, 1))
-            else:
-                cost_factor = np.random.triangular(0.7, 1, 1.3, (n_iterations, 1))
-
-        # Broadcast by labels: one cost factor per sample, shared across years.
-        cost_factor = xr.DataArray(
-            np.asarray(cost_factor).ravel(),
-            dims="value",
-            coords={"value": self.array.value},
-        )
 
         # Correction of hydrogen tank cost, per kg
         # Correction of fuel cell stack cost, per kW

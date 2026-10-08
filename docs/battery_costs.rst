@@ -98,9 +98,11 @@ calculation assigned EUR 102.57/kWh to the 2025 reference instead of EUR
 The correction also aligns power-battery, hydrogen-tank, fuel-cell-stack and
 CNG powertrain projections where used by the vehicle subclasses. Existing price
 curves, random-factor distributions, cost caps and explicit battery-price
-precedence are retained. Single-sample and single-year results are unchanged;
-multi-year uncertainty and sensitivity cost results should be regenerated.
-Parameter sampling seeds still do not seed the separate global cost RNG.
+precedence are retained. The alignment repair alone preserves static and
+single-year results. The subsequent :doc:`cost_uncertainty` repair ties projected
+cost draws to the input seed; regenerate stochastic results made with the old
+global generator, as well as multi-year sensitivity costs made before alignment
+was corrected.
 Truck models use a separate native cost path and do not call these projections.
 
 Plug-in hybrids
@@ -121,7 +123,7 @@ The focused shared tests cover labelled selections, interpolated years, custom
 files, per-sample prices, invalid values, zero, chemistry precedence, sensitivity
 and serialization. Completed family tests compare explicit prices with purchase
 and replacement-cost differences calculated from capacity and markup. They also
-check power batteries and PHEVs, preserve static and single-year stochastic results,
+check power batteries and PHEVs, preserve static prices,
 and verify identical physical outputs, inventories and LCIA for paired BEV prices.
 Cost-alignment regressions cover unequal year/sample counts, unsorted years,
 labelled sample draws, all affected component curves and completed sensitivity

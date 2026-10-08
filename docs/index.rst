@@ -23,6 +23,7 @@ User's Guide
    usage
    input_validation
    battery_costs
+   cost_uncertainty
    modeling
    structure
    validity

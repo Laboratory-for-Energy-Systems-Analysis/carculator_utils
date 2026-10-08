@@ -145,10 +145,14 @@ artifact index at ``docs/_static/energy_validation_2025/README.md`` distinguishe
 current results from retained investigation history. Original inputs and
 calibration metadata remain packaged with each vehicle model.
 
+Seeded inputs now retain projected-cost draws across fresh model runs and sample
+selections; see :doc:`cost_uncertainty`. This repair preserves the uncertainty
+distributions and does not empirically validate the underlying cost assumptions.
+
 
 Known limitations
 -----------------
 
 * The electrochemical synthetic-methane supplier is absent from the bundled inventory index and raises a visible mapping error.
 * Generic NMVOC characterization is used for ethene where the bundled biosphere index has no exact flow; HBEFA source-version provenance remains incomplete.
-* Seeded parameter draws do not seed every downstream stochastic cost adjustment. Build fresh models for independent runs.
+* Legacy arrays without retained cost-factor coordinates cannot reproduce projected-cost draws from the original input seed. Rebuild inputs with the current array builder and use fresh models for independent runs.

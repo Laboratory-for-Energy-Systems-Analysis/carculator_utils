@@ -5,6 +5,7 @@ import pandas as pd
 import xarray as xr
 
 from .battery_costs import SENSITIVITY, attach_references
+from .cost_uncertainty import attach_cost_factors
 from .vehicle_input_parameters import VehicleInputParameters as vip
 
 
@@ -62,7 +63,7 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
         for parameter in labels[1:]:
             array.loc[dict(parameter=parameter, value=parameter)] *= 1.1
         array.attrs[SENSITIVITY] = 1
-        return mappings, array
+        return mappings, attach_cost_factors(array)
 
     # Make sure to include PHEV-e and PHEV-c-d if
     # PHEV-d is listed
@@ -219,4 +220,5 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
         {label: index for index, label in enumerate(array[dim].values.tolist())}
         for dim in ("size", "powertrain", "parameter", "year")
     )
-    return mappings, attach_references(array, input_parameters)
+    array = attach_references(array, input_parameters)
+    return mappings, attach_cost_factors(array, input_parameters._cost_factors)

@@ -15,6 +15,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Retain projected-cost uncertainty with seeded input samples for cars, buses and two-wheelers. Preserve factors through selection, interpolation and serialization without global RNG draws; keep static/sensitivity factors deterministic and explicit prices authoritative. Single stochastic samples now retain uncertainty, including `stochastic(1)`; regenerate old stochastic cost results.
 - Validate triangular modes and bounds when loading parameter records, with year and vehicle context in errors. Test sampling of each vehicle family's complete defaults before scope selection, including the repaired truck cost distributions.
 - Align automatic component-cost projections by year and sample, correcting mixed-year prices in multi-year uncertainty and sensitivity runs. Keep the price curves, uncertainty draws and explicit battery-cost overrides; verify static reference agreement and unchanged physical/inventory results.
 - Preserve explicit generic and selected-chemistry battery unit costs through chemistry selection and cost projection. Add scoped `battery_costs` constructor inputs, labelled input provenance and effective-default sensitivity; leave existing default price trajectories unchanged. Reject combined-only PHEV prices that aggregation would discard.

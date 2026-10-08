@@ -6,6 +6,7 @@ import numpy as np
 import pytest
 import xarray as xr
 
+from carculator_utils.cost_uncertainty import FCEV_FACTOR, GENERAL_FACTOR
 from carculator_utils.model import VehicleModel
 
 ENERGY = "energy battery cost per kWh"
@@ -100,17 +101,26 @@ def test_each_projection_keeps_year_sample_and_vehicle_labels(
     # years; the factor belongs to a sample and must apply to every year.
     draws = dict(a=0.8, b=1.0, c=1.2, d=0.9)
     fcev_draws = dict(a=3.5, b=5.5, c=4.0, d=5.0)
-    calls = []
-
-    def triangular(left, mode, right, shape):
-        calls.append((left, mode, right, shape))
-        table = fcev_draws if mode == 5 else draws
-        return np.array([table[s] for s in samples]).reshape(len(samples), 1)
-
-    monkeypatch.setattr(np.random, "triangular", triangular)
-    model.adjust_cost()
     deterministic = len(samples) == 1 or "reference" in samples
-    assert len(calls) == (0 if deterministic else (2 if bus else 1))
+    model.array = model.array.assign_coords(
+        {
+            GENERAL_FACTOR: (
+                "value",
+                [1 if deterministic else draws[s] for s in samples],
+            ),
+            FCEV_FACTOR: (
+                "value",
+                [5 if deterministic else fcev_draws[s] for s in samples],
+            ),
+        }
+    )
+
+    def unexpected_draw(*args, **kwargs):
+        pytest.fail("Cost projection must reuse retained input draws.")
+
+    monkeypatch.setattr(np.random, "triangular", unexpected_draw)
+    monkeypatch.setattr(np.random, "default_rng", unexpected_draw)
+    model.adjust_cost()
     expected = xr.full_like(model.array, 17)
     for pwt, parameters in affected.items():
         for parameter in parameters:
