@@ -88,9 +88,10 @@ In particular:
 * Delivery heat and direct emissions remain generic proxies. The inherited
   2% extra production requirement is not an explicitly balanced methane loss;
   it must not be interpreted as a verified carbon balance for distribution.
-* Vehicle pump-to-tank leakage remains separate. Its existing methane-emission
-  allocation across fossil/non-fossil sources and vehicle families has not
-  been corrected by this supplier-mapping change.
+* Vehicle pump-to-tank leakage remains separate. Its fossil/non-fossil allocation
+  and missing bus/truck emissions are corrected in :doc:`methane_leakage`.
+  That correction also documents possible boundary overlap with this delivery
+  proxy; it does not establish a new measured leakage rate.
 * Complete-oxidation CO2 is separate from the CO, methane and hydrocarbon
   pollutant models; this is not a closed elemental exhaust balance.
 * Electrochemical synthetic methane still raises the existing missing-supplier

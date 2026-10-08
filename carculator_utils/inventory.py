@@ -398,8 +398,9 @@ class Inventory:
             [self.inputs[i] for i in self.noise_emissions]
         )
 
-        idx_cats["direct - non-exhaust"].append(
-            self.inputs[("Methane, fossil", ("air",), "kilogram")],
+        idx_cats["direct - non-exhaust"].extend(
+            self.inputs[(f"Methane, {origin}", ("air",), "kilogram")]
+            for origin in ("fossil", "non-fossil")
         )
 
         # idx for an input that has no burden
@@ -1623,6 +1624,84 @@ class Inventory:
             )
 
             self.add_sulphur_emissions(fuel, powertrains_short, powertrains)
+
+    def add_methane_leakage(self) -> None:
+        """Account for additional non-exhaust methane loss in gas vehicles.
+
+        The existing parameter is kg lost per kg of engine fuel, so purchased
+        fuel = engine fuel * (1 + loss ratio). It covers losses additional to
+        the selected fuel supplier; do not use a whole-chain loss estimate here
+        if the same stages are already included upstream. See docs/methane_leakage.
+
+        Generic air methane rows in gas transport columns hold this contribution.
+        HBEFA exhaust flows have separate compartments and are left unchanged.
+        Recomputing from engine fuel makes this method safe to call repeatedly.
+        """
+        if "ICEV-g" not in self.scope["powertrain"]:
+            return
+
+        labels = [f"{size} - ICEV-g" for size in self.scope["size"]]
+        columns = self.find_input_indices(
+            (f"transport, {self.vm.vehicle_type}, ICEV-g, ",)
+        )
+        (market,) = self.find_input_indices(("fuel supply for methane vehicles",))
+        selected = self.array.sel(combined_dim=labels)
+        rates = selected.sel(parameter="CNG pump-to-tank leakage").transpose(
+            "value", "combined_dim", "year"
+        )
+        active = (
+            selected.sel(parameter="TtW energy")
+            .transpose("value", "combined_dim", "year")
+            .values
+            > 0
+        )
+        invalid = active & (~np.isfinite(rates.values) | (rates.values < 0))
+        if invalid.any():
+            first = np.argwhere(invalid)[0]
+            coordinates = {
+                dim: rates.coords[dim].values[index]
+                for dim, index in zip(rates.dims, first)
+            }
+            raise ValueError(
+                "CNG pump-to-tank leakage must be finite and nonnegative "
+                f"(kg lost/kg engine fuel); invalid value at {coordinates}."
+            )
+
+        non_fossil_share = np.zeros(len(self.scope["year"]))
+        for role, component in self.vm.fuel_blend["methane"].items():
+            try:
+                fraction = np.broadcast_to(
+                    np.asarray(component["biogenic share"], dtype=float),
+                    non_fossil_share.shape,
+                )
+            except (TypeError, ValueError) as error:
+                raise ValueError(
+                    f"Methane {role} biogenic share must be numeric and scalar "
+                    "or have one entry per year."
+                ) from error
+            if not np.all(np.isfinite(fraction) & (fraction >= 0) & (fraction <= 1)):
+                raise ValueError(
+                    f"Methane {role} biogenic share must be finite and within [0, 1]."
+                )
+            non_fossil_share += component["share"] * fraction
+
+        engine_fuel = (
+            (
+                selected.sel(parameter="fuel consumption")
+                * selected.sel(parameter="fuel density per kg")
+            )
+            .transpose("value", "combined_dim", "year")
+            .values.astype(float)
+        )
+        engine_fuel = np.where(active, engine_fuel, 0)
+        lost = engine_fuel * np.where(active, rates.values, 0)
+        self.A[:, market, columns, :] = -(engine_fuel + lost)
+        for origin, share in (
+            ("fossil", 1 - non_fossil_share),
+            ("non-fossil", non_fossil_share),
+        ):
+            row = self.inputs[(f"Methane, {origin}", ("air",), "kilogram")]
+            self.A[:, row, columns, :] = -lost * share
 
     def add_road_maintenance(self) -> None:
         # Infrastructure maintenance

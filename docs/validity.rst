@@ -68,6 +68,8 @@ Fuel-blend inventory checks
 The biological synthetic-methane supplier repair and its completed car, bus and
 truck checks are described separately in :doc:`biological_methane`. The audit
 below covers blend propagation and predates that supplier correction.
+The additional methane-loss mass balance, carbon-origin split, characterization
+and boundary limitations are covered in :doc:`methane_leakage`.
 
 ``tests/test_fuel_blend_inventory.py`` completes parameter loading, vehicle
 sizing, inventory construction and LCIA for all four vehicle families. It
