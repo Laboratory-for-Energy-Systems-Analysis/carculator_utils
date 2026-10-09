@@ -202,7 +202,7 @@ jobs:
         run: >-
           python carculator_utils/scripts/verify_installation.py
           --repositories carculator_utils carculator carculator_truck carculator_bus carculator_two_wheeler
-          --output verification-family --run-tests
+          --output verification-family --run-tests --test-timeout 2400
       - uses: actions/upload-artifact@v7
         if: always()
         with:

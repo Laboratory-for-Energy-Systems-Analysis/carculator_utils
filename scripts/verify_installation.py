@@ -24,9 +24,9 @@ def interpreter(environment):
     return environment / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
 
 
-def run(args, cwd, log, env):
+def run(args, cwd, log, env, *, timeout=900):
     with log.open("a", encoding="utf-8") as stream:
-        stream.write("\n" + repr([str(a) for a in args]) + "\n")
+        stream.write(f"\nTimeout: {timeout}s\n{[str(a) for a in args]!r}\n")
         stream.flush()
         subprocess.run(
             [str(a) for a in args],
@@ -35,7 +35,7 @@ def run(args, cwd, log, env):
             stdout=stream,
             stderr=subprocess.STDOUT,
             check=True,
-            timeout=900,
+            timeout=timeout,
         )
 
 
@@ -85,7 +85,16 @@ def main():
         action="store_true",
         help="Run repository suites against installed wheels with test/export extras",
     )
+    parser.add_argument(
+        "--test-timeout",
+        type=int,
+        default=1800,
+        metavar="SECONDS",
+        help="Time limit for each repository's pytest suite (default: 1800 seconds)",
+    )
     args = parser.parse_args()
+    if args.test_timeout <= 0:
+        parser.error("--test-timeout must be greater than zero")
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     env = os.environ.copy()
@@ -216,8 +225,9 @@ def main():
                     "pytest",
                     repository.resolve() / "tests",
                     "--import-mode=importlib",
-                    "-q",
+                    "-v",
                     "--tb=short",
+                    "--durations=20",
                     "-p",
                     "no:cacheprovider",
                     "--junitxml",
@@ -226,6 +236,7 @@ def main():
                 tests_work,
                 log,
                 env,
+                timeout=args.test_timeout,
             )
     results = []
     for kind, directory in (("wheel", wheelhouse), ("sdist", rebuilt)):

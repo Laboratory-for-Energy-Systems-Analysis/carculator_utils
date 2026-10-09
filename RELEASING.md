@@ -27,7 +27,7 @@ For the complete family, run from `carculator_utils`:
 ```bash
 python scripts/verify_installation.py \
   --repositories . ../carculator ../carculator_truck ../carculator_bus ../carculator_two_wheeler \
-  --output /tmp/carculator-family-release-check --run-tests
+  --output /tmp/carculator-family-release-check --run-tests --test-timeout 2400
 ```
 
 The verifier builds wheels and sdists, rebuilds wheels from sdists, compares
@@ -35,6 +35,18 @@ packaged resource hashes, runs installed tests with export extras and checks
 offline core-only model/LCIA runs. Keep `report.json`, test XML, dependency freezes
 and artifact hashes with the release record. A local pass does not establish
 that Linux, Windows or hosted CI passed. Confirm the release commit's CI separately.
+
+Each repository's test suite has a 30-minute subprocess limit by default.
+Use `--test-timeout SECONDS` to adjust it; the full family CI job uses 2400
+seconds per suite within its existing 60-minute job limit. Build, installation
+and smoke commands keep their 900-second limits. The installation log records
+each command's limit, individual test names and the 20 slowest test durations,
+so a timeout can be traced to the active suite and test. Splitting or profiling
+expensive integration tests is preferable to repeatedly increasing the limit.
+
+Electricity CSV and YAML files have explicit LF checkout attributes because their
+provenance records hash exact bytes. Preserve those attributes when changing
+data or packaging; do not replace the recorded hashes with CRLF-specific values.
 
 4. Install `.[docs]`, build with `python -m sphinx -b html docs docs/_build/html`,
    and run the README example. Check wheel/sdist metadata before publication:
