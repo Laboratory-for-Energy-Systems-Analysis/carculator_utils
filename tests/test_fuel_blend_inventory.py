@@ -293,19 +293,11 @@ def _completed_fuel_blend_inventory(case, blend_mode):
                 np.asarray(c["share"]) * np.asarray(c["lhv"])
                 for c in properties.values()
             )
-            density = sum(
-                np.asarray(c["share"]) * np.asarray(c["density"])
-                for c in properties.values()
+            np.testing.assert_allclose(
+                model["LHV fuel MJ per kg"].sel(**select).transpose("value", "year"),
+                np.broadcast_to(lhv, (2, 3)),
+                rtol=2e-6,
             )
-            for parameter, expected in (
-                ("LHV fuel MJ per kg", lhv),
-                ("fuel density per kg", density),
-            ):
-                np.testing.assert_allclose(
-                    model[parameter].sel(**select).transpose("value", "year"),
-                    np.broadcast_to(expected, (2, 3)),
-                    rtol=2e-6,
-                )
             mass = (
                 (model["fuel consumption"] * model["fuel density per kg"])
                 .sel(**select)
@@ -319,6 +311,18 @@ def _completed_fuel_blend_inventory(case, blend_mode):
                 )
             energy_mass = energy.transpose("value", "year").values / (lhv * 1000)
             np.testing.assert_allclose(mass, energy_mass, rtol=2e-5, atol=1e-9)
+            # Independent component masses from combustion energy must occupy
+            # the reported litres, assuming additive component volumes.
+            component_litres = sum(
+                energy_mass * np.asarray(c["share"]) / np.asarray(c["density"])
+                for c in properties.values()
+            )
+            np.testing.assert_allclose(
+                model["fuel consumption"].sel(**select).transpose("value", "year"),
+                component_litres,
+                rtol=2e-5,
+                atol=1e-9,
+            )
             assert (mass > 0).all()
             purchased = mass.copy()
             if fuel == "methane":

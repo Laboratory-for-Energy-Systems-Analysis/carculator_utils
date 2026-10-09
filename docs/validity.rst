@@ -247,6 +247,43 @@ exports of a retained sample preserve these exchanges and the source inventory.
 These checks validate implementation of the supply assumption; they do not
 validate national hydrogen production shares or upstream production datasets.
 
+.. _fuel-blend-density:
+
+Fuel-blend density and volume checks
+------------------------------------
+
+Fuel-blend shares are mass fractions. The shared model calculates blend density
+in kg/L as ``1 / sum(w_i / rho_i)``: one kg of blend contains ``w_i`` kg of each
+component, occupying ``w_i / rho_i`` litres. This assumes additive component
+volumes at the reference conditions of the supplied densities. It does not
+model nonideal mixing contraction or expansion, nor temperature dependence;
+these are accounting checks, not empirical validation of liquid mixtures.
+
+Previously density was averaged arithmetically with mass shares. This
+overestimated density and understated reported litres when component densities
+differed. For a 50/50 diesel/biodiesel mass blend using the bundled 0.83 and
+0.88 kg/L densities, the corrected density is approximately 0.854269 kg/L,
+rather than 0.855 kg/L. Reported consumption in L/km increases by about 0.086%.
+Pure fuels and blends with identical component densities retain their density.
+The correction preserves heating values, driving energy and mass-based fuel
+and combustion-CO2 accounting, apart from numerical rounding. It does not
+change the calibrated vehicle-energy parameters.
+
+``tests/test_fuel_density.py`` reconstructs known batches from component
+volumes and densities, then checks their total mass using the model's blend
+density. Cases cover every fuelled powertrain handled by the shared method,
+pure-component endpoints, scalar and year-specific overrides, reordered years,
+multiple sizes and sample labels, and caller-data preservation.
+``tests/test_fuel_blend_inventory.py`` independently derives burned mass from
+combustion energy and lower heating value, divides each component's mass by its
+density, and checks the sum against reported fuel litres. Completed car, bus,
+truck and two-wheeler runs include hybrids/PHEVs, three years, two load samples,
+fuel suppliers, fossil/non-fossil CO2, finite LCIA results and annual exports.
+
+Run the checks with the sibling packages and optional export dependencies::
+
+   CARCULATOR_REQUIRE_FAMILY=1 python -m pytest tests/test_fuel_density.py tests/test_fuel_blend_inventory.py
+
 Fuel-blend inventory checks
 ----------------------------
 

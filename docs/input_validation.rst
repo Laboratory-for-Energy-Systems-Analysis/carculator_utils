@@ -156,6 +156,15 @@ numeric strings, nonfinite values, invalid bounds and incorrect shapes raise
 are checked, including those with a zero blend share. Omitted properties continue
 to use the selected fuel's catalog values.
 
+Blend density uses mass fractions and additive component volumes:
+``rho_mix = 1 / sum(w_i / rho_i)``, where ``w_i`` is a component's mass share
+and ``rho_i`` its density in kg/L. Lower heating value remains mass-weighted
+in MJ/kg. Thus reported fuel litres equal the sum of component masses divided
+by their respective densities. This approximation does not represent volume
+contraction or expansion during mixing, or temperature-dependent densities.
+Petrol-station volume percentages must be converted to mass shares before
+being supplied as ``share``; see :ref:`fuel-blend-density`.
+
 For example, ``biogenic share=1.5`` is invalid: the fraction must be at most one.
 Previously this could produce negative fossil tailpipe CO2 and still complete
 LCIA. Negative ``CO2`` factors are now rejected as well; zero remains valid,
@@ -181,6 +190,8 @@ fossil/non-fossil tailpipe CO2. Static exports use one value sample; multi-sampl
 inventories are tested through LCIA. Fuel-property regressions cover scalar and
 year-specific overrides, reordered years, both components, and preserved fuel
 supplies and tailpipe carbon through Brightway export.
+Independent component-volume checks also cover reported fuel litres; they do
+not reuse the model's blend-density calculation as their reference.
 
 Install all sibling checkouts into a Python 3.12 environment:
 

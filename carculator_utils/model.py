@@ -1548,8 +1548,10 @@ class VehicleModel:
 
     def set_average_lhv(self) -> None:
         """
-        Calculate average LHV of fuel.
-        :return:
+        Calculate blend LHV (MJ/kg) and density (kg/L) from mass shares.
+
+        Heating value is mass-weighted. Density assumes additive component
+        volumes: one kg of blend occupies the sum of share/density litres.
         """
 
         d_map_fuel = {
@@ -1587,6 +1589,7 @@ class VehicleModel:
             primary_fuel_density = self.fuel_blend[fuel_type]["primary"].get(
                 "density", self.bs.fuel_specs[primary_name]["density"]
             )
+            fuel_volume_per_kg = np.array(primary_fuel_share) / primary_fuel_density
 
             if "secondary" in self.fuel_blend[fuel_type]:
                 secondary_name = self.fuel_blend[fuel_type]["secondary"]["type"]
@@ -1597,10 +1600,13 @@ class VehicleModel:
                 secondary_fuel_density = self.fuel_blend[fuel_type]["secondary"].get(
                     "density", self.bs.fuel_specs[secondary_name]["density"]
                 )
+                fuel_volume_per_kg = (
+                    fuel_volume_per_kg
+                    + np.array(secondary_fuel_share) / secondary_fuel_density
+                )
             else:
                 secondary_fuel_share = 0
                 secondary_fuel_lhv = 0
-                secondary_fuel_density = 0
 
             self.array.loc[dict(powertrain=pt, parameter="LHV fuel MJ per kg")] = (
                 (np.array(primary_fuel_share) * primary_fuel_lhv)
@@ -1608,8 +1614,7 @@ class VehicleModel:
             ).reshape(1, -1, 1)
 
             self.array.loc[dict(powertrain=pt, parameter="fuel density per kg")] = (
-                (np.array(primary_fuel_share) * primary_fuel_density)
-                + (np.array(secondary_fuel_share) * secondary_fuel_density)
+                1 / fuel_volume_per_kg
             ).reshape(1, -1, 1)
 
     def set_energy_stored_properties(self) -> None:
