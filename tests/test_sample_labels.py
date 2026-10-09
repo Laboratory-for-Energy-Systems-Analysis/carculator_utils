@@ -4,6 +4,7 @@ import csv
 import importlib
 import importlib.util
 import io
+import json
 import os
 from copy import deepcopy
 from types import SimpleNamespace
@@ -189,7 +190,26 @@ def test_selected_sample_exports_preserve_data_and_metadata(family, label, tmp_p
                     and f"{{{activity['location']}}}" in rows[i + 1][0]
                 )
                 comment = rows[rows.index(["Comment"], index) + 1][0]
-                assert comment == activity["comment"]
+                original, separator, noise_audit = comment.partition(
+                    " Custom noise exchanges omitted from SimaPro LCIA "
+                    "(retained here for audit): "
+                )
+                assert original == activity["comment"]
+                noise = [
+                    {
+                        "name": exchange["name"],
+                        "categories": list(exchange["categories"]),
+                        "unit": exchange["unit"],
+                        "amount": exchange["amount"],
+                    }
+                    for exchange in activity["exchanges"]
+                    if exchange["name"].startswith("noise,")
+                ]
+                if noise:
+                    assert separator
+                    assert json.loads(noise_audit) == noise
+                else:
+                    assert not separator
                 assert f"Manufacture year: {year}." in comment
                 assert "Originally published in: None" not in comment
     np.testing.assert_array_equal(inventory.A, before)
