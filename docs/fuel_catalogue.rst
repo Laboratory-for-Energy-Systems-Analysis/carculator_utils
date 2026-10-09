@@ -1,5 +1,5 @@
 Fuel catalogue and supplier identity
-===================================
+====================================
 
 Synthetic methanol diesel distinguishes direct air capture (the historical
 ``electrolysis`` label) from cement-plant CO2 (``cement``). Economic and energy

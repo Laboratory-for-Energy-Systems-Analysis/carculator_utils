@@ -126,7 +126,7 @@ class NoiseEmissionsModel:
         (http://publications.jrc.ec.europa.eu/repository/bitstream/JRC72550/cnossos-eu%20jrc%20reference%20report_final_on%20line%20version_10%20august%202012.pdf)
 
         :returns: A numpy array with rolling noise (dB)
-        for each 8 octaves, per second of driving_cycles
+            for each of eight octaves, per second of the driving cycle.
         :rtype: numpy.array
 
         """

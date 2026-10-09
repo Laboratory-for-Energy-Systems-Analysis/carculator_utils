@@ -104,13 +104,13 @@ def get_sulfur_content_in_fuel() -> xr.DataArray:
         )
     dataframe = pd.read_csv(filepath, sep=";")
     dataframe = dataframe.groupby(["country", "year"]).sum().unstack()
-    dataframe.loc[:, ("diesel", 1990)] = dataframe["diesel"].max(1)
-    dataframe.loc[:, ("petrol", 1990)] = dataframe["petrol"].max(1)
+    dataframe.loc[:, ("diesel", 1990)] = dataframe["diesel"].max(axis=1)
+    dataframe.loc[:, ("petrol", 1990)] = dataframe["petrol"].max(axis=1)
 
     dataframe.loc[dataframe[("diesel", 2019)] > 50 / 1e6, ("diesel", 2050)] = 50 / 1e6
     dataframe.loc[dataframe[("petrol", 2019)] > 50 / 1e6, ("petrol", 2050)] = 50 / 1e6
-    dataframe.loc[:, ("diesel", 2050)] = dataframe["diesel"].min(1)
-    dataframe.loc[:, ("petrol", 2050)] = dataframe["petrol"].min(1)
+    dataframe.loc[:, ("diesel", 2050)] = dataframe["diesel"].min(axis=1)
+    dataframe.loc[:, ("petrol", 2050)] = dataframe["petrol"].min(axis=1)
 
     dataframe = dataframe.interpolate(axis=1)
     dataframe = dataframe.unstack().reset_index()

@@ -194,11 +194,8 @@ class EnergyConsumptionModel:
         either as a scalar or twelve identical monthly values. Other settings
         raise ValueError because cabin-setpoint sensitivity is not modelled.
 
-    :ivar velocity: Time series of speed values, in meters per second.
-    :vartype velocity: numpy.ndarray
-    :ivar acceleration: Time series of acceleration, calculated as
-        increment in velocity per interval of 1 second, in meter per second^2.
-    :vartype acceleration: numpy.ndarray
+    ``velocity`` is the speed time series in m/s. ``acceleration`` is its
+    one-second centred difference in m/s2; both are calculated attributes.
 
     """
 
@@ -590,7 +587,6 @@ class EnergyConsumptionModel:
         :param rr_coef: Rolling resistance coefficient (dimensionless, between 0.0 and 1.0)
         :param drag_coef: Aerodynamic drag coefficient (dimensionless, between 0.0 and 1.0)
         :param frontal_area: Frontal area of vehicle (m2)
-        :param sizes: size classes of the vehicles
         :param electric_motor_power: Electric motor power (watts). Optional.
         :param engine_efficiency_factor: Multiplicative map correction in (0, 1].
         :param combustion_controls: Optional conventional petrol-car operating

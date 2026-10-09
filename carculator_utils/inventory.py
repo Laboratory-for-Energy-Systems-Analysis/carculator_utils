@@ -38,8 +38,6 @@ from .hydrogen_power import (
 )
 from .inventory_electricity import lifetime_mix, specialize_electricity_supplies
 
-warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
-
 IAM_FILES_DIR = DATA_DIR / "IAM"
 
 
@@ -354,7 +352,7 @@ class Inventory:
         Format a xarray.DataArray array to receive the results.
 
         :param sensitivity: if True, the results table will
-        be formatted to receive sensitivity analysis results
+            be formatted to receive sensitivity analysis results.
         :return: xarrray.DataArray
         """
 
@@ -676,8 +674,7 @@ class Inventory:
         Load the A matrix. The matrix contains exchanges of products (rows)
         between activities (columns).
 
-        :return: A matrix with three dimensions of shape (number of values,
-        number of products, number of activities).
+        :return: A matrix with axes sample, product, activity and year.
         :rtype: numpy.ndarray
 
         """
@@ -718,9 +715,8 @@ class Inventory:
         Its length row-wise equals the number of
         impact assessment methods.
 
-        :return: an array with impact values per unit
-        of activity for each method.
-        :rtype: numpy.ndarray
+        :return: Characterized impacts per activity, year and category.
+        :rtype: xarray.DataArray
 
         """
 
@@ -1173,7 +1169,6 @@ class Inventory:
         Fill-in the A matrix. Does not return anything. Modifies in place.
         Shape of the A matrix (values, products, activities).
 
-        :param array: :attr:`array` from :class:`CarModel` class
         """
 
         pass

@@ -110,13 +110,14 @@ def get_driving_cycle_compartments(cycle_name, vehicle_type) -> dict:
 
 class HotEmissionsModel:
     """
-    Calculate hot pollutants emissions based on HBEFA 4.1 data, function of fuel consumption
+    Calculate hot pollutants emissions from the bundled HBEFA-derived tables, function of fuel consumption
     for vehicles with a combustion engine.
 
-    :param cycle: Driving cycle. Pandas Series of second-by-second speeds (km/h) or name (str)
-        of cycle e.g., "WLTC","WLTC 3.1","WLTC 3.2","WLTC 3.3","WLTC 3.4","CADC Urban","CADC Road",
-        "CADC Motorway","CADC Motorway 130","CADC","NEDC".
-    :type cycle: pandas.Series
+    :param powertrains: Vehicle powertrain labels.
+    :param sizes: Vehicle size labels.
+    :param velocity: Per-second speeds in metres per second, retaining labels.
+    :param cycle_name: Named driving cycle (used for cycle-specific factors).
+    :param vehicle_type: Car, truck, bus or two-wheeler category.
 
     """
 
@@ -174,7 +175,7 @@ class HotEmissionsModel:
             * *suburban*: from 51 km/h to 80 km/h
             * *rural*: above 80 km/h
 
-        :param powertrain_type: "diesel", "petrol" or "CNG"
+        :param lifetime_km: Lifetime distance by vehicle and sample (km).
         :param euro_class: integer, corresponding to the EURO pollution class
         :param energy_consumption: tank-to-wheel energy consumption for each second of the driving_cycles
         :param yearly_km: annual mileage, to calculate cold start emissions

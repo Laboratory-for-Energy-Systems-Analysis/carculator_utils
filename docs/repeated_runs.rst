@@ -1,5 +1,5 @@
 Repeating completed model runs
-=============================
+==============================
 
 The four vehicle models retain a private copy of the inputs used by ``set_all``.
 Calling it again rebuilds from those inputs; computed transmission efficiency,

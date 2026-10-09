@@ -116,24 +116,14 @@ class VehicleInputParameters(NamedParameters):
     default_parameters and format them into an array following the structured described
     in the *klausen* package.
 
-    :ivar sizes: List of string items e.g., ['Large', 'Lower medium', 'Medium', 'Mini', 'SUV', 'Small', 'Van']
-    :vartype sizes: list
-    :ivar powertrains: List of string items
-            e.g., ['BEV', 'FCEV', 'HEV-p', 'ICEV-d', 'ICEV-g', 'ICEV-p', 'PHEV-c', 'PHEV-e']
-    :vartype powertrains: list
-    :ivar parameters: List of string items e.g., ['Benzene', 'CH4', 'CNG tank mass intercept',...]
-    :vartype parameters: list
-    :ivar years: List of integers e.g., [2017, 2040]
-    :vartype years: list
-    :ivar metadata: Dictionary for metadata.
-    :vartype metadata: dict
-    :ivar values: Dictionary for storing values, of format {'param':[value]}.
-    :vartype values: dict
-    :ivar iterations: Number of iterations executed
-          by the method :func:`~car_input_parameters.CarInputParameters.stochastic`.
-          None if :func:`~car_input_parameters.CarInputParameters.static` used instead.
-    :vartype iterations: int
+    The ``sizes``, ``powertrains``, ``parameters`` and ``years`` attributes
+    list input coordinates. ``metadata`` stores record metadata and ``values``
+    holds static values or sampled arrays keyed by record ID. ``iterations``
+    is the sample count (or None for static inputs).
 
+    :param parameters: Parameter dictionary or JSON path; None loads defaults.
+    :param extra: Additional derived parameter names or a JSON path.
+    :param limit: Retained compatibility argument; does not filter the inputs.
 
     """
 
