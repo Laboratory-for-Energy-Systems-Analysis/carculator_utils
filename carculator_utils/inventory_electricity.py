@@ -4,13 +4,17 @@ import numpy as np
 import xarray as xr
 
 
-def lifetime_mix(array, generation, technologies, custom_mix=None):
+def lifetime_mix(
+    array, generation, technologies, custom_mix=None, horizon_policy="hold"
+):
     """Return normalized shares with axes value, combined_dim, year, technology.
 
     Retain the annual-step convention: truncate lifetime to whole years, with
-    at least the manufacturing year's mix. Stop at the last background year;
-    vehicles manufactured beyond that horizon use its final mix.
+    at least the manufacturing year's mix. Hold endpoints across the complete
+    lifetime. ``truncate`` preserves the old horizon convention for legacy data.
     """
+    if horizon_policy not in ("hold", "truncate"):
+        raise ValueError("Electricity horizon policy must be 'hold' or 'truncate'.")
     dims = ("value", "combined_dim", "year")
     lifetime = (
         array.sel(parameter="lifetime kilometers")
@@ -45,18 +49,36 @@ def lifetime_mix(array, generation, technologies, custom_mix=None):
             duration = (
                 max(1, int(lifetime.values[index])) if active.values[index] else 1
             )
-            start = min(year, horizon)
-            stop = min(year + duration, horizon + 1)
+            start = min(year, horizon) if horizon_policy == "truncate" else year
+            stop = (
+                min(year + duration, horizon + 1)
+                if horizon_policy == "truncate"
+                else year + duration
+            )
             key = (start, stop)
             if key not in cache:
-                cache[key] = (
-                    generation.interp(
-                        year=np.arange(start, stop),
-                        kwargs={"fill_value": "extrapolate"},
+                if horizon_policy == "truncate":
+                    cache[key] = (
+                        generation.interp(
+                            year=np.arange(start, stop),
+                            kwargs={"fill_value": "extrapolate"},
+                        )
+                        .mean("year")
+                        .values
                     )
-                    .mean("year")
-                    .values
-                )
+                else:
+                    first = int(generation.year.min())
+                    before = max(0, min(stop, first) - start)
+                    after = max(0, stop - max(start, horizon + 1))
+                    annual = np.arange(max(start, first), min(stop, horizon + 1))
+                    total = (before / duration) * generation.sel(year=first).values + (
+                        after / duration
+                    ) * generation.sel(year=horizon).values
+                    if annual.size:
+                        total += (
+                            generation.interp(year=annual).sum("year").values / duration
+                        )
+                    cache[key] = total
             values[index] = cache[key]
     if not np.isfinite(values).all():
         raise ValueError("Electricity mixes must contain finite shares.")

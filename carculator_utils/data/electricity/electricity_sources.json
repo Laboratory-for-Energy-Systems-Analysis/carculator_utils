@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "default_scenario": "geco-2025-reference",
+  "sources": {
+    "ember": {
+      "title": "Ember yearly electricity, snapshot 2026-10-09",
+      "url": "https://files.ember-energy.org/public-downloads/generation/outputs/release_generation_yearly_global.csv",
+      "sha256": "b2ac49fa9b27035fedda3c6afb85917bf136de9253bfcbaf09c3410904ec7cd1",
+      "license": "CC BY 4.0",
+      "attribution": "Ember yearly electricity, snapshot 2026-10-09"
+    },
+    "geco": {
+      "title": "JRC GECO 2025, workbooks published 2026-06-23",
+      "url": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GECOutlook/GECO2025/GECO2025.zip",
+      "sha256": "46c29962d0db6226652fee988977a8d9609318b1016dfbc81b5007280cd761e5",
+      "license": "CC BY 4.0",
+      "attribution": "JRC GECO 2025, workbooks published 2026-06-23"
+    },
+    "tyndp": {
+      "title": "TYNDP 2026 draft NT+ KPI dashboard, snapshot 2026-10-09",
+      "url": "https://2026-data.entsos-tyndp-scenarios.eu/output/model-results/kpi-dashboards/NT%2B_KPI_Dashboard.xlsx",
+      "sha256": "019592da14626c8452e16f452e98c1e3afc880a4a6e4913f498dba6df70cda6e",
+      "license": "CC BY 4.0",
+      "attribution": "TYNDP 2026 draft NT+ KPI dashboard, snapshot 2026-10-09"
+    }
+  },
+  "ember_technology_proxies": {
+    "Hydro": "Hydro",
+    "Nuclear": "Nuclear",
+    "Gas": "Gas",
+    "Solar": "Solar",
+    "Wind": "Wind",
+    "Bioenergy": "Biomass",
+    "Coal": "Coal",
+    "Other fossil": "Oil",
+    "Other renewables": "Geothermal"
+  },
+  "geco_technology_proxies": {
+    "Coal": "Coal",
+    "Oil": "Oil",
+    "Gas": "Gas",
+    "Biomass & Waste": "Biomass",
+    "Nuclear": "Nuclear",
+    "Hydro": "Hydro",
+    "Wind": "Wind",
+    "Solar": "Solar",
+    "Other": "Geothermal"
+  },
+  "geco_other_residual": true,
+  "geography_reference": {
+    "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC145985/JRC145985_01.pdf",
+    "location": "Annex 1, tables 2-3, pp. 167-168",
+    "extensions": "PS -> Mediterranean Middle-East; TL -> Rest of South-East Asia; GF/FK -> Rest of South America; remaining African/Oceanian/Latin American territories -> corresponding regional proxy; otherwise World. RER -> EU27."
+  },
+  "assumptions": [
+    "Generation shares only; electricity imports, storage losses and supplier contracts are not resolved.",
+    "Coarse categories use existing LCI proxies: oil for other fossil; geothermal for other renewables/GECO Other; wood CHP for bioenergy/biomass and waste; run-of-river for hydro; onshore wind and rooftop PV for aggregate wind/solar; conventional gas for aggregate gas; hard coal for aggregate coal.",
+    "CCS is subtracted from the parent fuel total and mapped separately; biomass/waste CCS uses Biomass CCS.",
+    "GECO's reported nine generation categories do not sum to its gross-generation total. With --geco-other-residual, preserve the eight named fuel groups and use total minus those groups for Other. Reported Other, its residual and surplus remain in geco_2025_balance_audit.csv. This explicit reconciliation assumes the reported total and named fuels are authoritative; the surplus is not assigned an invented technology or silently normalized.",
+    "Geographic assignments follow GECO 2025 Annex 1 where listed; extensions are identified separately. Regional trajectories are proxies, not national forecasts.",
+    "Annual country observations are held to the snapshot's final historical year (2025) when recent observations are unavailable, so historical years do not depend on the future scenario. Linear interpolation then joins that anchor to the first GECO endpoint. Endpoints are held outside the horizon.",
+    "2025 Ember values can include estimates. Missing component rows are zero only if reported total generation reconciles within source rounding precision.",
+    "Negative-generation country-years are excluded explicitly below; they are not clipped. Other years and subsequent interpolation remain available.",
+    "RER history is Ember Europe; its future uses EU27 as a regional proxy. GLO uses World.",
+    "TYNDP is an audit-only candidate: unresolved fuels and hydrogen cannot be silently assigned fossil or zero-impact generation.",
+    "Existing ecoinvent 3.6 loss multipliers and generic generation inventories are unchanged; missing country losses are disclosed at runtime."
+  ],
+  "excluded_history": [
+    {
+      "country": "AZ",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Solar": -0.094
+      }
+    },
+    {
+      "country": "BD",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Wind": -0.038
+      }
+    },
+    {
+      "country": "CR",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Other fossil": -1.134
+      }
+    },
+    {
+      "country": "HR",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Other fossil": -0.003
+      }
+    },
+    {
+      "country": "CZ",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Other renewables": -0.111
+      }
+    },
+    {
+      "country": "EE",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Other renewables": -0.001
+      }
+    },
+    {
+      "country": "KG",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Other fossil": -0.144
+      }
+    },
+    {
+      "country": "LS",
+      "year": 2023,
+      "reason": "zero domestic generation"
+    },
+    {
+      "country": "LS",
+      "year": 2024,
+      "reason": "zero domestic generation"
+    },
+    {
+      "country": "NL",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Other renewables": -0.005
+      }
+    },
+    {
+      "country": "SI",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Other fossil": -0.019
+      }
+    },
+    {
+      "country": "ES",
+      "year": 2025,
+      "reason": "negative source generation; entire country-year excluded",
+      "values": {
+        "Other renewables": -0.045
+      }
+    }
+  ],
+  "history_records": 5957,
+  "geographies": 211,
+  "projection_scenarios": [
+    "geco-2025-1.5c",
+    "geco-2025-ndc-lts",
+    "geco-2025-reference"
+  ],
+  "resources": {
+    "electricity_history.csv": "ef47de0d781ee322f7809a412a9f0a23411c01b78fda9fac8f2736957c4a3681",
+    "electricity_projections.csv": "90809281b869a532f1b8ac704f9ff0f93074911076ffbc70927cff43c5dd0ec1",
+    "electricity_geographies.csv": "12c625dc3678c0d78b2c353e9b169540adf2d22df7af37566fa95fe1cdcbee3e",
+    "tyndp_2026_mapping_audit.csv": "c4f482c77c6d1f6c9fffaa81162f9ede2f7b7f9236157858e9f57ef88039ed08",
+    "geco_2025_balance_audit.csv": "37f160111e3674f5fbd16f007019967de48f3673b5d3fd05ad03e680e8f19abd"
+  }
+}

@@ -12,6 +12,8 @@ import xarray as xr
 import yaml
 
 from . import DATA_DIR
+from .electricity import DEFAULT_SCENARIO
+from .electricity import get_electricity_mix as _get_electricity_mix
 
 
 def data_to_dict(csv_list: list) -> dict:
@@ -51,44 +53,14 @@ def get_electricity_losses() -> Dict[str, float]:
     return data_to_dict(csv_list)
 
 
-def get_electricity_mix() -> xr.DataArray:
-    """
-    Retrieve the bundled electricity mixes as a labelled array.
+def get_electricity_mix(scenario: str = DEFAULT_SCENARIO) -> xr.DataArray:
+    """Retrieve validated Ember/GECO generation shares, or the legacy dataset.
 
-    Historical data sources:
-
-    * European countries: `ENTSOE TYNDP 2020 scenarios
-      <https://2020.entsos-tyndp-scenarios.eu/>`_.
-    * African countries: the `TEMBA <http://www.osemosys.org/temba.html>`_ model.
-    * Other countries: `IEA World Energy Outlook 2017
-      <https://www.iea.org/reports/world-energy-outlook-2017>`_.
-
+    :param scenario: Electricity scenario, independent of IAM impact factors.
     :returns: Electricity shares by country, year and generating technology.
     :rtype: xarray.core.dataarray.DataArray
-
     """
-    filename = "electricity_mixes.csv"
-    filepath = DATA_DIR / "electricity" / filename
-    if not filepath.is_file():
-        raise FileNotFoundError(
-            "The CSV file that contains " "electricity mixes could not " "be found."
-        )
-
-    dataframe = pd.read_csv(filepath, sep=";", index_col=["country", "year"])
-    dataframe = dataframe.reset_index()
-
-    array = (
-        dataframe.melt(id_vars=["country", "year"], value_name="value")
-        .groupby(["country", "year", "variable"])["value"]
-        .mean()
-        .to_xarray()
-    )
-    array = array.interpolate_na(
-        dim="year", method="linear", fill_value="extrapolate"
-    ).clip(0, 1)
-    array /= array.sum(axis=2)
-
-    return array
+    return _get_electricity_mix(scenario)
 
 
 def get_biofuel_share(filepath) -> xr.DataArray:
@@ -178,15 +150,15 @@ class BackgroundSystemModel:
     """
     Retrieve and build dictionaries that contain important information to model in the background system:
 
-        * gross electricity production mixes from nearly all countries in the world, from 2015 to 2050.
+        * historical electricity generation and explicit country/regional projections through 2070.
         * cumulative electricity transformation/transmission/distribution losses from high voltage to medium and low voltage.
         * share of biomass-derived fuel in the total consumption of liquid fuel in the transport sector. Source: REMIND.
         * share of bioethanol, biodiesel and biomethane, for each country, for different years.
         * share of sulfur in gasoline and diesel, for different countries and years.
     """
 
-    def __init__(self) -> None:
-        self.electricity_mix = get_electricity_mix()
+    def __init__(self, electricity_scenario: str = DEFAULT_SCENARIO) -> None:
+        self.electricity_mix = get_electricity_mix(electricity_scenario)
         self.losses = get_electricity_losses()
         self.sulfur = get_sulfur_content_in_fuel()
         self.biomethane = get_biofuel_share(DATA_DIR / "fuel" / "share_bio_cng.csv")

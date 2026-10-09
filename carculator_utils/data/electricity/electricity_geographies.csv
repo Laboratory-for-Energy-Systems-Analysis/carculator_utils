@@ -1,0 +1,212 @@
+country;source_area;projection_region;projection_kind
+AE;United Arab Emirates;Rest of Persian Gulf;regional-proxy
+AF;Afghanistan;Rest of South Asia;regional-proxy
+AG;Antigua and Barbuda;Rest of Central America;regional-proxy
+AL;Albania;Rest of Balkans;regional-proxy
+AM;Armenia;Rest of CIS;regional-proxy
+AO;Angola;Rest of Sub-Saharan Africa;regional-proxy
+AR;Argentina;Argentina;country
+AS;American Samoa;Rest of Pacific;regional-proxy
+AT;Austria;European Union;regional-proxy
+AU;Australia;Australia;country
+AW;Aruba;Rest of Central America;regional-proxy
+AZ;Azerbaijan;Rest of CIS;regional-proxy
+BA;Bosnia Herzegovina;Rest of Balkans;regional-proxy
+BB;Barbados;Rest of Central America;regional-proxy
+BD;Bangladesh;Rest of South Asia;regional-proxy
+BE;Belgium;European Union;regional-proxy
+BF;Burkina Faso;Rest of Sub-Saharan Africa;regional-proxy
+BG;Bulgaria;European Union;regional-proxy
+BH;Bahrain;Rest of Persian Gulf;regional-proxy
+BI;Burundi;Rest of Sub-Saharan Africa;regional-proxy
+BJ;Benin;Rest of Sub-Saharan Africa;regional-proxy
+BN;Brunei Darussalam;Rest of South-East Asia;regional-proxy
+BO;Bolivia;Rest of South America;regional-proxy
+BR;Brazil;Brazil;country
+BS;Bahamas;Rest of Central America;regional-proxy
+BT;Bhutan;Rest of South Asia;regional-proxy
+BW;Botswana;Rest of Sub-Saharan Africa;regional-proxy
+BY;Belarus;Rest of CIS;regional-proxy
+BZ;Belize;Rest of Central America;regional-proxy
+CA;Canada;Canada;country
+CD;Congo (DRC);Rest of Sub-Saharan Africa;regional-proxy
+CF;Central African Republic;Rest of Sub-Saharan Africa;regional-proxy
+CG;Congo;Rest of Sub-Saharan Africa;regional-proxy
+CH;Switzerland;Switzerland;country
+CI;Cote d'Ivoire;Rest of Sub-Saharan Africa;regional-proxy
+CK;Cook Islands (the);Rest of Pacific;regional-proxy
+CL;Chile;Chile;country
+CM;Cameroon;Rest of Sub-Saharan Africa;regional-proxy
+CN;China;China;country
+CO;Colombia;Rest of South America;regional-proxy
+CR;Costa Rica;Rest of Central America;regional-proxy
+CU;Cuba;Rest of Central America;regional-proxy
+CV;Cabo Verde;Rest of Sub-Saharan Africa;regional-proxy
+CY;Cyprus;European Union;regional-proxy
+CZ;Czechia;European Union;regional-proxy
+DE;Germany;European Union;regional-proxy
+DJ;Djibouti;Rest of Sub-Saharan Africa;regional-proxy
+DK;Denmark;European Union;regional-proxy
+DM;Dominica;Rest of Central America;regional-proxy
+DO;Dominican Republic;Rest of Central America;regional-proxy
+DZ;Algeria;Algeria and Libya;regional-proxy
+EC;Ecuador;Rest of South America;regional-proxy
+EE;Estonia;European Union;regional-proxy
+EG;Egypt;Egypt;country
+ER;Eritrea;Rest of Sub-Saharan Africa;regional-proxy
+ES;Spain;European Union;regional-proxy
+ET;Ethiopia;Rest of Sub-Saharan Africa;regional-proxy
+FI;Finland;European Union;regional-proxy
+FJ;Fiji;Rest of Pacific;regional-proxy
+FK;Falkland Islands (Malvinas);Rest of South America;regional-proxy
+FO;Faroe Islands;World;world-proxy
+FR;France;European Union;regional-proxy
+GA;Gabon;Rest of Sub-Saharan Africa;regional-proxy
+GB;United Kingdom;United Kingdom;country
+GD;Grenada;Rest of Central America;regional-proxy
+GE;Georgia;Rest of CIS;regional-proxy
+GF;French Guiana;Rest of South America;regional-proxy
+GH;Ghana;Rest of Sub-Saharan Africa;regional-proxy
+GL;Greenland;World;world-proxy
+GLO;World;World;aggregate
+GM;Gambia;Rest of Sub-Saharan Africa;regional-proxy
+GN;Guinea;Rest of Sub-Saharan Africa;regional-proxy
+GP;Guadeloupe;Rest of Central America;regional-proxy
+GQ;Equatorial Guinea;Rest of Sub-Saharan Africa;regional-proxy
+GR;Greece;European Union;regional-proxy
+GT;Guatemala;Rest of Central America;regional-proxy
+GU;Guam;Rest of Pacific;regional-proxy
+GW;Guinea-Bissau;Rest of Sub-Saharan Africa;regional-proxy
+GY;Guyana;Rest of South America;regional-proxy
+HK;Hong Kong (SAR of China);China;regional-proxy
+HN;Honduras;Rest of Central America;regional-proxy
+HR;Croatia;European Union;regional-proxy
+HT;Haiti;Rest of Central America;regional-proxy
+HU;Hungary;European Union;regional-proxy
+ID;Indonesia;Indonesia;country
+IE;Ireland;European Union;regional-proxy
+IL;Israel;Mediterranean Middle-East;regional-proxy
+IN;India;India;country
+IQ;Iraq;Rest of Persian Gulf;regional-proxy
+IR;Iran;Iran;country
+IS;Iceland;Iceland;country
+IT;Italy;European Union;regional-proxy
+JM;Jamaica;Rest of Central America;regional-proxy
+JO;Jordan;Mediterranean Middle-East;regional-proxy
+JP;Japan;Japan;country
+KE;Kenya;Rest of Sub-Saharan Africa;regional-proxy
+KG;Kyrgyzstan;Rest of CIS;regional-proxy
+KH;Cambodia;Rest of South-East Asia;regional-proxy
+KI;Kiribati;Rest of Pacific;regional-proxy
+KM;Comoros;Rest of Sub-Saharan Africa;regional-proxy
+KN;Saint Kitts and Nevis;Rest of Central America;regional-proxy
+KP;North Korea;Rest of South-East Asia;regional-proxy
+KR;South Korea;South Korea;country
+KW;Kuwait;Rest of Persian Gulf;regional-proxy
+KY;Cayman Islands;Rest of Central America;regional-proxy
+KZ;Kazakhstan;Rest of CIS;regional-proxy
+LA;Lao PDR;Rest of South-East Asia;regional-proxy
+LB;Lebanon;Mediterranean Middle-East;regional-proxy
+LC;Saint Lucia;Rest of Central America;regional-proxy
+LK;Sri Lanka;Rest of South Asia;regional-proxy
+LR;Liberia;Rest of Sub-Saharan Africa;regional-proxy
+LS;Lesotho;Rest of Sub-Saharan Africa;regional-proxy
+LT;Lithuania;European Union;regional-proxy
+LU;Luxembourg;European Union;regional-proxy
+LV;Latvia;European Union;regional-proxy
+LY;Libya;Algeria and Libya;regional-proxy
+MA;Morocco;Morocco and Tunisia;regional-proxy
+MD;Moldova;Rest of Balkans;regional-proxy
+ME;Montenegro;Rest of Balkans;regional-proxy
+MG;Madagascar;Rest of Sub-Saharan Africa;regional-proxy
+MK;North Macedonia;Rest of Balkans;regional-proxy
+ML;Mali;Rest of Sub-Saharan Africa;regional-proxy
+MM;Myanmar;Rest of South-East Asia;regional-proxy
+MN;Mongolia;Rest of South-East Asia;regional-proxy
+MO;Macao (SAR of China);China;regional-proxy
+MQ;Martinique;Rest of Central America;regional-proxy
+MR;Mauritania;Rest of Sub-Saharan Africa;regional-proxy
+MS;Montserrat;Rest of Central America;regional-proxy
+MT;Malta;European Union;regional-proxy
+MU;Mauritius;Rest of Sub-Saharan Africa;regional-proxy
+MV;Maldives;Rest of South Asia;regional-proxy
+MW;Malawi;Rest of Sub-Saharan Africa;regional-proxy
+MX;Mexico;Mexico;country
+MY;Malaysia;Malaysia;country
+MZ;Mozambique;Rest of Sub-Saharan Africa;regional-proxy
+NA;Namibia;Rest of Sub-Saharan Africa;regional-proxy
+NC;New Caledonia;Rest of Pacific;regional-proxy
+NE;Niger;Rest of Sub-Saharan Africa;regional-proxy
+NG;Nigeria;Rest of Sub-Saharan Africa;regional-proxy
+NI;Nicaragua;Rest of Central America;regional-proxy
+NL;Netherlands;European Union;regional-proxy
+NO;Norway;Norway;country
+NP;Nepal;Rest of South Asia;regional-proxy
+NR;Nauru;Rest of Pacific;regional-proxy
+NZ;New Zealand;New Zealand;country
+OM;Oman;Rest of Persian Gulf;regional-proxy
+PA;Panama;Rest of Central America;regional-proxy
+PE;Peru;Rest of South America;regional-proxy
+PF;French Polynesia;Rest of Pacific;regional-proxy
+PG;Papua New Guinea;Rest of Pacific;regional-proxy
+PH;The Philippines;Rest of South-East Asia;regional-proxy
+PK;Pakistan;Rest of South Asia;regional-proxy
+PL;Poland;European Union;regional-proxy
+PM;Saint Pierre and Miquelon;Rest of Central America;regional-proxy
+PR;Puerto Rico;Rest of Central America;regional-proxy
+PS;Palestine (State of);Mediterranean Middle-East;regional-proxy
+PT;Portugal;European Union;regional-proxy
+PY;Paraguay;Rest of South America;regional-proxy
+QA;Qatar;Rest of Persian Gulf;regional-proxy
+RE;Reunion;Rest of Sub-Saharan Africa;regional-proxy
+RER;Europe;European Union;regional-proxy
+RO;Romania;European Union;regional-proxy
+RS;Serbia;Rest of Balkans;regional-proxy
+RU;Russia;Russian Federation;country
+RW;Rwanda;Rest of Sub-Saharan Africa;regional-proxy
+SA;Saudi Arabia;Saudi Arabia;country
+SB;Solomon Islands;Rest of Pacific;regional-proxy
+SC;Seychelles;Rest of South Asia;regional-proxy
+SD;Sudan;Rest of Sub-Saharan Africa;regional-proxy
+SE;Sweden;European Union;regional-proxy
+SG;Singapore;Rest of South-East Asia;regional-proxy
+SI;Slovenia;European Union;regional-proxy
+SK;Slovakia;European Union;regional-proxy
+SL;Sierra Leone;Rest of Sub-Saharan Africa;regional-proxy
+SN;Senegal;Rest of Sub-Saharan Africa;regional-proxy
+SO;Somalia;Rest of Sub-Saharan Africa;regional-proxy
+SR;Suriname;Rest of South America;regional-proxy
+SS;South Sudan;Rest of Sub-Saharan Africa;regional-proxy
+ST;Sao Tome and Principe;Rest of Central America;regional-proxy
+SV;El Salvador;Rest of Central America;regional-proxy
+SY;Syria;Mediterranean Middle-East;regional-proxy
+SZ;Eswatini;Rest of Sub-Saharan Africa;regional-proxy
+TC;Turks and Caicos Islands;Rest of Central America;regional-proxy
+TD;Chad;Rest of Sub-Saharan Africa;regional-proxy
+TG;Togo;Rest of Sub-Saharan Africa;regional-proxy
+TH;Thailand;Thailand;country
+TJ;Tajikistan;Rest of CIS;regional-proxy
+TM;Turkmenistan;Rest of CIS;regional-proxy
+TN;Tunisia;Morocco and Tunisia;regional-proxy
+TO;Tonga;Rest of Pacific;regional-proxy
+TR;Türkiye;Türkiye;country
+TT;Trinidad and Tobago;Rest of Central America;regional-proxy
+TW;Taiwan (China);Rest of South-East Asia;regional-proxy
+TZ;Tanzania (the United Republic of);Rest of Sub-Saharan Africa;regional-proxy
+UA;Ukraine;Ukraine;country
+UG;Uganda;Rest of Sub-Saharan Africa;regional-proxy
+US;United States;United States;country
+UY;Uruguay;Rest of South America;regional-proxy
+UZ;Uzbekistan;Rest of CIS;regional-proxy
+VC;Saint Vincent and the Grenadines;Rest of Central America;regional-proxy
+VE;Venezuela;Rest of South America;regional-proxy
+VG;Virgin Islands (British);Rest of Central America;regional-proxy
+VI;Virgin Islands (U.S.);Rest of Central America;regional-proxy
+VN;Viet Nam;Vietnam;country
+VU;Vanuatu;Rest of Pacific;regional-proxy
+WS;Samoa;Rest of Pacific;regional-proxy
+XK;Kosovo;Rest of Balkans;regional-proxy
+YE;Yemen;Rest of Persian Gulf;regional-proxy
+ZA;South Africa;South Africa;country
+ZM;Zambia;Rest of Sub-Saharan Africa;regional-proxy
+ZW;Zimbabwe;Rest of Sub-Saharan Africa;regional-proxy

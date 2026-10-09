@@ -43,6 +43,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Data and provenance
 
+- Refresh national electricity generation using attributed Ember history and three explicit GECO 2025 scenarios through 2070, with 211 geographic codes, validated shares, source hashes and reproducible import/audit scripts. Preserve the former table as `legacy`; disclose regional projections, coarse LCI proxies, source exclusions and GECO residual reconciliation. Hold refreshed endpoints across complete vehicle lifetimes and retain scenario/loss provenance in exports. TYNDP 2026 remains an audited candidate pending reliable LCI mappings. See [data, assumptions and reproduction](docs/electricity_scenarios.rst).
 - Add reproducible 2025 measurement catalogs, cycle/road-load diagnostics, temporal continuity checks and BEV battery-sizing audits.
 - Support grouped temporal uncertainty and retain original affected parameter records with provenance.
 - Continue the IAM scenario names introduced in 1.3.5: `SSP2-NPi`, `SSP2-PkBudg1000`, `SSP2-PkBudg650`, and `static`. Legacy 1150/500 names remain rejected.

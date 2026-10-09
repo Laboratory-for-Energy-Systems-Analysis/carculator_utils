@@ -24,9 +24,11 @@ Calculation and compatibility
   years. The existing whole-year convention is retained: fractional lifetime
   years are truncated. At least the manufacturing year's mix is used, including
   lifetimes below one year.
-* Annual averaging stops at the last available background year, currently 2050.
-  Vehicles manufactured beyond that horizon use its final mix. Inactive cells
-  use a finite placeholder mix and do not contribute vehicle demand.
+* Refreshed electricity scenarios average the complete operating lifetime,
+  holding the final generation mix after 2070. Years before the first available
+  background year use its first mix. ``electricity scenario="legacy"`` retains
+  the previous convention of stopping the average at 2050. Inactive cells use
+  a finite placeholder mix and do not contribute vehicle demand.
 * An explicit ``background_configuration["custom electricity mix"]`` still
   overrides default lifetime averaging. Its year-by-technology array is applied
   to all selected vehicles and samples without modifying the supplied array.
@@ -61,10 +63,11 @@ paths. Biomethane remains a fuel product even when its name mentions sewage
 sludge. External supplier mappings are retained. Additional distinct supply paths
 increase matrix size; use scoped calculations when exploring large vehicle grids.
 
-These changes do not introduce new electricity scenarios, generation factors,
-loss assumptions or vehicle calibration. ``static`` continues to select static
-background impact factors; it does not freeze the separately supplied national
-electricity time series.
+The subsequent :doc:`electricity_scenarios` refresh supplies new historical and
+projected generation mixes. The per-vehicle accounting repair described here
+does not change generation factors, loss assumptions or vehicle calibration.
+``static`` continues to select static background impact factors; it does not
+freeze the separately supplied national electricity time series.
 
 Verification
 ------------

@@ -51,7 +51,9 @@ cargo-normalized results require finite positive loads for active vehicles.
 Availability-masked zero consumption does not describe a zero-energy vehicle.
 
 Default charging/fuel-preparation electricity follows each vehicle and sample's
-own operating lifetime. Inspect ``inventory.electricity_mix`` for the labelled
+own operating lifetime. See :doc:`electricity_scenarios` for the refreshed
+Ember/GECO data, explicit electricity scenario selection and legacy reproduction.
+Inspect ``inventory.electricity_mix`` for the labelled
 shares; ``inventory.mix`` is only a summary. Explicit custom mixes remain
 supported. See :doc:`electricity_lifetime` for annual averaging, background-year
 limits and the corresponding inventory/export behavior.

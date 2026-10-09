@@ -23,6 +23,11 @@ from scipy import sparse
 
 from . import DATA_DIR
 from .background_systems import BackgroundSystemModel
+from .electricity import (
+    DEFAULT_SCENARIO,
+    ElectricityDataWarning,
+    select_electricity_mix,
+)
 from .fuel_supply import fill_fuel_suppliers, register_fuel_suppliers
 from .inventory_electricity import lifetime_mix, specialize_electricity_supplies
 
@@ -280,7 +285,11 @@ class Inventory:
         fuel_supply_recipes = register_fuel_suppliers(self.inputs, self.vm.fuel_blend)
         validate_fuel_mappings(self.vm.fuel_blend, self.inputs)
 
-        self.bs = BackgroundSystemModel()
+        self.bs = BackgroundSystemModel(
+            electricity_scenario=self.background_configuration.get(
+                "electricity scenario", DEFAULT_SCENARIO
+            )
+        )
         self.add_additional_activities()
         self.rev_inputs = {v: k for k, v in self.inputs.items()}
 
@@ -756,19 +765,31 @@ class Inventory:
         ``electricity_mix`` is the labelled array used in the inventories.
         ``mix`` remains a year/technology summary for existing reporting code.
         """
-        country = self.vm.country
-        if country not in self.bs.electricity_mix.country.values:
-            print(
-                f"The electricity mix for {country} could not be found. "
-                "Average European electricity mix is used instead."
+        custom = self.background_configuration.get("custom electricity mix")
+        if custom is not None:
+            # An explicit custom mix does not require national background data.
+            generation = self.bs.electricity_mix.isel(country=0)
+            self.electricity_provenance = {
+                "electricity_scenario": "custom",
+                "country": self.vm.country,
+                "requested_country": self.vm.country,
+                "boundary": "user-supplied electricity mix",
+                "horizon_policy": "custom",
+            }
+        else:
+            generation, self.electricity_provenance = select_electricity_mix(
+                self.bs.electricity_mix,
+                self.vm.country,
+                self.background_configuration.get("electricity fallback country"),
             )
-            country = "RER"
         self.electricity_mix = lifetime_mix(
             self.array,
-            self.bs.electricity_mix.sel(country=country),
+            generation,
             self.electricity_technologies,
-            self.background_configuration.get("custom electricity mix"),
+            custom,
+            horizon_policy=generation.attrs.get("horizon_policy", "hold"),
         )
+        self.electricity_mix.attrs.update(self.electricity_provenance)
         return self.electricity_mix.mean(("value", "combined_dim")).values
 
     def define_renewable_rate_in_mix(self) -> ndarray[Any, dtype[Any]]:
@@ -881,11 +902,21 @@ class Inventory:
         and hydrogen production through electrolysis.
         """
 
-        try:
-            losses_to_low = float(self.bs.losses[self.vm.country]["LV"])
-        except KeyError:
-            # If losses for the country are not found, assume EU average
-            losses_to_low = float(self.bs.losses["RER"]["LV"])
+        loss_country = {"UK": "GB", "NM": "NA"}.get(self.vm.country, self.vm.country)
+        if self.electricity_provenance["electricity_scenario"] == "legacy":
+            loss_country = self.vm.country
+        if loss_country not in self.bs.losses:
+            warnings.warn(
+                f"Electricity losses for {self.vm.country} use the legacy RER low-voltage multiplier.",
+                ElectricityDataWarning,
+                stacklevel=2,
+            )
+            loss_country = "RER"
+        losses_to_low = float(self.bs.losses[loss_country]["LV"])
+        self.electricity_provenance.update(
+            loss_country=loss_country, loss_multiplier=losses_to_low
+        )
+        self.electricity_mix.attrs.update(self.electricity_provenance)
 
         self.electricity_losses = losses_to_low
         # Fill the electricity markets for battery charging and hydrogen production
@@ -1864,6 +1895,18 @@ class Inventory:
             indices=export.rev_inputs,
             db_name=f"{filename}_{self.vm.vehicle_type}_{datetime.now().strftime('%Y%m%d')}",
         )
+
+        provenance = getattr(self, "electricity_provenance", {})
+        if provenance:
+            comment = "; ".join(f"{key}: {value}" for key, value in provenance.items())
+            for key in export.inputs:
+                if key[0].startswith("electricity supply for"):
+                    lci.references[key[0]] = {
+                        "source": provenance.get(
+                            "history_source", provenance["electricity_scenario"]
+                        ),
+                        "comment": comment,
+                    }
 
         for scoped, original in getattr(
             self, "electricity_supply_originals", {}

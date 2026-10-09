@@ -97,7 +97,7 @@ def test_each_sample_gets_its_own_annual_average():
 
 @pytest.mark.parametrize(
     "duration,year,expected",
-    [(0.5, 2025, [1, 0]), (25, 2025, [0.5, 0.5]), (25, 2040, [0, 1])],
+    [(0.5, 2025, [1, 0]), (25, 2025, [0.12, 0.88]), (25, 2040, [0, 1])],
 )
 def test_short_lifetime_and_background_horizon(duration, year, expected):
     data, generation = small_inputs()
@@ -105,6 +105,22 @@ def test_short_lifetime_and_background_horizon(duration, year, expected):
     data.loc[dict(parameter="lifetime kilometers")] = duration
     result = lifetime_mix(data, generation, ["coal", "wind"])
     np.testing.assert_allclose(result.values[:, 0, 0], [expected, expected])
+
+
+def test_legacy_horizon_truncation_remains_explicit():
+    data, generation = small_inputs()
+    data.loc[dict(parameter="lifetime kilometers")] = 25
+    result = lifetime_mix(data, generation, ["coal", "wind"], horizon_policy="truncate")
+    np.testing.assert_allclose(result.values[:, 0, 0], [[0.5, 0.5]] * 2)
+
+
+def test_endpoint_hold_accounts_for_years_before_and_after_available_data():
+    data, generation = small_inputs()
+    data = data.assign_coords(year=[2020])
+    data.loc[dict(parameter="lifetime kilometers")] = 20
+    result = lifetime_mix(data, generation, ["coal", "wind"])
+    # Five pre-2025 years plus 3 coal-equivalent years in the linear transition.
+    np.testing.assert_allclose(result.values[:, 0, 0], [[0.4, 0.6]] * 2)
 
 
 @pytest.mark.parametrize("duration", [0, -1, np.nan, np.inf])
