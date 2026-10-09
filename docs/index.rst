@@ -30,6 +30,7 @@ User's Guide
    modeling
    structure
    validity
+   approved_fixes
    biological_methane
    fuel_catalogue
    input_completeness

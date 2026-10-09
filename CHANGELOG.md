@@ -51,7 +51,6 @@ it has not yet been published. Older entries, where present, retain their origin
 - Delegate Brightway Excel and SimaPro CSV formatting to Brightpath and add `software="openlca"` foreground JSON-LD ZIP export. Preserve per-year outputs and inventory state; correct foreground database links. SimaPro now uses valid categories, canonical supplier labels and Latin-1 encoding, and warns when omitting unsupported custom noise flows. openLCA warns that ecoinvent providers and characterized elementary flows still need linking. See [export behavior and limits](docs/inventory_export.rst).
 - Correct fuel-blend density for mass-fraction shares using additive component volumes. Preserve heating values and mass-based fuel/CO2 accounting while correcting reported litres; verify known-volume batches and completed car, bus, truck and two-wheeler inventories, including pure fuels and year-specific property overrides. See [assumption and checks](docs/validity.rst#fuel-blend-density).
 - Restrict the empirical bus HVAC model to its existing 20-degree Celsius cabin assumption. Reject unsupported indoor temperatures before sizing and in the direct energy/HVAC API; accept scalar 20 or twelve all-20 monthly values. Preserve ambient-temperature dependence, overrides and default results. See [scope and migration](docs/validity.rst#cabin-temperature-limitation).
-- Fix the bus temperature fallback for countries absent from the bundled table: preserve Swiss decimal temperatures instead of crashing during integer parsing. Retain the printed fallback notice and explicit temperature overrides; verify diesel, fuel-cell and depot BEV models, fuel/charging exchanges and LCIA across five affected countries. See [scope and limitations](docs/validity.rst#temperature-fallback-checks).
 - Separate default hydrogen supply from petrol bioethanol shares. Use the configured primary route (100% natural-gas steam methane reforming) as an explicit fallback assumption for every country and year; preserve user hydrogen mixes. Verify completed car, bus and truck fuel supplies, unchanged driving energy and hydrogen demand, zero direct CO2 and annual exports. See [assumption and verification](docs/validity.rst#default-hydrogen-supply).
 - Preserve default biofuel shares above 30% by replacing the universal cap with physical 0--100% bounds. Restore the bundled biomethane shares for Sweden, Norway and Iceland through fuel supply, combustion CO2, methane leakage and exports; retain interpolation, regional fallback and explicit blends. See [scope and verification](docs/validity.rst#default-biofuel-shares).
 - Validate fuel-property overrides before sizing: positive heating values and densities, nonnegative CO2 factors, and biogenic fractions within [0, 1]. Reject nonnumeric, nonfinite and malformed values for both components, including zero shares. Normalize year-specific properties and verify their mass/energy balance, fossil/non-fossil CO2 and exported inventories across all four families.
@@ -94,11 +93,11 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Known limitations
 
-- The electrochemical synthetic-methane supplier is absent from the bundled inventory index and raises a visible mapping error.
-- Generic NMVOC characterization is used for ethene where the bundled biosphere index has no exact flow; HBEFA source-version provenance remains incomplete.
+- Electrochemical synthetic methane and other unavailable fuel routes are excluded from the supported catalogue and rejected before modelling; their missing suppliers still need scientifically justified mappings.
+- Ethene uses exact Ethylene characterization. HBEFA extraction-version provenance, coefficient derivation and legacy NH3/N2O adjustments remain incompletely verified.
 - Seeded parameter draws do not seed every downstream stochastic cost adjustment. Build fresh models for independent runs.
 
-See [validation](docs/validity.rst) and [release preparation](RELEASING.md) for scope and verification instructions.
+See [approved issue outcomes](docs/approved_fixes.rst), [validation](docs/validity.rst) and [release preparation](RELEASING.md) for scope and verification instructions.
 
 ## 1.3.5 - 2026-04-29
 

@@ -1,0 +1,472 @@
+{
+  "issues": {
+    "1": {
+      "status": "implemented",
+      "commits": {
+        "carculator_utils": "2c66c45",
+        "carculator": "2dedbe4",
+        "carculator_truck": "62f4847",
+        "carculator_bus": "8a99cb3",
+        "carculator_two_wheeler": "6765b07"
+      },
+      "tests": "28 repeat/battery; 37 shared; 55 sibling input/component checks passed"
+    },
+    "2": {
+      "status": "implemented",
+      "commits": {
+        "carculator_utils": "b373ba0"
+      },
+      "tests": "12 passed; all four family inventories and LCIA"
+    },
+    "3": {
+      "status": "implemented",
+      "commits": {
+        "carculator_utils": "5828882"
+      },
+      "tests": "230 passed; every advertised fuel has exact supplier or supported recipe",
+      "integration_followup_commits": {
+        "carculator": "a9b493e"
+      }
+    },
+    "4": {
+      "status": "implemented",
+      "commits": {
+        "carculator_utils": "ca9e4b5",
+        "carculator": "dc3571c",
+        "carculator_bus": "8a2c1bc",
+        "carculator_two_wheeler": "2c1769c"
+      },
+      "tests": "231 passed; static/distribution effective-cell hash and shared-draw checks"
+    },
+    "5": {
+      "status": "implemented",
+      "commits": {
+        "carculator_utils": "038302a"
+      },
+      "tests": "236 targeted tests and 27 repeated/base tests passed",
+      "integration_followup_commits": {
+        "carculator": "a0cd6fa"
+      }
+    },
+    "6": {
+      "status": "implemented",
+      "commits": {
+        "carculator_utils": "d4b35d6",
+        "carculator_two_wheeler": "8e90bbb"
+      },
+      "tests": "13 Human/bicycle/default-scope checks passed"
+    },
+    "7": {
+      "status": "implemented",
+      "commits": {
+        "carculator_utils": "b5b995d"
+      },
+      "tests": "33 passed"
+    },
+    "8": {
+      "status": "implemented",
+      "commits": {
+        "carculator_utils": "141d46f",
+        "carculator_bus": "1f92f61",
+        "carculator_truck": "e44cb37",
+        "carculator_two_wheeler": "e8fc19a",
+        "carculator": "9fdb28e"
+      },
+      "tests": "36 warning/fuel tests; all five Sphinx builds passed with -W"
+    },
+    "9": {
+      "status": "implemented",
+      "commits": {
+        "carculator_two_wheeler": "ced5fb5"
+      },
+      "tests": "9 completed inventory/export checks passed"
+    },
+    "10": {
+      "status": "implemented",
+      "commits": {
+        "carculator_two_wheeler": "215a54a"
+      },
+      "tests": "10 completed inventory/export and dry-mass checks passed"
+    },
+    "11": {
+      "status": "partially addressed",
+      "commits": {
+        "carculator_utils": "59fd0ef"
+      },
+      "tests": "39 carbon/export checks passed; completed four-family cases",
+      "qualification": "Explicit sourced fractions can close engine-fuel/exhaust carbon. Default unknown composition and cement capture-credit allocation are not scientifically resolved."
+    },
+    "12": {
+      "status": "implemented",
+      "commits": {
+        "carculator_utils": "551c948",
+        "carculator": "909061c",
+        "carculator_bus": "4b8828a",
+        "carculator_truck": "6efc144"
+      },
+      "tests": "62 passed: default boundary, explicit residual mass balance, LCIA/export and default scope checks",
+      "qualification": "Boundary correction excludes unmeasured extra leakage; does not claim empirical zero loss.",
+      "integration_followup_commits": {
+        "carculator_truck": "3526ef7"
+      }
+    },
+    "13": {
+      "status": "partially addressed",
+      "commits": {
+        "carculator_utils": "ee361f9"
+      },
+      "tests": "13 passed; full family pollutant audit, exact CF and SimaPro propagation",
+      "qualification": "Local bus/truck workbooks recovered; exact source version, derivation of all g/MJ coefficients and empirical manual multipliers remain unverified.",
+      "followup_commits": {
+        "carculator_utils": "dc9997e"
+      }
+    },
+    "14": {
+      "status": "partially addressed",
+      "commits": {
+        "carculator_utils": "c1f2265"
+      },
+      "tests": "80 existing + 16 new electricity tests passed",
+      "qualification": "Default bilateral trade, old grid-loss observations and coarse LCI proxies are not empirically upgraded; new sourced input boundary supports replacements."
+    },
+    "15": {
+      "status": "partially addressed",
+      "commits": {
+        "carculator_utils": "9807d09",
+        "carculator_bus": "1dbc198"
+      },
+      "tests": "62 passed, including completed bus runs",
+      "qualification": "Missing climates now require explicit input. Existing city proxies, fixed-cabin HVAC curve and other-family annual thermal inputs remain limited.",
+      "followup_commits": {
+        "carculator_utils": "9e0a4bc"
+      },
+      "integration_followup_commits": {
+        "carculator_bus": "acdbf50"
+      }
+    },
+    "16": {
+      "status": "partially addressed",
+      "commits": {
+        "carculator_utils": "a5fdfbd"
+      },
+      "tests": "11 qualification tests; 40 completed runs, 41 comparisons, 77 exclusions, no run errors",
+      "qualification": "40 runs completed; 41 comparisons remain screening. Matched independent datasets and the primary 32t VECTO trace are still missing."
+    },
+    "17": {
+      "status": "partially addressed",
+      "commits": {
+        "carculator_two_wheeler": "665d7c8"
+      },
+      "tests": "25 passed: explicit quotes, component repricing, repeat runs, unchanged model/inventory/LCIA",
+      "qualification": "Complete-price override is fixed. Component quotations, maintenance evidence and common currency-year rebasing remain unverified."
+    },
+    "18": {
+      "status": "partially addressed",
+      "commits": {
+        "carculator_utils": "d2888f0"
+      },
+      "tests": "Exact destination audits, UUID forwarding, focused export checks and 25 corrected sample/export tests passed.",
+      "qualification": "Ordinary flows match 3.9/3.10 after reachability filtering; custom noise needs a destination method. openLCA product/provider UUID linkage and GUI/LCIA parity are not verified.",
+      "integration_followup_commits": {
+        "carculator_utils": "ffe208c"
+      }
+    }
+  },
+  "closed_issues": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "partially_addressed_issues": [
+    11,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "commits": {
+    "carculator_utils": [
+      "b5b995d Fix annual financial accounting in the shared base model (issue 7)",
+      "2c66c45 Make completed model runs repeatable without feeding back outputs (issue 1)",
+      "ca9e4b5 Resolve overlapping default parameter scopes without changing values (issue 4)",
+      "b373ba0 Match synthetic fuel suppliers to carbon-source and allocation labels (issue 2)",
+      "5828882 Reject unavailable fuels before completed vehicle runs (issue 3)",
+      "d4b35d6 Allow sourced new inputs alongside historical overlap provenance (issue 6)",
+      "038302a Distinguish missing input records from physical zeros before full runs (issue 5)",
+      "141d46f Refresh API documentation and preserve caller warning settings (issue 8)",
+      "551c948 Remove the unqualified additional methane-loss default (issue 12)",
+      "ee361f9 Characterize Ethylene explicitly and qualify emission provenance (issue 13)",
+      "c1f2265 Trace electricity consumption mixes and expose sourced grid losses (issue 14)",
+      "9807d09 Require explicit climate inputs where bus country data are missing (issue 15)",
+      "dc9997e Record recovered HBEFA workbook artifacts without inferring source version (issue 13)",
+      "a5fdfbd Qualify energy evidence and rerun the measurement catalogue (issue 16)",
+      "59fd0ef Separate carbon diagnostics from climate allocation and support explicit closure (issue 11)",
+      "9e0a4bc Use explicit bus climate in electricity scenario regressions (issue 15)",
+      "d2888f0 Audit destination links and retain only reachable export suppliers (issue 18)",
+      "ffe208c Verify SimaPro noise audit comments across samples and years (issue 18)"
+    ],
+    "carculator": [
+      "2dedbe4 Rebuild repeated model runs from retained inputs (issue 1)",
+      "dc3571c Resolve overlapping default parameter scopes without changing values (issue 4)",
+      "9fdb28e Refresh API examples and preserve caller warning settings (issue 8)",
+      "909061c Remove the unqualified additional methane-loss default (issue 12)",
+      "a9b493e Check supported fuel routes and early rejection in car integrations (issue 3)",
+      "a0cd6fa Verify custom car inputs retain native completeness requirements (issue 5)"
+    ],
+    "carculator_bus": [
+      "8a99cb3 Rebuild repeated model runs from retained inputs (issue 1)",
+      "8a2c1bc Resolve overlapping default parameter scopes without changing values (issue 4)",
+      "1f92f61 Refresh API documentation and preserve caller warning settings (issue 8)",
+      "4b8828a Remove the unqualified additional methane-loss default (issue 12)",
+      "1dbc198 Document explicit climate requirements and city proxy limits (issue 15)",
+      "acdbf50 Remove the superseded automatic climate fallback release note (issue 15)"
+    ],
+    "carculator_truck": [
+      "62f4847 Rebuild repeated model runs from retained inputs (issue 1)",
+      "e44cb37 Refresh API documentation and preserve caller warning settings (issue 8)",
+      "6efc144 Remove the unqualified additional methane-loss default (issue 12)",
+      "3526ef7 Reconcile historical truck provenance with methane boundary defaults (issue 12)"
+    ],
+    "carculator_two_wheeler": [
+      "6765b07 Rebuild repeated model runs from retained inputs (issue 1)",
+      "2c1769c Resolve overlapping default parameter scopes without changing values (issue 4)",
+      "ced5fb5 Avoid duplicate disposal for petrol scooters and motorcycles (issue 9)",
+      "215a54a Use a consistent complete-vehicle boundary for petrol scooter production (issue 10)",
+      "8e90bbb Add sourced purchase costs and explicit maintenance prior for human bicycles (issue 6)",
+      "e8fc19a Refresh API documentation and preserve caller warning settings (issue 8)",
+      "665d7c8 Honor complete purchase quotes and qualify cost evidence (issue 17)"
+    ]
+  },
+  "documentation_builds": [
+    {
+      "repository": "carculator_utils",
+      "returncode": 0
+    },
+    {
+      "repository": "carculator",
+      "returncode": 0
+    },
+    {
+      "repository": "carculator_bus",
+      "returncode": 0
+    },
+    {
+      "repository": "carculator_truck",
+      "returncode": 0
+    },
+    {
+      "repository": "carculator_two_wheeler",
+      "returncode": 0
+    }
+  ],
+  "protected_work": {
+    "carculator_utils": {
+      "original_files_changed": [],
+      "original_index_preserved": true
+    },
+    "carculator": {
+      "original_files_changed": [],
+      "original_index_preserved": true
+    },
+    "carculator_truck": {
+      "original_files_changed": [],
+      "original_index_preserved": true
+    },
+    "carculator_bus": {
+      "original_files_changed": [],
+      "original_index_preserved": true
+    },
+    "carculator_two_wheeler": {
+      "original_files_changed": [],
+      "original_index_preserved": true
+    }
+  },
+  "issue_commit_count": 41,
+  "verification": {
+    "platform": "macOS arm64, Python 3.12.13",
+    "installed_tests": [
+      {
+        "repository": "carculator_utils",
+        "distinct_tests": 1234,
+        "initial_failures": 8,
+        "initial_skipped": 0,
+        "corrected_expectations_verified_by_focused_rerun": [
+          "test_selected_sample_exports_preserve_data_and_metadata[carculator-1]",
+          "test_selected_sample_exports_preserve_data_and_metadata[carculator-reference]",
+          "test_selected_sample_exports_preserve_data_and_metadata[carculator_bus-1]",
+          "test_selected_sample_exports_preserve_data_and_metadata[carculator_bus-reference]",
+          "test_selected_sample_exports_preserve_data_and_metadata[carculator_truck-1]",
+          "test_selected_sample_exports_preserve_data_and_metadata[carculator_truck-reference]",
+          "test_selected_sample_exports_preserve_data_and_metadata[carculator_two_wheeler-1]",
+          "test_selected_sample_exports_preserve_data_and_metadata[carculator_two_wheeler-reference]"
+        ],
+        "remaining_failures": 0
+      },
+      {
+        "repository": "carculator",
+        "distinct_tests": 77,
+        "initial_failures": 3,
+        "initial_skipped": 0,
+        "corrected_expectations_verified_by_focused_rerun": [
+          "test_fuel_blend",
+          "test_can_pass_directly",
+          "test_alternate_filepath"
+        ],
+        "remaining_failures": 0
+      },
+      {
+        "repository": "carculator_bus",
+        "distinct_tests": 43,
+        "initial_failures": 0,
+        "initial_skipped": 0,
+        "corrected_expectations_verified_by_focused_rerun": [],
+        "remaining_failures": 0
+      },
+      {
+        "repository": "carculator_truck",
+        "distinct_tests": 130,
+        "initial_failures": 1,
+        "initial_skipped": 0,
+        "corrected_expectations_verified_by_focused_rerun": [
+          "test_bound_repairs_preserve_all_central_values_and_unaffected_records"
+        ],
+        "remaining_failures": 0
+      },
+      {
+        "repository": "carculator_two_wheeler",
+        "distinct_tests": 101,
+        "initial_failures": 0,
+        "initial_skipped": 0,
+        "corrected_expectations_verified_by_focused_rerun": [],
+        "remaining_failures": 0
+      }
+    ],
+    "distinct_tests": 1585,
+    "method": "Full installed-package suites followed by focused reruns of updated integration expectations; no runtime edits after full-suite builds.",
+    "artifact_verification": {
+      "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 17:06:14) [Clang 19.1.7 ]",
+      "artifacts": [
+        {
+          "name": "carculator_utils-1.3.6-py3-none-any.whl",
+          "source": "wheels",
+          "sha256": "26b7f43afbd368e9749ee666d686cf6c801802ac16231a64fb5c56f2deb205cc",
+          "resources": 135
+        },
+        {
+          "name": "carculator_utils-1.3.6-py3-none-any.whl",
+          "source": "rebuilt",
+          "sha256": "52ccc08349fe6f20a4c33c0f37b679b5e18f96ad8e4394fc808e87f1e3d386ce",
+          "resources": 135
+        },
+        {
+          "name": "carculator-1.9.6-py3-none-any.whl",
+          "source": "wheels",
+          "sha256": "705724866ff59889bc378699cdc075c187a0cb13cbcb2c5bc3e9785b9d76bba8",
+          "resources": 7
+        },
+        {
+          "name": "carculator-1.9.6-py3-none-any.whl",
+          "source": "rebuilt",
+          "sha256": "705724866ff59889bc378699cdc075c187a0cb13cbcb2c5bc3e9785b9d76bba8",
+          "resources": 7
+        },
+        {
+          "name": "carculator_truck-0.5.1-py3-none-any.whl",
+          "source": "wheels",
+          "sha256": "8e1b4bb0c73a101ae6e373387d291bcc0c2d003adda45664662e9d685a5f49a6",
+          "resources": 7
+        },
+        {
+          "name": "carculator_truck-0.5.1-py3-none-any.whl",
+          "source": "rebuilt",
+          "sha256": "8e1b4bb0c73a101ae6e373387d291bcc0c2d003adda45664662e9d685a5f49a6",
+          "resources": 7
+        },
+        {
+          "name": "carculator_bus-0.1.1-py3-none-any.whl",
+          "source": "wheels",
+          "sha256": "3dfc4ab216cd0f46722a4bf491704a80ec50414d27aa0bab6827f3af2017acea",
+          "resources": 8
+        },
+        {
+          "name": "carculator_bus-0.1.1-py3-none-any.whl",
+          "source": "rebuilt",
+          "sha256": "6ebd8ed9e6d84760e8328f9cdf6790f086757faf3789785fbbdf5ee7102c081d",
+          "resources": 8
+        },
+        {
+          "name": "carculator_two_wheeler-0.1.1-py3-none-any.whl",
+          "source": "wheels",
+          "sha256": "5954551b5eae961b5a1dcdf3128a6d62bcd56f07bc3a889f4e812c88656002e0",
+          "resources": 12
+        },
+        {
+          "name": "carculator_two_wheeler-0.1.1-py3-none-any.whl",
+          "source": "rebuilt",
+          "sha256": "0d2e5612f11a52dedd74402baeeca7deca81326d0640bb33de69daa5229928d5",
+          "resources": 12
+        }
+      ],
+      "results": [
+        {
+          "package": "carculator",
+          "version": "1.9.6",
+          "ttw_energy": 561.8109741210938,
+          "climate_change": 0.1341553468840047
+        },
+        {
+          "package": "carculator_truck",
+          "version": "0.5.1",
+          "ttw_energy": 4511.23193359375,
+          "climate_change": 1.1549129633925295
+        },
+        {
+          "package": "carculator_bus",
+          "version": "0.1.1",
+          "ttw_energy": 4063.597900390625,
+          "climate_change": 0.4729838079313716
+        },
+        {
+          "package": "carculator_two_wheeler",
+          "version": "0.1.1",
+          "ttw_energy": 21.53740882873535,
+          "climate_change": 0.020412438235266995
+        }
+      ]
+    },
+    "runtime_consistency": {
+      "carculator_utils": {
+        "runtime_files_identical_between_tested_and_smoke_tested_wheels": 164,
+        "runtime_matches_current_checkout": true
+      },
+      "carculator": {
+        "runtime_files_identical_between_tested_and_smoke_tested_wheels": 12,
+        "runtime_matches_current_checkout": true
+      },
+      "carculator_bus": {
+        "runtime_files_identical_between_tested_and_smoke_tested_wheels": 14,
+        "runtime_matches_current_checkout": true
+      },
+      "carculator_truck": {
+        "runtime_files_identical_between_tested_and_smoke_tested_wheels": 14,
+        "runtime_matches_current_checkout": true
+      },
+      "carculator_two_wheeler": {
+        "runtime_files_identical_between_tested_and_smoke_tested_wheels": 17,
+        "runtime_matches_current_checkout": true
+      }
+    },
+    "scope_limit": "No claim of Linux/Windows/conda validation or native SimaPro/openLCA GUI and LCIA parity."
+  },
+  "date": "2026-10-09"
+}

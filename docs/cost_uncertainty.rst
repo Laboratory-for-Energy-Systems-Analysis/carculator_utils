@@ -59,10 +59,11 @@ input seed: rebuild inputs with the current array builder for reproducible
 stochastic costs. An incomplete or invalid factor coordinate raises an error
 instead of silently resampling.
 
-Build fresh models from input arrays for independent runs. Reusing cost draws
-does not establish that every other operation in repeated ``set_all()`` calls
-is idempotent. Record the seed, package versions, inputs and scenario alongside
-results; reproducibility across arbitrary dependency versions is not promised.
+Build fresh models from input arrays for independent runs. Completed family
+models now retain their inputs for repeatable ``set_all()`` calls; see
+:doc:`repeated_runs` for supported edits and PHEV restrictions. Record the seed,
+package versions, inputs and scenario alongside results; reproducibility across
+arbitrary dependency versions is not promised.
 
 Verification
 -------------

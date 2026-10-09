@@ -594,6 +594,13 @@ distributions and does not empirically validate the underlying cost assumptions.
 Known limitations
 -----------------
 
-* The electrochemical synthetic-methane supplier is absent from the bundled inventory index and raises a visible mapping error.
-* Generic NMVOC characterization is used for ethene where the bundled biosphere index has no exact flow; HBEFA source-version provenance remains incomplete.
+* Electrochemical synthetic methane and other unavailable routes are excluded
+  from the supported catalogue and rejected before modelling. Missing suppliers
+  still need justified mappings; see :doc:`fuel_catalogue`.
+* Ethene uses exact Ethylene characterization. HBEFA extraction-version
+  provenance, coefficient derivation and legacy NH3/N2O adjustments remain
+  incompletely verified; see :doc:`hot_emission_audit`.
 * Legacy arrays without retained cost-factor coordinates cannot reproduce projected-cost draws from the original input seed. Rebuild inputs with the current array builder and use fresh models for independent runs.
+
+See :doc:`approved_fixes` for the implemented corrections and remaining evidence
+requirements across all 18 approved issues.
