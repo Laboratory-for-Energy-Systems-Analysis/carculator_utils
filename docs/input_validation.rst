@@ -64,12 +64,12 @@ HVAC demand still varies with outside temperature. Ambient-temperature overrides
 are validated and preserved. Passenger cars, trucks and two-wheelers use annual
 thermal-demand inputs and reject temperature overrides.
 
-When ``ambient_temperature`` is omitted, the model reads the first row for the
-selected country in ``data/monthly_avg_temp.csv``. If the country is absent,
-it prints a notice and uses Switzerland's twelve monthly values. The lookup
-preserves decimal temperatures on both paths. This fallback is an assumption
-whose suitability depends on the study location; supply local monthly values
-when available. See :ref:`temperature-fallback-checks` for scope and verification.
+When ``ambient_temperature`` is omitted, the model reads the first city row for
+the selected country in ``data/monthly_avg_temp.csv``. This is a city proxy,
+not a national driving-weighted climate. Missing countries raise ``ValueError``
+and require an explicit local monthly profile or scalar. The former automatic
+Swiss substitution has been removed. Decimal temperatures are preserved.
+See :ref:`temperature-fallback-checks` for scope and verification.
 
 Fuel blends
 -----------

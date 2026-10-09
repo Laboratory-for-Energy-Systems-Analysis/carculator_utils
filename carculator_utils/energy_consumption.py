@@ -66,9 +66,10 @@ def get_efficiency_coefficients(vehicle_type: str) -> [Any, None]:
 def get_country_temperature(country: str) -> np.ndarray:
     """Read January--December temperatures in degrees Celsius.
 
-    Use the first bundled row for the requested country code. If it is absent,
-    announce and use the Swiss (CH) series. Both paths retain decimal values.
-    The Swiss fallback is an assumption, not a local climate estimate.
+    Use the first bundled city row for the requested country code. Missing
+    countries require explicit ambient temperatures; a different country's
+    climate is never silently substituted. These city proxies are not national
+    driving-weighted climate observations.
 
     :param country: Country code to look up in the bundled temperature table.
     :returns: Twelve monthly temperatures in January--December order.
@@ -80,16 +81,11 @@ def get_country_temperature(country: str) -> np.ndarray:
             if row[2] == country:
                 return np.asarray(row[3:], dtype=float)
 
-    print(
-        f"Could not find monthly average temperature series for {country}. "
-        f"Uses those for CH instead."
+    raise ValueError(
+        f"No bundled monthly temperature series for {country}. "
+        "Provide ambient_temperature as a Celsius scalar or twelve monthly "
+        "values for the study location."
     )
-
-    with open(DATA_DIR / MONTHLY_AVG_TEMP) as f:
-        reader = csv.reader(f, delimiter=";")
-        for row in reader:
-            if row[2] == "CH":
-                return np.asarray(row[3:], dtype=float)
 
 
 def validate_hvac_indoor_temperature(value: Union[float, np.ndarray]):
@@ -325,12 +321,17 @@ class EnergyConsumptionModel:
             validate_hvac_indoor_temperature(self.indoor_temperature), (12,)
         ).copy()
         if self.ambient_temperature is not None:
-            if isinstance(self.ambient_temperature, (float, int)):
-                self.ambient_temperature = np.resize(self.ambient_temperature, (12,))
-            else:
-                self.ambient_temperature = np.array(self.ambient_temperature)
-                if len(self.ambient_temperature) != 12:
-                    raise ValueError("Ambient temperature must be a 12-month array")
+            temperature = np.asarray(self.ambient_temperature, dtype=float)
+            if (
+                temperature.shape not in ((), (12,))
+                or not np.isfinite(temperature).all()
+                or np.any(temperature <= -273.15)
+            ):
+                raise ValueError(
+                    "Ambient temperature must be a finite Celsius scalar or "
+                    "twelve monthly values, above absolute zero."
+                )
+            self.ambient_temperature = np.broadcast_to(temperature, (12,)).copy()
         else:
             self.ambient_temperature = np.resize(
                 get_country_temperature(self.country), (12,)

@@ -1,4 +1,4 @@
-"""Country temperature fallback preserves decimals and completes bus runs."""
+"""Missing country climate requires an explicit profile; bus runs retain decimals."""
 
 import csv
 import importlib
@@ -21,13 +21,9 @@ POWERTRAINS = ["ICEV-d", "FCEV", "BEV-depot"]
 
 
 @pytest.mark.parametrize("country", [*MISSING_COUNTRIES, "XX"])
-def test_missing_country_uses_decimal_swiss_temperatures(country, capsys):
-    temperatures = get_country_temperature(country)
-    np.testing.assert_array_equal(temperatures, SWISS_TEMPERATURES)
-    assert temperatures.dtype.kind == "f"
-    notice = capsys.readouterr().out
-    assert f"for {country}" in notice
-    assert "Uses those for CH instead" in notice
+def test_missing_country_requires_explicit_climate(country):
+    with pytest.raises(ValueError, match=f"series for {country}.*ambient_temperature"):
+        get_country_temperature(country)
 
 
 def test_existing_country_preserves_temperatures_without_fallback_notice(capsys):
@@ -35,7 +31,7 @@ def test_existing_country_preserves_temperatures_without_fallback_notice(capsys)
     assert capsys.readouterr().out == ""
 
 
-@pytest.mark.parametrize("country", ["CH", "XX"])
+@pytest.mark.parametrize("country", ["CH"])
 def test_direct_and_fallback_parsing_preserve_negative_decimals(
     country, tmp_path, monkeypatch
 ):
@@ -84,48 +80,46 @@ def bus_inputs():
 
 @pytest.mark.family
 @pytest.mark.parametrize("country", MISSING_COUNTRIES)
-def test_completed_bus_fallback_matches_explicit_swiss_temperature(
+def test_completed_bus_requires_explicit_temperature_for_missing_country(
     bus_inputs, country, capsys
 ):
     package, source = bus_inputs
     before = source.copy(deep=True)
-    fallback = package.BusModel(source, country=country)
-    fallback.set_all()
-    assert f"temperature series for {country}" in capsys.readouterr().out
-    np.testing.assert_array_equal(fallback.ecm.ambient_temperature, SWISS_TEMPERATURES)
+    missing = package.BusModel(source, country=country)
+    initialized = missing.array.copy(deep=True)
+    with pytest.raises(ValueError, match=f"series for {country}.*ambient_temperature"):
+        missing.set_all()
+    xr.testing.assert_identical(missing.array, initialized)
+    xr.testing.assert_identical(source, before)
+    # Explicit profile is a user-selected scenario, not a measured local climate.
     requested = SWISS_TEMPERATURES.copy()
     explicit = package.BusModel(source, country=country, ambient_temperature=requested)
     explicit.set_all()
     assert "Uses those for CH instead" not in capsys.readouterr().out
     np.testing.assert_array_equal(requested, SWISS_TEMPERATURES)
     xr.testing.assert_identical(source, before)
-    xr.testing.assert_allclose(fallback.array, explicit.array)
     for parameter in ("TtW energy", "driving mass"):
-        assert np.isfinite(fallback[parameter]).all()
-        assert (fallback[parameter] > 0).all()
-    assert (fallback["electricity consumption"].sel(powertrain="BEV-depot") > 0).all()
+        assert np.isfinite(explicit[parameter]).all()
+        assert (explicit[parameter] > 0).all()
+    assert (explicit["electricity consumption"].sel(powertrain="BEV-depot") > 0).all()
 
-    inventory = package.InventoryBus(fallback, scenario="static", functional_unit="vkm")
-    reference = package.InventoryBus(explicit, scenario="static", functional_unit="vkm")
+    inventory = package.InventoryBus(explicit, scenario="static", functional_unit="vkm")
     impacts = inventory.calculate_impacts()
-    reference_impacts = reference.calculate_impacts()
     assert np.isfinite(impacts).all()
-    np.testing.assert_array_equal(inventory.A, reference.A)
-    xr.testing.assert_allclose(impacts, reference_impacts)
 
     for powertrain, fuel in (("ICEV-d", "diesel"), ("FCEV", "hydrogen")):
         (market,) = inventory.find_input_indices((f"fuel supply for {fuel} vehicles",))
         (transport,) = inventory.find_input_indices((f"transport, bus, {powertrain},",))
         energy = (
-            fallback["TtW energy"]
+            explicit["TtW energy"]
             .sel(powertrain=powertrain)
             .isel(size=0)
             .transpose("value", "year")
             .values
         )
         lhv = sum(
-            component["share"] * fallback.bs.fuel_specs[component["type"]]["lhv"]
-            for component in fallback.fuel_blend[fuel].values()
+            component["share"] * explicit.bs.fuel_specs[component["type"]]["lhv"]
+            for component in explicit.fuel_blend[fuel].values()
         )
         np.testing.assert_allclose(
             -inventory.A[:, market, transport, :], energy / (1000 * lhv), rtol=2e-5
@@ -135,7 +129,7 @@ def test_completed_bus_fallback_matches_explicit_swiss_temperature(
     )
     (transport,) = inventory.find_input_indices(("transport, bus, BEV-depot,",))
     charging = (
-        fallback["electricity consumption"]
+        explicit["electricity consumption"]
         .sel(powertrain="BEV-depot")
         .isel(size=0)
         .transpose("value", "year")
@@ -167,3 +161,19 @@ def test_explicit_bus_temperature_bypasses_country_lookup(
     np.testing.assert_array_equal(requested, temperature)
     assert np.isfinite(model["TtW energy"]).all()
     assert (model["TtW energy"] > 0).all()
+
+
+@pytest.mark.parametrize("temperature", [np.nan, np.inf, -273.15, [[20] * 12], [20]])
+def test_direct_hvac_rejects_invalid_ambient_profile(temperature):
+    model = energy_consumption.EnergyConsumptionModel(
+        "bus",
+        ["13m-city"],
+        ["BEV-depot"],
+        np.array([0, 10, 0]),
+        None,
+        ambient_temperature=temperature,
+    )
+    with pytest.raises(ValueError, match="Ambient temperature"):
+        model.calculate_hvac_energy(
+            xr.DataArray(18000.0), xr.DataArray(2750.0), xr.DataArray(500.0)
+        )
