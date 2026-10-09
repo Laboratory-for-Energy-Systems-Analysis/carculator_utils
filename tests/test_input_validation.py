@@ -296,3 +296,80 @@ def test_valid_category_fuels_keep_shares_and_caller_data(
         np.testing.assert_array_equal(
             result[fuel][component]["share"], source[fuel][component]["share"]
         )
+
+
+@pytest.mark.parametrize("field", ["lhv", "density", "CO2", "biogenic share"])
+@pytest.mark.parametrize("role", ["primary", "secondary"])
+@pytest.mark.parametrize(
+    "value", [None, True, "1", np.nan, np.inf, [], [1, 1, 1], [[1, 1]], [1, np.nan]]
+)
+def test_invalid_fuel_property_types_and_shapes(fuel_model, field, role, value):
+    source = blend(1, 0)
+    source["diesel"][role][field] = value
+    before = deepcopy(source)
+    with pytest.raises(ValueError) as error:
+        VehicleModel.check_fuel_blend(fuel_model, source)
+    for detail in ("diesel", role, field):
+        assert detail in str(error.value)
+    np.testing.assert_equal(source, before)
+
+
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("lhv", 0),
+        ("lhv", -1),
+        ("density", 0),
+        ("density", -1),
+        ("CO2", -3),
+        ("biogenic share", -0.1),
+        ("biogenic share", 1.5),
+    ],
+)
+@pytest.mark.parametrize("role", ["primary", "secondary"])
+def test_invalid_fuel_property_bounds_even_at_zero_share(
+    fuel_model, field, role, value
+):
+    source = blend(1, 0)
+    source["diesel"][role][field] = value
+    with pytest.raises(ValueError) as error:
+        VehicleModel.check_fuel_blend(fuel_model, source)
+    for detail in ("diesel", role, field):
+        assert detail in str(error.value)
+
+
+@pytest.mark.parametrize(
+    "field,values",
+    [
+        ("lhv", [40, 44]),
+        ("density", [0.75, 0.85]),
+        ("CO2", [0, 3.15]),
+        ("biogenic share", [0, 1]),
+    ],
+)
+@pytest.mark.parametrize("role", ["primary", "secondary"])
+@pytest.mark.parametrize("shape", ["scalar", "one-element", "per-year"])
+def test_fuel_properties_normalize_without_mutation(
+    fuel_model, field, values, role, shape
+):
+    fuel_model.array = fuel_model.array.assign_coords(year=[2030, 2025])
+    source = blend(0.8, 0.2)
+    value = (
+        values[0]
+        if shape == "scalar"
+        else values[:1] if shape == "one-element" else values
+    )
+    source["diesel"][role][field] = value
+    before = deepcopy(source)
+    result = VehicleModel.check_fuel_blend(fuel_model, source)
+    assert source == before
+    expected = values if shape == "per-year" else [values[0]] * 2
+    np.testing.assert_array_equal(
+        np.broadcast_to(result["diesel"][role][field], (2,)), expected
+    )
+    # Carbon arithmetic must work with normalized year sequences as well.
+    if field == "biogenic share":
+        np.testing.assert_array_equal(
+            np.broadcast_to(1 - result["diesel"][role][field], (2,)),
+            1 - np.asarray(expected),
+        )

@@ -95,6 +95,41 @@ are provided, their shares must sum to one for every year (absolute tolerance
 fuel types, incompatible categories, malformed shapes, and invalid shares raise
 contextual ``ValueError`` exceptions.
 
+Optional fuel-property overrides are also validated at construction:
+
+.. list-table:: Component properties
+   :header-rows: 1
+   :widths: 25 35 40
+
+   * - Key
+     - Unit
+     - Allowed values
+   * - ``lhv``
+     - MJ/kg fuel
+     - Finite and strictly positive
+   * - ``density``
+     - kg/L
+     - Finite and strictly positive
+   * - ``CO2``
+     - kg CO2/kg fuel burned
+     - Finite and nonnegative
+   * - ``biogenic share``
+     - Fraction of combustion CO2
+     - Finite and within [0, 1]
+
+These properties accept numbers, one-element sequences, or one-dimensional
+sequences with one value per model year, in ``array.year`` order. Year sequences
+are normalized for numerical calculations without changing caller data. Booleans,
+numeric strings, nonfinite values, invalid bounds and incorrect shapes raise
+``ValueError`` naming the fuel category, component and property. Both components
+are checked, including those with a zero blend share. Omitted properties continue
+to use the selected fuel's catalog values.
+
+For example, ``biogenic share=1.5`` is invalid: the fraction must be at most one.
+Previously this could produce negative fossil tailpipe CO2 and still complete
+LCIA. Negative ``CO2`` factors are now rejected as well; zero remains valid,
+including for hydrogen.
+
 When an inventory is constructed, selected suppliers must exist in the bundled
 inventory index. An unresolved supplier raises ``KeyError`` naming the category,
 component, fuel type, and supplier before the large inventory matrices are
@@ -112,7 +147,9 @@ electric bicycles, and multi-year fuel blends. Partial fuel overrides are checke
 through completed model, inventory and LCIA runs for all four families, including
 unchanged defaults for omitted fuel categories, suppliers, fuel mass balance and
 fossil/non-fossil tailpipe CO2. Static exports use one value sample; multi-sample
-inventories are tested through LCIA.
+inventories are tested through LCIA. Fuel-property regressions cover scalar and
+year-specific overrides, reordered years, both components, and preserved fuel
+supplies and tailpipe carbon through Brightway export.
 
 Install all sibling checkouts into a Python 3.12 environment:
 

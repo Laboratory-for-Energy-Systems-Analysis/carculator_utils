@@ -97,6 +97,8 @@ POWERTRAIN_FUEL = {
         "primary-only",
         "partial",
         "partial-primary",
+        "properties-scalar",
+        "properties-yearly",
     ],
 )
 def test_completed_fuel_blend_inventory(case, blend_mode):
@@ -105,7 +107,17 @@ def test_completed_fuel_blend_inventory(case, blend_mode):
 
 @pytest.mark.parametrize("case", CASES, ids=lambda c: c[0])
 @pytest.mark.parametrize("role", ["primary", "secondary"])
-def test_wrong_category_fuels_fail_in_family_constructor(case, role):
+@pytest.mark.parametrize(
+    "field,value",
+    [
+        ("type", "hydrogen - electrolysis - PEM"),
+        ("lhv", 0),
+        ("density", -1),
+        ("CO2", -3),
+        ("biogenic share", 1.5),
+    ],
+)
+def test_invalid_fuel_overrides_fail_in_family_constructor(case, role, field, value):
     name, prefix, size, powertrains, kwargs = case
     if importlib.util.find_spec(name) is None:
         if os.environ.get("CARCULATOR_REQUIRE_FAMILY") == "1":
@@ -126,13 +138,16 @@ def test_wrong_category_fuels_fail_in_family_constructor(case, role):
             "secondary": {"type": FUELS[fuel][1], "share": 0.25},
         }
     }
-    source[fuel][role]["type"] = "hydrogen - electrolysis - PEM"
+    source[fuel][role][field] = value
     before = deepcopy(source)
 
     with pytest.raises(ValueError) as error:
         getattr(package, prefix + "Model")(array, fuel_blend=source, **kwargs)
-    for detail in (repr(fuel), role, "hydrogen - electrolysis - PEM", "category"):
+    for detail in (repr(fuel), role, field):
         assert detail in str(error.value)
+    if field == "type":
+        assert value in str(error.value)
+        assert "category" in str(error.value)
     assert source == before
 
 
@@ -156,6 +171,8 @@ def _completed_fuel_blend_inventory(case, blend_mode):
     # Distinct samples exercise matrix axis alignment, without stochastic noise.
     array = array.isel(value=[0, 0]).assign_coords(value=[0, 1])
     array.loc[dict(parameter="average passengers", value=1)] *= 1.1
+    if blend_mode == "properties-yearly":
+        array = array.sel(year=[2030, 2020, 2025])
     specs = BackgroundSystemModel().fuel_specs
     blends = None
     if blend_mode != "default":
@@ -181,6 +198,25 @@ def _completed_fuel_blend_inventory(case, blend_mode):
         for components in blends.values():
             components.pop("secondary")
             components["primary"]["share"] = 0.65
+    if blend_mode in ("properties-scalar", "properties-yearly"):
+        # Deliberately altered properties test override arithmetic, not defaults.
+        yearly = blend_mode == "properties-yearly"
+        scale = np.array([0.95, 1.02, 1.07]) if yearly else 1.03
+        for components in blends.values():
+            for role, component in components.items():
+                specification = specs[component["type"]]
+                for field, spec_field in (
+                    ("lhv", "lhv"),
+                    ("density", "density"),
+                    ("CO2", "co2"),
+                ):
+                    value = specification[spec_field] * scale
+                    component[field] = value.tolist() if yearly else value
+                component["biogenic share"] = (
+                    ([0.1, 0.4, 0.9] if role == "primary" else [0.8, 0.5, 0.2])
+                    if yearly
+                    else (0.25 if role == "primary" else 0.75)
+                )
     requested = deepcopy(blends)
     model = getattr(package, prefix + "Model")(array, fuel_blend=blends, **kwargs)
     model.set_all()
@@ -193,6 +229,12 @@ def _completed_fuel_blend_inventory(case, blend_mode):
                     model.fuel_blend[fuel][role]["share"],
                     np.broadcast_to(component["share"], (3,)),
                 )
+                for field in ("lhv", "density", "CO2", "biogenic share"):
+                    if field in component:
+                        np.testing.assert_array_equal(
+                            np.broadcast_to(model.fuel_blend[fuel][role][field], (3,)),
+                            np.broadcast_to(component[field], (3,)),
+                        )
     if blend_mode in ("partial", "partial-primary"):
         default = getattr(package, prefix + "Model")(array, **kwargs)
         assert set(model.fuel_blend) == set(default.fuel_blend)
@@ -234,7 +276,36 @@ def _completed_fuel_blend_inventory(case, blend_mode):
         expected_carbon = [np.zeros((2, 3)), np.zeros((2, 3))]
         if fuel:
             blend = model.fuel_blend[fuel]
-            lhv = sum(c["share"] * specs[c["type"]]["lhv"] for c in blend.values())
+            properties = {}
+            for role, component in blend.items():
+                specification = specs[component["type"]]
+                # Derive expectations from raw requests and catalog defaults,
+                # independently of the model's normalized property metadata.
+                properties[role] = {
+                    "share": component["share"],
+                    "lhv": specification["lhv"],
+                    "density": specification["density"],
+                    "CO2": specification["co2"],
+                    "biogenic share": specification["biogenic_share"],
+                }
+                properties[role].update((requested or {}).get(fuel, {}).get(role, {}))
+            lhv = sum(
+                np.asarray(c["share"]) * np.asarray(c["lhv"])
+                for c in properties.values()
+            )
+            density = sum(
+                np.asarray(c["share"]) * np.asarray(c["density"])
+                for c in properties.values()
+            )
+            for parameter, expected in (
+                ("LHV fuel MJ per kg", lhv),
+                ("fuel density per kg", density),
+            ):
+                np.testing.assert_allclose(
+                    model[parameter].sel(**select).transpose("value", "year"),
+                    np.broadcast_to(expected, (2, 3)),
+                    rtol=2e-6,
+                )
             mass = (
                 (model["fuel consumption"] * model["fuel density per kg"])
                 .sel(**select)
@@ -260,14 +331,14 @@ def _completed_fuel_blend_inventory(case, blend_mode):
                 )
             for biogenic in (0, 1):
                 factor = sum(
-                    c["share"]
-                    * specs[c["type"]]["co2"]
+                    np.asarray(c["share"])
+                    * np.asarray(c["CO2"])
                     * (
-                        specs[c["type"]]["biogenic_share"]
+                        np.asarray(c["biogenic share"])
                         if biogenic
-                        else 1 - specs[c["type"]]["biogenic_share"]
+                        else 1 - np.asarray(c["biogenic share"])
                     )
-                    for c in blend.values()
+                    for c in properties.values()
                 )
                 expected_carbon[biogenic] = mass * factor
         for candidate in model.fuel_blend:
@@ -295,7 +366,9 @@ def _completed_fuel_blend_inventory(case, blend_mode):
 
 @pytest.mark.export
 @pytest.mark.parametrize("case", CASES, ids=lambda c: c[0])
-@pytest.mark.parametrize("blend_mode", ["bio", "same-supplier", "primary-only"])
+@pytest.mark.parametrize(
+    "blend_mode", ["bio", "same-supplier", "primary-only", "properties-yearly"]
+)
 def test_fuel_blends_survive_brightway_export(case, blend_mode, tmp_path):
     pytest.importorskip("bw2io")
     from carculator_utils.export import rename_mapping

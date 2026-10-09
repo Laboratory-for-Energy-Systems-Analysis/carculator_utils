@@ -1442,12 +1442,31 @@ class VehicleModel:
         Shares may be scalars or one-dimensional arrays with one entry per model
         year. Primary and secondary shares must sum to one for every year.
         Both components must use fuel types listed in the requested category.
+        Property overrides use the same year order: lhv (MJ/kg) and density
+        (kg/L) must be positive, CO2 (kg/kg fuel) nonnegative, and the biogenic
+        fraction within [0, 1]. All numeric inputs must be finite.
         """
         if not isinstance(fuel_blend, dict):
             raise ValueError("fuel_blend must be a dictionary.")
         fuel_blend = deepcopy(fuel_blend)
         default_specs = load_default_specs_for_fuels()
         n_years = self.array.sizes["year"]
+
+        def numeric_values(context, field, value):
+            try:
+                values = np.asarray(value)
+            except (TypeError, ValueError) as exc:
+                raise ValueError(f"{context}: {field} must be numeric.") from exc
+            if values.dtype.kind not in "iuf":
+                raise ValueError(f"{context}: {field} must be numeric.")
+            if values.ndim > 1 or values.size not in (1, n_years):
+                raise ValueError(
+                    f"{context}: {field} must be scalar or have one entry per "
+                    f"model year ({self.array.year.values.tolist()})."
+                )
+            if not np.isfinite(values).all():
+                raise ValueError(f"{context}: {field} must contain finite values.")
+            return values
 
         def validate_component(fuel, role, component):
             context = f"Fuel blend {fuel!r}, {role}"
@@ -1463,24 +1482,32 @@ class VehicleModel:
                 )
             if "share" not in component:
                 raise ValueError(f"{context}: share is required.")
-            try:
-                share = np.asarray(component["share"])
-            except (TypeError, ValueError) as exc:
-                raise ValueError(f"{context}: share must be numeric.") from exc
-            if share.dtype.kind not in "iuf":
-                raise ValueError(f"{context}: share must be numeric.")
-            if share.ndim > 1 or share.size not in (1, n_years):
-                raise ValueError(
-                    f"{context}: share must be scalar or have one entry per "
-                    f"model year ({self.array.year.values.tolist()})."
-                )
-            if not np.isfinite(share).all() or ((share < 0) | (share > 1)).any():
-                raise ValueError(f"{context}: shares must be finite and within [0, 1].")
+            share = numeric_values(context, "share", component["share"])
+            if ((share < 0) | (share > 1)).any():
+                raise ValueError(f"{context}: shares must be within [0, 1].")
             component["share"] = np.broadcast_to(share, (n_years,)).astype(float)
             specification = self.bs.fuel_specs[fuel_type]
             component.setdefault("name", tuple(specification["name"]))
             component.setdefault("CO2", specification["co2"])
             component.setdefault("biogenic share", specification["biogenic_share"])
+            for field in ("lhv", "density", "CO2", "biogenic share"):
+                if field not in component:
+                    continue
+                values = numeric_values(context, field, component[field])
+                if field in ("lhv", "density"):
+                    valid, requirement = values > 0, "strictly positive"
+                elif field == "CO2":
+                    valid, requirement = values >= 0, "nonnegative"
+                else:
+                    valid = (values >= 0) & (values <= 1)
+                    requirement = "within [0, 1]"
+                if not valid.all():
+                    raise ValueError(f"{context}: {field} must be {requirement}.")
+                component[field] = (
+                    float(values)
+                    if values.ndim == 0
+                    else np.broadcast_to(values, (n_years,)).astype(float)
+                )
             return component
 
         for fuel, specs in fuel_blend.items():
