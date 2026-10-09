@@ -3,7 +3,7 @@
   "retrieved": "2026-10-09",
   "source_version": "unverified",
   "version_note": "Filenames contain HBEFA42 while historical documentation cites 4.1. Neither proves the licensed extraction version.",
-  "source_extraction_available": false,
+  "source_extraction_available": true,
   "source_reference": "https://www.hbefa.net/",
   "manual_multipliers": {
     "car": {
@@ -96,5 +96,23 @@
     "08ba174",
     "c5f0fae"
   ],
-  "extraction_notebook": "carculator_truck/dev/HBEFA trucks.ipynb references EFA_HOT_Subsegm_HGV.XLSX; source workbook is absent."
+  "extraction_notebook": "carculator_truck/dev/HBEFA trucks.ipynb references the recovered EFA_HOT_Subsegm_HGV.XLSX; workbook properties have no version. Its polynomial-fit exploration is not a reproducible derivation of all shipped g/MJ coefficients.",
+  "extraction_status": "Local workbook artifacts recovered; extraction version and transformation to all shipped coefficients remain unverified.",
+  "local_workbooks": [
+    {
+      "path": "carculator_truck/dev/EFA_HOT_Subsegm_HGV.XLSX",
+      "sha256": "590caf965ea7cff1c3c554bdf7e03607b7a008daf4ea210647e69ef840ca2849",
+      "packaged": false
+    },
+    {
+      "path": "carculator_bus/dev/EFA_HOT_Subsegm_buses_w_extra.XLSX",
+      "sha256": "e9f18682f0133e0008cc9a85050a6d4aa9cb7fb3088a9fef1a1cc065ea8025e5",
+      "packaged": false
+    },
+    {
+      "path": "carculator_bus/dev/EFA_HOT_Subsegm_coaches_w_extra.XLSX",
+      "sha256": "95f2552bbee687a73a29e1613e66277b140448f9adef8975f0fb3f4c6464ce91",
+      "packaged": false
+    }
+  ]
 }

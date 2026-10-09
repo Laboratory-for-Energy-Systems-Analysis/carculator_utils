@@ -17,7 +17,8 @@ from carculator_utils.inventory import get_dict_input
 def test_emission_table_fingerprints_and_qualification():
     provenance = get_emission_factor_provenance()
     assert provenance["source_version"] == "unverified"
-    assert not provenance["source_extraction_available"]
+    assert provenance["source_extraction_available"]
+    assert len(provenance["local_workbooks"]) == 3
     for filename, record in provenance["files"].items():
         assert (
             hashlib.sha256(

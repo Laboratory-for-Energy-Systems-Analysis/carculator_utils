@@ -156,8 +156,9 @@ from the shipped tables; it does not resolve their version provenance, refit
 their coefficients or independently validate the manual NH3/N2O multipliers.
 Table hashes, the unresolved source version, and all retained manual
 multipliers are published in ``data/emission_factors/provenance.json`` and
-returned by ``get_emission_factor_provenance()``. The original licensed
-extraction workbook has not been recovered. Changing the NH3/N2O multipliers
+returned by ``get_emission_factor_provenance()``. Local truck and bus workbook artifacts were recovered and their hashes are
+recorded without distributing the workbooks. They do not establish the extraction
+version or a reproducible derivation of every shipped coefficient. Changing the NH3/N2O multipliers
 without that source or matched measurements would be another unsupported
 calibration, so this part of the scientific validation remains open.
 
