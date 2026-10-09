@@ -29,6 +29,10 @@ from .electricity import (
     ElectricityDataWarning,
     select_electricity_mix,
 )
+from .emission_provenance import (
+    fill_biosphere_characterization,
+    register_biosphere_extensions,
+)
 from .fuel_blends import select_fuel_blend
 from .fuel_supply import fill_fuel_suppliers, register_fuel_suppliers
 from .hydrogen_power import (
@@ -279,6 +283,7 @@ class Inventory:
         self.background_configuration.update(background_configuration or {})
 
         self.inputs = get_dict_input()
+        register_biosphere_extensions(self.inputs)
         fuel_blend = self.fuel_blend
         fuel_supply_recipes = register_fuel_suppliers(self.inputs, fuel_blend)
         validate_fuel_mappings(fuel_blend, self.inputs)
@@ -737,6 +742,10 @@ class Inventory:
             new_B = np.zeros((initial_B.shape[0], len(self.inputs)))
             new_B[: initial_B.shape[0], : initial_B.shape[1]] = initial_B
             B[f, :, :] = new_B
+
+        fill_biosphere_characterization(
+            B, self.inputs, self.method, self.indicator, self.impact_categories
+        )
 
         years = (
             [

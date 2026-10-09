@@ -1,0 +1,2707 @@
+{
+  "source_project": "ecoinvent-3.12-cutoff",
+  "biosphere_database": "ecoinvent-3.12-biosphere",
+  "retrieved": "2026-10-09",
+  "flows": [
+    {
+      "label": [
+        "Ethylene",
+        [
+          "air",
+          "urban air close to ground"
+        ],
+        "kilogram"
+      ],
+      "source_key": [
+        "ecoinvent-3.12-biosphere",
+        "36270548-9316-424b-9aeb-e0de134b0be1"
+      ],
+      "factors": {
+        "ef:midpoint": {
+          "acidification": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "acidification",
+              "accumulated exceedance (AE)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "mol H+-Eq",
+            "status": "mapped"
+          },
+          "climate change": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change: biogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change: biogenic",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change: fossil": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change: fossil",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change: land use and land use change": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change: land use and land use change",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater": {
+            "amount": 0.0011056,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ecotoxicity: freshwater",
+              "comparative toxic unit for ecosystems (CTUe)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "CTUe",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater, inorganics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ecotoxicity: freshwater, inorganics",
+              "comparative toxic unit for ecosystems (CTUe)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUe",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater, organics ": {
+            "amount": 0.0011056,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ecotoxicity: freshwater, organics",
+              "comparative toxic unit for ecosystems (CTUe)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "",
+            "status": "mapped"
+          },
+          "energy resources: non-renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "energy resources: non-renewable",
+              "abiotic depletion potential (ADP): fossil fuels"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ, net calorific value",
+            "status": "mapped"
+          },
+          "eutrophication: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "eutrophication: freshwater",
+              "fraction of nutrients reaching freshwater end compartment (P)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg P-Eq",
+            "status": "mapped"
+          },
+          "eutrophication: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "eutrophication: marine",
+              "fraction of nutrients reaching marine end compartment (N)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg N-Eq",
+            "status": "mapped"
+          },
+          "eutrophication: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "eutrophication: terrestrial",
+              "accumulated exceedance (AE)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "mol N-Eq",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: carcinogenic",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic, inorganics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: carcinogenic, inorganics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic, organics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: carcinogenic, organics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic": {
+            "amount": 1.2288e-09,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: non-carcinogenic",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic, inorganics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: non-carcinogenic, inorganics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic, organics ": {
+            "amount": 1.2288e-09,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: non-carcinogenic, organics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "ionising radiation: human health": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ionising radiation: human health",
+              "human exposure efficiency relative to u235"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kBq U235-Eq",
+            "status": "mapped"
+          },
+          "land use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "land use",
+              "soil quality index"
+            ],
+            "has_explicit_factor": false,
+            "unit": "dimensionless",
+            "status": "mapped"
+          },
+          "material resources: metals/minerals": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "material resources: metals/minerals",
+              "abiotic depletion potential (ADP): elements (ultimate reserves)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg Sb-Eq",
+            "status": "mapped"
+          },
+          "ozone depletion": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ozone depletion",
+              "ozone depletion potential (ODP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CFC-11-Eq",
+            "status": "mapped"
+          },
+          "particulate matter formation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "particulate matter formation",
+              "impact on human health"
+            ],
+            "has_explicit_factor": false,
+            "unit": "disease incidence",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: human health": {
+            "amount": 1.69,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "photochemical oxidant formation: human health",
+              "tropospheric ozone concentration increase"
+            ],
+            "has_explicit_factor": true,
+            "unit": "kg NMVOC-Eq",
+            "status": "mapped"
+          },
+          "water use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "water use",
+              "user deprivation potential (deprivation-weighted water consumption)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "m3 world Eq deprived",
+            "status": "mapped"
+          }
+        },
+        "recipe:midpoint": {
+          "climate change": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "IPCC 2021",
+              "climate change: total (excl. biogenic CO2)",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change w bio": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "IPCC 2021 (incl. biogenic CO2)",
+              "climate change: total (incl. biogenic CO2)",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "acidification: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "acidification: terrestrial",
+              "terrestrial acidification potential (TAP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg SO2-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ecotoxicity: freshwater",
+              "freshwater ecotoxicity potential (FETP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ecotoxicity: marine",
+              "marine ecotoxicity potential (METP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ecotoxicity: terrestrial",
+              "terrestrial ecotoxicity potential (TETP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "energy resources depletion: non-renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "energy resources: non-renewable, fossil",
+              "fossil fuel potential (FFP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ",
+            "status": "mapped"
+          },
+          "eutrophication: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "eutrophication: freshwater",
+              "freshwater eutrophication potential (FEP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg P-Eq",
+            "status": "mapped"
+          },
+          "eutrophication: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "eutrophication: marine",
+              "marine eutrophication potential (MEP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg N-Eq",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "human toxicity: carcinogenic",
+              "human toxicity potential (HTPc)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "human toxicity: non-carcinogenic",
+              "human toxicity potential (HTPnc)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "ionising radiation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ionising radiation",
+              "ionising radiation potential (IRP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg Co-60-Eq",
+            "status": "mapped"
+          },
+          "land use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "land use",
+              "agricultural land occupation (LOP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "m2*a crop-Eq",
+            "status": "mapped"
+          },
+          "material resources: metals/minerals": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "material resources: metals/minerals",
+              "surplus ore potential (SOP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg Cu-Eq",
+            "status": "mapped"
+          },
+          "ozone depletion": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ozone depletion",
+              "ozone depletion potential (ODPinfinite)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CFC-11-Eq",
+            "status": "mapped"
+          },
+          "particulate matter formation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "particulate matter formation",
+              "particulate matter formation potential (PMFP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg PM2.5-Eq",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: human health": {
+            "amount": 0.363,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "photochemical oxidant formation: human health",
+              "photochemical oxidant formation potential: humans (HOFP)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "kg NOx-Eq",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: terrestrial ecosystems": {
+            "amount": 0.585,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "photochemical oxidant formation: terrestrial ecosystems",
+              "photochemical oxidant formation potential: ecosystems (EOFP)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "kg NOx-Eq",
+            "status": "mapped"
+          },
+          "water use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "water use",
+              "water consumption potential (WCP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "cubic meter",
+            "status": "mapped"
+          },
+          "energy resources: non-renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "Cumulative Energy Demand (CED)",
+              "energy resources: non-renewable",
+              "energy content (HHV)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ-Eq",
+            "status": "mapped"
+          },
+          "energy resources: renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "Cumulative Energy Demand (CED)",
+              "energy resources: renewable",
+              "energy content (HHV)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ-Eq",
+            "status": "mapped"
+          },
+          "total": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "Cumulative Energy Demand (CED)",
+              "total",
+              "energy content (HHV)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ-Eq",
+            "status": "mapped"
+          },
+          "Human noise impacts": {
+            "amount": 0,
+            "method": null,
+            "has_explicit_factor": false,
+            "unit": "person-Pa/W",
+            "status": "custom noise method not available in Brightway"
+          }
+        },
+        "recipe:endpoint": {
+          "acidification: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "acidification: terrestrial"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "climate change: freshwater ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "climate change: freshwater ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "climate change: terrestrial ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "climate change: terrestrial ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "ecotoxicity: freshwater"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "ecotoxicity: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "ecotoxicity: marine"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "ecotoxicity: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "ecotoxicity: terrestrial"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "eutrophication: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "eutrophication: freshwater"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "eutrophication: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "eutrophication: marine"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "land use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "land use"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: terrestrial ecosystems": {
+            "amount": 7.54e-08,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "photochemical oxidant formation: terrestrial ecosystems"
+            ],
+            "has_explicit_factor": true,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "water use: aquatic ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "water use: aquatic ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "water use: terrestrial ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "water use: terrestrial ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "climate change: human health": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "climate change: human health"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "human toxicity: carcinogenic"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "human toxicity: non-carcinogenic"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "ionising radiation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "ionising radiation"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "ozone depletion": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "ozone depletion"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "particulate matter formation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "particulate matter formation"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: human health": {
+            "amount": 3.3e-07,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "photochemical oxidant formation: human health"
+            ],
+            "has_explicit_factor": true,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "water use: human health": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "water use: human health"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "energy resources: non-renewable, fossil ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "natural resources",
+              "energy resources: non-renewable, fossil"
+            ],
+            "has_explicit_factor": false,
+            "unit": "USD 2013",
+            "status": "mapped"
+          },
+          "material resources: metals/minerals": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "natural resources",
+              "material resources: metals/minerals"
+            ],
+            "has_explicit_factor": false,
+            "unit": "USD 2013",
+            "status": "mapped"
+          },
+          "total: ecosystem quality": {
+            "amount": 7.54e-08,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "total: ecosystem quality",
+              "ecosystem quality"
+            ],
+            "has_explicit_factor": true,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "total: human health": {
+            "amount": 3.3e-07,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "total: human health",
+              "human health"
+            ],
+            "has_explicit_factor": true,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "total: natural resources": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "total: natural resources",
+              "natural resources"
+            ],
+            "has_explicit_factor": false,
+            "unit": "USD 2013",
+            "status": "mapped"
+          },
+          "Human noise impacts": {
+            "amount": 0,
+            "method": null,
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "custom noise method not available in Brightway"
+          }
+        }
+      }
+    },
+    {
+      "label": [
+        "Ethylene",
+        [
+          "air",
+          "non-urban air or from high stacks"
+        ],
+        "kilogram"
+      ],
+      "source_key": [
+        "ecoinvent-3.12-biosphere",
+        "87f683ed-44ae-41a6-b4bc-230622f8cfef"
+      ],
+      "factors": {
+        "ef:midpoint": {
+          "acidification": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "acidification",
+              "accumulated exceedance (AE)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "mol H+-Eq",
+            "status": "mapped"
+          },
+          "climate change": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change: biogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change: biogenic",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change: fossil": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change: fossil",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change: land use and land use change": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change: land use and land use change",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater": {
+            "amount": 0.00078838,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ecotoxicity: freshwater",
+              "comparative toxic unit for ecosystems (CTUe)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "CTUe",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater, inorganics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ecotoxicity: freshwater, inorganics",
+              "comparative toxic unit for ecosystems (CTUe)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUe",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater, organics ": {
+            "amount": 0.00078838,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ecotoxicity: freshwater, organics",
+              "comparative toxic unit for ecosystems (CTUe)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "",
+            "status": "mapped"
+          },
+          "energy resources: non-renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "energy resources: non-renewable",
+              "abiotic depletion potential (ADP): fossil fuels"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ, net calorific value",
+            "status": "mapped"
+          },
+          "eutrophication: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "eutrophication: freshwater",
+              "fraction of nutrients reaching freshwater end compartment (P)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg P-Eq",
+            "status": "mapped"
+          },
+          "eutrophication: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "eutrophication: marine",
+              "fraction of nutrients reaching marine end compartment (N)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg N-Eq",
+            "status": "mapped"
+          },
+          "eutrophication: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "eutrophication: terrestrial",
+              "accumulated exceedance (AE)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "mol N-Eq",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: carcinogenic",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic, inorganics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: carcinogenic, inorganics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic, organics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: carcinogenic, organics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic": {
+            "amount": 8.428e-11,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: non-carcinogenic",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic, inorganics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: non-carcinogenic, inorganics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic, organics ": {
+            "amount": 8.428e-11,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: non-carcinogenic, organics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "ionising radiation: human health": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ionising radiation: human health",
+              "human exposure efficiency relative to u235"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kBq U235-Eq",
+            "status": "mapped"
+          },
+          "land use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "land use",
+              "soil quality index"
+            ],
+            "has_explicit_factor": false,
+            "unit": "dimensionless",
+            "status": "mapped"
+          },
+          "material resources: metals/minerals": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "material resources: metals/minerals",
+              "abiotic depletion potential (ADP): elements (ultimate reserves)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg Sb-Eq",
+            "status": "mapped"
+          },
+          "ozone depletion": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ozone depletion",
+              "ozone depletion potential (ODP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CFC-11-Eq",
+            "status": "mapped"
+          },
+          "particulate matter formation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "particulate matter formation",
+              "impact on human health"
+            ],
+            "has_explicit_factor": false,
+            "unit": "disease incidence",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: human health": {
+            "amount": 1.69,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "photochemical oxidant formation: human health",
+              "tropospheric ozone concentration increase"
+            ],
+            "has_explicit_factor": true,
+            "unit": "kg NMVOC-Eq",
+            "status": "mapped"
+          },
+          "water use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "water use",
+              "user deprivation potential (deprivation-weighted water consumption)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "m3 world Eq deprived",
+            "status": "mapped"
+          }
+        },
+        "recipe:midpoint": {
+          "climate change": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "IPCC 2021",
+              "climate change: total (excl. biogenic CO2)",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change w bio": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "IPCC 2021 (incl. biogenic CO2)",
+              "climate change: total (incl. biogenic CO2)",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "acidification: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "acidification: terrestrial",
+              "terrestrial acidification potential (TAP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg SO2-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ecotoxicity: freshwater",
+              "freshwater ecotoxicity potential (FETP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ecotoxicity: marine",
+              "marine ecotoxicity potential (METP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ecotoxicity: terrestrial",
+              "terrestrial ecotoxicity potential (TETP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "energy resources depletion: non-renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "energy resources: non-renewable, fossil",
+              "fossil fuel potential (FFP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ",
+            "status": "mapped"
+          },
+          "eutrophication: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "eutrophication: freshwater",
+              "freshwater eutrophication potential (FEP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg P-Eq",
+            "status": "mapped"
+          },
+          "eutrophication: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "eutrophication: marine",
+              "marine eutrophication potential (MEP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg N-Eq",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "human toxicity: carcinogenic",
+              "human toxicity potential (HTPc)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "human toxicity: non-carcinogenic",
+              "human toxicity potential (HTPnc)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "ionising radiation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ionising radiation",
+              "ionising radiation potential (IRP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg Co-60-Eq",
+            "status": "mapped"
+          },
+          "land use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "land use",
+              "agricultural land occupation (LOP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "m2*a crop-Eq",
+            "status": "mapped"
+          },
+          "material resources: metals/minerals": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "material resources: metals/minerals",
+              "surplus ore potential (SOP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg Cu-Eq",
+            "status": "mapped"
+          },
+          "ozone depletion": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ozone depletion",
+              "ozone depletion potential (ODPinfinite)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CFC-11-Eq",
+            "status": "mapped"
+          },
+          "particulate matter formation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "particulate matter formation",
+              "particulate matter formation potential (PMFP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg PM2.5-Eq",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: human health": {
+            "amount": 0.363,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "photochemical oxidant formation: human health",
+              "photochemical oxidant formation potential: humans (HOFP)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "kg NOx-Eq",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: terrestrial ecosystems": {
+            "amount": 0.585,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "photochemical oxidant formation: terrestrial ecosystems",
+              "photochemical oxidant formation potential: ecosystems (EOFP)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "kg NOx-Eq",
+            "status": "mapped"
+          },
+          "water use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "water use",
+              "water consumption potential (WCP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "cubic meter",
+            "status": "mapped"
+          },
+          "energy resources: non-renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "Cumulative Energy Demand (CED)",
+              "energy resources: non-renewable",
+              "energy content (HHV)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ-Eq",
+            "status": "mapped"
+          },
+          "energy resources: renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "Cumulative Energy Demand (CED)",
+              "energy resources: renewable",
+              "energy content (HHV)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ-Eq",
+            "status": "mapped"
+          },
+          "total": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "Cumulative Energy Demand (CED)",
+              "total",
+              "energy content (HHV)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ-Eq",
+            "status": "mapped"
+          },
+          "Human noise impacts": {
+            "amount": 0,
+            "method": null,
+            "has_explicit_factor": false,
+            "unit": "person-Pa/W",
+            "status": "custom noise method not available in Brightway"
+          }
+        },
+        "recipe:endpoint": {
+          "acidification: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "acidification: terrestrial"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "climate change: freshwater ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "climate change: freshwater ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "climate change: terrestrial ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "climate change: terrestrial ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "ecotoxicity: freshwater"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "ecotoxicity: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "ecotoxicity: marine"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "ecotoxicity: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "ecotoxicity: terrestrial"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "eutrophication: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "eutrophication: freshwater"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "eutrophication: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "eutrophication: marine"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "land use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "land use"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: terrestrial ecosystems": {
+            "amount": 7.54e-08,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "photochemical oxidant formation: terrestrial ecosystems"
+            ],
+            "has_explicit_factor": true,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "water use: aquatic ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "water use: aquatic ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "water use: terrestrial ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "water use: terrestrial ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "climate change: human health": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "climate change: human health"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "human toxicity: carcinogenic"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "human toxicity: non-carcinogenic"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "ionising radiation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "ionising radiation"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "ozone depletion": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "ozone depletion"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "particulate matter formation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "particulate matter formation"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: human health": {
+            "amount": 3.3e-07,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "photochemical oxidant formation: human health"
+            ],
+            "has_explicit_factor": true,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "water use: human health": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "water use: human health"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "energy resources: non-renewable, fossil ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "natural resources",
+              "energy resources: non-renewable, fossil"
+            ],
+            "has_explicit_factor": false,
+            "unit": "USD 2013",
+            "status": "mapped"
+          },
+          "material resources: metals/minerals": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "natural resources",
+              "material resources: metals/minerals"
+            ],
+            "has_explicit_factor": false,
+            "unit": "USD 2013",
+            "status": "mapped"
+          },
+          "total: ecosystem quality": {
+            "amount": 7.54e-08,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "total: ecosystem quality",
+              "ecosystem quality"
+            ],
+            "has_explicit_factor": true,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "total: human health": {
+            "amount": 3.3e-07,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "total: human health",
+              "human health"
+            ],
+            "has_explicit_factor": true,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "total: natural resources": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "total: natural resources",
+              "natural resources"
+            ],
+            "has_explicit_factor": false,
+            "unit": "USD 2013",
+            "status": "mapped"
+          },
+          "Human noise impacts": {
+            "amount": 0,
+            "method": null,
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "custom noise method not available in Brightway"
+          }
+        }
+      }
+    },
+    {
+      "label": [
+        "Ethylene",
+        [
+          "air",
+          "low population density, long-term"
+        ],
+        "kilogram"
+      ],
+      "source_key": [
+        "ecoinvent-3.12-biosphere",
+        "13fb54aa-a54a-48de-b2ec-b9165dea111d"
+      ],
+      "factors": {
+        "ef:midpoint": {
+          "acidification": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "acidification",
+              "accumulated exceedance (AE)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "mol H+-Eq",
+            "status": "mapped"
+          },
+          "climate change": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change: biogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change: biogenic",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change: fossil": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change: fossil",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change: land use and land use change": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "climate change: land use and land use change",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ecotoxicity: freshwater",
+              "comparative toxic unit for ecosystems (CTUe)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUe",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater, inorganics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ecotoxicity: freshwater, inorganics",
+              "comparative toxic unit for ecosystems (CTUe)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUe",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater, organics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ecotoxicity: freshwater, organics",
+              "comparative toxic unit for ecosystems (CTUe)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "",
+            "status": "mapped"
+          },
+          "energy resources: non-renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "energy resources: non-renewable",
+              "abiotic depletion potential (ADP): fossil fuels"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ, net calorific value",
+            "status": "mapped"
+          },
+          "eutrophication: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "eutrophication: freshwater",
+              "fraction of nutrients reaching freshwater end compartment (P)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg P-Eq",
+            "status": "mapped"
+          },
+          "eutrophication: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "eutrophication: marine",
+              "fraction of nutrients reaching marine end compartment (N)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg N-Eq",
+            "status": "mapped"
+          },
+          "eutrophication: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "eutrophication: terrestrial",
+              "accumulated exceedance (AE)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "mol N-Eq",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: carcinogenic",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic, inorganics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: carcinogenic, inorganics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic, organics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: carcinogenic, organics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: non-carcinogenic",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic, inorganics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: non-carcinogenic, inorganics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic, organics ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "human toxicity: non-carcinogenic, organics",
+              "comparative toxic unit for human (CTUh)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "CTUh",
+            "status": "mapped"
+          },
+          "ionising radiation: human health": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ionising radiation: human health",
+              "human exposure efficiency relative to u235"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kBq U235-Eq",
+            "status": "mapped"
+          },
+          "land use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "land use",
+              "soil quality index"
+            ],
+            "has_explicit_factor": false,
+            "unit": "dimensionless",
+            "status": "mapped"
+          },
+          "material resources: metals/minerals": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "material resources: metals/minerals",
+              "abiotic depletion potential (ADP): elements (ultimate reserves)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg Sb-Eq",
+            "status": "mapped"
+          },
+          "ozone depletion": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "ozone depletion",
+              "ozone depletion potential (ODP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CFC-11-Eq",
+            "status": "mapped"
+          },
+          "particulate matter formation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "particulate matter formation",
+              "impact on human health"
+            ],
+            "has_explicit_factor": false,
+            "unit": "disease incidence",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: human health": {
+            "amount": 1.69,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "photochemical oxidant formation: human health",
+              "tropospheric ozone concentration increase"
+            ],
+            "has_explicit_factor": true,
+            "unit": "kg NMVOC-Eq",
+            "status": "mapped"
+          },
+          "water use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "EF v3.1",
+              "water use",
+              "user deprivation potential (deprivation-weighted water consumption)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "m3 world Eq deprived",
+            "status": "mapped"
+          }
+        },
+        "recipe:midpoint": {
+          "climate change": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "IPCC 2021",
+              "climate change: total (excl. biogenic CO2)",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "climate change w bio": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "IPCC 2021 (incl. biogenic CO2)",
+              "climate change: total (incl. biogenic CO2)",
+              "global warming potential (GWP100)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CO2-Eq",
+            "status": "mapped"
+          },
+          "acidification: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "acidification: terrestrial",
+              "terrestrial acidification potential (TAP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg SO2-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ecotoxicity: freshwater",
+              "freshwater ecotoxicity potential (FETP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ecotoxicity: marine",
+              "marine ecotoxicity potential (METP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "ecotoxicity: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ecotoxicity: terrestrial",
+              "terrestrial ecotoxicity potential (TETP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "energy resources depletion: non-renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "energy resources: non-renewable, fossil",
+              "fossil fuel potential (FFP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ",
+            "status": "mapped"
+          },
+          "eutrophication: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "eutrophication: freshwater",
+              "freshwater eutrophication potential (FEP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg P-Eq",
+            "status": "mapped"
+          },
+          "eutrophication: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "eutrophication: marine",
+              "marine eutrophication potential (MEP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg N-Eq",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "human toxicity: carcinogenic",
+              "human toxicity potential (HTPc)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "human toxicity: non-carcinogenic",
+              "human toxicity potential (HTPnc)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg 1,4-DCB-Eq",
+            "status": "mapped"
+          },
+          "ionising radiation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ionising radiation",
+              "ionising radiation potential (IRP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg Co-60-Eq",
+            "status": "mapped"
+          },
+          "land use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "land use",
+              "agricultural land occupation (LOP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "m2*a crop-Eq",
+            "status": "mapped"
+          },
+          "material resources: metals/minerals": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "material resources: metals/minerals",
+              "surplus ore potential (SOP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg Cu-Eq",
+            "status": "mapped"
+          },
+          "ozone depletion": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "ozone depletion",
+              "ozone depletion potential (ODPinfinite)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg CFC-11-Eq",
+            "status": "mapped"
+          },
+          "particulate matter formation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "particulate matter formation",
+              "particulate matter formation potential (PMFP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "kg PM2.5-Eq",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: human health": {
+            "amount": 0.363,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "photochemical oxidant formation: human health",
+              "photochemical oxidant formation potential: humans (HOFP)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "kg NOx-Eq",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: terrestrial ecosystems": {
+            "amount": 0.585,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "photochemical oxidant formation: terrestrial ecosystems",
+              "photochemical oxidant formation potential: ecosystems (EOFP)"
+            ],
+            "has_explicit_factor": true,
+            "unit": "kg NOx-Eq",
+            "status": "mapped"
+          },
+          "water use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, midpoint (H)",
+              "water use",
+              "water consumption potential (WCP)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "cubic meter",
+            "status": "mapped"
+          },
+          "energy resources: non-renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "Cumulative Energy Demand (CED)",
+              "energy resources: non-renewable",
+              "energy content (HHV)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ-Eq",
+            "status": "mapped"
+          },
+          "energy resources: renewable": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "Cumulative Energy Demand (CED)",
+              "energy resources: renewable",
+              "energy content (HHV)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ-Eq",
+            "status": "mapped"
+          },
+          "total": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "Cumulative Energy Demand (CED)",
+              "total",
+              "energy content (HHV)"
+            ],
+            "has_explicit_factor": false,
+            "unit": "MJ-Eq",
+            "status": "mapped"
+          },
+          "Human noise impacts": {
+            "amount": 0,
+            "method": null,
+            "has_explicit_factor": false,
+            "unit": "person-Pa/W",
+            "status": "custom noise method not available in Brightway"
+          }
+        },
+        "recipe:endpoint": {
+          "acidification: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "acidification: terrestrial"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "climate change: freshwater ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "climate change: freshwater ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "climate change: terrestrial ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "climate change: terrestrial ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "ecotoxicity: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "ecotoxicity: freshwater"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "ecotoxicity: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "ecotoxicity: marine"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "ecotoxicity: terrestrial": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "ecotoxicity: terrestrial"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "eutrophication: freshwater": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "eutrophication: freshwater"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "eutrophication: marine": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "eutrophication: marine"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "land use": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "land use"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: terrestrial ecosystems": {
+            "amount": 7.54e-08,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "photochemical oxidant formation: terrestrial ecosystems"
+            ],
+            "has_explicit_factor": true,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "water use: aquatic ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "water use: aquatic ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "water use: terrestrial ecosystems": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "ecosystem quality",
+              "water use: terrestrial ecosystems"
+            ],
+            "has_explicit_factor": false,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "climate change: human health": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "climate change: human health"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "human toxicity: carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "human toxicity: carcinogenic"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "human toxicity: non-carcinogenic": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "human toxicity: non-carcinogenic"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "ionising radiation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "ionising radiation"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "ozone depletion": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "ozone depletion"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "particulate matter formation": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "particulate matter formation"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "photochemical oxidant formation: human health": {
+            "amount": 3.3e-07,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "photochemical oxidant formation: human health"
+            ],
+            "has_explicit_factor": true,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "water use: human health": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "human health",
+              "water use: human health"
+            ],
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "energy resources: non-renewable, fossil ": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "natural resources",
+              "energy resources: non-renewable, fossil"
+            ],
+            "has_explicit_factor": false,
+            "unit": "USD 2013",
+            "status": "mapped"
+          },
+          "material resources: metals/minerals": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "natural resources",
+              "material resources: metals/minerals"
+            ],
+            "has_explicit_factor": false,
+            "unit": "USD 2013",
+            "status": "mapped"
+          },
+          "total: ecosystem quality": {
+            "amount": 7.54e-08,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "total: ecosystem quality",
+              "ecosystem quality"
+            ],
+            "has_explicit_factor": true,
+            "unit": "species.yr",
+            "status": "mapped"
+          },
+          "total: human health": {
+            "amount": 3.3e-07,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "total: human health",
+              "human health"
+            ],
+            "has_explicit_factor": true,
+            "unit": "DALYs",
+            "status": "mapped"
+          },
+          "total: natural resources": {
+            "amount": 0,
+            "method": [
+              "ecoinvent-3.12",
+              "ReCiPe 2016 v1.03, endpoint (H)",
+              "total: natural resources",
+              "natural resources"
+            ],
+            "has_explicit_factor": false,
+            "unit": "USD 2013",
+            "status": "mapped"
+          },
+          "Human noise impacts": {
+            "amount": 0,
+            "method": null,
+            "has_explicit_factor": false,
+            "unit": "DALYs",
+            "status": "custom noise method not available in Brightway"
+          }
+        }
+      }
+    }
+  ]
+}

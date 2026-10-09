@@ -58,7 +58,11 @@ def test_ethane_and_ethene_are_retained_without_chemical_misidentification():
             mapping[("Ethane", ("air", compartment), "kilogram")]
             == f"Ethane direct emissions, {environment}"
         )
-        assert set(
+        assert (
+            mapping[("Ethylene", ("air", compartment), "kilogram")]
+            == f"Ethene direct emissions, {environment}"
+        )
+        assert (
             mapping[
                 (
                     "NMVOC, non-methane volatile organic compounds",
@@ -66,10 +70,7 @@ def test_ethane_and_ethene_are_retained_without_chemical_misidentification():
                     "kilogram",
                 )
             ]
-        ) == {
-            f"Ethene direct emissions, {environment}",
-            f"Non-methane hydrocarbon direct emissions, {environment}",
-        }
+        ) == f"Non-methane hydrocarbon direct emissions, {environment}"
 
 
 @pytest.mark.family

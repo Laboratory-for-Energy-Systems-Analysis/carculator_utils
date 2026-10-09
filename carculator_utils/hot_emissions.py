@@ -13,6 +13,7 @@ import yaml
 from xarray import DataArray
 
 from . import DATA_DIR
+from .emission_provenance import get_emission_factor_provenance
 
 FILEPATH_DC_SPECS = DATA_DIR / "driving_cycles" / "dc_specs.yaml"
 
@@ -44,7 +45,7 @@ def _(obj: Union[np.ndarray, xr.DataArray]) -> Union[np.ndarray, xr.DataArray]:
 
 
 def get_emission_factors(filepath) -> [Any, None]:
-    """Hot emissions factors extracted for passenger cars from HBEFA 4.1
+    """Load shipped emission coefficients; the exact HBEFA version is unverified.
     detailed by size, powertrain and EURO class for each substance.
     """
 
@@ -233,20 +234,11 @@ class HotEmissionsModel:
             },
         )
 
-        # a bit of a manual calibration for N2O and NH3
-        # as they do not correlate with fuel consumption
-
-        if self.vehicle_type == "car":
-            emissions.loc[dict(component="Dinitrogen oxide")] *= 0.5
-            emissions.loc[dict(component="Ammonia")] *= 0.5
-        elif self.vehicle_type == "truck":
-            emissions.loc[dict(component="Dinitrogen oxide")] *= 10
-            emissions.loc[dict(component="Ammonia")] *= 10
-        elif self.vehicle_type == "bus":
-            emissions.loc[dict(component="Dinitrogen oxide")] /= 15
-            emissions.loc[dict(component="Ammonia")] /= 12
-        else:
-            pass
+        # Preserve legacy adjustments, with their unverified status recorded
+        # alongside the table hashes instead of implying source calibration.
+        multipliers = get_emission_factor_provenance()["manual_multipliers"]
+        for component, factor in multipliers[self.vehicle_type].items():
+            emissions.loc[dict(component=component)] *= factor
 
         # apply a mileage degradation factor for CO, HC and NOx
         degradation_correction = get_mileage_degradation_factor(

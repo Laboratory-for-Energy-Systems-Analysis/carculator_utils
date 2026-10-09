@@ -3,9 +3,8 @@ Hot-pollutant inventory audit
 
 The original 2026-10-07 audit of shared runtime commit ``161d4c2`` found six
 pollutant-accounting defects. The repairs described below now pass all 34,518
-scalar checks on completed runs across the four vehicle families. Ethene is
-retained as generic NMVOC because the bundled inventory has no species-specific
-Ethene flow; this conserves mass without claiming species-specific LCIA.
+scalar checks on completed runs across the four vehicle families. Ethene now uses the chemically equivalent Ethylene elementary flow, with
+compartment-specific factors from the same methods as the bundled B matrices.
 
 Scope and result
 ----------------
@@ -124,10 +123,11 @@ Implemented repairs and limits
   to the original NMHC mass. Missing profiles, including gas, leave the parent
   mass in generic NMVOC rather than inventing a species distribution.
 * Many-to-one inventory mappings now sum all contributing parameters. Ethane
-  retains its own flow; Ethene joins the generic NMVOC flow. This is an explicit
-  aggregation approximation, not an Ethane proxy or a new Ethene-specific
-  characterization factor. A future species-specific implementation still
-  requires consistent biosphere, A/B matrix and export mappings.
+  retains its own flow; Ethene uses Ethylene (C2H4). Three exact air-compartment
+  flows are appended to private inventory indices and characterized using
+  ``data/emission_factors/ethylene_characterization.json``. Existing bundled
+  matrix positions are preserved. Missing method factors remain explicitly
+  recorded zeros; they are not substituted with generic NMVOC factors.
 * The positive motive/auxiliary fuel-input profile, including optional
   combustion-control losses, is normalized to the completed combustion fuel
   energy. Hybrid recovery thus reduces fuel demand without creating negative
@@ -148,12 +148,19 @@ These repairs change pollutant inventories and their LCIA results, particularly
 toxicity and NMVOC-related impacts. They do not recalibrate HBEFA-derived
 coefficients or change the earlier fuel-blend/CO2 accounting fixes. Regression
 coverage includes the complete audit, independent per-sample deterioration
-expectations and the Ethane/generic-NMVOC mapping contract.
+expectations and the Ethane/Ethylene/generic-NMVOC mapping contract.
 
 The files are named ``EF_HBEFA42_*``, while several legacy docstrings and
 documentation passages refer to HBEFA 4.1. This audit establishes propagation
 from the shipped tables; it does not resolve their version provenance, refit
 their coefficients or independently validate the manual NH3/N2O multipliers.
+Table hashes, the unresolved source version, and all retained manual
+multipliers are published in ``data/emission_factors/provenance.json`` and
+returned by ``get_emission_factor_provenance()``. The original licensed
+extraction workbook has not been recovered. Changing the NH3/N2O multipliers
+without that source or matched measurements would be another unsupported
+calibration, so this part of the scientific validation remains open.
+
 The existing speed-based urban/suburban/rural compartment convention is retained
 as an assumption, rather than validated as a geographic exposure model.
 

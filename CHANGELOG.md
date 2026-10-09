@@ -17,6 +17,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Characterize Ethene as exact Ethylene air flows, preserving original matrix positions. Publish emission-table fingerprints and the explicitly unverified provenance of legacy NH3/N2O adjustments.
+
 - Remove the unqualified default 0.4% additional CNG leakage overlay in sibling defaults. Retain upstream and exhaust emissions and explicit residual-loss accounting; verify the delivered-fuel boundary in completed family runs.
 
 - Retain provided, derived, not-applicable and missing input coverage on generated arrays. Reject missing declared inputs for active vehicles before full sizing, including gaps across year interpolation; document explicit zero overrides.

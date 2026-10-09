@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "retrieved": "2026-10-09",
+  "source_version": "unverified",
+  "version_note": "Filenames contain HBEFA42 while historical documentation cites 4.1. Neither proves the licensed extraction version.",
+  "source_extraction_available": false,
+  "source_reference": "https://www.hbefa.net/",
+  "manual_multipliers": {
+    "car": {
+      "Dinitrogen oxide": 0.5,
+      "Ammonia": 0.5
+    },
+    "truck": {
+      "Dinitrogen oxide": 10,
+      "Ammonia": 10
+    },
+    "bus": {
+      "Dinitrogen oxide": 0.06666666666666667,
+      "Ammonia": 0.08333333333333333
+    },
+    "two-wheeler": {}
+  },
+  "multiplier_status": "Retained legacy calibration; no independent empirical validation recovered.",
+  "files": {
+    "bus/EF_HBEFA42_exhaust.csv": {
+      "sha256": "d5135dc3cfefc3a58c63a5d9dc7f79c4504b1fb3c9fe0ba294e494c44d53649a"
+    },
+    "bus/NMHC_species.csv": {
+      "sha256": "ad2cd295ef5e86f17cd1b3b799a3be8c0b1802161c08ca3dd5257c3b093b2160"
+    },
+    "bus/degradation_EF.csv": {
+      "sha256": "29b8aa5b2466e5e8da5ccca9aa6a2b62481702976c9c377ce11589d68d0098ce"
+    },
+    "bus/engine_wear.csv": {
+      "sha256": "670ba2653f05ae4d094eb63ada440f081c2c5626907e5713a77bc161c8787013"
+    },
+    "bus/propulsion_noise_coefficients.csv": {
+      "sha256": "41d888457bcf18efc1dd390eeb3586817ff88d3aa2d56bd117fea774eb2c3cb7"
+    },
+    "bus/rolling_noise_coefficients.csv": {
+      "sha256": "664f4997b81a5b8ab9eb355f00953220101a6d217c4d5bf416a606e493927d13"
+    },
+    "car/EF_HBEFA42_exhaust.csv": {
+      "sha256": "e32b87a5e4c0bd3b29ee4f5424210957d4d4ebe6a90b4cedd8550dbbb3b3505d"
+    },
+    "car/EF_HBEFA42_non_exhaust.csv": {
+      "sha256": "bf5f44942f9dbe0a1c7fe4f61887e9c372d2f3165ef03e43c2267ee1aa346b8f"
+    },
+    "car/NMHC_species.csv": {
+      "sha256": "3ad04c77b303839d8830636212f5488f066c78784bffa3f52477a55686ac1e3d"
+    },
+    "car/degradation_EF.csv": {
+      "sha256": "58b931d2f6ce0745b404c8fe8165a0d74b183c72457273e93216cf295fae75de"
+    },
+    "car/engine_wear.csv": {
+      "sha256": "b0db6d113b195027d77db1e9b34577114bcce1bf70e2a234f1cf5e0f44233cd6"
+    },
+    "car/propulsion_noise_coefficients.csv": {
+      "sha256": "1ada1db632c8077c2e61fbb5323f20b15eba599c6478ce25558ee57d7362aa92"
+    },
+    "car/rolling_noise_coefficients.csv": {
+      "sha256": "a6778366f3916fbc1cdda9035d0e8a87b58a73b4cd91aa16ba71c2501ac47a56"
+    },
+    "truck/EF_HBEFA42_exhaust.csv": {
+      "sha256": "d526b8e0fd8cf09db4b977ca5e4c151ae9156ae83b52da1c6709da33e118a091"
+    },
+    "truck/NMHC_species.csv": {
+      "sha256": "ad2cd295ef5e86f17cd1b3b799a3be8c0b1802161c08ca3dd5257c3b093b2160"
+    },
+    "truck/degradation_EF.csv": {
+      "sha256": "29b8aa5b2466e5e8da5ccca9aa6a2b62481702976c9c377ce11589d68d0098ce"
+    },
+    "truck/engine_wear.csv": {
+      "sha256": "670ba2653f05ae4d094eb63ada440f081c2c5626907e5713a77bc161c8787013"
+    },
+    "truck/propulsion_noise_coefficients.csv": {
+      "sha256": "41d888457bcf18efc1dd390eeb3586817ff88d3aa2d56bd117fea774eb2c3cb7"
+    },
+    "truck/rolling_noise_coefficients.csv": {
+      "sha256": "664f4997b81a5b8ab9eb355f00953220101a6d217c4d5bf416a606e493927d13"
+    },
+    "two-wheeler/EF_HBEFA42_exhaust.csv": {
+      "sha256": "f76d8312396ca8f7ac65ddbaf4e2abaa4c88c3a370fc802ba2bb8ac12db603f4"
+    },
+    "two-wheeler/NMHC_species.csv": {
+      "sha256": "04ce9fde6769bd6445087565c023074043ddddd36d695c7e006ab54be90b7e3c"
+    },
+    "two-wheeler/engine_wear.csv": {
+      "sha256": "cc6788d6636906d098d3c0982067545d63cc512315121cf7ee96051e1ab31e0d"
+    },
+    "two-wheeler/propulsion_noise_coefficients.csv": {
+      "sha256": "b1fc101ee3b7deb0350295cbb661d55c31bf6ea6551fd8c9976fec0ba7e93a81"
+    }
+  },
+  "historical_commits": [
+    "08ba174",
+    "c5f0fae"
+  ],
+  "extraction_notebook": "carculator_truck/dev/HBEFA trucks.ipynb references EFA_HOT_Subsegm_HGV.XLSX; source workbook is absent."
+}
