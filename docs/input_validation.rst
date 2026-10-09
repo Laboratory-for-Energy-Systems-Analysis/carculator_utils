@@ -48,6 +48,23 @@ audit new data for overlapping cells:
 This audit identifies the duplicated ``(name, size, powertrain, year)`` cell and
 the two record identifiers. It does not rewrite data or resolve conflicts.
 
+Bus temperature inputs
+----------------------
+
+Bus HVAC uses ``ambient_temperature`` in degrees Celsius. A scalar applies to
+every month; a sequence supplies twelve values in January--December order.
+``indoor_temperature`` sets the cabin temperature, defaulting to 20 degrees
+Celsius. Explicit temperature inputs are validated and preserved. Passenger
+cars, trucks and two-wheelers use annual thermal-demand inputs and reject these
+temperature overrides.
+
+When ``ambient_temperature`` is omitted, the model reads the first row for the
+selected country in ``data/monthly_avg_temp.csv``. If the country is absent,
+it prints a notice and uses Switzerland's twelve monthly values. The lookup
+preserves decimal temperatures on both paths. This fallback is an assumption
+whose suitability depends on the study location; supply local monthly values
+when available. See :ref:`temperature-fallback-checks` for scope and verification.
+
 Fuel blends
 -----------
 

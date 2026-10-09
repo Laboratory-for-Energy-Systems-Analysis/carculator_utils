@@ -89,6 +89,33 @@ contract, not the stored array length. Custom cycles include all supplied
 samples, including terminal stops. Rate/grade provenance and power-feasibility
 checks remain necessary for measured-route comparisons.
 
+.. _temperature-fallback-checks:
+
+Bus temperature fallback
+------------------------
+
+Bus HVAC reads the selected country's bundled monthly temperature series unless
+``ambient_temperature`` is supplied explicitly. Missing countries use the
+Swiss series with a printed notice. Previously, that fallback parsed the Swiss
+decimal values as integers and raised ``ValueError`` on the first value,
+``1.9``. The corrected lookup uses floating-point parsing on both paths.
+
+The bundled table currently lacks ``BR``, ``US``, ``CA``, ``IN`` and ``AU``.
+``tests/test_temperature_fallback.py`` covers these codes, an unknown-country
+control, and positive/negative decimal temperatures. Completed 13m-city bus
+checks in all five countries compare the default fallback with the same Swiss
+temperatures supplied explicitly. They cover diesel, fuel-cell and depot BEV
+powertrains, reordered 2025/2030 years and two passenger-load samples, through
+vehicle sizing, fuel/charging exchanges and LCIA. Scalar and twelve-month
+overrides bypass the country lookup and retain caller data.
+
+This repair preserves the existing Swiss fallback, bundled climate data and
+HVAC assumptions. It restores runnable cases; it does not establish that a
+Swiss temperature series represents conditions in the requested country.
+For location-specific work, use the temperature inputs described in
+:doc:`input_validation`. The other vehicle families retain their separate
+annual thermal-demand inputs.
+
 .. _default-biofuel-shares:
 
 Default biofuel shares

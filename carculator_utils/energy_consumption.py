@@ -63,18 +63,22 @@ def get_efficiency_coefficients(vehicle_type: str) -> [Any, None]:
     return efficiency_coefficients
 
 
-def get_country_temperature(country):
-    """
-    Retrieves mothly average temperature
-    :type country: country for which to retrieve temperature values
-    :return:
+def get_country_temperature(country: str) -> np.ndarray:
+    """Read January--December temperatures in degrees Celsius.
+
+    Use the first bundled row for the requested country code. If it is absent,
+    announce and use the Swiss (CH) series. Both paths retain decimal values.
+    The Swiss fallback is an assumption, not a local climate estimate.
+
+    :param country: Country code to look up in the bundled temperature table.
+    :returns: Twelve monthly temperatures in January--December order.
     """
 
     with open(DATA_DIR / MONTHLY_AVG_TEMP) as f:
         reader = csv.reader(f, delimiter=";")
         for row in reader:
             if row[2] == country:
-                return np.array([float(i) for i in row[3:]])
+                return np.asarray(row[3:], dtype=float)
 
     print(
         f"Could not find monthly average temperature series for {country}. "
@@ -85,7 +89,7 @@ def get_country_temperature(country):
         reader = csv.reader(f, delimiter=";")
         for row in reader:
             if row[2] == "CH":
-                return np.array([int(i) for i in row[3:]])
+                return np.asarray(row[3:], dtype=float)
 
 
 def convert_to_xr(data):
