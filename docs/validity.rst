@@ -10,6 +10,72 @@ questions. The current evidence review separates analytical conservation tests,
 numerical convergence, fitted assumptions, held-out observations and screening
 comparisons with imperfectly matched cycles or meter boundaries.
 
+.. _battery-inventory-selection:
+
+Battery inventory selection
+----------------------------
+
+Battery purchases now use exact ``(powertrain, size, year)`` selections.
+Previously the inventory matched substrings in vehicle names: ``Medium`` also
+matched ``Medium SUV``, and ``Large`` matched ``Large SUV``. When those sizes
+used different chemistries, the SUV purchased a full battery of each chemistry.
+Physical battery sizing and disposal still described only one pack, so total
+battery production exceeded the mass actually fitted and replaced. The extra
+supplier also appeared in exported inventories.
+
+Each selected vehicle now receives only its chosen battery supplier, with::
+
+   purchased battery kg = energy battery mass * (1 + battery lifetime replacements)
+
+This retains the existing fractional replacement convention and disposal
+quantity. Matching also distinguishes HEVs from PHEVs, preserves sample and
+year labels, and ignores chemistry entries outside the inventory scope,
+including dropped PHEV intermediates. Chemistry defaults, mass, capacity,
+range, energy use, costs and battery characterization factors are unchanged.
+This correction does not alter how PHEV physical properties are assembled.
+
+Completed Swiss 2025 BEV runs on ``WLTC`` reproduce the problem by assigning
+LFP to ``Medium``/``Large`` and NMC-811 to their SUV counterparts. With the
+``static`` background, the results are:
+
+.. list-table:: Battery purchases and total climate impacts per vehicle-km
+   :header-rows: 1
+   :widths: 25 20 20 17 18
+
+   * - Vehicle
+     - Physical pack [kg]
+     - Purchases, old → corrected [kg]
+     - Old [g CO2-eq/km]
+     - Corrected [g CO2-eq/km]
+   * - Medium SUV
+     - 460
+     - 920 → 460
+     - 169.12
+     - 141.74
+   * - Large SUV
+     - 660
+     - 1,320 → 660
+     - 249.35
+     - 210.06
+
+These cases have zero replacements. The impact figures use the bundled
+ecoinvent 3.12 cut-off factors and IPCC 2021 GWP100 excluding biogenic CO2
+(``recipe``/``midpoint``, ``climate change``). Corrected SUV totals equal their
+standalone runs; ten paired vehicle results retain the original physical
+outputs and match removal of only the unselected battery supplier. Single-size
+and same-chemistry controls retain their previous results. Regenerate affected
+multi-size inventories, impacts and exports made with the former matching.
+
+``tests/test_battery_inventory.py`` verifies exact size/powertrain/year matching,
+reversed mapping order, named samples, fractional replacements and mass balance.
+Completed car, bus, truck and two-wheeler runs cover differing chemistries and
+2025/2030 years, HEV/PHEV controls, selected-scope battery contributions under
+static and prospective backgrounds, and repeatable Brightway/SimaPro exports
+for ecoinvent 3.9/3.10. Vehicle-specific suppliers are followed where electricity
+mixes differ. Run with all four sibling packages installed::
+
+   CARCULATOR_REQUIRE_FAMILY=1 python -m pytest tests/test_battery_inventory.py
+
 .. _charging-cost-accounting:
 
 Charging cost accounting

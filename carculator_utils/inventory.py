@@ -1278,41 +1278,29 @@ class Inventory:
 
         for key, val in self.vm.energy_storage["electric"].items():
             pwt, size, year = key
-            if pwt.startswith("HEV"):
-                pwt = " " + pwt
-            self.A[
-                :,
-                self.find_input_indices((battery_acts[val],)),
-                [
-                    x
-                    for x, y in self.rev_inputs.items()
-                    if y[0].startswith(f"{self.vm.vehicle_type}, ")
-                    and all(z in y[0] for z in (pwt, size))
-                ],
-                self.scope["year"].index(year),
-            ] = (
-                self.array.sel(
-                    parameter="energy battery mass",
-                    combined_dim=[
-                        d
-                        for d in self.array.coords["combined_dim"].values
-                        if all(x in d for x in [pwt, size])
-                    ],
-                    year=year,
+            # Chemistry mappings can retain dropped PHEV intermediates or a
+            # wider selection than this inventory. Match complete labels:
+            # "Medium" must not also purchase batteries for "Medium SUV".
+            if any(
+                label not in self.scope[dimension]
+                for dimension, label in (
+                    ("powertrain", pwt),
+                    ("size", size),
+                    ("year", year),
                 )
-                * (
-                    1
-                    + self.array.sel(
-                        parameter="battery lifetime replacements",
-                        combined_dim=[
-                            d
-                            for d in self.array.coords["combined_dim"].values
-                            if all(x in d for x in [pwt, size])
-                        ],
-                        year=year,
-                    )
-                )
-                * -1
+            ):
+                continue
+            vehicle = self.vm.vehicle_type
+            column = self.inputs[
+                (f"{vehicle}, {pwt}, {size}", self.vm.country, "unit", vehicle)
+            ]
+            (row,) = self.find_input_indices((battery_acts[val],))
+            cell = self.array.sel(combined_dim=f"{size} - {pwt}", year=year)
+            quantity = cell.sel(parameter="energy battery mass") * (
+                1 + cell.sel(parameter="battery lifetime replacements")
+            )
+            self.A[:, row, column, self.scope["year"].index(year)] = (
+                -quantity.transpose("value").values
             )
 
         # Battery EoL
