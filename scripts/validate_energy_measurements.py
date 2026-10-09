@@ -10,6 +10,7 @@ import hashlib
 import json
 from pathlib import Path
 
+from energy_evidence import qualify, summarize
 from validate_energy_2025 import provenance, run_case
 
 DATA = (
@@ -55,7 +56,11 @@ def main():
     metadata["catalog_sha256"] = hashlib.sha256(args.catalog.read_bytes()).hexdigest()
     metadata["runner_sha256"] = {
         name: hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest()
-        for name in ["validate_energy_measurements.py", "validate_energy_2025.py"]
+        for name in [
+            "validate_energy_measurements.py",
+            "validate_energy_2025.py",
+            "energy_evidence.py",
+        ]
     }
     metadata["mass_tolerance_kg"] = 0.1
     metadata["numerical_note"] = (
@@ -112,6 +117,7 @@ def main():
             comparisons.append(
                 {
                     "observation_id": case,
+                    "evidence_qualification": qualify(observation, dataset, run),
                     "model_run_id": run["case"],
                     "dataset_id": observation["dataset_id"],
                     "vehicle": dataset["vehicle"],
@@ -185,6 +191,9 @@ def main():
             "excluded": excluded,
         },
     )
+    write_json(args.output / "evidence_qualification.json", summarize(comparisons))
+    if errors:
+        raise SystemExit(f"{len(errors)} model run errors; see errors.json.")
     print(
         f"{len(runs)} complete model runs; {len(comparisons)} paired observations; "
         f"{len(excluded)} unpaired; {len(errors)} run errors."

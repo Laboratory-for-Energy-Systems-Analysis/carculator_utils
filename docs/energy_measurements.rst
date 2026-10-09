@@ -814,3 +814,62 @@ The recorded-commit audit assumes production source and input changes are
 committed. Regenerate the consolidated native inputs with::
 
     python scripts/export_2025_defaults.py --output /tmp/energy-defaults-2025
+
+Qualification of calibration and validation evidence
+----------------------------------------------------
+
+The measurement runner now writes an ``evidence_qualification`` record for each
+comparison and an ``evidence_qualification.json`` summary. Completed sizing and
+mass matching are prerequisites, not empirical validation. A comparison remains
+``screening`` until a reviewed qualification supplies all of the following:
+
+* The SHA-256 of the actual test speed/grade profile, matching the supplied
+  model profile. A common cycle name or digitized approximate trace is insufficient.
+* Matched vehicle/model year, road load, ambient conditions and conditioning,
+  auxiliaries, and fuel/battery properties, each with a source reference.
+* Driving mass matched within 0.1 kg, including documented payload reconstruction.
+* An explicit matching energy field and meter-boundary source: fuel, net battery
+  terminal energy, stored energy, or electricity purchased at charging.
+* A declared ``calibration`` or ``held_out`` role. Data used to fit an assumption
+  cannot independently validate that same assumption.
+
+The metadata are reviewed declarations, not automatically authenticated source
+measurements. Eligibility alone does not imply a passing model. No fixed error
+target or automatic efficiency correction is imposed. Run failures are retained
+in the output and cause a nonzero runner exit status.
+
+The current catalogue still lacks sufficiently matched independent evidence
+for several petrol-car, two-wheeler and heavy-BEV configurations. Historical
+diesel/hybrid observations remain historical screening. The 32t VECTO trace
+still has no recovered primary simulation source; it must not be described as
+a verified reference trace. The Gillig auxiliary calibration remains one
+vehicle's calibration evidence, with uncertainty, rather than validation of
+all 13m BEV buses.
+
+A further primary-source search identified `Carpio et al. (2025)
+<https://arxiv.org/abs/2503.21057>`_, a RAV4 chassis-dynamometer study. It reinforces
+the need to match road load and drivetrain control, but the retrieved article
+does not supply a directly usable numerical test trace and complete matched
+input set for the existing lower-medium petrol comparison. `NREL's Smith Newton
+fleet evaluation <https://research-hub.nlr.gov/en/publications/medium-duty-plug-in-electric-delivery-truck-fleet-evaluation-nrel/>`_
+is another candidate; fleet aggregates cannot substitute for a matched individual
+route and electrical meter boundary. These sources are leads, not new passing
+carculator validation cases.
+
+Run the current catalogue separately from the historical saved artifacts::
+
+    python scripts/validate_energy_measurements.py --output /tmp/current-energy-evidence
+    python -m pytest tests/test_energy_evidence.py
+
+The existing historical plots and their model hashes retain their original
+meaning. A new run must not overwrite their provenance while keeping old bars.
+
+The 9 October 2026 rerun completed **40 model runs**, paired **41 observations**,
+and retained **77 exclusions**, with **zero run errors**. All 41 comparisons
+remain screening under the explicit matching requirements above; no independent
+validation pass is asserted. See the :download:`qualification report
+<_static/energy_validation_2025/qualification_20261009/evidence_qualification.json>`,
+:download:`comparisons and exclusions
+<_static/energy_validation_2025/qualification_20261009/comparisons.json>`, and
+:download:`source/code provenance
+<_static/energy_validation_2025/qualification_20261009/provenance.json>`.

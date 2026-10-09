@@ -1,0 +1,9 @@
+{
+  "counts": {
+    "screening": 41,
+    "calibration": 0,
+    "held_out": 0
+  },
+  "validation_passed": null,
+  "note": "Eligibility is not validation success. No fixed error threshold or automatic parameter fitting is applied."
+}

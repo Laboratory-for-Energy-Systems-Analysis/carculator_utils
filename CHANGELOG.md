@@ -17,6 +17,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Require explicit matching evidence and calibration/held-out roles in energy comparisons; retain screening exclusions, record fresh completed runs, and fail the audit command on model-run errors.
+
 - Remove automatic Swiss climate substitution for missing bus-country data; require explicit ambient temperatures and validate direct HVAC profiles. Document retained city proxies and thermal-model limits.
 
 - Add explicit electricity consumption mixes with conservative import/re-export tracing, labelled custom-mix alignment, and sourced grid-loss overrides. Retain generation/trade/loss boundaries in provenance.
