@@ -15,6 +15,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Correct synthetic methanol diesel carbon-source supplier swaps and the petrol energy-allocation alias. Verify named suppliers in completed inventories across all four vehicle families; see docs/fuel_catalogue.rst.
+
 - Reject overlapping bundled default cells at input loading. Resolve sibling parameter scopes without changing effective values or distributions; custom dictionaries retain explicit first-entry compatibility.
 
 - Retain original model inputs for repeatable completed runs, including PHEV component inputs and selected chemistry-price samples. Preserve explicit input edits and reject ambiguous edits to aggregated PHEV outputs; see `docs/repeated_runs.rst`.

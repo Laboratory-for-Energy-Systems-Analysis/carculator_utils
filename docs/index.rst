@@ -31,6 +31,7 @@ User's Guide
    structure
    validity
    biological_methane
+   fuel_catalogue
    methane_leakage
    electricity_lifetime
    electricity_scenarios
