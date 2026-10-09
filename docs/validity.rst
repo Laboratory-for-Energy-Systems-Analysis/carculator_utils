@@ -89,6 +89,37 @@ contract, not the stored array length. Custom cycles include all supplied
 samples, including terminal stops. Rate/grade provenance and power-feasibility
 checks remain necessary for measured-route comparisons.
 
+.. _cabin-temperature-limitation:
+
+Bus cabin-temperature limitation
+--------------------------------
+
+The empirical HVAC model now explicitly supports only its existing 20-degree
+Celsius cabin assumption. Changing ``indoor_temperature`` previously moved an
+unchanged load between heating and cooling; the parameter did not adjust the
+load to maintain a different cabin temperature. In a completed 2025 13m-city
+depot-BEV check at 0 degrees Celsius outside, cabin settings of 15, 20 and 25
+degrees all gave the same 121.25 kWh/100 km charging electricity. Such results
+do not support comparisons of thermostat settings.
+
+Omit ``indoor_temperature``, pass ``20``, or supply twelve monthly values all
+equal to ``20``. Other settings now raise ``ValueError`` before sizing, including
+when using ``EnergyConsumptionModel`` directly. The HVAC calculation also
+checks later changes to that attribute. Existing studies with non-default
+cabin settings need to reconsider that assumption; the model cannot quantify
+their requested thermostat effect.
+
+This restriction preserves the existing ambient-temperature curve and its
+limitations. HVAC demand continues to vary with outside temperature, and
+scalar/monthly ``ambient_temperature`` overrides remain supported. It introduces
+neither a cabin heat-balance model nor new calibration data.
+
+``tests/test_cabin_temperature.py`` checks early errors, direct energy-model
+calls, later attribute changes and the existing heating/cooling loads. Completed
+13m-city diesel, fuel-cell and depot-BEV runs cover reordered 2020/2025/2030
+years, two load samples, country temperatures and ambient overrides. Default
+and explicit all-20-degree settings agree through sizing, inventories and LCIA.
+
 .. _temperature-fallback-checks:
 
 Bus temperature fallback

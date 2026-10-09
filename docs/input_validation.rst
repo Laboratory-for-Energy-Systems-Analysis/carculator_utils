@@ -53,10 +53,16 @@ Bus temperature inputs
 
 Bus HVAC uses ``ambient_temperature`` in degrees Celsius. A scalar applies to
 every month; a sequence supplies twelve values in January--December order.
-``indoor_temperature`` sets the cabin temperature, defaulting to 20 degrees
-Celsius. Explicit temperature inputs are validated and preserved. Passenger
-cars, trucks and two-wheelers use annual thermal-demand inputs and reject these
-temperature overrides.
+The cabin assumption is fixed at 20 degrees Celsius: ``indoor_temperature`` may
+be the scalar ``20`` or twelve monthly values all equal to ``20``. Other values
+raise ``ValueError`` before bus sizing because the empirical HVAC curve does
+not model cabin-setpoint changes. Direct ``EnergyConsumptionModel`` callers
+follow the same restriction, which is also checked when calculating HVAC loads.
+See :ref:`cabin-temperature-limitation` for scope and migration details.
+
+HVAC demand still varies with outside temperature. Ambient-temperature overrides
+are validated and preserved. Passenger cars, trucks and two-wheelers use annual
+thermal-demand inputs and reject temperature overrides.
 
 When ``ambient_temperature`` is omitted, the model reads the first row for the
 selected country in ``data/monthly_avg_temp.csv``. If the country is absent,

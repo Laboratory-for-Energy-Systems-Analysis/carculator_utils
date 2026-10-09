@@ -92,6 +92,26 @@ def get_country_temperature(country: str) -> np.ndarray:
                 return np.asarray(row[3:], dtype=float)
 
 
+def validate_hvac_indoor_temperature(value: Union[float, np.ndarray]):
+    """Retain the empirical HVAC model's fixed 20-degree cabin assumption.
+
+    Accept a scalar or twelve monthly values, all equal to 20 degrees Celsius.
+    Return a scalar or private array; other cabin settings are not modelled.
+    """
+    message = (
+        "Indoor temperature must be fixed at 20 degrees Celsius "
+        "(a scalar or twelve monthly values). The empirical HVAC curve "
+        "does not model cabin-setpoint changes."
+    )
+    try:
+        temperature = np.asarray(value, dtype=float)
+    except (TypeError, ValueError) as exc:
+        raise ValueError(message) from exc
+    if temperature.shape not in ((), (12,)) or np.any(temperature != 20):
+        raise ValueError(message)
+    return float(temperature) if temperature.ndim == 0 else temperature.copy()
+
+
 def convert_to_xr(data):
     return xr.DataArray(
         data,
@@ -168,6 +188,12 @@ class EnergyConsumptionModel:
         None by default. A numeric array must match the cycle length.
     :type gradient: numpy.ndarray
 
+    :param ambient_temperature: Celsius scalar or twelve monthly temperatures;
+        None uses the selected country's bundled series for HVAC.
+    :param indoor_temperature: Fixed cabin assumption: 20 degrees Celsius,
+        either as a scalar or twelve identical monthly values. Other settings
+        raise ValueError because cabin-setpoint sensitivity is not modelled.
+
     :ivar velocity: Time series of speed values, in meters per second.
     :vartype velocity: numpy.ndarray
     :ivar acceleration: Time series of acceleration, calculated as
@@ -188,6 +214,7 @@ class EnergyConsumptionModel:
         ambient_temperature: Union[float, np.ndarray] = None,
         indoor_temperature: Union[float, np.ndarray] = 20,
     ) -> None:
+        indoor_temperature = validate_hvac_indoor_temperature(indoor_temperature)
         if not isinstance(vehicle_size, list):
             vehicle_size = [vehicle_size]
 
@@ -297,6 +324,9 @@ class EnergyConsumptionModel:
         battery_cooling_unit,
         battery_heating_unit,
     ) -> tuple[Any, Any, Any, Any]:
+        self.indoor_temperature = np.broadcast_to(
+            validate_hvac_indoor_temperature(self.indoor_temperature), (12,)
+        ).copy()
         if self.ambient_temperature is not None:
             if isinstance(self.ambient_temperature, (float, int)):
                 self.ambient_temperature = np.resize(self.ambient_temperature, (12,))
@@ -308,14 +338,6 @@ class EnergyConsumptionModel:
             self.ambient_temperature = np.resize(
                 get_country_temperature(self.country), (12,)
             )
-
-        if self.indoor_temperature is not None:
-            if isinstance(self.indoor_temperature, (float, int)):
-                self.indoor_temperature = np.resize(self.indoor_temperature, (12,))
-            else:
-                self.indoor_temperature = np.array(self.indoor_temperature)
-                if len(self.indoor_temperature) != 12:
-                    raise ValueError("Indoor temperature must be a 12-month array")
 
         # use ambient temperature if provided, otherwise
         # monthly temperature average (12 values)

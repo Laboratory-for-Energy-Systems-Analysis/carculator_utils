@@ -13,7 +13,10 @@ from .battery_costs import ENERGY_COST, POWER_COST, capture_inputs, is_battery_c
 from .combustion_controls import validate_control_keys
 from .cost_uncertainty import FCEV_FACTOR, GENERAL_FACTOR, attach_cost_factors
 from .driving_cycles import detect_vehicle_type
-from .energy_consumption import get_default_driving_cycle_name
+from .energy_consumption import (
+    get_default_driving_cycle_name,
+    validate_hvac_indoor_temperature,
+)
 from .hot_emissions import HotEmissionsModel
 from .noise_emissions import NoiseEmissionsModel
 from .numerical import iterate_until_converged
@@ -134,7 +137,10 @@ class VehicleModel:
         :param ambient_temperature: Celsius scalar or twelve monthly values for
             bus HVAC only. Other families use annual-average thermal-demand
             inputs and reject temperature overrides rather than ignoring them.
-        :param indoor_temperature: Bus cabin setpoint in Celsius, default 20.
+        :param indoor_temperature: Fixed bus cabin assumption, 20 degrees
+            Celsius. A scalar or twelve values all equal to 20 are accepted;
+            other settings raise ValueError because the empirical HVAC curve
+            does not model cabin-setpoint changes.
         :param battery_costs: Explicit battery unit costs, keyed by parameter
             name and then ``(powertrain, size, year)``. Values are nonnegative
             scalars or one value per sample. Useful for arrays without input
@@ -164,6 +170,8 @@ class VehicleModel:
         indoor_temperature = validate_temperature(
             indoor_temperature, "Indoor temperature"
         )
+        if self.vehicle_type == "bus":
+            indoor_temperature = validate_hvac_indoor_temperature(indoor_temperature)
         if ambient_temperature is not None:
             ambient_temperature = validate_temperature(
                 ambient_temperature, "Ambient temperature"
