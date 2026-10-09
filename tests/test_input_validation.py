@@ -265,13 +265,13 @@ def test_wrong_category_fuels_fail_even_at_zero_share(
         ("petrol", "petrol - bioethanol - sugarbeet"),
         (
             "petrol",
-            "petrol - synthetic - methanol - electrolysis - economic allocation",
+            "petrol - synthetic - methanol - cement - economic allocation",
         ),
         ("methane", "methane"),
         ("methane", "methane - biomethane - sewage sludge"),
         ("methane", "methane - synthetic - biological"),
         ("hydrogen", "hydrogen - smr - natural gas"),
-        ("hydrogen", "hydrogen - smr - biogas"),
+        ("hydrogen", "hydrogen - atr - biogas"),
         ("hydrogen", "hydrogen - electrolysis - PEM"),
     ],
 )

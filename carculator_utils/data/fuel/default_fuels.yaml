@@ -33,12 +33,7 @@ methane:
     - methane
     - methane - biomethane - sewage sludge
     - methane - synthetic - coal
-    - methane - synthetic - electrochemical
-    - methane - synthetic - electrochemical - cement
-    - methane - synthetic - electrochemical - MSWI
     - methane - synthetic - biological
-    - methane - synthetic - biological - cement
-    - methane - synthetic - biological - MSWI
 
 hydrogen: 
   primary: hydrogen - smr - natural gas
@@ -51,10 +46,6 @@ hydrogen:
     - hydrogen - thermochemical water splitting
     - hydrogen - smr - natural gas
     - hydrogen - smr - natural gas with CCS
-    - hydrogen - smr - biogas
-    - hydrogen - smr - biogas with CCS
-    - hydrogen - coal gasification
-    - hydrogen - coal gasification with CCS
     - hydrogen - wood gasification
     - hydrogen - wood gasification with CCS
     - hydrogen - atr - natural gas
@@ -71,9 +62,7 @@ petrol:
     - petrol - bioethanol - maize starch
     - petrol - bioethanol - sugarbeet
     - petrol - bioethanol - forest residues
-    - petrol - synthetic - methanol - electrolysis - economic allocation
     - petrol - synthetic - methanol - cement - economic allocation
-    - petrol - synthetic - methanol - electrolysis - energy allocation
     - petrol - synthetic - methanol - cement - energy allocation
     - petrol - synthetic - methanol - coal - economic allocation
     - petrol - synthetic - methanol - coal - energy allocation

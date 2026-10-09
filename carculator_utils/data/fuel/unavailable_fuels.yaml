@@ -1,0 +1,14 @@
+# Known road-fuel options excluded from the supported catalogue.
+hydrogen - coal gasification: No matching bundled supplier.
+hydrogen - coal gasification with CCS: No matching bundled supplier.
+hydrogen - smr - biogas: No matching bundled supplier.
+hydrogen - smr - biogas with CCS: No matching bundled supplier.
+methane - synthetic - biological - MSWI: No fuel specification or delivery recipe.
+methane - synthetic - biological - cement: No fuel specification or delivery recipe.
+methane - synthetic - electrochemical: No matching bundled supplier.
+methane - synthetic - electrochemical - MSWI: No matching bundled supplier.
+methane - synthetic - electrochemical - cement: No matching bundled supplier.
+petrol - synthetic - methanol - electrolysis - economic allocation: Ambiguous carbon-source alias. No
+  DAC gasoline supplier is bundled; choose the explicit cement option if appropriate.
+petrol - synthetic - methanol - electrolysis - energy allocation: Ambiguous carbon-source alias. No DAC
+  gasoline supplier is bundled; choose the explicit cement option if appropriate.

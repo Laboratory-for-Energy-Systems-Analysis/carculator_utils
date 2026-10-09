@@ -146,6 +146,14 @@ def get_fuels_specs() -> dict:
     return fuel_specs
 
 
+def get_unavailable_fuels() -> dict:
+    """Return known unsupported fuel labels and explicit reasons, without fallback."""
+    with (DATA_DIR / "fuel" / "unavailable_fuels.yaml").open(
+        encoding="utf-8"
+    ) as stream:
+        return yaml.safe_load(stream)
+
+
 class BackgroundSystemModel:
     """
     Retrieve and build dictionaries that contain important information to model in the background system:

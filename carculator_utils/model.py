@@ -8,7 +8,11 @@ import numpy as np
 import xarray as xr
 import yaml
 
-from .background_systems import BackgroundSystemModel
+from .background_systems import (
+    BackgroundSystemModel,
+    get_default_fuels,
+    get_unavailable_fuels,
+)
 from .battery_costs import ENERGY_COST, POWER_COST, capture_inputs, is_battery_cost
 from .combustion_controls import validate_control_keys
 from .cost_uncertainty import FCEV_FACTOR, GENERAL_FACTOR, attach_cost_factors
@@ -44,8 +48,7 @@ def load_default_specs_for_fuels():
     """
     Load default_fuels.yaml file and return a dictionary with fuel specifications.
     """
-    with open(Path(__file__).parent / "data" / "fuel" / "default_fuels.yaml") as file:
-        return yaml.load(file, Loader=yaml.FullLoader)
+    return get_default_fuels()
 
 
 def validate_vehicle_array(array: xr.DataArray) -> None:
@@ -1485,6 +1488,7 @@ class VehicleModel:
             raise ValueError("fuel_blend must be a dictionary.")
         fuel_blend = deepcopy(fuel_blend)
         default_specs = load_default_specs_for_fuels()
+        unavailable = get_unavailable_fuels()
         n_years = self.array.sizes["year"]
 
         def numeric_values(context, field, value):
@@ -1508,6 +1512,11 @@ class VehicleModel:
             if not isinstance(component, dict):
                 raise ValueError(f"{context} must be a dictionary.")
             fuel_type = component.get("type")
+            if isinstance(fuel_type, str) and fuel_type in unavailable:
+                raise ValueError(
+                    f"{context}: fuel type {fuel_type!r} is unavailable. "
+                    f"{unavailable[fuel_type]}"
+                )
             if not isinstance(fuel_type, str) or fuel_type not in self.bs.fuel_specs:
                 raise ValueError(f"{context}: unknown fuel type {fuel_type!r}.")
             if fuel_type not in default_specs[fuel]["all"]:

@@ -15,6 +15,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Limit the public road-fuel catalogue to resolvable delivery chains. Report eleven unavailable or ambiguous choices with explicit reasons at model construction instead of failing after a completed run.
+
 - Correct synthetic methanol diesel carbon-source supplier swaps and the petrol energy-allocation alias. Verify named suppliers in completed inventories across all four vehicle families; see docs/fuel_catalogue.rst.
 
 - Reject overlapping bundled default cells at input loading. Resolve sibling parameter scopes without changing effective values or distributions; custom dictionaries retain explicit first-entry compatibility.
