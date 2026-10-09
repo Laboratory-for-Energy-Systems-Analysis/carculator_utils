@@ -23,6 +23,7 @@ from scipy import sparse
 
 from . import DATA_DIR
 from .background_systems import BackgroundSystemModel
+from .carbon_balance import inventory_carbon_balance, reconcile_exhaust_carbon
 from .electricity import (
     DEFAULT_SCENARIO,
     TYNDP_SCENARIO,
@@ -351,6 +352,18 @@ class Inventory:
             getattr(self.vm, "_fuel_blend_years", None),
             self.scope["year"],
         )
+
+    def carbon_balance(self):
+        """Audit engine-fuel/exhaust carbon bounds without altering inventories."""
+        return inventory_carbon_balance(self)
+
+    def reconcile_exhaust_carbon(self, carbon_fractions, *, source):
+        """Balance exhaust CO2 using explicit, sourced unspecified-carbon fractions.
+
+        See :doc:`carbon_accounting` for the engine-fuel boundary and retained
+        climate-allocation limitations. Recalculate impacts after this operation.
+        """
+        return reconcile_exhaust_carbon(self, carbon_fractions, source=source)
 
     def get_results_table(self, sensitivity: bool = False) -> xr.DataArray:
         """
@@ -1930,6 +1943,7 @@ class Inventory:
             indices=export.rev_inputs,
             db_name=f"{filename}_{self.vm.vehicle_type}_{datetime.now().strftime('%Y%m%d')}",
         )
+        lci.carbon_balance_provenance = getattr(self, "carbon_balance_provenance", None)
 
         provenance = getattr(self, "electricity_provenance", {})
         if getattr(self, "hydrogen_power_activities", []):

@@ -34,6 +34,7 @@ User's Guide
    fuel_catalogue
    input_completeness
    methane_leakage
+   carbon_accounting
    electricity_lifetime
    electricity_scenarios
    electricity_coverage

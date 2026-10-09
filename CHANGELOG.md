@@ -17,6 +17,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Expose bounded physical-carbon diagnostics separately from legacy non-fossil climate allocation. Support repeatable exhaust CO2 reconciliation with explicit sourced composition; report the default full-oxidation limitation in exports.
+
 - Require explicit matching evidence and calibration/held-out roles in energy comparisons; retain screening exclusions, record fresh completed runs, and fail the audit command on model-run errors.
 
 - Remove automatic Swiss climate substitution for missing bus-country data; require explicit ambient temperatures and validate direct HVAC profiles. Document retained city proxies and thermal-model limits.

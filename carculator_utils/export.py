@@ -364,6 +364,15 @@ class ExportInventory:
             else:
                 pass
 
+            if tuple_output[0].startswith("transport, "):
+                carbon = getattr(self, "carbon_balance_provenance", None)
+                note = (
+                    f"Exhaust carbon reconciliation: {carbon}."
+                    if carbon
+                    else "Carbon accounting: full-oxidation CO2 plus separately estimated pollutants; not a closed elemental carbon balance."
+                )
+                new_act["comment"] = (new_act.get("comment", "") + " " + note).strip()
+
             list_act.append(new_act)
 
         return list_act
