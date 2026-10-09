@@ -56,6 +56,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Documentation and verification
 
+- Preserve electricity CSV/YAML bytes and their recorded hashes on Windows with explicit LF checkout attributes, including the hashed hydrogen recipe. Write temperature-test CSV fixtures without platform newline translation, preventing spurious blank rows and parsing failures.
 - Add current installation and executable 2025 quick-start examples, migration notes and a release checklist.
 - Record calibration scope, measurement boundaries and numerical consistency separately from empirical validation.
 - Verify built wheels and sdist-built wheels, packaged resource hashes, installed tests with export extras and offline core-only model/LCIA smoke runs.

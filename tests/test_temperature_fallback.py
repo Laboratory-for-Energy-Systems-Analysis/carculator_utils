@@ -53,7 +53,9 @@ def test_direct_and_fallback_parsing_preserve_negative_decimals(
         4.25,
         -0.5,
     ]
-    with (tmp_path / energy_consumption.MONTHLY_AVG_TEMP).open("w") as stream:
+    with (tmp_path / energy_consumption.MONTHLY_AVG_TEMP).open(
+        "w", encoding="utf-8", newline=""
+    ) as stream:
         writer = csv.writer(stream, delimiter=";")
         writer.writerow(["city", "country", "iso_code", *range(1, 13)])
         writer.writerow(["test city", "Switzerland", "CH", *expected])
