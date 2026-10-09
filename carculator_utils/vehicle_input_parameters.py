@@ -29,7 +29,8 @@ def validate_parameters(parameters, *, check_duplicates=False):
 
     :param parameters: Mapping from record identifiers to parameter definitions.
     :param check_duplicates: Reject overlapping name/size/powertrain/year cells.
-        Disabled by default to preserve precedence in existing bundled data.
+        Bundled defaults are checked; explicit custom inputs keep first-entry
+        precedence unless the caller enables this audit.
     :raises ValueError: A record is malformed, nonfinite, or has invalid bounds.
     """
     if not isinstance(parameters, dict):
@@ -142,6 +143,7 @@ class VehicleInputParameters(NamedParameters):
     def __init__(self, parameters=None, extra=None, limit=None):
         """Create a `klausen <https://github.com/cmutel/klausen>`__ model with the car input parameters."""
         super().__init__(None)
+        using_defaults = parameters is None
 
         if parameters is None and not self.DEFAULT.exists():
             raise FileNotFoundError(
@@ -167,7 +169,7 @@ class VehicleInputParameters(NamedParameters):
             raise ValueError("extra must be a sequence of parameter-name strings.")
         extra = set(extra)
 
-        validate_parameters(parameters)
+        validate_parameters(parameters, check_duplicates=using_defaults)
         self.sizes = sorted(
             {size for o in parameters.values() for size in o.get("sizes", [])}
         )

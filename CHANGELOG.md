@@ -15,6 +15,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Reject overlapping bundled default cells at input loading. Resolve sibling parameter scopes without changing effective values or distributions; custom dictionaries retain explicit first-entry compatibility.
+
 - Retain original model inputs for repeatable completed runs, including PHEV component inputs and selected chemistry-price samples. Preserve explicit input edits and reject ambiguous edits to aggregated PHEV outputs; see `docs/repeated_runs.rst`.
 
 - Correct annual capital recovery and replacement discounting in the shared base cost method; preserve cell-specific purchase-price overrides and finite inactive-lifetime costs. Vehicle subclass formulas are unchanged.
