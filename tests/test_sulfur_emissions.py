@@ -81,11 +81,16 @@ def minimal_inventory():
     inventory.rev_inputs = {value: key for key, value in inventory.inputs.items()}
     inventory.A = np.full((2, 5, 5, 3), 123.0)
     inventory.array = xr.DataArray(
-        np.zeros((2, 2, 4, 3)),
+        np.zeros((2, 4, 4, 3)),
         dims=("value", "parameter", "combined_dim", "year"),
         coords={
             "value": [9, 2],
-            "parameter": ["fuel mass", "range"],
+            "parameter": [
+                "fuel consumption",
+                "fuel density per kg",
+                "fuel mass",
+                "range",
+            ],
             "combined_dim": [
                 "Large - ICEV-d",
                 "Large - BEV",
@@ -95,18 +100,23 @@ def minimal_inventory():
             "year": inventory.scope["year"],
         },
     )
-    inventory.array.loc[dict(parameter="range")] = 100
-    inventory.array.loc[dict(parameter="fuel mass", combined_dim="Large - ICEV-d")] = [
-        [10, 20, 30],
-        [70, 80, 90],
-    ]
-    inventory.array.loc[dict(parameter="fuel mass", combined_dim="Small - ICEV-d")] = [
-        [40, 0, 60],
-        [100, 110, 120],
+    # Stored fuel / range is deliberately inconsistent with burned fuel.
+    # The inventory must use litres/km and kg/litre, including zero fuel use.
+    inventory.array.loc[dict(parameter="range")] = 0
+    inventory.array.loc[dict(parameter="fuel mass")] = 100
+    inventory.array.loc[dict(parameter="fuel density per kg")] = [0.5, 0.8, 1]
+    inventory.array.loc[
+        dict(parameter="fuel consumption", combined_dim="Large - ICEV-d")
+    ] = [
+        [0.2, 0.25, 0.3],
+        [1.4, 1, 0.9],
     ]
     inventory.array.loc[
-        dict(parameter="range", combined_dim="Small - ICEV-d", value=9, year=2020)
-    ] = 0
+        dict(parameter="fuel consumption", combined_dim="Small - ICEV-d")
+    ] = [
+        [0.8, 0, 0.6],
+        [2, 1.375, 1.2],
+    ]
     return inventory
 
 
@@ -119,7 +129,7 @@ def test_sulfur_emissions_align_years_samples_and_vehicle_columns(reorder):
         )
     before = inventory.A.copy()
     inventory.add_sulphur_emissions("diesel", "EV-d", ["ICEV-d", "HEV-d", "PHEV-d"])
-    # Each entry is kg fuel/km for the known 100-km batches above.
+    # Independent mass balances from the volume and density batches above.
     fuel_per_km = np.array(
         [[[0.1, 0.2, 0.3], [0.4, 0, 0.6]], [[0.7, 0.8, 0.9], [1, 1.1, 1.2]]]
     )
@@ -152,7 +162,7 @@ CASES = [
         "carculator",
         "Car",
         "Medium",
-        ["ICEV-p", "ICEV-d", "HEV-p", "HEV-d", "ICEV-g", "BEV"],
+        ["ICEV-p", "ICEV-d", "HEV-p", "HEV-d", "PHEV-p", "PHEV-d", "ICEV-g", "BEV"],
         {},
     ),
     (
@@ -166,7 +176,7 @@ CASES = [
         "carculator_truck",
         "Truck",
         "40t",
-        ["ICEV-d", "HEV-d", "ICEV-g", "BEV"],
+        ["ICEV-d", "HEV-d", "PHEV-d", "ICEV-g", "BEV"],
         {"cycle": "Long haul"},
     ),
     (
@@ -225,12 +235,88 @@ def test_completed_inventory_sulfur_mass_balance(completed_run):
             )
             fuel_mass = -inventory.A[:, market, column, :]
             assert (fuel_mass > 0).all()
+            selected = model.array.sel(powertrain=powertrain).isel(size=0)
+            energy = selected.sel(parameter="TtW energy")
+            if powertrain.startswith("PHEV"):
+                energy = selected.sel(parameter="TtW energy, combustion mode") * (
+                    1 - selected.sel(parameter="electric utility factor")
+                )
+            burned_mass = energy / (selected.sel(parameter="LHV fuel MJ per kg") * 1000)
+            np.testing.assert_allclose(
+                fuel_mass, burned_mass.transpose("value", "year"), rtol=2e-5
+            )
             expected = fuel_mass * sulfur * 2
         else:
             expected = 0
         np.testing.assert_allclose(
             -inventory.A[:, row, column, :], expected, rtol=2e-6, atol=1e-12
         )
+
+
+@pytest.mark.family
+@pytest.mark.parametrize("case", [CASES[0], CASES[2]], ids=lambda case: case[0])
+@pytest.mark.parametrize("electric_share", [0, 0.5, 1])
+def test_completed_phev_sulfur_follows_burned_fuel(case, electric_share):
+    name, prefix, size, powertrains, kwargs = case
+    if importlib.util.find_spec(name) is None:
+        if os.environ.get("CARCULATOR_REQUIRE_FAMILY") == "1":
+            pytest.fail(f"Required family package {name} missing")
+        pytest.skip(f"Optional family package {name} missing")
+    package = importlib.import_module(name)
+    inputs = getattr(package, prefix + "InputParameters")()
+    inputs.static()
+    powertrains = [pt for pt in powertrains if pt.startswith("PHEV")]
+    years = [2030, 2025]
+    _, array = fill_xarray_from_input_parameters(
+        inputs, scope={"size": [size], "powertrain": powertrains, "year": years}
+    )
+    array = array.sel(year=years).isel(value=[0, 0]).assign_coords(value=[9, 2])
+    array.loc[dict(parameter="average passengers", value=2)] *= 1.1
+    original = array.copy(deep=True)
+    kwargs = kwargs.copy()
+    if prefix == "Car":
+        kwargs["electric_utility_factor"] = {year: electric_share for year in years}
+    model = getattr(package, prefix + "Model")(array, country="CH", **kwargs)
+    if prefix == "Truck":
+        model.set_all(electric_utility_factor=electric_share)
+    else:
+        model.set_all()
+    xr.testing.assert_identical(array, original)
+    inventory = getattr(package, "Inventory" + prefix)(
+        model, scenario="static", functional_unit="vkm"
+    )
+    assert np.isfinite(inventory.calculate_impacts()).all()
+    row = inventory.inputs[("Sulfur dioxide", ("air",), "kilogram")]
+    for powertrain in powertrains:
+        selected = model.array.sel(size=size, powertrain=powertrain)
+        np.testing.assert_allclose(
+            selected.sel(parameter="electric utility factor"), electric_share
+        )
+        # Independent kg fuel/km from combustion energy and the supplied share.
+        burned_mass = (
+            selected.sel(parameter="TtW energy, combustion mode")
+            * (1 - electric_share)
+            / (selected.sel(parameter="LHV fuel MJ per kg") * 1000)
+        ).transpose("value", "year")
+        fuel = "diesel" if powertrain.endswith("-d") else "petrol"
+        sulfur = 10e-6 if fuel == "diesel" else 8e-6
+        (column,) = inventory.find_input_indices(
+            (f"transport, {model.vehicle_type}, {powertrain},",)
+        )
+        (market,) = inventory.get_vehicle_supply_indices(
+            f"fuel supply for {fuel} vehicles", [column]
+        )
+        np.testing.assert_allclose(
+            -inventory.A[:, market, column, :], burned_mass, rtol=2e-5, atol=1e-12
+        )
+        np.testing.assert_allclose(
+            -inventory.A[:, row, column, :],
+            burned_mass * sulfur * 2,
+            rtol=2e-5,
+            atol=1e-12,
+        )
+        if electric_share == 1:
+            np.testing.assert_array_equal(inventory.A[:, row, column, :], 0)
 
 
 @pytest.mark.family

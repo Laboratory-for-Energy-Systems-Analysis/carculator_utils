@@ -42,14 +42,6 @@ warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
 IAM_FILES_DIR = DATA_DIR / "IAM"
 
 
-RANGE_PARAM = {
-    "two-wheeler": "range",
-    "car": "range",
-    "bus": "daily distance",
-    "truck": "target range",
-}
-
-
 def check_func_unit(func_unit):
     """Check if func_unit is a valid functional unit."""
     if func_unit not in ["vkm", "pkm", "tkm"]:
@@ -1491,7 +1483,7 @@ class Inventory:
             self.A[:, row, columns] = -burned_fuel * intensity
 
     def add_sulphur_emissions(self, fuel, powertrain_short, powertrains) -> None:
-        """Apply each year's kg S/kg fuel to fuel use, yielding kg SO2/km."""
+        """Apply each year's kg S/kg fuel to burned fuel, yielding kg SO2/km."""
         sulfur_concentration = self.get_sulfur_content(self.vm.country, fuel)
         selected = self.array.sel(
             combined_dim=[
@@ -1500,9 +1492,10 @@ class Inventory:
                 if any(powertrain in label for powertrain in powertrains)
             ]
         )
-        distance = selected.sel(parameter=RANGE_PARAM[self.vm.vehicle_type])
-        fuel_per_km = selected.sel(parameter="fuel mass") / distance.where(
-            distance != 0, 1
+        # Match fuel purchases and CO2. PHEV fuel consumption already includes
+        # the combustion-driving share; stored fuel / combined range does not.
+        fuel_per_km = selected.sel(parameter="fuel consumption") * selected.sel(
+            parameter="fuel density per kg"
         )
         emissions = fuel_per_km * sulfur_concentration * (64 / 32)  # SO2 / S molar mass
         columns = self.find_input_indices(

@@ -266,8 +266,25 @@ example, tripled Swiss diesel's applied concentration from 10 to 30 ppm,
 and petrol's from 8 to 24 ppm. With differing concentrations, a historical
 year could also inflate future-year emissions. Recalculate multi-year
 inventories and exports to correct these SO2 exchanges and their LCIA effects.
-This repair changes the year lookup while retaining the existing fuel-mass
-and distance basis of the SO2 calculation.
+That year-lookup repair retained the former stored-fuel/distance basis.
+
+SO2 now uses the same burned fuel per kilometre as fuel purchases and CO2:
+``fuel consumption`` (litres/km) times ``fuel density per kg`` (kg/litre),
+times the annual sulfur fraction, times ``64 / 32``. Dividing stored fuel by
+combined range is not equivalent for plug-in hybrids: their fuel consumption
+already accounts for the share of distance driven electrically. The corrected
+calculation applies that share once, through fuel consumption, and produces
+zero fuel-based SO2 when no fuel is burned.
+
+Completed default Swiss 2025 runs illustrate the correction. On WLTC, the
+``Medium`` petrol PHEV previously emitted 0.143 mg SO2/km instead of the
+fuel-balance expectation of 0.169 mg/km (15.0% low); the diesel PHEV emitted
+0.170 instead of 0.198 mg/km (14.2% low). The ``40t`` diesel PHEV on the
+``Long haul`` cycle emitted 4.151 instead of 4.181 mg/km (0.7% low).
+These expectations use the existing fuel demand and bundled sulfur values,
+not external emissions measurements. Recalculate affected PHEV inventories
+and exports; vehicle energy use, fuel purchases and CO2 are unchanged by
+this accounting correction.
 
 ``Inventory.get_sulfur_content(location, fuel)`` now returns a private
 ``xarray.DataArray`` with a ``year`` dimension in inventory order, including
@@ -278,9 +295,13 @@ previously populated SO2 exchange when recalculating.
 ``tests/test_sulfur_emissions.py`` checks distinct yearly concentrations,
 zero endpoints, reordered years and dimensions, country fallback, multiple
 sizes/samples and preservation of unrelated exchanges. Completed car, bus,
-truck and two-wheeler models cover conventional engines and non-plug-in
-hybrids, with BEV and methane controls. Independent expectations multiply
-inventoried liquid-fuel mass by the bundled sulfur fraction and ``64 / 32``.
+truck and two-wheeler models cover conventional engines, non-plug-in hybrids
+and the supported petrol/diesel PHEVs, with BEV and methane controls.
+Independent expectations compare fuel purchases against combustion energy
+divided by heating value (weighted by combustion-driving share for PHEVs),
+then multiply burned fuel mass by the bundled sulfur fraction and ``64 / 32``.
+Additional completed PHEV runs check explicit electric-driving shares of 0%,
+50% and 100%, including zero fuel and SO2 at the fully electric endpoint.
 Single-year inventories are built from the same completed vehicles to isolate
 inventory behavior from sizing. LCIA must remain finite, and annual exports
 of a retained sample must preserve the SO2 exchanges and source inventory.
