@@ -17,6 +17,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Add explicit electricity consumption mixes with conservative import/re-export tracing, labelled custom-mix alignment, and sourced grid-loss overrides. Retain generation/trade/loss boundaries in provenance.
+
 - Characterize Ethene as exact Ethylene air flows, preserving original matrix positions. Publish emission-table fingerprints and the explicitly unverified provenance of legacy NH3/N2O adjustments.
 
 - Remove the unqualified default 0.4% additional CNG leakage overlay in sibling defaults. Retain upstream and exhaust emissions and explicit residual-loss accounting; verify the delivered-fuel boundary in completed family runs.

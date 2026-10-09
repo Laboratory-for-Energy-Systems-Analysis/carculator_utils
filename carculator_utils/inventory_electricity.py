@@ -24,11 +24,33 @@ def lifetime_mix(
     coords["technology"] = technologies
     shape = (*lifetime.shape, len(technologies))
     if custom_mix is not None:
+        if isinstance(custom_mix, xr.DataArray):
+            if set(custom_mix.dims) != {"year", "technology"}:
+                raise ValueError(
+                    "Labelled custom electricity mix needs year and technology dimensions."
+                )
+            for dim, labels in (
+                ("year", array.year.values),
+                ("technology", technologies),
+            ):
+                if not custom_mix.get_index(dim).is_unique or set(
+                    custom_mix[dim].values
+                ) != set(labels):
+                    raise ValueError(
+                        f"Custom electricity mix {dim} coordinates must match the inventory exactly."
+                    )
+            custom_mix = custom_mix.sel(
+                year=array.year, technology=technologies
+            ).transpose("year", "technology")
         mix = np.array(custom_mix, dtype=float, copy=True)
         expected = (array.sizes["year"], len(technologies))
         if mix.shape != expected:
             raise ValueError(
                 f"Custom electricity mix must have shape {expected}; got {mix.shape}."
+            )
+        if not np.isfinite(mix).all() or (mix < 0).any():
+            raise ValueError(
+                "Custom electricity mix shares must be finite and nonnegative."
             )
         values = np.broadcast_to(mix, shape).copy()
     else:

@@ -804,6 +804,16 @@ class Inventory:
                 "boundary": "user-supplied electricity mix",
                 "horizon_policy": "custom",
             }
+            if isinstance(custom, xr.DataArray):
+                for key in (
+                    "boundary",
+                    "source",
+                    "trade_method",
+                    "energy_unit",
+                    "method_reference",
+                ):
+                    if key in custom.attrs:
+                        self.electricity_provenance[key] = custom.attrs[key]
         else:
             generation, self.electricity_provenance = select_electricity_mix(
                 self.bs.electricity_mix,
@@ -930,19 +940,48 @@ class Inventory:
         and hydrogen production through electrolysis.
         """
 
-        loss_country = {"UK": "GB", "NM": "NA"}.get(self.vm.country, self.vm.country)
-        if self.electricity_provenance["electricity_scenario"] == "legacy":
+        custom_loss = self.background_configuration.get("electricity loss multiplier")
+        if custom_loss is not None:
+            try:
+                custom_loss = np.asarray(custom_loss, dtype=float)
+            except (TypeError, ValueError) as error:
+                raise ValueError(
+                    "Electricity loss multiplier must be numeric."
+                ) from error
+            if (
+                np.ndim(custom_loss) != 0
+                or not np.isfinite(custom_loss)
+                or custom_loss < 1
+            ):
+                raise ValueError(
+                    "Electricity loss multiplier must be a finite scalar >= 1 (generation/delivered electricity)."
+                )
+            loss_source = self.background_configuration.get("electricity loss source")
+            if not isinstance(loss_source, str) or not loss_source.strip():
+                raise ValueError(
+                    "Provide an electricity loss source for the custom multiplier."
+                )
+            losses_to_low = float(custom_loss)
             loss_country = self.vm.country
-        if loss_country not in self.bs.losses:
-            warnings.warn(
-                f"Electricity losses for {self.vm.country} use the legacy RER low-voltage multiplier.",
-                ElectricityDataWarning,
-                stacklevel=2,
+        else:
+            loss_country = {"UK": "GB", "NM": "NA"}.get(
+                self.vm.country, self.vm.country
             )
-            loss_country = "RER"
-        losses_to_low = float(self.bs.losses[loss_country]["LV"])
+            if self.electricity_provenance["electricity_scenario"] == "legacy":
+                loss_country = self.vm.country
+            if loss_country not in self.bs.losses:
+                warnings.warn(
+                    f"Electricity losses for {self.vm.country} use the legacy RER low-voltage multiplier.",
+                    ElectricityDataWarning,
+                    stacklevel=2,
+                )
+                loss_country = "RER"
+            losses_to_low = float(self.bs.losses[loss_country]["LV"])
+            loss_source = "legacy ecoinvent 3.6 low-voltage loss table"
         self.electricity_provenance.update(
-            loss_country=loss_country, loss_multiplier=losses_to_low
+            loss_country=loss_country,
+            loss_multiplier=losses_to_low,
+            loss_source=loss_source,
         )
         self.electricity_mix.attrs.update(self.electricity_provenance)
 

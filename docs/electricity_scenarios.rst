@@ -289,3 +289,43 @@ feedback calculation, all four vehicle families and multi-vehicle export/scope
 invariance. The installed artifact verifier also checks all bundled resource
 hashes. The source refresh reproduces all ten generated resources byte for byte
 from the pinned source snapshots and the versioned hydrogen recipe.
+
+Explicit consumption mixes and grid losses
+------------------------------------------
+
+The default scenarios describe domestic generation. They do not become
+consumption mixes simply by changing the country label. To account for imports,
+use ``carculator_utils.electricity_trade.consumption_mix`` with generation by
+``country, year, technology`` and bilateral physical trade by
+``exporter, importer, year``. Both must contain absolute energy in the same
+``attrs['unit']`` and include all external suppliers. The function requires an
+explicit source description and rejects missing boundaries, negative balances,
+duplicate labels, and trade cycles without an identifiable generation source.
+
+For each year, it solves ``(diag(supply) - trade.T) * shares = generation``,
+where supply is domestic generation plus imports. This proportional-sharing
+assumption traces re-exports as well as direct imports and conserves generation
+by technology across final consumption. See `Hörsch et al. (2018)
+<https://doi.org/10.1016/j.ijepes.2017.10.024>`_. Annual inputs represent annual
+pooling; hourly flow tracing can give different results. The helper does not
+infer bilateral flows from net imports, trade contracts, or certificates.
+
+Select a country's result, retaining exactly the inventory years and technology
+labels, and pass it as ``background_configuration['custom electricity mix']``.
+A labelled mix is aligned by coordinates, including reordered technologies;
+an unlabelled array retains the existing year-by-technology convention.
+Custom mixes are supplied lifetime mixes for each manufacturing year: they are
+not automatically averaged over future years. Source and trade-boundary
+metadata are retained in inventory/export provenance.
+
+``background_configuration['electricity loss multiplier']`` accepts a finite
+scalar of at least one, defined as generated electricity divided by delivered
+low-voltage electricity. Supply ``'electricity loss source'`` with its source,
+date and boundary. A measured loss fraction of generation ``l`` corresponds to
+``1 / (1 - l)``. Do not apply losses twice if the custom mix already includes
+them. Without an override, the legacy ecoinvent 3.6 loss table and any RER
+fallback remain explicitly identified in provenance.
+
+These additions allow a documented consumption boundary; they do not establish
+new global bilateral trade observations or update the default grid-loss data.
+Coarse hydro, coal and wind LCI proxies also remain scientific limitations.
