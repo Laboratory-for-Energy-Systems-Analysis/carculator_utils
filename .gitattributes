@@ -1,4 +1,9 @@
-# Electricity provenance records SHA-256 digests of the exact resource bytes.
+# Resource provenance records SHA-256 digests of the exact resource bytes.
 # Keep those bytes identical in Windows checkouts and built distributions.
 carculator_utils/data/electricity/*.csv text eol=lf
 carculator_utils/data/electricity/*.yaml text eol=lf
+carculator_utils/data/emission_factors/**/*.csv text eol=lf
+carculator_utils/data/emission_factors/*.json text eol=lf
+carculator_utils/data/emission_factors/*.yaml text eol=lf
+carculator_utils/data/IAM/*.csv text eol=lf
+carculator_utils/data/IAM/*.json text eol=lf

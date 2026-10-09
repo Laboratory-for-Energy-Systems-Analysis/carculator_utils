@@ -44,9 +44,21 @@ each command's limit, individual test names and the 20 slowest test durations,
 so a timeout can be traced to the active suite and test. Splitting or profiling
 expensive integration tests is preferable to repeatedly increasing the limit.
 
-Electricity CSV and YAML files have explicit LF checkout attributes because their
-provenance records hash exact bytes. Preserve those attributes when changing
-data or packaging; do not replace the recorded hashes with CRLF-specific values.
+Electricity, emissions and IAM text resources have explicit LF checkout
+attributes because their provenance records hash exact bytes. Normalize new or
+regenerated resources to LF before computing their fingerprints; Git can
+normalize CRLF on commit while leaving the local working file untouched. Hashes
+from that working file would then disagree with a fresh checkout. Preserve the
+attributes and verify the manifests from fresh checkouts with both
+`core.autocrlf=false` and `core.autocrlf=true`:
+
+```bash
+python -m pytest tests/test_resource_checkouts.py tests/test_emission_provenance.py tests/test_iam_bundle.py
+```
+
+The checkout regression also verifies that an unprotected control file receives
+Windows line endings. Binary matrices and scientific values are unchanged by
+these text-file conventions; retain their exact-byte manifest checks.
 
 4. Install `.[docs]`, build with `python -m sphinx -b html docs docs/_build/html`,
    and run the README example. Check wheel/sdist metadata before publication:

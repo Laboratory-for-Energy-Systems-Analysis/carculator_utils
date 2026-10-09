@@ -17,6 +17,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Compatibility and installation
 
+- Preserve emissions and IAM text-resource fingerprints across fresh Linux/macOS and Windows checkouts. Correct eleven emissions hashes recorded from CRLF working files to match the committed LF bytes; retain all numerical values and verify both checkout modes with real Git operations.
 - Require Python 3.12 (`>=3.12,<3.13`); older Python environments must be recreated.
 - Use NumPy `>=1.26.4,<2` through the shared runtime.
 - Build wheels and source distributions from centralized `pyproject.toml` metadata.
