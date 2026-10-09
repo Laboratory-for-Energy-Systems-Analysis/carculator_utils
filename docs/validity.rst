@@ -137,6 +137,58 @@ Independent expectations check component purchases, engine fuel, combustion
 CO2 and methane leakage. Brightway exports of a retained sample preserve the
 shares and both carbon origins, including Iceland's 100% biomethane blend.
 
+.. _default-hydrogen-supply:
+
+Default hydrogen supply
+-----------------------
+
+Without an explicit hydrogen blend, FCEV cars, buses and trucks use 100%
+``hydrogen - smr - natural gas`` and 0% ``hydrogen - electrolysis - PEM``.
+This follows the primary route in ``data/fuel/default_fuels.yaml`` for every
+country and year. It is a fallback modelling assumption, with no implied
+forecast or claim to represent a measured national hydrogen market. Studies
+with known hydrogen sourcing should provide their own ``fuel_blend``.
+
+Previously, an obsolete fuel-name condition caused hydrogen to use the petrol
+bioethanol table. The resulting 2025 PEM-electrolysis shares were 1.1576289%
+for Switzerland, 4.165197% for Germany and 20.1925897% for Brazil. These were
+unrelated biofuel assumptions, with no hydrogen-specific justification.
+The repair separates hydrogen defaults from all biofuel share tables.
+
+Explicit hydrogen mixes remain supported. For example, this scalar primary-only
+override supplies 100% PEM-electrolysis hydrogen in every selected model year:
+
+.. code-block:: python
+
+    fuel_blend = {
+        "hydrogen": {
+            "primary": {"type": "hydrogen - electrolysis - PEM", "share": 1.0}
+        }
+    }
+    # Pass fuel_blend=fuel_blend to the vehicle model constructor.
+
+For mixed routes, provide primary and secondary components with complementary
+mass shares. Year-specific share sequences follow ``array.year`` order, as
+described in :doc:`input_validation`. Overrides for other fuel categories
+continue to leave the hydrogen default intact.
+
+Changing the hydrogen supply route affects upstream inventories and impacts.
+With the bundled physical fuel properties, vehicle hydrogen demand and driving
+energy remain unchanged and direct fossil/non-fossil CO2 emissions remain zero.
+The default's natural-gas production route still has upstream emissions.
+Recalculate affected FCEV studies to apply the corrected supply assumption.
+
+``tests/test_hydrogen_defaults.py`` checks country and regional defaults,
+unknown-country handling, individual and reordered years, and independence
+from biofuel tables. Completed model/LCIA checks cover Medium cars in Brazil,
+13m-city buses in Switzerland and 40t long-haul trucks in Germany for
+2020/2025/2030 and two load samples. Default, pure-electrolysis and explicit
+year-varying supplies are checked against independent kg/kg component shares,
+the 120 MJ/kg hydrogen heating value and zero direct CO2. Annual Brightway
+exports of a retained sample preserve these exchanges and the source inventory.
+These checks validate implementation of the supply assumption; they do not
+validate national hydrogen production shares or upstream production datasets.
+
 Fuel-blend inventory checks
 ----------------------------
 

@@ -232,8 +232,12 @@ class BackgroundSystemModel:
     def find_fuel_shares(
         self, fuel_blend: dict, fuel_type: str, country: str, years: List[int]
     ) -> [str, str, np.array, np.array]:
-        """
-        Find the fuel shares of the fuel blend, given a country, a fuel type and a list of years.
+        """Find fuel shares for a country and ordered model years.
+
+        Default hydrogen uses the configured primary route at 100% in every
+        country and year (currently natural-gas steam methane reforming).
+        This is a fallback assumption, independent of the biofuel tables.
+        Explicit model fuel-blend overrides are validated separately.
         """
         if fuel_type in fuel_blend:
             primary = fuel_blend[fuel_type]["primary"]["type"]
@@ -259,8 +263,8 @@ class BackgroundSystemModel:
             primary = self.default_fuels[fuel_type]["primary"]
             secondary = self.default_fuels[fuel_type]["secondary"]
 
-            if primary == "electrolysis":
-                secondary_share = np.zeros_like(np.array(years))
+            if fuel_type == "hydrogen":
+                secondary_share = np.zeros(len(years), dtype=float)
 
             else:
                 if fuel_type == "diesel":

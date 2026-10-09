@@ -74,7 +74,9 @@ reordered sample labels, short lifetimes, the background horizon, unavailable
 cells and explicit overrides. Completed car, bus, truck and two-wheeler runs in
 2025/2030 compare individual samples with their results in a group. Additional
 car cases cover multiple sizes, battery-electric, fuel-cell and methane vehicles,
-and static/prospective backgrounds.
+and static/prospective backgrounds. Fuel-cell routing cases explicitly request
+100% PEM-electrolysis hydrogen; the :ref:`default-hydrogen-supply` assumption
+uses natural-gas reforming.
 
 Repeated Brightway and SimaPro export checks inspect the separate electricity
 markets and internal supplier links and preserve the original inventory and

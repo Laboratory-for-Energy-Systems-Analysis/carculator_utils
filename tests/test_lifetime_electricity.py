@@ -56,6 +56,17 @@ def inventory_for(case, model):
     return case.inventory_type(model, scenario="static", functional_unit=case.unit)
 
 
+def electricity_dependent_fuel_blend(powertrain):
+    # Exercise electrolysis explicitly: default hydrogen now uses natural gas.
+    if powertrain == "FCEV":
+        return {
+            "hydrogen": {
+                "primary": {"type": "hydrogen - electrolysis - PEM", "share": 1.0}
+            }
+        }
+    return None
+
+
 def small_inputs():
     data = xr.DataArray(
         np.ones((2, 1, 3, 1)),
@@ -173,7 +184,11 @@ def test_two_vehicle_sizes_keep_independent_supplies(powertrain, scenario):
         source.loc[dict(parameter="lifetime kilometers", size=size)] = xr.DataArray(
             lifetimes, dims="value", coords={"value": [9, 2]}
         )
-    model = case.model_type(source, country="DE")
+    model = case.model_type(
+        source,
+        country="DE",
+        fuel_blend=electricity_dependent_fuel_blend(powertrain),
+    )
     model.set_all()
     inventory = case.inventory_type(model, scenario=scenario)
     result = inventory.calculate_impacts()
@@ -216,7 +231,11 @@ def test_vehicle_specific_supplies_survive_export(powertrain, tmp_path):
     source.loc[dict(parameter="kilometers per year")] = 20000
     source.loc[dict(parameter="lifetime kilometers", size="Large")] = 100000
     source.loc[dict(parameter="lifetime kilometers", size="Medium")] = 500000
-    model = case.model_type(source, country="DE")
+    model = case.model_type(
+        source,
+        country="DE",
+        fuel_blend=electricity_dependent_fuel_blend(powertrain),
+    )
     model.set_all()
     inventory = case.inventory_type(model, scenario="static", functional_unit="pkm")
     before = inventory.A.copy()

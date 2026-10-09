@@ -52,8 +52,11 @@ Fuel blends
 -----------
 
 ``fuel_blend`` overrides only the fuel categories supplied. All other fuels
-needed by the selected powertrains retain their country- and year-specific
-defaults. ``None`` or an empty dictionary uses defaults for every selected fuel.
+needed by the selected powertrains retain their defaults. Petrol, diesel and
+methane use country- and year-specific biofuel shares. Hydrogen uses 100%
+natural-gas steam methane reforming in every country and year, as a documented
+fallback assumption; see :ref:`default-hydrogen-supply`.
+``None`` or an empty dictionary uses defaults for every selected fuel.
 For example, the diesel override below also works in a comparison containing
 petrol, methane and hydrogen vehicles: those fuels retain their default blends.
 Previously, any nonempty override replaced the entire configuration, so omitted
