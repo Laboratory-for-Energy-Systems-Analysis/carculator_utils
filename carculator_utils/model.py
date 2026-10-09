@@ -1441,6 +1441,7 @@ class VehicleModel:
 
         Shares may be scalars or one-dimensional arrays with one entry per model
         year. Primary and secondary shares must sum to one for every year.
+        Both components must use fuel types listed in the requested category.
         """
         if not isinstance(fuel_blend, dict):
             raise ValueError("fuel_blend must be a dictionary.")
@@ -1455,6 +1456,11 @@ class VehicleModel:
             fuel_type = component.get("type")
             if not isinstance(fuel_type, str) or fuel_type not in self.bs.fuel_specs:
                 raise ValueError(f"{context}: unknown fuel type {fuel_type!r}.")
+            if fuel_type not in default_specs[fuel]["all"]:
+                raise ValueError(
+                    f"{context}: fuel type {fuel_type!r} is not allowed "
+                    f"in the {fuel!r} category."
+                )
             if "share" not in component:
                 raise ValueError(f"{context}: share is required.")
             try:

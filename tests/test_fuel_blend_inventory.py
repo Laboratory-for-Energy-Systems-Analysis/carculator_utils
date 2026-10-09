@@ -103,6 +103,39 @@ def test_completed_fuel_blend_inventory(case, blend_mode):
     _completed_fuel_blend_inventory(case, blend_mode)
 
 
+@pytest.mark.parametrize("case", CASES, ids=lambda c: c[0])
+@pytest.mark.parametrize("role", ["primary", "secondary"])
+def test_wrong_category_fuels_fail_in_family_constructor(case, role):
+    name, prefix, size, powertrains, kwargs = case
+    if importlib.util.find_spec(name) is None:
+        if os.environ.get("CARCULATOR_REQUIRE_FAMILY") == "1":
+            pytest.fail(f"Required family package {name} missing")
+        pytest.skip(f"Optional family package {name} missing")
+    package = importlib.import_module(name)
+    inputs = getattr(package, prefix + "InputParameters")()
+    inputs.static()
+    powertrain = powertrains[0]
+    _, array = fill_xarray_from_input_parameters(
+        inputs,
+        scope={"size": [size], "powertrain": [powertrain], "year": [2025]},
+    )
+    fuel = POWERTRAIN_FUEL[powertrain]
+    source = {
+        fuel: {
+            "primary": {"type": FUELS[fuel][0], "share": 0.75},
+            "secondary": {"type": FUELS[fuel][1], "share": 0.25},
+        }
+    }
+    source[fuel][role]["type"] = "hydrogen - electrolysis - PEM"
+    before = deepcopy(source)
+
+    with pytest.raises(ValueError) as error:
+        getattr(package, prefix + "Model")(array, fuel_blend=source, **kwargs)
+    for detail in (repr(fuel), role, "hydrogen - electrolysis - PEM", "category"):
+        assert detail in str(error.value)
+    assert source == before
+
+
 def _completed_fuel_blend_inventory(case, blend_mode):
     name, prefix, size, powertrains, kwargs = case
     if importlib.util.find_spec(name) is None:

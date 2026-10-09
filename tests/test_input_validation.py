@@ -220,3 +220,79 @@ def test_scalar_and_year_specific_shares_broadcast(fuel_model):
 def test_invalid_fuel_definitions_have_context(fuel_model, source, match):
     with pytest.raises(ValueError, match=match):
         VehicleModel.check_fuel_blend(fuel_model, source)
+
+
+@pytest.mark.parametrize(
+    "fuel,fuel_type",
+    [
+        ("diesel", "hydrogen - electrolysis - PEM"),
+        ("diesel", "kerosene"),
+        ("petrol", "diesel"),
+        ("petrol", "hydrogen - electrolysis - PEM"),
+        ("methane", "hydrogen - electrolysis - PEM"),
+        ("hydrogen", "methane"),
+    ],
+)
+@pytest.mark.parametrize("role", ["primary", "secondary"])
+@pytest.mark.parametrize("share", [0, 0.25])
+def test_wrong_category_fuels_fail_even_at_zero_share(
+    fuel_model, fuel, fuel_type, role, share
+):
+    default = fuel_model.bs.default_fuels[fuel]["primary"]
+    source = {
+        fuel: {
+            "primary": {"type": default, "share": 1 - share},
+            "secondary": {"type": default, "share": 1 - share},
+        }
+    }
+    source[fuel][role] = {"type": fuel_type, "share": share}
+    before = deepcopy(source)
+
+    with pytest.raises(ValueError) as error:
+        VehicleModel.check_fuel_blend(fuel_model, source)
+    for detail in (repr(fuel), role, repr(fuel_type), "category"):
+        assert detail in str(error.value)
+    assert source == before
+
+
+@pytest.mark.parametrize(
+    "fuel,fuel_type",
+    [
+        ("diesel", "diesel"),
+        ("diesel", "diesel - biodiesel - cooking oil"),
+        ("diesel", "diesel - synthetic - FT - wood - economic allocation"),
+        ("petrol", "petrol"),
+        ("petrol", "petrol - bioethanol - sugarbeet"),
+        (
+            "petrol",
+            "petrol - synthetic - methanol - electrolysis - economic allocation",
+        ),
+        ("methane", "methane"),
+        ("methane", "methane - biomethane - sewage sludge"),
+        ("methane", "methane - synthetic - biological"),
+        ("hydrogen", "hydrogen - smr - natural gas"),
+        ("hydrogen", "hydrogen - smr - biogas"),
+        ("hydrogen", "hydrogen - electrolysis - PEM"),
+    ],
+)
+@pytest.mark.parametrize("role", ["primary", "secondary"])
+def test_valid_category_fuels_keep_shares_and_caller_data(
+    fuel_model, fuel, fuel_type, role
+):
+    default = fuel_model.bs.default_fuels[fuel]["primary"]
+    source = {
+        fuel: {
+            "primary": {"type": default, "share": [0.8, 0.2]},
+            "secondary": {"type": default, "share": [0.2, 0.8]},
+        }
+    }
+    source[fuel][role]["type"] = fuel_type
+    before = deepcopy(source)
+    result = VehicleModel.check_fuel_blend(fuel_model, source)
+
+    assert source == before
+    assert result[fuel][role]["type"] == fuel_type
+    for component in ("primary", "secondary"):
+        np.testing.assert_array_equal(
+            result[fuel][component]["share"], source[fuel][component]["share"]
+        )

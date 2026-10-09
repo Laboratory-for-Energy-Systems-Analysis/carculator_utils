@@ -65,6 +65,15 @@ They may be scalars, one-element sequences, or one-dimensional sequences with
 one entry per model year, in the order of ``array.year``. Scalars and
 one-element sequences are expanded to all years.
 
+Both primary and secondary fuel types must belong to the supplied category's
+``all`` list in ``data/fuel/default_fuels.yaml``. This includes components with a
+zero share. A known hydrogen fuel under ``diesel`` or ``petrol``, for example,
+raises ``ValueError`` during model construction, identifying the category,
+component and incompatible type. Earlier versions accepted that mismatch and
+could combine a conventional combustion vehicle model with hydrogen supply and
+zero tailpipe CO2. Valid fossil, biofuel and synthetic routes remain available
+within their respective categories.
+
 .. code-block:: python
 
     fuel_blend = {
@@ -83,8 +92,8 @@ component is completed with the default secondary fuel and the complementary
 share, rather than retaining the country's default share. If both components
 are provided, their shares must sum to one for every year (absolute tolerance
 ``1e-7``). The caller's dictionary is preserved. Unsupported categories, unknown
-fuel types, malformed shapes, and invalid shares raise contextual ``ValueError``
-exceptions.
+fuel types, incompatible categories, malformed shapes, and invalid shares raise
+contextual ``ValueError`` exceptions.
 
 When an inventory is constructed, selected suppliers must exist in the bundled
 inventory index. An unresolved supplier raises ``KeyError`` naming the category,
