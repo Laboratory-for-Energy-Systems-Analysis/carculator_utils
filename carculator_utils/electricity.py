@@ -13,7 +13,14 @@ from . import DATA_DIR
 
 ELECTRICITY_DIR = DATA_DIR / "electricity"
 DEFAULT_SCENARIO = "geco-2025-reference"
-SCENARIOS = (DEFAULT_SCENARIO, "geco-2025-ndc-lts", "geco-2025-1.5c", "legacy")
+TYNDP_SCENARIO = "tyndp-2026-ntplus"
+SCENARIOS = (
+    DEFAULT_SCENARIO,
+    "geco-2025-ndc-lts",
+    "geco-2025-1.5c",
+    TYNDP_SCENARIO,
+    "legacy",
+)
 
 
 class ElectricityDataWarning(UserWarning):
@@ -75,7 +82,7 @@ def _legacy_mix():
     return array
 
 
-@lru_cache(maxsize=4)
+@lru_cache(maxsize=5)
 def _load_mix(scenario):
     if scenario == "legacy":
         return _legacy_mix()
@@ -97,7 +104,10 @@ def _load_mix(scenario):
         ["scenario", "region", "year"],
         technologies,
     )
-    projections = projections.loc[projections.scenario == scenario]
+    projections = projections.loc[
+        projections.scenario
+        == (DEFAULT_SCENARIO if scenario == TYNDP_SCENARIO else scenario)
+    ]
     if projections.empty:
         raise ValueError(f"No bundled electricity projections for {scenario}.")
     geographies = pd.read_csv(
@@ -109,7 +119,45 @@ def _load_mix(scenario):
         raise ValueError("Electricity geography mapping must match history uniquely.")
     years = np.arange(int(history.year.min()), int(projections.year.max()) + 1)
     history_cutoff = int(history.year.max())
-    countries, mixes, last_years, regions, kinds = [], [], [], [], []
+    national = None
+    if scenario == TYNDP_SCENARIO:
+        from .hydrogen_power import load_hydrogen_power
+
+        config = load_hydrogen_power()
+        extra = [
+            f"Hydrogen {converter}, {fuel}"
+            for converter in config["converters"]
+            for fuel in config["fuels"]
+        ]
+        technologies += extra
+        national = validate_shares(
+            pd.read_csv(
+                ELECTRICITY_DIR / "tyndp_2026_projections.csv",
+                sep=";",
+                keep_default_na=False,
+            ),
+            ["country", "year"],
+            technologies,
+        )
+        metadata = electricity_source_metadata()
+        expected = {
+            (country, year)
+            for country in metadata["tyndp_countries"] + metadata["tyndp_aggregates"]
+            for year in (2030, 2035, 2040, 2050)
+        }
+        if set(zip(national.country, national.year)) != expected:
+            raise ValueError("TYNDP country/year coverage differs from its manifest.")
+        history = history.assign(**dict.fromkeys(extra, 0.0))
+        projections = projections.assign(**dict.fromkeys(extra, 0.0))
+    countries, mixes, last_years, regions, kinds, horizons, sources = (
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+        [],
+    )
     for row in geographies.sort_values("country").itertuples(index=False):
         past = history.loc[history.country == row.country].sort_values("year")
         future = projections.loc[
@@ -118,6 +166,18 @@ def _load_mix(scenario):
         if future.empty:
             raise ValueError(
                 f"Missing electricity projection region {row.projection_region}."
+            )
+        region, kind, source = (
+            row.projection_region,
+            row.projection_kind,
+            "JRC GECO 2025, published 2026-06-23",
+        )
+        if national is not None and row.country in national.country.values:
+            future = national.loc[national.country == row.country].sort_values("year")
+            region, kind, source = (
+                row.country,
+                "aggregate" if row.country == "EU27" else "country",
+                "TYNDP 2026 draft NT+, snapshot 2026-10-09",
             )
         last = int(past.year.max())
         # Use national observations up to their final available year. Regional
@@ -136,8 +196,10 @@ def _load_mix(scenario):
         )
         countries.append(row.country)
         last_years.append(last)
-        regions.append(row.projection_region)
-        kinds.append(row.projection_kind)
+        regions.append(region)
+        kinds.append(kind)
+        horizons.append(int(future.year.max()))
+        sources.append(source)
     return xr.DataArray(
         np.stack(mixes),
         dims=("country", "year", "variable"),
@@ -148,6 +210,8 @@ def _load_mix(scenario):
             "history_last_year": ("country", last_years),
             "projection_region": ("country", regions),
             "projection_kind": ("country", kinds),
+            "projection_last_year": ("country", horizons),
+            "country_projection_source": ("country", sources),
         },
         attrs={
             "electricity_scenario": scenario,
@@ -155,7 +219,11 @@ def _load_mix(scenario):
             "boundary": "domestic generation; imports excluded",
             "history_source": "Ember yearly electricity, snapshot 2026-10-09",
             "history_snapshot_year": history_cutoff,
-            "projection_source": "JRC GECO 2025, published 2026-06-23",
+            "projection_source": (
+                "TYNDP 2026 NT+ (EU27); JRC GECO 2025 Reference (elsewhere)"
+                if national is not None
+                else "JRC GECO 2025, published 2026-06-23"
+            ),
             "technology_mapping": "electricity_sources.json; coarse LCI proxies",
         },
     )
@@ -194,9 +262,17 @@ def select_electricity_mix(generation, country, fallback=None):
         raise ValueError(f"Electricity fallback country {country!r} is unavailable.")
     selected = generation.sel(country=country)
     provenance = dict(generation.attrs, requested_country=requested, country=country)
-    for name in ("projection_region", "projection_kind", "history_last_year"):
+    for name in (
+        "projection_region",
+        "projection_kind",
+        "history_last_year",
+        "projection_last_year",
+        "country_projection_source",
+    ):
         if name in selected.coords:
             provenance[name] = selected.coords[name].item()
+    if "country_projection_source" in provenance:
+        provenance["projection_source"] = provenance.pop("country_projection_source")
     if country != requested:
         warnings.warn(
             f"Electricity for {requested} uses {country}.",

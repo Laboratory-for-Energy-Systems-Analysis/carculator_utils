@@ -2,7 +2,7 @@ National electricity data and scenarios
 =======================================
 
 The default electricity supply now combines observed national generation from
-Ember with the Reference scenario of JRC's GECO 2025 release. Three electricity
+Ember with the Reference scenario of JRC's GECO 2025 release. Four electricity
 scenarios are available offline, independently of the IAM scenario used for
 background impact factors. The previous table remains available as ``legacy``.
 
@@ -32,35 +32,42 @@ The electricity scenario choices are:
 * ``geco-2025-reference`` (default): GECO Reference projections.
 * ``geco-2025-ndc-lts``: GECO national pledges and long-term strategies.
 * ``geco-2025-1.5c``: GECO's 1.5-degree pathway.
+* ``tyndp-2026-ntplus``: national TYNDP 2026 NT+ projections for all EU27
+  countries; GECO Reference projections elsewhere. This is an explicit,
+  draft target-compliant alternative to the default GECO Reference scenario.
 * ``legacy``: the previous TYNDP 2020/TEMBA/WEO 2017 table, its original
   normalization and its truncated lifetime averaging convention.
 
 These labels do not imply equivalence to ``SSP2-NPi``, ``SSP2-PkBudg1000`` or
 ``SSP2-PkBudg650``. Record both choices in a study. ``scenario="static"`` still
 selects static background impact factors; it does not freeze generation shares.
-The same country/year history is used in all three refreshed scenarios.
+The same country/year history is used in all four refreshed scenarios.
 
 An explicit ``custom electricity mix`` retains its existing year-by-technology
 shape and overrides generation shares for all selected vehicles and samples.
 It works even for a country absent from the national dataset. Unknown countries
 otherwise raise; an intentional geographic fallback can be specified with
 ``"electricity fallback country": "GLO"``. ``GLO`` is World, while ``RER`` uses
-Ember Europe history and EU27 projections. ``UK`` and the former table's ``NM``
+Ember Europe history and GECO EU27 projections. ``EU27`` selects the European
+Union itself, with its own Ember EU history and matching EU27 projections.
+``UK`` and the former table's ``NM``
 are recognized as aliases for ``GB`` and ``NA`` respectively. Substitution is
 reported, not silent.
 
 Data and geographic meaning
 ---------------------------
 
-The bundled snapshot contains 5,957 observed country/region-year records and
-211 geographic codes. Historical coverage varies by country (the earliest
+The bundled snapshot contains 5,983 observed country/region-year records and
+212 geographic codes. Historical coverage varies by country (the earliest
 record is 1985); the most recent observations are from 2022--2025. The latest
 years may include estimates. Each country's actual final historical year is
 available as ``history_last_year`` in the background array and provenance.
 
 See :doc:`electricity_coverage` for the full country/economy list, each retained
-historical year range and its projection source: 27 country projections,
-180 regional proxies and two World proxies, plus the World and Europe aggregates.
+historical year range and its projection source. GECO has 27 country projections,
+180 regional proxies and two World proxies, plus World, Europe and EU27 aggregates.
+The TYNDP option raises country projection coverage to 54 by replacing the
+27 EU regional proxies with national trajectories.
 
 GECO supplies generation endpoints in 2030, 2035, 2040, 2050, 2060 and 2070.
 Its public workbooks contain individual countries as well as regional groups;
@@ -120,7 +127,7 @@ mapped separately, so they are not double-counted.
 LCI proxies and remaining limitations
 -------------------------------------
 
-The refresh uses the existing 21 background electricity activities. Coarse
+The Ember/GECO refresh uses the existing 21 background electricity activities. Coarse
 source categories cannot recover all of their distinctions:
 
 * Aggregate coal uses hard coal; gas uses the conventional gas activity.
@@ -142,15 +149,95 @@ voltage-specific fuel-production markets nor a consumption mix reconstructed
 from bilateral trade has been introduced. These need additional source data
 and validation beyond a generation-share refresh.
 
-TYNDP 2026 is included as a reproducible candidate audit, not a selectable
-runtime scenario. Its NT+ dashboard provides generation in TWh at four future
-years with weather-weighted results. ``tyndp_2026_mapping_audit.csv`` preserves
-these values, missing cells and mapping status. Pumped storage output,
-curtailment and unserved demand are excluded from candidate primary generation.
-Hydrogen generation, evolving gas composition, broad other categories and
-adequacy units remain unresolved. None are silently assigned fossil gas or
-zero impact. NT+ is also a draft target-compliant scenario, not a direct
-replacement for an enacted-policy GECO Reference trajectory.
+National EU27 projections with TYNDP
+--------------------------------------
+
+Select the country-specific alternative with::
+
+    inventory = InventoryCar(
+        model,
+        scenario="static",
+        background_configuration={"electricity scenario": "tyndp-2026-ntplus"},
+    )
+
+For the EU27 as a whole, select it on the vehicle model::
+
+    model = CarModel(array, country="EU27")
+    model.set_all()
+    inventory = InventoryCar(
+        model,
+        scenario="static",
+        background_configuration={"electricity scenario": "tyndp-2026-ntplus"},
+    )
+
+``EU27`` uses Ember's published EU aggregate for 2000--2025 and the TYNDP EU27
+aggregate for future years. The importer verifies the latter against summed
+member-country generation in TWh; it never takes an unweighted average of
+country shares. ``EU27`` also works with all three GECO scenarios, using their
+European Union projections through 2070. It is distinct from ``RER`` (Europe).
+EU27 grid losses currently use the existing RER multiplier, with an explicit
+warning and ``loss_country="RER"`` in provenance.
+
+All 27 EU members have national endpoints in 2030, 2035, 2040 and 2050 from
+the weather-weighted NT+ KPI dashboard, alongside the EU27 aggregate. The last observed Ember mix is held
+through 2025, then shares are interpolated to these endpoints. The national
+2050 mix is held for every later operating year, including after 2070; countries
+do not revert to the European GECO proxy. Other countries and ``GLO``/``RER``
+retain GECO Reference. ``projection_last_year``, ``projection_region`` and
+``projection_source`` in inventory provenance identify the selected country's
+actual source and horizon. NT+ is a draft target-compliant scenario, and should
+not be interpreted as an enacted-policy forecast.
+
+The importer reconciles generation components against the separate electricity
+energy-balance total before interpreting blank cells as zero. It then removes
+pumped-storage output, unserved energy and curtailment before calculating
+generation shares. Batteries and vehicle discharge are outside the generation
+block and are not added. Storage infrastructure and losses are not resolved;
+this is still a domestic generation mix. The raw 40-area workbook audit is
+retained, but only the 27 validated EU countries and their EU27 aggregate enter
+this scenario.
+
+Wind, solar, hydro and nuclear retain the dashboard's distinctions, including
+offshore wind, concentrated solar and reservoir hydro. Remaining categories
+use explicit LCI proxies: SRES electricity uses PV, Biofuel and Other RES use
+wood CHP, Other Non RES uses oil, coal uses hard coal, and gas/adequacy units use
+fossil CCGT. In particular, this implementation does not recover renewable-gas
+shares or country-specific fuels hidden inside the broad Other categories.
+These approximations can matter for impacts even when generation balances close.
+
+Hydrogen power is retained through six added foreground routes: turbine or
+fuel-cell generation, each supplied by electrolysis, grey reforming or reforming
+with CCS. Fuel fractions use the dashboard's EU27 hydrogen supply pool for each
+endpoint, as an explicit proxy for national fuel sourcing. Domestic electrolysis
+uses the modelled country's electricity supply; blue SMR/pyrolysis uses SMR with
+CCS. Grey SMR, hydrogen adequacy units and unspecified imported hydrogen/ammonia
+use grey SMR. This does not claim that imported hydrogen is actually fossil;
+its production, transport and ammonia cracking remain unresolved.
+
+The hydrogen recipes use 60% LHV conversion efficiency (TYNDP Common Data,
+categories 25/26), 120 MJ/kg hydrogen and 0.5% delivery loss. The turbine uses
+a CCGT plant proxy, including NOx and construction inputs from the attributed
+CLIC inventory. It also represents unresolved OCGT output. Fuel cells include
+PEM stack and balance-of-plant production with a 40,000-hour life assumption.
+Electrolysis retains the bundled PEM process and its 54 kWh/kg input, which is
+rewired to the country electricity market. The resulting electricity/hydrogen
+feedback is solved in the inventory matrix; hydrogen is not free electricity.
+Fuel routes remain separate during interpolation and lifetime averaging so
+the fuel mix is weighted by hydrogen generation. Vehicles with different
+lifetimes retain independent supply chains, including the feedback loop.
+
+``hydrogen_power.yaml`` records the exact supplier keys, quantities, source
+links and limitations. The original bundled A/B matrices and their indices
+remain unchanged; the new activities are appended privately. The TYNDP array
+has 27 technology columns (the original 21 followed by six hydrogen routes).
+An explicit custom mix still accepts the established 21 columns and overrides
+TYNDP completely. Exported foregrounds include their recipe provenance.
+
+``tyndp_2026_projections.csv`` contains 108 national and four EU27 aggregate endpoints.
+``tyndp_2026_balance_audit.csv`` records reported totals and exclusions;
+``tyndp_2026_hydrogen_audit.csv`` records the EU fuel-pool quantities; and
+``tyndp_2026_mapping_audit.csv`` preserves raw generation, blanks and mapping
+status. Runtime loading requires no network or Excel reader.
 
 Attribution and reproducible refresh
 ------------------------------------
@@ -178,8 +265,9 @@ loading needs no Excel reader. Build into a separate directory::
       --allow-history-exclusions \
       --geco-other-residual
 
-Review both audits, exclusions, geography mappings and changed results before
-copying the six generated resources into ``carculator_utils/data/electricity``.
+Review the audits, exclusions, geography mappings, hydrogen recipes and changed
+results before copying the ten generated resources into
+``carculator_utils/data/electricity``.
 The source files are independently versioned; a later download from the same URL
 can have different content. Reusing these reconciliation rules on another
 release requires inspecting its balances and definitions again.
@@ -194,3 +282,10 @@ car, bus, truck and two-wheeler cases compare electricity scenarios while
 preserving model energy, and export checks retain supply provenance. These
 checks establish implementation consistency; they do not validate future
 forecasts or the accuracy of the coarse LCI proxies.
+
+``tests/test_tyndp_electricity.py`` adds all-EU coverage and horizon checks,
+independent generation totals, rejected missing output, an analytic hydrogen
+feedback calculation, all four vehicle families and multi-vehicle export/scope
+invariance. The installed artifact verifier also checks all bundled resource
+hashes. The source refresh reproduces all ten generated resources byte for byte
+from the pinned source snapshots and the versioned hydrogen recipe.

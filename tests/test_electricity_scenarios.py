@@ -268,19 +268,20 @@ def test_geco_other_reconciliation_is_explicit_and_audited(builder):
     assert audit[0]["reported_total_twh"] == 100
 
 
-def test_tyndp_keeps_storage_and_unknown_generation_out_of_runtime_mixes():
+def test_tyndp_maps_eu_generation_and_keeps_storage_out():
     audit = pd.read_csv(
         DATA_DIR / "electricity" / "tyndp_2026_mapping_audit.csv", sep=";"
     )
-    assert set(audit.loc[audit.technology == "Hydrogen GT", "status"]) <= {
-        "unresolved LCI mapping",
-        "not reported",
-    }
+    assert (
+        audit.loc[(audit.area == "DE") & (audit.technology == "Hydrogen GT"), "status"]
+        .str.startswith("foreground LCI")
+        .all()
+    )
     assert set(audit.loc[audit.technology == "PS Turbine", "status"]) <= {
         "storage output",
         "not reported",
     }
-    assert not any("tyndp" in s for s in SCENARIOS)
+    assert "tyndp-2026-ntplus" in SCENARIOS
 
 
 @pytest.mark.family

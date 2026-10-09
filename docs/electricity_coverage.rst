@@ -8,8 +8,9 @@ mappings and the interpretation of the future scenarios.
 
 All 209 countries/economies listed below have their own Ember historical
 generation records. GECO supplies country projections for 27 of them; 180 use
-regional proxies and two use the World proxy. World (``GLO``) and Europe
-(``RER``) are two additional aggregate histories, giving 211 geographic codes.
+regional proxies and two use the World proxy. World (``GLO``), Europe
+(``RER``) and the European Union (``EU27``) are three additional aggregate
+histories, giving 212 geographic codes.
 Territories and economies follow the source dataset's geographic labels.
 
 Historical dates are the first and latest retained source observations; the
@@ -25,8 +26,33 @@ assignments follow the published GECO crosswalk and the extensions documented
 in the source manifest, including its non-geographic assignments of Seychelles
 to Rest of South Asia and Sao Tome and Principe to Rest of Central America.
 
-Country projections (27)
-------------------------
+TYNDP option: national EU27 projections
+---------------------------------------
+
+``tyndp-2026-ntplus`` adds national projections for Austria (AT), Belgium (BE),
+Bulgaria (BG), Croatia (HR), Cyprus (CY), Czechia (CZ), Denmark (DK), Estonia
+(EE), Finland (FI), France (FR), Germany (DE), Greece (GR), Hungary (HU),
+Ireland (IE), Italy (IT), Latvia (LV), Lithuania (LT), Luxembourg (LU), Malta
+(MT), Netherlands (NL), Poland (PL), Portugal (PT), Romania (RO), Slovakia
+(SK), Slovenia (SI), Spain (ES) and Sweden (SE).
+
+These 27 countries use their own NT+ endpoints in 2030, 2035, 2040 and 2050,
+holding 2050 thereafter. Their historical coverage is unchanged and is listed
+in the European Union table below. The remaining countries retain the GECO
+assignments below. Thus this option provides 54 country projections, 153
+regional proxies and two World proxies, plus the three aggregate geographies.
+The table below describes the GECO scenarios; its EU grouping is replaced only
+when the TYNDP option is selected. See :doc:`electricity_scenarios` for the
+draft scenario's assumptions and the hydrogen-power LCI proxies.
+
+Select ``country="EU27"`` on any vehicle model to use the EU27 as a whole.
+It has its own Ember history from 2000 to 2025. Its future uses the published,
+generation-weighted TYNDP EU27 aggregate in the TYNDP scenario, or GECO's
+European Union aggregate in each GECO scenario. ``RER`` remains a separate
+Europe selection. Grid losses for EU27 use a disclosed RER proxy.
+
+GECO country projections (27)
+------------------------------
 
 .. csv-table::
    :header: "Code", "Country/economy", "First year", "Latest year", "Records", "Projection region"
@@ -365,16 +391,18 @@ World projection fallback (2)
    "FO","Faroe Islands","2000","2023","24","World"
    "GL","Greenland","2000","2024","25","World"
 
-Additional aggregates (2)
+Additional aggregates (3)
 -------------------------
 
 Europe history is the Ember Europe aggregate; its EU27 projection is a
 regional proxy with a different geographic boundary. World uses the World
-projection.
+projection. EU27 has matching EU history and projections; the GECO assignment
+below is replaced by TYNDP's EU27 aggregate when that scenario is selected.
 
 .. csv-table::
    :header: "Code", "Country/economy", "First year", "Latest year", "Records", "Projection region"
    :widths: 7, 26, 10, 10, 9, 28
 
    "RER","Europe","2000","2025","26","European Union"
+   "EU27","European Union","2000","2025","26","European Union"
    "GLO","World","2000","2025","26","World"

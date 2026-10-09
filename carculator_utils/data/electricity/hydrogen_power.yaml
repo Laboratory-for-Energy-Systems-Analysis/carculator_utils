@@ -1,0 +1,45 @@
+# Explicit foreground proxies, per kWh of electricity output.
+# These are not national hydrogen networks or complete TYNDP sector inventories.
+source: TYNDP 2026 Common Data; CLIC hydrogen turbine v1.0.0; DOE stationary fuel cells
+references:
+  efficiencies: https://2026-data.entsos-tyndp-scenarios.eu/input/model-input/national-trends/PEMMDB_CommonData.xlsx
+  turbine_inventory: https://clic.psi.ch/datasets/electricity-production-from-hydrogen-fired-one-gigawatt-gas-turbine-for-grid-balancing/versions/1.0.0/
+  fuel_cell_lifetime: https://www.energy.gov/cmei/fuels/hydrogen-and-fuel-cell-technologies-office-newsletter-may-july-2020
+comment: >-
+  TYNDP category 26 CCGT and category 25 fuel cell both use 60% LHV efficiency;
+  all Hydrogen GT is represented by CCGT, including unresolved OCGT output.
+  Hydrogen LHV is 120 MJ/kg. A 0.5% delivery loss, NOx 1.54e-4 kg/kWh and
+  CCGT infrastructure 1.39e-11 units/kWh follow the rounded CLIC turbine
+  inventory (CC BY 4.0, based on Ozawa et al. 2019, doi:10.1016/j.ijhydene.2019.02.230).
+  Infrastructure uses the bundled global 400 MW plant market as a geographic proxy.
+  The loss fraction is also applied to fuel cells as a delivery assumption.
+  Fuel cell infrastructure uses bundled 1 kWe PEM stack and balance of plant
+  with 40000 operating hours (DOE 2020 stationary storage durability target,
+  used here as a proxy, not a forecast of achieved service life).
+  Electrolysis retains the bundled PEM process, including its 54 kWh/kg
+  electricity input, water, infrastructure and residual characterization factors;
+  electricity is supplied by the country's modelled lifetime mix. This can form
+  a physical electricity-hydrogen-electricity feedback loop. Low-voltage supply
+  remains a voltage proxy. Hydrogen storage, import transport, ammonia cracking,
+  detailed turbine auxiliaries and fuel-cell end of life are not resolved.
+lhv_mj_per_kg: 120
+delivery_loss_fraction: 0.005
+converters:
+  turbine:
+    efficiency: 0.6
+    inputs:
+      - key: ["market for gas power plant, combined cycle, 400MW electrical", GLO, unit, "gas power plant, combined cycle, 400MW electrical"]
+        amount: 1.39e-11
+      - key: [Nitrogen oxides, [air, non-urban air or from high stacks], kilogram]
+        amount: 0.000154
+  fuel cell:
+    efficiency: 0.6
+    inputs:
+      - key: ["fuel cell stack production, 1 kWe, proton exchange membrane (PEM)", GLO, unit, "fuel cell stack, 1 kWe, proton exchange membrane (PEM)"]
+        amount: 0.000025
+      - key: ["fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM)", GLO, unit, "fuel cell Balance of Plant, 1 kWe, proton exchange membrane (PEM)"]
+        amount: 0.000025
+fuels:
+  electrolysis: ["hydrogen production, gaseous, 30 bar, from PEM electrolysis, from grid electricity", RER, kilogram, "hydrogen, gaseous, 30 bar"]
+  reforming: ["hydrogen production, steam methane reforming", RER, kilogram, "hydrogen, gaseous, low pressure"]
+  reforming CCS: ["hydrogen production, steam methane reforming, with CCS", RER, kilogram, "hydrogen, gaseous, low pressure"]

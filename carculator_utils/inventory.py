@@ -25,10 +25,16 @@ from . import DATA_DIR
 from .background_systems import BackgroundSystemModel
 from .electricity import (
     DEFAULT_SCENARIO,
+    TYNDP_SCENARIO,
     ElectricityDataWarning,
     select_electricity_mix,
 )
 from .fuel_supply import fill_fuel_suppliers, register_fuel_suppliers
+from .hydrogen_power import (
+    fill_hydrogen_power,
+    load_hydrogen_power,
+    register_hydrogen_power,
+)
 from .inventory_electricity import lifetime_mix, specialize_electricity_supplies
 
 warnings.filterwarnings("ignore", category=np.VisibleDeprecationWarning)
@@ -290,6 +296,14 @@ class Inventory:
                 "electricity scenario", DEFAULT_SCENARIO
             )
         )
+        hydrogen_mapping, hydrogen_pem = {}, None
+        if (
+            self.bs.electricity_mix.attrs.get("electricity_scenario") == TYNDP_SCENARIO
+            and self.background_configuration.get("custom electricity mix") is None
+        ):
+            hydrogen_mapping, hydrogen_pem = register_hydrogen_power(
+                self.inputs, self.vm.country
+            )
         self.add_additional_activities()
         self.rev_inputs = {v: k for k, v in self.inputs.items()}
 
@@ -298,6 +312,7 @@ class Inventory:
         ) as stream:
             self.elec_map = yaml.safe_load(stream)
             self.elec_map = {k: tuple(v) for k, v in self.elec_map.items()}
+        self.elec_map.update(hydrogen_mapping)
 
         self.electricity_technologies = list(self.elec_map.keys())
 
@@ -320,6 +335,11 @@ class Inventory:
 
         # Create the B matrix
         self.B = self.get_B_matrix()
+        if hydrogen_mapping:
+            fill_hydrogen_power(self, hydrogen_mapping, hydrogen_pem)
+        self.hydrogen_power_activities = [*hydrogen_mapping.values()]
+        if hydrogen_pem is not None:
+            self.hydrogen_power_activities.append(hydrogen_pem)
         self.rev_inputs = {v: k for k, v in self.inputs.items()}
 
         self.fill_in_A_matrix()
@@ -1897,6 +1917,15 @@ class Inventory:
         )
 
         provenance = getattr(self, "electricity_provenance", {})
+        if getattr(self, "hydrogen_power_activities", []):
+            recipe = load_hydrogen_power()
+            for key in self.hydrogen_power_activities:
+                lci.references[key[0]] = {
+                    "source": recipe["source"],
+                    "comment": recipe["comment"]
+                    + " Sources: "
+                    + "; ".join(recipe["references"].values()),
+                }
         if provenance:
             comment = "; ".join(f"{key}: {value}" for key, value in provenance.items())
             for key in export.inputs:

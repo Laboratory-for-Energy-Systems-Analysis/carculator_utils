@@ -46,6 +46,34 @@ GECO_SCENARIOS = {
     "NDC-LTS": "geco-2025-ndc-lts",
     "15C": "geco-2025-1.5c",
 }
+TYNDP_SCENARIO = "tyndp-2026-ntplus"
+EU27 = set(
+    "AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE".split()
+)
+TYNDP_MAP = {
+    "Wind Onshore": "Wind",
+    "Wind Offshore Radial": "Wind, offshore",
+    "Wind Offshore Hub": "Wind, offshore",
+    "Solar PV": "Solar",
+    "Solar CSP": "Solar, thermal",
+    "SRES Electricity": "Solar",
+    "Run of River": "Hydro",
+    "Pondage": "Hydro, reservoir",
+    "Reservoir": "Hydro, reservoir",
+    "Biofuel": "Biomass",
+    "Other RES": "Biomass",
+    "Nuclear": "Nuclear",
+    "Natural Gas": "Gas CCGT",
+    "Crude Oil": "Oil",
+    "Coal": "Coal",
+    "Other Non RES": "Oil",
+    "Adequacy Units": "Gas CCGT",
+}
+HYDROGEN_ROUTES = [
+    f"Hydrogen {converter}, {fuel}"
+    for converter in ("turbine", "fuel cell")
+    for fuel in ("electrolysis", "reforming", "reforming CCS")
+]
 NATIVE_REGIONS = {
     "AR": "Argentina",
     "AU": "Australia",
@@ -119,8 +147,8 @@ def normalized_generation(values, total, context, absolute_tolerance=0.005):
 
 
 def country_code(area, iso3):
-    if area in ("Europe", "World"):
-        return {"Europe": "RER", "World": "GLO"}[area]
+    if area in ("EU", "Europe", "World"):
+        return {"EU": "EU27", "Europe": "RER", "World": "GLO"}[area]
     if iso3 == "XKX":
         return "XK"
     record = pycountry.countries.get(alpha_3=iso3)
@@ -145,7 +173,7 @@ def read_ember(path, allow_exclusions=False):
         raise ValueError(f"Ember schema is missing {required - set(source)}.")
     source = source.loc[
         (source["Area type"] == "Country or economy")
-        | source.Area.isin(["Europe", "World"])
+        | source.Area.isin(["EU", "Europe", "World"])
     ]
     keys = ["Area", "Year", "Electricity source"]
     if source.duplicated(keys).any():
@@ -312,6 +340,8 @@ def geography_mapping(history, areas, projection_regions):
     for code in sorted(history.country.unique()):
         area = areas[code]
         region, kind = NATIVE_REGIONS.get(code), "country"
+        if code == "EU27":
+            region, kind = "European Union", "aggregate"
         if region is None:
             kind = "regional-proxy"
             region = next(
@@ -432,11 +462,177 @@ def audit_tyndp(path):
     return pd.DataFrame(records)
 
 
+def read_tyndp(path):
+    """Map EU27 generation, retaining raw amounts and independent balance checks.
+
+    Hydrogen supply uses an explicitly approximate EU pool. Unspecified imports
+    and adequacy hydrogen use grey reforming; they are never assumed zero-impact.
+    Missing cells become zero only after the independently reported generation
+    (including pumped storage) and domestic H2 totals reconcile.
+    """
+    import openpyxl
+
+    book = openpyxl.load_workbook(path, read_only=True, data_only=True)
+    try:
+        sheets = {s.title: list(s.values) for s in book if s.title != "Info"}
+    finally:
+        book.close()
+    accepted_areas = EU27 | {"EU27"}
+    if not accepted_areas.issubset(sheets):
+        raise ValueError(f"Missing TYNDP EU areas: {accepted_areas - set(sheets)}.")
+
+    def section(rows, start, stop):
+        first = next(i for i, r in enumerate(rows) if r[0] == start)
+        last = next(i for i in range(first + 1, len(rows)) if rows[i][0] == stop)
+        block = {r[1].strip(): r for r in rows[first + 1 : last]}
+        if len(block) != last - first - 1:
+            raise ValueError("Duplicate TYNDP generation category.")
+        return block
+
+    def amount(value):
+        if value is None:
+            return 0.0
+        value = float(value)
+        if not np.isfinite(value) or value < 0:
+            raise ValueError(f"Invalid TYNDP generation: {value}.")
+        return value
+
+    # Hydrogen generation is the second block labelled H2; anchor by the
+    # generation section rather than matching labels across capacity/FLH blocks.
+    eu = sheets["EU27"]
+    start = next(i for i, r in enumerate(eu) if r[0] == "Generation [TWh]")
+    hstart = next(i for i in range(start + 1, len(eu)) if eu[i][0] == "H2")
+    hend = next(i for i in range(hstart + 1, len(eu)) if eu[i][0] == "Heat")
+    h2 = {r[1].strip(): r for r in eu[hstart:hend]}
+    domestic = next(r for r in eu if r[1] == "H2 Domestic Production")
+    supply_rows = [
+        "SMR (Blue) and Pyrolisis",
+        "SMR (Grey)",
+        "Electrolyzers E-Market (P2G)",
+        "Electrolyzers DRES (P2G)",
+        "Electrolyzers SRES (P2G)",
+        "H2 Adequacy Units",
+    ]
+    pools, pool_audit = {}, []
+    for col, year in zip((6, 11, 16, 21), (2030, 2035, 2040, 2050)):
+        reported = amount(domestic[col])
+        values = {k: amount(h2[k][col]) for k in supply_rows}
+        normalized_generation(list(values.values()), reported, ("EU27 H2", year))
+        imports = sum(amount(h2[k][col]) for k in h2 if "Imports -" in k)
+        electrolysis = sum(
+            v for k, v in values.items() if k.startswith("Electrolyzers")
+        )
+        blue = values["SMR (Blue) and Pyrolisis"]
+        grey = values["SMR (Grey)"] + values["H2 Adequacy Units"] + imports
+        total = reported + imports
+        pools[year] = np.array([electrolysis, grey, blue]) / total
+        pool_audit.append(
+            dict(
+                year=year,
+                domestic_twh=reported,
+                imports_twh=imports,
+                electrolysis_twh=electrolysis,
+                reforming_proxy_twh=grey,
+                reforming_ccs_proxy_twh=blue,
+            )
+        )
+
+    records, balances = [], []
+    audit = audit_tyndp(path)
+    techs = technologies() + HYDROGEN_ROUTES
+    for country in sorted(accepted_areas):
+        rows = sheets[country]
+        block = section(rows, "Generation [TWh]", "Electricity - Flexibility")
+        expected = set(TYNDP_MAP) | {
+            "Hydrogen GT",
+            "Fuel Cell",
+            "PS Turbine",
+            "ENS",
+            "RES Curtailment",
+        }
+        if set(block) != expected:
+            raise ValueError(f"Unexpected TYNDP generation categories for {country}.")
+        balance = next(r for r in rows if r[1] == "Electricity Generation")
+        for col, year in zip((6, 11, 16, 21), (2030, 2035, 2040, 2050)):
+            if rows[3][col] != "Weighted WS" or rows[2][col - 3] != year:
+                raise ValueError(f"Unexpected TYNDP weighted-year schema: {country}.")
+            values = {k: amount(r[col]) for k, r in block.items()}
+            generated = {
+                k: v for k, v in values.items() if k not in ("ENS", "RES Curtailment")
+            }
+            total = amount(balance[col])
+            normalized_generation(list(generated.values()), total, (country, year))
+            primary = total - values["PS Turbine"]
+            mapped = dict.fromkeys(techs, 0.0)
+            for label, target in TYNDP_MAP.items():
+                mapped[target] += values[label]
+            for label, converter in (
+                ("Hydrogen GT", "turbine"),
+                ("Fuel Cell", "fuel cell"),
+            ):
+                for fuel, share in zip(
+                    ("electrolysis", "reforming", "reforming CCS"), pools[year]
+                ):
+                    mapped[f"Hydrogen {converter}, {fuel}"] = values[label] * share
+            shares = normalized_generation(
+                list(mapped.values()), primary, (country, year, "mapped")
+            )
+            records.append(dict(country=country, year=year, **dict(zip(techs, shares))))
+            balances.append(
+                dict(
+                    country=country,
+                    year=year,
+                    reported_generation_twh=total,
+                    component_generation_twh=sum(generated.values()),
+                    pumped_storage_twh=values["PS Turbine"],
+                    mapped_generation_twh=primary,
+                    unserved_twh=values["ENS"],
+                    curtailed_twh=values["RES Curtailment"],
+                    missing_generation_cells=sum(
+                        r[col] is None for r in block.values()
+                    ),
+                )
+            )
+    # The published aggregate is generation-weighted. Independently verify it
+    # against member-country TWh, never average normalized national shares.
+    summed = (
+        audit.loc[audit.area.isin(EU27)]
+        .groupby(["year", "technology"])
+        .generation_twh.sum()
+    )
+    aggregate = (
+        audit.loc[audit.area == "EU27"]
+        .set_index(["year", "technology"])
+        .generation_twh.fillna(0)
+    )
+    if not np.allclose(
+        summed.sort_index(), aggregate.sort_index(), rtol=1e-8, atol=1e-6
+    ):
+        raise ValueError(
+            "TYNDP EU27 aggregate does not reconcile with member countries."
+        )
+    accepted = audit.area.isin(accepted_areas)
+    for label, target in TYNDP_MAP.items():
+        selected = accepted & (audit.technology == label)
+        audit.loc[selected, "mapping"] = target
+        audit.loc[selected, "status"] = "LCI proxy; blank zero validated by total"
+    for label, converter in (("Hydrogen GT", "turbine"), ("Fuel Cell", "fuel cell")):
+        selected = accepted & (audit.technology == label)
+        audit.loc[selected, "mapping"] = f"Hydrogen {converter}, EU fuel pool proxy"
+        audit.loc[selected, "status"] = "foreground LCI; blank zero validated by total"
+    return (
+        pd.DataFrame(records),
+        pd.DataFrame(balances),
+        pd.DataFrame(pool_audit),
+        audit,
+    )
+
+
 def build(ember, geco, tyndp, output, allow_exclusions=False, other_residual=False):
     history, areas, exclusions = read_ember(ember, allow_exclusions)
     projections, geco_audit = read_geco(geco, other_residual)
     geography = geography_mapping(history, areas, set(projections.region))
-    tyndp_audit = audit_tyndp(tyndp)
+    tyndp_projections, tyndp_balances, tyndp_hydrogen, tyndp_audit = read_tyndp(tyndp)
     output.mkdir(parents=True, exist_ok=True)
     resources = [
         ("electricity_history.csv", history),
@@ -444,6 +640,9 @@ def build(ember, geco, tyndp, output, allow_exclusions=False, other_residual=Fal
         ("electricity_geographies.csv", geography),
         ("tyndp_2026_mapping_audit.csv", tyndp_audit),
         ("geco_2025_balance_audit.csv", geco_audit),
+        ("tyndp_2026_projections.csv", tyndp_projections),
+        ("tyndp_2026_balance_audit.csv", tyndp_balances),
+        ("tyndp_2026_hydrogen_audit.csv", tyndp_hydrogen),
     ]
     for name, frame in resources:
         frame.to_csv(
@@ -453,6 +652,8 @@ def build(ember, geco, tyndp, output, allow_exclusions=False, other_residual=Fal
             float_format="%.12g",
             lineterminator="\n",
         )
+    recipe = (SOURCE_DIR / "hydrogen_power.yaml").read_bytes()
+    (output / "hydrogen_power.yaml").write_bytes(recipe)
     source_info = [
         (
             "ember",
@@ -474,7 +675,7 @@ def build(ember, geco, tyndp, output, allow_exclusions=False, other_residual=Fal
         ),
     ]
     metadata = {
-        "schema_version": 1,
+        "schema_version": 2,
         "default_scenario": "geco-2025-reference",
         "sources": {
             key: {
@@ -488,6 +689,10 @@ def build(ember, geco, tyndp, output, allow_exclusions=False, other_residual=Fal
         },
         "ember_technology_proxies": EMBER_MAP,
         "geco_technology_proxies": GECO_MAP,
+        "tyndp_technology_proxies": TYNDP_MAP,
+        "tyndp_hydrogen_routes": HYDROGEN_ROUTES,
+        "tyndp_countries": sorted(EU27),
+        "tyndp_aggregates": ["EU27"],
         "geco_other_residual": other_residual,
         "geography_reference": {
             "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC145985/JRC145985_01.pdf",
@@ -503,19 +708,26 @@ def build(ember, geco, tyndp, output, allow_exclusions=False, other_residual=Fal
             "Annual country observations are held to the snapshot's final historical year (2025) when recent observations are unavailable, so historical years do not depend on the future scenario. Linear interpolation then joins that anchor to the first GECO endpoint. Endpoints are held outside the horizon.",
             "2025 Ember values can include estimates. Missing component rows are zero only if reported total generation reconciles within source rounding precision.",
             "Negative-generation country-years are excluded explicitly below; they are not clipped. Other years and subsequent interpolation remain available.",
-            "RER history is Ember Europe; its future uses EU27 as a regional proxy. GLO uses World.",
-            "TYNDP is an audit-only candidate: unresolved fuels and hydrogen cannot be silently assigned fossil or zero-impact generation.",
+            "EU27 uses Ember EU history and EU27 projections (GECO European Union or TYNDP EU27); the TYNDP aggregate is checked against summed member-country TWh. RER history is Ember Europe; its future uses GECO EU27 as a regional proxy. GLO uses World. EU27 grid losses still use the disclosed legacy RER proxy.",
+            "tyndp-2026-ntplus overlays EU27 national endpoints (2030, 2035, 2040, 2050) on GECO Reference elsewhere. EU endpoints are held after 2050; no return to the regional GECO mix. GECO remains the default: NT+ is a draft target-compliant alternative.",
+            "TYNDP primary generation excludes pumped-storage output, ENS and curtailment. Missing source cells are interpreted as zero only after reconciling the independent energy-balance generation total. Storage losses and infrastructure are not added; this remains a generation mix, not a delivered consumption mix.",
+            "TYNDP SRES electricity uses PV; Other RES and Biofuel use wood CHP; Other Non RES uses oil; gas and adequacy units use fossil CCGT. These are explicit coarse LCI proxies, not inferred national fuel or renewable-gas splits.",
+            "TYNDP hydrogen power uses an EU27 supply pool, not national fuel tracing. Electrolysis uses the modelled country's lifetime electricity supply, including its feedback loop. Blue SMR/pyrolysis uses SMR with CCS; grey SMR, unspecified imported hydrogen/ammonia and adequacy hydrogen use grey SMR. Import transport/ammonia cracking are omitted. Separate fuel routes preserve generation-weighted fuel shares during interpolation and lifetime averaging.",
+            "Hydrogen power foreground recipes and their efficiency, infrastructure and emissions proxies are documented in hydrogen_power.yaml. They do not import TYNDP system-level carbon offsets or assume zero-impact hydrogen.",
             "Existing ecoinvent 3.6 loss multipliers and generic generation inventories are unchanged; missing country losses are disclosed at runtime.",
         ],
         "excluded_history": exclusions,
         "history_records": len(history),
         "geographies": len(geography),
-        "projection_scenarios": sorted(projections.scenario.unique()),
+        "projection_scenarios": sorted(
+            [*projections.scenario.unique(), TYNDP_SCENARIO]
+        ),
         "resources": {
             name: hashlib.sha256((output / name).read_bytes()).hexdigest()
             for name, _ in resources
         },
     }
+    metadata["resources"]["hydrogen_power.yaml"] = hashlib.sha256(recipe).hexdigest()
     (output / "electricity_sources.json").write_text(
         json.dumps(metadata, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )
@@ -549,7 +761,7 @@ def main():
     )
     print(
         f"Built {metadata['history_records']} observations, {metadata['geographies']} geographies, "
-        f"3 scenarios; {len(metadata['excluded_history'])} explicitly excluded records."
+        f"{len(metadata['projection_scenarios'])} scenarios; {len(metadata['excluded_history'])} explicitly excluded records."
     )
 
 

@@ -1,5 +1,5 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "default_scenario": "geco-2025-reference",
   "sources": {
     "ember": {
@@ -46,6 +46,65 @@
     "Solar": "Solar",
     "Other": "Geothermal"
   },
+  "tyndp_technology_proxies": {
+    "Wind Onshore": "Wind",
+    "Wind Offshore Radial": "Wind, offshore",
+    "Wind Offshore Hub": "Wind, offshore",
+    "Solar PV": "Solar",
+    "Solar CSP": "Solar, thermal",
+    "SRES Electricity": "Solar",
+    "Run of River": "Hydro",
+    "Pondage": "Hydro, reservoir",
+    "Reservoir": "Hydro, reservoir",
+    "Biofuel": "Biomass",
+    "Other RES": "Biomass",
+    "Nuclear": "Nuclear",
+    "Natural Gas": "Gas CCGT",
+    "Crude Oil": "Oil",
+    "Coal": "Coal",
+    "Other Non RES": "Oil",
+    "Adequacy Units": "Gas CCGT"
+  },
+  "tyndp_hydrogen_routes": [
+    "Hydrogen turbine, electrolysis",
+    "Hydrogen turbine, reforming",
+    "Hydrogen turbine, reforming CCS",
+    "Hydrogen fuel cell, electrolysis",
+    "Hydrogen fuel cell, reforming",
+    "Hydrogen fuel cell, reforming CCS"
+  ],
+  "tyndp_countries": [
+    "AT",
+    "BE",
+    "BG",
+    "CY",
+    "CZ",
+    "DE",
+    "DK",
+    "EE",
+    "ES",
+    "FI",
+    "FR",
+    "GR",
+    "HR",
+    "HU",
+    "IE",
+    "IT",
+    "LT",
+    "LU",
+    "LV",
+    "MT",
+    "NL",
+    "PL",
+    "PT",
+    "RO",
+    "SE",
+    "SI",
+    "SK"
+  ],
+  "tyndp_aggregates": [
+    "EU27"
+  ],
   "geco_other_residual": true,
   "geography_reference": {
     "url": "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC145985/JRC145985_01.pdf",
@@ -61,8 +120,12 @@
     "Annual country observations are held to the snapshot's final historical year (2025) when recent observations are unavailable, so historical years do not depend on the future scenario. Linear interpolation then joins that anchor to the first GECO endpoint. Endpoints are held outside the horizon.",
     "2025 Ember values can include estimates. Missing component rows are zero only if reported total generation reconciles within source rounding precision.",
     "Negative-generation country-years are excluded explicitly below; they are not clipped. Other years and subsequent interpolation remain available.",
-    "RER history is Ember Europe; its future uses EU27 as a regional proxy. GLO uses World.",
-    "TYNDP is an audit-only candidate: unresolved fuels and hydrogen cannot be silently assigned fossil or zero-impact generation.",
+    "EU27 uses Ember EU history and EU27 projections (GECO European Union or TYNDP EU27); the TYNDP aggregate is checked against summed member-country TWh. RER history is Ember Europe; its future uses GECO EU27 as a regional proxy. GLO uses World. EU27 grid losses still use the disclosed legacy RER proxy.",
+    "tyndp-2026-ntplus overlays EU27 national endpoints (2030, 2035, 2040, 2050) on GECO Reference elsewhere. EU endpoints are held after 2050; no return to the regional GECO mix. GECO remains the default: NT+ is a draft target-compliant alternative.",
+    "TYNDP primary generation excludes pumped-storage output, ENS and curtailment. Missing source cells are interpreted as zero only after reconciling the independent energy-balance generation total. Storage losses and infrastructure are not added; this remains a generation mix, not a delivered consumption mix.",
+    "TYNDP SRES electricity uses PV; Other RES and Biofuel use wood CHP; Other Non RES uses oil; gas and adequacy units use fossil CCGT. These are explicit coarse LCI proxies, not inferred national fuel or renewable-gas splits.",
+    "TYNDP hydrogen power uses an EU27 supply pool, not national fuel tracing. Electrolysis uses the modelled country's lifetime electricity supply, including its feedback loop. Blue SMR/pyrolysis uses SMR with CCS; grey SMR, unspecified imported hydrogen/ammonia and adequacy hydrogen use grey SMR. Import transport/ammonia cracking are omitted. Separate fuel routes preserve generation-weighted fuel shares during interpolation and lifetime averaging.",
+    "Hydrogen power foreground recipes and their efficiency, infrastructure and emissions proxies are documented in hydrogen_power.yaml. They do not import TYNDP system-level carbon offsets or assume zero-impact hydrogen.",
     "Existing ecoinvent 3.6 loss multipliers and generic generation inventories are unchanged; missing country losses are disclosed at runtime."
   ],
   "excluded_history": [
@@ -157,18 +220,23 @@
       }
     }
   ],
-  "history_records": 5957,
-  "geographies": 211,
+  "history_records": 5983,
+  "geographies": 212,
   "projection_scenarios": [
     "geco-2025-1.5c",
     "geco-2025-ndc-lts",
-    "geco-2025-reference"
+    "geco-2025-reference",
+    "tyndp-2026-ntplus"
   ],
   "resources": {
-    "electricity_history.csv": "ef47de0d781ee322f7809a412a9f0a23411c01b78fda9fac8f2736957c4a3681",
+    "electricity_history.csv": "703dc8c876a3bbac96fd2f18ece9e588c6951f522dca800ee9e9dfdf901b1ceb",
     "electricity_projections.csv": "90809281b869a532f1b8ac704f9ff0f93074911076ffbc70927cff43c5dd0ec1",
-    "electricity_geographies.csv": "12c625dc3678c0d78b2c353e9b169540adf2d22df7af37566fa95fe1cdcbee3e",
-    "tyndp_2026_mapping_audit.csv": "c4f482c77c6d1f6c9fffaa81162f9ede2f7b7f9236157858e9f57ef88039ed08",
-    "geco_2025_balance_audit.csv": "37f160111e3674f5fbd16f007019967de48f3673b5d3fd05ad03e680e8f19abd"
+    "electricity_geographies.csv": "04568bea50516046a3495df7154330c76ee26768a8913cd5009a7a7abe9bd8a5",
+    "tyndp_2026_mapping_audit.csv": "679de1c2a26d929087909eff194146530597bd195256c38d12091fa437d215f9",
+    "geco_2025_balance_audit.csv": "37f160111e3674f5fbd16f007019967de48f3673b5d3fd05ad03e680e8f19abd",
+    "tyndp_2026_projections.csv": "810a0e0f3091d71b0837651d6db4c4ec5b47076372c8aac45c3eed54817bcea4",
+    "tyndp_2026_balance_audit.csv": "86645a1d513a7b59b92ebde545cc8a0847bf3b92e2b84e155752b8156edb37c7",
+    "tyndp_2026_hydrogen_audit.csv": "c9695d119170b1055400f9828a24d34e748208671c5f9a3ce657ce048e503aa6",
+    "hydrogen_power.yaml": "278042cbadaac7cf92793052c9587fb5a748ee6806475dbfb441e15bbbea2200"
   }
 }
