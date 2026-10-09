@@ -341,7 +341,11 @@ def test_noise_is_retained_in_brightway_and_openlca_and_reported_in_simapro(tmp_
     assert any(f["name"] == noise()["name"] for f in flows)
     with pytest.warns(UserWarning, match="omits 1 custom noise"):
         csv_text = instance.write_simapro_lci("3.10", export_format="string")
-    assert noise()["name"] not in csv_text
+    assert noise()["name"] in csv_text  # retained in the audit comment
+    rows = list(csv.reader(io.StringIO(csv_text), delimiter=";"))
+    assert not any(
+        noise()["name"] in row for row in rows_by_section(rows, "Emissions to air")
+    )
     assert data[0]["exchanges"][1] == noise()
 
 
@@ -477,3 +481,86 @@ def test_family_exports_preserve_model_inventory_and_impacts(
     xr.testing.assert_identical(model.array, model_before)
     xr.testing.assert_identical(inventory.calculate_impacts(), impacts)
     assert not (tmp_path / "unused").exists()
+
+
+def test_openlca_exact_method_ids_and_coverage_are_forwarded(tmp_path):
+    import uuid
+    from brightpath.formats.openlca_methods import OpenLCAMethodMapping
+
+    uid = lambda name: str(uuid.uuid5(uuid.NAMESPACE_URL, "carculator-test:" + name))
+    records = {
+        "flows": {
+            "@id": uid("flow"),
+            "name": "Test emission",
+            "flowType": "ELEMENTARY_FLOW",
+            "category": "Elementary flows/Emission to air/low population density",
+            "flowProperties": [
+                {
+                    "flowProperty": {"@id": uid("property")},
+                    "isRefFlowProperty": True,
+                    "conversionFactor": 1,
+                }
+            ],
+        },
+        "flow_properties": {
+            "@id": uid("property"),
+            "name": "Mass",
+            "unitGroup": {"@id": uid("group")},
+        },
+        "unit_groups": {
+            "@id": uid("group"),
+            "name": "Units of mass",
+            "units": [
+                {
+                    "@id": uid("unit"),
+                    "name": "kg",
+                    "isRefUnit": True,
+                    "conversionFactor": 1,
+                }
+            ],
+        },
+    }
+    root = tmp_path / "method"
+    for folder, record in records.items():
+        (root / folder).mkdir(parents=True)
+        (root / folder / (record["@id"] + ".json")).write_text(json.dumps(record))
+    csv_path = tmp_path / "biosphere.csv"
+    with csv_path.open("w", newline="") as stream:
+        csv.writer(stream).writerow(
+            [
+                "Test emission",
+                "air",
+                "non-urban air or from high stacks",
+                "kilogram",
+                uid("flow"),
+            ]
+        )
+    mapping = OpenLCAMethodMapping(root, csv_path, biosphere_version="3.10")
+    data = [activity()]
+    data[0]["exchanges"].append(
+        {
+            "name": "Test emission",
+            "categories": ("air", "non-urban air or from high stacks"),
+            "unit": "kilogram",
+            "amount": 2.5,
+            "type": "biosphere",
+        }
+    )
+    with pytest.warns(UserWarning, match="foreground processes only"):
+        path = exporter(data).write_openlca_lci(
+            "3.10", directory=tmp_path, method_mapping=mapping
+        )
+    with zipfile.ZipFile(path) as archive:
+        process = next(
+            json.loads(archive.read(name))
+            for name in archive.namelist()
+            if name.startswith("processes/")
+        )
+        emission = process["exchanges"][1]
+        assert emission["flow"]["@id"] == uid("flow")
+        assert emission["unit"]["@id"] == uid("unit")
+        assert emission["amount"] == 2.5
+        assert "flows/" + uid("flow") + ".json" not in archive.namelist()
+    report = json.loads(Path(path).with_suffix(".biosphere-coverage.json").read_text())
+    assert report["inventory_mapped_flows"] == 1
+    assert not report["inventory_unmapped_flows"]

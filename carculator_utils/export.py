@@ -20,6 +20,7 @@ import xarray as xr
 import yaml
 
 from . import DATA_DIR
+from .export_matching import reachable_foreground, validate_known_target_gaps
 from .fuel_supply import load_fuel_supply_recipes
 
 
@@ -375,6 +376,8 @@ class ExportInventory:
 
             list_act.append(new_act)
 
+        list_act = reachable_foreground(list_act, self.vm.vehicle_type)
+        validate_known_target_gaps(list_act, ecoinvent_version)
         return list_act
 
     def _brightpath_inventory(self, data, ecoinvent_version, database_name=None):
@@ -474,6 +477,22 @@ class ExportInventory:
         omitted_noise = 0
         for activity in data:
             exchanges = activity["exchanges"]
+            noise = [e for e in exchanges if _is_noise_exchange(e)]
+            if noise:
+                activity["comment"] = (
+                    activity.get("comment", "")
+                    + " Custom noise exchanges omitted from SimaPro LCIA (retained here for audit): "
+                    + json.dumps(
+                        [
+                            {
+                                key: exchange[key]
+                                for key in ("name", "categories", "unit", "amount")
+                            }
+                            for exchange in noise
+                        ],
+                        ensure_ascii=True,
+                    )
+                ).strip()
             activity["exchanges"] = [e for e in exchanges if not _is_noise_exchange(e)]
             omitted_noise += len(exchanges) - len(activity["exchanges"])
             # Same physical unit; Brightpath uses ecoinvent's person-kilometre
@@ -563,7 +582,13 @@ class ExportInventory:
         return str(directory / filename)
 
     def _write_exports(
-        self, ecoinvent_version, directory, filename, export_format, software
+        self,
+        ecoinvent_version,
+        directory,
+        filename,
+        export_format,
+        software,
+        openlca_method_mapping=None,
     ):
         """Use Brightpath writers; preserve the established per-year return types."""
         from brightpath.formats.openlca_jsonld import write_openlca_jsonld
@@ -645,7 +670,9 @@ class ExportInventory:
                         inventory_format=InventoryFormat.OPENLCA_JSONLD,
                         database_name=inventory.database_name,
                     )
-                    write_openlca_jsonld(document, destination)
+                    write_openlca_jsonld(
+                        document, destination, method_mapping=openlca_method_mapping
+                    )
 
                 if export_format == "string":
                     path = Path(destination)
@@ -678,9 +705,19 @@ class ExportInventory:
         )
 
     def write_openlca_lci(
-        self, ecoinvent_version, directory=None, filename=None, export_format="file"
+        self,
+        ecoinvent_version,
+        directory=None,
+        filename=None,
+        export_format="file",
+        method_mapping=None,
     ):
         """Export a foreground-only openLCA JSON-LD ZIP as a file or bytes."""
         return self._write_exports(
-            ecoinvent_version, directory, filename, export_format, "openlca"
+            ecoinvent_version,
+            directory,
+            filename,
+            export_format,
+            "openlca",
+            openlca_method_mapping=method_mapping,
         )

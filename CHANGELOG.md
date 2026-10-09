@@ -17,6 +17,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Export only reachable foreground chains, reject unsupported 3.9 coal suppliers, and add exact destination-link audits. Forward explicit openLCA method UUID mapping and retain omitted SimaPro noise quantities in audit comments.
+
 - Expose bounded physical-carbon diagnostics separately from legacy non-fossil climate allocation. Support repeatable exhaust CO2 reconciliation with explicit sourced composition; report the default full-oxidation limitation in exports.
 
 - Require explicit matching evidence and calibration/held-out roles in energy comparisons; retain screening exclusions, record fresh completed runs, and fail the audit command on model-run errors.

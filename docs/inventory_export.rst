@@ -120,3 +120,70 @@ water-unit conversion and comments. Repeated real vehicle exports also check
 scoped electricity suppliers and unchanged matrices and LCIA results. These
 checks do not establish successful GUI imports or numerical equivalence inside
 SimaPro or openLCA.
+
+Reachability and exact destination matching
+-------------------------------------------
+
+Vehicle exports now retain only foreground suppliers reachable from the
+selected transport activities, including cyclic supply chains. Unused fuel
+pathways no longer introduce unrelated destination requirements. The two
+coal-gasification suppliers for methanol and hydrogen are absent from the
+installed ecoinvent 3.9 cutoff database. If such a route is actually needed,
+3.9 export fails explicitly; use 3.10 or provide a scientifically reviewed
+mapping. No natural-gas or geographic substitute is invented.
+
+``carculator_utils.export_matching.match_export`` links activity dictionaries
+on a copy using exact destination catalogs. A technosphere identity contains
+name, reference product, location and unit; a biosphere identity contains name,
+compartments and unit. Catalog values are lists of destination database/code
+keys. Missing and ambiguous matches fail by default. With ``strict=False`` the
+function returns the unlinked cases for inspection. Custom noise requires an
+explicit compatible biosphere database and characterization method.
+
+``scripts/audit_export_targets.py`` checks a pre-generated export against
+existing version-specific Brightway projects without creating or modifying
+database contents. It restores the previously active project. The
+:download:`9 October 2026 destination audit
+<_static/export_target_audit_20261009.json>` covers eight exports: combustion and
+BEV vehicles in each of the four families, against both 3.9 and 3.10 cutoff.
+After reachability filtering, every ordinary supplier and elementary flow has
+an exact match. Only the custom noise flows remain outside those databases.
+This is a destination-identity audit, not an executed full LCIA in SimaPro or
+openLCA. Internal B factors use the bundled source/method versions, so equal
+scores must not be asserted against a different background database version.
+
+Custom noise quantities omitted from SimaPro's flow sections are now retained
+verbatim in each affected activity's audit comment as well as producing a
+warning. This preserves reviewable quantities; comments do not participate in
+SimaPro LCIA and do not restore noise impacts there.
+
+Exact openLCA elementary-flow identifiers
+------------------------------------------
+
+A local method package and its version-matched biosphere CSV can now be passed
+through Brightpath's explicit mapping interface::
+
+    from brightpath.formats.openlca_methods import OpenLCAMethodMapping
+
+    mapping = OpenLCAMethodMapping(
+        "/path/to/methods.zip",
+        "/path/to/biosphere-3.10.csv",
+        biosphere_version="3.10",
+    )
+    inventory.export_lci(
+        software="openlca", format="file", ecoinvent_version="3.10",
+        openlca_method_mapping=mapping,
+    )
+
+Import the original method package into the destination first. The writer uses
+its exact elementary-flow, flow-property and unit identifiers and writes a
+``.biosphere-coverage.json`` sidecar for file exports. Review unmapped flows;
+a missing characterization factor is not fixed by successful serialization.
+The regression verifies identifier reuse, signed quantities and coverage with
+a synthetic method fixture, without distributing licensed method data.
+
+This mapping does not resolve external product-flow/provider identifiers.
+An exact openLCA background catalog and a destination-software LCIA comparison
+are still required for that qualification. Neither generated UUIDs nor the
+Brightway destination audit establishes those openLCA links. SimaPro/openLCA
+GUI import and cross-software numerical parity remain unverified.
