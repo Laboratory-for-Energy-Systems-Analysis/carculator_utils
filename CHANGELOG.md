@@ -15,6 +15,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Retain original model inputs for repeatable completed runs, including PHEV component inputs and selected chemistry-price samples. Preserve explicit input edits and reject ambiguous edits to aggregated PHEV outputs; see `docs/repeated_runs.rst`.
+
 - Correct annual capital recovery and replacement discounting in the shared base cost method; preserve cell-specific purchase-price overrides and finite inactive-lifetime costs. Vehicle subclass formulas are unchanged.
 
 - Preserve constructor-year labels for fuel shares and properties. Align fuel supplies, heating values/densities, combustion CO2 and methane-leakage origin fractions after selecting or reordering completed model years; correct silent blend swaps and single-year inventory failures. Add `model.get_fuel_blend()` and `inventory.fuel_blend` as aligned copies, retain original metadata, and verify family LCIA and repeated annual exports. Older saved fuel-using models without year provenance must be rebuilt; see [scope and migration](docs/usage.rst#fuel-blends-after-year-selection).

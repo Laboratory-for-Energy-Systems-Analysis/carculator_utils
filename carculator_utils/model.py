@@ -473,8 +473,11 @@ class VehicleModel:
                         v not in prices[d].values for d, v in selection.items()
                     ):
                         continue
-                    cost, chosen, factor = (a.sel(selection) for a in specific)
                     default = prices.sel(selection)
+                    cost, chosen, factor = (
+                        a.sel(selection).sel({d: default[d] for d in default.dims})
+                        for a in specific
+                    )
                     if projected:
                         default = default * factor
                     prices.loc[selection] = xr.where(chosen, cost, default)

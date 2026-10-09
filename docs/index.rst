@@ -26,6 +26,7 @@ User's Guide
    battery_costs
    cost_uncertainty
    base_costs
+   repeated_runs
    modeling
    structure
    validity
