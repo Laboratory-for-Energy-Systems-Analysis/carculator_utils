@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.12,<3.13"
 license = {file = "LICENSE"}
 authors = [{name = "Romain Sacchi", email = "romain.sacchi@psi.ch"}]
-dependencies = ["numpy>=1.26.4,<2", "pandas>=2.2.3", "scipy>=1.11", "xarray>=2024.1.0", "numexpr", "klausen", "stats_arrays>=0.6", "PyYAML", "pyprind", "pycountry"]
+dependencies = ["numpy>=1.26.4,<2", "pandas>=2.2.3", "scipy>=1.11", "xarray>=2024.1.0", "numexpr", "klausen", "stats_arrays>=0.6", "PyYAML", "pyprind", "pycountry", "brightpath>=1.0.0a6,<1.1"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.12",
@@ -27,6 +27,7 @@ Issues = "https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_u
 [project.optional-dependencies]
 test = ["pytest>=8", "pytest-cov", "hypothesis>=6", "openpyxl", "xlsxwriter"]
 docs = ["sphinx", "sphinx-immaterial", "sphinx-copybutton", "sphinxcontrib-bibtex"]
+# Compatibility extra: Brightpath already supplies the Excel writer.
 excel = ["xlsxwriter"]
 # Legacy bw2io compares tuple versions and cannot import current bw2data.
 brightway = ["bw2io>=0.8.12,<0.9", "bw2data>=3.6,<4", "bw2calc>=1.8,<2"]

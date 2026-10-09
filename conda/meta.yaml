@@ -25,6 +25,7 @@ requirements:
     - PyYAML
     - pyprind
     - pycountry
+    - brightpath >=1.0.0a6,<1.1
 test:
   imports:
     - carculator_utils

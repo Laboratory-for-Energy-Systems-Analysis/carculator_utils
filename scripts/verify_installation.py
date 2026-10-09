@@ -72,6 +72,7 @@ for name in sys.argv[1:]:
             "ttw_energy":model["TtW energy"].item(),
             "climate_change":result.sel(impact_category="climate change").sum().item()})
 Path("model-results.json").write_text(json.dumps(records,indent=2))
+assert not any(name.split('.')[0] in {'bw2io', 'bw2data', 'brightpath'} for name in sys.modules)
 """
 
 
@@ -235,12 +236,14 @@ def main():
         wheels = sorted(directory.glob("*.whl"))
         run([interpreter(runtime), "-m", "pip", "install", *wheels], work, log, env)
         run([interpreter(runtime), "-m", "pip", "check"], work, log, env)
-        # No checkout on sys.path and no optional export dependencies in the core install.
+        # Brightpath brings export dependencies, but model calculations must not
+        # import them or require a Brightway project. SMOKE checks lazy imports.
         run(
             [
                 interpreter(runtime),
                 "-c",
-                "import importlib.util; assert importlib.util.find_spec('bw2io') is None",
+                "import importlib.metadata; "
+                "print('Brightpath', importlib.metadata.version('brightpath'))",
             ],
             work,
             log,

@@ -294,6 +294,21 @@ def test_vehicle_specific_supplies_survive_export(powertrain, tmp_path):
             # Each new supplier must be referenced by its own exported product,
             # not collapsed to a generic electricity or fuel label in SimaPro.
             rows = list(csv.reader(io.StringIO(content), delimiter=";"))
+            products, consumers = set(), set()
+            section = None
+            for row in rows:
+                if not row:
+                    section = None
+                elif len(row) == 1:
+                    section = row[0]
+                elif section in ("Products", "Waste treatment"):
+                    products.add(row[0])
+                elif section in (
+                    "Materials/fuels",
+                    "Electricity/heat",
+                    "Waste to treatment",
+                ):
+                    consumers.add(row[0])
             new_names = {a["name"] for a in importer.data if " [for " in a["name"]}
             assert new_names
             for activity in importer.data:
@@ -303,15 +318,17 @@ def test_vehicle_specific_supplies_survive_export(powertrain, tmp_path):
                         or exchange["name"] not in new_names
                     ):
                         continue
-                    product = f"{exchange['name'].capitalize()} {{{exchange['location']}}} | Cut-off U"
-                    assert any(len(row) == 7 and row[0] == product for row in rows), (
-                        product,
-                        [
-                            row
-                            for row in rows
-                            if row and row[0].startswith(product.split(" {")[0])
-                        ],
-                    )
+                    # Brightpath's label includes product, geography and the
+                    # exact scoped activity. It must identify both a product
+                    # row and its consuming input, even when units coincide.
+                    labels = {
+                        label
+                        for label in products
+                        if exchange["name"].casefold() in label.casefold()
+                        and f"{{{exchange['location']}}}" in label
+                    }
+                    assert len(labels) == 1, (exchange, labels)
+                    assert labels <= consumers, labels
     np.testing.assert_array_equal(inventory.A, before)
     assert inventory.inputs == inputs
     xr.testing.assert_identical(inventory.calculate_impacts(), impacts)

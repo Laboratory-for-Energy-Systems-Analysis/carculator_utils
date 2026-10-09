@@ -1,56 +1,88 @@
+"""Format-level regression checks for the Brightpath export boundary."""
+
 import csv
 import io
+import json
+import subprocess
+import sys
+import zipfile
+from contextlib import nullcontext
 from copy import deepcopy
 from pathlib import Path
 from types import SimpleNamespace
 
-import numpy as np
 import pytest
 import xarray as xr
+from brightpath import BrightwayInventory, InventoryValidationError
 
 from carculator_utils.export import ExportInventory
 
 
+def activity(name="example", product="product", unit="kilogram", **metadata):
+    identity = {
+        "name": name,
+        "reference product": product,
+        "unit": unit,
+        "location": "CH",
+    }
+    return {
+        **identity,
+        "production amount": 1,
+        "exchanges": [{**identity, "type": "production", "amount": 1}],
+        **metadata,
+    }
+
+
+def exporter(data, years=(2025,)):
+    result = ExportInventory.__new__(ExportInventory)
+    result.references = {}
+    result.db_name = "example"
+    result.vm = SimpleNamespace(
+        array=xr.DataArray([0] * len(years), dims="year", coords={"year": list(years)})
+    )
+    result.write_lci = lambda **kwargs: deepcopy(data)
+    return result
+
+
+def rows_by_section(rows, section):
+    """Read SimaPro blocks, without depending on column counts or label spelling."""
+    result = []
+    active = False
+    for row in rows:
+        if not row:
+            active = False
+        elif row == [section]:
+            active = True
+        elif active:
+            result.append(row)
+    return result
+
+
 @pytest.mark.parametrize(
-    "base_name,reference_product",
+    "name,product",
     [
         ("supply and refining of waste cooking oil", "vegetable oil, refined"),
-        (
-            "carbon fiber production, exhaust gas treatment 1",
-            "carbon fiber production, exhaust gas treatment 1",
-        ),
-        (
-            "carbon fiber production, exhaust gas treatment 2",
-            "carbon fiber production, exhaust gas treatment 2",
-        ),
+        ("carbon fiber production, exhaust gas treatment 1", "carbon fiber production"),
+        ("carbon fiber production, exhaust gas treatment 2", "carbon fiber production"),
     ],
 )
-def test_manufactured_products_with_waste_terms_keep_their_links(
-    base_name, reference_product
-):
-    exporter = ExportInventory.__new__(ExportInventory)
-    exporter.references = {}
-    exporter.flow_map = {}
-    name = f"{base_name} [for Medium - FCEV]"
-    fuel = {
-        "name": name,
-        "location": "RER",
-        "unit": "kilogram",
-        "reference product": reference_product,
-    }
-    activity = {**fuel, "exchanges": [{**fuel, "type": "production", "amount": 1}]}
-    consumer = {
-        "name": "fuel supply example",
-        "location": "CH",
-        "unit": "kilogram",
-        "reference product": "fuel",
-        "exchanges": [{**fuel, "type": "technosphere", "amount": 0.5}],
-    }
-    rows = exporter.format_data_for_lci_for_simapro([activity, consumer], "3.10")
-    product = f"{name.capitalize()} {{RER}} | Cut-off U"
-    assert any(len(row) == 6 and row[0] == product for row in rows)
-    assert any(len(row) == 7 and row[0] == product for row in rows)
-    assert not any(len(row) == 5 and row[0] == product for row in rows)
+def test_manufactured_products_with_waste_terms_keep_their_links(name, product):
+    supplier = activity(f"{name} [for Medium - FCEV]", product)
+    consumer = activity("fuel supply example", "fuel")
+    consumer["exchanges"].append(
+        {**supplier["exchanges"][0], "type": "technosphere", "amount": 0.5}
+    )
+    data = [supplier, consumer]
+    before = deepcopy(data)
+    rows = exporter(data).format_data_for_lci_for_simapro(data, "3.10")
+    products = rows_by_section(rows, "Products")
+    inputs = rows_by_section(rows, "Materials/fuels")
+    assert len(products) == 2
+    assert inputs[0][0] == products[0][0]
+    assert "[for Medium - FCEV]" in inputs[0][0]
+    assert float(inputs[0][2]) == 0.5
+    assert not rows_by_section(rows, "Waste treatment")
+    assert data == before
 
 
 @pytest.mark.parametrize(
@@ -64,176 +96,384 @@ def test_manufactured_products_with_waste_terms_keep_their_links(
         (
             {"comment": "Selected sample.", "source": "Vehicle-specific source"},
             {"comment": "Catalog comment.", "source": "Catalog source"},
-            "Selected sample. Originally published in: Vehicle-specific source.",
+            "Selected sample. Source: Vehicle-specific source",
         ),
         (
             {},
             {"comment": "Catalog comment.", "source": "Catalog source"},
-            "Catalog comment. Originally published in: Catalog source.",
+            "Catalog comment. Source: Catalog source",
         ),
         (
             {"comment": "Selected sample."},
             {"source": "Catalog source"},
-            "Selected sample. Originally published in: Catalog source.",
+            "Selected sample. Source: Catalog source",
         ),
         (
             {"source": "Vehicle-specific source"},
             {"comment": "Catalog comment."},
-            "Catalog comment. Originally published in: Vehicle-specific source.",
+            "Catalog comment. Source: Vehicle-specific source",
         ),
         (
             {"comment": None, "source": ""},
             {"comment": "Catalog comment.", "source": "Catalog source"},
-            "",
+            "Inventory generated by carculator_utils.",
         ),
-        ({}, {}, ""),
-    ],
-    ids=[
-        "vehicle",
-        "activity-precedence",
-        "catalog",
-        "source-fallback",
-        "comment-fallback",
-        "explicit-empty",
-        "missing",
+        ({}, {}, "Inventory generated by carculator_utils."),
     ],
 )
 def test_simapro_preserves_activity_metadata(metadata, reference, expected):
-    exporter = ExportInventory.__new__(ExportInventory)
-    name = "transport, car, example"
-    exporter.references = {name: reference}
-    exporter.flow_map = {}
-    activity = {
-        "name": name,
-        "location": "CH",
-        "unit": "kilometer",
-        "reference product": "transport",
-        "exchanges": [],
-        **metadata,
-    }
-    before = deepcopy(activity)
-    references_before = deepcopy(exporter.references)
-    rows = exporter.format_data_for_lci_for_simapro([activity], "3.10")
-    assert rows[rows.index(["Comment"]) + 1] == [expected]
-    assert activity == before
-    assert exporter.references == references_before
+    data = [activity(**metadata)]
+    instance = exporter(data)
+    instance.references = {"example": reference}
+    before, references_before = deepcopy(data), deepcopy(instance.references)
+    rows = instance.format_data_for_lci_for_simapro(data, "3.10")
+    assert rows_by_section(rows, "Comment") == [[expected]]
+    assert data == before
+    assert instance.references == references_before
 
 
-@pytest.mark.parametrize("export_format", ["file", "string"])
-@pytest.mark.parametrize("has_metadata", [True, False], ids=["metadata", "empty"])
-def test_simapro_metadata_survives_csv_serialization(
-    export_format, has_metadata, tmp_path
-):
-    exporter = ExportInventory.__new__(ExportInventory)
-    exporter.vm = SimpleNamespace(
-        array=xr.DataArray([0], dims="year", coords={"year": [2025]})
+def test_simapro_file_and_string_use_the_same_brightpath_encoding(tmp_path):
+    comment = '"Quoted"; manufacture year: 2025.\nConsumption: 15 kWh/100 km; é.'
+    instance = exporter([activity(comment=comment, source="Model-specific evidence")])
+    filename = instance.write_simapro_lci("3.10", directory=tmp_path)
+    content = instance.write_simapro_lci(
+        "3.10", export_format="string", directory=tmp_path / "unused"
     )
-    exporter.references = {}
-    exporter.flow_map = {}
-    comment = '"Quoted"; manufacture year: 2025.\nConsumption: 15 kWh/100 km; 90\\%; €.'
-    metadata = (
-        {"comment": comment, "source": "Model-specific evidence"}
-        if has_metadata
-        else {}
-    )
-    exporter.write_lci = lambda **kwargs: [
-        {
-            "name": "transport, car, example",
-            "location": "CH",
-            "unit": "kilometer",
-            "reference product": "transport",
-            "exchanges": [],
-            **metadata,
-        }
-    ]
-    output = exporter.write_simapro_lci(
-        "3.10", directory=tmp_path, export_format=export_format
-    )
-    content = (
-        Path(output).read_text(encoding="utf-8") if export_format == "file" else output
-    )
-    rows = list(
+    file_rows = list(
         csv.reader(
-            io.StringIO(content),
-            delimiter=";",
+            io.StringIO(Path(filename).read_text(encoding="latin-1")), delimiter=";"
         )
     )
-    assert rows[rows.index(["Comment"]) + 1] == [
-        (
-            comment + " Originally published in: Model-specific evidence."
-            if has_metadata
-            else ""
-        )
+    text_rows = list(csv.reader(io.StringIO(content), delimiter=";"))
+    # Brightpath records the export time, which can cross a second boundary.
+    assert [r for r in file_rows if not r or not r[0].startswith("{Time:")] == [
+        r for r in text_rows if not r or not r[0].startswith("{Time:")
     ]
+    assert b"\xe9" in Path(filename).read_bytes()
+    assert rows_by_section(
+        list(csv.reader(io.StringIO(content), delimiter=";")), "Comment"
+    ) == [[comment.replace("\n", "\x7f") + " Source: Model-specific evidence"]]
+    assert not (tmp_path / "unused").exists()
 
 
-def test_simapro_export_returns_each_year_as_string():
-    exporter = ExportInventory.__new__(ExportInventory)
-    exporter.vm = SimpleNamespace(
-        array=xr.DataArray(
-            np.zeros(2),
-            dims=("year",),
-            coords={"year": [2020, 2030]},
+@pytest.mark.parametrize("version", ["3.9", "3.10"])
+@pytest.mark.parametrize("software", ["brightway2", "simapro", "openlca"])
+@pytest.mark.parametrize("years", [(2025,), (2030, 2025)])
+def test_files_and_contents_preserve_years(software, version, years, tmp_path):
+    instance = exporter([activity()], years)
+    context = (
+        pytest.warns(UserWarning, match="foreground processes only")
+        if software == "openlca"
+        else nullcontext()
+    )
+    with context:
+        files = instance._write_exports(version, tmp_path, "test", "file", software)
+    context = (
+        pytest.warns(UserWarning, match="foreground processes only")
+        if software == "openlca"
+        else nullcontext()
+    )
+    with context:
+        contents = instance._write_exports(
+            version, tmp_path / "unused", "test", "string", software
         )
+    file_list = files if isinstance(files, list) else [files]
+    contents_list = contents if isinstance(contents, list) else [contents]
+    assert len(file_list) == len(contents_list) == len(years)
+    for year, filename, content in zip(years, file_list, contents_list):
+        assert f"_{year}_" in filename
+        if software == "simapro":
+            assert f"example_{year}" in content
+        elif software == "brightway2":
+            assert content.startswith(b"PK")
+            loaded = BrightwayInventory.from_excel(filename)
+            assert loaded.database_name == f"example_{year}"
+            assert loaded.background_profile.version == version
+            assert loaded.data[0]["exchanges"][0]["amount"] == 1
+        else:
+            with zipfile.ZipFile(io.BytesIO(content)) as archive:
+                assert (
+                    len([n for n in archive.namelist() if n.startswith("processes/")])
+                    == 1
+                )
+    assert isinstance(contents, list) == (len(years) > 1 or software == "brightway2")
+    assert not (tmp_path / "unused").exists()
+
+
+def foreground_data():
+    supplier = activity(
+        "scoped supplier [for Medium - BEV]", "electricity", "kilowatt hour"
     )
-    exporter.write_lci = lambda ecoinvent_version, year: [{"year": year}]
-    exporter.format_data_for_lci_for_simapro = lambda data, ei_version: [
-        ["year", data[0]["year"]]
-    ]
-
-    result = exporter.write_simapro_lci(
-        ecoinvent_version="3.10", export_format="string"
+    consumer = activity(
+        "transport", "transport", "passenger kilometer", comment="Selected vehicle."
     )
-
-    assert len(result) == 2
-    assert "2020" in result[0]
-    assert "2030" in result[1]
-
-
-def test_brightway_export_preserves_all_years(monkeypatch, tmp_path):
-    import sys
-
-    exporter = ExportInventory.__new__(ExportInventory)
-    exporter.vm = SimpleNamespace(
-        array=xr.DataArray([0, 0], dims="year", coords={"year": [2020, 2030]})
+    consumer["exchanges"].extend(
+        [
+            {**supplier["exchanges"][0], "type": "technosphere", "amount": 0.125},
+            {
+                "type": "technosphere",
+                "name": "external supplier",
+                "reference product": "material",
+                "location": "RER",
+                "unit": "kilogram",
+                "amount": -0.5,
+            },
+            {
+                "type": "biosphere",
+                "name": "Carbon dioxide, fossil",
+                "categories": ("air",),
+                "unit": "kilogram",
+                "amount": 2.5,
+            },
+            {
+                "type": "biosphere",
+                "name": "Water",
+                "categories": ("water",),
+                "unit": "cubic meter",
+                "amount": 0.002,
+            },
+        ]
     )
-    exporter.db_name = "example"
-    exporter.write_lci = lambda **kwargs: [{"name": "example", "year": kwargs["year"]}]
-    exporter.get_export_filepath = lambda name, directory: str(tmp_path / name)
+    return [supplier, consumer]
 
-    class Importer:
-        def __init__(self, name):
-            self.db_name = name
 
-    monkeypatch.setitem(
-        sys.modules,
-        "bw2io",
-        SimpleNamespace(
-            importers=SimpleNamespace(base_lci=SimpleNamespace(LCIImporter=Importer))
-        ),
-    )
-    result = exporter.write_bw2_lci(ecoinvent_version="3.10", export_format="bw2io")
-    assert [item.db_name for item in result] == ["example_2020", "example_2030"]
-    assert [item.data[0]["year"] for item in result] == [2020, 2030]
-    exporter.vm.array = exporter.vm.array.sel(year=[2020])
+def test_bw2io_and_excel_keep_foreground_links_and_exchange_values(tmp_path):
+    data = foreground_data()
+    instance = exporter(data, (2030, 2025))
+    importers = instance.write_bw2_lci("3.10", export_format="bw2io")
+    for year, importer in zip((2030, 2025), importers):
+        assert importer.db_name == f"example_{year}"
+        assert importer.data[1]["exchanges"][1]["database"] == importer.db_name
+        assert "database" not in importer.data[1]["exchanges"][2]
+        assert [e["amount"] for e in importer.data[1]["exchanges"]] == [
+            1,
+            0.125,
+            -0.5,
+            2.5,
+            0.002,
+        ]
+    instance.vm.array = instance.vm.array.sel(year=[2025])
     assert (
-        exporter.write_bw2_lci(ecoinvent_version="3.10", export_format="bw2io").db_name
-        == "example_2020"
+        instance.write_bw2_lci("3.10", export_format="bw2io").db_name == "example_2025"
+    )
+    filename = instance.write_bw2_lci("3.10", directory=tmp_path)
+    loaded = BrightwayInventory.from_excel(filename)
+    assert [e["amount"] for e in loaded.data[1]["exchanges"]] == [
+        1,
+        0.125,
+        -0.5,
+        2.5,
+        0.002,
+    ]
+    assert data == foreground_data()
+
+
+def test_openlca_zip_links_foreground_and_preserves_signed_amounts():
+    instance = exporter(foreground_data())
+    with pytest.warns(UserWarning, match="need linking"):
+        content = instance.write_openlca_lci("3.10", export_format="string")
+    with zipfile.ZipFile(io.BytesIO(content)) as archive:
+        processes = [
+            json.loads(archive.read(n))
+            for n in archive.namelist()
+            if n.startswith("processes/")
+        ]
+    supplier = next(p for p in processes if "scoped supplier" in p["name"])
+    consumer = next(p for p in processes if p["name"] == "transport")
+    assert consumer["description"].startswith("Selected vehicle.")
+    exchanges = consumer["exchanges"]
+    linked = next(
+        e
+        for e in exchanges
+        if e.get("defaultProvider", {}).get("@id") == supplier["@id"]
+    )
+    assert linked["amount"] == 0.125 and linked["isInput"]
+    assert any(e["amount"] == -0.5 and e["isInput"] for e in exchanges)
+    assert any(e["amount"] == 2.5 and not e["isInput"] for e in exchanges)
+    assert any(e["amount"] == 0.002 and not e["isInput"] for e in exchanges)
+
+
+def test_simapro_keeps_waste_links_and_converts_water_without_mutation():
+    data = foreground_data()
+    waste = activity("treatment of used powertrain", "used powertrain")
+    data.append(waste)
+    data[1]["exchanges"].append(
+        {**waste["exchanges"][0], "type": "technosphere", "amount": -0.1}
+    )
+    before = deepcopy(data)
+    rows = exporter(data).format_data_for_lci_for_simapro(data, "3.10")
+    treatment = rows_by_section(rows, "Waste treatment")
+    waste_inputs = rows_by_section(rows, "Waste to treatment")
+    assert len(treatment) == len(waste_inputs) == 1
+    assert treatment[0][0] == waste_inputs[0][0]
+    water = rows_by_section(rows, "Emissions to water")
+    assert water[0][2] == "kg" and float(water[0][3]) == 2
+    assert data == before
+
+
+def noise():
+    return {
+        "type": "biosphere",
+        "name": "noise, octave 1, day time, urban",
+        "categories": ("octave 1", "day time", "urban"),
+        "unit": "joule",
+        "amount": 3,
+    }
+
+
+def test_noise_is_retained_in_brightway_and_openlca_and_reported_in_simapro(tmp_path):
+    data = [activity()]
+    data[0]["exchanges"].append(noise())
+    instance = exporter(data)
+    workbook = instance.write_bw2_lci("3.10", directory=tmp_path)
+    assert (
+        BrightwayInventory.from_excel(workbook).data[0]["exchanges"][1]["categories"]
+        == noise()["categories"]
+    )
+    with pytest.warns(UserWarning, match="foreground processes only"):
+        content = instance.write_openlca_lci("3.10", export_format="string")
+    with zipfile.ZipFile(io.BytesIO(content)) as archive:
+        flows = [
+            json.loads(archive.read(n))
+            for n in archive.namelist()
+            if n.startswith("flows/")
+        ]
+    assert any(f["name"] == noise()["name"] for f in flows)
+    with pytest.warns(UserWarning, match="omits 1 custom noise"):
+        csv_text = instance.write_simapro_lci("3.10", export_format="string")
+    assert noise()["name"] not in csv_text
+    assert data[0]["exchanges"][1] == noise()
+
+
+@pytest.mark.parametrize(
+    "exchange",
+    [{**noise(), "amount": float("nan")}, {**noise(), "name": "unrecognized flow"}],
+)
+def test_custom_noise_validation_exception_does_not_hide_invalid_data(exchange):
+    data = [activity()]
+    data[0]["exchanges"].append(exchange)
+    with pytest.raises((InventoryValidationError, ValueError)):
+        exporter(data).write_bw2_lci("3.10", export_format="string")
+
+
+def test_model_and_export_module_imports_stay_lazy():
+    subprocess.run(
+        [
+            sys.executable,
+            "-c",
+            "import sys; import carculator_utils.model; import carculator_utils.export; "
+            "assert not {'bw2io', 'bw2data', 'brightpath'} & sys.modules.keys()",
+        ],
+        check=True,
     )
 
 
-def test_brightway_missing_extra_is_actionable(monkeypatch, tmp_path):
-    import sys
+@pytest.mark.family
+@pytest.mark.parametrize(
+    "package,prefix,size,powertrain,unit,kwargs",
+    [
+        ("carculator", "Car", "Medium", "BEV", "pkm", {}),
+        (
+            "carculator_truck",
+            "Truck",
+            "40t",
+            "BEV",
+            "tkm",
+            {"cycle": "Regional delivery"},
+        ),
+        ("carculator_bus", "Bus", "13m-city", "BEV-depot", "pkm", {}),
+        (
+            "carculator_two_wheeler",
+            "TwoWheeler",
+            "Motorcycle 11-35kW",
+            "BEV",
+            "pkm",
+            {},
+        ),
+    ],
+)
+def test_family_exports_preserve_model_inventory_and_impacts(
+    package, prefix, size, powertrain, unit, kwargs, tmp_path
+):
+    import importlib
+    import importlib.util
+    import os
+    import warnings
 
-    import pytest
+    import numpy as np
 
-    exporter = ExportInventory.__new__(ExportInventory)
-    exporter.vm = SimpleNamespace(
-        array=xr.DataArray([0], dims="year", coords={"year": [2020]})
+    if importlib.util.find_spec(package) is None:
+        if os.environ.get("CARCULATOR_REQUIRE_FAMILY") == "1":
+            pytest.fail(f"Required family package {package} missing")
+        pytest.skip(f"Optional family package {package} missing")
+    module = importlib.import_module(package)
+    inputs = getattr(module, prefix + "InputParameters")()
+    inputs.static()
+    _, array = module.fill_xarray_from_input_parameters(
+        inputs, scope={"size": [size], "powertrain": [powertrain], "year": [2025, 2030]}
     )
-    exporter.db_name = "example"
-    exporter.write_lci = lambda **kwargs: []
-    exporter.get_export_filepath = lambda name, directory: str(tmp_path / name)
-    monkeypatch.setitem(sys.modules, "bw2io", None)
-    with pytest.raises(ImportError, match=r"carculator_utils\[brightway\]"):
-        exporter.write_bw2_lci(ecoinvent_version="3.10", export_format="bw2io")
+    model = getattr(module, prefix + "Model")(array, **kwargs)
+    model.set_all()
+    inventory = getattr(module, "Inventory" + prefix)(
+        model, scenario="static", functional_unit=unit
+    )
+    before, indices = inventory.A.copy(), deepcopy(inventory.inputs)
+    model_before = model.array.copy(deep=True)
+    impacts = inventory.calculate_impacts()
+    for software in ("brightway2", "simapro", "openlca"):
+        with warnings.catch_warnings(record=True) as caught:
+            result = inventory.export_lci(
+                software=software, format="string", directory=tmp_path / "unused"
+            )
+        assert len(result) == 2
+        if software == "openlca":
+            assert any("need linking" in str(w.message) for w in caught)
+            for content in result:
+                with zipfile.ZipFile(io.BytesIO(content)) as archive:
+                    processes = [
+                        json.loads(archive.read(n))
+                        for n in archive.namelist()
+                        if n.startswith("processes/")
+                    ]
+                process_ids = {p["@id"] for p in processes}
+                providers = {
+                    e["defaultProvider"]["@id"]
+                    for p in processes
+                    for e in p["exchanges"]
+                    if e.get("defaultProvider")
+                }
+                outputs = {
+                    (p["@id"], e["flow"]["@id"])
+                    for p in processes
+                    for e in p["exchanges"]
+                    if e.get("isQuantitativeReference")
+                }
+                local_inputs = [
+                    e
+                    for p in processes
+                    for e in p["exchanges"]
+                    if e.get("isInput")
+                    and e.get("defaultProvider", {}).get("@id") in process_ids
+                ]
+                assert local_inputs
+                for exchange in local_inputs:
+                    assert (
+                        exchange["defaultProvider"]["@id"],
+                        exchange["flow"]["@id"],
+                    ) in outputs
+                # External provider references are synthetic in this export;
+                # their absence is the linking limitation reported to users.
+                assert providers - process_ids
+                assert any(p["name"].startswith("transport, ") for p in processes)
+        elif software == "simapro":
+            assert all(
+                "personkm" in content if unit == "pkm" else "tkm" in content
+                for content in result
+            )
+        else:
+            assert all(content.startswith(b"PK") for content in result)
+    np.testing.assert_array_equal(inventory.A, before)
+    assert inventory.inputs == indices
+    xr.testing.assert_identical(model.array, model_before)
+    xr.testing.assert_identical(inventory.calculate_impacts(), impacts)
+    assert not (tmp_path / "unused").exists()

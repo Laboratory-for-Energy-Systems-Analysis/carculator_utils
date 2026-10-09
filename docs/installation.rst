@@ -21,7 +21,10 @@ activate it, and use the same pip command. Availability of a conda package is
 separate from the PyPI release.
 
 Core calculations use bundled resources without a Brightway project, an
-ecoinvent installation or network access. For export support::
+ecoinvent installation or network access. Brightpath is a runtime dependency
+and supplies Excel, SimaPro CSV and openLCA JSON-LD writers. It also installs
+``bw2io``, but these packages are imported only when exporting. To select the
+tested legacy Brightway stack::
 
    python -m pip install "carculator_utils[excel,brightway]==1.3.6"
 

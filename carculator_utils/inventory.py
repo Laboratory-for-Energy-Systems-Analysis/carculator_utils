@@ -1853,24 +1853,25 @@ class Inventory:
         format="bw2io",
     ):
         """
-        Export the inventory. Can export to Simapro (as csv), or brightway2 (as bw2io object, file or string).
-        :param db_name:
+        Export one retained sample through Brightpath, with one artifact per year.
+
         :param ecoinvent_version: str. "3.9" or "3.10"
         :param filename: str. Name of the file to be exported
         :param directory: str. Directory where the file is saved
-        :param software: str. "brightway2" or "simapro"
-        :param format: str. "bw2io" or "file" or "string"
-        ::return: inventory, or the filepath where the file is saved.
-        :rtype: list
+        :param software: "brightway2", "simapro", or "openlca" (foreground only).
+        :param format: "bw2io" (Brightway only), "file", or "string". The latter
+            returns decoded SimaPro CSV or binary Excel/JSON-LD ZIP contents.
+        :return: Paths, contents or unlinked importers. Multiple years return a
+            list; Brightway Excel contents always return a list.
         """
 
         if ecoinvent_version not in ["3.9", "3.10"]:
             raise ValueError("ecoinvent_version must be either '3.9' or '3.10'")
 
-        if software not in ("brightway2", "simapro"):
-            raise ValueError("software must be 'brightway2' or 'simapro'.")
+        if software not in ("brightway2", "simapro", "openlca"):
+            raise ValueError("software must be 'brightway2', 'simapro' or 'openlca'.")
         if format not in ("file", "string", "bw2io") or (
-            software == "simapro" and format == "bw2io"
+            software != "brightway2" and format == "bw2io"
         ):
             raise ValueError("Unsupported inventory export format for this software.")
         export = copy(self)
@@ -1927,7 +1928,12 @@ class Inventory:
             )
 
         else:
-            return lci.write_simapro_lci(
+            writer = (
+                lci.write_simapro_lci
+                if software == "simapro"
+                else lci.write_openlca_lci
+            )
+            return writer(
                 ecoinvent_version=ecoinvent_version,
                 directory=directory,
                 filename=f"{filename}_{self.vm.vehicle_type}_{datetime.now().strftime('%Y%m%d')}",

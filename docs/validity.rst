@@ -59,8 +59,11 @@ and preserve the original arrays, indices and calculated impacts. SimaPro checks
 parse the serialized CSV and compare each vehicle's comment with its Brightway
 metadata, including manufacture year and the selected sample's parameters.
 ``tests/test_export.py`` additionally checks activity metadata precedence,
-catalog fallback, missing sources, and file/string serialization of comments
-containing semicolons, quotes, line breaks and Unicode.
+catalog fallback, missing sources, and Brightpath file/string serialization of
+comments containing semicolons, quotes and line breaks. Latin-1 encoding and
+Unicode transliteration follow Brightpath's SimaPro format rules. The same suite
+checks foreground provider references and signed amounts in openLCA JSON-LD,
+and Excel round trips. See :doc:`inventory_export` for format-specific limits.
 These checks cover the exported CSV, not supplier linking or import into the
 SimaPro application. Multi-sample exports remain unsupported and fail with
 selection instructions. These are software consistency checks, not additional

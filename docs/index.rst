@@ -21,6 +21,7 @@ User's Guide
 
    installation
    usage
+   inventory_export
    input_validation
    battery_costs
    cost_uncertainty

@@ -181,10 +181,15 @@ def test_selected_sample_exports_preserve_data_and_metadata(family, label, tmp_p
             for activity in importer.data:
                 if "Manufacture year:" not in activity.get("comment", ""):
                     continue
-                name = f"{activity['name'].capitalize()} {{{activity['location']}}} | Cut-off U"
-                index = rows.index([name])
+                index = next(
+                    i
+                    for i, row in enumerate(rows)
+                    if row == ["Process name"]
+                    and f"| {activity['name']} |" in rows[i + 1][0]
+                    and f"{{{activity['location']}}}" in rows[i + 1][0]
+                )
                 comment = rows[rows.index(["Comment"], index) + 1][0]
-                assert comment == activity["comment"].strip()
+                assert comment == activity["comment"]
                 assert f"Manufacture year: {year}." in comment
                 assert "Originally published in: None" not in comment
     np.testing.assert_array_equal(inventory.A, before)

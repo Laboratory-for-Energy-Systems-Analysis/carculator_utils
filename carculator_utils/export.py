@@ -5,24 +5,22 @@ in different formats.
 
 from __future__ import annotations
 
-import csv
 import datetime
-import io
 import json
-import os
 import uuid
-from typing import TYPE_CHECKING, Dict, List, Tuple, Union
+import warnings
+from numbers import Real
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from typing import Dict, List, Tuple
 
 import numpy as np
 import pyprind
 import xarray as xr
 import yaml
 
-from . import DATA_DIR, __version__
+from . import DATA_DIR
 from .fuel_supply import load_fuel_supply_recipes
-
-if TYPE_CHECKING:
-    import bw2io
 
 
 def safe_filename(name: str) -> str:
@@ -32,13 +30,18 @@ def safe_filename(name: str) -> str:
     ).strip()
 
 
-def create_valid_worksheet_name(name: str) -> str:
-    """Return an Excel worksheet name within Excel's length and character limits."""
-    invalid_characters = set("[]:*?/\\")
-    worksheet_name = "".join(
-        "_" if char in invalid_characters else char for char in str(name)
-    )[:31]
-    return worksheet_name or "Sheet1"
+def _is_noise_exchange(exchange):
+    """Recognize only carculator's 24 custom day-time noise flows."""
+    categories = tuple(exchange.get("categories") or ())
+    return (
+        exchange.get("type") == "biosphere"
+        and exchange.get("unit") == "joule"
+        and len(categories) == 3
+        and categories[0] in {f"octave {i}" for i in range(1, 9)}
+        and categories[1] == "day time"
+        and categories[2] in {"urban", "suburban", "rural"}
+        and exchange.get("name") == "noise, " + ", ".join(categories)
+    )
 
 
 def load_references() -> dict:
@@ -108,66 +111,6 @@ def load_mapping(
         )
 
     return dict_map
-
-
-def get_simapro_subcompartments() -> Dict[str, str]:
-    # Load the matching dictionary between ecoinvent and Simapro subcompartments
-    # contained in simapro_subcompartments.yaml
-
-    filename = "simapro_subcompartments.yaml"
-    filepath = DATA_DIR / "export" / filename
-    if not filepath.is_file():
-        raise FileNotFoundError(
-            "The dictionary of subcompartments match "
-            "between ecoinvent and Simapro could not be found."
-        )
-
-    # read YAML file
-    with open(filepath, "r") as stream:
-        try:
-            data = yaml.safe_load(stream)
-        except yaml.YAMLError as exc:
-            print(exc)
-
-    return data
-
-
-def get_simapro_biosphere() -> Dict[str, str]:
-    # Load the matching dictionary between ecoinvent and Simapro biosphere flows
-    # for each ecoinvent biosphere flow name, it gives the corresponding Simapro name
-
-    filename = "simapro-biosphere.json"
-    filepath = DATA_DIR / "export" / filename
-    if not filepath.is_file():
-        raise FileNotFoundError(
-            "The dictionary of biosphere flow match "
-            "between ecoinvent and Simapro could not be found."
-        )
-    with open(filepath, encoding="utf-8") as json_file:
-        data = json.load(json_file)
-    dict_bio = {}
-    for d in data:
-        dict_bio[d[2]] = d[1]
-
-    return dict_bio
-
-
-def get_simapro_technosphere() -> Dict[Tuple[str, str], str]:
-    # Load the matching dictionary between ecoinvent and Simapro product flows
-
-    filename = "simapro-technosphere-3.5.csv"
-    filepath = DATA_DIR / "export" / filename
-    with open(filepath, encoding="utf-8") as f:
-        csv_list = [[val.strip() for val in r.split(";")] for r in f.readlines()]
-    (_, _, *header), *data = csv_list
-
-    dict_tech = {}
-    for row in data:
-        name, location, simapro_name = row
-        simapro_name = simapro_name.split("|")[:2]
-        dict_tech[(name, location)] = "|".join(simapro_name)
-
-    return dict_tech
 
 
 def rename_mapping(filename: str) -> Dict[str, str]:
@@ -425,121 +368,115 @@ class ExportInventory:
 
         return list_act
 
-    def format_data_for_lci_for_bw2(self, data: List[dict]) -> List[dict]:
-        rows = []
-        rows.extend((["Database", self.db_name], ("format", "Excel spreadsheet")))
-        rows.append([])
+    def _brightpath_inventory(self, data, ecoinvent_version, database_name=None):
+        """Prepare a private canonical inventory with an exact background context.
 
-        for k in data:
-            if k.get("exchanges"):
-                rows.extend(
-                    (
-                        ["Activity", k["name"]],
-                        ("location", k["location"]),
-                        ("production amount", float(k["production amount"])),
-                        ("reference product", k.get("reference product"), ""),
-                        ("type", "process"),
-                        ("unit", k["unit"]),
-                        ("source", k.get("source", "")),
-                        ("comment", k.get("comment", "")),
-                        ["Exchanges"],
-                        [
-                            "name",
-                            "amount",
-                            "database",
-                            "location",
-                            "unit",
-                            "categories",
-                            "type",
-                            "reference product",
-                            "tag",
-                        ],
-                    )
-                )
+        Carculator owns foreground metadata and its existing 3.10-to-3.9 mapping.
+        Brightpath owns normalization, format validation and serialization.
+        This does not certify links against an installed background database.
+        """
+        from copy import deepcopy
 
-                for e in k["exchanges"]:
-                    rows.append(
-                        [
-                            e["name"],
-                            float(e["amount"]),
-                            e["database"],
-                            e.get("location", "None"),
-                            e["unit"],
-                            "::".join(e.get("categories", ())),
-                            e["type"],
-                            e.get("reference product"),
-                            e.get("tag", "other"),
-                        ]
-                    )
-            else:
-                rows.extend(
-                    (
-                        ["Activity", k["name"]],
-                        ("type", "biosphere"),
-                        ("unit", k["unit"]),
-                        ("worksheet name", "None"),
-                    )
-                )
-            rows.append([])
+        from brightpath import (
+            BackgroundContext,
+            BiosphereProfile,
+            BrightwayInventory,
+            FormatProfile,
+            InventoryContext,
+            InventoryValidationError,
+            TechnosphereProfile,
+        )
 
-        return rows
+        data = deepcopy(data)
+        database_name = database_name or getattr(self, "db_name", "carculator export")
+        for activity in data:
+            reference = self.references.get(activity["name"], {})
+            for field in ("comment", "source"):
+                if field not in activity and field in reference:
+                    activity[field] = reference[field]
+            # Brightpath requires a nonempty activity comment. This identifies
+            # generated data without inventing a literature citation.
+            if not activity.get("comment"):
+                activity["comment"] = "Inventory generated by carculator_utils."
+            activity["database"] = database_name
 
-    def format_data_for_lci_for_simapro(
-        self, data: List[Dict], ei_version: str
-    ) -> List[List]:
-        # not all biosphere flows exist in simapro
-        # load list from `simapro_blacklist.yaml`
-        with open(
-            DATA_DIR / "export" / "simapro_blacklist.yaml", "r", encoding="utf-8"
-        ) as f:
-            blacklist = yaml.safe_load(f)
-
-        # load fields list from `simapro_fields.yaml`
-        with open(
-            DATA_DIR / "export" / "simapro_fields.yaml", "r", encoding="utf-8"
-        ) as f:
-            fields = yaml.safe_load(f)
-
-        dict_tech = get_simapro_technosphere()
-        dict_bio = get_simapro_biosphere()
-        simapro_subs = get_simapro_subcompartments()
-
-        rows = []
-
-        for item in fields["headers"]:
-            if item.startswith("{date"):
-                item = item.replace(
-                    "date", datetime.datetime.today().strftime("%d/%m/%Y")
-                )
-            rows.append([item])
-        rows.append([])
-
-        own_products = {
-            (
-                a["name"],
-                a.get("location", "GLO"),
-                a["unit"],
-                a["reference product"],
-            ): dict_tech.get(
-                (a["name"], a.get("location", "GLO")),
-                f"{a['name'].capitalize()} {{{a.get('location', 'GLO')}}} | Cut-off U",
-            )
-            for a in data
+        identities = {
+            (a["name"], a["reference product"], a["location"], a["unit"]) for a in data
         }
+        for activity in data:
+            for exchange in activity["exchanges"]:
+                amount = exchange.get("amount")
+                if isinstance(amount, Real) and not np.isfinite(amount):
+                    raise ValueError(
+                        f"Nonfinite exchange amount in {activity['name']!r}: "
+                        f"{exchange.get('name')!r}."
+                    )
+                identity = tuple(
+                    exchange.get(k)
+                    for k in ("name", "reference product", "location", "unit")
+                )
+                if exchange["type"] == "production" or identity in identities:
+                    exchange["database"] = database_name
+                elif exchange["type"] == "technosphere":
+                    # External suppliers must be matched to the user's database;
+                    # they do not belong to the generated foreground database.
+                    exchange.pop("database", None)
 
-        # We loop through the activities
-        for a in data:
-            # Keep generated vehicle metadata and explicit activity overrides.
-            # Use the reference catalog only for fields absent from the activity.
-            reference = self.references.get(a["name"], {})
-            comment = a.get("comment", reference.get("comment"))
-            source = a.get("source", reference.get("source"))
+        context = InventoryContext(
+            format=FormatProfile("brightway_excel", dialect="bw2io"),
+            background=BackgroundContext(
+                technosphere=TechnosphereProfile(
+                    "ecoinvent", ecoinvent_version, "cutoff"
+                ),
+                biosphere=BiosphereProfile("ecoinvent", ecoinvent_version),
+            ),
+        )
+        inventory = BrightwayInventory.from_data(
+            data, context=context, database_name=database_name
+        ).normalize()
+        report = inventory.validate(check_background_links=False)
+        # Brightpath's standard compartment whitelist does not include our
+        # custom noise flows. Excel and JSON-LD can preserve them verbatim.
+        # Exempt this one diagnostic, keeping amount/identity checks in force.
+        noise_paths = {
+            f"activity[{i}].exchanges[{j}]"
+            for i, activity in enumerate(data)
+            for j, exchange in enumerate(activity["exchanges"])
+            if _is_noise_exchange(exchange)
+        }
+        report.issues = [
+            issue
+            for issue in report.issues
+            if not (
+                issue.code == "inventory_structure"
+                and issue.path in noise_paths
+                and "unsupported biosphere category" in issue.message
+            )
+        ]
+        if report.has_errors:
+            raise InventoryValidationError(report)
+        return inventory
 
-            main_category = (
-                "waste treatment"
-                if any(
-                    i.lower() in a["name"].lower()
-                    for i in (
+    def _simapro_inventory(self, inventory):
+        """Attach carculator's foreground classifications before serialization."""
+        from brightpath import SimaProInventory
+
+        data = inventory.data
+        omitted_noise = 0
+        for activity in data:
+            exchanges = activity["exchanges"]
+            activity["exchanges"] = [e for e in exchanges if not _is_noise_exchange(e)]
+            omitted_noise += len(exchanges) - len(activity["exchanges"])
+            # Same physical unit; Brightpath uses ecoinvent's person-kilometre
+            # spelling. Apply it to both producers and consumers on this copy.
+            for record in [activity, *activity["exchanges"]]:
+                if record["unit"] == "passenger kilometer":
+                    record["unit"] = "person kilometer"
+            name = activity["name"].lower()
+            waste = (
+                any(
+                    word in name
+                    for word in (
                         "waste",
                         "emissions",
                         "treatment",
@@ -550,630 +487,191 @@ class ExportInventory:
                         "used li-ion",
                     )
                 )
-                and "biomethane" not in a["name"].lower()
-                and not a["name"]
-                .lower()
-                .startswith(
+                and "biomethane" not in name
+                and not name.startswith(
                     (
                         "supply and refining of waste cooking oil",
                         "carbon fiber production,",
                     )
                 )
-                else "process"
             )
-            category = "carculator"
-
-            # We loop through the fields SimaPro expects to see
-            for item in fields["fields"]:
-                # If it is a waste treatment activity, we skip the field `Products`
-                if main_category == "waste treatment" and item == "Products":
-                    continue
-
-                # It is not a waste treatment activity, we skip the field `Waste treatment`
-                if main_category != "waste treatment" and item == "Waste treatment":
-                    continue
-
-                rows.append([item])
-
-                if item == "Process name":
-                    dataset_name = f"{a['name'].capitalize()} {{{a.get('location', 'GLO')}}} | Cut-off U"
-                    rows.append([dataset_name])
-
-                if item == "Type":
-                    rows.append(["Unit process"])
-
-                if item == "Comment":
-                    parts = [str(comment).strip()] if comment else []
-                    if source:
-                        parts.append(f"Originally published in: {source}.")
-                    rows.append([" ".join(parts)])
-
-                if item == "Category type":
-                    rows.append([main_category])
-
-                if item == "Generator":
-                    rows.append([f"carculator: {__version__}"])
-
-                if item == "Geography":
-                    rows.append([a["location"]])
-
-                if item == "Time Period":
-                    rows.append(["Refer to vehicle year."])
-
-                if item == "Date":
-                    rows.append([f"{datetime.datetime.today():%d.%m.%Y}"])
-
-                if item in (
-                    "Cut off rules",
-                    "Capital goods",
-                    "Technology",
-                    "Representativeness",
-                    "Boundary with nature",
-                ):
-                    rows.append(["Unspecified"])
-
-                if item == "Infrastructure":
-                    rows.append(["Yes"])
-
-                if item == "External documents":
-                    rows.append(["https://carculator.psi.ch"])
-
-                if item in "System description":
-                    rows.append(["carculator"])
-
-                if item in "Allocation rules":
-                    rows.append(
-                        [
-                            "In the instance of joint-production, allocation of process burden based on"
-                            "economic relative revenue of each co-product."
-                        ]
-                    )
-
-                if item == "Literature references":
-                    rows.append(["Sacchi et al. 2022"])
-
-                if item == "Collection method":
-                    rows.append(
-                        [
-                            "Modeling and assumptions: https://carculator.readthedocs.io/en/latest/modeling.html"
-                        ]
-                    )
-
-                if item == "Verification":
-                    rows.append(["Peer-reviewed, but susceptible to change."])
-
-                if item == "Waste treatment":
-                    rows.append(
-                        [
-                            dict_tech.get((a["name"], a["location"]), dataset_name),
-                            fields["unit"][a["unit"]],
-                            1.0,
-                            "not defined",
-                            category,
-                        ]
-                    )
-
-                if item == "Products":
-                    for e in a["exchanges"]:
-                        if e["type"] == "production":
-                            rows.append(
-                                [
-                                    dict_tech.get(
-                                        (a["name"], a["location"]), dataset_name
-                                    ),
-                                    fields["unit"][a["unit"]],
-                                    1.0,
-                                    "100%",
-                                    "not defined",
-                                    category,
-                                ]
-                            )
-
-                if item == "Materials/fuels":
-                    for e in a["exchanges"]:
-                        if e["type"] == "technosphere":
-                            if (
-                                not any(
-                                    i.lower() in e["name"].lower()
-                                    for i in (
-                                        "waste",
-                                        "emissions",
-                                        "treatment",
-                                        "scrap",
-                                        "used powertrain",
-                                        "disposal",
-                                        "sludge",
-                                        "used li-ion",
-                                        "mineral oil storage",
-                                    )
-                                )
-                                or any(
-                                    i.lower() in e["name"].lower()
-                                    for i in [
-                                        "from municipal waste incineration",
-                                        "municipal solid waste, incineration",
-                                        "Biomethane",
-                                        "biogas upgrading",
-                                        "anaerobic digestion, with biogenic carbon uptake",
-                                        "supply and refining of waste cooking oil",
-                                        "carbon fiber production,",
-                                    ]
-                                )
-                                or any(
-                                    i.lower() in e["reference product"].lower()
-                                    for i in [
-                                        "electricity",
-                                    ]
-                                )
-                            ):
-                                tupled = (
-                                    e["name"],
-                                    e.get("location", "GLO"),
-                                    e["unit"],
-                                    e["reference product"],
-                                )
-
-                                (
-                                    e["name"],
-                                    e["location"],
-                                    e["unit"],
-                                    e["reference product"],
-                                ) = self.flow_map.get(ei_version, {tupled: tupled}).get(
-                                    tupled, tupled
-                                )
-
-                                exchange_name = f"{e['name'].capitalize()} {{{e.get('location', 'GLO')}}}"
-
-                                if tupled not in own_products:
-                                    exchange_name = f"{e['reference product'].capitalize()} {{{e.get('location', 'GLO')}}}"
-
-                                    if "market" in e["name"]:
-                                        exchange_name += f"| market for {e['reference product'].lower()}"
-
-                                    if "market group" in e["name"]:
-                                        exchange_name += f"| market group for {e['reference product'].lower()}"
-
-                                    if "production" in e["name"]:
-                                        if len(e["reference product"].split(", ")) > 1:
-                                            exchange_name += f"| {e['reference product'].split(', ')[0].lower()} production, "
-                                            exchange_name += f"{e['reference product'].split(', ')[1].lower()}"
-
-                                rows.append(
-                                    [
-                                        own_products.get(
-                                            tupled,
-                                            f"{dict_tech.get((e['name'], e['location']), exchange_name)} | Cut-off, U",
-                                        ),
-                                        fields["unit"][e["unit"]],
-                                        "{:.3E}".format(e["amount"]),
-                                        "undefined",
-                                        0,
-                                        0,
-                                        0,
-                                    ]
-                                )
-
-                if item == "Resources":
-                    for e in a["exchanges"]:
-                        if (
-                            e["type"] == "biosphere"
-                            and e["categories"][0] == "natural resource"
-                        ):
-                            if e["name"] not in blacklist:
-                                rows.append(
-                                    [
-                                        dict_bio.get(e["name"], e["name"]),
-                                        "",
-                                        fields["unit"][e["unit"]],
-                                        "{:.3E}".format(e["amount"]),
-                                        "undefined",
-                                        0,
-                                        0,
-                                        0,
-                                    ]
-                                )
-
-                if item == "Emissions to air":
-                    for e in a["exchanges"]:
-                        if (
-                            e["type"] == "biosphere" and e["categories"][0] == "air"
-                        ) or e["name"] in [
-                            "Carbon dioxide, from soil or biomass stock",
-                            "Carbon dioxide, to soil or biomass stock",
-                        ]:
-                            if e["name"] not in blacklist:
-                                if e["name"].lower() == "water":
-                                    e["unit"] = "kilogram"
-                                    e["amount"] *= 1000
-
-                                if e["name"] in [
-                                    "Carbon dioxide, to soil or biomass stock"
-                                ]:
-                                    rows.append(
-                                        [
-                                            dict_bio.get(e["name"], e["name"]),
-                                            "",
-                                            fields["unit"][e["unit"]],
-                                            "{:.3E}".format(e["amount"] * -1),
-                                            "undefined",
-                                            0,
-                                            0,
-                                            0,
-                                        ]
-                                    )
-
-                                else:
-                                    rows.append(
-                                        [
-                                            dict_bio.get(e["name"], e["name"]),
-                                            "",
-                                            fields["unit"][e["unit"]],
-                                            "{:.3E}".format(e["amount"]),
-                                            "undefined",
-                                            0,
-                                            0,
-                                            0,
-                                        ]
-                                    )
-
-                if item == "Emissions to water":
-                    for e in a["exchanges"]:
-                        if e["type"] == "biosphere" and e["categories"][0] == "water":
-                            if e["name"] not in blacklist:
-                                if e["name"].lower() == "water":
-                                    e["unit"] = "kilogram"
-                                    e["amount"] *= 1000
-
-                                rows.append(
-                                    [
-                                        dict_bio.get(e["name"], e["name"]),
-                                        "",
-                                        fields["unit"][e["unit"]],
-                                        "{:.3E}".format(e["amount"]),
-                                        "undefined",
-                                        0,
-                                        0,
-                                        0,
-                                    ]
-                                )
-
-                if item == "Emissions to soil":
-                    for e in a["exchanges"]:
-                        if e["type"] == "biosphere" and e["categories"][0] == "soil":
-                            if e["name"] not in blacklist:
-                                if len(e["categories"]) > 1:
-                                    sub_compartment = simapro_subs[e["categories"][1]]
-                                else:
-                                    sub_compartment = ""
-
-                                rows.append(
-                                    [
-                                        dict_bio.get(e["name"], e["name"]),
-                                        "",
-                                        fields["unit"][e["unit"]],
-                                        "{:.3E}".format(e["amount"]),
-                                        "undefined",
-                                        0,
-                                        0,
-                                        0,
-                                    ]
-                                )
-
-                if item == "Waste to treatment":
-                    for e in a["exchanges"]:
-                        is_waste = False
-                        if e["type"] == "technosphere":
-                            # We check if this is indeed a waste treatment activity
-                            if e["name"] in self.references:
-                                if self.references[e["name"]] == "waste treatment":
-                                    is_waste = True
-                            else:
-                                if (
-                                    any(
-                                        i.lower() in e["name"].lower()
-                                        for i in (
-                                            " waste ",
-                                            "emissions",
-                                            "treatment",
-                                            "scrap",
-                                            "used powertrain",
-                                            "used passenger car",
-                                            "used electric passenger car",
-                                            "municipal solid waste",
-                                            "disposal",
-                                            "rainwater mineral oil",
-                                            "sludge",
-                                            "used li-ion",
-                                        )
-                                    )
-                                    and not any(
-                                        i.lower() in e["name"].lower()
-                                        for i in (
-                                            "anaerobic",
-                                            "biomethane",
-                                            "cooking",
-                                            "heat",
-                                            "manual dismantling",
-                                            "carbon fiber production,",
-                                        )
-                                    )
-                                    and e["unit"] not in ["kilowatt hour", "megajoule"]
-                                ):
-                                    is_waste = True
-
-                            # Yes, it is a waste treatment activity
-                            if is_waste:
-                                # In SimaPro, waste inputs are positive numbers
-                                if e["amount"] < 0:
-                                    e["amount"] *= -1
-
-                                tupled = (
-                                    e["name"],
-                                    e.get("location", "GLO"),
-                                    e["unit"],
-                                    e["reference product"],
-                                )
-
-                                (
-                                    e["name"],
-                                    e["location"],
-                                    e["unit"],
-                                    e["reference product"],
-                                ) = self.flow_map.get(ei_version, {tupled: tupled}).get(
-                                    tupled, tupled
-                                )
-
-                                dataset_name = dict_tech.get(
-                                    (e["name"], e["location"]),
-                                    f"{e['name']} {{e['location']}}",
-                                )
-
-                                rows.append(
-                                    [
-                                        own_products.get(
-                                            tupled, f"{dataset_name} | Cut-off, U"
-                                        ),
-                                        fields["unit"][e["unit"]],
-                                        "{:.3E}".format(e["amount"]),
-                                        "undefined",
-                                        0,
-                                        0,
-                                        0,
-                                    ]
-                                )
-
-                rows.append([])
-
-        # System description
-        rows.append(["System description"])
-        rows.append([])
-        rows.append(["Name"])
-        rows.append(["carculator_utils"])
-        rows.append([])
-        rows.append(["Category"])
-        rows.append(["transport"])
-        rows.append([])
-        rows.append(["Description"])
-        rows.append(
-            [
-                "Prospective life cycle assessment model "
-                "for vehicles developed by the Paul Scherrer Institute."
-            ]
+            if waste:
+                category = "waste treatment"
+            elif activity["unit"] in (
+                "kilometer",
+                "person kilometer",
+                "ton kilometer",
+            ):
+                category = "transport"
+            elif activity["unit"] in ("kilowatt hour", "megajoule"):
+                category = "energy"
+            else:
+                category = "material"
+            for exchange in activity["exchanges"]:
+                if exchange["type"] == "production":
+                    exchange["simapro category"] = f"{category}/carculator"
+        if omitted_noise:
+            warnings.warn(
+                f"SimaPro export omits {omitted_noise} custom noise exchanges, "
+                "which its standard flow sections cannot represent. "
+                "Brightway and openLCA exports retain them.",
+                UserWarning,
+                stacklevel=3,
+            )
+        return SimaProInventory.from_data(
+            data,
+            context=inventory.to_simapro().context,
+            database_name=inventory.database_name,
         )
-        rows.append([])
-        rows.append(["Cut-off rules"])
-        rows.append(
-            [
-                "All environmentally-relevant flows are included, as far as the authors knowledge permits."
-                "Also, residual material (e.g., biomass residue) and energy (e.g., waste heat) "
-                "come free of burden, except for the necessary steps to make it reusable"
-                " (transport, conditioning, etc.)."
-            ]
-        )
-        rows.append([])
-        rows.append(["Energy model"])
-        rows.append(
-            [
-                "The energy consumption of vehicles calculated based on a physics model, including "
-                "inertia, rolling resistance, aerodynamic drag, road gradient, etc."
-            ]
-        )
-        rows.append([])
-        rows.append(["Transport model"])
-        rows.append(["Based on Sacchi et al. 2022"])
-        rows.append([])
-        rows.append(["Allocation rules"])
-        rows.append(
-            [
-                "The system modeling is attributional. In the instance of joint-production, the allocation of "
-                "burden between co-products is generally based on the relative economic revenue of "
-                "each product, to align with the underlying database ecoinvent cut-off."
-            ]
-        )
-        rows.append(["End"])
-        rows.append([])
 
-        # Literature reference
-        rows.append(["Literature reference"])
-        rows.append([])
-        rows.append(["Name"])
-        rows.append(["Sacchi et al. 2022"])
-        rows.append([])
-        rows.append(["Documentation link"])
-        rows.append(["https://doi.org/10.1016/j.rser.2022.112475"])
-        rows.append([])
-        rows.append(["Comment"])
-        rows.append(["Study available at: https://doi.org/10.1016/j.rser.2022.112475"])
-        rows.append([])
-        rows.append(["Category"])
-        rows.append(["carculator_utils"])
-        rows.append([])
-        rows.append(["Description"])
-        description = "When, where and how can the electrification of passenger cars reduce greenhouse gas emissions?"
-        description += (
-            "Romain Sacchi, Christian Bauer, Brian L. Cox and Chris L. Mutel\n"
-        )
-        description += "Renewable and Sustainable Energy Reviews, 2022"
+    def format_data_for_lci_for_simapro(
+        self, data: List[Dict], ei_version: str
+    ) -> List[List]:
+        """Return Brightpath-rendered SimaPro rows (before file encoding)."""
+        from brightpath import SimaProSerializationError
 
-        rows.append([description])
+        inventory = self._brightpath_inventory(data, ei_version)
+        result = self._simapro_inventory(inventory).render()
+        if result.has_errors:
+            raise SimaProSerializationError("\n".join(i.message for i in result.issues))
+        self._check_simapro_losses(result)
+        return result.rows
 
-        return rows
+    @staticmethod
+    def _check_simapro_losses(result):
+        """Never silently omit exchanges reported by the format renderer."""
+        from brightpath import SimaProSerializationError
+
+        unused = [
+            i.message for i in result.issues if i.code == "simapro_exchange_unused"
+        ]
+        if unused:
+            raise SimaProSerializationError("\n".join(unused))
 
     def get_export_filepath(self, filename, directory=None):
-        # check that filepath exists
-        directory = directory or os.getcwd()
-        if not os.path.exists(directory):
-            os.makedirs(directory)
+        directory = Path(directory or Path.cwd()).expanduser()
+        directory.mkdir(parents=True, exist_ok=True)
+        return str(directory / filename)
 
-        return os.path.join(directory, filename)
-
-    def write_simapro_lci(
-        self,
-        ecoinvent_version: str,
-        directory: str = None,
-        filename: str = None,
-        export_format: str = "file",
+    def _write_exports(
+        self, ecoinvent_version, directory, filename, export_format, software
     ):
+        """Use Brightpath writers; preserve the established per-year return types."""
+        from brightpath.formats.openlca_jsonld import write_openlca_jsonld
+        from brightpath.formats.simapro_csv import write_simapro_csv
+        from brightpath.models import InventoryDocument, InventoryFormat
+
+        if ecoinvent_version not in ("3.9", "3.10"):
+            raise ValueError("ecoinvent_version must be either '3.9' or '3.10'")
+        if export_format not in ("file", "string", "bw2io") or (
+            export_format == "bw2io" and software != "brightway2"
+        ):
+            raise ValueError("Unsupported inventory export format for this software.")
+        if software == "openlca":
+            warnings.warn(
+                "openLCA export contains foreground processes only. External ecoinvent "
+                "suppliers and LCIA elementary flows need linking in the target database "
+                "before calculation; generated identifiers do not establish these links.",
+                UserWarning,
+                stacklevel=3,
+            )
+
         exports = []
-        base_filename = filename or safe_filename(
-            f"carculator_export_{datetime.date.today()}"
-        )
+        base = filename or safe_filename(f"carculator_export_{datetime.date.today()}")
+        suffix = {
+            "brightway2": "bw2.xlsx",
+            "simapro": "simapro.csv",
+            "openlca": "openlca.zip",
+        }[software]
+        # Brightpath's writers accept paths. Temporary files provide the legacy
+        # in-memory API without maintaining another Excel/CSV/JSON-LD writer.
+        with TemporaryDirectory(prefix="carculator-export-") as temporary:
+            for year in self.vm.array.coords["year"].values:
+                data = self.write_lci(ecoinvent_version=ecoinvent_version, year=year)
+                inventory = self._brightpath_inventory(
+                    data, ecoinvent_version, f"{self.db_name}_{year}"
+                )
+                if export_format == "bw2io":
+                    try:
+                        from bw2io.importers.base_lci import LCIImporter
+                    except ImportError as exc:
+                        raise ImportError(
+                            "Brightway export requires carculator_utils[brightway]."
+                        ) from exc
+                    importer = LCIImporter(inventory.database_name)
+                    importer.data = inventory.data
+                    exports.append(importer)
+                    continue
 
-        for year in self.vm.array.coords["year"].values:
-            year_filename = f"{base_filename}_{year}_simapro.csv"
+                destination = self.get_export_filepath(
+                    f"{base}_{year}_{suffix}",
+                    temporary if export_format == "string" else directory,
+                )
+                if software == "brightway2":
+                    # Structural validation already ran; external backgrounds
+                    # are matched by the receiving application.
+                    inventory.write_excel(destination, validate=False)
+                elif software == "simapro":
+                    simapro = self._simapro_inventory(inventory)
+                    document = InventoryDocument(
+                        data=simapro.data,
+                        context=simapro.context,
+                        database_name=simapro.database_name,
+                    )
+                    # Check representation before publishing the file.
+                    result = simapro.render()
+                    if result.has_errors:
+                        from brightpath import SimaProSerializationError
 
-            filepath_export = self.get_export_filepath(year_filename, directory)
+                        raise SimaProSerializationError(
+                            "\n".join(i.message for i in result.issues)
+                        )
+                    self._check_simapro_losses(result)
+                    write_simapro_csv(document, destination)
+                else:
+                    document = InventoryDocument(
+                        data=inventory.data,
+                        background_profile=inventory.background_profile,
+                        biosphere_profile=inventory.biosphere_profile,
+                        inventory_format=InventoryFormat.OPENLCA_JSONLD,
+                        database_name=inventory.database_name,
+                    )
+                    write_openlca_jsonld(document, destination)
 
-            list_act = self.write_lci(
-                ecoinvent_version=ecoinvent_version,
-                year=year,
-            )
-
-            rows = self.format_data_for_lci_for_simapro(
-                data=list_act, ei_version=ecoinvent_version
-            )
-
-            if export_format == "file":
-                with open(filepath_export, "w", newline="", encoding="utf8") as csvFile:
-                    writer = csv.writer(csvFile, delimiter=";")
-                    for row in rows:
-                        writer.writerow(row)
-                exports.append(filepath_export)
-                continue
-
-            # string format
-            csvFile = io.StringIO()
-            # Use the same quoting as file exports, including empty comments.
-            writer = csv.writer(csvFile, delimiter=";")
-            for row in rows:
-                writer.writerow(row)
-            csvFile.seek(0)
-            exports.append(csvFile.read())
-
+                if export_format == "string":
+                    path = Path(destination)
+                    exports.append(
+                        path.read_text(encoding="latin-1")
+                        if software == "simapro"
+                        else path.read_bytes()
+                    )
+                else:
+                    exports.append(destination)
+        # Brightway Excel bytes have historically always been returned as a list.
+        if software == "brightway2" and export_format == "string":
+            return exports
         return exports[0] if len(exports) == 1 else exports
 
+    def write_simapro_lci(
+        self, ecoinvent_version, directory=None, filename=None, export_format="file"
+    ):
+        """Export Latin-1 SimaPro CSV files or their decoded contents."""
+        return self._write_exports(
+            ecoinvent_version, directory, filename, export_format, "simapro"
+        )
+
     def write_bw2_lci(
-        self,
-        ecoinvent_version: str,
-        directory: str = None,
-        filename: str = None,
-        export_format: str = "file",
-    ) -> Union[bytes, str, bw2io.importers.base_lci.LCIImporter]:
-        """
-        Export a file that can be consumed by the software defined in
-        `software_compatibility`.
-        Alternatively, exports a string representation of the file
-        (in case the invenotry should be downloaded
-        from a browser, for example)
+        self, ecoinvent_version, directory=None, filename=None, export_format="file"
+    ):
+        """Export Brightway Excel files/bytes or unlinked bw2io importers."""
+        return self._write_exports(
+            ecoinvent_version, directory, filename, export_format, "brightway2"
+        )
 
-        :param vehicle_specs:
-        :param filename:
-        :param export_format: file, string, bw2io
-        :param directory: str. path to export the file to.
-        :type directory: str or pathlib.Path
-        :param ecoinvent_version: str. "3.5", "3.6", "3.7" or "3.8"
-        :type ecoinvent_version: str
-
-        If "string", returns a string.
-
-        :returns: returns the file path of the exported inventory.
-        :rtype: str
-        """
-
-        importers = []
-
-        for year in self.vm.array.coords["year"].values:
-            file = filename or safe_filename(
-                f"carculator_export_{datetime.date.today()}"
-            )
-            file += f"_{year}_bw2.xlsx"
-
-            filepath_export = self.get_export_filepath(file, directory)
-
-            data = self.write_lci(ecoinvent_version=ecoinvent_version, year=year)
-
-            # update database name in datasets
-            for d in data:
-                d["database"] = f"{self.db_name}_{year}"
-
-            if export_format == "bw2io":
-                try:
-                    import bw2io
-                except ImportError as exc:
-                    raise ImportError(
-                        "Brightway export requires carculator_utils[brightway]."
-                    ) from exc
-
-                lci = bw2io.importers.base_lci.LCIImporter(self.db_name)
-                lci.data = data
-                # remove keys with empty values
-                lci.data = [{k: v for k, v in d.items() if v} for d in lci.data]
-                lci.db_name = f"{self.db_name}_{year}"
-                importers.append(lci)
-                continue
-
-            formatted_data = self.format_data_for_lci_for_bw2(data)
-            output = io.BytesIO() if export_format == "string" else filepath_export
-            try:
-                import xlsxwriter
-            except ImportError as exc:
-                raise ImportError(
-                    "Excel export requires carculator_utils[excel]."
-                ) from exc
-
-            workbook = xlsxwriter.Workbook(output, {"in_memory": True})
-
-            bold = workbook.add_format({"bold": True})
-            bold.set_font_size(12)
-            highlighted = {
-                "Activity",
-                "Database",
-                "Exchanges",
-                "Parameters",
-                "Database parameters",
-                "Project parameters",
-            }
-            frmt = lambda x: bold if row[0] in highlighted else None
-            sheet = workbook.add_worksheet(create_valid_worksheet_name("inventories"))
-
-            for row_index, row in enumerate(formatted_data):
-                for col_index, value in enumerate(row):
-                    if value is None:
-                        continue
-                    elif isinstance(value, float):
-                        sheet.write_number(row_index, col_index, value, frmt(value))
-                    else:
-                        sheet.write_string(row_index, col_index, value, frmt(value))
-
-            if export_format == "file":
-                workbook.close()
-                importers.append(filepath_export)
-            else:
-                # return string
-                workbook.close()
-                output.seek(0)
-                importers.append(output.read())
-
-        if export_format in ("file", "bw2io") and len(importers) == 1:
-            return importers[0]
-        return importers
+    def write_openlca_lci(
+        self, ecoinvent_version, directory=None, filename=None, export_format="file"
+    ):
+        """Export a foreground-only openLCA JSON-LD ZIP as a file or bytes."""
+        return self._write_exports(
+            ecoinvent_version, directory, filename, export_format, "openlca"
+        )

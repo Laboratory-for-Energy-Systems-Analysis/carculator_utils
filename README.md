@@ -27,7 +27,9 @@ python -m pip install "carculator_utils==1.3.6"
 
 Before publication, use the matching source checkouts as described under development.
 Core calculations use bundled resources and need no Brightway project, ecoinvent
-installation or network access. Inventory export has optional dependencies:
+installation or network access. Brightpath supplies Brightway Excel, SimaPro CSV
+and openLCA JSON-LD export as a runtime dependency. To select the tested legacy
+Brightway stack:
 
 ```bash
 python -m pip install "carculator_utils[excel,brightway]==1.3.6"
@@ -36,6 +38,9 @@ python -m pip install "carculator_utils[excel,brightway]==1.3.6"
 The Brightway extra supports the legacy stack (`bw2io<0.9`, `bw2data<4`,
 `bw2calc<2`). Export currently targets ecoinvent 3.9 and 3.10; importing those
 inventories requires the corresponding background database in the destination tool.
+openLCA export currently supplies foreground processes and requires manual
+background/elementary-flow linking before calculation. See the
+[export guide](docs/inventory_export.rst) for examples and compatibility details.
 
 ## Vehicle packages
 
