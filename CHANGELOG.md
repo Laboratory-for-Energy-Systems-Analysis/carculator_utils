@@ -17,6 +17,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Remove the unqualified default 0.4% additional CNG leakage overlay in sibling defaults. Retain upstream and exhaust emissions and explicit residual-loss accounting; verify the delivered-fuel boundary in completed family runs.
+
 - Retain provided, derived, not-applicable and missing input coverage on generated arrays. Reject missing declared inputs for active vehicles before full sizing, including gaps across year interpolation; document explicit zero overrides.
 
 - Limit the public road-fuel catalogue to resolvable delivery chains. Report eleven unavailable or ambiguous choices with explicit reasons at model construction instead of failing after a completed run.

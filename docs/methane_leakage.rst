@@ -45,8 +45,10 @@ already contained in that supplier must not be entered again in this parameter.
 The upstream datasets are left unchanged: this patch cannot reliably separate
 loss stages hidden inside pre-characterized background activities.
 
-The historical default is retained at 0.004, with its existing uncertainty
-bounds. Its cited source is
+The additional-loss default is now **zero at all native years** in cars, buses
+and trucks. This excludes an unqualified residual overlay beyond the delivered-fuel
+supplier; it does not assert zero physical leakage. The historical 0.004 prior
+and its uncertainty bounds are archived in each package. Its cited source is
 `Speirs et al. (2020), Table 1
 <https://strathprints.strath.ac.uk/87891/1/Speirs-etal-PE-2020-Natural-gas-fuel-and-greenhouse-gas-emissions-in-trucks-and-ships.pdf>`_.
 That table combines delivery, station storage, vehicle tank and manual venting
@@ -59,7 +61,7 @@ of which losses can safely be added to a particular inventory.
 The bundled sewage-biomethane fuelling activity already includes station
 methane emissions and a 2% extra production allowance for distribution. The
 biological synthetic-methane delivery recipe inherits those delivery proxies.
-Consequently, adding the historical 0.4% assumption does not establish absence
+Consequently, adding the historical 0.4% assumption did not establish absence
 of overlap. The 2% production allowance is not an explicit 2% methane emission
 and is not subtracted from the leakage parameter. Fossil-gas background factors
 also do not expose a separable station-loss inventory here.
@@ -72,9 +74,11 @@ additional parameter to zero before constructing the model::
 
 Zero disables only this additional loss, retaining upstream supplier emissions
 and HBEFA exhaust emissions. No automatic upstream credit or removal of methane
-emissions is applied. A stage-resolved supplier and leakage recalibration is
-still needed to qualify the default as free of overlap. This repair establishes
-inventory consistency, not empirical validation of the historical leakage prior.
+emissions is applied. The default now follows this no-overlay boundary. A measured
+post-supplier residual can still be supplied explicitly; route-specific leakage
+measurement remains an evidence gap. The zero default is not an empirical
+calibration, and studies needing whole-chain leakage sensitivity should vary
+the appropriate upstream stages rather than add their total again here.
 
 Verification
 -------------
@@ -93,7 +97,7 @@ upstream matrices, combustion CO2 and exhaust pollutants remain unchanged.
 Repeated three-year Brightway exports preserve quantities and the original
 inventory. No Brightway database is written.
 
-Completed 2025 runs with 100% sewage biomethane and the retained 0.004 loss ratio
+Historical completed 2025 runs with 100% sewage biomethane and an explicit 0.004 loss ratio
 give the following additional leakage. These are model results, not measurements.
 Fossil leakage is zero in each case; the climate contribution shown uses the
 bundled non-fossil methane factor of 27 kg CO2-eq/kg.
