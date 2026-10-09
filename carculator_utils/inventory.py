@@ -704,6 +704,11 @@ class Inventory:
 
         # load matrix A
         initial_A = sparse.load_npz(filepath).toarray()
+        base_inputs = len(get_dict_input())
+        if initial_A.shape != (base_inputs, base_inputs):
+            raise ValueError("A matrix and packaged activity index are not aligned.")
+        if not np.isfinite(initial_A).all():
+            raise ValueError("The packaged A matrix contains nonfinite coefficients.")
 
         new_A = np.identity(len(self.inputs))
         new_A[0 : np.shape(initial_A)[0], 0 : np.shape(initial_A)[0]] = initial_A
@@ -738,34 +743,43 @@ class Inventory:
 
         """
 
+        years = (
+            [2020]
+            if self.scenario == "static"
+            else [2005, 2010, 2020, 2030, 2040, 2050]
+        )
+        suffixes = (
+            ["static"]
+            if self.scenario == "static"
+            else [f"remind_{self.scenario}_{year}" for year in years]
+        )
         filepaths = [
-            str(fp)
-            for fp in list(Path(IAM_FILES_DIR).glob("*.npz"))
-            if all(x in str(fp) for x in [self.method, self.indicator, self.scenario])
+            Path(IAM_FILES_DIR)
+            / f"B_matrix_{self.method}_{self.indicator}_{suffix}.npz"
+            for suffix in suffixes
         ]
-
-        if self.scenario != "static":
-            filepaths = sorted(filepaths, key=lambda x: int(x[-8:-4]))
-
-        n_files = max(1, len(filepaths))  # guarantees the first dimension
-        B = np.zeros((n_files, len(self.impact_categories), len(self.inputs)))
+        B = np.zeros((len(filepaths), len(self.impact_categories), len(self.inputs)))
+        expected_shape = (len(self.impact_categories), len(get_dict_input()))
 
         for f, filepath in enumerate(filepaths):
+            if not filepath.is_file():
+                raise FileNotFoundError(
+                    f"Missing required background matrix: {filepath.name}"
+                )
             initial_B = sparse.load_npz(filepath).toarray()
+            if initial_B.shape != expected_shape:
+                raise ValueError(
+                    f"{filepath.name} and the packaged index/categories are not aligned: "
+                    f"{initial_B.shape} != {expected_shape}."
+                )
+            if not np.isfinite(initial_B).all():
+                raise ValueError(f"Nonfinite coefficients in {filepath.name}.")
             new_B = np.zeros((initial_B.shape[0], len(self.inputs)))
             new_B[: initial_B.shape[0], : initial_B.shape[1]] = initial_B
             B[f, :, :] = new_B
 
         fill_biosphere_characterization(
             B, self.inputs, self.method, self.indicator, self.impact_categories
-        )
-
-        years = (
-            [
-                2020,
-            ]
-            if self.scenario == "static"
-            else [2005, 2010, 2020, 2030, 2040, 2050]
         )
 
         return xr.DataArray(
@@ -1329,7 +1343,7 @@ class Inventory:
 
         battery_acts = {
             "NMC-111": "market for battery, Li-ion, NMC111, rechargeable, prismatic",
-            "NMC-523": "market for battery, Li-ion, NMC523",
+            "NMC-532": "market for battery, Li-ion, NMC532, rechargeable",
             "NMC-622": "market for battery, Li-ion, NMC622",
             "NMC-811": "market for battery, Li-ion, NMC811, rechargeable, prismatic",
             "NMC-955": "market for battery, Li-ion, NMC955",
@@ -1901,7 +1915,7 @@ class Inventory:
 
     def export_lci(
         self,
-        ecoinvent_version="3.10",
+        ecoinvent_version="3.12",
         filename=f"carculator_lci",
         directory=None,
         software="brightway2",
@@ -1911,7 +1925,7 @@ class Inventory:
         """
         Export one retained sample through Brightpath, with one artifact per year.
 
-        :param ecoinvent_version: str. "3.9" or "3.10"
+        :param ecoinvent_version: str. "3.12" (default), "3.9" or "3.10"
         :param filename: str. Name of the file to be exported
         :param directory: str. Directory where the file is saved
         :param software: "brightway2", "simapro", or "openlca" (foreground only).
@@ -1923,8 +1937,8 @@ class Inventory:
             list; Brightway Excel contents always return a list.
         """
 
-        if ecoinvent_version not in ["3.9", "3.10"]:
-            raise ValueError("ecoinvent_version must be either '3.9' or '3.10'")
+        if ecoinvent_version not in ["3.9", "3.10", "3.12"]:
+            raise ValueError("ecoinvent_version must be '3.9', '3.10' or '3.12'")
 
         if software not in ("brightway2", "simapro", "openlca"):
             raise ValueError("software must be 'brightway2', 'simapro' or 'openlca'.")

@@ -86,7 +86,7 @@ kerosene production, via Fischer-Tropsch, from forest residues, energy allocatio
 lead acid battery, for lorry;RER;kilogram;lead acid battery, for lorry
 maintenance, electric bicycle, without battery;CH;unit;maintenance, electric bicycle, without battery
 market for battery, Li-ion, LTO;GLO;kilogram;battery, Li-ion, LTO
-market for battery, Li-ion, NMC523;GLO;kilogram;battery, Li-ion, NMC523
+market for battery, Li-ion, NMC532, rechargeable;GLO;kilogram;battery, Li-ion, NMC532, rechargeable
 market for battery, Li-ion, NMC622;GLO;kilogram;battery, Li-ion, NMC622
 market for battery, Li-ion, NMC955;GLO;kilogram;battery, Li-ion, NMC955
 market for battery, Li-oxygen, Li-O2;GLO;kilogram;battery, Li-O2
@@ -148,7 +148,6 @@ electrolyzer production, 1MWe, AEC, Stack;RER;unit;electrolyzer, 1MWe, AEC, Stac
 electrolyzer production, 1MWe, AEC, Balance of Plant;RER;unit;electrolyzer, 1MWe, AEC, Balance of Plant
 treatment of fuel cell stack, 1MWe, AEC;RER;unit;used fuel cell stack, 1MWe, AEC
 treatment of fuel cell balance of plant, 1MWe, AEC;RER;unit;used fuel cell balance of plant, 1MWe, AEC
-battery production, Li-ion, NMC622;GLO;kilogram;battery, Li-ion, NMC622
 ethanol production, via fermentation, from corn starch, energy allocation;RER;kilogram;ethanol, from corn starch
 biodiesel production, via transesterification, from algae, energy allocation;RER;kilogram;biodiesel, from algae
 cables;RER;unit;cables
@@ -169,7 +168,6 @@ carbon dioxide, captured at municipal solid waste incineration plant, for subseq
 diesel production, from methanol, hydrogen from coal gasification, economic allocation;RER;kilogram;diesel, synthetic
 diesel production, from methanol, hydrogen from coal gasification, with CCS, energy allocation;RER;kilogram;diesel, synthetic
 gasoline production, from methanol, hydrogen from coal gasification, energy allocation;RER;kilogram;gasoline, synthetic
-battery production, Li-ion, NMC523;GLO;kilogram;battery, Li-ion, NMC523
 construction, BIGCC power plant 450MW;RER;unit;construction, BIGCC power plant 450MW
 dismantling, BIGCC power plant 450MW;RER;unit;dismantling, BIGCC power plant 450MW
 supply and refining of waste cooking oil;RER;kilogram;waste Cooking Oil
@@ -217,7 +215,6 @@ refining of crude vegetable oil from rapeseed;RER;kilogram;refining of crude veg
 syngas, RWGS, Production, for Fischer Tropsch process, hydrogen from electrolysis;RER;kilogram;syngas, RWGS, Production, for Fischer Tropsch process, hydrogen from electrolysis
 methanol synthesis and distillation, hydrogen from electrolysis, CO2 from cement plant;RER;kilogram;methanol, purified
 farming and supply of wheat straw;RER;kilogram;wheat straw
-battery cell production, Li-ion, NMC523;GLO;kilogram;battery cell, Li-ion, NMC523
 methanol distillation, hydrogen from coal gasification;RER;kilogram;methanol, purified
 refining of vegetable oil from oil palm;ID;kilogram;refining of vegetable oil from oil palm
 syngas, RWGS, Production, for Fischer Tropsch process, hydrogen from coal gasification;RER;kilogram;syngas, RWGS, Production
@@ -246,7 +243,6 @@ carbon fiber production, fiber drying and sizing;RER;kilogram;carbon fiber, drie
 carbon monoxide, from RWGS, for Fischer Tropsch process, hydrogen from wood gasification, with CCS;RER;kilogram;carbon monoxide, from RWGS
 RWGS tank construction;GLO;unit;RWGS tank construction
 farming and supply of dry algae;RER;kilogram;algae harvesting for dry algae production
-battery cell production, Li-ion, NMC622;GLO;kilogram;battery cell, Li-ion, NMC622
 syngas production plant;RER;unit;syngas production plant
 platinum group metal, extraction and refinery operations;ZA;kilogram;iridium
 amine-based silica production, for sorbent-based direct air capture system;RER;kilogram;amine-based silica
@@ -257,7 +253,6 @@ farming and supply of sugarbeet;RER;kilogram;sugar beet cultivation
 methanol synthesis, hydrogen from electrolysis, CO2 from DAC;RER;kilogram;methanol, unpurified
 methanol production facility, construction;RER;unit;methanol production facility, construction
 carbon monoxide, from RWGS, for Fischer Tropsch process, hydrogen from coal gasification, with CCS;RER;kilogram;carbon monoxide, from RWGS
-cathode, NMC622, for Li-ion battery;GLO;kilogram;cathode, NMC622, for Li-ion battery
 electrolyte, for Li-ion battery;GLO;kilogram;electrolyte, for Li-ion battery
 copper collector foil, for Li-ion battery;GLO;kilogram;copper collector foil, for Li-ion battery
 aluminium collector foil, for Li-ion battery;GLO;kilogram;aluminium collector foil, for Li-ion battery
@@ -284,7 +279,6 @@ cathode production, NMMT, for SIB battery;RER;kilogram;cathode, NMMT
 electrolyte production, SIB;RER;kilogram;electrolyte, SIB
 NCA oxide;GLO;kilogram;NCA oxide
 carbon fiber production, fiber stabilization, carbonization, electrolysis and washing;RER;kilogram;carbon fiber, washed
-cathode, NMC523, for Li-ion battery;GLO;kilogram;cathode, NMC523, for Li-ion battery
 IBIS production, for Li-O2 battery;RER;kilogram;IBIS
 IBIS fasteners production, for Li-O2 battery;RER;kilogram;IBIS fasteners
 high voltage system production, for Li-O2 battery;RER;kilogram;high voltage system
@@ -326,9 +320,7 @@ farming and supply of Fresh Fruit Bunches (FFBs) for palm oil;ID;kilogram;fresh 
 binder production, PVDF, for SIB battery;RER;kilogram;binder, PVDF
 NMMT active material production, for SIB battery;RER;kilogram;NMMT active material
 carbon dioxide, captured from atmosphere, with a solvent-based direct air capture system, 1MtCO2;RER;kilogram;carbon dioxide, captured from atmosphere
-NMC523 oxide;GLO;kilogram;NMC523 oxide
 farming and supply of rapeseed;RER;kilogram;rapeseed cultivation
-NMC622 oxide;GLO;kilogram;NMC622 oxide
 RWGS catalyst;RER;kilogram;RWGS catalyst
 market for lithium carbonate, battery grade;GLO;kilogram;lithium carbonate, battery grade
 film extrusion process, lithium;RER;kilogram;film extrusion, lithium
@@ -339,12 +331,10 @@ pipeline, supercritical carbon dioxide;RER;kilometer;pipeline, supercritical car
 magnesium hydroxide production;RER;kilogram;magnesium hydroxide
 nickel carbonate production;RER;kilogram;nickel carbonate
 lithium hydroxide production, battery grade;GLO;kilogram;lithium hydroxide, battery grade
-NMC523 hydroxide;GLO;kilogram;NMC523 hydroxide
 1,2-Dichloro-1,1-difluoroethane (R-132b) production;RER;kilogram;r-132b
 NMC955 hydroxide;GLO;kilogram;NMC955 hydroxide
 direct air capture system, solvent-based, 1MtCO2;RER;unit;direct air capture system
 treatment of direct air capture system, solvent-based, 1MtCO2;RER;unit;direct air capture system
-NMC622 hydroxide;GLO;kilogram;NMC622 hydroxide
 cobalt sulfate production, from copper mining, economic allocation;CN;kilogram;cobalt sulfate
 aluminium foil production, for LiS battery;GLO;kilogram;aluminium foil
 CMK-3 production, for LiS battery;GLO;kilogram;CMK-3
@@ -407,7 +397,7 @@ market for battery capacity, stationary (CONT scenario);GLO;kilowatt hour;electr
 lithium brine production, from evaporation pond, from Salar de Olaroz;AR;kilogram;lithium brine, from evaporation pond
 market for battery capacity, Li-ion, LFP, stationary;GLO;kilowatt hour;electricity storage capacity
 market for battery capacity, Li-ion, NMC111, stationary;GLO;kilowatt hour;electricity storage capacity
-market for battery capacity, Li-ion, NMC523, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, Li-ion, NMC532, stationary;GLO;kilowatt hour;electricity storage capacity
 market for battery capacity, Li-ion, NMC622, stationary;GLO;kilowatt hour;electricity storage capacity
 market for battery capacity, Li-ion, NMC811, stationary;GLO;kilowatt hour;electricity storage capacity
 market for battery capacity, Li-ion, NMC955, stationary;GLO;kilowatt hour;electricity storage capacity
@@ -1710,3 +1700,172 @@ Selenium IV;('air', 'low population density, long-term');kilogram
 Styrene;('air', 'low population density, long-term');kilogram
 Toluene;('air', 'low population density, long-term');kilogram
 Zinc II;('air', 'low population density, long-term');kilogram
+Carbonate;('water', 'surface water');kilogram
+Sodium hydroxide;('water',);kilogram
+Sulfuric acid;('water',);kilogram
+battery production, Li-ion, NMC532, rechargeable;CN;kilogram;battery, Li-ion, NMC532, rechargeable
+battery production, Li-ion, NMC532, rechargeable;RoW;kilogram;battery, Li-ion, NMC532, rechargeable
+battery production, Li-ion, NMC622, rechargeable;CN;kilogram;battery, Li-ion, NMC622, rechargeable
+battery production, Li-ion, NMC622, rechargeable;RoW;kilogram;battery, Li-ion, NMC622, rechargeable
+carbon dioxide, captured, at cement production plant, for subsequent reuse;RER;kilogram;carbon dioxide, captured
+concrete production, 30MPa, for drilled piles, with cement, CEM II/B;CH;cubic meter;concrete, 30MPa
+deionized water production, via reverse osmosis, from brackish water;RER;kilogram;water, deionized
+gravel and sand quarry operation;CH;kilogram;sand
+market for acrylic dispersion, with water, in 58% solution state;RER;kilogram;acrylic dispersion, with water, in 58% solution state
+market for aluminium oxide, metallurgical;CA;kilogram;aluminium oxide, metallurgical
+market for aluminium oxide, metallurgical;CN;kilogram;aluminium oxide, metallurgical
+market for aluminium oxide, metallurgical;IAI Area, Asia, without China and GCC;kilogram;aluminium oxide, metallurgical
+market for aluminium oxide, metallurgical;IAI Area, Gulf Cooperation Council;kilogram;aluminium oxide, metallurgical
+market for aluminium oxide, metallurgical;IAI Area, South America;kilogram;aluminium oxide, metallurgical
+market for aluminium oxide, metallurgical;UN-OCEANIA;kilogram;aluminium oxide, metallurgical
+market for aluminium, primary, ingot;CN;kilogram;aluminium, primary, ingot
+market for aluminium, primary, ingot;IAI Area, Asia, without China and GCC;kilogram;aluminium, primary, ingot
+market for aluminium, primary, ingot;IAI Area, Gulf Cooperation Council;kilogram;aluminium, primary, ingot
+market for aluminium, primary, ingot;IAI Area, South America;kilogram;aluminium, primary, ingot
+market for aluminium, primary, ingot;UN-OCEANIA;kilogram;aluminium, primary, ingot
+market for butadiene;RER w/o RU;kilogram;butadiene
+market for butadiene;RU;kilogram;butadiene
+market for butene, mixed;RER w/o RU;kilogram;butene, mixed
+market for butene, mixed;RU;kilogram;butene, mixed
+market for chlorine, liquid;US;kilogram;chlorine, liquid
+market for clay brick;EC;kilogram;clay brick
+market for electric arc furnace dust;CH;kilogram;electric arc furnace dust
+market for electric arc furnace dust;Europe without Switzerland;kilogram;electric arc furnace dust
+market for electric arc furnace slag;CH;kilogram;electric arc furnace slag
+market for electric arc furnace slag;Europe without Switzerland;kilogram;electric arc furnace slag
+market for ethylene glycol;RER;kilogram;ethylene glycol
+market for ethylene oxide;CA;kilogram;ethylene oxide
+market for ethylene oxide;CN;kilogram;ethylene oxide
+market for ethylene oxide;IN;kilogram;ethylene oxide
+market for ethylene oxide;JP;kilogram;ethylene oxide
+market for ethylene oxide;KR;kilogram;ethylene oxide
+market for ethylene oxide;SA;kilogram;ethylene oxide
+market for ethylene oxide;TW;kilogram;ethylene oxide
+market for ethylene oxide;US;kilogram;ethylene oxide
+market for hard coal;AT;kilogram;hard coal
+market for hard coal;BE;kilogram;hard coal
+market for hard coal;BG;kilogram;hard coal
+market for hard coal;CH;kilogram;hard coal
+market for hard coal;CZ;kilogram;hard coal
+market for hard coal;DE;kilogram;hard coal
+market for hard coal;DK;kilogram;hard coal
+market for hard coal;EE;kilogram;hard coal
+market for hard coal;ES;kilogram;hard coal
+market for hard coal;FI;kilogram;hard coal
+market for hard coal;FR;kilogram;hard coal
+market for hard coal;GB;kilogram;hard coal
+market for hard coal;HR;kilogram;hard coal
+market for hard coal;IE;kilogram;hard coal
+market for hard coal;IT;kilogram;hard coal
+market for hard coal;JP;kilogram;hard coal
+market for hard coal;KR;kilogram;hard coal
+market for hard coal;LV;kilogram;hard coal
+market for hard coal;NL;kilogram;hard coal
+market for hard coal;NO;kilogram;hard coal
+market for hard coal;PL;kilogram;hard coal
+market for hard coal;PT;kilogram;hard coal
+market for hard coal;SE;kilogram;hard coal
+market for hard coal;SK;kilogram;hard coal
+market for hydrogen, gaseous, low pressure;RER;kilogram;hydrogen, gaseous, low pressure
+market for iron scrap, sorted, pressed;RER;kilogram;iron scrap, sorted, pressed
+market for lithium hexafluorophosphate;CN;kilogram;lithium hexafluorophosphate
+market for lithium hexafluorophosphate;RoW;kilogram;lithium hexafluorophosphate
+market for methanol;CA;kilogram;methanol
+market for methanol;CN;kilogram;methanol
+market for methanol;IR;kilogram;methanol
+market for methanol;OM;kilogram;methanol
+market for methanol;QA;kilogram;methanol
+market for methanol;RER w/o RU;kilogram;methanol
+market for methanol;RU;kilogram;methanol
+market for methanol;RoW;kilogram;methanol
+market for methanol;SA;kilogram;methanol
+market for methanol;TT;kilogram;methanol
+market for methanol;UN-SAMERICA;kilogram;methanol
+market for methanol;US;kilogram;methanol
+market for methyl acrylate;RER;kilogram;methyl acrylate
+market for methyl acrylate;RoW;kilogram;methyl acrylate
+market for methyldiethanolamine;RER;kilogram;methyldiethanolamine
+market for natural gas, high pressure;RoE;cubic meter;natural gas, high pressure
+market for neutralising agent, sodium hydroxide-equivalent;RER;kilogram;neutralising agent, sodium hydroxide-equivalent
+market for nitrogen, liquid;Asia without China;kilogram;nitrogen, liquid
+market for nitrogen, liquid;CN;kilogram;nitrogen, liquid
+market for nitrogen, liquid;RAF;kilogram;nitrogen, liquid
+market for nitrogen, liquid;RLA;kilogram;nitrogen, liquid
+market for nitrogen, liquid;RNA;kilogram;nitrogen, liquid
+market for oxygen, liquid;Asia without China;kilogram;oxygen, liquid
+market for oxygen, liquid;CN;kilogram;oxygen, liquid
+market for oxygen, liquid;RAF;kilogram;oxygen, liquid
+market for oxygen, liquid;RLA;kilogram;oxygen, liquid
+market for oxygen, liquid;RNA;kilogram;oxygen, liquid
+market for phthalic anhydride;RER;kilogram;phthalic anhydride
+market for phthalic anhydride;RoW;kilogram;phthalic anhydride
+market for polycarbonate;RER;kilogram;polycarbonate
+market for polyethylene, high density, granulate;IN;kilogram;polyethylene, high density, granulate
+market for polyethylene, high density, granulate;JP;kilogram;polyethylene, high density, granulate
+market for polyethylene, high density, granulate;KR;kilogram;polyethylene, high density, granulate
+market for polyethylene, high density, granulate;RER;kilogram;polyethylene, high density, granulate
+market for polyethylene, high density, granulate;RoW;kilogram;polyethylene, high density, granulate
+market for polyethylene, high density, granulate;US;kilogram;polyethylene, high density, granulate
+market for polyethylene, low density, granulate;IN;kilogram;polyethylene, low density, granulate
+market for polyethylene, low density, granulate;KR;kilogram;polyethylene, low density, granulate
+market for polyethylene, low density, granulate;RER;kilogram;polyethylene, low density, granulate
+market for polyethylene, low density, granulate;RoW;kilogram;polyethylene, low density, granulate
+market for polyethylene, low density, granulate;US;kilogram;polyethylene, low density, granulate
+market for polypropylene, granulate;Asia without China;kilogram;polypropylene, granulate
+market for polypropylene, granulate;CN;kilogram;polypropylene, granulate
+market for polypropylene, granulate;RAF;kilogram;polypropylene, granulate
+market for polypropylene, granulate;RER;kilogram;polypropylene, granulate
+market for polypropylene, granulate;RLA;kilogram;polypropylene, granulate
+market for polypropylene, granulate;RNA;kilogram;polypropylene, granulate
+market for polypropylene, granulate;RoW;kilogram;polypropylene, granulate
+market for polyvinyl chloride, emulsion polymerised;Asia without China;kilogram;polyvinyl chloride, emulsion polymerised
+market for polyvinyl chloride, emulsion polymerised;CN;kilogram;polyvinyl chloride, emulsion polymerised
+market for polyvinyl chloride, emulsion polymerised;RER;kilogram;polyvinyl chloride, emulsion polymerised
+market for polyvinyl chloride, emulsion polymerised;RNA;kilogram;polyvinyl chloride, emulsion polymerised
+market for polyvinyl chloride, emulsion polymerised;RoW;kilogram;polyvinyl chloride, emulsion polymerised
+market for polyvinyl chloride, suspension polymerised;Asia without China;kilogram;polyvinyl chloride, suspension polymerised
+market for polyvinyl chloride, suspension polymerised;CN;kilogram;polyvinyl chloride, suspension polymerised
+market for polyvinyl chloride, suspension polymerised;RER;kilogram;polyvinyl chloride, suspension polymerised
+market for polyvinyl chloride, suspension polymerised;RNA;kilogram;polyvinyl chloride, suspension polymerised
+market for polyvinyl chloride, suspension polymerised;RoW;kilogram;polyvinyl chloride, suspension polymerised
+market for polyvinyl chloride, unspecified polymerisation, weighted average;RER;kilogram;polyvinyl chloride, unspecified polymerisation, weighted average
+market for polyvinyl chloride, unspecified polymerisation, weighted average;RoW;kilogram;polyvinyl chloride, unspecified polymerisation, weighted average
+market for propylene oxide, liquid;US;kilogram;propylene oxide, liquid
+market for rape seed;AU-NSW;kilogram;rape seed
+market for rape seed;AU-QLD;kilogram;rape seed
+market for rape seed;AU-SA;kilogram;rape seed
+market for rape seed;AU-VIC;kilogram;rape seed
+market for rape seed;AU-WA;kilogram;rape seed
+market for rape seed;CH;kilogram;rape seed
+market for soda ash, light;RER;kilogram;soda ash, light
+market for sodium hydroxide, without water, in 50% solution state;RER;kilogram;sodium hydroxide, without water, in 50% solution state
+market for sodium hydroxide, without water, in 50% solution state;US;kilogram;sodium hydroxide, without water, in 50% solution state
+market for styrene;CN;kilogram;styrene
+market for styrene;JP;kilogram;styrene
+market for styrene;KR;kilogram;styrene
+market for styrene;RER;kilogram;styrene
+market for styrene;RoW;kilogram;styrene
+market for styrene;US;kilogram;styrene
+market for synthetic graphite, battery grade;RoW;kilogram;synthetic graphite, battery grade
+market for transport, freight, lorry, unspecified;BR;ton kilometer;transport, freight, lorry, diesel, unspecified
+market for wastewater, average;CA-QC;cubic meter;wastewater, average
+market for water, completely softened;RoW;kilogram;water, completely softened
+market for water, completely softened;US;kilogram;water, completely softened
+market for water, decarbonised;BR;kilogram;water, decarbonised
+market for water, decarbonised;CA;kilogram;water, decarbonised
+market for water, decarbonised;CN;kilogram;water, decarbonised
+market for water, decarbonised;ES;kilogram;water, decarbonised
+market for water, decarbonised;FR;kilogram;water, decarbonised
+market for water, decarbonised;GB;kilogram;water, decarbonised
+market for water, decarbonised;IN;kilogram;water, decarbonised
+market for water, decarbonised;RU;kilogram;water, decarbonised
+market for water, decarbonised;US;kilogram;water, decarbonised
+market for water, decarbonised;ZA;kilogram;water, decarbonised
+nickel mine operation and benefication to nickel concentrate, 7% Ni;CN;kilogram;nickel concentrate, 7% Ni
+nickel mine operation and benefication to nickel concentrate, 7% Ni;RoW;kilogram;nickel concentrate, 7% Ni
+soda ash, light, crystalline, heptahydrate, to generic market for neutralising agent;RER;kilogram;neutralising agent, sodium hydroxide-equivalent
+steel production, electric, low-alloyed;AT;kilogram;steel, low-alloyed
+steel production, electric, low-alloyed;CH;kilogram;steel, low-alloyed
+treatment of spent anion exchange resin from potable water production, municipal incineration;GLO;kilogram;spent anion exchange resin from potable water production
+treatment of wastewater from lorry production, wastewater treatment, urban;CH;cubic meter;wastewater from lorry production
+zinc mine operation;GLO;kilogram;zinc concentrate

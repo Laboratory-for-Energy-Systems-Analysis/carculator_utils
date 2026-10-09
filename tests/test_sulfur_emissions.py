@@ -359,7 +359,7 @@ def test_sulfur_survives_annual_exports(completed_run, tmp_path):
     before = inventory.A.copy()
     original_indices = inventory.inputs.copy()
     exports = inventory.export_lci(
-        ecoinvent_version="3.10", format="bw2io", directory=tmp_path
+        ecoinvent_version="3.12", format="bw2io", directory=tmp_path
     )
     assert len(exports) == 3
     renamed = rename_mapping("rename_powertrains.yaml")

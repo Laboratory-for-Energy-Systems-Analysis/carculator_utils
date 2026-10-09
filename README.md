@@ -36,8 +36,9 @@ python -m pip install "carculator_utils[excel,brightway]==1.3.6"
 ```
 
 The Brightway extra supports the legacy stack (`bw2io<0.9`, `bw2data<4`,
-`bw2calc<2`). Export currently targets ecoinvent 3.9 and 3.10; importing those
-inventories requires the corresponding background database in the destination tool.
+`bw2calc<2`). Exports default to **ecoinvent 3.12 cutoff**; importing them
+requires that background database in the destination tool. Legacy 3.9/3.10
+targets reject newly introduced suppliers without a reviewed backward mapping.
 openLCA export currently supplies foreground processes and requires manual
 background/elementary-flow linking before calculation. See the
 [export guide](docs/inventory_export.rst) for examples and compatibility details.
@@ -64,6 +65,12 @@ print(sorted(background.fuel_specs))
 This shared package has no standalone default vehicle. Choose a vehicle package from the family table below for complete model/LCIA runs.
 
 ## Modelling and validation
+
+The bundled A matrix and all 57 B matrices were rebuilt with **premise 2.5.4**
+and **ecoinvent 3.12 cutoff**. B contains precomputed LCIA coefficients.
+See the [rebuild and validation guide](docs/background_rebuild.rst) for scenarios,
+reproducible scripts and source hashes. The former `NMC-523` option is now
+`NMC-532`, using the actual 5:3:2 chemistry; update custom chemistry selections.
 
 Explicit battery unit prices now survive chemistry selection and cost adjustment.
 Use `battery_costs` for scoped prices, including zero or values equal to packaged

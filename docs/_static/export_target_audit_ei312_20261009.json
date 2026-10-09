@@ -1,0 +1,698 @@
+[
+  {
+    "package": "carculator",
+    "version": "3.12",
+    "project": "ecoinvent-3.12-cutoff",
+    "biosphere_database": "ecoinvent-3.12-biosphere",
+    "matched": {
+      "foreground": 34,
+      "technosphere": 299,
+      "biosphere": 322
+    },
+    "unresolved": {},
+    "chemistry": "default",
+    "custom_noise_requires_user_method": {
+      "('noise, octave 1, day time, urban', ('octave 1', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, urban', ('octave 2', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, urban', ('octave 3', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, urban', ('octave 4', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, urban', ('octave 5', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, urban', ('octave 6', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, urban', ('octave 7', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, urban', ('octave 8', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, suburban', ('octave 1', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, suburban', ('octave 2', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, suburban', ('octave 3', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, suburban', ('octave 4', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, suburban', ('octave 5', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, suburban', ('octave 6', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, suburban', ('octave 7', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, suburban', ('octave 8', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, rural', ('octave 1', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, rural', ('octave 2', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, rural', ('octave 3', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, rural', ('octave 4', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, rural', ('octave 5', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, rural', ('octave 6', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, rural', ('octave 7', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, rural', ('octave 8', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      }
+    }
+  },
+  {
+    "package": "carculator",
+    "version": "3.12",
+    "project": "ecoinvent-3.12-cutoff",
+    "biosphere_database": "ecoinvent-3.12-biosphere",
+    "matched": {
+      "foreground": 35,
+      "technosphere": 304,
+      "biosphere": 322
+    },
+    "unresolved": {},
+    "chemistry": "NMC-532",
+    "custom_noise_requires_user_method": {
+      "('noise, octave 1, day time, urban', ('octave 1', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, urban', ('octave 2', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, urban', ('octave 3', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, urban', ('octave 4', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, urban', ('octave 5', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, urban', ('octave 6', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, urban', ('octave 7', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, urban', ('octave 8', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, suburban', ('octave 1', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, suburban', ('octave 2', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, suburban', ('octave 3', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, suburban', ('octave 4', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, suburban', ('octave 5', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, suburban', ('octave 6', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, suburban', ('octave 7', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, suburban', ('octave 8', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, rural', ('octave 1', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, rural', ('octave 2', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, rural', ('octave 3', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, rural', ('octave 4', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, rural', ('octave 5', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, rural', ('octave 6', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, rural', ('octave 7', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, rural', ('octave 8', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      }
+    }
+  },
+  {
+    "package": "carculator_truck",
+    "version": "3.12",
+    "project": "ecoinvent-3.12-cutoff",
+    "biosphere_database": "ecoinvent-3.12-biosphere",
+    "matched": {
+      "technosphere": 827,
+      "biosphere": 410,
+      "foreground": 108
+    },
+    "unresolved": {},
+    "chemistry": "default",
+    "custom_noise_requires_user_method": {
+      "('noise, octave 1, day time, urban', ('octave 1', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, urban', ('octave 2', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, urban', ('octave 3', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, urban', ('octave 4', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, urban', ('octave 5', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, urban', ('octave 6', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, urban', ('octave 7', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, urban', ('octave 8', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, suburban', ('octave 1', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, suburban', ('octave 2', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, suburban', ('octave 3', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, suburban', ('octave 4', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, suburban', ('octave 5', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, suburban', ('octave 6', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, suburban', ('octave 7', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, suburban', ('octave 8', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, rural', ('octave 1', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, rural', ('octave 2', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, rural', ('octave 3', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, rural', ('octave 4', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, rural', ('octave 5', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, rural', ('octave 6', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, rural', ('octave 7', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, rural', ('octave 8', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      }
+    }
+  },
+  {
+    "package": "carculator_truck",
+    "version": "3.12",
+    "project": "ecoinvent-3.12-cutoff",
+    "biosphere_database": "ecoinvent-3.12-biosphere",
+    "matched": {
+      "technosphere": 832,
+      "biosphere": 410,
+      "foreground": 109
+    },
+    "unresolved": {},
+    "chemistry": "NMC-532",
+    "custom_noise_requires_user_method": {
+      "('noise, octave 1, day time, urban', ('octave 1', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, urban', ('octave 2', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, urban', ('octave 3', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, urban', ('octave 4', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, urban', ('octave 5', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, urban', ('octave 6', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, urban', ('octave 7', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, urban', ('octave 8', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, suburban', ('octave 1', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, suburban', ('octave 2', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, suburban', ('octave 3', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, suburban', ('octave 4', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, suburban', ('octave 5', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, suburban', ('octave 6', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, suburban', ('octave 7', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, suburban', ('octave 8', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, rural', ('octave 1', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, rural', ('octave 2', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, rural', ('octave 3', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, rural', ('octave 4', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, rural', ('octave 5', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, rural', ('octave 6', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, rural', ('octave 7', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, rural', ('octave 8', 'day time', 'rural'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      }
+    }
+  },
+  {
+    "package": "carculator_bus",
+    "version": "3.12",
+    "project": "ecoinvent-3.12-cutoff",
+    "biosphere_database": "ecoinvent-3.12-biosphere",
+    "matched": {
+      "technosphere": 825,
+      "biosphere": 378,
+      "foreground": 109
+    },
+    "unresolved": {},
+    "chemistry": "default",
+    "custom_noise_requires_user_method": {
+      "('noise, octave 1, day time, urban', ('octave 1', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, urban', ('octave 2', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, urban', ('octave 3', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, urban', ('octave 4', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, urban', ('octave 5', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, urban', ('octave 6', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, urban', ('octave 7', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, urban', ('octave 8', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, suburban', ('octave 1', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, suburban', ('octave 2', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, suburban', ('octave 3', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, suburban', ('octave 4', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, suburban', ('octave 5', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, suburban', ('octave 6', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, suburban', ('octave 7', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, suburban', ('octave 8', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      }
+    }
+  },
+  {
+    "package": "carculator_bus",
+    "version": "3.12",
+    "project": "ecoinvent-3.12-cutoff",
+    "biosphere_database": "ecoinvent-3.12-biosphere",
+    "matched": {
+      "technosphere": 831,
+      "biosphere": 378,
+      "foreground": 109
+    },
+    "unresolved": {},
+    "chemistry": "NMC-532",
+    "custom_noise_requires_user_method": {
+      "('noise, octave 1, day time, urban', ('octave 1', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, urban', ('octave 2', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, urban', ('octave 3', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, urban', ('octave 4', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, urban', ('octave 5', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, urban', ('octave 6', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, urban', ('octave 7', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, urban', ('octave 8', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 1, day time, suburban', ('octave 1', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, suburban', ('octave 2', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, suburban', ('octave 3', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, suburban', ('octave 4', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, suburban', ('octave 5', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, suburban', ('octave 6', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, suburban', ('octave 7', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, suburban', ('octave 8', 'day time', 'suburban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      }
+    }
+  },
+  {
+    "package": "carculator_two_wheeler",
+    "version": "3.12",
+    "project": "ecoinvent-3.12-cutoff",
+    "biosphere_database": "ecoinvent-3.12-biosphere",
+    "matched": {
+      "foreground": 35,
+      "technosphere": 298,
+      "biosphere": 242
+    },
+    "unresolved": {},
+    "chemistry": "default",
+    "custom_noise_requires_user_method": {
+      "('noise, octave 1, day time, urban', ('octave 1', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, urban', ('octave 2', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, urban', ('octave 3', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, urban', ('octave 4', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, urban', ('octave 5', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, urban', ('octave 6', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, urban', ('octave 7', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, urban', ('octave 8', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      }
+    }
+  },
+  {
+    "package": "carculator_two_wheeler",
+    "version": "3.12",
+    "project": "ecoinvent-3.12-cutoff",
+    "biosphere_database": "ecoinvent-3.12-biosphere",
+    "matched": {
+      "foreground": 36,
+      "technosphere": 303,
+      "biosphere": 242
+    },
+    "unresolved": {},
+    "chemistry": "NMC-532",
+    "custom_noise_requires_user_method": {
+      "('noise, octave 1, day time, urban', ('octave 1', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 2, day time, urban', ('octave 2', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 3, day time, urban', ('octave 3', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 4, day time, urban', ('octave 4', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 5, day time, urban', ('octave 5', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 6, day time, urban', ('octave 6', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 7, day time, urban', ('octave 7', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      },
+      "('noise, octave 8, day time, urban', ('octave 8', 'day time', 'urban'), 'joule')": {
+        "type": "biosphere",
+        "matches": 0
+      }
+    }
+  }
+]

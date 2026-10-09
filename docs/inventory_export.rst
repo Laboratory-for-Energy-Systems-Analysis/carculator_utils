@@ -53,10 +53,13 @@ Responsibilities and background linking
 
 Carculator constructs activities and exchanges from its matrices, normalizes the
 functional unit, and supplies vehicle parameters, fuel recipes and electricity
-provenance. Its existing ecoinvent 3.10-to-3.9 mapping remains in use. Supported
-targets remain exactly ``3.9`` and ``3.10``, with cut-off technosphere and
-version-matched biosphere contexts. Format conversion does not migrate the
-background to another release or system model.
+provenance. The default target is now **ecoinvent 3.12 cutoff**, matching the
+rebuilt coefficient bundle. Logical supplier names are resolved through the
+recorded 3.12 mappings, including weighted disaggregations. Foreground identities
+and signed physical demands are preserved. Legacy ``3.9``/``3.10`` targets remain
+conditional: newly introduced suppliers without verified older counterparts
+raise an explicit error. The existing 3.10-to-3.9 mapping remains available for
+verified older routes; complete backward compatibility is not claimed.
 
 Brightpath normalizes canonical dictionaries and writes the software formats,
 including product names, compartments, units, CSV escaping and JSON-LD entities.
@@ -113,7 +116,7 @@ An importable ZIP alone does not establish equivalent LCIA results.
 Verification
 ------------
 
-``tests/test_export.py`` checks per-year return values for all formats and both
+``tests/test_export.py`` checks per-year return values for all formats and the three
 ecoinvent contexts, reads Excel with Brightpath/bw2io, inspects openLCA JSON-LD
 provider links and signed quantities, and parses SimaPro products, waste inputs,
 water-unit conversion and comments. Repeated real vehicle exports also check
@@ -129,7 +132,7 @@ selected transport activities, including cyclic supply chains. Unused fuel
 pathways no longer introduce unrelated destination requirements. The two
 coal-gasification suppliers for methanol and hydrogen are absent from the
 installed ecoinvent 3.9 cutoff database. If such a route is actually needed,
-3.9 export fails explicitly; use 3.10 or provide a scientifically reviewed
+3.9 export fails explicitly; use 3.12 or provide a scientifically reviewed
 mapping. No natural-gas or geographic substitute is invented.
 
 ``carculator_utils.export_matching.match_export`` links activity dictionaries
@@ -142,12 +145,14 @@ explicit compatible biosphere database and characterization method.
 
 ``scripts/audit_export_targets.py`` checks a pre-generated export against
 existing version-specific Brightway projects without creating or modifying
-database contents. It restores the previously active project. The
+database contents. It restores the previously active project. The historical pre-refresh
 :download:`9 October 2026 destination audit
 <_static/export_target_audit_20261009.json>` covers eight exports: combustion and
 BEV vehicles in each of the four families, against both 3.9 and 3.10 cutoff.
-After reachability filtering, every ordinary supplier and elementary flow has
-an exact match. Only the custom noise flows remain outside those databases.
+For that earlier bundle, after reachability filtering, every ordinary supplier
+and elementary flow had an exact match. It does not certify the refreshed bundle
+against those older destinations. The new 3.12 audit and reproduction commands
+are documented in :doc:`background_rebuild`. Only the custom noise flows remain outside those databases.
 This is a destination-identity audit, not an executed full LCIA in SimaPro or
 openLCA. Internal B factors use the bundled source/method versions, so equal
 scores must not be asserted against a different background database version.
@@ -167,11 +172,11 @@ through Brightpath's explicit mapping interface::
 
     mapping = OpenLCAMethodMapping(
         "/path/to/methods.zip",
-        "/path/to/biosphere-3.10.csv",
-        biosphere_version="3.10",
+        "/path/to/biosphere-3.12.csv",
+        biosphere_version="3.12",
     )
     inventory.export_lci(
-        software="openlca", format="file", ecoinvent_version="3.10",
+        software="openlca", format="file", ecoinvent_version="3.12",
         openlca_method_mapping=mapping,
     )
 

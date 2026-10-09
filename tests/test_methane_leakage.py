@@ -308,7 +308,7 @@ def test_completed_leakage_survives_repeated_export(completed_run, tmp_path):
     )
     for _ in range(2):
         exports = inventory.export_lci(
-            ecoinvent_version="3.10", format="bw2io", directory=tmp_path
+            ecoinvent_version="3.12", format="bw2io", directory=tmp_path
         )
         assert len(exports) == 3
         for year_index, importer in enumerate(exports):

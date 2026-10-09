@@ -384,7 +384,7 @@ def test_fuel_blends_survive_brightway_export(case, blend_mode, tmp_path):
     before = inventory.A.copy()
     indices_before = inventory.inputs.copy()
     exports = inventory.export_lci(
-        ecoinvent_version="3.10", format="bw2io", directory=tmp_path
+        ecoinvent_version="3.12", format="bw2io", directory=tmp_path
     )
     assert len(exports) == 3
     renamed = rename_mapping("rename_powertrains.yaml")

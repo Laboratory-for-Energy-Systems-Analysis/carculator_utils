@@ -20,7 +20,12 @@ import xarray as xr
 import yaml
 
 from . import DATA_DIR
-from .export_matching import reachable_foreground, validate_known_target_gaps
+from .export_matching import (
+    map_legacy_exchanges,
+    migrate_background,
+    reachable_foreground,
+    validate_known_target_gaps,
+)
 from .fuel_supply import load_fuel_supply_recipes
 
 
@@ -185,6 +190,10 @@ class ExportInventory:
 
         list_act = []
 
+        # Read once per export; labels are logical identifiers, not necessarily
+        # the names used by the selected ecoinvent release.
+        mapping = json.loads((DATA_DIR / "IAM/background_mapping.json").read_text())
+
         # List of coordinates for non-zero values
         non_zeroes = np.nonzero(self.array[0, :, :, idx_year])
         # List of coordinates where activities present more than once
@@ -210,42 +219,6 @@ class ExportInventory:
                 tuple_output = self.indices[col]
                 tuple_input = self.indices[row]
                 mult_factor = 1
-
-                # check migration dictionary self.flow_map
-                if ecoinvent_version in self.flow_map:
-                    if len(tuple_input) == 3:
-                        tupled = (
-                            tuple_input[0],
-                            "",
-                            tuple_input[1],
-                            tuple_input[2],
-                            "",
-                        )
-                        if tupled in self.flow_map[ecoinvent_version]:
-                            tuple_input = self.flow_map[ecoinvent_version][tupled]
-                            # remove the ""
-                            tuple_input = (
-                                tuple_input[0],
-                                tuple_input[2],
-                                tuple_input[3],
-                            )
-                    else:
-                        tupled = (
-                            tuple_input[0],
-                            tuple_input[1],
-                            "",
-                            tuple_input[2],
-                            tuple_input[3],
-                        )
-                        if tupled in self.flow_map[ecoinvent_version]:
-                            tuple_input = self.flow_map[ecoinvent_version][tupled]
-                            # remove the ""
-                            tuple_input = (
-                                tuple_input[0],
-                                tuple_input[1],
-                                tuple_input[3],
-                                tuple_input[4],
-                            )
 
                 amount = self.array[0, row, col, idx_year] * mult_factor
 
@@ -377,13 +350,16 @@ class ExportInventory:
             list_act.append(new_act)
 
         list_act = reachable_foreground(list_act, self.vm.vehicle_type)
+        list_act = migrate_background(list_act, mapping, ecoinvent_version)
+        if ecoinvent_version in self.flow_map:
+            list_act = map_legacy_exchanges(list_act, self.flow_map[ecoinvent_version])
         validate_known_target_gaps(list_act, ecoinvent_version)
         return list_act
 
     def _brightpath_inventory(self, data, ecoinvent_version, database_name=None):
         """Prepare a private canonical inventory with an exact background context.
 
-        Carculator owns foreground metadata and its existing 3.10-to-3.9 mapping.
+        Carculator owns foreground metadata and version-specific supplier mappings.
         Brightpath owns normalization, format validation and serialization.
         This does not certify links against an installed background database.
         """
@@ -595,8 +571,8 @@ class ExportInventory:
         from brightpath.formats.simapro_csv import write_simapro_csv
         from brightpath.models import InventoryDocument, InventoryFormat
 
-        if ecoinvent_version not in ("3.9", "3.10"):
-            raise ValueError("ecoinvent_version must be either '3.9' or '3.10'")
+        if ecoinvent_version not in ("3.9", "3.10", "3.12"):
+            raise ValueError("ecoinvent_version must be '3.9', '3.10' or '3.12'")
         if export_format not in ("file", "string", "bw2io") or (
             export_format == "bw2io" and software != "brightway2"
         ):

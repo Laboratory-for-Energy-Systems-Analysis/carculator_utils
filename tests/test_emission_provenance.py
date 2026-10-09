@@ -68,7 +68,7 @@ def test_exact_ethylene_reaches_completed_inventory_and_lcia(
         np.testing.assert_allclose(actual, factor)
         amounts.append(expected)
     assert sum(amounts) > 0
-    for version in ("3.9", "3.10"):
+    for version in ("3.12",):
         content = inventory.export_lci(
             software="simapro",
             format="string",

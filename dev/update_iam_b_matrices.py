@@ -1,4 +1,8 @@
-"""Update IAM B matrices from Brightway LCIA results.
+"""Legacy partial B updater; use rebuild_iam.py for current complete rebuilds.
+
+This historical CLI can retain stale coefficients. Its method metadata helpers
+remain shared with the complete compiler, but it is not the supported rebuild
+entry point.
 
 This script regenerates the characterized emission factors stored in
 ``carculator_utils/data/IAM/B_matrix_*.npz`` using the Brightway project

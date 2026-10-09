@@ -37,13 +37,14 @@
     source: https://carbonstorage.io/media/project_files/Biocat_Life_Cycle_Analysis.pdf
     comment: >-
       Per kg of delivered methane: 1.02 kg of the bundled biological-methanation
-      product using PEM hydrogen and atmospheric CO2. Retains the bundled
+      product using regional market hydrogen and atmospheric CO2 (premise 2.5.4 /
+      ecoinvent 3.12; earlier bundles used direct PEM electrolysis). Retains the bundled
       sewage-biomethane delivery activity's distribution allowance, pipeline,
       station infrastructure, heat and direct emissions as delivery proxies;
       sewage-sludge gas production is removed. Replaces station electricity
       with 0.314 kWh/kg for compression to 200 bar (BioCat II LCA, January 2017,
       Annex I, page 15, Audi AG). The production activity's 1.55 kWh/kg plant
-      electricity is additional, as are electrolysis and direct air capture.
+      electricity is additional, as are upstream hydrogen supply and direct air capture.
       Delivery proxies and upstream production inventories are not newly
       validated. The 2% production allowance is inherited, not an explicitly
       balanced methane emission. Vehicle pump-to-tank leakage remains separate.

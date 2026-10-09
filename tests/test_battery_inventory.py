@@ -30,6 +30,22 @@ BATTERIES = {
         "battery, Li-ion, NMC811, rechargeable, prismatic",
     ),
 }
+# Exact ecoinvent 3.12 export identities; internal matrix labels stay stable.
+EXPORT_BATTERIES = {
+    "LFP": (
+        "market for battery, Li-ion, LFP, rechargeable",
+        "GLO",
+        "kilogram",
+        "battery, Li-ion, LFP, rechargeable",
+    ),
+    "NMC-811": (
+        "market for battery, Li-ion, NMC811, rechargeable",
+        "GLO",
+        "kilogram",
+        "battery, Li-ion, NMC811, rechargeable",
+    ),
+}
+
 USED = ("market for used Li-ion battery", "GLO", "kilogram", "used Li-ion battery")
 
 
@@ -249,7 +265,7 @@ def test_selected_battery_impacts_equal_combined_scope(completed, scenario):
 
 @pytest.mark.family
 @pytest.mark.export
-@pytest.mark.parametrize("version", ["3.9", "3.10"])
+@pytest.mark.parametrize("version", ["3.12"])
 def test_battery_exports_are_exact_and_repeatable(completed, version):
     pytest.importorskip("bw2io")
     model, cls = completed
@@ -279,14 +295,17 @@ def test_battery_exports_are_exact_and_repeatable(completed, version):
                     ).item()
                     if mass:
                         chem = model.energy_storage["electric"][(pt, size, year)]
-                        expected.append((size, BATTERIES[chem], mass))
+                        expected.append((size, EXPORT_BATTERIES[chem], mass))
             actual = []
             for vehicle in vehicles:
                 size = vehicle["name"].rsplit(", ", 1)[-1]
                 batteries = [
                     e
                     for e in vehicle["exchanges"]
-                    if any(e["name"].startswith(key[0]) for key in BATTERIES.values())
+                    if any(
+                        e["name"].startswith(key[0])
+                        for key in EXPORT_BATTERIES.values()
+                    )
                 ]
                 assert len(batteries) <= 1
                 for e in batteries:

@@ -248,7 +248,7 @@ def test_completed_selected_years_preserve_fuel_and_impacts(completed, years):
 
 @pytest.mark.family
 @pytest.mark.export
-@pytest.mark.parametrize("version", ["3.9", "3.10"])
+@pytest.mark.parametrize("version", ["3.12"])
 def test_selected_year_exports_preserve_fuel_suppliers_and_carbon(completed, version):
     pytest.importorskip("bw2io")
     from carculator_utils.export import rename_mapping

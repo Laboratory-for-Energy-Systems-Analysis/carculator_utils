@@ -2,7 +2,10 @@ Biological synthetic methane
 =============================
 
 ``methane - synthetic - biological`` uses the bundled biological-methanation
-production route with hydrogen from PEM electrolysis and CO2 captured from air.
+production route with regional market hydrogen and CO2 captured from air.
+The premise 2.5.4 / ecoinvent 3.12 refresh replaces the older direct PEM hydrogen
+input with ``market for hydrogen, gaseous, low pressure`` (RER). Synthetic
+methane therefore does not imply renewable or low-carbon hydrogen.
 Previously, its supplier mapping silently selected sewage-sludge biomethane.
 This correction applies to the shared fuel supply used by cars, buses and trucks;
 the two-wheeler model has no methane powertrain.
@@ -32,9 +35,11 @@ compression scenario, not a measurement applicable to every station.
 Per kg of production, the existing biological-methanation activity requires
 0.5 kg hydrogen, 2.75 kg captured CO2 and 1.55 kWh plant electricity, plus
 nutrients and wastewater treatment. Station compression is additional to that
-plant electricity and to electricity for electrolysis and air capture.
-All these electricity inputs follow the selected fuel-preparation mix.
-The upstream hydrogen and air-capture inventories are reused without modification.
+plant electricity and to the upstream hydrogen and air-capture supply chains.
+Explicit foreground electricity purchases follow the fuel-preparation mix;
+the hydrogen market is a background supplier characterized in B and retains
+its background/scenario mix. The upstream inventories follow the refreshed
+source recipes. See :doc:`background_rebuild`.
 
 The recipe is instantiated only when its supplier tuple is selected. Explicit
 user supplier-name overrides remain authoritative. Existing A/B matrix indices

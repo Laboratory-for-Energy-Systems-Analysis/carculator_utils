@@ -1,0 +1,438 @@
+nafion membrane production;RER;kilogram;nafion membrane
+vanadium slag production;ZA;kilogram;vanadium slag
+EV charger, level 3, plugin, 200 kW;RER;unit;EV charger, level 3, plugin, 200 kW
+EV charger, level 3, with pantograph, 450 kW;RER;unit;EV charger, level 3, with pantograph, 450 kW
+assembly operation, for lorry;RER;kilogram;assembly operation, for lorry
+biodiesel, from algae, at fuelling station;RER;kilogram;biodiesel, vehicle grade
+biodiesel, from palm oil, at fuelling station;ID;kilogram;biodiesel, vehicle grade
+biodiesel, from rapeseed oil, at fuelling station;RER;kilogram;biodiesel, vehicle grade
+biodiesel, from used cooking oil, at fuelling station;RER;kilogram;biodiesel, vehicle grade
+biomethane, gaseous, 5 bar, from sewage sludge fermentation, at fuelling station;RER;kilogram;biomethane, high pressure
+catenary system;RER;kilometer;catenary system
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from coal gasification, economic allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from coal gasification, energy allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from coal gasification, with CCS, economic allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from coal gasification, with CCS, energy allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from electrolysis, economic allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from electrolysis, energy allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from wood gasification, economic allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from wood gasification, energy allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from wood gasification, with CCS, economic allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from Fischer Tropsch process, hydrogen from wood gasification, with CCS, energy allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from methanol, hydrogen from coal gasification, economic allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from methanol, hydrogen from coal gasification, energy allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from methanol, hydrogen from coal gasification, with CCS, economic allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from methanol, hydrogen from coal gasification, with CCS, energy allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from methanol, hydrogen from electrolysis, CO2 from DAC, economic allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from methanol, hydrogen from electrolysis, CO2 from DAC, energy allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, economic allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+diesel production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, energy allocation, at fuelling station;RER;kilogram;diesel, synthetic, vehicle grade
+electric bicycle production, without battery and motor;RER;unit;electric bicycle, without battery and motor
+electricity production, at biomass-fired IGCC power plant, pre, pipeline 200km, storage 1000m;RER;kilowatt hour;electricity, high voltage
+electricity production, at biomethane-fired power plant, post, pipeline 200km, storage 1000m;RER;kilowatt hour;electricity, high voltage
+electricity production, at hard coal-fired power plant, post, pipeline 200km, storage 1000m;RER;kilowatt hour;electricity, high voltage
+electricity production, at natural gas-fired combined cycle power plant, post, pipeline 200km, storage 1000m;RER;kilowatt hour;electricity, high voltage
+electricity production, at wood burning power plant, post, pipeline 200km, storage 1000m;RER;kilowatt hour;electricity, high voltage
+ethanol, from corn starch, at fuelling station;RER;kilogram;ethanol, without water, in 99.7% solution state, vehicle grade
+ethanol, from forest residues, at fuelling station;RER;kilogram;ethanol, without water, in 99.7% solution state, vehicle grade
+ethanol, from sugarbeet, at fuelling station;RER;kilogram;ethanol, without water, in 99.7% solution state, vehicle grade
+ethanol, from wheat straw, at fuelling station;RER;kilogram;ethanol, without water, in 99.7% solution state, vehicle grade
+exhaust system, for lorry;RER;kilogram;exhaust system, for lorry
+frame, blanks and saddle, for lorry;RER;kilogram;frame, blanks and saddle, for lorry
+fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM);GLO;unit;fuel cell Balance of Plant, 1 kWe, proton exchange membrane (PEM)
+fuel cell stack production, 1 kWe, proton exchange membrane (PEM);GLO;unit;fuel cell stack, 1 kWe, proton exchange membrane (PEM)
+fuel tank assembly, compressed hydrogen gas, 700bar;RER;kilogram;fuel tank, compressed hydrogen gas, 700bar
+fuel tank assembly, compressed natural gas, 200 bar;RER;kilogram;fuel tank, compressed natural gas, 200 bar
+fuel tank, compressed hydrogen gas, 700bar, with HDPE liner;RER;kilogram;hydrogen tank
+fuel tank, compressed hydrogen gas, 700bar, with aluminium liner;RER;kilogram;hydrogen tank
+fuel tank, for diesel vehicle;RER;kilogram;fuel tank
+gasoline production, synthetic, from methanol, hydrogen from coal gasification, economic allocation, at fuelling station;RER;kilogram;gasoline, synthetic, vehicle grade
+gasoline production, synthetic, from methanol, hydrogen from coal gasification, energy allocation, at fuelling station;RER;kilogram;gasoline, synthetic, vehicle grade
+gasoline production, synthetic, from methanol, hydrogen from coal gasification, with CCS, economic allocation, at fuelling station;RER;kilogram;gasoline, synthetic, vehicle grade
+gasoline production, synthetic, from methanol, hydrogen from coal gasification, with CCS, energy allocation, at fuelling station;RER;kilogram;gasoline, synthetic, vehicle grade
+gasoline production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, economic allocation, at fuelling station;RER;kilogram;gasoline, synthetic, vehicle grade
+gasoline production, synthetic, from methanol, hydrogen from electrolysis, CO2 from cement plant, energy allocation, at fuelling station;RER;kilogram;gasoline, synthetic, vehicle grade
+gearbox, for lorry;RER;kilogram;gearbox, for lorry
+glider lightweighting;GLO;kilogram;glider lightweighting
+hydrogen production, auto-thermal reforming;RER;kilogram;hydrogen, gaseous, low pressure
+hydrogen production, auto-thermal reforming, from biomethane;RER;kilogram;hydrogen, gaseous, low pressure
+hydrogen production, auto-thermal reforming, from biomethane, with CCS;RER;kilogram;hydrogen, gaseous, low pressure
+hydrogen production, auto-thermal reforming, with CCS;RER;kilogram;hydrogen, gaseous, low pressure
+hydrogen production, coal gasification, with CCS;RoW;kilogram;hydrogen, gaseous, low pressure
+hydrogen production, gaseous, 1 bar, from SOEC electrolysis, from grid electricity;CH;kilogram;hydrogen, gaseous, 1 bar
+hydrogen production, gaseous, 100 bar, from methane pyrolysis;RER;kilogram;hydrogen, gaseous, 100 bar
+hydrogen production, gaseous, 20 bar, from AEC electrolysis, from grid electricity;CH;kilogram;hydrogen, gaseous, 20 bar
+hydrogen production, gaseous, 25 bar, from gasification of woody biomass in entrained flow gasifier, at gasification plant;RER;kilogram;hydrogen, gaseous, 25 bar
+hydrogen production, gaseous, 25 bar, from gasification of woody biomass in entrained flow gasifier, with CCS, at gasification plant;RER;kilogram;hydrogen, gaseous, 25 bar
+hydrogen production, gaseous, 25 bar, from thermochemical water splitting, at solar tower;RER;kilogram;hydrogen, gaseous, 25 bar
+hydrogen production, gaseous, 30 bar, from PEM electrolysis, from grid electricity;RER;kilogram;hydrogen, gaseous, 30 bar
+hydrogen production, steam methane reforming, from biomethane, with CCS;RER;kilogram;hydrogen, gaseous, low pressure
+hydrogen production, steam methane reforming, with CCS;RER;kilogram;hydrogen, gaseous, low pressure
+hydrogen, from steam reforming of biomass gas, at reforming plant;RER;megajoule;hydrogen, from steam reforming of biomass gas, at reforming plant
+internal combustion engine, for lorry;RER;kilogram;internal combustion engine, for lorry
+kerosene production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, economic allocation;RER;kilogram;kerosene, synthetic
+kerosene production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, energy allocation;RER;kilogram;kerosene, synthetic
+kerosene production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, with CCS, economic allocation;RER;kilogram;kerosene, synthetic
+kerosene production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, with CCS, energy allocation;RER;kilogram;kerosene, synthetic
+kerosene production, synthetic, from methanol, hydrogen from coal gasification, economic allocation, at fuelling station;RER;kilogram;kerosene, synthetic, vehicle grade
+kerosene production, synthetic, from methanol, hydrogen from coal gasification, energy allocation, at fuelling station;RER;kilogram;kerosene, synthetic, vehicle grade
+kerosene production, synthetic, from methanol, hydrogen from coal gasification, with CCS, economic allocation, at fuelling station;RER;kilogram;kerosene, synthetic, vehicle grade
+kerosene production, synthetic, from methanol, hydrogen from coal gasification, with CCS, energy allocation, at fuelling station;RER;kilogram;kerosene, synthetic, vehicle grade
+kerosene production, synthetic, from methanol, hydrogen from electrolysis, CO2 from DAC, economic allocation, at fuelling station;RER;kilogram;kerosene, synthetic, vehicle grade
+kerosene production, synthetic, from methanol, hydrogen from electrolysis, CO2 from DAC, energy allocation, at fuelling station;RER;kilogram;kerosene, synthetic, vehicle grade
+kerosene production, via Fischer-Tropsch, from forest product (non-residual), energy allocation;RER;kilogram;kerosene, from forest residues
+kerosene production, via Fischer-Tropsch, from forest product (non-residual), with carbon capture and storage, energy allocation;RER;kilogram;kerosene, from forest residues
+kerosene production, via Fischer-Tropsch, from forest residues, energy allocation;RER;kilogram;kerosene, from forest residues
+lead acid battery, for lorry;RER;kilogram;lead acid battery, for lorry
+maintenance, electric bicycle, without battery;CH;unit;maintenance, electric bicycle, without battery
+market for battery, Li-ion, LTO;GLO;kilogram;battery, Li-ion, LTO
+market for battery, Li-ion, NMC532, rechargeable;GLO;kilogram;battery, Li-ion, NMC532, rechargeable
+market for battery, Li-ion, NMC622;GLO;kilogram;battery, Li-ion, NMC622
+market for battery, Li-ion, NMC955;GLO;kilogram;battery, Li-ion, NMC955
+market for battery, Li-oxygen, Li-O2;GLO;kilogram;battery, Li-O2
+market for battery, Li-sulfur, Li-S;GLO;kilogram;battery, Li-S
+market for battery, Sodium-ion, SiB;GLO;kilogram;battery, SiB
+methane, from biological methanation, with carbon from atmosphere;RER;kilogram;methane, from biological methanation
+methane, from biological methanation, with carbon from cement plant;RER;kilogram;methane, from biological methanation
+methane, from biological methanation, with carbon from municipal waste incineration plant;RER;kilogram;methane, from biological methanation
+methane, from electrochemical methanation, with carbon from atmosphere;RER;kilogram;methane, from electrochemical methanation
+methane, from electrochemical methanation, with carbon from cement plant;RER;kilogram;methane, from electrochemical methanation
+methane, from electrochemical methanation, with carbon from municipal waste incineration plant;RER;kilogram;methane, from electrochemical methanation
+methane, synthetic, gaseous, 5 bar, from coal-based hydrogen, at fuelling station;RER;kilogram;methane, high pressure
+other components, for electric lorry;RER;kilogram;other components, for electric lorry
+other components, for hybrid electric lorry;RER;kilogram;other components, for hybrid electric lorry
+power electronics, for lorry;RER;kilogram;power electronics, for lorry
+retarder, for lorry;RER;kilogram;retarder, for lorry
+suspension, for lorry;RER;kilogram;suspension, for lorry
+tires and wheels, for lorry;RER;kilogram;tires and wheels, for lorry
+transmission, for lorry;RER;kilogram;transmission, for lorry
+syngas, RWGS, Production, for Fischer Tropsch process, hydrogen from wood gasification;RER;kilogram;syngas, RWGS, Production
+gas-to-liquid plant construction;GLO;unit;gas-to-liquid plant
+diesel production, from methanol, hydrogen from electrolysis, CO2 from cement plant, energy allocation;RER;kilogram;diesel, synthetic
+diesel production, from methanol, hydrogen from coal gasification, with CCS, economic allocation;RER;kilogram;diesel, synthetic
+biodiesel production, via transesterification, from rapeseed oil, energy allocation;RER;kilogram;biodiesel, from rapeseed oil
+kerosene production, from methanol, hydrogen from coal gasification, with CCS, economic allocation;RER;kilogram;kerosene, synthetic
+kerosene production, from methanol, hydrogen from electrolysis, CO2 from DAC, energy allocation;RER;kilogram;kerosene, synthetic
+sabatier reaction methanation unit construction;RER;unit;sabatier reaction methanation unit
+carbon dioxide, captured from atmosphere, with a sorbent-based direct air capture system, 100ktCO2;RER;kilogram;carbon dioxide, captured from atmosphere
+production of nickel-based catalyst for methanation;RER;kilogram;nickel-based catalyst for methanation
+HDPE tank liner;RER;kilogram;HDPE tank liner
+carbon fiber production, weaved, at factory;RER;kilogram;carbon fiber, weaved
+storage battery;RER;unit;storage battery
+charger;RER;unit;charger
+charging stand;RER;unit;charging stand
+carbon dioxide, captured at hydrogen production plant, pre, pipeline 200km, storage 1000m;RER;kilogram;carbon dioxide, captured at hydrogen production plant, pre, pipeline 200km, storage 1000m
+biomethane production, from biogas upgrading, using amine scrubbing;RER;kilogram;biomethane, from biogas upgrading, using amine scrubbing
+carbon dioxide, captured from natural gas, post, 200km pipeline, storage 1000m;RER;kilogram;carbon dioxide, captured from natural gas, post, 200km pipeline, storage 1000m
+diesel production, synthetic, Fischer Tropsch process, hydrogen from electrolysis, economic allocation;RER;kilogram;diesel, synthetic
+battery production, Li-ion, NMC955;GLO;kilogram;battery, Li-ion, NMC955
+battery cell production, Li-ion, LTO;GLO;kilogram;battery cell, Li-ion, LTO
+battery module production, for SiB battery;GLO;kilogram;battery, SiB module
+kerosene production, from methanol, hydrogen from coal gasification, with CCS, energy allocation;RER;kilogram;kerosene, synthetic
+market for gas power plant, combined cycle, 400MW electrical;GLO;unit;NGCC power plant, 400MWe
+gasoline production, from methanol, hydrogen from coal gasification, with CCS, economic allocation;RER;kilogram;gasoline, synthetic
+carbon dioxide compression, transport and storage;RER;kilogram;carbon dioxide, stored
+kerosene production, from methanol, hydrogen from coal gasification, energy allocation;RER;kilogram;kerosene, synthetic
+gasoline production, from methanol, hydrogen from electrolysis, CO2 from cement plant, energy allocation;RER;kilogram;gasoline, synthetic
+diesel production, from methanol, hydrogen from electrolysis, CO2 from DAC, energy allocation;RER;kilogram;diesel, synthetic
+gasoline production, from methanol, hydrogen from coal gasification, economic allocation;RER;kilogram;gasoline, synthetic
+supply of forest residue;RER;kilogram;forest residue
+solar tower subsystem contruction for thermochemical water splitting;RER;unit;solar tower subsystem
+power generation subsystem for thermochemical water splitting;RER;unit;power generation subsystem
+hydrogen production subsystem for thermochemical water splitting;RER;unit;hydrogen production subsystem
+hydrogen plant assembly for thermochemical water splitting;RER;unit;hydrogen production subsystem
+syngas, RWGS, Production, for Fischer Tropsch process, hydrogen from wood gasification, with CCS;RER;kilogram;syngas, RWGS, Production
+methane, from coal-based hydrogen;RER;kilogram;methane, from coal-based hydrogen
+diesel production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, energy allocation;RER;kilogram;diesel, synthetic
+electrolyzer production, 1MWe, AEC, Stack;RER;unit;electrolyzer, 1MWe, AEC, Stack
+electrolyzer production, 1MWe, AEC, Balance of Plant;RER;unit;electrolyzer, 1MWe, AEC, Balance of Plant
+treatment of fuel cell stack, 1MWe, AEC;RER;unit;used fuel cell stack, 1MWe, AEC
+treatment of fuel cell balance of plant, 1MWe, AEC;RER;unit;used fuel cell balance of plant, 1MWe, AEC
+ethanol production, via fermentation, from corn starch, energy allocation;RER;kilogram;ethanol, from corn starch
+biodiesel production, via transesterification, from algae, energy allocation;RER;kilogram;biodiesel, from algae
+cables;RER;unit;cables
+catenary masts;RER;unit;catenary masts
+distribution sheds;RER;unit;distribution sheds
+electrical equipment;RER;unit;electrical equipment
+overhead lines;RER;unit;overhead lines
+semi-rigid roadside barriers;RER;unit;semi-rigid roadside barriers
+transformers;RER;unit;transformers
+kerosene production, from methanol, hydrogen from electrolysis, CO2 from DAC, economic allocation;RER;kilogram;kerosene, synthetic
+ethanol production, via fermentation, from forest residue, energy allocation;RER;kilogram;ethanol, from forest residues
+battery module production, for LiS battery;GLO;kilogram;battery, LiS module
+electrolyzer production, 1MWe, SOEC, Stack;RER;unit;electrolyzer, 1MWe, SOEC, Stack
+electrolyzer production, 1MWe, SOEC, Balance of Plant;RER;unit;electrolyzer, 1MWe, SOEC, Balance of Plant
+treatment of fuel cell stack, 1MWe, SOEC;RER;unit;used fuel cell stack, 1MWe, SOEC
+treatment of fuel cell balance of plant, 1MWe, SOEC;RER;unit;used fuel cell balance of plant, 1MWe, SOEC
+carbon dioxide, captured at municipal solid waste incineration plant, for subsequent reuse;RER;kilogram;carbon dioxide, captured and reused
+diesel production, from methanol, hydrogen from coal gasification, economic allocation;RER;kilogram;diesel, synthetic
+diesel production, from methanol, hydrogen from coal gasification, with CCS, energy allocation;RER;kilogram;diesel, synthetic
+gasoline production, from methanol, hydrogen from coal gasification, energy allocation;RER;kilogram;gasoline, synthetic
+construction, BIGCC power plant 450MW;RER;unit;construction, BIGCC power plant 450MW
+dismantling, BIGCC power plant 450MW;RER;unit;dismantling, BIGCC power plant 450MW
+supply and refining of waste cooking oil;RER;kilogram;waste Cooking Oil
+carbon dioxide, captured at wood burning power plant 20 MW post, pipeline 200km, storage 1000m;RER;kilogram;carbon dioxide, captured at wood burning power plant 20 MW post, pipeline 200km, storage 1000m
+carbon dioxide, captured at cement production plant, for subsequent reuse;RER;kilogram;carbon dioxide, captured and reused
+kerosene production, from methanol, hydrogen from coal gasification, economic allocation;RER;kilogram;kerosene, synthetic
+electrolyzer production, 1MWe, PEM, Stack;RER;unit;electrolyzer, 1MWe, PEM, Stack
+electrolyzer production, 1MWe, PEM, Balance of Plant;RER;unit;electrolyzer, 1MWe, PEM, Balance of Plant
+treatment of fuel cell stack, 1MWe, PEM;RER;unit;used fuel cell stack, 1MWe, PEM
+treatment of fuel cell balance of plant, 1MWe, PEM;RER;unit;used fuel cell balance of plant, 1MWe, PEM
+diesel production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, economic allocation;RER;kilogram;diesel, synthetic
+diesel production, synthetic, Fischer Tropsch process, hydrogen from coal gasification, energy allocation;RER;kilogram;diesel, synthetic
+diesel production, from methanol, hydrogen from electrolysis, CO2 from DAC, economic allocation;RER;kilogram;diesel, synthetic
+diesel production, synthetic, Fischer Tropsch process, hydrogen from coal gasification, with CCS, energy allocation;RER;kilogram;diesel, synthetic
+diesel production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, with CCS, energy allocation;RER;kilogram;diesel, synthetic
+gasoline production, from methanol, hydrogen from electrolysis, CO2 from cement plant, economic allocation;RER;kilogram;gasoline, synthetic
+wood combustion power plant 20 MW;RER;unit;wood combustion power plant 20 MW
+diesel production, from methanol, hydrogen from electrolysis, CO2 from cement plant, economic allocation;RER;kilogram;diesel, synthetic
+diesel production, synthetic, Fischer Tropsch process, hydrogen from coal gasification, with CCS, economic allocation;RER;kilogram;diesel, synthetic
+diesel production, synthetic, Fischer Tropsch process, hydrogen from wood gasification, with CCS, economic allocation;RER;kilogram;diesel, synthetic
+ethanol production, via fermentation, from wheat straw, energy allocation;RER;kilogram;ethanol, from wheat straw pellets
+ethanol production, via fermentation, from sugarbeet, energy allocation;RER;kilogram;ethanol, from sugarbeet
+polymer electrolyte membrane (Nafion) production;RER;kilogram;polymer electrolyte membrane (Nafion)
+syngas, from biomass gasification;RER;megajoule;syngas, from biomass gasification
+battery production, Li-O2;GLO;kilogram;battery, Li-O2
+diesel production, synthetic, Fischer Tropsch process, hydrogen from electrolysis, energy allocation;RER;kilogram;diesel, synthetic
+biodiesel production, via transesterification, from palm oil, energy allocation;ID;kilogram;biodiesel, from palm oil
+biodiesel production, via transesterification, from used cooking oil, energy allocation;RER;kilogram;biodiesel, from cooking oil
+diesel production, synthetic, Fischer Tropsch process, hydrogen from coal gasification, economic allocation;RER;kilogram;diesel, synthetic
+gasoline production, from methanol, hydrogen from coal gasification, with CCS, energy allocation;RER;kilogram;gasoline, synthetic
+carbon dioxide, captured from hard coal-fired power plant, post, pipeline 200km, storage 1000m;RER;kilogram;carbon dioxide, captured from hard coal-fired power plant, post, pipeline 200km, storage 1000m
+market for hard coal power plant;GLO;unit;hard coal pulverised power plant 500MW
+diesel production, from methanol, hydrogen from coal gasification, energy allocation;RER;kilogram;diesel, synthetic
+methanol distillation, hydrogen from coal gasification, with CCS;RER;kilogram;methanol, purified
+carbon dioxide storage at wood burning power plant 20 MW post, pipeline 200km, storage 1000m;RER;kilogram;carbon dioxide storage at wood burning power plant 20 MW post, pipeline 200km, storage 1000m
+cathode, NCA, for Li-ion battery;GLO;kilogram;cathode, NCA, for Li-ion battery
+anode paste, LTO;JP;kilogram;anode paste, LTO
+cathode current collector, LTO;JP;kilogram;cathode current collector, LTO
+anode current collector, LTO;JP;kilogram;anode current collector, LTO
+electrolyte, LTO;JP;kilogram;electrolyte, LTO
+battery separator;GLO;kilogram;battery separator
+cell container;GLO;kilogram;cell container
+methanol distillation, hydrogen from electrolysis, CO2 from DAC;RER;kilogram;methanol, purified
+refining of crude vegetable oil from rapeseed;RER;kilogram;refining of crude vegetable oil from rapeseed
+syngas, RWGS, Production, for Fischer Tropsch process, hydrogen from electrolysis;RER;kilogram;syngas, RWGS, Production, for Fischer Tropsch process, hydrogen from electrolysis
+methanol synthesis and distillation, hydrogen from electrolysis, CO2 from cement plant;RER;kilogram;methanol, purified
+farming and supply of wheat straw;RER;kilogram;wheat straw
+methanol distillation, hydrogen from coal gasification;RER;kilogram;methanol, purified
+refining of vegetable oil from oil palm;ID;kilogram;refining of vegetable oil from oil palm
+syngas, RWGS, Production, for Fischer Tropsch process, hydrogen from coal gasification;RER;kilogram;syngas, RWGS, Production
+carbon dioxide storage from hard coal, post, pipeline 200km, storage 1000m;RER;kilogram;carbon dioxide storage from hard coal, post, pipeline 200km, storage 1000m
+battery cell production, SIB, with NMMT cathode and fossil-HC anode;RER;kilogram;battery cell
+aluminium busbar production, for LiS battery;GLO;kilogram;aluminium busbar
+bimetallic busbar production, for LiS battery;GLO;kilogram;bimetallic busbar
+copper busbar production, for LiS battery;GLO;kilogram;copper busbar
+carbon dioxide storage at hydrogen production plant, pre, pipeline 200km, storage 1000m;RER;kilogram;carbon dioxide storage at hydrogen production plant, pre, pipeline 200km, storage 1000m
+selexol (Dimethylether of polyethylene glycol);RER;kilogram;selexol (Dimethylether of polyethylene glycol)
+production of 2 wt-% potassium iodide solution;RER;kilogram;2 wt-% potassium iodide solution
+carbon dioxide storage from natural gas, post, 200km pipeline, storage 1000m;RER;kilogram;carbon dioxide storage from natural gas, post, 200km pipeline, storage 1000m
+battery cell production, Li-S;GLO;kilogram;battery cell, LiS
+syngas, RWGS, Production, for Fischer Tropsch process, hydrogen from coal gasification, with CCS;RER;kilogram;syngas, RWGS, Production
+market for battery capacity, Li-ion, NMC622;GLO;kilowatt hour;electricity storage capacity
+battery cell production, Li-O2;GLO;kilogram;battery cell
+module packaging, for Li-O2 battery;RER;kilogram;module packaging
+pack packaging, for Li-O2 battery;RER;kilogram;pack packaging
+oxygen tank production, for Li-O2 battery;RER;kilogram;oxygen tank
+BMS production, for Li-O2 battery;RER;kilogram;BMS
+cooling system production, for Li-O2 battery;RER;kilogram;cooling system
+treatment of LiO2 battery, for recycling;RER;kilogram;waste LiO2 battery
+battery cell production, Li-ion, NMC955;GLO;kilogram;battery cell, Li-ion, NMC955
+farming and supply of corn;RER;kilogram;corn, harvested, at ethanol plant
+carbon fiber production, fiber drying and sizing;RER;kilogram;carbon fiber, dried and sized
+carbon monoxide, from RWGS, for Fischer Tropsch process, hydrogen from wood gasification, with CCS;RER;kilogram;carbon monoxide, from RWGS
+RWGS tank construction;GLO;unit;RWGS tank construction
+farming and supply of dry algae;RER;kilogram;algae harvesting for dry algae production
+syngas production plant;RER;unit;syngas production plant
+platinum group metal, extraction and refinery operations;ZA;kilogram;iridium
+amine-based silica production, for sorbent-based direct air capture system;RER;kilogram;amine-based silica
+direct air capture system, sorbent-based, 100ktCO2;RER;unit;direct air capture system
+treatment of direct air capture system, sorbent-based, 100ktCO2;RER;unit;direct air capture system
+carbon monoxide, from RWGS, for Fischer Tropsch process, hydrogen from wood gasification;RER;kilogram;carbon monoxide, from RWGS
+farming and supply of sugarbeet;RER;kilogram;sugar beet cultivation
+methanol synthesis, hydrogen from electrolysis, CO2 from DAC;RER;kilogram;methanol, unpurified
+methanol production facility, construction;RER;unit;methanol production facility, construction
+carbon monoxide, from RWGS, for Fischer Tropsch process, hydrogen from coal gasification, with CCS;RER;kilogram;carbon monoxide, from RWGS
+electrolyte, for Li-ion battery;GLO;kilogram;electrolyte, for Li-ion battery
+copper collector foil, for Li-ion battery;GLO;kilogram;copper collector foil, for Li-ion battery
+aluminium collector foil, for Li-ion battery;GLO;kilogram;aluminium collector foil, for Li-ion battery
+methanol synthesis, hydrogen from coal gasification;RER;kilogram;methanol, unpurified
+battery cell assembly, Li-S;GLO;kilogram;battery cell
+factory construction and operation, for LiS battery;GLO;unit;operating battery factory
+extraction of vegetable oil from rapeseed;RER;kilogram;extraction of vegetable oil from rapeseed
+multilayer pouch;GLO;kilogram;multilayer pouch
+tab Aluminum;GLO;kilogram;tab Aluminum
+tab Copper;GLO;kilogram;tab Copper
+fixed bed reactor for RWGS;RER;unit;fixed bed reactor
+drilling, deep borehole;RER;meter;drilling, deep borehole
+transport, pipeline, supercritical carbon dioxide, 200km without recompression;RER;ton kilometer;transport, pipeline, supercritical carbon dioxide, 200km without recompression
+LTO electrode material (Li4Ti5O12);GLO;kilogram;LTO electrode material (Li4Ti5O12)
+market for styrene butadiene rubber (SBR);RER;kilogram;styrene butadiene rubber (SBR)
+polyethyleneimine (PEI) production, for sorbent-based direct air capture system;RER;kilogram;polyethyleneimine
+silica gel production, for sorbent-based direct air capture system;RER;kilogram;silica gel
+methanol synthesis, hydrogen from coal gasification, with CCS;RER;kilogram;methanol, unpurified
+carbon monoxide, from RWGS, for Fischer Tropsch process, hydrogen from coal gasification;RER;kilogram;carbon monoxide, from RWGS
+cathode, NMC955, for Li-ion battery;GLO;kilogram;cathode, NMC955, for Li-ion battery
+21700 container production, for SIB battery;RER;kilogram;21700 container, for SIB battery
+anode production, NMMT, with fossil based precursor, for SIB battery;RER;kilogram;anode, NMMT, with fossil based precursor
+cathode production, NMMT, for SIB battery;RER;kilogram;cathode, NMMT
+electrolyte production, SIB;RER;kilogram;electrolyte, SIB
+NCA oxide;GLO;kilogram;NCA oxide
+carbon fiber production, fiber stabilization, carbonization, electrolysis and washing;RER;kilogram;carbon fiber, washed
+IBIS production, for Li-O2 battery;RER;kilogram;IBIS
+IBIS fasteners production, for Li-O2 battery;RER;kilogram;IBIS fasteners
+high voltage system production, for Li-O2 battery;RER;kilogram;high voltage system
+low voltage system production, for Li-O2 battery;RER;kilogram;low voltage system
+carbon dioxide, captured at cement production plant, integrated in fuel production chain;RER;kilogram;carbon dioxide, captured and reused
+radiator production, for Li-O2 battery;RER;kilogram;radiator
+manifolds production, for Li-O2 battery;RER;kilogram;manifolds
+clamps and fasteners production, for Li-O2 battery;RER;kilogram;clamps and fasteners
+pipe fitting production, for Li-O2 battery;RER;kilogram;pipe fitting
+thermal pad production, for Li-O2 battery;RER;kilogram;thermal pad
+crude Palm Oil extraction from FFBs at oil mill;ID;kilogram;crude Palm Oil extraction from FFBs at oil mill
+carbon monoxide, from RWGS, for Fischer Tropsch process, hydrogen from electrolysis;RER;kilogram;carbon monoxide, from RWGS
+CNT production, for Li-O2 battery;RER;kilogram;CNT
+aluminium current collector production, for Li-O2 battery;RER;kilogram;aluminium current collector
+lithium metal production, for Li-O2 battery;RER;kilogram;lithium metal
+copper current collector production, for Li-O2 battery;RER;kilogram;copper current collector
+electrolyte production, for Li-O2 battery;RER;kilogram;electrolyte
+separator manufacturing, for Li-O2 battery;RER;kilogram;separator
+multilayer film production, for Li-O2 battery;RER;kilogram;multilayer film
+terminals production, for Li-O2 battery;RER;kilogram;terminals
+NMC955 oxide;GLO;kilogram;NMC955 oxide
+carbon fiber production, exhaust gas treatment 2;RER;kilogram;carbon fiber production, exhaust gas treatment 2
+carbon fiber production, fiber winding and unwinding;RER;kilogram;carbon fiber, unwound
+carbon fiber production, exhaust gas treatment 1;RER;kilogram;carbon fiber production, exhaust gas treatment 1
+lithium foil production, for LiS battery;GLO;kilogram;lithium foil
+separator production, for LiS battery;GLO;kilogram;separator
+cathode production, for LiS battery;GLO;kilogram;cathode
+electrolyte mixing and feeding, for LiS battery;GLO;kilogram;electrolyte
+battery pouch production, for LiS battery;GLO;kilogram;battery pouch
+negative tab production, for LiS battery;GLO;kilogram;negative tab
+positive tab production, for LiS battery;GLO;kilogram;positive tab
+market for lithium hydroxide, battery grade;GLO;kilogram;lithium hydroxide, battery grade
+NCA hydroxide;GLO;kilogram;NCA hydroxide
+cleaning surface production, for SIB battery;RER;square meter;cleaning surface
+nickel plating;RER;square meter;nickel plating
+vinyl carbonate;GLO;kilogram;disodium disulphite
+sodium hexafluorophosphate production;RER;kilogram;sodium hexafluorophosphate
+farming and supply of Fresh Fruit Bunches (FFBs) for palm oil;ID;kilogram;fresh Fruit Bunches (FFBs) production
+binder production, PVDF, for SIB battery;RER;kilogram;binder, PVDF
+NMMT active material production, for SIB battery;RER;kilogram;NMMT active material
+carbon dioxide, captured from atmosphere, with a solvent-based direct air capture system, 1MtCO2;RER;kilogram;carbon dioxide, captured from atmosphere
+farming and supply of rapeseed;RER;kilogram;rapeseed cultivation
+RWGS catalyst;RER;kilogram;RWGS catalyst
+market for lithium carbonate, battery grade;GLO;kilogram;lithium carbonate, battery grade
+film extrusion process, lithium;RER;kilogram;film extrusion, lithium
+surface production process, lithium;RER;kilogram;surface production, lithium
+binder production, CMC-SBR, for SIB battery;RER;kilogram;binder, CMC-SBR
+hard carbon, from pitch, for SIB battery;RER;kilogram;hard carbon, from pitch
+pipeline, supercritical carbon dioxide;RER;kilometer;pipeline, supercritical carbon dioxide
+magnesium hydroxide production;RER;kilogram;magnesium hydroxide
+nickel carbonate production;RER;kilogram;nickel carbonate
+lithium hydroxide production, battery grade;GLO;kilogram;lithium hydroxide, battery grade
+1,2-Dichloro-1,1-difluoroethane (R-132b) production;RER;kilogram;r-132b
+NMC955 hydroxide;GLO;kilogram;NMC955 hydroxide
+direct air capture system, solvent-based, 1MtCO2;RER;unit;direct air capture system
+treatment of direct air capture system, solvent-based, 1MtCO2;RER;unit;direct air capture system
+cobalt sulfate production, from copper mining, economic allocation;CN;kilogram;cobalt sulfate
+aluminium foil production, for LiS battery;GLO;kilogram;aluminium foil
+CMK-3 production, for LiS battery;GLO;kilogram;CMK-3
+liTFSi, (CF3SO2)2NLi, production, for LiS battery;GLO;kilogram;liTFSi, (CF3SO2)2NLi
+DOL production, for LiS battery;GLO;kilogram;DOL
+liNO3 production, for LiS battery;GLO;kilogram;liNO3
+carbon fiber production, fiber relaxation;RER;kilogram;carbon fiber, relaxed
+lithium carbonate production, from Salar de Atacama;CL;kilogram;lithium carbonate, battery grade
+lithium carbonate production, from Salar de Olaroz;AR;kilogram;lithium carbonate, battery grade
+lithium carbonate production, from Salar de Cauchari-Olaroz;AR;kilogram;lithium carbonate, battery grade
+lithium carbonate production, from Salar del Hombre Muerto;AR;kilogram;lithium carbonate, battery grade
+lithium carbonate production, from Chaerhan salt lake;CN;kilogram;lithium carbonate, battery grade
+(CF3SO2)2NH production, for LiS battery;GLO;kilogram;(CF3SO2)2NH
+lithium carbonate precipitation 2;CL;kilogram;lithium carbonate, precipitated
+lithium carbonate precipitation 2, from Salar de Olaroz;AR;kilogram;lithium carbonate, precipitated
+water, pure, via reverse osmosis;AR;kilogram;water, pure
+lithium carbonate precipitation 2;CN;kilogram;lithium carbonate, precipitated
+water, pure, via reverse osmosis;CN;kilogram;water, pure
+carbon fiber production, fiber coagulation, stretching, washing, sizing and drying;RER;kilogram;carbon fiber, dried
+cobalt hydroxide, via hydrometallurigcal ore procesing, economic allocation;CD;kilogram;cobalt hydroxide
+disodium disulphite;GLO;kilogram;disodium disulphite
+SBA-15 production, for LiS battery;GLO;kilogram;SBA-15
+lithium carbonate precipitation 2, from Salar del Hombre Muerto;AR;kilogram;lithium carbonate, precipitated
+lithium carbonate precipitation 2, from Salar de Cauchari-Olaroz;AR;kilogram;lithium carbonate, precipitated
+lithium carbonate precipitation 1, from Salar de Olaroz;AR;kilogram;lithium carbonate, precipitated
+polyacrylonitrile production (PAN) by polymerisation;RER;kilogram;polyacrylonitrile
+copper-cobalt mining, artisanal;CD;kilogram;copper-cobalt ore
+copper-cobalt mining, industrial, economic allocation;CD;kilogram;copper-cobalt ore
+lithium carbonate precipitation 1;CN;kilogram;lithium carbonate, precipitated
+filtering, through water ion exchanger;CL;kilogram;filtering, through water ion exchanger
+lithium carbonate washing;CL;kilogram;lithium carbonate, washed
+(CF3SO2)2NNa production, for LiS battery;GLO;kilogram;(CF3SO2)2NNa
+pluronic P123 production, for LiS battery;GLO;kilogram;pluronic P123
+lithium carbonate precipitation 1, from Salar de Cauchari-Olaroz;AR;kilogram;lithium carbonate, precipitated
+lithium carbonate precipitation 1, from Salar del Hombre Muerto;AR;kilogram;lithium carbonate, precipitated
+lithium carbonate precipitation 1;CL;kilogram;lithium carbonate, precipitated
+lithium brine production, manganese removal, from Salar del Hombre Muerto;AR;kilogram;lithium brine, manganese-free
+lithium brine production, sulfate removal, from Salar de Cauchari-Olaroz;AR;kilogram;lithium brine, sulfate-free
+cF3SO2NNaSiMe3 production, for LiS battery;GLO;kilogram;cF3SO2NNaSiMe3
+trifluoromethanesulphonyl fluoride (CF3SO2F) production, for LiS battery;GLO;kilogram;trifluoromethanesulphonyl fluoride (CF3SO2F)
+lithium brine purifying, via membrane separation;CN;kilogram;lithium brine, purified
+lithium brine production, lime removal, from Salar de Cauchari-Olaroz;AR;kilogram;lithium brine, lime-free
+lithium brine production, lime removal;CL;kilogram;lithium brine, lime-free
+lithium brine filtering, via ion exchanger;CN;kilogram;lithium brine, filtered
+(Me3Si)2NH production, for LiS battery;GLO;kilogram;(Me3Si)2NH
+cF3SO2NHNa production, for LiS battery;GLO;kilogram;cF3SO2NHNa
+lithium brine production, boron removal, from Salar del Hombre Muerto;AR;kilogram;lithium brine, boron-free
+lithium brine production, manganese removal, from Salar de Cauchari-Olaroz;AR;kilogram;lithium brine, manganese-free
+lithium brine production, from evaporation pond, from Salar del Hombre Muerto;AR;kilogram;lithium brine, from evaporation pond
+dearomatized hydrocarbon fluid production;GLO;kilogram;dearomatized hydrocarbon fluid
+lithium brine production, from Li-ion selective adsorption;CN;kilogram;lithium brine, from Li-ion selective adsorption
+trimethylchlorosilane production, for LiS battery;GLO;kilogram;trimethylchlorosilane
+lithium brine production, manganese removal;CL;kilogram;lithium brine, manganese-free
+lithium brine production, boron removal, from Salar de Cauchari-Olaroz;AR;kilogram;lithium brine, boron-free
+lithium brine production, boron removal;CL;kilogram;lithium brine, boron-free
+lithium brine production, from evaporation pond;CL;kilogram;lithium brine, from evaporation pond
+lithium brine production, from evaporation pond, from Salar de Cauchari-Olaroz;AR;kilogram;lithium brine, from evaporation pond
+water, pure, via reverse osmosis;CL;kilogram;water, pure
+market for battery capacity, stationary (CONT scenario);GLO;kilowatt hour;electricity storage capacity
+lithium brine production, from evaporation pond, from Salar de Olaroz;AR;kilogram;lithium brine, from evaporation pond
+market for battery capacity, Li-ion, LFP, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, Li-ion, NMC111, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, Li-ion, NMC532, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, Li-ion, NMC622, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, Li-ion, NMC811, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, Li-ion, NMC955, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, Sodium-ion, SiB, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, redox-flow, Vanadium, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, lead acid, rechargeable, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery capacity, Sodium-Nickel-Chloride, Na-NiCl, stationary;GLO;kilowatt hour;electricity storage capacity
+market for battery, redox-flow, Vanadium;GLO;kilogram;battery, redox-flow, Vanadium
+market for used redox-flow battery;GLO;kilogram;used redox-flow battery
+treatment of stack, for VRFB system;RER;kilogram;used stack, for VRFB system
+treatment of electrolyte tank, for VRFB system;RER;kilogram;used electrolyte tank, for VRFB system
+treatment of electrolyte solution, for VRFB system;RER;kilogram;used electrolyte solution, for VRFB system
+treatment of periphericals, for VRFB system;RER;kilogram;used periphericals, for VRFB system
+vanadium-redox flow battery system assembly, 8.3 megawatt hour;RER;unit;vanadium-redox flow battery system
+vanadium-redox flow battery stack assembly;RER;unit;vanadium-redox flow battery stack
+vanadium electrolyte solution production;RER;kilogram;vanadium electrolyte solution
+electrolyte tank production, for VRFB system;RER;kilogram;electrolyte tank
+pumps assembly, for VRFB system;RER;kilogram;pumps, for VRFB system
+pipes assembly, for VRFB system;RER;kilogram;pipes, for VRFB system
+copper cable production, for VRFB system;RER;kilogram;copper cable, for VRFB system
+process control system assembly, for VRFB system;RER;kilogram;process control system, for VRFB system
+heat exchanger production, for VRFB system;RER;kilogram;heat exchanger, for VRFB system
+polyacrylonitrile-based electrode production, for VRFB system;RER;kilogram;polyacrylonitrile-based electrode, for VFRB system
+bipolar plate production, for VRFB system;RER;kilogram;bipolar plate, for VRFB system
+current collector production, for VRFB system;RER;kilogram;current collector, for VRFB system
+polyvinylchloride cell frame production, for VRFB system;RER;kilogram;polyvinylchloride cell frame, for VRFB system
+gasket production, FKM, for VRFB system;RER;kilogram;gasket, FKM
+stack frame assembly, for VRFB system;RER;kilogram;stack frame, for VRFB system
+vanadium pentoxide production;ZA;kilogram;vanadium pentoxide
+stack monitoring interface assembly, for VRFB system;RER;kilogram;stack monitoring interface, for VRFB system
+battery management system assembly, for VRFB system;RER;kilogram;battery management system, for VRFB system
+vanadium pentoxide bearing cast iron, production;ZA;kilogram;vanadium pentoxide bearing cast iron
+pre-reduced vanadium pentoxide bearing magnetite production;ZA;kilogram;pre-reduced vanadium pentoxide bearing magnetite
+vanadium bearing magnetite production;ZA;kilogram;vanadium bearing magnetite
+charging station, 500W;GLO;unit;charging station, 500W
+charging station, 100W;GLO;unit;charging station, 100W
+charging station, 3kW;GLO;unit;charging station, 3kW
+electric cargo bicycle production, without battery and motor;RER;unit;electric cargo bicycle, without battery and motor

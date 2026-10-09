@@ -41,10 +41,10 @@ SEWAGE_PRODUCTION = (
     "biomethane, from biogas upgrading, using amine scrubbing",
 )
 HYDROGEN = (
-    "hydrogen production, gaseous, 30 bar, from PEM electrolysis, from grid electricity",
+    "market for hydrogen, gaseous, low pressure",
     "RER",
     "kilogram",
-    "hydrogen, gaseous, 30 bar",
+    "hydrogen, gaseous, low pressure",
 )
 CAPTURE = (
     "carbon dioxide, captured from atmosphere, with a sorbent-based direct air "
@@ -101,7 +101,9 @@ def test_supply_recipe_preserves_bundled_indices_and_delivery_inputs():
     )
     expected[inputs[electricity]] = -0.314
     expected[inputs[DELIVERED]] = 1
-    np.testing.assert_array_equal(
+    # Premise compact stores source coefficients as float32. Retain the
+    # independent 2% delivery-loss expectation within that source precision.
+    np.testing.assert_allclose(
         matrix[:, :, inputs[DELIVERED], :],
         np.broadcast_to(expected[None, :, None], (2, len(inputs), 3)),
     )
@@ -179,7 +181,7 @@ def test_completed_biological_methane_supply_and_carbon(completed_inventory):
     np.testing.assert_array_equal(
         A[:, inputs[SEWAGE_PRODUCTION], inputs[DELIVERED], :], 0
     )
-    # Distinguish station compression from reactor, electrolysis and DAC inputs.
+    # Distinguish station compression from reactor, hydrogen-market and DAC inputs.
     np.testing.assert_allclose(-A[:, electricity, inputs[PRODUCTION], :], 1.55)
     np.testing.assert_allclose(-A[:, inputs[HYDROGEN], inputs[PRODUCTION], :], 0.5)
     np.testing.assert_allclose(-A[:, inputs[CAPTURE], inputs[PRODUCTION], :], 2.75)
@@ -235,7 +237,7 @@ def test_biological_methane_export_preserves_supplier_and_provenance(
     indices = inventory.inputs.copy()
     for _ in range(2):
         exports = inventory.export_lci(
-            ecoinvent_version="3.10", format="bw2io", directory=tmp_path
+            ecoinvent_version="3.12", format="bw2io", directory=tmp_path
         )
         assert len(exports) == 2
         for importer in exports:

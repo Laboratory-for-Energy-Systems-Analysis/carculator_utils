@@ -156,7 +156,7 @@ def test_simapro_file_and_string_use_the_same_brightpath_encoding(tmp_path):
     assert not (tmp_path / "unused").exists()
 
 
-@pytest.mark.parametrize("version", ["3.9", "3.10"])
+@pytest.mark.parametrize("version", ["3.9", "3.10", "3.12"])
 @pytest.mark.parametrize("software", ["brightway2", "simapro", "openlca"])
 @pytest.mark.parametrize("years", [(2025,), (2030, 2025)])
 def test_files_and_contents_preserve_years(software, version, years, tmp_path):

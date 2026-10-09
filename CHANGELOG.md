@@ -7,6 +7,14 @@ it has not yet been published. Older entries, where present, retain their origin
 
 - Remove import-time global warning suppression and refresh API/documentation contracts; shared sulfur-table reductions use explicit pandas axis arguments.
 
+### LCA background refresh
+
+- Rebuild A, the aligned activity index and all 57 B coefficient matrices from 13 isolated premise 2.5.4 databases using ecoinvent 3.12 cutoff. Preserve signed/non-unit production, weighted migrations and custom noise factors; fail on missing or ambiguous suppliers.
+- Replace NMC-523 with NMC-532 and the actual ecoinvent 5:3:2 chemistry. Existing physical/cost assumptions carry forward as documented priors.
+- Add reproducible build, compilation, completed-model and destination-audit scripts with pinned dependencies, source hashes and full/reduced Brightway parity checks.
+- Default exports to ecoinvent 3.12, resolve logical supplier labels and disaggregations, and reject unverified older supplier links. Refresh biological methanation to the latest source recipe's regional hydrogen market.
+- Select B files by exact filenames and validate A/B shapes and finite coefficients, preventing method names in directory paths from selecting the wrong matrices.
+
 ### Compatibility and installation
 
 - Require Python 3.12 (`>=3.12,<3.13`); older Python environments must be recreated.

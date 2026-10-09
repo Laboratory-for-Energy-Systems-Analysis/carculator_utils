@@ -139,7 +139,7 @@ def test_hydrogen_shares_and_vehicle_exchanges_survive_export(
     before = inventory.A.copy()
     indices_before = inventory.inputs.copy()
     exports = inventory.export_lci(
-        ecoinvent_version="3.10", format="bw2io", directory=tmp_path
+        ecoinvent_version="3.12", format="bw2io", directory=tmp_path
     )
     assert len(exports) == 3
     for yi, (year, importer) in enumerate(zip(YEARS, exports)):

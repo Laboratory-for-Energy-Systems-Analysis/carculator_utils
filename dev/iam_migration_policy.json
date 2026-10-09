@@ -1,0 +1,384 @@
+{
+  "source_version": "3.10",
+  "target_version": "3.12",
+  "retired_foreground": [
+    {
+      "label": [
+        "battery production, Li-ion, NMC622",
+        "GLO",
+        "kilogram",
+        "battery, Li-ion, NMC622"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    },
+    {
+      "label": [
+        "battery production, Li-ion, NMC523",
+        "GLO",
+        "kilogram",
+        "battery, Li-ion, NMC523"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    },
+    {
+      "label": [
+        "battery cell production, Li-ion, NMC523",
+        "GLO",
+        "kilogram",
+        "battery cell, Li-ion, NMC523"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    },
+    {
+      "label": [
+        "battery cell production, Li-ion, NMC622",
+        "GLO",
+        "kilogram",
+        "battery cell, Li-ion, NMC622"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    },
+    {
+      "label": [
+        "cathode, NMC622, for Li-ion battery",
+        "GLO",
+        "kilogram",
+        "cathode, NMC622, for Li-ion battery"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    },
+    {
+      "label": [
+        "cathode, NMC523, for Li-ion battery",
+        "GLO",
+        "kilogram",
+        "cathode, NMC523, for Li-ion battery"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    },
+    {
+      "label": [
+        "NMC523 oxide",
+        "GLO",
+        "kilogram",
+        "NMC523 oxide"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    },
+    {
+      "label": [
+        "NMC622 oxide",
+        "GLO",
+        "kilogram",
+        "NMC622 oxide"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    },
+    {
+      "label": [
+        "NMC523 hydroxide",
+        "GLO",
+        "kilogram",
+        "NMC523 hydroxide"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    },
+    {
+      "label": [
+        "NMC622 hydroxide",
+        "GLO",
+        "kilogram",
+        "NMC622 hydroxide"
+      ],
+      "reason": "Generic GLO intermediate is superseded by regional ecoinvent 3.12 NMC production chains, supplied by the global battery market. No runtime selector references this internal intermediate."
+    }
+  ],
+  "overrides": [
+    {
+      "label": [
+        "electricity production, at biomass-fired IGCC power plant, pre, pipeline 200km, storage 1000m",
+        "RER",
+        "kilowatt hour",
+        "electricity, high voltage"
+      ],
+      "targets": [
+        {
+          "label": [
+            "electricity production, at biomass-fired IGCC power plant, post, pipeline 200km, storage 1000m",
+            "RER",
+            "kilowatt hour",
+            "electricity, high voltage"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "The legacy inventory already consumes post-combustion wood-plant capture (0.9774 kg/kWh); updated source corrects the name and scales auxiliary inputs for the CCS efficiency penalty.",
+      "source": "premise 2.5.4 lci-BIGCC.xlsx; https://doi.org/10.1016/j.jclepro.2020.125680"
+    },
+    {
+      "label": [
+        "carbon dioxide, captured from atmosphere, with a sorbent-based direct air capture system, 100ktCO2",
+        "RER",
+        "kilogram",
+        "carbon dioxide, captured from atmosphere"
+      ],
+      "targets": [
+        {
+          "label": [
+            "carbon dioxide, captured, with a sorbent-based direct air capture system, 100ktCO2",
+            "RER",
+            "kilogram",
+            "carbon dioxide, captured"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Same DAC technology and capacity; select captured-only output, not capture-and-storage.",
+      "source": "premise 2.5.4 bundled direct-air-capture inventories"
+    },
+    {
+      "label": [
+        "treatment of fuel cell stack, 1MWe, AEC",
+        "RER",
+        "unit",
+        "used fuel cell stack, 1MWe, AEC"
+      ],
+      "targets": [
+        {
+          "label": [
+            "treatment of electrolyzer stack, 1MWe, AEC",
+            "RER",
+            "unit",
+            "used electrolyzer stack, 1MWe, AEC"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Premise renamed the end-of-life electrolyzer datasets; technology, capacity, location and unit are unchanged.",
+      "source": "premise 2.5.4 bundled electrolyzer inventory workbooks"
+    },
+    {
+      "label": [
+        "treatment of fuel cell balance of plant, 1MWe, AEC",
+        "RER",
+        "unit",
+        "used fuel cell balance of plant, 1MWe, AEC"
+      ],
+      "targets": [
+        {
+          "label": [
+            "treatment of electrolyzer balance of plant, 1MWe, AEC",
+            "RER",
+            "unit",
+            "used electrolyzer balance of plant, 1MWe, AEC"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Premise renamed the end-of-life electrolyzer datasets; technology, capacity, location and unit are unchanged.",
+      "source": "premise 2.5.4 bundled electrolyzer inventory workbooks"
+    },
+    {
+      "label": [
+        "treatment of fuel cell stack, 1MWe, SOEC",
+        "RER",
+        "unit",
+        "used fuel cell stack, 1MWe, SOEC"
+      ],
+      "targets": [
+        {
+          "label": [
+            "treatment of electrolyzer stack, 1MWe, SOEC",
+            "RER",
+            "unit",
+            "used electrolyzer stack, 1MWe, SOEC"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Premise renamed the end-of-life electrolyzer datasets; technology, capacity, location and unit are unchanged.",
+      "source": "premise 2.5.4 bundled electrolyzer inventory workbooks"
+    },
+    {
+      "label": [
+        "treatment of fuel cell balance of plant, 1MWe, SOEC",
+        "RER",
+        "unit",
+        "used fuel cell balance of plant, 1MWe, SOEC"
+      ],
+      "targets": [
+        {
+          "label": [
+            "treatment of electrolyzer balance of plant, 1MWe, SOEC",
+            "RER",
+            "unit",
+            "used electrolyzer balance of plant, 1MWe, SOEC"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Premise renamed the end-of-life electrolyzer datasets; technology, capacity, location and unit are unchanged.",
+      "source": "premise 2.5.4 bundled electrolyzer inventory workbooks"
+    },
+    {
+      "label": [
+        "carbon dioxide, captured at municipal solid waste incineration plant, for subsequent reuse",
+        "RER",
+        "kilogram",
+        "carbon dioxide, captured and reused"
+      ],
+      "targets": [
+        {
+          "label": [
+            "carbon dioxide, captured, at municipal solid waste incineration plant, for subsequent reuse",
+            "RER",
+            "kilogram",
+            "carbon dioxide, captured"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Same MSWI capture process, with standardized captured-CO2 product naming.",
+      "source": "premise 2.5.4 lci-carbon-capture.xlsx"
+    },
+    {
+      "label": [
+        "treatment of fuel cell stack, 1MWe, PEM",
+        "RER",
+        "unit",
+        "used fuel cell stack, 1MWe, PEM"
+      ],
+      "targets": [
+        {
+          "label": [
+            "treatment of electrolyzer stack, 1MWe, PEM",
+            "RER",
+            "unit",
+            "used electrolyzer stack, 1MWe, PEM"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Premise renamed the end-of-life electrolyzer datasets; technology, capacity, location and unit are unchanged.",
+      "source": "premise 2.5.4 bundled electrolyzer inventory workbooks"
+    },
+    {
+      "label": [
+        "treatment of fuel cell balance of plant, 1MWe, PEM",
+        "RER",
+        "unit",
+        "used fuel cell balance of plant, 1MWe, PEM"
+      ],
+      "targets": [
+        {
+          "label": [
+            "treatment of electrolyzer balance of plant, 1MWe, PEM",
+            "RER",
+            "unit",
+            "used electrolyzer balance of plant, 1MWe, PEM"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Premise renamed the end-of-life electrolyzer datasets; technology, capacity, location and unit are unchanged.",
+      "source": "premise 2.5.4 bundled electrolyzer inventory workbooks"
+    },
+    {
+      "label": [
+        "carbon dioxide, captured from atmosphere, with a solvent-based direct air capture system, 1MtCO2",
+        "RER",
+        "kilogram",
+        "carbon dioxide, captured from atmosphere"
+      ],
+      "targets": [
+        {
+          "label": [
+            "carbon dioxide, captured, with a solvent-based direct air capture system, 1MtCO2",
+            "RER",
+            "kilogram",
+            "carbon dioxide, captured"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Same DAC technology and capacity; select captured-only output, not capture-and-storage.",
+      "source": "premise 2.5.4 bundled direct-air-capture inventories"
+    },
+    {
+      "label": [
+        "nickel carbonate production",
+        "RER",
+        "kilogram",
+        "nickel carbonate"
+      ],
+      "targets": [
+        {
+          "label": [
+            "nickel carbonate production",
+            "RER",
+            "kilogram",
+            "nickel carbonate, anhydrous, at plant"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Reference product renamed; process, location and unit unchanged.",
+      "source": "premise 2.5.4 bundled supplementary inventories"
+    },
+    {
+      "label": [
+        "market for chemical, organic",
+        "GLO",
+        "kilogram",
+        "chemical, organic"
+      ],
+      "targets": [
+        {
+          "label": [
+            "market for chemical, organic, basic precursors and materials",
+            "GLO",
+            "kilogram",
+            "chemical, organic, basic precursors and materials"
+          ],
+          "weight": 1.0
+        }
+      ],
+      "reason": "Published migration contains two conflicting targets. The basic-precursors product preserves the source reference-product UUID 2be73167-58e8-4706-a68f-167c80df9f72 and CPC 341; the unspecified product has a different UUID.",
+      "source": "ecoinvent 3.10 and 3.12 source EcoSpold metadata; official ecoinvent 3.11-to-3.12 migration"
+    }
+  ],
+  "logical_renames": [
+    {
+      "old": [
+        "market for battery, Li-ion, NMC523",
+        "GLO",
+        "kilogram",
+        "battery, Li-ion, NMC523"
+      ],
+      "new": [
+        "market for battery, Li-ion, NMC532, rechargeable",
+        "GLO",
+        "kilogram",
+        "battery, Li-ion, NMC532, rechargeable"
+      ],
+      "reason": "User-approved replacement of NMC523 by NMC532 (Ni:Mn:Co = 5:3:2). This changes the chemistry; the old supplier is not chemically equivalent.",
+      "source": "ecoinvent 3.12 NMC532 hydroxide dataset metadata; Winjobi, Dai, Kelly (2020), GREET battery bill of materials"
+    },
+    {
+      "old": [
+        "market for battery capacity, Li-ion, NMC523, stationary",
+        "GLO",
+        "kilowatt hour",
+        "electricity storage capacity"
+      ],
+      "new": [
+        "market for battery capacity, Li-ion, NMC532, stationary",
+        "GLO",
+        "kilowatt hour",
+        "electricity storage capacity"
+      ],
+      "reason": "User-approved replacement of NMC523 by NMC532 (Ni:Mn:Co = 5:3:2). This changes the chemistry; the old supplier is not chemically equivalent.",
+      "source": "ecoinvent 3.12 NMC532 hydroxide dataset metadata; Winjobi, Dai, Kelly (2020), GREET battery bill of materials"
+    }
+  ]
+}

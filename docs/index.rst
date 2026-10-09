@@ -39,6 +39,7 @@ User's Guide
    electricity_lifetime
    electricity_scenarios
    electricity_coverage
+   background_rebuild
    bev_target_range_issue
    hot_emission_audit
    energy_validation_2025

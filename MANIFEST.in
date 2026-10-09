@@ -3,5 +3,9 @@ recursive-include carculator_utils/data *.json *.yaml *.yml *.csv *.npz *.xlsx
 recursive-include tests *.py *.json *.xlsx
 recursive-include scripts *.py
 prune dev
+include dev/rebuild_iam.py dev/rebuild_iam_databases.py dev/compile_iam_matrices.py
+include dev/iam_matrix_tools.py dev/update_iam_b_matrices.py
+include dev/validate_iam_models.py dev/validate_iam_exports.py
+include dev/iam_foreground.csv dev/iam_migration_policy.json dev/iam-build-requirements.txt
 prune examples
 global-exclude .DS_Store *.pyc

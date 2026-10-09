@@ -157,7 +157,7 @@ def test_default_shares_and_carbon_survive_export(completed_inventory, tmp_path)
     inventory = inventory_type(selected, scenario="static", functional_unit="vkm")
     before = inventory.A.copy()
     exports = inventory.export_lci(
-        ecoinvent_version="3.10", format="bw2io", directory=tmp_path
+        ecoinvent_version="3.12", format="bw2io", directory=tmp_path
     )
     assert len(exports) == 3
     (transport,) = inventory.find_input_indices(
