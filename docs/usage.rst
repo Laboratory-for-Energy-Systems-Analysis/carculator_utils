@@ -36,6 +36,39 @@ use ``(powertrain, size, year)`` keys; consult the model API for exceptions.
 Repeated ``set_all()`` calls on an already completed model are not the supported
 way to compare independent scenarios.
 
+Fuel blends after year selection
+--------------------------------
+
+Fuel-share and property vectors follow the input array's year order at model
+construction. The model retains those source-year labels, so a completed model
+can be copied and narrowed or reordered before constructing an inventory:
+
+.. code-block:: python
+
+   from copy import deepcopy
+   from carculator import InventoryCar
+
+   # model is a completed CarModel containing 2025 and 2030.
+   selected = deepcopy(model)
+   selected.array = selected.array.sel(year=[2030, 2025])
+   inventory = InventoryCar(selected)
+   aligned_blend = selected.get_fuel_blend()
+
+``get_fuel_blend()`` returns an independent copy in current array-year order;
+``get_fuel_blend([2025])`` requests an explicit subset. ``inventory.fuel_blend``
+returns a copy aligned to the inventory's year scope. The original
+``model.fuel_blend`` dictionary remains in constructor-year order: do not trim
+its vectors manually when selecting the model array. Scalars still apply to
+every year, and supplier identities remain unchanged. Heating values, densities,
+CO2 factors and biogenic fractions follow the same labels as the fuel shares.
+
+Selecting years does not create a new fuel scenario or rerun sizing. For new
+years, interpolation or different blend assumptions, build a fresh model from
+the corresponding inputs. Unknown years, malformed vectors and missing
+source-year provenance raise an explicit error instead of guessing. Rebuild
+fuel-using model objects saved before this correction, because they lack those
+labels. See :ref:`fuel-blend-year-selection` for validation and impact examples.
+
 Energy and results
 ------------------
 

@@ -39,6 +39,7 @@ def test_missing_supplier_fails_before_inventory_matrix_allocation(monkeypatch):
     class MinimalModel:
         array = model.array
         fuel_blend = model.fuel_blend
+        _fuel_blend_years = (2020,)
 
         def __getitem__(self, parameter):
             return self.array.sel(parameter=parameter)

@@ -29,6 +29,7 @@ from .electricity import (
     ElectricityDataWarning,
     select_electricity_mix,
 )
+from .fuel_blends import select_fuel_blend
 from .fuel_supply import fill_fuel_suppliers, register_fuel_suppliers
 from .hydrogen_power import (
     fill_hydrogen_power,
@@ -280,8 +281,9 @@ class Inventory:
         self.background_configuration.update(background_configuration or {})
 
         self.inputs = get_dict_input()
-        fuel_supply_recipes = register_fuel_suppliers(self.inputs, self.vm.fuel_blend)
-        validate_fuel_mappings(self.vm.fuel_blend, self.inputs)
+        fuel_blend = self.fuel_blend
+        fuel_supply_recipes = register_fuel_suppliers(self.inputs, fuel_blend)
+        validate_fuel_mappings(fuel_blend, self.inputs)
 
         self.bs = BackgroundSystemModel(
             electricity_scenario=self.background_configuration.get(
@@ -337,6 +339,15 @@ class Inventory:
         self.fill_in_A_matrix()
         self.remove_non_compliant_vehicles()
         specialize_electricity_supplies(self)
+
+    @property
+    def fuel_blend(self):
+        """Return fuel metadata aligned to this inventory's year scope, on a copy."""
+        return select_fuel_blend(
+            self.vm.fuel_blend,
+            getattr(self.vm, "_fuel_blend_years", None),
+            self.scope["year"],
+        )
 
     def get_results_table(self, sensitivity: bool = False) -> xr.DataArray:
         """
@@ -1009,11 +1020,12 @@ class Inventory:
         ] = -1
 
         # fuel datasets
-        for fuel_type in self.vm.fuel_blend:
+        fuel_blend = self.fuel_blend
+        for fuel_type in fuel_blend:
             self.find_input_requirement(
                 value_in="kilowatt hour",
                 find_input_by="unit",
-                value_out=self.vm.fuel_blend[fuel_type]["primary"]["name"][0],
+                value_out=fuel_blend[fuel_type]["primary"]["name"][0],
                 replace_by=self.find_input_indices(
                     ("electricity supply for fuel preparation",)
                 ),
@@ -1021,25 +1033,25 @@ class Inventory:
             self.find_input_requirement(
                 value_in="kilowatt hour",
                 find_input_by="unit",
-                value_out=self.vm.fuel_blend[fuel_type]["secondary"]["name"][0],
+                value_out=fuel_blend[fuel_type]["secondary"]["name"][0],
                 replace_by=self.find_input_indices(
                     ("electricity supply for fuel preparation",)
                 ),
             )
 
             for y, year in enumerate(self.scope["year"]):
-                primary_share = self.vm.fuel_blend[fuel_type]["primary"]["share"][y]
-                secondary_share = self.vm.fuel_blend[fuel_type]["secondary"]["share"][y]
+                primary_share = fuel_blend[fuel_type]["primary"]["share"][y]
+                secondary_share = fuel_blend[fuel_type]["secondary"]["share"][y]
                 fuel_market_index = self.find_input_indices(
                     (d_dataset_name[fuel_type],)
                 )
 
                 try:
                     primary_fuel_activity_index = self.inputs[
-                        self.vm.fuel_blend[fuel_type]["primary"]["name"]
+                        fuel_blend[fuel_type]["primary"]["name"]
                     ]
                     secondary_fuel_activity_index = self.inputs[
-                        self.vm.fuel_blend[fuel_type]["secondary"]["name"]
+                        fuel_blend[fuel_type]["secondary"]["name"]
                     ]
                 except KeyError:
                     raise KeyError(
@@ -1139,18 +1151,15 @@ class Inventory:
         :param fuel_type: fuel type
         :return: carbon intensity of fuel blend fossil, and biogenic
         """
-        primary_share = self.vm.fuel_blend[fuel_type]["primary"]["share"]
-        secondary_share = self.vm.fuel_blend[fuel_type]["secondary"]["share"]
+        blend = self.fuel_blend[fuel_type]
+        primary_share = blend["primary"]["share"]
+        secondary_share = blend["secondary"]["share"]
 
-        primary_CO2 = self.vm.fuel_blend[fuel_type]["primary"]["CO2"]
-        secondary_CO2 = self.vm.fuel_blend[fuel_type]["secondary"]["CO2"]
+        primary_CO2 = blend["primary"]["CO2"]
+        secondary_CO2 = blend["secondary"]["CO2"]
 
-        primary_biogenic_share = self.vm.fuel_blend[fuel_type]["primary"][
-            "biogenic share"
-        ]
-        secondary_biogenic_share = self.vm.fuel_blend[fuel_type]["secondary"][
-            "biogenic share"
-        ]
+        primary_biogenic_share = blend["primary"]["biogenic share"]
+        secondary_biogenic_share = blend["secondary"]["biogenic share"]
 
         return (
             primary_share * primary_CO2 * (1 - primary_biogenic_share)
@@ -1395,10 +1404,11 @@ class Inventory:
 
     def add_hydrogen_to_fuel_cell_vehicles(self) -> None:
         if "FCEV" in self.scope["powertrain"]:
+            blend = self.fuel_blend["hydrogen"]
             print(
                 "{} is completed by {}.".format(
-                    self.vm.fuel_blend["hydrogen"]["primary"]["type"],
-                    self.vm.fuel_blend["hydrogen"]["secondary"]["type"],
+                    blend["primary"]["type"],
+                    blend["secondary"]["type"],
                 ),
                 end="\n \t * ",
             )
@@ -1411,7 +1421,7 @@ class Inventory:
 
                 print(
                     f"in {year} _________________________________________ "
-                    f"{np.round(self.vm.fuel_blend['hydrogen']['secondary']['share'][y]* 100)}%",
+                    f"{np.round(blend['secondary']['share'][y]* 100)}%",
                     end=end_str,
                 )
 
@@ -1428,10 +1438,11 @@ class Inventory:
             )
 
     def display_fuel_blend(self, fuel) -> None:
+        blend = self.fuel_blend[fuel]
         print(
             "{} is completed by {}.".format(
-                self.vm.fuel_blend[fuel]["primary"]["type"],
-                self.vm.fuel_blend[fuel]["secondary"]["type"],
+                blend["primary"]["type"],
+                blend["secondary"]["type"],
             ),
             end="\n \t * ",
         )
@@ -1443,7 +1454,7 @@ class Inventory:
                 end_str = "\n \t * "
 
             print(
-                f"in {year} _________________________________________ {np.round(self.vm.fuel_blend[fuel]['secondary']['share'][y] * 100)}%",
+                f"in {year} _________________________________________ {np.round(blend['secondary']['share'][y] * 100)}%",
                 end=end_str,
             )
 
@@ -1586,7 +1597,7 @@ class Inventory:
             )
 
         non_fossil_share = np.zeros(len(self.scope["year"]))
-        for role, component in self.vm.fuel_blend["methane"].items():
+        for role, component in self.fuel_blend["methane"].items():
             try:
                 fraction = np.broadcast_to(
                     np.asarray(component["biogenic share"], dtype=float),

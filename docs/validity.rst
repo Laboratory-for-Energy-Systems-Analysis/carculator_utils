@@ -453,6 +453,55 @@ Run the checks with the sibling packages and optional export dependencies::
 
    CARCULATOR_REQUIRE_FAMILY=1 python -m pytest tests/test_fuel_density.py tests/test_fuel_blend_inventory.py
 
+.. _fuel-blend-year-selection:
+
+Fuel blends after selecting completed model years
+-------------------------------------------------
+
+Normalized fuel metadata retains the year labels used at model construction.
+Fuel markets, heating values, densities, fossil/non-fossil combustion CO2,
+methane-leakage origin fractions and printed blend summaries now select these
+values by year. Inventory construction reads an aligned copy; it does not
+rewrite the model's original blend dictionary.
+
+Previously, changing ``model.array`` from years ``[2025, 2030]`` to
+``[2030, 2025]`` left fuel-share and carbon-factor vectors in their original
+positions. The inventory could therefore silently supply the wrong blend and
+emit the wrong fossil/non-fossil CO2. Selecting a single year instead failed
+with a broadcasting error in CO2 assignment, even for default blends. The
+incorrect fuel-market shares also appeared in Brightway exports.
+
+A diagnostic Swiss ``Medium`` petrol-car run on ``WLTC`` uses 90% fossil petrol
+and 10% sugarbeet ethanol by mass in 2025, then 50% of each in 2030. Reversing
+the completed model's year order previously assigned 90% fossil petrol to
+2030 and reported **194.67 g fossil CO2/km**. The corrected result is
+**108.15 g fossil CO2/km**, matching the original model's 2030 result. These are
+direct fossil CO2 emissions, not life-cycle climate impacts; the diagnostic
+blend is an accounting test, not a fuel-compatibility recommendation.
+
+The paired audit completes 24 inventory/LCIA cases across cars, buses, trucks
+and two-wheelers: default and distinct-year blends, each in original order,
+reversed order and a single-year selection. All cases now complete, with
+year-correct fuel shares and fossil/biogenic CO2. Selected and reordered
+life-cycle results match the original year results. The eight original-order
+cases retain exactly the same fuel demand, direct CO2 and climate impacts.
+
+``tests/test_fuel_years.py`` checks year-specific shares and all four numeric
+properties, independent returned copies, recomputed heating value/density,
+deepcopy/pickle round trips, unknown or duplicate years, malformed vectors and
+missing provenance. ``tests/test_fuel_year_inventory.py`` adds completed runs
+for all four families with petrol, diesel, methane and hydrogen where
+supported, PHEVs and BEV controls, two named load samples, defaults and
+year-varying property overrides. It checks fuel-supply mass balance, methane
+losses, fossil/non-fossil CO2 and LCIA for reordered or individual 2025/2030
+years, plus repeated Brightway exports to ecoinvent 3.9 and 3.10. Exports leave
+the source matrix, index and model fuel metadata unchanged.
+
+These are selection and accounting checks, not new fuel assumptions or an
+empirical recalibration. See :doc:`usage` for the aligned-copy API and migration
+of older saved models that do not contain source-year labels.
+
+
 Fuel-blend inventory checks
 ----------------------------
 

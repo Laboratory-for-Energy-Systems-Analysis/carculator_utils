@@ -330,12 +330,6 @@ def test_same_completed_vehicle_has_same_sulfur_in_single_year_inventory(complet
         if key[2] == 2025
     }
     yi = list(model.array.year.values).index(2025)
-    for components in single.fuel_blend.values():
-        for component in components.values():
-            for key in ("share", "lhv", "density", "CO2", "biogenic share"):
-                value = np.asarray(component[key])
-                if value.ndim:
-                    component[key] = value[yi : yi + 1]
     inventory = inventory_type(single, scenario="static", functional_unit="vkm")
     impacts = inventory.calculate_impacts()
     assert np.isfinite(impacts).all()

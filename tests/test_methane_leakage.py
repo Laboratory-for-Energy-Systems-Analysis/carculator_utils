@@ -24,6 +24,7 @@ def minimal_inventory():
     }
     inventory.vm = SimpleNamespace(
         vehicle_type="car",
+        _fuel_blend_years=(2030, 2025),
         fuel_blend={
             "methane": {
                 "primary": {"share": np.array([0.25, 1]), "biogenic share": 0},
@@ -108,7 +109,7 @@ def test_invalid_carbon_origin_fails_before_inventory_mutation(fraction):
     inventory = minimal_inventory()
     inventory.vm.fuel_blend["methane"]["primary"]["biogenic share"] = fraction
     before = inventory.A.copy()
-    with pytest.raises(ValueError, match="Methane primary biogenic share"):
+    with pytest.raises(ValueError, match="(?i)methane.*primary.*biogenic share"):
         inventory.add_methane_leakage()
     np.testing.assert_array_equal(inventory.A, before)
 

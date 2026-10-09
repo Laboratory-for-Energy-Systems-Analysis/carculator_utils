@@ -17,6 +17,7 @@ from .energy_consumption import (
     get_default_driving_cycle_name,
     validate_hvac_indoor_temperature,
 )
+from .fuel_blends import select_fuel_blend
 from .hot_emissions import HotEmissionsModel
 from .noise_emissions import NoiseEmissionsModel
 from .numerical import iterate_until_converged
@@ -134,6 +135,8 @@ class VehicleModel:
         :param fuel_blend: Fuel-category overrides. Supplied categories replace
             their defaults; omitted categories retain country/year defaults for
             the selected powertrains. None or an empty dictionary uses defaults.
+            Year vectors follow the constructor array's year order. Use
+            ``get_fuel_blend()`` for an aligned copy after selecting model years.
         :param ambient_temperature: Celsius scalar or twelve monthly values for
             bus HVAC only. Other families use annual-average thermal-demand
             inputs and reject temperature overrides rather than ignoring them.
@@ -234,6 +237,7 @@ class VehicleModel:
             # Complete each override on its own: an omitted secondary component
             # uses the complementary share, not the country default's share.
             self.fuel_blend.update(self.check_fuel_blend(fuel_blend))
+        self._fuel_blend_years = tuple(self.array.year.values.tolist())
 
         self.ambient_temperature = ambient_temperature
         self.indoor_temperature = indoor_temperature
@@ -1566,6 +1570,22 @@ class VehicleModel:
                 )
         return fuel_blend
 
+    def get_fuel_blend(self, years=None) -> dict:
+        """Return a copy of fuel metadata aligned to selected model years.
+
+        The public ``fuel_blend`` dictionary retains constructor-year order.
+        Use this method after selecting or reordering ``array.year``; it also
+        aligns year-specific heating values, densities and carbon properties.
+
+        :param years: Original-year subset/order; defaults to current array years.
+        :returns: Independent component specifications for the requested years.
+        """
+        return select_fuel_blend(
+            self.fuel_blend,
+            getattr(self, "_fuel_blend_years", None),
+            self.array.year.values if years is None else years,
+        )
+
     def set_average_lhv(self) -> None:
         """
         Calculate blend LHV (MJ/kg) and density (kg/L) from mass shares.
@@ -1573,6 +1593,7 @@ class VehicleModel:
         Heating value is mass-weighted. Density assumes additive component
         volumes: one kg of blend occupies the sum of share/density litres.
         """
+        fuel_blend = self.get_fuel_blend()
 
         d_map_fuel = {
             "ICEV-p": "petrol",
@@ -1601,23 +1622,23 @@ class VehicleModel:
         ]:
             # calculate the average LHV based on fuel blend
             fuel_type = d_map_fuel[pt]
-            primary_name = self.fuel_blend[fuel_type]["primary"]["type"]
-            primary_fuel_share = self.fuel_blend[fuel_type]["primary"]["share"]
-            primary_fuel_lhv = self.fuel_blend[fuel_type]["primary"].get(
+            primary_name = fuel_blend[fuel_type]["primary"]["type"]
+            primary_fuel_share = fuel_blend[fuel_type]["primary"]["share"]
+            primary_fuel_lhv = fuel_blend[fuel_type]["primary"].get(
                 "lhv", self.bs.fuel_specs[primary_name]["lhv"]
             )
-            primary_fuel_density = self.fuel_blend[fuel_type]["primary"].get(
+            primary_fuel_density = fuel_blend[fuel_type]["primary"].get(
                 "density", self.bs.fuel_specs[primary_name]["density"]
             )
             fuel_volume_per_kg = np.array(primary_fuel_share) / primary_fuel_density
 
-            if "secondary" in self.fuel_blend[fuel_type]:
-                secondary_name = self.fuel_blend[fuel_type]["secondary"]["type"]
-                secondary_fuel_share = self.fuel_blend[fuel_type]["secondary"]["share"]
-                secondary_fuel_lhv = self.fuel_blend[fuel_type]["secondary"].get(
+            if "secondary" in fuel_blend[fuel_type]:
+                secondary_name = fuel_blend[fuel_type]["secondary"]["type"]
+                secondary_fuel_share = fuel_blend[fuel_type]["secondary"]["share"]
+                secondary_fuel_lhv = fuel_blend[fuel_type]["secondary"].get(
                     "lhv", self.bs.fuel_specs[secondary_name]["lhv"]
                 )
-                secondary_fuel_density = self.fuel_blend[fuel_type]["secondary"].get(
+                secondary_fuel_density = fuel_blend[fuel_type]["secondary"].get(
                     "density", self.bs.fuel_specs[secondary_name]["density"]
                 )
                 fuel_volume_per_kg = (
