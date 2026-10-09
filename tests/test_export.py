@@ -12,6 +12,48 @@ from carculator_utils.export import ExportInventory
 
 
 @pytest.mark.parametrize(
+    "base_name,reference_product",
+    [
+        ("supply and refining of waste cooking oil", "vegetable oil, refined"),
+        (
+            "carbon fiber production, exhaust gas treatment 1",
+            "carbon fiber production, exhaust gas treatment 1",
+        ),
+        (
+            "carbon fiber production, exhaust gas treatment 2",
+            "carbon fiber production, exhaust gas treatment 2",
+        ),
+    ],
+)
+def test_manufactured_products_with_waste_terms_keep_their_links(
+    base_name, reference_product
+):
+    exporter = ExportInventory.__new__(ExportInventory)
+    exporter.references = {}
+    exporter.flow_map = {}
+    name = f"{base_name} [for Medium - FCEV]"
+    fuel = {
+        "name": name,
+        "location": "RER",
+        "unit": "kilogram",
+        "reference product": reference_product,
+    }
+    activity = {**fuel, "exchanges": [{**fuel, "type": "production", "amount": 1}]}
+    consumer = {
+        "name": "fuel supply example",
+        "location": "CH",
+        "unit": "kilogram",
+        "reference product": "fuel",
+        "exchanges": [{**fuel, "type": "technosphere", "amount": 0.5}],
+    }
+    rows = exporter.format_data_for_lci_for_simapro([activity, consumer], "3.10")
+    product = f"{name.capitalize()} {{RER}} | Cut-off U"
+    assert any(len(row) == 6 and row[0] == product for row in rows)
+    assert any(len(row) == 7 and row[0] == product for row in rows)
+    assert not any(len(row) == 5 and row[0] == product for row in rows)
+
+
+@pytest.mark.parametrize(
     "metadata,reference,expected",
     [
         (

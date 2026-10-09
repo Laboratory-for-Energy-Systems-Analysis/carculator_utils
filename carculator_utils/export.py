@@ -551,6 +551,14 @@ class ExportInventory:
                     )
                 )
                 and "biomethane" not in a["name"].lower()
+                and not a["name"]
+                .lower()
+                .startswith(
+                    (
+                        "supply and refining of waste cooking oil",
+                        "carbon fiber production,",
+                    )
+                )
                 else "process"
             )
             category = "carculator"
@@ -687,6 +695,8 @@ class ExportInventory:
                                         "Biomethane",
                                         "biogas upgrading",
                                         "anaerobic digestion, with biogenic carbon uptake",
+                                        "supply and refining of waste cooking oil",
+                                        "carbon fiber production,",
                                     ]
                                 )
                                 or any(
@@ -884,6 +894,7 @@ class ExportInventory:
                                             "cooking",
                                             "heat",
                                             "manual dismantling",
+                                            "carbon fiber production,",
                                         )
                                     )
                                     and e["unit"] not in ["kilowatt hour", "megajoule"]
