@@ -253,6 +253,9 @@ def test_tyndp_runs_in_each_vehicle_family(
     _, array = package.fill_xarray_from_input_parameters(
         ip, scope={"size": [size], "powertrain": [powertrain], "year": [2040]}
     )
+    # Isolate electricity supply from climate: an explicit illustrative bus profile.
+    if prefix == "Bus":
+        kwargs = {**kwargs, "ambient_temperature": 20.0}
     model = getattr(package, prefix + "Model")(array, country=country, **kwargs)
     model.set_all()
     before = model.array.copy(deep=True)

@@ -303,6 +303,9 @@ def test_completed_family_scenarios_preserve_energy_and_change_electricity(
     _, array = module.fill_xarray_from_input_parameters(
         inputs, scope={"size": [size], "powertrain": [powertrain], "year": [2030]}
     )
+    # Isolate electricity supply from climate: an explicit illustrative bus profile.
+    if prefix == "Bus":
+        kwargs = {**kwargs, "ambient_temperature": 20.0}
     model = getattr(module, prefix + "Model")(array, country="US", **kwargs)
     model.set_all()
     original = model.array.copy(deep=True)
