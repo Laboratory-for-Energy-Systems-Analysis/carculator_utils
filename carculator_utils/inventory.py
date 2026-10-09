@@ -958,28 +958,26 @@ class Inventory:
             "electricity supply for fuel preparation", losses_to_low
         )
 
-    def get_sulfur_content(self, location, fuel):
+    def get_sulfur_content(self, location, fuel) -> xr.DataArray:
         """
-        Return the sulfur content in the fuel.
-        If a region is passed, the average sulfur content over
-        the countries the region contains is returned.
+        Return sulfur mass fractions in the requested inventory year order.
 
-        :param year:
+        Unknown locations use the bundled European (RER) values. Fuels absent
+        from the sulfur table retain the existing zero-sulfur assumption.
+
         :param location: str. A country or region ISO code
         :param fuel: str. "diesel" or "petrol"
-        :return: float. Sulfur content in ppm.
+        :return: A private year-labelled array in kg S/kg fuel (ppm / 1e6).
         """
 
         if fuel not in self.bs.sulfur.fuel.values:
-            return 0
-
-        if location in self.bs.sulfur.country.values:
-            sulfur_concentration = (
-                self.bs.sulfur.sel(country=location, year=self.scope["year"], fuel=fuel)
-                .sum()
-                .values
+            return xr.DataArray(
+                np.zeros(len(self.scope["year"])),
+                dims="year",
+                coords={"year": self.scope["year"]},
             )
-        else:
+
+        if location not in self.bs.sulfur.country.values:
             # If the geography is not found,
             # we use the European average
 
@@ -988,14 +986,11 @@ class Inventory:
                 f"could not be found."
                 "European average sulfur content is used instead."
             )
+            location = "RER"
 
-            sulfur_concentration = (
-                self.bs.sulfur.sel(country="RER", year=self.scope["year"], fuel=fuel)
-                .sum()
-                .values
-            )
-
-        return sulfur_concentration
+        return self.bs.sulfur.sel(
+            country=location, year=self.scope["year"], fuel=fuel, drop=True
+        ).copy(deep=True)
 
     def create_fuel_markets(self):
         """
@@ -1496,44 +1491,28 @@ class Inventory:
             self.A[:, row, columns] = -burned_fuel * intensity
 
     def add_sulphur_emissions(self, fuel, powertrain_short, powertrains) -> None:
-        # Fuel-based SO2 emissions
-        # Sulfur concentration value for a given country, a given year, as concentration ratio
-
+        """Apply each year's kg S/kg fuel to fuel use, yielding kg SO2/km."""
         sulfur_concentration = self.get_sulfur_content(self.vm.country, fuel)
-        idx = [f"transport, {self.vm.vehicle_type}, ", powertrain_short]
-        _ = lambda x: np.where(x == 0, 1, x)
-
-        if sulfur_concentration:
-            self.A[
-                :,
-                self.inputs[("Sulfur dioxide", ("air",), "kilogram")],
-                self.find_input_indices(
-                    contains=tuple(idx),
-                    excludes=("BEV",),
-                ),
-            ] = (
-                self.array.sel(
-                    parameter="fuel mass",
-                    combined_dim=[
-                        d
-                        for d in self.array.coords["combined_dim"].values
-                        if any(x in d for x in powertrains)
-                    ],
-                )
-                / _(
-                    self.array.sel(
-                        parameter=RANGE_PARAM[self.vm.vehicle_type],
-                        combined_dim=[
-                            d
-                            for d in self.array.coords["combined_dim"].values
-                            if any(x in d for x in powertrains)
-                        ],
-                    )
-                )
-                * -1
-                * sulfur_concentration
-                * (64 / 32)  # molar mass of SO2/molar mass of O2
-            )
+        selected = self.array.sel(
+            combined_dim=[
+                label
+                for label in self.array.coords["combined_dim"].values
+                if any(powertrain in label for powertrain in powertrains)
+            ]
+        )
+        distance = selected.sel(parameter=RANGE_PARAM[self.vm.vehicle_type])
+        fuel_per_km = selected.sel(parameter="fuel mass") / distance.where(
+            distance != 0, 1
+        )
+        emissions = fuel_per_km * sulfur_concentration * (64 / 32)  # SO2 / S molar mass
+        columns = self.find_input_indices(
+            contains=(f"transport, {self.vm.vehicle_type}, ", powertrain_short),
+            excludes=("BEV",),
+        )
+        row = self.inputs[("Sulfur dioxide", ("air",), "kilogram")]
+        self.A[:, row, columns, :] = -emissions.transpose(
+            "value", "combined_dim", "year"
+        ).values
 
     def add_fuel_to_vehicles(self, fuel, powertrains, powertrains_short) -> None:
         if [i for i in self.scope["powertrain"] if i in powertrains]:

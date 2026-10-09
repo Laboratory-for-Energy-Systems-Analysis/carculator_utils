@@ -1164,9 +1164,13 @@ The amount of sulfur dioxide released by the vehicle over one km [kg/km] is calc
 
 Where:
 
-- :math:`r_{S}` is the sulfur content per kg of fuel [kg SO2/kg fuel],
+- :math:`r_{S}` is the year-specific sulfur content per kg of fuel [kg S/kg fuel],
 - :math:`F_{fuel}` is the fuel consumption of the vehicle [kg/km],
-- and :math:`64/32` is the ratio between the molar mass of SO2 and the molar mass of O2.
+- and :math:`64/32` is the ratio between the molar mass of SO2 and the atomic molar mass of S.
+
+Each inventory year uses its own sulfur concentration. Concentrations are not
+summed across selected years. See :ref:`sulfur-year-accounting` for the corrected
+multi-year behavior, fallback assumptions and verification scope.
 
 Country-specific fuel blends are sourced from the IEA's Extended World
 Energy Balances database :cite:`ct-1045`. By default, the biofuel used is assumed

@@ -247,6 +247,49 @@ exports of a retained sample preserve these exchanges and the source inventory.
 These checks validate implementation of the supply assumption; they do not
 validate national hydrogen production shares or upstream production datasets.
 
+.. _sulfur-year-accounting:
+
+Sulfur emissions by inventory year
+----------------------------------
+
+Fuel-based SO2 emissions use the sulfur concentration for each vehicle's
+inventory year. Concentrations are kg elemental S/kg fuel; 1 ppm by mass is
+``1e-6`` in these units. The molecular-mass conversion from S to SO2 is
+``64 / 32``. Missing country codes retain the bundled European (RER) fallback
+and its notice. Fuels without a sulfur-table entry retain the existing zero
+assumption. The bundled concentrations and the assumption that biofuels use
+the same concentration as their conventional fuel category are unchanged.
+
+Previously the lookup summed sulfur concentrations across all selected years
+and applied that scalar to every vehicle. Selecting 2020, 2025 and 2030, for
+example, tripled Swiss diesel's applied concentration from 10 to 30 ppm,
+and petrol's from 8 to 24 ppm. With differing concentrations, a historical
+year could also inflate future-year emissions. Recalculate multi-year
+inventories and exports to correct these SO2 exchanges and their LCIA effects.
+This repair changes the year lookup while retaining the existing fuel-mass
+and distance basis of the SO2 calculation.
+
+``Inventory.get_sulfur_content(location, fuel)`` now returns a private
+``xarray.DataArray`` with a ``year`` dimension in inventory order, including
+for a single year. Direct callers can use ``.sel(year=2025).item()`` to obtain
+one scalar. A zero concentration writes zero emissions and can clear a
+previously populated SO2 exchange when recalculating.
+
+``tests/test_sulfur_emissions.py`` checks distinct yearly concentrations,
+zero endpoints, reordered years and dimensions, country fallback, multiple
+sizes/samples and preservation of unrelated exchanges. Completed car, bus,
+truck and two-wheeler models cover conventional engines and non-plug-in
+hybrids, with BEV and methane controls. Independent expectations multiply
+inventoried liquid-fuel mass by the bundled sulfur fraction and ``64 / 32``.
+Single-year inventories are built from the same completed vehicles to isolate
+inventory behavior from sizing. LCIA must remain finite, and annual exports
+of a retained sample must preserve the SO2 exchanges and source inventory.
+These are accounting checks, not new measurements of fuel sulfur content.
+
+Run with the sibling packages and optional export dependencies::
+
+   CARCULATOR_REQUIRE_FAMILY=1 python -m pytest tests/test_sulfur_emissions.py
+
 .. _fuel-blend-density:
 
 Fuel-blend density and volume checks
