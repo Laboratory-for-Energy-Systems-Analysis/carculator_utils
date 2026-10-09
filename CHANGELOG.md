@@ -15,6 +15,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Retain provided, derived, not-applicable and missing input coverage on generated arrays. Reject missing declared inputs for active vehicles before full sizing, including gaps across year interpolation; document explicit zero overrides.
+
 - Limit the public road-fuel catalogue to resolvable delivery chains. Report eleven unavailable or ambiguous choices with explicit reasons at model construction instead of failing after a completed run.
 
 - Correct synthetic methanol diesel carbon-source supplier swaps and the petrol energy-allocation alias. Verify named suppliers in completed inventories across all four vehicle families; see docs/fuel_catalogue.rst.

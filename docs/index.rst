@@ -32,6 +32,7 @@ User's Guide
    validity
    biological_methane
    fuel_catalogue
+   input_completeness
    methane_leakage
    electricity_lifetime
    electricity_scenarios

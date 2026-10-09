@@ -170,6 +170,18 @@ class VehicleInputParameters(NamedParameters):
         extra = set(extra)
 
         validate_parameters(parameters, check_duplicates=using_defaults)
+        schema = (
+            parameters
+            if using_defaults or not self.DEFAULT.exists()
+            else load_parameters(self.DEFAULT)
+        )
+        self._expected_input_records = [
+            {
+                field: deepcopy(record[field])
+                for field in ("name", "sizes", "powertrain", "year")
+            }
+            for record in schema.values()
+        ]
         self.sizes = sorted(
             {size for o in parameters.values() for size in o.get("sizes", [])}
         )
@@ -177,7 +189,9 @@ class VehicleInputParameters(NamedParameters):
             {pt for o in parameters.values() for pt in o.get("powertrain", [])}
         )
         self.parameters = sorted(
-            {o["name"] for o in parameters.values()}.union(set(extra))
+            {o["name"] for o in parameters.values()}
+            .union(set(extra))
+            .union(record["name"] for record in self._expected_input_records)
         )
 
         # keep a list of input parameters, for sensitivity purpose

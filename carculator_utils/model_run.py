@@ -4,6 +4,8 @@ from functools import wraps
 
 import numpy as np
 
+from .input_completeness import validate_input_completeness
+
 
 def repeatable_run(method):
     """Rebuild from retained inputs, preserving explicit edits to completed cells.
@@ -51,6 +53,7 @@ def repeatable_run(method):
             inputs.loc[selection] = inputs.sel(selection).where(~changed, current)
         self.array = inputs.copy(deep=True)
         try:
+            validate_input_completeness(self)
             result = method(self, *args, **kwargs)
             if previous is not None:
                 order = [

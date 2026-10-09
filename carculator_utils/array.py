@@ -6,6 +6,7 @@ import xarray as xr
 
 from .battery_costs import SENSITIVITY, attach_references
 from .cost_uncertainty import attach_cost_factors
+from .input_completeness import attach_input_status
 from .vehicle_input_parameters import VehicleInputParameters as vip
 
 
@@ -220,5 +221,6 @@ def fill_xarray_from_input_parameters(input_parameters, sensitivity=False, scope
         {label: index for index, label in enumerate(array[dim].values.tolist())}
         for dim in ("size", "powertrain", "parameter", "year")
     )
+    array = attach_input_status(array, input_parameters)
     array = attach_references(array, input_parameters)
     return mappings, attach_cost_factors(array, input_parameters._cost_factors)
