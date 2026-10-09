@@ -25,6 +25,7 @@ User's Guide
    input_validation
    battery_costs
    cost_uncertainty
+   base_costs
    modeling
    structure
    validity

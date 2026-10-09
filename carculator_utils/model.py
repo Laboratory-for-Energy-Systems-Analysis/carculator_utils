@@ -20,7 +20,7 @@ from .energy_consumption import (
 from .fuel_blends import select_fuel_blend
 from .hot_emissions import HotEmissionsModel
 from .noise_emissions import NoiseEmissionsModel
-from .numerical import iterate_until_converged
+from .numerical import capital_recovery_factor, iterate_until_converged
 from .particulates_emissions import ParticulatesEmissionsModel
 
 REQUIRED_ARRAY_DIMS = ("size", "powertrain", "parameter", "year", "value")
@@ -1756,46 +1756,46 @@ class VehicleModel:
         self[to_markup] *= self["markup factor"]
 
         # calculate costs per km:
-        self["lifetime"] = self["lifetime kilometers"] / self["kilometers per year"]
+        annual_km = self["kilometers per year"]
+        safe_annual_km = annual_km.where(annual_km > 0, 1)
+        lifetime_years = self["lifetime kilometers"] / safe_annual_km
+        valid_lifetime = (annual_km > 0) & (lifetime_years > 0)
+        safe_lifetime_years = lifetime_years.where(valid_lifetime, 1)
+        self["lifetime"] = lifetime_years.where(valid_lifetime, 0)
 
         with open(self.DATA_DIR / "purchase_cost_params.yaml", "r") as stream:
             purchase_cost_params = yaml.safe_load(stream)["purchase"]
 
-        # if purchase cost is zero, we claculate it
-        if np.all(self["purchase cost"]) == 0:
-            self["purchase cost"] = self[purchase_cost_params].sum(axis=2)
+        self["purchase cost"] = xr.where(
+            self["purchase cost"] == 0,
+            self[purchase_cost_params].sum(dim="parameter"),
+            self["purchase cost"],
+        )
 
         # per km
-        amortisation_factor = self["interest rate"] + (
-            self["interest rate"]
-            / (
-                (np.array(1) + self["interest rate"]) ** self["lifetime kilometers"]
-                - np.array(1)
-            )
-        )
+        amortisation_factor = capital_recovery_factor(
+            self["interest rate"], safe_lifetime_years
+        ).where(valid_lifetime, 0)
         self["amortised purchase cost"] = (
-            self["purchase cost"] * amortisation_factor / self["kilometers per year"]
+            self["purchase cost"] * amortisation_factor / safe_annual_km
         )
 
         # per km
         self["maintenance cost"] = (
             self["maintenance cost per glider cost"]
             * self["glider cost"]
-            / self["kilometers per year"]
-        )
+            / safe_annual_km
+        ).where(valid_lifetime, 0)
 
         # simple assumption that component replacement
         # occurs at half of life.
         self["amortised component replacement cost"] = (
             (
                 self["component replacement cost"]
-                * (
-                    (np.array(1) - self["interest rate"]) ** self["lifetime kilometers"]
-                    / 2
-                )
+                * (1 + self["interest rate"]) ** (-safe_lifetime_years / 2)
             )
             * amortisation_factor
-            / self["kilometers per year"]
+            / safe_annual_km
         )
 
         self["total cost per km"] = (
