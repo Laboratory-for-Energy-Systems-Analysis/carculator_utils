@@ -592,6 +592,26 @@ class VehicleModel:
             self["fuel mass"] / _(self[var]) / _(self["fuel density per kg"])
         )
 
+    def set_electricity_costs(self, price_per_kwh) -> None:
+        """Bill electric modes using grid purchases, including charging losses.
+
+        Call after :meth:`set_electricity_consumption` and before PHEV assembly.
+        ``price_per_kwh`` is a scalar or labelled tariff in currency/kWh. For
+        passenger-km costs, pass the tariff divided by the passenger count.
+        Combined PHEVs retain the later utility-factor-weighted sum of electric
+        and combustion costs; other powertrains retain their fuel costs.
+        """
+        costs = self["energy cost"]
+        electric = costs.powertrain.isin(
+            ["BEV", "BEV-depot", "BEV-opp", "BEV-motion", "PHEV-e"]
+        )
+        if electric.any():
+            self["energy cost"] = xr.where(
+                electric,
+                self["electricity consumption"] * price_per_kwh,
+                costs,
+            )
+
     def override_ttw_energy(self):
         # override of TtW energy, provided by the user
         if self.energy_consumption:
@@ -1699,12 +1719,10 @@ class VehicleModel:
         # Per km
         self["energy cost"] = self["energy cost per kWh"] * self["TtW energy"] / 3600
 
-        # For battery, need to divide cost of electricity
-        # at battery by efficiency of charging
-        # to get costs at the "wall socket".
-
+        # Retain the fuel-cost convention; electric modes use grid purchases.
         _ = lambda x: np.where(x == 0, 1, x)
         self["energy cost"] /= _(self["battery charge efficiency"])
+        self.set_electricity_costs(self["energy cost per kWh"])
 
         self["component replacement cost"] = (
             self["energy battery cost"] * self["battery lifetime replacements"]

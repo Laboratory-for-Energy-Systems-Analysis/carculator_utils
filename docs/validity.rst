@@ -10,6 +10,42 @@ questions. The current evidence review separates analytical conservation tests,
 numerical convergence, fitted assumptions, held-out observations and screening
 comparisons with imperfectly matched cycles or meter boundaries.
 
+.. _charging-cost-accounting:
+
+Charging cost accounting
+------------------------
+
+Electricity running costs use grid purchases: ``electricity consumption`` in
+kWh/km times the electricity tariff. Grid consumption already includes both
+battery-charge and charger losses; neither efficiency is applied again when
+billing that electricity. Previously the cost formula omitted charger losses.
+At 90% charger efficiency it understated the electricity component by 10%; at
+80% efficiency it understated it by 20%. This correction changes costs, while
+preserving vehicle energy demand, inventory electricity exchanges and LCIA.
+
+BEVs and PHEV electric intermediates use this grid-based calculation. Combined
+PHEVs retain the utility-factor-weighted sum of electric and combustion costs,
+with the electric share applied once. Fuel-mode costs retain their existing
+convention. Tariffs and charging-efficiency assumptions have not been refitted.
+
+The shared ``VehicleModel.set_electricity_costs(price_per_kwh)`` helper runs
+after consumption and before PHEV assembly. Cars, trucks and two-wheelers report
+costs per vehicle-km; buses pass the tariff divided by passengers to retain
+costs per passenger-km. Trucks retain their depot/public tariff weighting.
+Depot infrastructure charges are a separate cost component.
+
+``tests/test_charging_costs.py`` completes model and LCIA runs in all four
+vehicle families, including all three bus electric strategies. It compares
+bills with inventoried electricity, tests labelled years/samples, distinct
+charger efficiencies, zero tariffs, truck charging shares and PHEV electric
+shares of 0%, 50% and 100%. The existing financial regressions retain independent
+discounted cash-flow expectations.
+
+Run the family checks with matching sibling checkouts::
+
+   CARCULATOR_REQUIRE_FAMILY=1 python -m pytest tests/test_charging_costs.py
+
+
 Current evidence
 ----------------
 
