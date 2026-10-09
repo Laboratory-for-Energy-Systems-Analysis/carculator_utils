@@ -15,6 +15,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Preserve default biofuel shares above 30% by replacing the universal cap with physical 0--100% bounds. Restore the bundled biomethane shares for Sweden, Norway and Iceland through fuel supply, combustion CO2, methane leakage and exports; retain interpolation, regional fallback and explicit blends. See [scope and verification](docs/validity.rst#default-biofuel-shares).
 - Validate fuel-property overrides before sizing: positive heating values and densities, nonnegative CO2 factors, and biogenic fractions within [0, 1]. Reject nonnumeric, nonfinite and malformed values for both components, including zero shares. Normalize year-specific properties and verify their mass/energy balance, fossil/non-fossil CO2 and exported inventories across all four families.
 - Reject known fuel types used under an incompatible blend category, such as hydrogen under diesel or petrol. Validate both components, including zero shares, during model construction with category, role and fuel context; retain supported fossil, biofuel and synthetic routes.
 - Treat custom fuel blends as overrides of supplied fuel categories, retaining country/year defaults for other selected fuels. Preserve complementary secondary shares and caller data; validate partial blends through completed family runs, fuel suppliers and fossil/non-fossil CO2. Mixed-powertrain comparisons no longer fail because an untouched fuel category is missing.

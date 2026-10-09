@@ -59,6 +59,11 @@ petrol, methane and hydrogen vehicles: those fuels retain their default blends.
 Previously, any nonempty override replaced the entire configuration, so omitted
 categories could cause ``KeyError`` during ``set_all()``.
 
+Default biofuel fractions are interpolated or extrapolated from the bundled
+country data with bounds of 0--100%. The former universal 30% cap has been
+removed, preserving supplied biomethane shares above that threshold. See
+:ref:`default-biofuel-shares` for the affected defaults and completed-run checks.
+
 Each supplied fuel category must have a primary component with a known fuel
 ``type`` and a ``share``. Shares must be finite numbers between zero and one.
 They may be scalars, one-element sequences, or one-dimensional sequences with

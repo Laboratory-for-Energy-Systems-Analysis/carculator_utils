@@ -201,9 +201,11 @@ class BackgroundSystemModel:
         return self.__class__.__name__
 
     def get_share_biofuel(self, fuel: str, country: str, years: List[int]) -> np.array:
-        """
-        Returns average share of biodiesel according to historical IEA stats
-        with an upper limit of 30% when extrapolating.
+        """Interpolate bundled country biofuel shares in the requested year order.
+
+        Retain supplied shares above 30%, including pure biofuel. Linear
+        extrapolation uses the physical fraction bounds [0, 1]. The source
+        arrays are unchanged; a single requested year retains scalar output.
         """
 
         map_array = {
@@ -222,7 +224,7 @@ class BackgroundSystemModel:
                 )
                 .values,
                 0,
-                0.3,
+                1,
             )
         )
         return share_biofuel

@@ -89,6 +89,54 @@ contract, not the stored array length. Custom cycles include all supplied
 samples, including terminal stops. Rate/grade provenance and power-feasibility
 checks remain necessary for measured-route comparisons.
 
+.. _default-biofuel-shares:
+
+Default biofuel shares
+----------------------
+
+Default blends now preserve the supplied fractions in the bundled country data.
+The shared interpolation previously clipped every biofuel share to 30%, including
+historical values and interpolation within the supplied years. The repair uses
+0--100% bounds for bioethanol, biodiesel and biomethane, retaining the existing
+linear interpolation/extrapolation and requested year order.
+
+``data/fuel/share_bio_cng.csv`` supplies these fractions at both 2018 and 2050;
+the corresponding interpolated 2025 defaults are therefore the same:
+
+.. list-table:: Bundled biomethane mass shares
+   :header-rows: 1
+
+   * - Country
+     - Supplied/repaired share
+     - Previously applied
+   * - Sweden
+     - 91.211681%
+     - 30%
+   * - Norway
+     - 38.2813676%
+     - 30%
+   * - Iceland
+     - 100%
+     - 30%
+
+These are preserved model inputs, not newly collected measurements for 2025.
+The repair does not update their historical sources or forecast assumptions.
+Explicit user blends continue to override the relevant default fuel category.
+
+Completed 2025 Swedish Medium gas-car runs give about 80 g fossil tailpipe
+CO2/km under the old cap, versus 10 g/km with the supplied share. Energy demand
+is identical. The change also affects the fossil/non-fossil split of additional
+methane leakage and upstream fuel-production impacts; total climate results
+must be recalculated for affected studies.
+
+``tests/test_biofuel_shares.py`` checks the three countries, lower-share controls,
+regional fallback, interpolation and extrapolation at both fraction bounds.
+Completed model/LCIA cases cover Medium cars, 13m-city buses and 40t long-haul
+trucks in all three countries, reordered 2020/2025/2030 years and two samples.
+Independent expectations check component purchases, engine fuel, combustion
+CO2 and methane leakage. Brightway exports of a retained sample preserve the
+shares and both carbon origins, including Iceland's 100% biomethane blend.
+
 Fuel-blend inventory checks
 ----------------------------
 
