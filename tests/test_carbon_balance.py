@@ -47,10 +47,27 @@ def test_completed_carbon_audit_and_explicit_reconciliation(
     assert (report.carbon_excess_lower_bound > 0).all()
     assert not report.attrs["closed_elemental_balance"]
     np.testing.assert_array_equal(inventory.A, before)
+    # Total HC is a diagnostic aggregate, never an additional carbon source.
+    aggregate = [
+        p
+        for p in inventory.array.parameter.values
+        if p.startswith("Hydrocarbons direct emissions,")
+    ]
+    inventory.array.loc[dict(parameter=aggregate)] *= 100
+    changed = inventory.carbon_balance()
+    np.testing.assert_array_equal(
+        report.unspecified_exhaust_mass, changed.unspecified_exhaust_mass
+    )
+    np.testing.assert_array_equal(
+        report.known_exhaust_carbon, changed.known_exhaust_carbon
+    )
+    with pytest.raises(ValueError, match="unsupported exhaust groups"):
+        inventory.reconcile_exhaust_carbon(
+            {"Hydrocarbons": 0.5}, source="Aggregate must not be counted again"
+        )
     # These are an explicit analytic scenario, not measured default fractions.
     fractions = {
         "Non-methane hydrocarbon": 0.8,
-        "Hydrocarbons": 0.5,
         "PAH, polycyclic aromatic hydrocarbons": 0.9,
         "Particulate matters": 0.7,
     }

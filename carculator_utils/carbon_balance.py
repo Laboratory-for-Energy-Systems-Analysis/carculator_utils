@@ -32,7 +32,6 @@ FORMULAS = {
 }
 UNSPECIFIED = (
     "Non-methane hydrocarbon",
-    "Hydrocarbons",
     "PAH, polycyclic aromatic hydrocarbons",
     "Particulate matters",
 )
@@ -72,7 +71,8 @@ def inventory_carbon_balance(inventory):
     Fuel carbon is inferred from the specified full-oxidation CO2 factor, not
     independently measured elemental composition. Unspecified HC/PM carbon is
     bounded by zero and the species' entire mass; no unsupported carbon fraction
-    is invented. Evaporation, lubricants and non-exhaust carbon are outside this
+    is invented. Total Hydrocarbons is excluded because its components are
+    already counted. Evaporation, lubricants and non-exhaust carbon are outside this
     diagnostic. It never changes the inventory or allocates capture credits.
     """
     array = inventory.array

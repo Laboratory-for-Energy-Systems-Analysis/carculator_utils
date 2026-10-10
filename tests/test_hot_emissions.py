@@ -13,6 +13,20 @@ from carculator_utils import hot_emissions
 from carculator_utils.inventory import get_exhaust_emission_flows
 
 
+def test_total_hydrocarbons_remain_a_diagnostic_aggregate():
+    mapping = get_exhaust_emission_flows()
+    assert not any(flow[0] == "Hydrocarbons, chlorinated" for flow in mapping)
+    parameters = [
+        p
+        for names in mapping.values()
+        for p in ((names,) if isinstance(names, str) else names)
+    ]
+    assert not any(p.startswith("Hydrocarbons direct emissions,") for p in parameters)
+    for environment in ("urban", "suburban", "rural"):
+        assert f"Methane direct emissions, {environment}" in parameters
+        assert f"Non-methane hydrocarbon direct emissions, {environment}" in parameters
+
+
 def test_deterioration_uses_each_year_size_and_sample(monkeypatch):
     endpoints = xr.DataArray(
         [[[3.0], [5.0]]],

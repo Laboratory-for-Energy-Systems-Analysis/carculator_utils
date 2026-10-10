@@ -116,6 +116,14 @@ The following descriptions record the original failing implementation.
 Implemented repairs and limits
 ------------------------------
 
+* Total hydrocarbons are retained as a vehicle diagnostic but are no longer
+  mapped to ``Hydrocarbons, chlorinated`` or counted alongside their components.
+  Methane, named non-methane species and residual NMVOC enter the inventory once,
+  including the modeled cold-start and evaporative contributions. Carbon
+  diagnostics and explicit CO2 reconciliation also exclude the aggregate.
+  This follows the pollutant definitions in the
+  `HBEFA reference, section 2.2.1 <https://download.hbefa.net/helpfiles/HBEFA51_help_en.pdf>`_.
+  That definition does not resolve the packaged tables' extraction provenance.
 * Hot-model output is mapped to vehicle parameters by explicit pollutant names
   and documented aliases, preserving chromium oxidation states.
 * Hybrid powertrain names are mapped to their combustion category before

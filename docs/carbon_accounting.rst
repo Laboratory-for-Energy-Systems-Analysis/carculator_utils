@@ -29,9 +29,12 @@ Carbon diagnostics
 vehicle-km. It compares carbon implied by the fuel's full-oxidation CO2 factor
 with the actual CO2 inventory and carbon in CO, methane and chemically identified
 hydrocarbons. Integer molecular masses follow the existing 12/44 CO2 convention.
-Generic NMHC, chlorinated hydrocarbons, PAHs and particulates have unknown carbon
+Residual generic NMHC, PAHs and particulates have unknown carbon
 fractions; the diagnostic reports lower/upper bounds rather than assigning an
-unsupported composition. The method leaves the inventory unchanged.
+unsupported composition. Total ``Hydrocarbons`` remains available in the vehicle
+model as a diagnostic aggregate. It is excluded from the inventory and carbon
+balance because methane and the non-methane components are already counted.
+The method leaves the inventory unchanged.
 
 The default full-oxidation CO2 calculation and independently estimated exhaust
 pollutants generally produce a positive carbon excess. Consequently, the default
@@ -53,10 +56,12 @@ missing composition, call::
     impacts = inventory.calculate_impacts()
 
 ``fractions`` maps each present unspecified exhaust group to kg C/kg group.
-The accepted keys are ``Non-methane hydrocarbon``, ``Hydrocarbons``,
+The accepted keys are ``Non-methane hydrocarbon``,
 ``PAH, polycyclic aromatic hydrocarbons``, and ``Particulate matters``. Values
 must be finite and within zero to one. A nonzero group cannot be omitted.
 Do not set these fractions to zero simply to obtain agreement.
+Remove the former ``Hydrocarbons`` key from custom fraction dictionaries: that
+aggregate does not describe an additional inventoried substance.
 
 The operation assigns all counted exhaust carbon to engine fuel and calculates
 CO2 from the remaining carbon. It rejects a negative carbon budget, validates

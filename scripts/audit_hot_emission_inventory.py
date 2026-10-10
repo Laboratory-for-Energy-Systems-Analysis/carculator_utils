@@ -354,6 +354,19 @@ def audit(output):
             (column,) = inventory.find_input_indices(
                 (f"transport, {model.vehicle_type}, ", f", {pt},", size)
             )
+            # HC is the total of methane and NMHC, not a chlorinated species.
+            # Check independently of the YAML mapping, which excludes aggregates.
+            for env, compartment in ENVIRONMENTS.items():
+                row = inventory.inputs[
+                    ("Hydrocarbons, chlorinated", ("air", compartment), "kilogram")
+                ]
+                check(
+                    name,
+                    "no_duplicate_total_hydrocarbons",
+                    f"{pt}/{env}",
+                    0,
+                    -inventory.A[:, row, column, :],
+                )
             for flow, components in reverse.items():
                 for env, compartment in ENVIRONMENTS.items():
                     expected = sum(

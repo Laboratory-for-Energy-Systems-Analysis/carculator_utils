@@ -21,7 +21,8 @@ exhaust:
   Formaldehyde: Formaldehyde
   Heptane: Heptane
   Hexane: Hexane
-  Hydrocarbons: Hydrocarbons, chlorinated
+  # Total Hydrocarbons is a diagnostic aggregate of methane and NMHC.
+  # Inventory its components below once, without assigning a chlorine content.
   Lead: Lead II
   Mercury: Mercury II
   Methane: Methane, fossil
