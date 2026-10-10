@@ -181,36 +181,41 @@ def get_exhaust_emission_flows() -> dict:
 
 
 def get_dict_impact_categories(method, indicator) -> dict:
-    """
-    Load a dictionary with available impact assessment
-    methods as keys, and assessment level and categories as values.
+    """Read LCIA metadata in CSV row order, which is also the B-matrix row order.
 
-    :return: dictionary
-    :rtype: dict
+    Fields are method group, assessment level, source, category, indicator type,
+    abbreviation and unit. Category labels are preserved verbatim for indexing.
     """
-    filename = "dict_impact_categories.csv"
-    filepath = DATA_DIR / "lcia" / filename
+    filepath = DATA_DIR / "lcia" / "dict_impact_categories.csv"
     if not filepath.is_file():
         raise FileNotFoundError(
             "The dictionary of impact categories could not be found."
         )
-
-    csv_dict = {}
-
-    with open(filepath, encoding="utf-8") as f:
-        input_dict = csv.reader(f, delimiter=",")
-        for row in input_dict:
-            if row[0] == method and row[1] == indicator:
-                csv_dict[row[3]] = {
-                    "method": row[1],
-                    "category": row[2],
-                    "type": row[3],
-                    "abbreviation": row[4],
-                    "unit": row[5],
-                    "source": row[6],
-                }
-
-    return csv_dict
+    fields = (
+        "method",
+        "indicator",
+        "source",
+        "category",
+        "type",
+        "abbreviation",
+        "unit",
+    )
+    categories = {}
+    with filepath.open(encoding="utf-8") as handle:
+        for line, record in enumerate(csv.DictReader(handle, fieldnames=fields), 1):
+            if None in record or any(value is None for value in record.values()):
+                raise ValueError(f"Expected seven LCIA metadata fields at line {line}.")
+            if record["method"] != method or record["indicator"] != indicator:
+                continue
+            category = record["category"]
+            if not category.strip() or not record["unit"].strip():
+                raise ValueError(f"Missing LCIA category or unit at line {line}.")
+            if category in categories:
+                raise ValueError(
+                    f"Duplicate LCIA category {category!r} at line {line}."
+                )
+            categories[category] = record
+    return categories
 
 
 def get_dict_input() -> dict:

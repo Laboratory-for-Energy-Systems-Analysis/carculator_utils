@@ -4,12 +4,12 @@ recipe,midpoint,ReCiPe 2016,acidification: terrestrial,terrestrial acidification
 recipe,midpoint,ReCiPe 2016,ecotoxicity: freshwater,freshwater ecotoxicity potential (FETP),FETP,"kg 1,4-DCB-Eq"
 recipe,midpoint,ReCiPe 2016,ecotoxicity: marine,marine ecotoxicity potential (METP),METP,"kg 1,4-DCB-Eq"
 recipe,midpoint,ReCiPe 2016,ecotoxicity: terrestrial,terrestrial ecotoxicity potential (TETP),TETP,"kg 1,4-DCB-Eq"
-recipe,midpoint,ReCiPe 2016,energy resources depletion: non-renewable,energy resources: non-renewable,NREN,MJ
+recipe,midpoint,ReCiPe 2016,energy resources depletion: non-renewable,energy resources: non-renewable,NREN,kg oil-Eq
 recipe,midpoint,ReCiPe 2016,eutrophication: freshwater,freshwater eutrophication potential (FEP),FEP,kg P-Eq
 recipe,midpoint,ReCiPe 2016,eutrophication: marine,marine eutrophication potential (MEP),MEP,kg N-Eq
 recipe,midpoint,ReCiPe 2016,human toxicity: carcinogenic,human toxicity potential (HTPc),HTPc,"kg 1,4-DCB-Eq"
 recipe,midpoint,ReCiPe 2016,human toxicity: non-carcinogenic,human toxicity potential (HTPnc),HTPnc,"kg 1,4-DCB-Eq"
-recipe,midpoint,ReCiPe 2016,ionising radiation,ionising radiation potential (IRP),IRP,kg Co-60-Eq
+recipe,midpoint,ReCiPe 2016,ionising radiation,ionising radiation potential (IRP),IRP,kBq Co-60-Eq
 recipe,midpoint,ReCiPe 2016,land use,agricultural land occupation (LOP),LOP,m2*a crop-Eq
 recipe,midpoint,ReCiPe 2016,material resources: metals/minerals,surplus ore potential (SOP),SOP,kg Cu-Eq
 recipe,midpoint,ReCiPe 2016,ozone depletion,ozone depletion potential (ODPinfinite),ODP,kg CFC-11-Eq
@@ -28,7 +28,7 @@ ef,midpoint,EF v3.1,climate change: fossil,global warming potential (GWP100),,kg
 ef,midpoint,EF v3.1,climate change: land use and land use change,global warming potential (GWP100),,kg CO2-Eq
 ef,midpoint,EF v3.1,ecotoxicity: freshwater,comparative toxic unit for ecosystems (CTUe),,CTUe
 ef,midpoint,EF v3.1,"ecotoxicity: freshwater, inorganics ",comparative toxic unit for ecosystems (CTUe),,CTUe
-ef,midpoint,EF v3.1,"ecotoxicity: freshwater, organics ",comparative toxic unit for ecosystems (CTUe),,
+ef,midpoint,EF v3.1,"ecotoxicity: freshwater, organics ",comparative toxic unit for ecosystems (CTUe),,CTUe
 ef,midpoint,EF v3.1,energy resources: non-renewable,abiotic depletion potential (ADP): fossil fuels,,"MJ, net calorific value"
 ef,midpoint,EF v3.1,eutrophication: freshwater,fraction of nutrients reaching freshwater end compartment (P),,kg P-Eq
 ef,midpoint,EF v3.1,eutrophication: marine,fraction of nutrients reaching marine end compartment (N),,kg N-Eq

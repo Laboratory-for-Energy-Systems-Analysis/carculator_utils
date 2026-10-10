@@ -60,6 +60,7 @@ Evidence and recorded checks
    temporal_energy
    energy_model_repairs
    hot_emission_audit
+   lcia_metadata
    background_rebuild
 
 Development and historical records

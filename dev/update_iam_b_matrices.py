@@ -306,6 +306,31 @@ def load_existing_matrix(
     return expanded
 
 
+def validate_method_units(entries, method_metadata):
+    """Reject metadata that mislabels the selected methods' numerical factors.
+
+    ``method_metadata`` can be Brightway's method registry or an ordinary
+    mapping in offline tests. This validates labels; it never rescales factors.
+    """
+    aliases = {"cubic meter": "m3", "m³": "m3"}
+
+    def normalized(unit):
+        unit = unit.strip() if isinstance(unit, str) else ""
+        return aliases.get(unit, unit)
+
+    for entry in entries:
+        if entry.brightway_method is None:
+            continue  # The custom noise method has its own documented units.
+        declared = entry.category.unit
+        actual = method_metadata[entry.brightway_method].get("unit")
+        if not normalized(declared) or normalized(declared) != normalized(actual):
+            raise ValueError(
+                f"LCIA unit mismatch for {entry.category.category!r}: "
+                f"CSV declares {declared!r}, but {entry.brightway_method!r} "
+                f"uses {actual!r}. Review the metadata before compiling coefficients."
+            )
+
+
 def finite_or_zero(values: np.ndarray) -> np.ndarray:
     values = np.asarray(values, dtype=float)
     values[~np.isfinite(values)] = 0.0
@@ -489,6 +514,7 @@ def main(argv: Iterable[str] | None = None) -> int:
         raise ValueError(f"Missing Brightway databases: {missing_databases}")
 
     method_entries = mapped_methods(categories, available_methods)
+    validate_method_units(method_entries, bd.methods)
 
     activity_columns = [index for index, label in enumerate(labels) if len(label) == 4]
     flow_columns = [index for index, label in enumerate(labels) if len(label) == 3]

@@ -29,7 +29,12 @@ from rebuild_iam import PATHWAYS, PREFIX, database_plan
 from rebuild_iam_databases import digest, write_json
 from scipy import sparse
 from scipy.sparse.linalg import splu
-from update_iam_b_matrices import MATRIX_GROUPS, load_impact_categories, mapped_methods
+from update_iam_b_matrices import (
+    MATRIX_GROUPS,
+    load_impact_categories,
+    mapped_methods,
+    validate_method_units,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -158,6 +163,7 @@ def load_methods(bd, category_path):
     ]
     if missing:
         raise LookupError(f"Missing LCIA methods: {missing}")
+    validate_method_units(entries, bd.methods)
     return entries
 
 

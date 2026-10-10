@@ -15,6 +15,7 @@ from update_iam_b_matrices import (
     PROJECT,
     load_impact_categories,
     mapped_methods,
+    validate_method_units,
 )
 
 
@@ -61,6 +62,7 @@ def extract():
         / "carculator_utils/data/lcia/dict_impact_categories.csv"
     )
     entries = mapped_methods(categories, set(bd.methods))
+    validate_method_units(entries, bd.methods)
     cache = {}
     identities = {flow.key for flow in flows} | {flow.id for flow in flows}
     for entry in entries:
