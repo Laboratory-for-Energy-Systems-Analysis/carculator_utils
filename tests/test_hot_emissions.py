@@ -63,18 +63,22 @@ def test_deterioration_uses_each_year_size_and_sample(monkeypatch):
 
 def test_ethane_and_ethene_are_retained_without_chemical_misidentification():
     mapping = get_exhaust_emission_flows()
-    for environment, compartment in (
-        ("urban", "urban air close to ground"),
-        ("suburban", "non-urban air or from high stacks"),
-        ("rural", "low population density, long-term"),
+    for environments, compartment in (
+        (("urban",), "urban air close to ground"),
+        (("suburban", "rural"), "non-urban air or from high stacks"),
     ):
-        assert (
-            mapping[("Ethane", ("air", compartment), "kilogram")]
-            == f"Ethane direct emissions, {environment}"
+
+        def expected(pollutant):
+            names = tuple(
+                f"{pollutant} direct emissions, {env}" for env in environments
+            )
+            return names[0] if len(names) == 1 else names
+
+        assert mapping[("Ethane", ("air", compartment), "kilogram")] == expected(
+            "Ethane"
         )
-        assert (
-            mapping[("Ethylene", ("air", compartment), "kilogram")]
-            == f"Ethene direct emissions, {environment}"
+        assert mapping[("Ethylene", ("air", compartment), "kilogram")] == expected(
+            "Ethene"
         )
         assert (
             mapping[
@@ -84,7 +88,10 @@ def test_ethane_and_ethene_are_retained_without_chemical_misidentification():
                     "kilogram",
                 )
             ]
-        ) == f"Non-methane hydrocarbon direct emissions, {environment}"
+        ) == expected("Non-methane hydrocarbon")
+    assert not any(
+        "long-term" in compartment for flow in mapping for compartment in flow[1]
+    )
 
 
 @pytest.mark.family

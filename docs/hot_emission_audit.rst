@@ -116,6 +116,15 @@ The following descriptions record the original failing implementation.
 Implemented repairs and limits
 ------------------------------
 
+* Immediate rural exhaust is assigned to ``air, non-urban air or from high
+  stacks``, together with suburban exhaust. Their masses are summed once per
+  pollutant, while urban emissions keep their own compartment. The former
+  ``low population density, long-term`` mapping was incorrect: ecoinvent uses
+  long-term compartments for releases more than 100 years after the activity,
+  not for rural roads. See `ecoinvent's LCIA definitions
+  <https://support.ecoinvent.org/lcia-results>`_. Existing long-term matrix and
+  ethylene-cache entries are retained for index compatibility, but receive no
+  direct road-exhaust demand. Background waste-treatment releases are unchanged.
 * Total hydrocarbons are retained as a vehicle diagnostic but are no longer
   mapped to ``Hydrocarbons, chlorinated`` or counted alongside their components.
   Methane, named non-methane species and residual NMVOC enter the inventory once,

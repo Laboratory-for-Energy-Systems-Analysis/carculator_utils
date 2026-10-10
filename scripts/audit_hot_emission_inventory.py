@@ -70,7 +70,7 @@ CASES = [
 ENVIRONMENTS = {
     "urban": "urban air close to ground",
     "suburban": "non-urban air or from high stacks",
-    "rural": "low population density, long-term",
+    "rural": "non-urban air or from high stacks",
 }
 
 
@@ -368,19 +368,35 @@ def audit(output):
                     -inventory.A[:, row, column, :],
                 )
             for flow, components in reverse.items():
-                for env, compartment in ENVIRONMENTS.items():
+                for compartment in set(ENVIRONMENTS.values()):
+                    environments = [
+                        env
+                        for env, mapped in ENVIRONMENTS.items()
+                        if mapped == compartment
+                    ]
                     expected = sum(
                         model[f"{c} direct emissions, {env}"].sel(**selection)
+                        for env in environments
                         for c in components
                     )
                     row = inventory.inputs[(flow, ("air", compartment), "kilogram")]
                     check(
                         name,
                         "vehicle_to_inventory",
-                        f"{pt}/{flow}/{env}",
+                        f"{pt}/{flow}/{' + '.join(environments)}",
                         expected.transpose("year", "value"),
                         -inventory.A[:, row, column, :].T,
                     )
+                old = inventory.inputs[
+                    (flow, ("air", "low population density, long-term"), "kilogram")
+                ]
+                check(
+                    name,
+                    "no_delayed_rural_exhaust",
+                    f"{pt}/{flow}",
+                    0,
+                    -inventory.A[:, old, column, :],
+                )
             if MAP_PWT[pt] != "BEV":
                 energy = captured["arguments"]["energy_consumption"]
                 if pt.startswith("PHEV-"):

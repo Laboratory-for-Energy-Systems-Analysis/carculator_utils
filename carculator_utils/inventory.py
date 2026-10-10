@@ -163,7 +163,7 @@ def get_exhaust_emission_flows() -> dict:
     d_comp = {
         "urban": "urban air close to ground",
         "suburban": "non-urban air or from high stacks",
-        "rural": "low population density, long-term",
+        "rural": "non-urban air or from high stacks",
     }
 
     grouped = defaultdict(list)

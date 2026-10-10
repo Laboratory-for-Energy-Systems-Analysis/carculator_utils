@@ -56,13 +56,19 @@ def test_exact_ethylene_reaches_completed_inventory_and_lcia(
     assert np.isfinite(inventory.calculate_impacts()).all()
     (column,) = inventory.find_input_indices(("transport, car, ICEV-p, ",))
     amounts = []
-    for environment, record in zip(
-        ("urban", "suburban", "rural"), load_biosphere_extensions()["flows"]
-    ):
+    environments = {
+        "urban air close to ground": ("urban",),
+        "non-urban air or from high stacks": ("suburban", "rural"),
+        "low population density, long-term": (),
+    }
+    for record in load_biosphere_extensions()["flows"]:
         label = (record["label"][0], tuple(record["label"][1]), record["label"][2])
         row = inventory.inputs[label]
-        expected = model[f"Ethene direct emissions, {environment}"].item()
-        assert expected > 0
+        expected = sum(
+            model[f"Ethene direct emissions, {environment}"].item()
+            for environment in environments[label[1][1]]
+        )
+        assert expected > 0 if environments[label[1][1]] else expected == 0
         np.testing.assert_allclose(-inventory.A[0, row, column, 0], expected)
         actual = inventory.B.sel(category=category).isel(activity=row).values
         np.testing.assert_allclose(actual, factor)
