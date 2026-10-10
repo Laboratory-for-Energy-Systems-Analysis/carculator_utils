@@ -1,5 +1,5 @@
 Inventory export with Brightpath
-==================================
+================================
 
 ``carculator_utils`` uses `Brightpath <https://pypi.org/project/brightpath/1.0.0a6/>`_
 for Brightway Excel, SimaPro CSV and openLCA JSON-LD serialization. The runtime
@@ -163,7 +163,7 @@ warning. This preserves reviewable quantities; comments do not participate in
 SimaPro LCIA and do not restore noise impacts there.
 
 Exact openLCA elementary-flow identifiers
-------------------------------------------
+-----------------------------------------
 
 A local method package and its version-matched biosphere CSV can now be passed
 through Brightpath's explicit mapping interface::

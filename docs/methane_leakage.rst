@@ -36,8 +36,8 @@ generic-air methane-leakage rows. Calling it repeatedly does not multiply the
 loss allowance or add duplicate emissions. Active gas vehicles require a finite,
 nonnegative loss ratio; invalid inputs raise with sample, vehicle and year.
 
-Supplier boundary and the 0.4% default
---------------------------------------
+Supplier boundary and the former 0.4% assumption
+------------------------------------------------
 
 The corrected calculation represents **additional loss after the selected
 supplier's output boundary**. Production, distribution and station emissions
@@ -45,7 +45,7 @@ already contained in that supplier must not be entered again in this parameter.
 The upstream datasets are left unchanged: this patch cannot reliably separate
 loss stages hidden inside pre-characterized background activities.
 
-The additional-loss default is now **zero at all native years** in cars, buses
+The additional-loss default is now **zero at all tabulated years** in cars, buses
 and trucks. This excludes an unqualified residual overlay beyond the delivered-fuel
 supplier; it does not assert zero physical leakage. The historical 0.004 prior
 and its uncertainty bounds are archived in each package. Its cited source is
@@ -81,7 +81,7 @@ calibration, and studies needing whole-chain leakage sensitivity should vary
 the appropriate upstream stages rather than add their total again here.
 
 Verification
--------------
+------------
 
 ``tests/test_methane_leakage.py`` covers hand-calculated mass balances, two sizes,
 reordered years and samples, zero leakage, invalid rates and origin fractions,

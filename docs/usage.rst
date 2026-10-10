@@ -22,19 +22,25 @@ Quick start
 Inputs and scope
 ----------------
 
-The vehicle input classes provide packaged defaults. Call ``static()`` for a
-single deterministic sample, or ``stochastic(n, seed=42)`` for seeded parameter
-draws. The array builder returns ``(mappings, array)`` and preserves labelled
-``size``, ``powertrain``, ``parameter``, ``year`` and ``value`` dimensions.
-Scope by actual labels and native input years; interpolate explicitly when a
-year is not in the parameter table. The current defaults include 2025.
+The input classes load the default parameter tables. ``static()`` uses one
+set of central values. ``stochastic(n, seed=42)`` draws ``n`` sets from the
+specified uncertainty distributions; using the same seed repeats those draws.
+
+The array builder returns ``(mappings, array)``. The array has labelled axes for
+``size``, ``powertrain``, ``parameter``, ``year`` and ``value``; ``value`` identifies
+the sample. The ``scope`` dictionary selects vehicles and years, rather than
+changing their assumptions. Use labels and years present in the parameter
+tables, including 2025. For other years, interpolate the input array explicitly
+before constructing the vehicle model.
 
 Change input parameters before constructing a fresh vehicle model. Constructor
 overrides such as battery chemistry, capacity, fuel blends and component
 efficiencies are copied, preserving the caller's data. Most vehicle overrides
 use ``(powertrain, size, year)`` keys; consult the model API for exceptions.
-Repeated ``set_all()`` calls on an already completed model are not the supported
-way to compare independent scenarios.
+Calling ``set_all()`` again is supported: it starts from saved inputs,
+including explicit edits, rather than using calculated outputs as new inputs.
+Use a fresh model for a separate scenario, new coordinates, or changes to the
+component assumptions of a plug-in hybrid.
 
 Fuel blends after year selection
 --------------------------------
@@ -72,6 +78,9 @@ labels. See :ref:`fuel-blend-year-selection` for validation and impact examples.
 Energy and results
 ------------------
 
+See :doc:`interpretation` for units, powertrain abbreviations, and the difference
+between energy use, direct emissions and life cycle impacts.
+
 ``model["TtW energy"]`` is kJ per vehicle-kilometre. For BEVs it is net
 stored-energy depletion; ``model.battery_terminal_energy`` is a separate DC
 boundary, and ``model["electricity consumption"]`` is grid electricity in
@@ -81,7 +90,8 @@ Construct the inventory with the completed model, not its raw parameter array.
 Use ``calculate_impacts()`` and labelled selection/reduction of the returned
 xarray. Functional units are ``vkm``, ``pkm`` and ``tkm``. Passenger- and
 cargo-normalized results require finite positive loads for active vehicles.
-Availability-masked zero consumption does not describe a zero-energy vehicle.
+A zero reported for an unavailable or infeasible vehicle is a status marker,
+not a prediction of zero energy use.
 
 Default charging/fuel-preparation electricity follows each vehicle and sample's
 own operating lifetime. See :doc:`electricity_scenarios` for the refreshed
@@ -108,7 +118,7 @@ calculation, the shared public API is:
 .. code-block:: python
 
    paths = inventory.export_lci(
-       ecoinvent_version="3.10",
+       ecoinvent_version="3.12",
        software="brightway2",
        format="file",
        directory="exports",
@@ -119,7 +129,8 @@ calculation, the shared public API is:
 supports ``file``, ``string`` and ``bw2io``; SimaPro and openLCA support ``file``
 and ``string``. openLCA produces a foreground-only JSON-LD ZIP that requires
 background and elementary-flow linking before calculation.
-The supported ecoinvent targets are 3.9 and 3.10. Multi-year runs preserve every
+Exports default to ecoinvent 3.12 cutoff. Older 3.9/3.10 targets require
+verified supplier links and may raise an error. Multi-year runs preserve every
 year in the returned exports, and exporting does not change the original
 inventory or calculated impacts. A destination Brightway/ecoinvent setup is
 needed to register and link exported inventories, not for the core calculation.

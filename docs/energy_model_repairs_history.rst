@@ -462,7 +462,7 @@ change is ``aa0c3a8``; matching car/bus/truck/two-wheeler commits are
 ``3f23ed3``, ``13d2961``, ``b71f7b1`` and ``33fca54`` respectively.
 
 Hybrid component sensitivity
------------------------------
+----------------------------
 
 Toyota's `2023 Prius specification
 <https://newsroom.toyota.it/presentazione-stampa-nuova-toyota-prius-plug-in-hybrid/>`_

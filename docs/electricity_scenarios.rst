@@ -150,7 +150,7 @@ from bilateral trade has been introduced. These need additional source data
 and validation beyond a generation-share refresh.
 
 National EU27 projections with TYNDP
---------------------------------------
+------------------------------------
 
 Select the country-specific alternative with::
 

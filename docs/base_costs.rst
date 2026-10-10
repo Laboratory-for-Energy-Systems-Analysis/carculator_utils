@@ -1,6 +1,11 @@
 Shared base cost calculation
 ============================
 
+This page concerns developers who use the shared base class directly. For a
+normal car, truck, bus or two-wheeler calculation, use the cost method in that
+vehicle package. Capital recovery converts a purchase price into an annual cost
+over the assumed service life; it is not calculated over a number of kilometres.
+
 ``VehicleModel.set_costs()`` is available to custom vehicle implementations.
 It now uses lifetime kilometres divided by annual kilometres for annual capital
 recovery, including zero and near-zero interest. Component replacements retain

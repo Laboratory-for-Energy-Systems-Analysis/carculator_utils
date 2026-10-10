@@ -1,7 +1,7 @@
 Energy assumptions around the 2025 anchor
-==========================================
+=========================================
 
-The 2025 energy audit introduced component priors and a limited bus calibration.
+The 2025 energy audit introduced component assumptions and a limited bus calibration.
 Leaving these assumptions confined to 2025 created artificial temporal features.
 The revised inputs preserve **every 2025 nominal value and uncertainty
 distribution**, while making their interpretation consistent across years.
@@ -13,7 +13,7 @@ What changed
 
 The four vehicle packages now carry explicit motor/inverter efficiency (0.90),
 electric transmission efficiency (0.97), and, where applicable, independent
-hybrid motor peak/system-power ratio (0.65) at every native anchor from 2000 to
+hybrid motor peak/system-power ratio (0.65) at every tabulated year from 2000 to
 2050. The bus hybrid combustion peak/system-power prior is 0.70 throughout.
 These component/architecture assumptions are held constant because we have not
 established a defensible technology-specific trend for them.
@@ -26,7 +26,7 @@ The same problem affected the electric transmission override. The combination
 produced extreme consumption or failure of vehicle sizing.
 
 Battery and charger efficiencies retain the relative shape of their legacy
-**losses**, rebased on the 2025 component prior:
+**losses**, rebased on the 2025 component assumption:
 
 .. math::
 
@@ -36,7 +36,7 @@ Battery and charger efficiencies retain the relative shape of their legacy
 Here the legacy 2025 reference is the midpoint of its original 2020 and 2030
 values, excluding the subsequently introduced 2025 prior. An absent, zero or
 ideal legacy efficiency provides no usable loss trend; in that case the
-component prior is held constant. Missing depleted-PHEV discharge records use
+component assumption is held constant. Missing depleted-PHEV discharge records use
 the paired electric-mode battery's legacy trend. Every resulting efficiency is
 checked to remain in (0, 1]. This is a transparent engineering transfer of trend
 shape between component definitions, not evidence that the historical component
@@ -44,7 +44,7 @@ efficiencies were measured separately.
 
 For example, the car battery charge prior is 0.984598, 0.984886 and 0.985174 in
 2020, 2025 and 2030. Charger conversion remains separate from internal storage
-losses. Interpolation stays linear between native anchors; no spline,
+losses. Interpolation stays linear between tabulated years; no spline,
 overshoot-prone fit, or universal monotonic-energy constraint is introduced.
 
 The 13 m city BEV base auxiliary prior is **8.3 kW from 2020 through 2050**,
@@ -165,8 +165,8 @@ staging directory, never directly overwrites sibling packages. The audit uses
 the packaged restoration metadata automatically. Its ``--resume`` option checks
 the saved runtime, model-code and resource hashes before reusing completed cases.
 
-The array builder accepts native years. Build an array containing the bracketing
-native anchors, then interpolate it before constructing the model::
+The array builder accepts tabulated years. Build an array containing the bracketing
+tabulated years, then interpolate it before constructing the model::
 
    inputs.static()
    _, native = fill_xarray_from_input_parameters(inputs, scope=scope)

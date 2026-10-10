@@ -1,50 +1,37 @@
-.. _structure:
+How the package fits together
+=============================
 
-Shared model structure
-======================
+The calculation follows the same sequence as the example in :doc:`usage`:
 
-``carculator_utils`` supplies common modelling machinery to the passenger-car,
-bus, truck and two-wheeler packages. Vehicle-specific input records and sizing
-policies remain in those packages; the shared package does not ship a generic
-vehicle parameter table that can replace them.
+1. ``VehicleInputParameters`` loads parameter records, units and uncertainty distributions.
+   Call ``static()`` for central values or ``stochastic(n, seed=...)`` for samples.
+2. ``fill_xarray_from_input_parameters()`` builds a labelled array and its
+   coordinate mappings. Select the sizes, powertrains and years needed for the study.
+3. ``VehicleModel`` accepts this array and any constructor overrides. ``set_all()``
+   calculates masses, component sizes, energy demand, direct emissions and costs.
+4. ``Inventory`` combines the calculated vehicle with material and energy
+   suppliers. ``calculate_impacts()`` returns results by impact category and
+   contribution group.
+5. Export methods write foreground inventories for use in another LCA tool.
+   Linking them to that tool's background database is a separate step.
 
-.. list-table:: Responsibilities
-   :header-rows: 1
-   :widths: 35 65
+The vehicle packages contain their own defaults and sizing rules.
+``carculator_utils`` supplies the common array handling, cycle physics, fuel and
+electricity systems, emissions, matrix calculations and export interface. The
+bare shared input class has no standalone vehicle defaults.
 
-   * - Module
-     - Role
-   * - ``vehicle_input_parameters`` and ``array``
-     - Input validation, static/seeded sampling and labelled vehicle arrays.
-   * - ``model`` and ``numerical``
-     - Shared overrides, battery/fuel accounting and bounded sizing iteration.
-   * - ``driving_cycles`` and ``energy_consumption``
-     - Cycle/grade resources, road load, conversion losses and auxiliaries.
-   * - ``combustion_controls``
-     - Opt-in conventional petrol-car control rules and buffer accounting.
-   * - ``hot_emissions``, ``particulates_emissions`` and ``noise_emissions``
-     - Direct operation-related emissions.
-   * - ``background_systems``
-     - Fuel properties, electricity mixes and background assumptions.
-   * - ``inventory`` and ``export``
-     - Inventory construction, LCIA and optional external-format export.
+Key files for readers of the code
+---------------------------------
 
-Workflow and boundaries
------------------------
+* ``vehicle_input_parameters.py`` and ``array.py`` load and arrange inputs.
+* ``model.py`` calculates vehicle properties; vehicle packages extend this class.
+* ``energy_consumption.py`` calculates power over the driving cycle.
+* ``background_systems.py`` selects fuel properties and electricity shares.
+* ``inventory.py`` assembles inventories and calculates impact scores.
+* ``export.py`` prepares inventories for the supported export writers.
 
-A vehicle-specific input class loads its package data and supplies static or
-sampled values. ``fill_xarray_from_input_parameters`` returns mappings and an
-array with dimensions ``size``, ``powertrain``, ``parameter``, ``year`` and
-``value``. The vehicle-specific model's ``set_all()`` couples mass, power,
-storage and energy through bounded sizing before constructing inventory inputs.
-
-Energy traces distinguish wheel demand, shaft load, battery-terminal energy,
-stored-energy depletion and charging electricity. Their units and comparison
-boundaries are described in :doc:`energy_model_repairs`. Availability masks
-identify unsupported vehicle configurations; a masked zero is not a physical
-prediction. Calibration evidence and reproducibility checks are described in
-:doc:`validity` and :doc:`temporal_energy`.
-
-Use the vehicle package's public model and inventory classes for a complete
-calculation. See :doc:`api` for shared interfaces and :doc:`input_validation`
-for array, sampling and override contracts.
+The last four shared files live in ``carculator_utils``; a vehicle package may
+also have its own ``model.py`` and ``inventory.py``. See :doc:`interpretation` for
+units and :doc:`validity` for checks on these interfaces. Input samples, sizing
+iterations and background scenarios are different concepts and should not be
+used interchangeably when reporting a study.

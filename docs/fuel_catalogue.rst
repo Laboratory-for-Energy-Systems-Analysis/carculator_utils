@@ -1,6 +1,10 @@
 Fuel catalogue and supplier identity
 ====================================
 
+Choose a fuel by its production route as well as its name. Two fuels with the
+same heating value can have different suppliers and life cycle impacts. This
+page explains supported names and why ambiguous or missing suppliers are rejected.
+
 Synthetic methanol diesel distinguishes direct air capture (the historical
 ``electrolysis`` label) from cement-plant CO2 (``cement``). Economic and energy
 allocation select different supplier datasets. The swapped diesel carbon-source
@@ -24,7 +28,7 @@ Both default roles belong to that supported list.
 ``background_systems.get_unavailable_fuels()`` lists excluded labels and reasons.
 These include biogas steam reforming, coal-gasification hydrogen, electrochemical
 methane, cement/MSWI biological methane and the ambiguous petrol electrolysis
-aliases. Selecting one now raises a contextual ``ValueError`` during model
+aliases. Selecting one now raises a ``ValueError`` identifying the affected input during model
 construction, before an expensive completed run. No replacement pathway is
 silently substituted. The explicit cement petrol options remain supported.
 

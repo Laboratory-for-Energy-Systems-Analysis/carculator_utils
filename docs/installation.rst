@@ -6,7 +6,7 @@ Installation
 Use Python **3.12** (``>=3.12,<3.13``) in a fresh environment.
 The shared runtime requires NumPy ``>=1.26.4,<2``.
 
-Published release
+Install a release
 -----------------
 
 Install ``carculator_utils 1.3.6`` from PyPI::
@@ -34,6 +34,11 @@ background database in the destination LCA tool.
 
 Source checkout and documentation
 ---------------------------------
+
+This website follows the repository documentation. Changes listed under
+``Unreleased`` in the changelog may be newer than the package on PyPI. Use
+matching source checkouts to reproduce those changes; record their Git revisions
+in addition to package version numbers.
 
 For development, use the matching sibling checkouts and install from this
 repository root::

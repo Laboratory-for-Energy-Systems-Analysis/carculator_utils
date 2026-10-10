@@ -80,7 +80,7 @@ exceptions that require a source-based decision:
   in a premise workbook. Ten obsolete generic NMC523/NMC622 intermediate columns
   are retired; the updated markets supply regional production chains. Existing
   capacity, mass-share, cycle-life and cost assumptions carry forward as modelling
-  priors under the new name; this update does not independently recalibrate them.
+  assumptions under the new name; this update does not independently recalibrate them.
 
 Stable labels selected by the vehicle models remain logical identifiers. Build
 reports record the actual supplier identities; labels alone do not establish
@@ -119,7 +119,7 @@ An optional ``--legacy-catalogue`` accepts a JSON list of exact 3.10 cutoff
 activity labels (name, location, unit, reference product) to certify older
 supplier availability. ``--legacy-39-catalogue`` does the same for 3.9, after
 applying the reviewed 3.10-to-3.9 naming map. Availability is checked independently
-for each target; absent catalogues make rebuilt exports fail closed for that
+for each target; absent catalogues make rebuilt exports stop with an error for that
 target. Catalogue hashes are recorded in ``background_mapping.json``.
 
 Only encrypted IAM inputs are accepted. The workspace has a dedicated premise

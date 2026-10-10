@@ -1,5 +1,9 @@
 Reproducible cost uncertainty
-==============================
+=============================
+
+Sampling an uncertain input and repeating the same model calculation are
+different operations. This page explains which cost adjustments use random draws
+and how their seeds preserve the identity of each sample.
 
 ``inputs.stochastic(n, seed=42)`` now controls both input-parameter draws and
 the additional projected-cost factors used by cars, buses and two-wheelers.
@@ -13,11 +17,11 @@ Previously, the cost hooks drew from the process-wide generator every time a
 model ran. Two completed 2025 Medium BEV car runs using three samples and
 ``seed=42`` reproduced their physical inputs but gave first-sample purchase
 costs of EUR 43,294 and EUR 41,534. The defect also affected buses and
-two-wheelers. The truck model uses its native sampled costs and does not call
+two-wheelers. The truck model uses its sampled cost records and does not call
 these projection hooks.
 
 Distributions and sample identity
-----------------------------------
+---------------------------------
 
 The existing assumptions are retained:
 
@@ -66,10 +70,10 @@ package versions, inputs and scenario alongside results; reproducibility across
 arbitrary dependency versions is not promised.
 
 Verification
--------------
+------------
 
 Regressions check unchanged parameter draws, global RNG isolation, independent
-triangular distributions, retained sample identity under array transformations
+triangular distributions, selected sample identity under array transformations
 and NetCDF, and deterministic static/sensitivity factors. Completed car, bus
 and two-wheeler runs cover BEV and combustion costs, fuel cells where supported,
 single-sample selections and explicit per-sample battery prices. Paired physical,

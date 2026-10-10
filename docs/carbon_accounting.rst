@@ -1,6 +1,11 @@
 Physical carbon and climate accounting
 ======================================
 
+Fuel carbon can leave the vehicle as CO2, carbon monoxide, methane and other
+compounds. This page explains which amounts the model counts, why their sum can
+exceed the fuel carbon under the default convention, and how to inspect that
+difference. A climate-accounting label is not always a physical carbon origin.
+
 The legacy fuel field ``biogenic share`` selects the fraction assigned to
 non-fossil CO2 accounting. It must not be interpreted as a measured biological
 carbon fraction for every synthetic fuel. Biomass carbon, carbon captured from
@@ -36,7 +41,7 @@ Evaporation, lubricant consumption and non-exhaust material carbon are outside
 this engine-fuel/exhaust diagnostic.
 
 Explicit exhaust reconciliation
---------------------------------
+-------------------------------
 
 When appropriate source measurements or a documented scenario supply the
 missing composition, call::

@@ -1,11 +1,12 @@
 Input completeness
-===================
+==================
 
-Input arrays retain ``input_status`` (provided, derived, not applicable or missing)
-and a numeric ``missing_input`` coordinate. Required record scopes come from the
-vehicle input subclass's bundled defaults. Extra output parameters can start at
+The array records whether each parameter was actually supplied. It retains
+``input_status`` (provided, derived, not applicable or missing)
+and a numeric ``missing_input`` coordinate. The vehicle package's default tables define which combinations of parameter,
+size, powertrain and year require an input. Extra output parameters can start at
 zero; a recorded input zero remains a valid supplied value. Missing declared
-inputs for an active vehicle raise a contextual error before full-model sizing.
+inputs for an active vehicle raise a error identifying the affected input before full-model sizing.
 The existing technology/year availability policy excludes unavailable cells, and
 PHEV aggregate outputs are validated through their component inputs.
 
@@ -20,8 +21,8 @@ provide a zero, assign it and explicitly mark its record coverage::
    array = mark_inputs_provided(array, "maintenance cost per glider cost")
 
 Selections and linear interpolation retain coverage. Interpolation between a
-missing and a provided native-year input fails preflight until corrected, even
-if its interpolated numerical value is nonzero. Complete the native inputs
+missing and a provided input at a tabulated year is rejected before sizing, even
+if its interpolated numerical value is nonzero. Complete the inputs at the tabulated years
 before interpolating. Status codes on interpolated arrays can be fractional;
 ``missing_input > 0`` is the coverage diagnostic.
 

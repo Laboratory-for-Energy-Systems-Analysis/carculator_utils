@@ -6,8 +6,8 @@ Energy-model audit: 2025 cars, buses and trucks
    This page records the pre-fix audit. See :doc:`energy_model_repairs` for
    subsequent corrections, explicit 2025 inputs and updated comparison results.
 
-Audit date: 6 October 2026. **The current evidence does not establish robust fuel
-consumption.** Full model runs complete, but independent checks expose errors in
+Audit date: 6 October 2026. **At that stage, the evidence did not establish robust
+fuel consumption.** Full model runs completed, but independent checks exposed errors in
 power/energy accounting and several public input contracts. Some aggregate values
 are plausible while compensating errors remain possible. Correct the mechanics
 before adjusting efficiency maps to match observations.

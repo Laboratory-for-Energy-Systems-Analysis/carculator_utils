@@ -1,6 +1,10 @@
 Approved robustness work: implementation status
 ===============================================
 
+This is a dated implementation record for maintainers. It documents the approved
+repair batch and its checks. Start with :doc:`interpretation` and
+:doc:`validation_examples` for an introduction to model results and evidence.
+
 The 18 approved items have separate, targeted implementation commits in the
 repositories they affect. **Eleven items are closed at the software/data-boundary
 level; seven are partially addressed and still require scientific evidence or
@@ -61,7 +65,7 @@ Closed items
      - Remove the unqualified overlay; retain upstream/exhaust emissions and explicit residual-loss inputs.
 
 Partially addressed items
---------------------------
+-------------------------
 
 .. list-table:: Implemented work and remaining requirement
    :header-rows: 1
@@ -81,7 +85,7 @@ Partially addressed items
      - Updated default bilateral trade/loss observations and improved coarse technology LCI proxies. See :doc:`electricity_scenarios`.
    * - 15
      - Missing bus climates require explicit input; automatic Swiss substitution removed; HVAC profiles validated.
-     - Broader representative climate coverage and measured thermal models beyond the retained fixed-cabin bus curve and other-family annual priors. See :doc:`input_validation`.
+     - Broader representative climate coverage and measured thermal models beyond the retained fixed-cabin bus curve and other-family annual assumptions. See :doc:`input_validation`.
    * - 16
      - Explicit calibration/held-out qualification, failure-reporting and 40 fresh completed model runs.
      - Matched independent measurement datasets and the unrecovered primary 32t VECTO trace. All 41 paired observations remain screening. See :doc:`energy_measurements`.

@@ -1,0 +1,88 @@
+{
+  "narrative_pages": {
+    "carculator_utils": 38,
+    "carculator": 11,
+    "carculator_truck": 13,
+    "carculator_bus": 12,
+    "carculator_two_wheeler": 20
+  },
+  "python_code_blocks": 30,
+  "syntax_errors": [],
+  "git_indexes_preserved": true,
+  "plot_source_hashes_verified": true,
+  "review_date": "2026-10-10",
+  "python": "3.12.13",
+  "sphinx": "9.1.0",
+  "sphinx_all_five_warnings_as_errors": "passed",
+  "quickstarts": [
+    {
+      "package": "carculator_utils",
+      "first_python_block": "passed"
+    },
+    {
+      "package": "carculator",
+      "first_python_block": "passed",
+      "impact_shape": [
+        23,
+        1,
+        2,
+        1,
+        10,
+        1
+      ],
+      "finite": true,
+      "repeated_energy_unchanged": true
+    },
+    {
+      "package": "carculator_truck",
+      "first_python_block": "passed",
+      "impact_shape": [
+        23,
+        1,
+        2,
+        1,
+        10,
+        1
+      ],
+      "finite": true,
+      "repeated_energy_unchanged": true
+    },
+    {
+      "package": "carculator_bus",
+      "first_python_block": "passed",
+      "impact_shape": [
+        23,
+        1,
+        2,
+        1,
+        10,
+        1
+      ],
+      "finite": true,
+      "repeated_energy_unchanged": true
+    },
+    {
+      "package": "carculator_two_wheeler",
+      "first_python_block": "passed",
+      "impact_shape": [
+        23,
+        1,
+        2,
+        1,
+        10,
+        1
+      ],
+      "finite": true,
+      "repeated_energy_unchanged": true
+    }
+  ],
+  "truck_executable_ast_unchanged": true,
+  "source_revisions": {
+    "carculator_utils": "20bc8bc9ac9f6c0def23cccbea9127d1d4e28f25",
+    "carculator": "ccbebb222c4f6ecf89e054af7063f46c9e586368",
+    "carculator_truck": "561c572b88434f493c751a0696de448bbb28931c",
+    "carculator_bus": "c3c5ee1d48a604da70d24a73ce294583d466676c",
+    "carculator_two_wheeler": "a987a332bec399904305c331b7e4ff86c8fa9a63"
+  },
+  "scope": "Documentation and plot regeneration from saved results; no model calibration or background rebuild."
+}

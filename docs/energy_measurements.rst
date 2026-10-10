@@ -1,6 +1,11 @@
 Additional measured fuel and electricity consumption
 ====================================================
 
+For a shorter introduction with plotted examples, see :doc:`validation_examples`.
+The 9 October 2026 qualification review classifies all 41 retained pairs as
+screening comparisons: the available conditions are not fully matched. The
+older numerical snapshots below retain their own revisions and dates.
+
 Collected 6 October 2026 to extend :doc:`energy_validation_2025`.
 
 The subsequent :doc:`temporal_energy` update preserves these 40 model outputs
@@ -13,7 +18,7 @@ For the subsequent mini-BEV cycle-only reconstruction experiment, see
 original WLTC comparison snapshot.
 
 Preserved corrected-model comparison snapshot
-----------------------------------------------
+---------------------------------------------
 
 The ``calibrated_2025`` snapshot uses shared commit ``032ebc6`` and the
 recorded matching sibling commits. It includes the shaft/load, regeneration,
@@ -35,11 +40,11 @@ one is measured at the battery terminal and five have unresolved boundaries.
 Historical tests are not adjusted to 2025. No residual threshold overrides
 physical consistency or these comparability limits.
 
-* :download:`Latest eight comparison figures (PDF) <_static/energy_validation_2025/expanded/calibrated_2025/mass_comparison_bars.pdf>`
-* :download:`Latest paired values (CSV) <_static/energy_validation_2025/expanded/calibrated_2025/comparisons.csv>`
-* :download:`Latest full outputs (JSON) <_static/energy_validation_2025/expanded/calibrated_2025/runs.json>`
-* :download:`Latest provenance (JSON) <_static/energy_validation_2025/expanded/calibrated_2025/provenance.json>`
-* :download:`Latest coverage audit (JSON) <_static/energy_validation_2025/expanded/calibrated_2025/coverage_audit.json>`
+* :download:`Preserved eight comparison figures (PDF) <_static/energy_validation_2025/expanded/calibrated_2025/mass_comparison_bars.pdf>`
+* :download:`Preserved paired values (CSV) <_static/energy_validation_2025/expanded/calibrated_2025/comparisons.csv>`
+* :download:`Preserved full outputs (JSON) <_static/energy_validation_2025/expanded/calibrated_2025/runs.json>`
+* :download:`Preserved provenance (JSON) <_static/energy_validation_2025/expanded/calibrated_2025/provenance.json>`
+* :download:`Preserved coverage audit (JSON) <_static/energy_validation_2025/expanded/calibrated_2025/coverage_audit.json>`
 * :download:`Primary VECTO source audit (JSON) <_static/energy_validation_2025/expanded/source_cycle_audit.json>`
 
 .. image:: _static/energy_validation_2025/expanded/calibrated_2025/electricity_mass_comparison.png
@@ -60,11 +65,11 @@ latest snapshot; earlier plots grouped them under an AC title incorrectly.
 .. image:: _static/energy_validation_2025/expanded/calibrated_2025/bus_unknown_boundary_comparison.png
    :alt: BYD SORT screening comparisons with explicitly unresolved electrical boundary
 
-Native 2025 input set
----------------------
+Tabulated 2025 input set
+------------------------
 
-The four vehicle packages contain 1,147 native 2025 parameter records in total.
-Most are interpolated or engineering priors, not fitted consumption parameters.
+The four vehicle packages contain 1,147 tabulated 2025 parameter records in total.
+Most are interpolated or engineering assumptions, not fitted consumption parameters.
 The consolidated exports retain units, uncertainty bounds, sources and comments.
 The JSON also includes per-record provenance; package commits and file hashes
 are provided separately. These exports are read-only views of the installed
@@ -75,7 +80,7 @@ input format, not alternative runtime defaults.
 * :download:`Input file hashes and commits (JSON) <_static/energy_validation_2025/defaults_2025/provenance.json>`
 
 Historical comparison snapshot before energy repairs
------------------------------------------------------
+----------------------------------------------------
 
 The following results and figures document the earlier baseline. They are
 retained to show the original findings and sources; their model values and
@@ -314,7 +319,7 @@ the truck package has no ``HEV-p`` implementation, and a diesel hybrid would
 represent a different powertrain. Historical test dates are retained.
 
 Electric bus with documented curb and seated-load weights
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: _static/energy_validation_2025/expanded/bus_mass_comparison.png
    :alt: Gillig electric bus at matched curb and driving masses: model 219.1 versus measured 188.8 kWh/100 km on Manhattan, 180.5 versus 141.0 on OCBC, and 147.2 versus 130.1 on HD-UDDS, including charging losses.
@@ -380,7 +385,7 @@ The direction of the discrepancy is not evidence of improvement in 2025
 technology: these factors prevent attributing the difference to a single cause.
 
 Bus exclusions and numerical findings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The three BYD SORT tests report 16,675 kg and auxiliaries off. Full model runs
 reach that mass, but representing the added load as passengers triggers a later
@@ -475,7 +480,7 @@ and additional bus and truck sizes/powertrains with documented test loads. The
 research backlog is saved in the expanded catalog.
 
 Downloads and reproduction
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * :download:`Coverage and consistency audit (JSON) <_static/energy_validation_2025/expanded/coverage_audit.json>`
 * :download:`Expanded source catalog (JSON) <_static/energy_validation_2025/expanded/measurements.json>`
@@ -523,7 +528,7 @@ source hashes, distance, speed and sampling diagnostics. It rejects nonuniform
 timestamps, negative speeds and moving endpoints.
 
 Earlier catalog and generic comparisons
-----------------------------------------
+---------------------------------------
 
 The earlier catalog contains **24 absolute consumption values and two relative winter
 comparisons from 10 datasets**: 16 absolute electric values, eight fuel values,
@@ -717,7 +722,7 @@ frequency, routes and drivers can affect the values. The bins describe a fleet
 association, not a controlled temperature experiment or an isolated HVAC curve.
 
 Electric trucks: loaded road measurements
-------------------------------------------
+-----------------------------------------
 
 .. list-table:: Reported road-test electricity consumption
    :header-rows: 1
@@ -796,7 +801,7 @@ For example, the numeric 50 with qualifier “almost” is not an exact 50% resu
 The only absolute unit conversion here is kWh/km multiplied by 100.
 
 Reproducing the current comparison
------------------------------------
+----------------------------------
 
 Use Python 3.12 with matching editable installs of all five repositories and
 Matplotlib. Run the following from the shared repository, using a fresh output
@@ -811,7 +816,7 @@ copy lets the independent audit verify the exact evidence used::
     python scripts/audit_energy_measurements.py --data /tmp/energy-comparison --recorded-commits
 
 The recorded-commit audit assumes production source and input changes are
-committed. Regenerate the consolidated native inputs with::
+committed. Regenerate the consolidated tabulated inputs with::
 
     python scripts/export_2025_defaults.py --output /tmp/energy-defaults-2025
 

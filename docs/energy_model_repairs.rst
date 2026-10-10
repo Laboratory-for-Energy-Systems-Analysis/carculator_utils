@@ -5,7 +5,7 @@ The shared energy model now has analytical and full-vehicle regression checks
 for the accounting defects identified in the 2025 review. Physical consistency
 takes precedence over achieving an arbitrary residual target. Only the city-bus
 auxiliary prior was fitted to consumption in this review; the other changes are
-physics repairs, component priors or diagnostic experiments.
+physics repairs, component assumptions or diagnostic experiments.
 
 Current accounting
 ------------------
@@ -38,10 +38,10 @@ Current accounting
 Adopted assumptions and calibration
 -----------------------------------
 
-The four vehicle packages include native 2025 records. Battery one-way
+The four vehicle packages include tabulated 2025 records. Battery one-way
 charge/discharge efficiencies use sqrt(0.97); motor/inverter, electric
-transmission and charger priors are 0.90, 0.97 and 0.90 in their documented
-scopes. These component priors are not independently identified by aggregate
+transmission and charger assumptions are 0.90, 0.97 and 0.90 in their documented
+scopes. These component assumptions are not independently identified by aggregate
 consumption. Generic hybrid motor/system peak ratios are likewise assumptions.
 
 The **8.3 kW base auxiliary prior for 13 m city BEVs** transfers a conditional

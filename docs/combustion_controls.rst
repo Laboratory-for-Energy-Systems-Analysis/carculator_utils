@@ -1,6 +1,11 @@
 Conventional petrol-car operating controls
 ==========================================
 
+A speed trace does not fully specify engine operation. Stopping the engine at
+idle, selecting an operating load, or using a hybrid battery can change fuel use.
+The optional controls below represent these choices with explicit energy
+accounting; they are not manufacturer-specific control software.
+
 ``CarModel`` now supports opt-in start-stop and deceleration fuel cut through
 ``combustion_controls``. The controller conserves auxiliary service energy,
 tracks a finite buffer causally, limits recharge power, and accounts for restart

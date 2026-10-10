@@ -52,7 +52,7 @@ European Union aggregate in each GECO scenario. ``RER`` remains a separate
 Europe selection. Grid losses for EU27 use a disclosed RER proxy.
 
 GECO country projections (27)
-------------------------------
+-----------------------------
 
 .. csv-table::
    :header: "Code", "Country/economy", "First year", "Latest year", "Records", "Projection region"

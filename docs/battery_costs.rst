@@ -1,6 +1,10 @@
 Battery unit-cost inputs
 ========================
 
+A battery price input is a price per unit of nominal capacity, not the total
+price of the installed pack. This guide explains how an explicit price interacts
+with chemistry selection and subsequent cost calculations.
+
 Cars, buses and two-wheelers project default battery unit costs by model year.
 Previously, this projection silently replaced user prices, including prices for
 the selected chemistry. Explicit prices now survive both chemistry selection and
@@ -103,7 +107,7 @@ single-year results. The subsequent :doc:`cost_uncertainty` repair ties projecte
 cost draws to the input seed; regenerate stochastic results made with the old
 global generator, as well as multi-year sensitivity costs made before alignment
 was corrected.
-Truck models use a separate native cost path and do not call these projections.
+Truck models use a separate sampled-cost calculation and do not call these projections.
 
 Shared fuel-cell component costs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

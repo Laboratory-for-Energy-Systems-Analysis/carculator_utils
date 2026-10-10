@@ -1,7 +1,7 @@
 Input validation and family verification
 ========================================
 
-These contracts are shared by ``carculator``, ``carculator_truck``,
+These input requirements are shared by ``carculator``, ``carculator_truck``,
 ``carculator_bus``, and ``carculator_two_wheeler``.
 
 Parameter records
@@ -31,9 +31,10 @@ vehicles and years. The truck package documents its repaired cost bounds in
 ``docs/uncertainty_bounds.rst`` and ships their original records and 2020 anchors
 in ``data/cost_uncertainty_provenance.json``.
 
-Some bundled records overlap after expansion across sizes and powertrains.
-Their existing first-record precedence is preserved. Authors can explicitly
-audit new data for overlapping cells:
+The bundled duplicate records were removed during the input audit. Custom
+records can still overlap for the same parameter, size, powertrain and year.
+For compatibility, the first matching record takes precedence unless duplicate
+checking is requested. Audit new data explicitly:
 
 .. code-block:: python
 
@@ -124,7 +125,7 @@ share, rather than retaining the country's default share. If both components
 are provided, their shares must sum to one for every year (absolute tolerance
 ``1e-7``). The caller's dictionary is preserved. Unsupported categories, unknown
 fuel types, incompatible categories, malformed shapes, and invalid shares raise
-contextual ``ValueError`` exceptions.
+``ValueError`` identifying the affected input exceptions.
 
 Optional fuel-property overrides are also validated at construction:
 

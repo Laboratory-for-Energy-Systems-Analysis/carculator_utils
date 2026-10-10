@@ -3,6 +3,10 @@
 Shared-model validation
 =======================
 
+Start with :doc:`validation_examples` for bar charts and an explanation of the
+evidence. This page records detailed checks and limitations; dated test totals
+and before/after results refer to their stated software snapshots.
+
 ``carculator_utils`` provides shared physics, parameter handling and inventory
 machinery; vehicle-specific calibration belongs to the four vehicle packages.
 A passing software test and agreement with a measured vehicle answer different
@@ -13,7 +17,7 @@ comparisons with imperfectly matched cycles or meter boundaries.
 .. _battery-inventory-selection:
 
 Battery inventory selection
-----------------------------
+---------------------------
 
 Battery purchases now use exact ``(powertrain, size, year)`` selections.
 Previously the inventory matched substrings in vehicle names: ``Medium`` also
@@ -71,7 +75,7 @@ reversed mapping order, named samples, fractional replacements and mass balance.
 Completed car, bus, truck and two-wheeler runs cover differing chemistries and
 2025/2030 years, HEV/PHEV controls, selected-scope battery contributions under
 static and prospective backgrounds, and repeatable Brightway/SimaPro exports
-for ecoinvent 3.9/3.10. Vehicle-specific suppliers are followed where electricity
+for ecoinvent 3.12. Vehicle-specific suppliers are followed where electricity
 mixes differ. Run with all four sibling packages installed::
 
    CARCULATOR_REQUIRE_FAMILY=1 python -m pytest tests/test_battery_inventory.py
@@ -123,7 +127,7 @@ Current evidence
 * :doc:`hot_emission_audit` records 132 completed vehicle cases and repairs to
   pollutant mapping, speciation, energy-boundary and deterioration accounting;
   all 34,518 scalar checks pass after repair.
-* :doc:`energy_model_repairs` describes adopted accounting repairs and priors.
+* :doc:`energy_model_repairs` describes adopted accounting repairs and assumptions.
 * :doc:`energy_measurements` records 40 model runs, 41 paired observations and
   77 exclusions. It distinguishes charging AC, battery-terminal DC and unknown
   electrical boundaries.
@@ -154,7 +158,7 @@ samples reorders their characterized results. Selecting sample 1 before sizing
 gives the same physical outputs, inventory and impacts as relabelling that same
 input draw to zero. Reordered sensitivity runs normalize to the named reference.
 
-Repeated Brightway and SimaPro exports cover one retained numeric or named
+Repeated Brightway and SimaPro exports cover one selected numeric or named
 sample, both years, and passenger-/tonne-kilometre normalization. Checks compare
 Brightway energy inputs to consumption divided by load, verify vehicle comments,
 and preserve the original arrays, indices and calculated impacts. SimaPro checks
@@ -292,7 +296,7 @@ regional fallback, interpolation and extrapolation at both fraction bounds.
 Completed model/LCIA cases cover Medium cars, 13m-city buses and 40t long-haul
 trucks in all three countries, reordered 2020/2025/2030 years and two samples.
 Independent expectations check component purchases, engine fuel, combustion
-CO2 and methane leakage. Brightway exports of a retained sample preserve the
+CO2 and methane leakage. Brightway exports of a selected sample preserve the
 shares and both carbon origins, including Iceland's 100% biomethane blend.
 
 .. _default-hydrogen-supply:
@@ -343,7 +347,7 @@ from biofuel tables. Completed model/LCIA checks cover Medium cars in Brazil,
 2020/2025/2030 and two load samples. Default, pure-electrolysis and explicit
 year-varying supplies are checked against independent kg/kg component shares,
 the 120 MJ/kg hydrogen heating value and zero direct CO2. Annual Brightway
-exports of a retained sample preserve these exchanges and the source inventory.
+exports of a selected sample preserve these exchanges and the source inventory.
 These checks validate implementation of the supply assumption; they do not
 validate national hydrogen production shares or upstream production datasets.
 
@@ -404,7 +408,7 @@ Additional completed PHEV runs check explicit electric-driving shares of 0%,
 50% and 100%, including zero fuel and SO2 at the fully electric endpoint.
 Single-year inventories are built from the same completed vehicles to isolate
 inventory behavior from sizing. LCIA must remain finite, and annual exports
-of a retained sample must preserve the SO2 exchanges and source inventory.
+of a selected sample must preserve the SO2 exchanges and source inventory.
 These are accounting checks, not new measurements of fuel sulfur content.
 
 Run with the sibling packages and optional export dependencies::
@@ -489,7 +493,7 @@ for all four families with petrol, diesel, methane and hydrogen where
 supported, PHEVs and BEV controls, two named load samples, defaults and
 year-varying property overrides. It checks fuel-supply mass balance, methane
 losses, fossil/non-fossil CO2 and LCIA for reordered or individual 2025/2030
-years, plus repeated Brightway exports to ecoinvent 3.9 and 3.10. Exports leave
+years, plus repeated Brightway exports to ecoinvent 3.12. Exports leave
 the source matrix, index and model fuel metadata unchanged.
 
 These are selection and accounting checks, not new fuel assumptions or an
@@ -498,7 +502,7 @@ of older saved models that do not contain source-year labels.
 
 
 Fuel-blend inventory checks
-----------------------------
+---------------------------
 
 The biological synthetic-methane supplier repair and its completed car, bus and
 truck checks are described separately in :doc:`biological_methane`. The audit

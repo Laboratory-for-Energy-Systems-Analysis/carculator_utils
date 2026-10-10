@@ -1,5 +1,9 @@
 Biological synthetic methane
-=============================
+============================
+
+Biological methanation uses microorganisms to convert hydrogen and CO2 into
+methane. This page describes the supplying activities and the choices that
+affect their material, electricity and carbon accounting.
 
 ``methane - synthetic - biological`` uses the bundled biological-methanation
 production route with regional market hydrogen and CO2 captured from air.

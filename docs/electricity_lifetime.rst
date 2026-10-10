@@ -1,7 +1,7 @@
 Electricity supply over each vehicle's lifetime
 ===============================================
 
-Default electricity mixes now use each vehicle and retained sample's own
+Default electricity mixes now use each vehicle and selected sample's own
 operating lifetime. Previously, the inventory averaged lifetime kilometres
 divided by annual kilometres across all vehicles and samples before calculating
 one electricity mix. Adding another vehicle could therefore change an existing
@@ -33,7 +33,7 @@ Calculation and compatibility
   overrides default lifetime averaging. Its year-by-technology array is applied
   to all selected vehicles and samples without modifying the supplied array.
   Shares retain the existing clipping and normalization convention; nonfinite
-  mixes, zero totals and incorrect shapes raise contextual errors.
+  mixes, zero totals and incorrect shapes raise error identifying the affected inputs.
 
 The authoritative mixes are now available as a labelled array::
 
@@ -46,7 +46,7 @@ Its dimensions are ``value, combined_dim, year, technology``. The older
 reporting compatibility. That summary is not used to fill vehicle inventories.
 
 Inventory, characterization and export
----------------------------------------
+--------------------------------------
 
 The change covers charging and electricity already substituted into fuel
 production, including hydrogen and synthetic fuels. Vehicles needing different
@@ -55,13 +55,13 @@ those paths remain shared, as do vehicles with identical mixes. Additional
 supplier names end with ``[for <size> - <powertrain>]``. Their non-electricity
 exchanges, characterization factors and source metadata follow the originals.
 
-LCIA solves the appropriate matrix for every retained sample and year instead
+LCIA solves the appropriate matrix for every selected sample and year instead
 of reusing the first sample's upstream results. Export retains the corresponding
 supply activities and electricity shares. SimaPro exchanges use the actual
 exported product names for internal suppliers, including the additional supply
 paths. Biomethane remains a fuel product even when its name mentions sewage
 sludge. External supplier mappings are retained. Additional distinct supply paths
-increase matrix size; use scoped calculations when exploring large vehicle grids.
+increase matrix size; use small selections of vehicles and years when exploring large vehicle grids.
 
 The subsequent :doc:`electricity_scenarios` refresh supplies new historical and
 projected generation mixes. The per-vehicle accounting repair described here

@@ -12,7 +12,7 @@ When upgrading from an earlier version:
   see :doc:`background_rebuild`. Exports default to 3.12. Legacy targets
   reject suppliers without verified older links.
 * Rename custom battery selections from ``NMC-523`` to ``NMC-532``. This uses
-  the actual 5:3:2 inventory; existing physical and cost priors carry forward.
+  the actual 5:3:2 inventory; existing physical and cost assumptions carry forward.
 * Recalculate saved scenarios: changes to energy accounting, battery sizing,
   costs and emissions can affect results.
 * Select a supported background scenario: ``SSP2-NPi``,

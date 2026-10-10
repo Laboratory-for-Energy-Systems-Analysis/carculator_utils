@@ -48,8 +48,8 @@ vehicle's mass. The eight default runs without a target retain the recorded
 baseline outputs. These are internal consistency checks, not independent
 measurements of real vehicles.
 
-Sizing and override contracts
------------------------------
+Sizing and override rules
+-------------------------
 
 Nominal capacity is target distance multiplied by battery stored-energy demand,
 divided by usable depth of discharge. Pack mass follows from cell energy density

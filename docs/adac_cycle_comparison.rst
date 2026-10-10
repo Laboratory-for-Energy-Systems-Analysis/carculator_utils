@@ -81,7 +81,7 @@ the nominal reconstruction; this narrow sensitivity does not bound the omitted
 test conditions or uncertainty in the graph.
 
 This supports investigating cycle mismatch before adjusting the mini-BEV
-component priors. It does not establish that the remaining differences are
+component assumptions. It does not establish that the remaining differences are
 model defects: auxiliary/HVAC demand, road load, temperature, charging efficiency,
 and battery state trajectories still differ or are not known. The Spring
 remains the clearest residual among these four configurations.
