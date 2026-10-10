@@ -44,6 +44,77 @@ from .hydrogen_power import (
 from .inventory_electricity import lifetime_mix, specialize_electricity_supplies
 
 IAM_FILES_DIR = DATA_DIR / "IAM"
+# Explicit proxy for catalogued hydrogen suppliers without numerical pressure.
+# premise 2.5.4 fuels/utils.py:add_compression_electricity starts gaseous delivery
+# chains at 25 bar. This is overridable, not inferred from "low pressure".
+HYDROGEN_DELIVERY_PRESSURE_PROXY_BAR = 25.0
+
+
+def hydrogen_compression_electricity(
+    inlet_pressure,
+    outlet_pressure,
+    *,
+    temperature=300.0,
+    stages=3,
+    isentropic_efficiency=0.56,
+    motor_efficiency=0.92,
+):
+    """Estimate electricity in kWh/kg H2 for intercooled gas compression.
+
+    Pressures are absolute bar and temperature is kelvin. Equal pressure ratios
+    and complete intercooling are assumed for ideal hydrogen (gamma = 1.4).
+    Efficiencies follow DOE Program Record 9013; three stages are an explicit
+    engineering assumption. This excludes precooling, station infrastructure,
+    transport, leakage and fast-fill overpressure. No energy credit is given
+    for pressure reduction. See the hydrogen-compression section in validity.rst.
+    """
+    values = {
+        "inlet pressure": inlet_pressure,
+        "outlet pressure": outlet_pressure,
+        "temperature": temperature,
+        "stages": stages,
+        "isentropic efficiency": isentropic_efficiency,
+        "motor efficiency": motor_efficiency,
+    }
+    for label, value in values.items():
+        if (
+            isinstance(value, (bool, np.bool_))
+            or not np.isscalar(value)
+            or not isinstance(value, (int, float, np.integer, np.floating))
+            or not np.isreal(value)
+            or not np.isfinite(value)
+            or value <= 0
+        ):
+            raise ValueError(
+                f"Hydrogen compression {label} must be finite and positive."
+            )
+    if stages != int(stages):
+        raise ValueError("Hydrogen compression stages must be an integer.")
+    if isentropic_efficiency > 1 or motor_efficiency > 1:
+        raise ValueError("Hydrogen compression efficiencies must be in (0, 1].")
+    if outlet_pressure <= inlet_pressure:
+        return 0.0
+    gamma = 1.4
+    gas_constant = 8.314462618 / 0.00201588  # J/(kg K), hydrogen molar mass kg/mol
+    exponent = (gamma - 1) / (gamma * stages)
+    pressure_work = np.expm1(
+        exponent * (np.log(outlet_pressure) - np.log(inlet_pressure))
+    )
+    return float(
+        stages
+        * gamma
+        / (gamma - 1)
+        * gas_constant
+        * temperature
+        * pressure_work
+        / (isentropic_efficiency * motor_efficiency * 3.6e6)
+    )
+
+
+def _pressure_from_label(label):
+    """Read an explicit pressure in bar; descriptive pressure classes return None."""
+    match = re.search(r"(?<![\d.])(\d+(?:\.\d+)?)\s*bar\b", label)
+    return float(match.group(1)) if match else None
 
 
 def check_func_unit(func_unit):
@@ -1139,6 +1210,97 @@ class Inventory:
                 for supplier, share in suppliers.items():
                     self.A[:, supplier, fuel_market_index, y] = -share
 
+        if "hydrogen" in fuel_blend:
+            self.add_hydrogen_compression_electricity()
+
+    def add_hydrogen_compression_electricity(self):
+        """Add blend-weighted compression to vehicle H2 supply, in kWh/kg.
+
+        Keep production suppliers unchanged: hydrogen used in other fuel chains
+        must not acquire a vehicle-tank compression burden. Repeated calls replace
+        this market's electricity input rather than accumulating it.
+        """
+        configuration = self.background_configuration.get("hydrogen compression", {})
+        allowed = {
+            "delivery pressure",
+            "temperature",
+            "stages",
+            "isentropic efficiency",
+            "motor efficiency",
+        }
+        if not isinstance(configuration, dict) or set(configuration) - allowed:
+            raise ValueError(
+                f"Hydrogen compression options must be a mapping with keys {sorted(allowed)}."
+            )
+        overrides = configuration.get("delivery pressure", {})
+        if not isinstance(overrides, dict):
+            raise ValueError(
+                "Hydrogen compression delivery pressure must map fuel types to absolute bar."
+            )
+        options = {
+            key.replace(" ", "_"): value
+            for key, value in configuration.items()
+            if key != "delivery pressure"
+        }
+        tank = self._hydrogen_tank_name()
+        outlet = _pressure_from_label(tank)
+        if outlet is None:
+            raise ValueError(f"Hydrogen tank pressure is unspecified: {tank!r}.")
+        blend = self.fuel_blend["hydrogen"]
+        unknown = set(overrides) - {component["type"] for component in blend.values()}
+        if unknown:
+            raise ValueError(
+                f"Hydrogen delivery pressure overrides refer to unselected fuels: {sorted(unknown)}."
+            )
+        electricity = np.zeros(len(self.scope["year"]))
+        details = []
+        for role in ("primary", "secondary"):
+            component = blend[role]
+            shares = np.asarray(component["share"])
+            if not np.any(shares):
+                continue
+            supplier = tuple(component["name"])
+            inlet = overrides.get(component["type"])
+            origin = "explicit override"
+            if inlet is None:
+                inlet = _pressure_from_label(supplier[3])
+                if inlet is None:
+                    inlet = _pressure_from_label(supplier[0])
+                origin = "supplier label"
+            if inlet is None:
+                specification = self.bs.fuel_specs[component["type"]]
+                if supplier == tuple(specification["name"]) and supplier[3] in {
+                    "hydrogen, gaseous, low pressure",
+                    "hydrogen, gaseous, from pipeline",
+                }:
+                    inlet = HYDROGEN_DELIVERY_PRESSURE_PROXY_BAR
+                origin = "catalogue pressure assumption"
+            if inlet is None:
+                raise ValueError(
+                    f"Hydrogen delivery pressure is unspecified for {supplier!r}. "
+                    "Set background_configuration['hydrogen compression']"
+                    "['delivery pressure'][fuel_type] in absolute bar."
+                )
+            intensity = hydrogen_compression_electricity(inlet, outlet, **options)
+            electricity += shares * intensity
+            details.append(
+                {
+                    "role": role,
+                    "fuel": component["type"],
+                    "inlet pressure bar": inlet,
+                    "pressure source": origin,
+                    "electricity kWh/kg": intensity,
+                }
+            )
+        (row,) = self.find_input_indices(("electricity supply for fuel preparation",))
+        (column,) = self.find_input_indices(("fuel supply for hydrogen vehicles",))
+        self.A[:, row, column, :] = -electricity
+        self.hydrogen_compression = {
+            "tank pressure bar": outlet,
+            "components": details,
+            "electricity kWh/kg": electricity.copy(),
+        }
+
     def find_input_requirement(
         self,
         value_in,
@@ -1292,7 +1454,7 @@ class Inventory:
             * -1
         )
 
-    def add_hydrogen_tank(self):
+    def _hydrogen_tank_name(self):
         hydro_tank_type = self.vm.energy_storage.get("hydrogen", {"tank type": "hdpe"})[
             "tank type"
         ]
@@ -1302,10 +1464,12 @@ class Inventory:
             "hdpe": "fuel tank, compressed hydrogen gas, 700bar, with HDPE liner",
             "aluminium": "fuel tank, compressed hydrogen gas, 700bar, with aluminium liner",
         }
+        return dict_tank_map[hydro_tank_type]
 
+    def add_hydrogen_tank(self):
         self.A[
             :,
-            self.find_input_indices((dict_tank_map[hydro_tank_type],)),
+            self.find_input_indices((self._hydrogen_tank_name(),)),
             [
                 x
                 for x, y in self.rev_inputs.items()

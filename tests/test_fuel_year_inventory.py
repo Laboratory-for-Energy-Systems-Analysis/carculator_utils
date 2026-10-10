@@ -296,6 +296,14 @@ def test_selected_year_exports_preserve_fuel_suppliers_and_carbon(completed, ver
                             for role, c in components.items()
                             if expected[fuel][role]["share"][yi] > 0
                         }
+                        if fuel == "hydrogen":
+                            (row,) = inventory.find_input_indices(
+                                ("electricity supply for fuel preparation",),
+                                excludes=(" [for ",),
+                            )
+                            wanted[inventory.rev_inputs[row]] = (
+                                inventory.hydrogen_compression["electricity kWh/kg"][yi]
+                            )
                         assert actual.keys() == wanted.keys()
                         for key in wanted:
                             assert actual[key] == pytest.approx(wanted[key])

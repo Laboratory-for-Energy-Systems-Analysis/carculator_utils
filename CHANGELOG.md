@@ -32,6 +32,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Model and inventory changes
 
+- Add pressure-dependent hydrogen compression electricity to vehicle fuel supply. Blend supplier outlet pressures against the selected tank pressure, retain the scenario electricity mix, expose pressure assumptions and overrides, and avoid adding vehicle compression to upstream hydrogen-production inventories. See [hydrogen compression](docs/validity.rst#hydrogen-delivery-pressure-and-compression).
+
 - Export only reachable foreground chains, reject unsupported 3.9 coal suppliers, and add exact destination-link audits. Forward explicit openLCA method UUID mapping and retain omitted SimaPro noise quantities in audit comments.
 
 - Expose bounded physical-carbon diagnostics separately from legacy non-fossil climate allocation. Support repeatable exhaust CO2 reconciliation with explicit sourced composition; report the default full-oxidation limitation in exports.

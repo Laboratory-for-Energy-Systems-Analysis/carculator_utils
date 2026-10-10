@@ -145,6 +145,83 @@ auxiliary losses, explicit overrides and battery boundaries.
 audit runtime and inputs. Empirical residuals remain conditional on source quality
 and matched test settings; no fixed error threshold substitutes for physics.
 
+.. _hydrogen-compression:
+
+Hydrogen delivery pressure and compression
+-----------------------------------------
+
+Vehicle hydrogen supply includes electricity to compress each gaseous hydrogen
+component from its delivery pressure to the pressure of the selected onboard
+tank inventory. All currently supported tank inventories specify 700 bar. The
+electricity is purchased by ``fuel supply for hydrogen vehicles``, using the
+scenario's ``electricity supply for fuel preparation``. This preserves the
+selected electricity mix, losses, operating-lifetime mix and sample/year scope.
+The hydrogen production process is unchanged, so hydrogen used upstream of
+synthetic fuels does not acquire this vehicle-specific compression burden.
+
+Delivery pressures are absolute bar. An explicit numeric pressure in the
+supplier's reference product takes precedence over its activity name. Suppliers
+labelled only ``low pressure`` or ``from pipeline`` use an explicit 25-bar
+catalogue proxy: the starting pressure of the gaseous delivery chains in
+premise 2.5.4, ``premise/fuels/utils.py:add_compression_electricity``. This is an
+assumption, not a measured pressure inferred from those descriptive labels.
+Unrecognized suppliers without a numerical pressure require an override.
+Zero-share components do not require a pressure. Pressure reduction receives
+no electricity credit.
+
+The estimate is an ideal-gas, equal-ratio, three-stage compressor with complete
+intercooling to 300 K. Hydrogen has molar mass 0.00201588 kg/mol and heat-capacity
+ratio 1.4. For inlet and outlet pressure :math:`p_1,p_2`, stage count :math:`n`,
+temperature :math:`T` and compressor/motor efficiencies :math:`\eta_c,\eta_m`:
+
+.. math::
+
+   e = \frac{n\,\gamma\,R\,T}
+            {(\gamma-1)M\eta_c\eta_m\,3.6\times10^6}
+       \left[\left(\frac{p_2}{p_1}\right)^{(\gamma-1)/(n\gamma)}-1\right]
+
+Here :math:`e` is kWh/kg hydrogen and :math:`R` is 8.314462618 J/(mol K).
+The result is zero when :math:`p_2\leq p_1`. Default isentropic efficiency 0.56
+and motor efficiency 0.92 come from the compressor assumptions in
+`DOE Program Record 9013 (2009)
+<https://www.hydrogen.energy.gov/docs/hydrogenprogramlibraries/pdfs/9013_energy_requirements_for_hydrogen_gas_compression.pdf>`_.
+Three stages and ideal-gas behaviour are engineering assumptions; this is not
+a calibrated model of a particular 2025 station. The estimate gives 3.04 kWh/kg
+for 20 to 880 bar, close to that record's 3.0 kWh/kg example. It gives 2.45
+kWh/kg for the PEM supplier's 30 bar to the tank's 700 bar.
+
+The input is weighted by the mass share of each fuel component in each year.
+``inventory.hydrogen_compression`` records the inlet-pressure sources, tank
+pressure and resulting kWh/kg. Optional inventory settings are::
+
+    background_configuration = {
+        "hydrogen compression": {
+            "delivery pressure": {"hydrogen - smr - natural gas": 25.0},
+            "temperature": 300.0,
+            "stages": 3,
+            "isentropic efficiency": 0.56,
+            "motor efficiency": 0.92,
+        }
+    }
+
+Delivery-pressure overrides refer to selected fuel types and take precedence
+over labels and catalogue proxies. Values must be positive and finite;
+efficiencies cannot exceed one and the stage count must be an integer.
+They describe the inlet boundary and must not be used to conceal missing
+compression already required by that boundary. The target follows the tank
+inventory rather than an independent pressure override.
+
+This addition covers compression electricity only. It does not model
+fast-fill overpressure above the tank's nominal pressure, precooling, station
+construction, off-site hydrogen transport, storage losses or leakage. Those
+require a separately specified delivery scenario; the current supplier is
+not thereby converted into a complete hydrogen-refuelling-station inventory.
+
+``tests/test_hydrogen_compression.py`` checks thermodynamic bounds, the DOE
+order of magnitude, equal/excess delivery pressure, invalid assumptions,
+blend/year/sample accounting and car/bus/truck LCIA increments. The electricity
+exchange is part of the ordinary A matrix and therefore also enters exports.
+
 Sample identity checks
 ----------------------
 

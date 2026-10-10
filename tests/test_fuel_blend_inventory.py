@@ -409,6 +409,17 @@ def test_fuel_blends_survive_brightway_export(case, blend_mode, tmp_path):
                 for e in dataset["exchanges"]
                 if e["type"] == "technosphere"
             }
+            if fuel == "hydrogen":
+                # Electricity is an energy input, not part of the kg fuel blend.
+                (electricity,) = [
+                    key
+                    for key in exchanges
+                    if key[0].startswith("electricity supply for fuel preparation")
+                ]
+                assert electricity[2] == "kilowatt hour"
+                assert exchanges.pop(electricity) == pytest.approx(
+                    inventory.hydrogen_compression["electricity kWh/kg"][yi]
+                )
             assert set(exchanges) == {s for s, share in expected.items() if share > 0}
             for supplier, share in expected.items():
                 assert exchanges.get(supplier, 0) == pytest.approx(share)
