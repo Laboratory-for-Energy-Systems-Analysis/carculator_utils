@@ -152,7 +152,9 @@ def test_hydrogen_shares_and_vehicle_exchanges_survive_export(
         suppliers = {
             e["name"]: e["amount"]
             for e in market["exchanges"]
-            if e["type"] == "technosphere"
+            # Blend shares are kg hydrogen/kg delivered hydrogen. Compression
+            # electricity is a separate input, measured in kWh/kg hydrogen.
+            if e["type"] == "technosphere" and e["unit"] == "kilogram"
         }
         expected = {
             model.bs.fuel_specs[fuel]["name"][0]: share
@@ -160,6 +162,17 @@ def test_hydrogen_shares_and_vehicle_exchanges_survive_export(
             if share > 0
         }
         assert suppliers == pytest.approx(expected)
+        (compression,) = [
+            e
+            for e in market["exchanges"]
+            if e["type"] == "technosphere" and e["unit"] != "kilogram"
+        ]
+        assert compression["unit"] == "kilowatt hour"
+        assert compression["name"].startswith("electricity supply for fuel preparation")
+        assert compression["amount"] > 0
+        assert compression["amount"] == pytest.approx(
+            inventory.hydrogen_compression["electricity kWh/kg"][yi]
+        )
         (vehicle,) = [
             d
             for d in importer.data
