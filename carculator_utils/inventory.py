@@ -1340,12 +1340,18 @@ class Inventory:
 
         index_output = self.find_input_indices(value_out)
 
-        f_vector = np.zeros((np.shape(self.A)[1]))
-        f_vector[index_output] = 1
-
-        X = sparse.linalg.spsolve(sparse.csr_matrix(self.A[0, ..., 0]), f_vector.T)
-
-        ind_inputs = np.nonzero(X)[0]
+        # Follow actual exchanges, including routes present only in later years
+        # or samples. Sparse solves can return tiny nonzero residuals for wholly
+        # unrelated activities; using those as links rewires their electricity.
+        reachable = set(index_output)
+        pending = index_output
+        while pending:
+            suppliers = np.flatnonzero(
+                np.any(self.A[:, :, pending, :] != 0, axis=(0, 2, 3))
+            )
+            pending = sorted(set(suppliers) - reachable)
+            reachable.update(pending)
+        ind_inputs = sorted(reachable)
 
         if find_input_by == "name":
             ins = [
@@ -1376,7 +1382,7 @@ class Inventory:
         ins = [
             i
             for i in ins
-            if self.A[np.ix_(np.arange(0, self.A.shape[0]), [i], outs)].sum() != 0
+            if np.any(self.A[np.ix_(np.arange(0, self.A.shape[0]), [i], outs)] != 0)
         ]
 
         # if replace_by, replace the input by the new one

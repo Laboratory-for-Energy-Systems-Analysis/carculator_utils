@@ -55,6 +55,16 @@ those paths remain shared, as do vehicles with identical mixes. Additional
 supplier names end with ``[for <size> - <powertrain>]``. Their non-electricity
 exchanges, characterization factors and source metadata follow the originals.
 
+Fuel-production electricity is identified by following nonzero inventory
+exchanges upstream from the selected fuel, across all retained years and samples.
+It is not identified from the numerical supply amounts returned by an LCA solve:
+rounding can leave tiny residual amounts for completely disconnected activities.
+Treating those residuals as links would incorrectly replace electricity in other
+manufacturing processes, including batteries used in depot chargers. Such
+manufacturing keeps its background electricity unless it is actually part of the
+selected fuel's supply chain. Small but real exchanges are retained without an
+arbitrary numerical cutoff.
+
 LCIA solves the appropriate matrix for every selected sample and year instead
 of reusing the first sample's upstream results. Export retains the corresponding
 supply activities and electricity shares. SimaPro exchanges use the actual
@@ -80,6 +90,12 @@ car cases cover multiple sizes, battery-electric, fuel-cell and methane vehicles
 and static/prospective backgrounds. Fuel-cell routing cases explicitly request
 100% PEM-electrolysis hydrogen; the :ref:`default-hydrogen-supply` assumption
 uses natural-gas reforming.
+
+``tests/test_inventory_helpers.py`` also checks that electricity replacement
+preserves unrelated activities, follows supply loops safely, retains very small
+real exchanges, and finds fuel routes present only in later years or samples.
+Truck charger tests compare the allocated LCIA contribution with an independent
+matrix solve for both shared and differing operating-electricity mixes.
 
 Repeated Brightway and SimaPro export checks inspect the separate electricity
 markets and internal supplier links and preserve the original inventory and
