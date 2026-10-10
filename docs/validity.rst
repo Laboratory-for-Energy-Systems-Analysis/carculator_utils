@@ -148,7 +148,7 @@ and matched test settings; no fixed error threshold substitutes for physics.
 .. _hydrogen-compression:
 
 Hydrogen delivery pressure and compression
------------------------------------------
+------------------------------------------
 
 Vehicle hydrogen supply includes electricity to compress each gaseous hydrogen
 component from its delivery pressure to the pressure of the selected onboard
@@ -221,6 +221,34 @@ not thereby converted into a complete hydrogen-refuelling-station inventory.
 order of magnitude, equal/excess delivery pressure, invalid assumptions,
 blend/year/sample accounting and car/bus/truck LCIA increments. The electricity
 exchange is part of the ordinary A matrix and therefore also enters exports.
+
+.. _impact-source-grouping:
+
+Additive impact source groups
+-----------------------------
+
+Each vehicle or transport input must contribute to exactly one impact source
+group. Onboard car and scooter chargers belong to ``powertrain``; depot chargers,
+charging stations and overhead infrastructure belong to ``charger``. Group
+totals can therefore be added without counting charger production twice.
+Ambiguous source rules and contributing exchanges with no group raise an error
+that identifies the supplier. Within-group repeated patterns are deduplicated.
+
+The October 2026 end-to-end audit found that the former broad ``charger``
+pattern also matched onboard chargers already counted under ``powertrain``.
+Climate totals were inflated by 0.47–1.70% in the affected sampled vehicles.
+Correcting these groups changes reported totals; it does not change energy
+consumption, inventory exchange quantities or background factors. Regenerate
+affected LCIA results. Brightway exports already contained one charger input.
+
+``tests/test_impact_source_groups.py`` compares the sum of all reported groups
+with a direct solution of the complete inventory matrix, across cars, a PHEV,
+trucks, buses and two-wheelers in 2025 and 2030. It also verifies that ambiguous
+and unassigned inputs cannot silently alter a total. The reproducible audit in
+``results/pipeline_audit_20261010`` additionally compares exported inventories
+with actual Brightway calculations against the matching premise 2.5.4 /
+ecoinvent 3.12 cutoff backgrounds. These establish numerical consistency;
+they do not independently validate every physical assumption.
 
 Sample identity checks
 ----------------------

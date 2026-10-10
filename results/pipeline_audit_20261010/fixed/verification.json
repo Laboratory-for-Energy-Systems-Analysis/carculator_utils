@@ -1,0 +1,158 @@
+{
+  "date": "2026-10-10",
+  "scope": "Only charger grouping and truck sizing. Concurrent hydrogen-compression edits are excluded.",
+  "provenance": "Model report revisions identify starting commits. Hashes identify the tested grouping snapshot and truck fix; installed suites ran against isolated candidate wheels.",
+  "truck_fix_commit": "e3f0947029ce010e63a3d251b336110b41ed2773",
+  "tested_source_sha256": {
+    "carculator_utils/carculator_utils/inventory.py": "2b911f6c6a38f0e922ceba558687396ea6b0394bfe97bbc3d6d358a25ef1e1e3",
+    "carculator_utils/carculator_utils/data/lcia/impact_source_categories.yaml": "48a95a77dc69f05e3f8c72b86a95dc4a90dbe2624e71a1b2b342835a2b6c2e3f",
+    "carculator_utils/CHANGELOG.md": "899639003e9d3c022784b0fd2f09fb4ca347b73a24ddea541275452d2df2ac2d",
+    "carculator_utils/docs/validity.rst": "0169c914b47c299c13eacd45464c801b5640e54a6c501b14ab88e83e5bf6dd96",
+    "carculator_truck/carculator_truck/model.py": "95149454ecf1ad29135ad7741fdd49bf9a587f8602d918fb90b37bff2b24f005",
+    "carculator_truck/tests/test_sizing_consistency.py": "8539a349d43052dd7df8df5b32db5fa43f5496e33125b3864bbb2c98424d9b4d",
+    "carculator_utils/tests/test_impact_source_groups.py": "b900cbc49275ec9f0b086f41243f2964c96060deefb788cf209122902ec36a9f",
+    "carculator_utils/dev/audit_pipeline_spotchecks.py": "64d8752786b42215d386d4b87e68c838ebde013cc8acc211412ac46647503cf9",
+    "carculator_utils/dev/audit_pipeline_physics.py": "657c9dc9b6c121868a7f875cc2f5370d9a32883dd151331d6aa3fcf6d29186c7",
+    "carculator_utils/dev/audit_pipeline_brightway.py": "4bfc5ae095134d23d02c3f978a3769cd2d2655602761ee657b022b84ac2c9fe9"
+  },
+  "installed_tests": {
+    "carculator_utils": {
+      "tests": 1278,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1083.11
+    },
+    "carculator": {
+      "tests": 77,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 213.343
+    },
+    "carculator_truck": {
+      "tests": 139,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 287.689
+    },
+    "carculator_bus": {
+      "tests": 43,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 133.025
+    },
+    "carculator_two_wheeler": {
+      "tests": 100,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 84.877
+    }
+  },
+  "documentation_builds": {
+    "carculator_utils": {
+      "build": "html",
+      "warnings_as_errors": true,
+      "passed": true
+    },
+    "carculator_truck": {
+      "build": "html",
+      "warnings_as_errors": true,
+      "passed": true
+    }
+  },
+  "artifact_verification": {
+    "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 17:06:14) [Clang 19.1.7 ]",
+    "artifacts": [
+      {
+        "name": "carculator_utils-1.3.6-py3-none-any.whl",
+        "source": "wheels",
+        "sha256": "68ac4f4ff043f7d8e438c074c2f8c88f4001fab2e7ac13daff0c9ed00448d1f9",
+        "resources": 137
+      },
+      {
+        "name": "carculator_utils-1.3.6-py3-none-any.whl",
+        "source": "rebuilt",
+        "sha256": "32a0b127abb098eae04e71e3ec8d0e79ca1516a4711bec4fe47d75a861acc0de",
+        "resources": 137
+      },
+      {
+        "name": "carculator-1.9.6-py3-none-any.whl",
+        "source": "wheels",
+        "sha256": "018078e16d007d496bba427027928993113e51c1067b82a119173180a07106ad",
+        "resources": 7
+      },
+      {
+        "name": "carculator-1.9.6-py3-none-any.whl",
+        "source": "rebuilt",
+        "sha256": "a4167b4b1e2f7fa07d421e310dc433168f26b4a5266c79270820f49be483c214",
+        "resources": 7
+      },
+      {
+        "name": "carculator_truck-0.5.1-py3-none-any.whl",
+        "source": "wheels",
+        "sha256": "d291d15a66c4d96dab3e4d826c9651ac530d64737f41e4310094fe4e04797853",
+        "resources": 7
+      },
+      {
+        "name": "carculator_truck-0.5.1-py3-none-any.whl",
+        "source": "rebuilt",
+        "sha256": "c2be94f061ec16d3a32f8219e07cddb5c91fe31f64eecfa93bef9a251a30b0be",
+        "resources": 7
+      },
+      {
+        "name": "carculator_bus-0.1.1-py3-none-any.whl",
+        "source": "wheels",
+        "sha256": "1b5a00faa8270d265170e3fb9e73399853e9484ddb66bf5af3b2e022e45df566",
+        "resources": 8
+      },
+      {
+        "name": "carculator_bus-0.1.1-py3-none-any.whl",
+        "source": "rebuilt",
+        "sha256": "ba4e194bf60d26a30a6fb6a68456c6bd87b2372972eeefa67a738a3d8e394f03",
+        "resources": 8
+      },
+      {
+        "name": "carculator_two_wheeler-0.1.1-py3-none-any.whl",
+        "source": "wheels",
+        "sha256": "1c2f80d04162e82cbd5562796d70b42fc5d88b172b59a91b352e29de4d31f77a",
+        "resources": 12
+      },
+      {
+        "name": "carculator_two_wheeler-0.1.1-py3-none-any.whl",
+        "source": "rebuilt",
+        "sha256": "1c2f80d04162e82cbd5562796d70b42fc5d88b172b59a91b352e29de4d31f77a",
+        "resources": 12
+      }
+    ],
+    "results": [
+      {
+        "package": "carculator",
+        "version": "1.9.6",
+        "ttw_energy": 561.8109741210938,
+        "climate_change": 0.14997842821233132
+      },
+      {
+        "package": "carculator_truck",
+        "version": "0.5.1",
+        "ttw_energy": 4523.498046875,
+        "climate_change": 1.4052935655531484
+      },
+      {
+        "package": "carculator_bus",
+        "version": "0.1.1",
+        "ttw_energy": 4063.597900390625,
+        "climate_change": 0.5274745348481149
+      },
+      {
+        "package": "carculator_two_wheeler",
+        "version": "0.1.1",
+        "ttw_energy": 21.53740882873535,
+        "climate_change": 0.021581237888735626
+      }
+    ]
+  }
+}

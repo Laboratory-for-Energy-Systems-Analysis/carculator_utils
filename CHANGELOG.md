@@ -34,6 +34,8 @@ it has not yet been published. Older entries, where present, retain their origin
 
 - Add pressure-dependent hydrogen compression electricity to vehicle fuel supply. Blend supplier outlet pressures against the selected tank pressure, retain the scenario electricity mix, expose pressure assumptions and overrides, and avoid adding vehicle compression to upstream hydrogen-production inventories. See [hydrogen compression](docs/validity.rst#hydrogen-delivery-pressure-and-compression).
 
+- Count onboard car/scooter chargers once under powertrain and external charging infrastructure once under charger. Reject ambiguous or unassigned impact-source groups instead of returning double-counted or incomplete totals. Add complete-matrix and Brightway parity checks across vehicle families; see [validation](docs/validity.rst#impact-source-grouping).
+
 - Export only reachable foreground chains, reject unsupported 3.9 coal suppliers, and add exact destination-link audits. Forward explicit openLCA method UUID mapping and retain omitted SimaPro noise quantities in audit comments.
 
 - Expose bounded physical-carbon diagnostics separately from legacy non-fossil climate allocation. Support repeatable exhaust CO2 reconciliation with explicit sourced composition; report the default full-oxidation limitation in exports.

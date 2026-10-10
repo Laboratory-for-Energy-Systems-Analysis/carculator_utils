@@ -482,7 +482,12 @@ class Inventory:
 
     def get_split_indices(self):
         """
-        Return list of indices to split the results into categories.
+        Return disjoint source groups for additive impact results.
+
+        List-valued rules match name substrings. A mapping can additionally
+        specify ``exact`` names, for example the external ``charger`` activity
+        without matching onboard charger production. Ambiguous rules fail
+        before calculation rather than counting a contribution twice.
 
         :return: list of indices
         :rtype: list
@@ -495,13 +500,14 @@ class Inventory:
 
         idx_cats = defaultdict(list)
 
-        for cat, name in source_cats.items():
-            for n in name:
-                idx = self.find_input_indices((n,))
-                if idx and idx not in idx_cats[cat]:
-                    idx_cats[cat].extend(idx)
-            # remove duplicates
-            idx_cats[cat] = list(set(idx_cats[cat]))
+        for cat, rule in source_cats.items():
+            contains = rule if isinstance(rule, list) else rule.get("contains", [])
+            exact = [] if isinstance(rule, list) else rule.get("exact", [])
+            idx_cats[cat] = [
+                index
+                for label, index in self.inputs.items()
+                if label[0] in exact or any(term in label[0] for term in contains)
+            ]
 
         # add flows corresponding to `exhaust - direct`
         idx_cats["direct - exhaust"] = [
@@ -522,6 +528,17 @@ class Inventory:
             self.inputs[(f"Methane, {origin}", ("air",), "kilogram")]
             for origin in ("fossil", "non-fossil")
         )
+
+        owners = {}
+        for category, indices in idx_cats.items():
+            idx_cats[category] = list(dict.fromkeys(indices))
+            for index in idx_cats[category]:
+                if index in owners:
+                    raise ValueError(
+                        f"Impact source {self.rev_inputs[index]!r} belongs to both "
+                        f"{owners[index]!r} and {category!r}. Assign it to one group."
+                    )
+                owners[index] = category
 
         # idx for an input that has no burden
         # oxygen in this case
@@ -594,7 +611,13 @@ class Inventory:
         vehicle_rows = idx_cars + idx_car_trspt
         contributing = np.any(self.A[:, :, vehicle_rows, :] != 0, axis=(0, 2))
         contributing[vehicle_rows, :] = False
-        nonzero_idx = np.argwhere(contributing)
+        grouped = set(itertools.chain.from_iterable(self.split_indices))
+        unassigned = set(np.flatnonzero(contributing.any(axis=1))) - grouped
+        if unassigned:
+            labels = [self.rev_inputs[i] for i in sorted(unassigned)]
+            raise ValueError(
+                f"Inventory contributions have no impact source group: {labels!r}"
+            )
         # Electricity and fuel supply matrices may differ between samples.
         # Factor each sample/year once and solve all required suppliers together.
         new_arr = np.zeros(
@@ -650,19 +673,6 @@ class Inventory:
         )
 
         arr = arr[:, :, self.split_indices].sum(axis=3)
-
-        # fetch indices not contained in self.split_indices
-        # to see if there are other flows unaccounted for
-        idx = [
-            i
-            for i in range(self.B.shape[-1])
-            if i not in list(itertools.chain.from_iterable(self.split_indices))
-        ]
-        # check if any of the first items of nonzero_idx
-        # are in idx
-        for i in nonzero_idx:
-            if i[0] in idx:
-                print(f"The flow {self.rev_inputs[i[0]][0]} is not accounted for.")
 
         # reshape the array to match the dimensions of the results table
         arr = arr.transpose(0, 3, 4, 5, 2, 1)

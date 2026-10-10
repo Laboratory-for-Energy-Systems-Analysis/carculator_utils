@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-10",
+  "scope": "Charger grouping and truck sizing fixes integrated with hydrogen compression commit 654a844.",
+  "starting_revisions": {
+    "carculator_utils": "654a844b3022f1fbddece049dfdfef0e9c520866",
+    "carculator": "e1b1f090e8d273d3841c2978e948034d18db2b39",
+    "carculator_truck": "e3f0947029ce010e63a3d251b336110b41ed2773",
+    "carculator_bus": "820743719f14cfa92826c3cc5754eaaea930dd0b",
+    "carculator_two_wheeler": "1f0ff2d1eaf1583b9e58005bdafbb268a6c952ee"
+  },
+  "tested_source_sha256": {
+    "carculator_utils/carculator_utils/inventory.py": "7e82b970bfbd0556a4e85264e1344d1c6c08cea5ed6b66853f6963936b7196c8",
+    "carculator_utils/carculator_utils/data/lcia/impact_source_categories.yaml": "48a95a77dc69f05e3f8c72b86a95dc4a90dbe2624e71a1b2b342835a2b6c2e3f",
+    "carculator_utils/tests/test_impact_source_groups.py": "b900cbc49275ec9f0b086f41243f2964c96060deefb788cf209122902ec36a9f",
+    "carculator_utils/tests/test_hydrogen_compression.py": "ae4909d2623696d50acc5b092c89ae678097f4dd4a16639d81d9d269df34d45f",
+    "carculator_utils/docs/validity.rst": "727156c2bf65c72d19801ecd1709fb186d6a5afc3cb35849bc4b1842406bfeeb",
+    "carculator_utils/dev/audit_pipeline_spotchecks.py": "64d8752786b42215d386d4b87e68c838ebde013cc8acc211412ac46647503cf9",
+    "carculator_utils/dev/audit_pipeline_physics.py": "e2a45aa7095f7ada9d2cefe9581f239277f07f7148f390067bc6d2c2f2c74033",
+    "carculator_utils/dev/audit_pipeline_brightway.py": "4bfc5ae095134d23d02c3f978a3769cd2d2655602761ee657b022b84ac2c9fe9",
+    "carculator_truck/carculator_truck/model.py": "95149454ecf1ad29135ad7741fdd49bf9a587f8602d918fb90b37bff2b24f005",
+    "carculator_truck/tests/test_sizing_consistency.py": "8539a349d43052dd7df8df5b32db5fa43f5496e33125b3864bbb2c98424d9b4d"
+  },
+  "checks_passed": {
+    "model_and_matrix": 331,
+    "physics": 54,
+    "inventory_and_contributions": 40,
+    "phev": 3,
+    "brightway": 242
+  },
+  "focused_tests": {
+    "tests": 46,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "documentation": {
+    "warnings_as_errors": true,
+    "passed": true
+  },
+  "maximum_grouped_brightway_relative_difference": 7.609805331373037e-08
+}

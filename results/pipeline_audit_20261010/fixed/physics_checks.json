@@ -1,0 +1,1392 @@
+{
+  "physics": [
+    {
+      "id": "case-01",
+      "cycle_km": 23.262388888888896,
+      "checks": [
+        {
+          "name": "rolling resistance maximum trace error",
+          "observed": 5.872639547988001e-07,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 9.273737066082002e-05,
+          "passed": true
+        },
+        {
+          "name": "air resistance maximum trace error",
+          "observed": 1.110399061587941e-06,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.00035630794423908,
+          "passed": true
+        },
+        {
+          "name": "gradient resistance maximum trace error",
+          "observed": 0.0,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 1e-08,
+          "passed": true
+        },
+        {
+          "name": "kinetic energy maximum trace error",
+          "observed": 5.841290509067676e-06,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.0006873881134259249,
+          "passed": true
+        },
+        {
+          "name": "motive energy at wheels maximum trace error",
+          "observed": 5.20957183880455e-06,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.0007401664879908179,
+          "passed": true
+        },
+        {
+          "name": "cycle integration to TtW",
+          "observed": 455.6911926269531,
+          "expected": 455.69119861589064,
+          "unit": "kJ/km",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "cycle_work_kJ": {
+        "rolling resistance": {
+          "model": 2957.4459358105123,
+          "manual": 2957.4463103739927
+        },
+        "air resistance": {
+          "model": 4379.787665478897,
+          "manual": 4379.787392495281
+        },
+        "gradient resistance": {
+          "model": 0.0,
+          "manual": 0.0
+        },
+        "kinetic energy": {
+          "model": -1.9895196601282805e-13,
+          "manual": -4.178879464689089e-13
+        },
+        "motive energy at wheels": {
+          "model": 10391.793436888755,
+          "manual": 10391.794210525179
+        }
+      },
+      "energy_balance": {
+        "positive_input_kJ": 11903.54342001201,
+        "auxiliary_kJ": 956.6716554565559,
+        "hvac_kJ": 0.0,
+        "combustion_control_kJ": 0,
+        "regeneration_credit_kJ": 2419.9672680473036,
+        "ttw_manual_kJ_per_km": 455.69119861589064,
+        "ttw_model_kJ_per_km": 455.6911926269531
+      },
+      "trace_mass_kg": 1436.492005566852,
+      "final_driving_mass_kg": 1436.4921875
+    },
+    {
+      "id": "case-02",
+      "cycle_km": 23.262388888888896,
+      "checks": [
+        {
+          "name": "rolling resistance maximum trace error",
+          "observed": 3.094505196976627e-06,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 9.255725795621859e-05,
+          "passed": true
+        },
+        {
+          "name": "air resistance maximum trace error",
+          "observed": 6.838802946163014e-08,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.0003809442824197531,
+          "passed": true
+        },
+        {
+          "name": "gradient resistance maximum trace error",
+          "observed": 0.0,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 1e-08,
+          "passed": true
+        },
+        {
+          "name": "kinetic energy maximum trace error",
+          "observed": 2.6285807294357255e-05,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.0007155366498480891,
+          "passed": true
+        },
+        {
+          "name": "motive energy at wheels maximum trace error",
+          "observed": 2.476206181256657e-05,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.0007735549712245763,
+          "passed": true
+        },
+        {
+          "name": "cycle integration to TtW",
+          "observed": 2208.09765625,
+          "expected": 2208.0974642901415,
+          "unit": "kJ/km",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "cycle_work_kJ": {
+        "rolling resistance": {
+          "model": 2951.700442375607,
+          "manual": 2951.702416085431
+        },
+        "air resistance": {
+          "model": 4682.6207452062135,
+          "manual": 4682.620728393511
+        },
+        "gradient resistance": {
+          "model": 0.0,
+          "manual": 0.0
+        },
+        "kinetic energy": {
+          "model": -5.573319583618286e-13,
+          "manual": -1.7408297026122455e-13
+        },
+        "motive energy at wheels": {
+          "model": 10826.311885737996,
+          "manual": 10826.316655332259
+        }
+      },
+      "energy_balance": {
+        "positive_input_kJ": 42046.95385385452,
+        "auxiliary_kJ": 11013.786241898011,
+        "hvac_kJ": 0.0,
+        "combustion_control_kJ": 0,
+        "regeneration_credit_kJ": 1695.1181768657916,
+        "ttw_manual_kJ_per_km": 2208.0974642901415,
+        "ttw_model_kJ_per_km": 2208.09765625
+      },
+      "trace_mass_kg": 1495.3155284495572,
+      "final_driving_mass_kg": 1495.3165283203125
+    },
+    {
+      "id": "case-03",
+      "cycle_km": 27.81558683333309,
+      "checks": [
+        {
+          "name": "rolling resistance maximum trace error",
+          "observed": 1.647965852669131e-07,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.011795395344216126,
+          "passed": true
+        },
+        {
+          "name": "air resistance maximum trace error",
+          "observed": 1.2403031099950113e-06,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.03779444251676288,
+          "passed": true
+        },
+        {
+          "name": "gradient resistance maximum trace error",
+          "observed": 4.998883795792608e-07,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.10556143999038216,
+          "passed": true
+        },
+        {
+          "name": "kinetic energy maximum trace error",
+          "observed": 4.263256414560601e-13,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.14207975919605348,
+          "passed": true
+        },
+        {
+          "name": "motive energy at wheels maximum trace error",
+          "observed": 1.3097407916967674e-06,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.19031937883011601,
+          "passed": true
+        },
+        {
+          "name": "cycle integration to TtW",
+          "observed": 1200.94189453125,
+          "expected": 1200.941860976587,
+          "unit": "kJ/km",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "cycle_work_kJ": {
+        "rolling resistance": {
+          "model": 6946.2453707176555,
+          "manual": 6946.245176621994
+        },
+        "air resistance": {
+          "model": 8643.70138992567,
+          "manual": 8643.701957247657
+        },
+        "gradient resistance": {
+          "model": -0.3470741706632989,
+          "manual": -0.3470741673748016
+        },
+        "kinetic energy": {
+          "model": 1.1227095642052376e-12,
+          "manual": 5.678218312210603e-13
+        },
+        "motive energy at wheels": {
+          "model": 32310.654489820245,
+          "manual": 32310.654692256634
+        }
+      },
+      "energy_balance": {
+        "positive_input_kJ": 37011.05886913503,
+        "auxiliary_kJ": 10037.812499999905,
+        "hvac_kJ": 0.0,
+        "combustion_control_kJ": 0,
+        "regeneration_credit_kJ": 14148.858729189706,
+        "ttw_manual_kJ_per_km": 1200.941860976587,
+        "ttw_model_kJ_per_km": 1200.94189453125
+      },
+      "trace_mass_kg": 5360.47768884779,
+      "final_driving_mass_kg": 5360.4775390625
+    },
+    {
+      "id": "case-04",
+      "cycle_km": 27.81613297222201,
+      "checks": [
+        {
+          "name": "rolling resistance maximum trace error",
+          "observed": 9.05916213156388e-07,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.02534733226845747,
+          "passed": true
+        },
+        {
+          "name": "air resistance maximum trace error",
+          "observed": 6.232394689220655e-07,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.05348270147725728,
+          "passed": true
+        },
+        {
+          "name": "gradient resistance maximum trace error",
+          "observed": 8.26688879840276e-06,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.22940255594043818,
+          "passed": true
+        },
+        {
+          "name": "kinetic energy maximum trace error",
+          "observed": 9.450218385609332e-13,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.30421267599647983,
+          "passed": true
+        },
+        {
+          "name": "motive energy at wheels maximum trace error",
+          "observed": 9.468256905620365e-06,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.19982041601460698,
+          "passed": true
+        },
+        {
+          "name": "cycle integration to TtW",
+          "observed": 9499.111328125,
+          "expected": 9499.111063237153,
+          "unit": "kJ/km",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "cycle_work_kJ": {
+        "rolling resistance": {
+          "model": 14927.202277238,
+          "manual": 14927.201210238669
+        },
+        "air resistance": {
+          "model": 11838.820556995865,
+          "manual": 11838.820281077802
+        },
+        "gradient resistance": {
+          "model": -0.03506177737587764,
+          "manual": -0.035061774849316704
+        },
+        "kinetic energy": {
+          "model": -1.220357148667972e-12,
+          "manual": 1.4203083154029628e-12
+        },
+        "motive energy at wheels": {
+          "model": 63487.34946376631,
+          "manual": 63487.347332133264
+        }
+      },
+      "energy_balance": {
+        "positive_input_kJ": 194619.9365700568,
+        "auxiliary_kJ": 81306.64331688498,
+        "hvac_kJ": 0.0,
+        "combustion_control_kJ": 0,
+        "regeneration_credit_kJ": 11698.043434031915,
+        "ttw_manual_kJ_per_km": 9499.111063237153,
+        "ttw_model_kJ_per_km": 9499.111328125
+      },
+      "trace_mass_kg": 11519.225432771475,
+      "final_driving_mass_kg": 11519.224609375
+    },
+    {
+      "id": "case-05",
+      "cycle_km": 39.55043941666727,
+      "checks": [
+        {
+          "name": "rolling resistance maximum trace error",
+          "observed": 0.0027878682952042766,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.02524484760510236,
+          "passed": true
+        },
+        {
+          "name": "air resistance maximum trace error",
+          "observed": 2.7203697072764044e-09,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.04176452605909342,
+          "passed": true
+        },
+        {
+          "name": "gradient resistance maximum trace error",
+          "observed": 0.016128961197196645,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.14603901127561805,
+          "passed": true
+        },
+        {
+          "name": "kinetic energy maximum trace error",
+          "observed": 0.037944583361650075,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.34350624152334763,
+          "passed": true
+        },
+        {
+          "name": "motive energy at wheels maximum trace error",
+          "observed": 0.030968734183659308,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.30807126942412905,
+          "passed": true
+        },
+        {
+          "name": "cycle integration to TtW",
+          "observed": 4017.624267578125,
+          "expected": 4017.624007327357,
+          "unit": "kJ/km",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "cycle_work_kJ": {
+        "rolling resistance": {
+          "model": 26379.369925293973,
+          "manual": 26385.197526775257
+        },
+        "air resistance": {
+          "model": 12039.844039363674,
+          "manual": 12039.844037795016
+        },
+        "gradient resistance": {
+          "model": -0.5148836213715944,
+          "manual": -0.5149973769277593
+        },
+        "kinetic energy": {
+          "model": 1.2070379418194221e-12,
+          "manual": -9.444788701129525e-13
+        },
+        "motive energy at wheels": {
+          "model": 128613.5928700989,
+          "manual": 128640.36272053937
+        }
+      },
+      "energy_balance": {
+        "positive_input_kJ": 147323.7027305004,
+        "auxiliary_kJ": 67495.60000001015,
+        "hvac_kJ": 17868.32512414635,
+        "combustion_control_kJ": 0,
+        "regeneration_credit_kJ": 76190.46871498793,
+        "ttw_manual_kJ_per_km": 4017.624007327357,
+        "ttw_model_kJ_per_km": 4017.624267578125
+      },
+      "trace_mass_kg": 12953.131621529914,
+      "final_driving_mass_kg": 12955.9931640625
+    },
+    {
+      "id": "case-06",
+      "cycle_km": 39.55212594444491,
+      "checks": [
+        {
+          "name": "rolling resistance maximum trace error",
+          "observed": 0.003794411827584554,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.03213540696350958,
+          "passed": true
+        },
+        {
+          "name": "air resistance maximum trace error",
+          "observed": 2.7203697072764044e-09,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.04176452605909342,
+          "passed": true
+        },
+        {
+          "name": "gradient resistance maximum trace error",
+          "observed": 0.02199118942695577,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.18631157943880391,
+          "passed": true
+        },
+        {
+          "name": "kinetic energy maximum trace error",
+          "observed": 0.05189616049227652,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.4395333080597988,
+          "passed": true
+        },
+        {
+          "name": "motive energy at wheels maximum trace error",
+          "observed": 0.04618983304553126,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.41533408964306395,
+          "passed": true
+        },
+        {
+          "name": "cycle integration to TtW",
+          "observed": 17083.048828125,
+          "expected": 17083.049644524417,
+          "unit": "kJ/km",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "cycle_work_kJ": {
+        "rolling resistance": {
+          "model": 33580.51347982989,
+          "manual": 33588.445440660136
+        },
+        "air resistance": {
+          "model": 12362.700729385182,
+          "manual": 12362.70072777449
+        },
+        "gradient resistance": {
+          "model": -5.736790765320151,
+          "manual": -5.738145363303269
+        },
+        "kinetic energy": {
+          "model": -1.9824142327706795e-12,
+          "manual": -1.8318679906315083e-12
+        },
+        "motive energy at wheels": {
+          "model": 162726.96910317105,
+          "manual": 162763.62100629753
+        }
+      },
+      "energy_balance": {
+        "positive_input_kJ": 467939.01593674213,
+        "auxiliary_kJ": 168244.84904729237,
+        "hvac_kJ": 39487.06607140012,
+        "combustion_control_kJ": 0,
+        "regeneration_credit_kJ": -0.0,
+        "ttw_manual_kJ_per_km": 17083.049644524417,
+        "ttw_model_kJ_per_km": 17083.048828125
+      },
+      "trace_mass_kg": 16488.42562678282,
+      "final_driving_mass_kg": 16492.3203125
+    },
+    {
+      "id": "case-07",
+      "cycle_km": 13.176722222222208,
+      "checks": [
+        {
+          "name": "rolling resistance maximum trace error",
+          "observed": 6.749809289274822e-08,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 1.449984262256215e-05,
+          "passed": true
+        },
+        {
+          "name": "air resistance maximum trace error",
+          "observed": 1.094491297592981e-07,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.00010586657987853333,
+          "passed": true
+        },
+        {
+          "name": "gradient resistance maximum trace error",
+          "observed": 0.0,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 1e-08,
+          "passed": true
+        },
+        {
+          "name": "kinetic energy maximum trace error",
+          "observed": 1.5432100042289676e-14,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.0001336637847222222,
+          "passed": true
+        },
+        {
+          "name": "motive energy at wheels maximum trace error",
+          "observed": 4.1951036422460675e-08,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.0001589413485485795,
+          "passed": true
+        },
+        {
+          "name": "cycle integration to TtW",
+          "observed": 149.97511291503906,
+          "expected": 149.97511864206288,
+          "unit": "kJ/km",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "cycle_work_kJ": {
+        "rolling resistance": {
+          "model": 362.3906736825301,
+          "manual": 362.3906399432995
+        },
+        "air resistance": {
+          "model": 1081.4873825112877,
+          "manual": 1081.4874048729914
+        },
+        "gradient resistance": {
+          "model": 0.0,
+          "manual": 0.0
+        },
+        "kinetic energy": {
+          "model": 4.417993748617732e-14,
+          "manual": 5.4817261840867104e-14
+        },
+        "motive energy at wheels": {
+          "model": 1667.8857085159125,
+          "manual": 1667.8857006595424
+        }
+      },
+      "energy_balance": {
+        "positive_input_kJ": 1910.5219971424654,
+        "auxiliary_kJ": 35.790000000000596,
+        "hvac_kJ": 0.0,
+        "combustion_control_kJ": 0,
+        "regeneration_credit_kJ": 0,
+        "ttw_manual_kJ_per_km": 149.97511864206288,
+        "ttw_model_kJ_per_km": 149.97511291503906
+      },
+      "trace_mass_kg": 200.250018643641,
+      "final_driving_mass_kg": 200.25
+    },
+    {
+      "id": "case-08",
+      "cycle_km": 3.9442222222222223,
+      "checks": [
+        {
+          "name": "rolling resistance maximum trace error",
+          "observed": 2.5319724095140828e-08,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 6.575686160306094e-06,
+          "passed": true
+        },
+        {
+          "name": "air resistance maximum trace error",
+          "observed": 1.6007506431492402e-08,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 1.5483539940633495e-05,
+          "passed": true
+        },
+        {
+          "name": "gradient resistance maximum trace error",
+          "observed": 0.0,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 1e-08,
+          "passed": true
+        },
+        {
+          "name": "kinetic energy maximum trace error",
+          "observed": 3.9968028886505635e-15,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 6.29873321156443e-05,
+          "passed": true
+        },
+        {
+          "name": "motive energy at wheels maximum trace error",
+          "observed": 1.2256732961901662e-08,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 7.127762882977067e-05,
+          "passed": true
+        },
+        {
+          "name": "cycle integration to TtW",
+          "observed": 492.9831848144531,
+          "expected": 492.9831852790275,
+          "unit": "kJ/km",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "cycle_work_kJ": {
+        "rolling resistance": {
+          "model": 93.36949011781472,
+          "manual": 93.36948292741818
+        },
+        "air resistance": {
+          "model": 109.15061080231362,
+          "manual": 109.15061305919963
+        },
+        "gradient resistance": {
+          "model": 0.0,
+          "manual": 0.0
+        },
+        "kinetic energy": {
+          "model": 6.2450045135165055e-15,
+          "manual": 8.0629947163402e-15
+        },
+        "motive energy at wheels": {
+          "model": 271.6125382919611,
+          "manual": 271.61253454665706
+        }
+      },
+      "energy_balance": {
+        "positive_input_kJ": 1848.5544072557702,
+        "auxiliary_kJ": 95.88082730366519,
+        "hvac_kJ": 0.0,
+        "combustion_control_kJ": 0,
+        "regeneration_credit_kJ": 0,
+        "ttw_manual_kJ_per_km": 492.9831852790275,
+        "ttw_model_kJ_per_km": 492.9831848144531
+      },
+      "trace_mass_kg": 172.36399642807044,
+      "final_driving_mass_kg": 172.36398315429688
+    },
+    {
+      "id": "case-10",
+      "cycle_km": 25.835386833333043,
+      "checks": [
+        {
+          "name": "rolling resistance maximum trace error",
+          "observed": 1.3302386143720923e-06,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.038939697131905135,
+          "passed": true
+        },
+        {
+          "name": "air resistance maximum trace error",
+          "observed": 6.232394689220655e-07,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.05348270147725728,
+          "passed": true
+        },
+        {
+          "name": "gradient resistance maximum trace error",
+          "observed": 1.0453528176412874e-05,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.43016161877257153,
+          "passed": true
+        },
+        {
+          "name": "kinetic energy maximum trace error",
+          "observed": 1.4779288903810084e-12,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.45693831128361184,
+          "passed": true
+        },
+        {
+          "name": "motive energy at wheels maximum trace error",
+          "observed": 1.087185312087513e-05,
+          "expected": 0.0,
+          "unit": "kJ per second",
+          "rtol": 0,
+          "atol": 0.2193026534708846,
+          "passed": true
+        },
+        {
+          "name": "cycle integration to TtW",
+          "observed": 4873.20703125,
+          "expected": 4873.207458422785,
+          "unit": "kJ/km",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "cycle_work_kJ": {
+        "rolling resistance": {
+          "model": 21299.255926536553,
+          "manual": 21299.254471307402
+        },
+        "air resistance": {
+          "model": 20968.265109333443,
+          "manual": 20968.26462064297
+        },
+        "gradient resistance": {
+          "model": 1.8337426723861088,
+          "manual": 1.8337425832665626
+        },
+        "kinetic energy": {
+          "model": 6.444178524134259e-12,
+          "manual": 1.0863754340562082e-11
+        },
+        "motive energy at wheels": {
+          "model": 68875.69372113839,
+          "manual": 68875.69112708652
+        }
+      },
+      "energy_balance": {
+        "positive_input_kJ": 156075.71301802917,
+        "auxiliary_kJ": 14331.274332471668,
+        "hvac_kJ": 0.0,
+        "combustion_control_kJ": 0,
+        "regeneration_credit_kJ": 44505.78754306442,
+        "ttw_manual_kJ_per_km": 4873.207458422785,
+        "ttw_model_kJ_per_km": 4873.20703125
+      },
+      "trace_mass_kg": 17696.344959067435,
+      "final_driving_mass_kg": 17696.34375,
+      "ttw_after_refresh_at_final_mass_kJ_per_km": 4873.20703125
+    }
+  ],
+  "source_grouping": [
+    {
+      "id": "case-01",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "battery production including replacements",
+          "observed": 290.0,
+          "expected": 290.0,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.0763854434891047,
+          "expected": 0.0763854434891047,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 8.881784197001252e-16,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.050025365173891,
+        "direct emissions": 0.0,
+        "fuel and electricity supply": 0.012056990736909658,
+        "road, maintenance and other operation": 0.014303087578304046
+      }
+    },
+    {
+      "id": "case-02",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "fuel mass fraction: petrol production, low-sulfur",
+          "observed": 0.988423711,
+          "expected": 0.988423711,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel mass fraction: ethanol, from sugarbeet, at fuelling station",
+          "observed": 0.011576289,
+          "expected": 0.011576289,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel supply total mass",
+          "observed": 1.0,
+          "expected": 1.0,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "battery production including replacements",
+          "observed": 2.5,
+          "expected": 2.5,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.18590703876989378,
+          "expected": 0.18590703876989384,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 4.440892098500626e-16,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.03487681938776626,
+        "direct emissions": 0.10113004200978801,
+        "fuel and electricity supply": 0.03286873175833308,
+        "road, maintenance and other operation": 0.01703144561400645
+      }
+    },
+    {
+      "id": "case-03",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "battery production including replacements",
+          "observed": 1189.9940185546875,
+          "expected": 1189.9940185546875,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.13001326019657233,
+          "expected": 0.13001326019657225,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 2.9103830456733704e-11,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.08563805102327957,
+        "direct emissions": 0.0,
+        "fuel and electricity supply": 0.01446333644935599,
+        "road, maintenance and other operation": 0.029911872723936764
+      }
+    },
+    {
+      "id": "case-04",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "fuel mass fraction: diesel production, low-sulfur, petroleum refinery operation",
+          "observed": 0.951924819,
+          "expected": 0.951924819,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel mass fraction: biodiesel, from used cooking oil, at fuelling station",
+          "observed": 0.048075181,
+          "expected": 0.048075181,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel supply total mass",
+          "observed": 1.0,
+          "expected": 1.0,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "battery production including replacements",
+          "observed": -0.0,
+          "expected": 0.0,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.46330906130549226,
+          "expected": 0.4633090613054922,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 0.005922710464801639,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.07214156970842953,
+        "direct emissions": 0.27516652121301016,
+        "fuel and electricity supply": 0.07742526511916767,
+        "road, maintenance and other operation": 0.038575705264884894
+      }
+    },
+    {
+      "id": "case-05",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "battery production including replacements",
+          "observed": 3007.833251953125,
+          "expected": 3007.833251953125,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.05672949456877355,
+          "expected": 0.056729494568773534,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 4.440892098500626e-16,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.021122307005961977,
+        "direct emissions": 0.0,
+        "fuel and electricity supply": 0.01755159664778337,
+        "road, maintenance and other operation": 0.018055590915028202
+      }
+    },
+    {
+      "id": "case-06",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "fuel mass fraction: diesel production, low-sulfur, petroleum refinery operation",
+          "observed": 0.951924819,
+          "expected": 0.951924819,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel mass fraction: biodiesel, from used cooking oil, at fuelling station",
+          "observed": 0.048075181,
+          "expected": 0.048075181,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel supply total mass",
+          "observed": 1.0,
+          "expected": 1.0,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "battery production including replacements",
+          "observed": -0.0,
+          "expected": 0.0,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.09858701187515487,
+          "expected": 0.09858701187515488,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 2.9103830456733704e-11,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.008061625627470974,
+        "direct emissions": 0.06305379004623107,
+        "fuel and electricity supply": 0.019787959943195335,
+        "road, maintenance and other operation": 0.007683636258257491
+      }
+    },
+    {
+      "id": "case-07",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "battery production including replacements",
+          "observed": 23.100000381469727,
+          "expected": 23.100000381469727,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.05893597184158733,
+          "expected": 0.05893597184158733,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 1.1102230246251565e-16,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.042336999849844084,
+        "direct emissions": 0.0,
+        "fuel and electricity supply": 0.008474521166796724,
+        "road, maintenance and other operation": 0.00812445082494652
+      }
+    },
+    {
+      "id": "case-08",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "fuel mass fraction: petrol production, low-sulfur",
+          "observed": 0.988423711,
+          "expected": 0.988423711,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel mass fraction: ethanol, from sugarbeet, at fuelling station",
+          "observed": 0.011576289,
+          "expected": 0.011576289,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel supply total mass",
+          "observed": 1.0,
+          "expected": 1.0,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "battery production including replacements",
+          "observed": -0.0,
+          "expected": 0.0,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.08486200045347145,
+          "expected": 0.08486200045347145,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 2.220446049250313e-16,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.02774284886032804,
+        "direct emissions": 0.036675546438751934,
+        "fuel and electricity supply": 0.011741291923498714,
+        "road, maintenance and other operation": 0.008702313230892765
+      }
+    },
+    {
+      "id": "case-09",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "fuel mass fraction: petrol production, low-sulfur",
+          "observed": 0.988423711,
+          "expected": 0.988423711,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel mass fraction: ethanol, from sugarbeet, at fuelling station",
+          "observed": 0.011576289,
+          "expected": 0.011576289,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel supply total mass",
+          "observed": 1.0,
+          "expected": 1.0,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "battery production including replacements",
+          "observed": 154.0,
+          "expected": 154.0,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.17897492224236336,
+          "expected": 0.1789749222423634,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 1.3322676295501878e-15,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.0794464680913002,
+        "direct emissions": 0.047964133929929466,
+        "fuel and electricity supply": 0.02224300455506724,
+        "road, maintenance and other operation": 0.02932131566606647
+      }
+    },
+    {
+      "id": "case-10",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "fuel mass fraction: hydrogen production, steam methane reforming",
+          "observed": 1.0,
+          "expected": 1.0,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel mass fraction: hydrogen production, gaseous, 30 bar, from PEM electrolysis, from grid electricity",
+          "observed": 0.0,
+          "expected": 0.0,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "fuel supply total mass",
+          "observed": 1.0,
+          "expected": 1.0,
+          "unit": "kg/kg blend",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "battery production including replacements",
+          "observed": 249.64585876464844,
+          "expected": 249.64585876464844,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.11596035722913811,
+          "expected": 0.11596035722913813,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 0.0012691431402345188,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.02499137988972698,
+        "direct emissions": 0.0,
+        "fuel and electricity supply": 0.06618840740203635,
+        "road, maintenance and other operation": 0.02478056993737478
+      }
+    },
+    {
+      "id": "case-11",
+      "duplicates": [],
+      "checks": [
+        {
+          "name": "battery production including replacements",
+          "observed": 290.0,
+          "expected": 290.0,
+          "unit": "kg/vehicle",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        },
+        {
+          "name": "sum of four manual LCIA contributions",
+          "observed": 0.06525880900552633,
+          "expected": 0.06525880900552632,
+          "unit": "kg CO2-eq/FU",
+          "rtol": 1e-05,
+          "atol": 1e-10,
+          "passed": true
+        }
+      ],
+      "explains_all_category_differences": true,
+      "maximum_residual": 4.440892098500626e-16,
+      "manual_climate_contributions_per_fu": {
+        "vehicle production and replacements": 0.04193948160511803,
+        "direct emissions": 0.0,
+        "fuel and electricity supply": 0.011070666279431264,
+        "road, maintenance and other operation": 0.012248661120977038
+      }
+    }
+  ],
+  "scope": "Physics checks exclude aggregated PHEV modes and the repeated prospective case. Efficiency-map and HVAC outputs are inputs to the cycle energy balance.",
+  "phev": {
+    "id": "case-09",
+    "electric_distance_fraction": 0.6,
+    "checks": [
+      {
+        "name": "utility-weighted fuel demand",
+        "observed": 0.020560692995786667,
+        "expected": 0.02056069489116833,
+        "unit": "L/km",
+        "rtol": 1e-05,
+        "atol": 1e-10,
+        "passed": true
+      },
+      {
+        "name": "utility-weighted grid demand",
+        "observed": 0.09496762603521347,
+        "expected": 0.094967618018031,
+        "unit": "kWh/km",
+        "rtol": 1e-05,
+        "atol": 1e-10,
+        "passed": true
+      },
+      {
+        "name": "utility-weighted TtW",
+        "observed": 957.42236328125,
+        "expected": 957.4223754882813,
+        "unit": "kJ/km",
+        "rtol": 1e-05,
+        "atol": 1e-10,
+        "passed": true
+      }
+    ]
+  }
+}

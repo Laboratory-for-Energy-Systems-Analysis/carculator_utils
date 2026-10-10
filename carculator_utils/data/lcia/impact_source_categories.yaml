@@ -44,14 +44,18 @@ energy chain:
 
 
 charger:
-  - overhead
-  - charging station, 500W
-  - charging station, 100W
-  - charging station, 3kW
-  - catenary
-  - pantograph
-  - charger
-  - ev charger
+  # External charging infrastructure. Onboard chargers belong to powertrain.
+  contains:
+    - overhead
+    - charging station, 500W
+    - charging station, 100W
+    - charging station, 3kW
+    - catenary
+    - pantograph
+    - EV charger
+    - ev charger
+  exact:
+    - charger
 
 maintenance:
   - maintenance,
