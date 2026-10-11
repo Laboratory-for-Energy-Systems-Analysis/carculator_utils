@@ -1,0 +1,1021 @@
+{
+  "project": "carculator-matrices-premise-2.5.4-ei312-20261009",
+  "source": "https://doi.org/10.69766/WJTE1771",
+  "checks": [
+    {
+      "database": "carculator-ei312-premise254-static",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 28.10443921772492,
+      "maximum_absolute_difference": 4.440892098500626e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-static",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 25.691756597160833,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-static",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 15.569713515556861,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-static",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 16.00542400692164,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-static",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 23.325928634480043,
+      "maximum_absolute_difference": 2.6645352591003757e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-static",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 21.270903304464532,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2005",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 31.664882338349987,
+      "maximum_absolute_difference": 2.5326962749261384e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2005",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 29.066346629077444,
+      "maximum_absolute_difference": 2.237793284010081e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2005",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 17.54307099504176,
+      "maximum_absolute_difference": 1.6341095143701523e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2005",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 18.073649768751835,
+      "maximum_absolute_difference": 3.552713678800501e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2005",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 26.32059483396948,
+      "maximum_absolute_difference": 2.2447321779139884e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2005",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 24.024309638469365,
+      "maximum_absolute_difference": 1.925543058334256e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2010",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 29.359204717742223,
+      "maximum_absolute_difference": 1.4432899320127035e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2010",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 26.867194692717273,
+      "maximum_absolute_difference": 2.6645352591003757e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2010",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 16.257328054735854,
+      "maximum_absolute_difference": 9.26342336171615e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2010",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 16.72356820700549,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2010",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 24.358973748299874,
+      "maximum_absolute_difference": 1.214306433183765e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2010",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 22.22707771055116,
+      "maximum_absolute_difference": 3.552713678800501e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2020",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 24.996508617971674,
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2020",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 23.067924314084273,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2020",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 13.996700345548698,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2020",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 14.357904113812213,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2020",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 20.85866399858195,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2020",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 19.07937674250954,
+      "maximum_absolute_difference": 2.6645352591003757e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 15.590192786162277,
+      "maximum_absolute_difference": 4.440892098500626e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 14.304249996535015,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 8.747434726679494,
+      "maximum_absolute_difference": 4.440892098500626e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 8.919336034862079,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 12.9603618001034,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 11.84929772114214,
+      "maximum_absolute_difference": 1.5543122344752192e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 10.9752254451202,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 10.130456521464378,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 6.250869715691542,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 6.320668187700847,
+      "maximum_absolute_difference": 6.661338147750939e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 9.144456133246072,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 8.393993072722498,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 8.502447049270682,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 7.857982014554793,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 4.8793138103565425,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 4.904748082556159,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 7.080356743478421,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-NPi-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 6.512277448120197,
+      "maximum_absolute_difference": 3.1086244689504383e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 15.083604953684025,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 13.60434254791187,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 8.301734294799338,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 8.498104604215229,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 12.409239564012594,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 11.291117046575966,
+      "maximum_absolute_difference": 3.552713678800501e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 9.028618543793517,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 8.14519940970829,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 5.017774905079109,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 5.090812721728057,
+      "maximum_absolute_difference": 4.440892098500626e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 7.414466164774664,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 6.762131401787156,
+      "maximum_absolute_difference": 2.220446049250313e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 7.39188154123533,
+      "maximum_absolute_difference": 4.440892098500626e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 6.48662030486996,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 3.98768426190474,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 4.0654180957126425,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 5.968266961058555,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg1000-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 5.4011363838957065,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 13.964423949003764,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 12.635073059216506,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 7.733465919134663,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 7.893240297601972,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 11.507125676086645,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2030",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 10.486156180552925,
+      "maximum_absolute_difference": 2.6645352591003757e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 7.742323834284742,
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 6.734898196400916,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 4.116982343259716,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 4.2208104691101465,
+      "maximum_absolute_difference": 2.220446049250313e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 6.223160819739848,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2040",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 5.609142861708076,
+      "maximum_absolute_difference": 1.7763568394002505e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 6.139041572655538,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 5.128131611892777,
+      "maximum_absolute_difference": 2.220446049250313e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 3.1354108508012404,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 1,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 3.231379729977204,
+      "maximum_absolute_difference": 1.3322676295501878e-15
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 27,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 4.816800047547048,
+      "maximum_absolute_difference": 8.881784197001252e-16
+    },
+    {
+      "database": "carculator-ei312-premise254-SSP2-PkBudg650-2050",
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "source_supplier_count": 210,
+      "categories_checked": 74,
+      "g_co2eq_per_kwh_at_plant": 4.294659446064258,
+      "maximum_absolute_difference": 2.6645352591003757e-15
+    }
+  ],
+  "status": "passed"
+}

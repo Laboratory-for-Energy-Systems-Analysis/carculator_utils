@@ -113,7 +113,7 @@
   },
   "assumptions": [
     "Generation shares only; electricity imports, storage losses and supplier contracts are not resolved.",
-    "Coarse categories use existing LCI proxies: oil for other fossil; geothermal for other renewables/GECO Other; wood CHP for bioenergy/biomass and waste; run-of-river for hydro; onshore wind and rooftop PV for aggregate wind/solar; conventional gas for aggregate gas; hard coal for aggregate coal.",
+    "Coarse categories use existing LCI proxies: oil for other fossil; geothermal for other renewables/GECO Other; wood CHP for bioenergy/biomass and waste; run-of-river for hydro; onshore wind for aggregate wind; IEA PVPS 2026 country production mixes for solar (see IAM/photovoltaic.json); conventional gas for aggregate gas; hard coal for aggregate coal.",
     "CCS is subtracted from the parent fuel total and mapped separately; biomass/waste CCS uses Biomass CCS.",
     "GECO's reported nine generation categories do not sum to its gross-generation total. With --geco-other-residual, preserve the eight named fuel groups and use total minus those groups for Other. Reported Other, its residual and surplus remain in geco_2025_balance_audit.csv. This explicit reconciliation assumes the reported total and named fuels are authoritative; the surplus is not assigned an invented technology or silently normalized.",
     "Geographic assignments follow GECO 2025 Annex 1 where listed; extensions are identified separately. Regional trajectories are proxies, not national forecasts.",

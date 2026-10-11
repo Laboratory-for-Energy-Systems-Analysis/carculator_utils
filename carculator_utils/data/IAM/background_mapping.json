@@ -22203,8 +22203,7673 @@
       "migration": [],
       "available_in_3.10": true,
       "available_in_3.9": true
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AD",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AF",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AL",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AQ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AQ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AU",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AX",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AX",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "AZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BB",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BB",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BD",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BF",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BJ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BJ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BL",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BQ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BQ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BV",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BY",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "BZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CC",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CD",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CF",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CL",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CU",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CV",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CX",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CX",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CY",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "CZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "DE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "DJ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DJ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "DK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "DM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "DO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "DZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EC",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "EC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "EE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "EG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "EH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ER",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ER",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ES",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ES",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ET",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ET",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "FI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "FJ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FJ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "FK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "FM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "FO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "FR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GB",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GB",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GD",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GF",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GL",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GP",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GP",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GQ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GQ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GU",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GY",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "HK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "HM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "HN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "HR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "HT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "HU",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ID",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ID",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IL",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IQ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IQ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "IT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "JE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "JE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "JM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "JM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "JO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "JO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "JP",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "JP",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KP",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KP",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KY",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "KZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LB",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LB",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LC",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LU",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LV",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "LY",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MC",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MD",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ME",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ME",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MF",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ML",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ML",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MP",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MP",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MQ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MQ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MU",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MV",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MX",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MX",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MY",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "MZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NC",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NF",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NL",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NP",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NP",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NU",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "NZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "OM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "OM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PF",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PL",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "PY",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "QA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "QA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "RE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "RO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "RS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "RU",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "RW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SB",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SB",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SC",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SD",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SJ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SJ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SL",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ST",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ST",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SV",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SX",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SX",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SY",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "SZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TC",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TD",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TF",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TH",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TJ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TJ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TL",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TR",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TV",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "TZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "UA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "UA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "UG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "UG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "UM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "UM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "US",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "US",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "UY",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "UY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "UZ",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "UZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "VA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "VC",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "VE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "VG",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "VI",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "VN",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "VU",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "WF",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "WF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "WS",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "WS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "XK",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "XK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "YE",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "YE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "YT",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "YT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ZA",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ZA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ZM",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ZM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "ZW",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ZW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0
+        ]
+      ],
+      "migration": [],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "GLO",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.483332184792198e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.008264529510988435
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          7.263746640517178e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.4279160062555138e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.483332184792198e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0001843874147208207
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00045507062286317024
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00027378737337333984
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.002044403221130177
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.483332184792198e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.003970227330436526
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.026053258783701145
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.6141659201149288e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          5.0287476742042004e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0001570707606881065
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BB",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.953330117418154e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0007332038275598965
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0048549144212687466
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00012106244400861964
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.002185953155663332
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          5.711664025022055e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          9.933328739168792e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BJ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.9799986217506373e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.483332184792198e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0002297082270932783
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BQ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          5.587497415782445e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.03144022712556162
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.4899993108753186e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.208330461980495e-07
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.7249982771882966e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          9.747078825309377e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          5.587497415782445e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.004389910469666408
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.8624991385941483e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.538748363328882e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.208330461980495e-07
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0028707320056197807
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.297082270932783e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          5.587497415782445e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.011367453075886286
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          7.263746640517178e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.362475857354916
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.000766107979008393
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.64291359431913e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0001179582787776294
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.345831323386346e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          8.691662646772693e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0005159122613905791
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.001795449169604759
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.03947008174508719
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DJ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.208330461980495e-07
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0020878615343640403
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0010709370046916354
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0004786622786186961
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "EC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.545415489412003e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "EE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00044762062630879365
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "EG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0030104194410143417
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ER",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.9179153171308326e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ES",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.026983266686905823
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ET",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.1108323570733682e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00044451646107780343
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FJ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          8.691662646772693e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.208330461980495e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.013736551980178043
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.208330461980495e-07
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GB",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.008622750178644709
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.483332184792198e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.208330461980495e-07
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.787081581808102e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0001607957589652948
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.208330461980495e-07
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.8624991385941483e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.6141659201149288e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GP",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.953330117418154e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.005521689112885452
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00015334576241091821
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          8.753745951392497e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.8624991385941483e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.3658327016357089e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00013037493970159038
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0006344913732144066
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00025640404807979444
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.483332184792198e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.004299268844921492
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ID",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00044265396193920927
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00040105814784394
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.004870435247423698
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.06713316061757989
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IQ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00023405405841666466
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0004569331220017644
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.1041652309902473e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0190664036817883
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "JM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          8.319162819053863e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "JO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0028334820228478976
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "JP",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.05988493480321765
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0005457122476080855
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0005562664093934523
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.345831323386346e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.483332184792198e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.1041652309902473e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KP",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00010367911871507426
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.018564770580460275
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.538748363328882e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.4279160062555138e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "KZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0011628202955289468
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          5.9599972435012746e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LB",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0009622912216069767
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.966664369584396e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0006195913801056534
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.483332184792198e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.208330461980495e-07
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00042713313578425803
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00018252491558222653
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0001483790980413338
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.966664369584396e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00039733314956675166
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          8.194996209814253e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ME",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.0554161785366841e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.241666092396099e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          5.9599972435012746e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.8624991385941483e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00022039573140030755
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ML",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.097498104907126e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00020114990696816802
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00012478744228580795
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MQ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.704996898938934e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          7.387913249756789e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.241666092396099e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0001918374112751973
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          9.374578997590547e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          5.1529142834438105e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          8.070829600574644e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MX",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.014636139064119017
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00028558320125110276
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.283748018766541e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.000314141521376213
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0001769374181664441
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          8.070829600574643e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00016638325638107727
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.9245824432139534e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.012154669378465412
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0002321915592780705
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NP",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          7.263746640517178e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.1041652309902473e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0002297082270932783
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "OM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0012770535760293878
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0005444705815156894
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0006307663749372183
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PF",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.7937487078912225e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.7249982771882966e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0016613492316259804
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0005587497415782445
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.006895592644121736
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0007381704919294808
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00021791239921551536
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0032034985183819354
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.8004158339743436e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.241666092396099e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "QA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0011684077929447292
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0001831457486284246
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0013825951938830562
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0001105082822232528
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0020015657409425116
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.297082270932783e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0029781361226120435
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SB",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.345831323386346e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.3037493970159038e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          7.822496382095423e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.001933274105860726
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00065249553155415
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0006108997174588806
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00037560399294981993
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.3658327016357089e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0002626123785417749
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.469997932625956e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.829163508178544e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.345831323386346e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0007449996554376593
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.332497071220104e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.9799986217506373e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.1041652309902473e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TD",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.8624991385941483e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.780414455724981e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TH",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0033736067730402008
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.241666092396099e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0005674414042250172
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          6.829163508178544e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.013714822823561111
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.7249982771882966e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.241666092396099e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.008014333793370621
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "TZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.1108323570733682e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "UA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.004995222689709506
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "UG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          7.574163163616204e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "US",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.13312895509452494
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "UY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0002675790429113593
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "UZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0003861581547351868
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VC",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.345831323386346e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          3.7249982771882966e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.241666092396099e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.179582787776294e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VN",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.015952925955105078
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "VU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.345831323386346e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "WS",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          1.241666092396099e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "XK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          5.587497415782445e-06
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "YE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00031662485356100524
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "YT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          2.8558320125110275e-05
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ZA",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00778214223409255
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ZM",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.00010181661957648012
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ZW",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          4.780414455724981e-05
+        ]
+      ],
+      "migration": [
+        "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2025/Jul/IRENA_DAT_RE_Statistics_2025.pdf"
+      ],
+      "available_in_3.10": false,
+      "available_in_3.9": false
+    },
+    {
+      "label": [
+        "electricity production, photovoltaic, production mix",
+        "EU27",
+        "kilowatt hour",
+        "electricity, photovoltaic, at plant"
+      ],
+      "targets": [
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "AT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.025857398167541384
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.03161921089447594
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "BG",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.014236731657218641
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CY",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0033600465797070976
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "CZ",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.011693447302662969
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.25706175854567803
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "DK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.013597878035565548
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "EE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0029152750709612726
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "ES",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.17573730986018002
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0028950581842000986
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "FR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.08946376729554663
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "GR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.035961798170776084
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HR",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.001669914846472962
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "HU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.028000388164225815
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0026120217695436644
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "IT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.12417616186448216
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.002781843618337525
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LU",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0011887529415570237
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "LV",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0009663671871841112
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "MT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0012494036018405453
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "NL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.07916124180205242
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PL",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.04490979225127164
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "PT",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.020863827137531436
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "RO",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.009004601363426843
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SE",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.012591077074859089
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SI",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.003978683314599018
+        ],
+        [
+          [
+            "electricity production, photovoltaic, production mix",
+            "SK",
+            "kilowatt hour",
+            "electricity, photovoltaic, at plant"
+          ],
+          0.0024462432981020386
+        ]
+      ],
+      "migration": [
+        "https://www.irena.org/-/media/Files/IRENA/Agency/Publication/2025/Jul/IRENA_DAT_RE_Statistics_2025.pdf"
+      ],
+      "available_in_3.10": false,
+      "available_in_3.9": false
     }
   ],
+  "legacy_39_catalogue_sha256": "4b7aa255444b453d6f3989b5202256fe2d5ba5e54ef3abcefc6935a25f5003e6",
+  "legacy_catalogue_sha256": "2f15ffef447f29f29aa234d6fa2ab2a26f601c313c34722c928bc3f559241f94",
   "logical_renames": [
     {
       "old": [
@@ -22238,7 +29903,5 @@
       "reason": "User-approved replacement of NMC523 by NMC532 (Ni:Mn:Co = 5:3:2). This changes the chemistry; the old supplier is not chemically equivalent.",
       "source": "ecoinvent 3.12 NMC532 hydroxide dataset metadata; Winjobi, Dai, Kelly (2020), GREET battery bill of materials"
     }
-  ],
-  "legacy_catalogue_sha256": "2f15ffef447f29f29aa234d6fa2ab2a26f601c313c34722c928bc3f559241f94",
-  "legacy_39_catalogue_sha256": "4b7aa255444b453d6f3989b5202256fe2d5ba5e54ef3abcefc6935a25f5003e6"
+  ]
 }

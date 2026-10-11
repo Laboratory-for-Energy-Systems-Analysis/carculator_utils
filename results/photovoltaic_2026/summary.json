@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "source": "https://doi.org/10.69766/WJTE1771",
+  "implementation": "Full upstream coefficients in B; PV background identity columns in A; no PV foreground supply chains imported.",
+  "preserved_existing_labels": 1871,
+  "added_pv_columns": 252,
+  "pre_existing_A_and_B_coefficients": "exactly unchanged",
+  "source_parity_comparisons": 78,
+  "impact_categories_per_comparison": 74,
+  "vehicle_figure_cases_verified": 162,
+  "global_solar_g_co2eq_per_delivered_kwh": 25.19955200193184,
+  "focused_integration_tests": 129,
+  "coefficient_bundle_manifest_sha256": "6b0296897e2ed183ed20928d52484cf812c7d325d817fa5546e2b46d404b45a3",
+  "export_requirement": "Matching IEA PVPS 2026 premise suppliers in destination background; no automatic legacy substitute.",
+  "artifact_verification": {
+    "status": "passed",
+    "report": "artifact_verification.json",
+    "installed_tests": 1689,
+    "repositories": 5,
+    "wheel_sdist_resources_and_offline_models": "passed",
+    "platform": "macOS, Python 3.12",
+    "note": "A later description-only change to scripts/refresh_electricity.py is not present in the tested source archive; runtime code and resources are unchanged."
+  }
+}

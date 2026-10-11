@@ -16,6 +16,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import numpy as np
+from compile_photovoltaic import (
+    aggregate_overrides,
+    label as photovoltaic_label,
+    load_config as load_photovoltaic_config,
+)
+from correct_hydrogen_tanks import RESOURCE as TANK_CORRECTIONS
+from correct_hydrogen_tanks import corrected_matrix
 from iam_matrix_tools import (
     activity_label,
     assemble_matrix,
@@ -296,8 +303,14 @@ def compile_background(
     # Validate the adjoint against separately solved forward supply arrays.
     checked = []
     candidates = list(resolved)
+    pv_checks = [
+        column
+        for column in candidates
+        if labels[column][0] == "electricity production, photovoltaic, production mix"
+        and labels[column][1] in {"CH", "CN", "US", "IN", "EU27", "GLO"}
+    ]
     for column in sorted(
-        set(candidates[:: max(1, len(candidates) // 12)] + candidates[-1:])
+        set(candidates[:: max(1, len(candidates) // 12)] + candidates[-1:] + pv_checks)
     ):
         demand = dict(resolved[column])
         lca.redo_lci(demand)
@@ -342,7 +355,7 @@ def main():
         raise ValueError(f"Missing project {args.project}")
     previous = bd.projects.current
     try:
-        bd.projects.set_current(args.project)
+        bd.projects.set_current(args.project, writable=False)
         legacy_labels = (
             {tuple(label) for label in json.loads(args.legacy_catalogue.read_text())}
             if args.legacy_catalogue
@@ -372,12 +385,20 @@ def main():
         original_labels = load_labels(original / "dict_inputs_A_matrix.csv")
         foreground = load_labels(ROOT / "dev/iam_foreground.csv")
         policy, overrides, retired = load_policy()
+        photovoltaic = load_photovoltaic_config(ROOT)
+        pv_aggregates = aggregate_overrides(photovoltaic)
+        overrides.update(pv_aggregates)
         chain, migration_hashes = migration_chain()
         renames = {
             tuple(row["old"]): tuple(row["new"])
             for row in policy.get("logical_renames", [])
         }
         renamed_labels = [renames.get(label, label) for label in original_labels]
+        pv_labels = [
+            photovoltaic_label(photovoltaic, country)
+            for country in photovoltaic["countries"]
+        ] + list(pv_aggregates)
+        renamed_labels.extend(key for key in pv_labels if key not in renamed_labels)
         labels, matrix, foreground_provenance = compile_foreground(
             bd.Database(PREFIX + "-static"),
             renamed_labels,
@@ -390,6 +411,7 @@ def main():
         foreground = [tuple(row["label"]) for row in foreground_provenance]
         sparse.save_npz(candidate / "A_matrix.npz", matrix)
         save_labels(candidate / "dict_inputs_A_matrix.csv", labels)
+        write_json(candidate / "photovoltaic.json", photovoltaic)
         entries = load_methods(
             bd, ROOT / "carculator_utils/data/lcia/dict_impact_categories.csv"
         )
@@ -419,6 +441,13 @@ def main():
             ),
             "migration_hashes": migration_hashes,
             "foreground": foreground_provenance,
+            "photovoltaic": {
+                "source": photovoltaic["source"],
+                "country_count": len(photovoltaic["countries"]),
+                "aggregates": list(photovoltaic["aggregate_members"]),
+                "boundary": "Full upstream LCIA coefficients in B; identity columns in A",
+                "configuration": "photovoltaic.json",
+            },
             "label_count": len(labels),
             "A_nonzero": matrix.nnz,
             "databases": [],
@@ -434,6 +463,15 @@ def main():
             built = json.loads(build_report.read_text())
             if not built.get("written") or built.get("project") != args.project:
                 raise ValueError(f"Unverified build: {database}")
+            for name, checksum in photovoltaic["source_hashes"].items():
+                if "additional_inventories" in name:
+                    if (
+                        built["supplementary_inventory_hashes"].get(Path(name).name)
+                        != checksum
+                    ):
+                        raise ValueError(
+                            f"PV workbook differs from source build: {name}"
+                        )
             print(f"Characterizing: {database}", flush=True)
             started = time.monotonic()
             result, audit, scores, ids, resolved = compile_background(
@@ -546,15 +584,29 @@ def main():
             )
             write_json(candidate / "build_manifest.json", report)
             print(f"Completed coefficients in {audit['seconds']:.1f}s", flush=True)
+        # Keep source/full-Brightway parity checks above independent of local
+        # scientific corrections. These recipes deliberately differ from the
+        # imported source, and use the same already-characterized suppliers.
+        tank_source = original / TANK_CORRECTIONS
+        matrix, tank_audit = corrected_matrix(
+            matrix, labels, json.loads(tank_source.read_text())
+        )
+        tank_audit["source_A_sha256"] = digest(candidate / "A_matrix.npz")
+        report["foreground_corrections"] = {"hydrogen_tanks": tank_audit}
+        sparse.save_npz(candidate / "A_matrix.npz", matrix)
+        (candidate / TANK_CORRECTIONS).write_bytes(tank_source.read_bytes())
+        report["A_nonzero"] = matrix.nnz
         report["complete"] = not args.static_only
         report["resource_hashes"] = {
             p.name: digest(p)
             for p in sorted(candidate.iterdir())
-            if p.suffix in {".npz", ".csv"} or p.name == "background_mapping.json"
+            if p.suffix in {".npz", ".csv"}
+            or p.name
+            in {"background_mapping.json", TANK_CORRECTIONS, "photovoltaic.json"}
         }
         write_json(candidate / "build_manifest.json", report)
     finally:
-        bd.projects.set_current(previous)
+        bd.projects.set_current(previous, writable=False)
 
 
 if __name__ == "__main__":

@@ -145,6 +145,55 @@ auxiliary losses, explicit overrides and battery boundaries.
 audit runtime and inputs. Empirical residuals remain conditional on source quality
 and matched test settings; no fixed error threshold substitutes for physics.
 
+.. _hydrogen-tank-materials:
+
+Hydrogen tank material inventories
+----------------------------------
+
+The ``hdpe`` (default) and ``aluminium`` hydrogen tank options represent one
+kilogram of **dry tank assembly, including tank balance of plant**, excluding
+stored hydrogen. Their material quantities follow the supplementary recipe
+tables in `Evangelisti et al. (2017)
+<https://doi.org/10.1016/j.jclepro.2016.11.159>`_. The
+`supplementary document
+<https://ars.els-cdn.com/content/image/1-s2.0-S0959652616320212-mmc1.docx>`_
+lists the HDPE recipe under S16 and the aluminium recipe under S17; other
+scenario labels and masses in the paper are inconsistent with these tables.
+
+The imported inventories divided the HDPE material quantities by 119 kg and
+the aluminium quantities by 93 kg. This supplied only 0.737059 kg of materials
+per kg of HDPE tank, and 1.216871 kg per kg of aluminium tank. The correction
+uses the sums of the listed dry materials, **87.71 kg and 113.169 kg**,
+respectively. Their proportions are preserved and now sum to one kg per kg of
+tank. No unreported material is invented to fill the gap. The difference between
+these material totals and the supplementary table's nominal 93/119 kg outputs
+is approximately the stored hydrogen, but the paper does not establish that
+boundary unambiguously; the dry-mass normalization is an explicit modelling
+choice.
+
+Steel working and aluminium sheet rolling remain processing services; they
+do not add material mass. Aluminium sheet and ingot both contribute to the
+aluminium purchase. Source manufacturing electricity is 12.87 MJ per HDPE
+assembly and 16.422 MJ per aluminium assembly, previously copied as kWh.
+Converting by 3.6 MJ/kWh gives **0.0407593 and 0.0403084 kWh per kg of dry tank**.
+This is manufacturing electricity, separate from refuelling compression.
+
+``data/IAM/hydrogen_tank_corrections.json`` records the source quantities,
+supplement checksum, supplier identities and boundary. The compiler applies
+the correction after checking parity with its unmodified source database;
+unknown upstream recipes stop the build. Both legacy and corrected premise
+recipes are recognized. A, its provenance and resource hashes change; the
+background LCIA factors in B do not require regeneration because these expanded
+foreground tank columns have zero direct coefficients in B.
+
+The correction does not recalibrate tank sizing, fibre/resin proportions,
+manufacturing yields or supplier proxies (including AlLi for aluminium) to
+current vehicles. The separate ``carbon fiber`` assembly option has a different
+source recipe and is outside this correction. Tests verify source energy units,
+material closure excluding processing services, and tank purchases in completed
+car, bus and truck inventories. Existing calculated results must be regenerated
+to use the corrected inventories.
+
 .. _hydrogen-compression:
 
 Hydrogen delivery pressure and compression

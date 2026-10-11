@@ -127,11 +127,12 @@ mapped separately, so they are not double-counted.
 LCI proxies and remaining limitations
 -------------------------------------
 
-The Ember/GECO refresh uses the existing 21 background electricity activities. Coarse
+The Ember/GECO refresh uses 21 electricity technology categories. Coarse
 source categories cannot recover all of their distinctions:
 
 * Aggregate coal uses hard coal; gas uses the conventional gas activity.
-* Hydro uses run-of-river; wind uses onshore wind; solar uses rooftop PV.
+* Hydro uses run-of-river; wind uses onshore wind. Solar PV uses the country
+  production mix from IEA PVPS 2026 as described below.
 * Bioenergy and biomass/waste use wood CHP; biomass/waste CCS uses Biomass CCS.
 * Other fossil uses oil; other renewables and GECO's reconciled Other category
   use geothermal as a coarse proxy.
@@ -139,8 +140,68 @@ source categories cannot recover all of their distinctions:
 These are explicit approximations, not assertions that each category consists
 of that technology. In particular, the source update does not establish national
 coal/lignite, CCGT/CHP, reservoir/run-of-river, onshore/offshore or biomass/waste
-splits, nor does it regionalize the underlying Swiss/German/etc. inventories.
+splits. Apart from solar PV, the underlying Swiss/German/etc. inventory proxies
+are not regionalized by this selection.
 The complete mappings are included in ``electricity_sources.json``.
+
+Solar photovoltaic impact coefficients
+--------------------------------------
+
+Solar PV defaults to the country-specific production mix from
+`IEA PVPS Task 12, T12-33:2026 <https://doi.org/10.69766/WJTE1771>`_, as integrated
+in premise 2.5.4. All supported impact categories are supplied as complete upstream
+coefficients in B, for all thirteen source background databases. PV activities
+have identity columns in A: their manufacturing supply chains are not expanded
+in the vehicle inventory. Fuel-production electricity substitutions therefore
+leave the embedded panel-manufacturing electricity unchanged.
+
+Coverage is 250 countries/territories, plus GLO and EU27 aggregates. Country
+selection follows the vehicle's operating country. An independent energy-supply
+location can be specified, particularly when supplying a custom mix::
+
+    inventory = InventoryCar(
+        model,
+        background_configuration={
+            "solar photovoltaic": "iea-pvps-2026",
+            "solar photovoltaic country": "EU27",
+        },
+    )
+
+GLO and EU27 use fixed 2023 PV-generation weights from the IRENA data distributed
+with premise. They are not capacity-weighted or future geographic projections.
+An unsupported operating geography uses GLO with a warning; an invalid explicit
+PV country raises an error. The selected inventory, geography and source are
+recorded in ``inventory.electricity_provenance``. National generation shares and
+their projections are unchanged by selecting a PV supplier.
+
+The country inventories combine residential and commercial/utility systems,
+including single-Si, multi-Si and CdTe. The source assumes 30 years of operation;
+report-country yields take precedence, with documented Atlas/average proxies
+elsewhere. Manufacturing locations remain those of the source supply chains.
+Premise preserves the workbook's lifetime-times-yield convention without adding
+a separate degradation factor. These assumptions are not measured national
+fleet inventories. See the source hashes and aggregation inputs in
+``data/IAM/photovoltaic.json``.
+
+The coefficients refer to one kWh generated at the plant. Carculator adds its
+delivery losses and electricity infrastructure separately; vehicle charging
+losses are another separate step. Each coefficient includes the full source
+database's scenario/year transformations, including prospective PV changes.
+Runtime interpolation and the 2050 background horizon remain unchanged.
+
+For reproduction of the former Swiss 3 kWp multi-Si rooftop proxy, select
+``"solar photovoltaic": "legacy"`` without a PV-country override. This is
+independent of ``"electricity scenario": "legacy"``, which selects generation
+shares and the lifetime-averaging convention.
+
+Exports reference the exact premise PV production activities. GLO and EU27
+demands are split into their weighted country suppliers. The destination must
+include these IEA PVPS 2026 premise activities; a plain ecoinvent database lacks
+them. No older PV dataset is silently substituted. Ecoinvent 3.9/3.10 export
+targets reject these unverified supplier links; the explicit legacy option
+retains the previous supplier mapping. The IEA source-material licence
+(CC BY-NC-SA 4.0 with its stated exceptions) remains separate from the software
+licence.
 
 The boundary remains domestic generation, excluding electricity imports.
 Grid losses still use the existing ecoinvent 3.6 low-voltage multipliers;

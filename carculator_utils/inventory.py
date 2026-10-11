@@ -42,6 +42,7 @@ from .hydrogen_power import (
     register_hydrogen_power,
 )
 from .inventory_electricity import lifetime_mix, specialize_electricity_supplies
+from .photovoltaic import select_photovoltaic
 
 IAM_FILES_DIR = DATA_DIR / "IAM"
 # Explicit proxy for catalogued hydrogen suppliers without numerical pressure.
@@ -387,6 +388,9 @@ class Inventory:
             self.elec_map = yaml.safe_load(stream)
             self.elec_map = {k: tuple(v) for k, v in self.elec_map.items()}
         self.elec_map.update(hydrogen_mapping)
+        self.elec_map["Solar"], self.photovoltaic_provenance = select_photovoltaic(
+            self.vm.country, self.background_configuration, self.inputs
+        )
 
         self.electricity_technologies = list(self.elec_map.keys())
 
@@ -1095,6 +1099,7 @@ class Inventory:
             loss_country=loss_country,
             loss_multiplier=losses_to_low,
             loss_source=loss_source,
+            **self.photovoltaic_provenance,
         )
         self.electricity_mix.attrs.update(self.electricity_provenance)
 

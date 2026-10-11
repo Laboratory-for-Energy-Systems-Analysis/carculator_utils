@@ -15,6 +15,7 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### LCA background refresh
 
+- Use premise's IEA PVPS 2026 upstream PV coefficients for all impact categories and background scenarios/years. Select country production mixes or generation-weighted GLO/EU27 aggregates; retain an explicit legacy solar option. Exports require the corresponding premise PV suppliers. See [electricity scenarios](docs/electricity_scenarios.rst).
 - Rebuild A, the aligned activity index and all 57 B coefficient matrices from 13 isolated premise 2.5.4 databases using ecoinvent 3.12 cutoff. Preserve signed/non-unit production, weighted migrations and custom noise factors; fail on missing or ambiguous suppliers.
 - Replace NMC-523 with NMC-532 and the actual ecoinvent 5:3:2 chemistry. Existing physical/cost assumptions carry forward as documented priors.
 - Add reproducible build, compilation, completed-model and destination-audit scripts with pinned dependencies, source hashes and full/reduced Brightway parity checks.
@@ -31,6 +32,8 @@ it has not yet been published. Older entries, where present, retain their origin
 - Align documentation versions with the package version and provide complete documentation-build dependencies.
 
 ### Model and inventory changes
+
+- Correct the HDPE- and aluminium-lined 700-bar hydrogen tank recipes to one kilogram of dry assembly, using the material totals in Evangelisti et al. (2017). Convert the source manufacturing electricity from MJ to kWh, preserve processing services separately, and retain the correction in future background builds. See [source and boundary](docs/validity.rst#hydrogen-tank-material-inventories).
 
 - Add pressure-dependent hydrogen compression electricity to vehicle fuel supply. Blend supplier outlet pressures against the selected tank pressure, retain the scenario electricity mix, expose pressure assumptions and overrides, and avoid adding vehicle compression to upstream hydrogen-production inventories. See [hydrogen compression](docs/validity.rst#hydrogen-delivery-pressure-and-compression).
 
