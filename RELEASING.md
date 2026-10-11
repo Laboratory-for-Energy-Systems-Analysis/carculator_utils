@@ -152,3 +152,15 @@ channel; omitting it prevents the conda test environment from resolving.
 The publishing workflow includes all three channels. For already-created
 release tags, dispatch the current workflow with `release_tag` to build the
 unchanged tagged sources using the corrected channel configuration.
+
+### Retry an upload with the shared conda publisher
+
+If a sibling repository has an expired Anaconda credential, use the
+`Retry verified family conda upload` workflow in this repository after the
+sibling build and tests pass. Attach its exact `release-conda` artifact to the
+public GitHub release, then supply the package, version, completed verification
+run ID, and artifact SHA256. The workflow verifies platform checks, the conda
+build, PyPI publication, and the GitHub asset checksum before using this
+repository's existing publisher credential for the `romainsacchi` channel.
+It does not rebuild packages or skip verification. Refresh the sibling
+`ANACONDA_CLOUD` secret before its next regular release.

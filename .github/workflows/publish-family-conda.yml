@@ -1,0 +1,132 @@
+name: Retry verified family conda upload
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Family package whose tested conda artifact needs uploading
+        required: true
+        type: choice
+        options:
+          - carculator_utils
+          - carculator
+          - carculator_truck
+          - carculator_bus
+          - carculator_two_wheeler
+      version:
+        description: Published GitHub release version, without the v. prefix
+        required: true
+        type: string
+      verification_run:
+        description: Completed package workflow with successful tests and conda build
+        required: true
+        type: string
+      sha256:
+        description: SHA256 of the tested conda artifact attached to the GitHub release
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: family-conda-${{ inputs.package }}-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Verify release evidence and download the exact tested artifact
+        env:
+          PACKAGE_NAME: ${{ inputs.package }}
+          PACKAGE_VERSION: ${{ inputs.version }}
+          VERIFICATION_RUN: ${{ inputs.verification_run }}
+          EXPECTED_SHA256: ${{ inputs.sha256 }}
+        shell: python
+        run: |
+          import hashlib
+          import json
+          import os
+          import re
+          import urllib.request
+          from pathlib import Path
+
+          package = os.environ['PACKAGE_NAME']
+          version = os.environ['PACKAGE_VERSION']
+          run = os.environ['VERIFICATION_RUN']
+          digest = os.environ['EXPECTED_SHA256']
+          allowed = {'carculator_utils', 'carculator', 'carculator_truck',
+                     'carculator_bus', 'carculator_two_wheeler'}
+          if package not in allowed or not re.fullmatch(r'\d+\.\d+\.\d+', version):
+              raise SystemExit('Unsupported package or release version')
+          if not run.isdigit() or not re.fullmatch(r'[0-9a-f]{64}', digest):
+              raise SystemExit('Invalid verification run or SHA256')
+          repository = f'Laboratory-for-Energy-Systems-Analysis/{package}'
+          api = f'https://api.github.com/repos/{repository}'
+
+          def read_json(url):
+              request = urllib.request.Request(url, headers={
+                  'Accept': 'application/vnd.github+json',
+                  'User-Agent': 'carculator-family-release',
+              })
+              with urllib.request.urlopen(request, timeout=60) as response:
+                  return json.load(response)
+
+          workflow = read_json(f'{api}/actions/runs/{run}')
+          if (workflow['status'] != 'completed'
+                  or workflow['event'] not in {'release', 'workflow_dispatch'}
+                  or workflow['repository']['full_name'].lower() != repository.lower()
+                  or workflow['path'].split('@')[0] != '.github/workflows/main.yml'):
+              raise SystemExit('Expected a completed release publishing workflow')
+          jobs = read_json(f'{api}/actions/runs/{run}/jobs?per_page=100')['jobs']
+          required = {'verify (ubuntu-latest, 3.12)', 'verify (macos-latest, 3.12)',
+                      'verify (windows-latest, 3.12)', 'build-conda', 'publish-pypi'}
+          if package == 'carculator_utils':
+              required.update(f'Vehicle family (Python 3.12, shard {i})' for i in range(3))
+          successful = {job['name'] for job in jobs if job['conclusion'] == 'success'}
+          if not required <= successful:
+              raise SystemExit(f'Missing successful release checks: {required - successful}')
+          release = read_json(f'{api}/releases/tags/v.{version}')
+          if release['draft'] or release['prerelease']:
+              raise SystemExit('Expected a published stable GitHub release')
+          source = release['target_commitish']
+          if not re.fullmatch(r'[0-9a-f]{40}', source):
+              raise SystemExit('Release must record its exact source commit')
+          if workflow['head_sha'] != source:
+              comparison = read_json(f'{api}/compare/{source}...{workflow["head_sha"]}')
+              allowed_changes = all(
+                  item['filename'] == 'RELEASING.md'
+                  or item['filename'].startswith('.github/workflows/')
+                  for item in comparison.get('files', [])
+              )
+              if comparison['status'] != 'ahead' or not allowed_changes:
+                  raise SystemExit('Verification run differs from the release package sources')
+          filename = f'{package}-{version}-py_0.conda'
+          asset = next(item for item in release['assets'] if item['name'] == filename)
+          if asset.get('digest') != f'sha256:{digest}' or asset['state'] != 'uploaded':
+              raise SystemExit('GitHub asset does not match the verified artifact hash')
+          expected_url = f'https://github.com/{repository}/releases/download/v.{version}/{filename}'
+          if asset['browser_download_url'] != expected_url:
+              raise SystemExit('Unexpected release artifact URL')
+          destination = Path('conda-dist') / filename
+          destination.parent.mkdir()
+          checksum = hashlib.sha256()
+          with urllib.request.urlopen(expected_url, timeout=60) as response:
+              with destination.open('wb') as output:
+                  while chunk := response.read(1024 * 1024):
+                      checksum.update(chunk)
+                      output.write(chunk)
+          if checksum.hexdigest() != digest:
+              raise SystemExit('Downloaded conda artifact checksum mismatch')
+          print(f'Verified {filename}: {digest}; checks {workflow["html_url"]}')
+      - name: Install upload client
+        run: python -m pip install anaconda-client
+      - name: Publish verified conda artifact
+        env:
+          ANACONDA_API_TOKEN: ${{ secrets.ANACONDA_CLOUD }}
+        run: anaconda upload --user romainsacchi --skip-existing conda-dist/*.conda
