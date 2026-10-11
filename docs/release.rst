@@ -1,8 +1,21 @@
 Release notes
 =============
 
-1.3.6
+1.3.7
 -----
+
+Recent inventory corrections in this release:
+
+* Follow actual inventory links when replacing fuel-production electricity,
+  including expanded upstream supply chains. Preserve embedded electricity in
+  suppliers characterized only through background coefficients.
+* Exclude aggregate hydrocarbon totals from inventories and carbon balances
+  where the individual species are already counted; assign rural exhaust to
+  immediate non-urban air.
+* Correct shifted LCIA metadata fields and the units of fossil resource
+  scarcity, ionising radiation and freshwater ecotoxicity without rescaling
+  verified coefficients. The metadata's ``method`` now names the method group;
+  use ``indicator`` for the assessment level. See :doc:`lcia_metadata`.
 
 When upgrading from an earlier version:
 

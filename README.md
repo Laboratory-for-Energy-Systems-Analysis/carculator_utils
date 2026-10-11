@@ -6,7 +6,7 @@ Shared physics, parameter handling, background systems, inventories and export m
 [![PyPI](https://img.shields.io/pypi/v/carculator_utils)](https://pypi.org/project/carculator_utils/)
 
 Developed at the [Paul Scherrer Institute](https://www.psi.ch/en).
-This checkout prepares **1.3.6**; see [CHANGELOG.md](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/CHANGELOG.md) for release status and changes.
+This checkout prepares the unpublished release **1.3.7**; see [CHANGELOG.md](https://github.com/Laboratory-for-Energy-Systems-Analysis/carculator_utils/blob/master/CHANGELOG.md) for release status and changes.
 
 ## Installation
 
@@ -22,7 +22,7 @@ On Windows, activate with `.venv\Scripts\activate`. After publication, install
 this release from PyPI:
 
 ```bash
-python -m pip install "carculator_utils==1.3.6"
+python -m pip install "carculator_utils==1.3.7"
 ```
 
 Before publication, use the matching source checkouts as described under development.
@@ -32,7 +32,7 @@ and openLCA JSON-LD export as a runtime dependency. To select the tested legacy
 Brightway stack:
 
 ```bash
-python -m pip install "carculator_utils[excel,brightway]==1.3.6"
+python -m pip install "carculator_utils[excel,brightway]==1.3.7"
 ```
 
 The Brightway extra supports the legacy stack (`bw2io<0.9`, `bw2data<4`,
@@ -47,10 +47,10 @@ background/elementary-flow linking before calculation. See the
 
 | Package | Prepared version |
 | --- | --- |
-| `carculator_utils` | 1.3.6 |
-| `carculator` | 1.9.6 |
-| `carculator_truck` | 0.5.1 |
-| `carculator_bus` | 0.1.1 |
+| `carculator_utils` | 1.3.7 |
+| `carculator` | 1.9.7 |
+| `carculator_truck` | 0.5.2 |
+| `carculator_bus` | 0.1.2 |
 | `carculator_two_wheeler` | 0.1.1 |
 
 ## Quick start
@@ -105,7 +105,7 @@ and the [documentation](https://github.com/Laboratory-for-Energy-Systems-Analysi
 
 ## Development and release
 
-Use matching sibling checkouts, especially `carculator_utils` **1.3.6 or newer**:
+Use matching sibling checkouts, especially `carculator_utils` **1.3.7 or newer**:
 
 ```bash
 python -m pip install -e ".[test,docs,excel,brightway]"

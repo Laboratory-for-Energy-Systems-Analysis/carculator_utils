@@ -1,16 +1,23 @@
 # Changelog
 
-Notable user-facing changes to `carculator_utils`. The entry below is prepared for release;
-it has not yet been published. Older entries, where present, retain their original record.
+Notable user-facing changes to `carculator_utils`. The first entry is prepared for release and remains unpublished.
 
-## [1.3.6] - Unreleased
+## [1.3.7] - Unreleased
+
+### Migration to ecoinvent 3.12
+
+- Use the coordinated `carculator_utils 1.3.7` background with premise 2.5.4 and ecoinvent 3.12 cutoff. The foreground matrix, activity index and all 57 LCIA coefficient matrices were rebuilt together. Recalculate saved LCA results; results from the previous background are not directly interchangeable.
+- Rename explicit battery chemistry selections and chemistry-specific custom parameter names from `NMC-523` to `NMC-532`. The new inventory uses the actual 5:3:2 Ni:Mn:Co chemistry. Existing engineering and price assumptions carry forward; this is not an alias for the former inventory.
+- Inventory exports now default to ecoinvent 3.12. Match exported suppliers against the documented compatible background. Ecoinvent 3.9/3.10 remain explicit legacy targets, but suppliers without verified older links raise an error; requesting an older version does not convert the new background automatically.
+- Brightpath supplies Brightway Excel, SimaPro CSV and foreground openLCA JSON-LD exports. Select one sample before export; all selected years are retained. Brightway requires background matching, and openLCA requires provider and elementary-flow mapping before calculation. SimaPro uses Latin-1 and retains unsupported noise quantities in audit comments.
+- Python support remains `>=3.12,<3.13` with NumPy `>=1.26.4,<2`. Install matching family versions and rebuild saved models/arrays when applying the corrected inputs, costs or inventory accounting described below.
+
+### Other changes
 
 - Review the documentation against current code, explain units and assumptions
   in plain English, and add validation bar charts with sources and explicit
   limits. Correct outdated descriptions of exports, repeated runs and scientific
   accounting; preserve dated historical results as such.
-
-
 - Remove import-time global warning suppression and refresh API/documentation contracts; shared sulfur-table reductions use explicit pandas axis arguments.
 
 ### LCA background refresh
@@ -24,44 +31,29 @@ it has not yet been published. Older entries, where present, retain their origin
 ### Compatibility and installation
 
 - Preserve emissions and IAM text-resource fingerprints across fresh Linux/macOS and Windows checkouts. Correct eleven emissions hashes recorded from CRLF working files to match the committed LF bytes; retain all numerical values and verify both checkout modes with real Git operations.
-- Require Python 3.12 (`>=3.12,<3.13`); older Python environments must be recreated.
-- Use NumPy `>=1.26.4,<2` through the shared runtime.
-- Build wheels and source distributions from centralized `pyproject.toml` metadata.
 - Add `brightpath>=1.0.0a6,<1.1` for inventory export. Its dependencies include `bw2io`, XlsxWriter and `olca-schema`; core model/LCIA calculations keep lazy imports and require no Brightway project. The `brightway` extra selects the legacy stack (`bw2io<0.9`, `bw2data<4`, `bw2calc<2`); `excel` remains a compatibility extra.
-- Align documentation versions with the package version and provide complete documentation-build dependencies.
 
 ### Model and inventory changes
 
+- Follow actual foreground links when replacing fuel-production electricity, including expanded upstream supply chains; preserve embedded electricity in suppliers represented only by background impact coefficients. Verify supplier order and completed fuel inventories.
+- Exclude aggregate hydrocarbon totals from inventories and physical carbon balances when the individual species are already counted, preventing duplicate pollutant burdens. Attribute rural exhaust to immediate non-urban air rather than a distant-air compartment.
+- Correct shifted LCIA metadata fields and the reported units for ReCiPe fossil resource scarcity (kg oil-equivalent), ReCiPe ionising radiation (kBq Co-60-equivalent), and EF freshwater ecotoxicity (CTUe). Preserve category identifiers, row order and verified coefficient values. Use `indicator` for assessment level and `method` for method group; coefficient builds now reject inconsistent units. See [LCIA metadata](docs/lcia_metadata.rst).
+
 - Add pressure-dependent hydrogen compression electricity to vehicle fuel supply. Blend supplier outlet pressures against the selected tank pressure, retain the scenario electricity mix, expose pressure assumptions and overrides, and avoid adding vehicle compression to upstream hydrogen-production inventories. See [hydrogen compression](docs/validity.rst#hydrogen-delivery-pressure-and-compression).
-
 - Count onboard car/scooter chargers once under powertrain and external charging infrastructure once under charger. Reject ambiguous or unassigned impact-source groups instead of returning double-counted or incomplete totals. Add complete-matrix and Brightway parity checks across vehicle families; see [validation](docs/validity.rst#impact-source-grouping).
-
 - Export only reachable foreground chains, reject unsupported 3.9 coal suppliers, and add exact destination-link audits. Forward explicit openLCA method UUID mapping and retain omitted SimaPro noise quantities in audit comments.
-
 - Expose bounded physical-carbon diagnostics separately from legacy non-fossil climate allocation. Support repeatable exhaust CO2 reconciliation with explicit sourced composition; report the default full-oxidation limitation in exports.
-
 - Require explicit matching evidence and calibration/held-out roles in energy comparisons; retain screening exclusions, record fresh completed runs, and fail the audit command on model-run errors.
-
 - Remove automatic Swiss climate substitution for missing bus-country data; require explicit ambient temperatures and validate direct HVAC profiles. Document retained city proxies and thermal-model limits.
-
 - Add explicit electricity consumption mixes with conservative import/re-export tracing, labelled custom-mix alignment, and sourced grid-loss overrides. Retain generation/trade/loss boundaries in provenance.
-
 - Characterize Ethene as exact Ethylene air flows, preserving original matrix positions. Publish emission-table fingerprints and the explicitly unverified provenance of legacy NH3/N2O adjustments.
-
 - Remove the unqualified default 0.4% additional CNG leakage overlay in sibling defaults. Retain upstream and exhaust emissions and explicit residual-loss accounting; verify the delivered-fuel boundary in completed family runs.
-
 - Retain provided, derived, not-applicable and missing input coverage on generated arrays. Reject missing declared inputs for active vehicles before full sizing, including gaps across year interpolation; document explicit zero overrides.
-
 - Limit the public road-fuel catalogue to resolvable delivery chains. Report eleven unavailable or ambiguous choices with explicit reasons at model construction instead of failing after a completed run.
-
 - Correct synthetic methanol diesel carbon-source supplier swaps and the petrol energy-allocation alias. Verify named suppliers in completed inventories across all four vehicle families; see docs/fuel_catalogue.rst.
-
 - Reject overlapping bundled default cells at input loading. Resolve sibling parameter scopes without changing effective values or distributions; custom dictionaries retain explicit first-entry compatibility.
-
 - Retain original model inputs for repeatable completed runs, including PHEV component inputs and selected chemistry-price samples. Preserve explicit input edits and reject ambiguous edits to aggregated PHEV outputs; see `docs/repeated_runs.rst`.
-
 - Correct annual capital recovery and replacement discounting in the shared base cost method; preserve cell-specific purchase-price overrides and finite inactive-lifetime costs. Vehicle subclass formulas are unchanged.
-
 - Preserve constructor-year labels for fuel shares and properties. Align fuel supplies, heating values/densities, combustion CO2 and methane-leakage origin fractions after selecting or reordering completed model years; correct silent blend swaps and single-year inventory failures. Add `model.get_fuel_blend()` and `inventory.fuel_blend` as aligned copies, retain original metadata, and verify family LCIA and repeated annual exports. Older saved fuel-using models without year provenance must be rebuilt; see [scope and migration](docs/usage.rst#fuel-blends-after-year-selection).
 - Match battery inventory purchases by exact powertrain, size and year. Prevent mixed-chemistry comparisons from supplying extra batteries to overlapping names such as Medium/Medium SUV and Large/Large SUV; retain replacement mass balance and ignore out-of-scope chemistry entries. Verify completed family inventories, battery impacts and Brightway/SimaPro exports. Regenerate affected multi-size results; see [battery inventory selection](docs/validity.rst#battery-inventory-selection).
 - Bill BEVs and PHEV electric operation from grid electricity consumption, including charger losses. Preserve fuel-mode costs, PHEV driving-share weighting and model-specific cost units; verify costs against completed inventory purchases. See [charging cost accounting](docs/validity.rst#charging-cost-accounting).
@@ -85,6 +77,36 @@ it has not yet been published. Older entries, where present, retain their origin
 - Validate triangular modes and bounds when loading parameter records, with year and vehicle context in errors. Test sampling of each vehicle family's complete defaults before scope selection, including the repaired truck cost distributions.
 - Align automatic component-cost projections by year and sample, correcting mixed-year prices in multi-year uncertainty and sensitivity runs. Keep the price curves, uncertainty draws and explicit battery-cost overrides; verify static reference agreement and unchanged physical/inventory results.
 - Preserve explicit generic and selected-chemistry battery unit costs through chemistry selection and cost projection. Add scoped `battery_costs` constructor inputs, labelled input provenance and effective-default sensitivity; leave existing default price trajectories unchanged. Reject combined-only PHEV prices that aggregation would discard.
+
+### Data and provenance
+
+- Refresh national electricity generation using attributed Ember history and three explicit GECO 2025 scenarios through 2070, with 211 geographic codes, validated shares, source hashes and reproducible import/audit scripts. Preserve the former table as `legacy`; disclose regional projections, coarse LCI proxies, source exclusions and GECO residual reconciliation. Hold refreshed endpoints across complete vehicle lifetimes and retain scenario/loss provenance in exports. TYNDP 2026 remains an audited candidate pending reliable LCI mappings. See [data, assumptions and reproduction](docs/electricity_scenarios.rst).
+
+### Documentation and verification
+
+- Make installed-test subprocess limits configurable with `--test-timeout` (1800 seconds by default, 2400 in the family workflow). Keep 900-second build/install limits and the 60-minute family job cap; log test names and the 20 slowest durations to diagnose slow suites.
+- Preserve electricity CSV/YAML bytes and their recorded hashes on Windows with explicit LF checkout attributes, including the hashed hydrogen recipe. Write temperature-test CSV fixtures without platform newline translation, preventing spurious blank rows and parsing failures.
+
+### Known limitations
+
+- Electrochemical synthetic methane and other unavailable fuel routes are excluded from the supported catalogue and rejected before modelling; their missing suppliers still need scientifically justified mappings.
+- Ethene uses exact Ethylene characterization. HBEFA extraction-version provenance, coefficient derivation and legacy NH3/N2O adjustments remain incompletely verified.
+- Seeded parameter draws do not seed every downstream stochastic cost adjustment. Build fresh models for independent runs.
+
+See [release preparation](RELEASING.md) for coordinated versions and verification.
+
+## [1.3.6] - 2026-10-08
+
+### Compatibility and installation
+
+- Require Python 3.12 (`>=3.12,<3.13`); older Python environments must be recreated.
+- Use NumPy `>=1.26.4,<2` through the shared runtime.
+- Build wheels and source distributions from centralized `pyproject.toml` metadata.
+- Keep core model/LCIA use independent of Brightway; install `excel` or `brightway` extras for export. The Brightway extra targets the legacy stack (`bw2io<0.9`, `bw2data<4`, `bw2calc<2`).
+- Align documentation versions with the package version and provide complete documentation-build dependencies.
+
+### Model and inventory changes
+
 - Separate stored battery energy, terminal DC energy and grid charging electricity; correct regenerative recovery, shaft/input energy balance and regenerative power limits.
 - Restore paired VECTO speed/grade traces and duration conventions; interpret numeric gradient overrides as degrees and validate cycle inputs.
 - Correct efficiency-map load accounting and add opt-in petrol start-stop/fuel-cut controls for passenger cars.
@@ -97,26 +119,23 @@ it has not yet been published. Older entries, where present, retain their origin
 
 ### Data and provenance
 
-- Refresh national electricity generation using attributed Ember history and three explicit GECO 2025 scenarios through 2070, with 211 geographic codes, validated shares, source hashes and reproducible import/audit scripts. Preserve the former table as `legacy`; disclose regional projections, coarse LCI proxies, source exclusions and GECO residual reconciliation. Hold refreshed endpoints across complete vehicle lifetimes and retain scenario/loss provenance in exports. TYNDP 2026 remains an audited candidate pending reliable LCI mappings. See [data, assumptions and reproduction](docs/electricity_scenarios.rst).
 - Add reproducible 2025 measurement catalogs, cycle/road-load diagnostics, temporal continuity checks and BEV battery-sizing audits.
 - Support grouped temporal uncertainty and retain original affected parameter records with provenance.
 - Continue the IAM scenario names introduced in 1.3.5: `SSP2-NPi`, `SSP2-PkBudg1000`, `SSP2-PkBudg650`, and `static`. Legacy 1150/500 names remain rejected.
 
 ### Documentation and verification
 
-- Make installed-test subprocess limits configurable with `--test-timeout` (1800 seconds by default, 2400 in the family workflow). Keep 900-second build/install limits and the 60-minute family job cap; log test names and the 20 slowest durations to diagnose slow suites.
-- Preserve electricity CSV/YAML bytes and their recorded hashes on Windows with explicit LF checkout attributes, including the hashed hydrogen recipe. Write temperature-test CSV fixtures without platform newline translation, preventing spurious blank rows and parsing failures.
 - Add current installation and executable 2025 quick-start examples, migration notes and a release checklist.
 - Record calibration scope, measurement boundaries and numerical consistency separately from empirical validation.
 - Verify built wheels and sdist-built wheels, packaged resource hashes, installed tests with export extras and offline core-only model/LCIA smoke runs.
 
 ### Known limitations
 
-- Electrochemical synthetic methane and other unavailable fuel routes are excluded from the supported catalogue and rejected before modelling; their missing suppliers still need scientifically justified mappings.
-- Ethene uses exact Ethylene characterization. HBEFA extraction-version provenance, coefficient derivation and legacy NH3/N2O adjustments remain incompletely verified.
+- The electrochemical synthetic-methane supplier is absent from the bundled inventory index and raises a visible mapping error.
+- Generic NMVOC characterization is used for ethene where the bundled biosphere index has no exact flow; HBEFA source-version provenance remains incomplete.
 - Seeded parameter draws do not seed every downstream stochastic cost adjustment. Build fresh models for independent runs.
 
-See [approved issue outcomes](docs/approved_fixes.rst), [validation](docs/validity.rst) and [release preparation](RELEASING.md) for scope and verification instructions.
+See [validation](docs/validity.rst) and [release preparation](RELEASING.md) for scope and verification instructions.
 
 ## 1.3.5 - 2026-04-29
 

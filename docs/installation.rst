@@ -9,11 +9,11 @@ The shared runtime requires NumPy ``>=1.26.4,<2``.
 Install a release
 -----------------
 
-Install ``carculator_utils 1.3.6`` from PyPI::
+After publication, install ``carculator_utils 1.3.7`` from PyPI::
 
    python3.12 -m venv .venv
    source .venv/bin/activate
-   python -m pip install "carculator_utils==1.3.6"
+   python -m pip install "carculator_utils==1.3.7"
 
 On Windows activate with ``.venv\Scripts\activate``. Alternatively, create a
 conda environment with ``conda create -n carculator-release python=3.12 pip``,
@@ -26,7 +26,7 @@ and supplies Excel, SimaPro CSV and openLCA JSON-LD writers. It also installs
 ``bw2io``, but these packages are imported only when exporting. To select the
 tested legacy Brightway stack::
 
-   python -m pip install "carculator_utils[excel,brightway]==1.3.6"
+   python -m pip install "carculator_utils[excel,brightway]==1.3.7"
 
 The Brightway extra intentionally targets the legacy stack (``bw2io<0.9``,
 ``bw2data<4``, ``bw2calc<2``). Importing exported inventories requires a matching
