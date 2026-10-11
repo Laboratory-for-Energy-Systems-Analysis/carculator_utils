@@ -1,0 +1,19 @@
+tank,exchange,location,unit_per_kg_tank,role,before,after,source_amount_per_assembly,dry_mass_kg,legacy_denominator_kg
+"fuel tank, compressed hydrogen gas, 700bar, with HDPE liner","market for aluminium alloy, AlLi",GLO,kilogram,material,0.05957983193277311,0.08083456846425721,7.09,87.71,119
+"fuel tank, compressed hydrogen gas, 700bar, with HDPE liner","carbon fiber production, weaved, at factory",RER,kilogram,material,0.16621848739495798,0.22551590468589675,19.78,87.71,119
+"fuel tank, compressed hydrogen gas, 700bar, with HDPE liner","epoxy resin production, liquid",RER,kilogram,material,0.249327731092437,0.3382738570288451,29.67,87.71,119
+"fuel tank, compressed hydrogen gas, 700bar, with HDPE liner",market for glass fibre,GLO,kilogram,material,0.047058823529411764,0.06384676775738228,5.6,87.71,119
+"fuel tank, compressed hydrogen gas, 700bar, with HDPE liner","polyethylene production, high density, granulate",RER,kilogram,material,0.08621848739495798,0.11697639949834683,10.26,87.71,119
+"fuel tank, compressed hydrogen gas, 700bar, with HDPE liner","market for polyurethane, flexible foam",RER,kilogram,material,0.0392436974789916,0.053243643826245586,4.67,87.71,119
+"fuel tank, compressed hydrogen gas, 700bar, with HDPE liner","market for steel, chromium steel 18/8",GLO,kilogram,material,0.08941176470588236,0.12130885873902635,10.64,87.71,119
+"fuel tank, compressed hydrogen gas, 700bar, with HDPE liner","metal working, average for chromium steel product manufacturing",RER,kilogram,processing,0.08941176470588236,0.12130885873902635,10.64,87.71,119
+"fuel tank, compressed hydrogen gas, 700bar, with HDPE liner","market group for electricity, low voltage",ENTSO-E,kilowatt hour,energy,0.10815126050420168,0.04075932048797173,12.87,87.71,119
+"fuel tank, compressed hydrogen gas, 700bar, with aluminium liner","market for aluminium alloy, AlLi",GLO,kilogram,material,0.4593655913978495,0.37749737118822296,42.721000000000004,113.169,93
+"fuel tank, compressed hydrogen gas, 700bar, with aluminium liner","carbon fiber production, weaved, at factory",RER,kilogram,material,0.21368817204301077,0.17560462670872767,19.873,113.169,93
+"fuel tank, compressed hydrogen gas, 700bar, with aluminium liner","epoxy resin production, liquid",RER,kilogram,material,0.31989247311827956,0.26288117770767616,29.75,113.169,93
+"fuel tank, compressed hydrogen gas, 700bar, with aluminium liner",market for glass fibre,GLO,kilogram,material,0.060139784946236556,0.04942166140904311,5.593,113.169,93
+"fuel tank, compressed hydrogen gas, 700bar, with aluminium liner","market for polyurethane, flexible foam",RER,kilogram,material,0.049903225806451616,0.04100946372239748,4.641,113.169,93
+"fuel tank, compressed hydrogen gas, 700bar, with aluminium liner","market for steel, chromium steel 18/8",GLO,kilogram,material,0.11388172043010752,0.0935856992639327,10.591,113.169,93
+"fuel tank, compressed hydrogen gas, 700bar, with aluminium liner","metal working, average for chromium steel product manufacturing",RER,kilogram,processing,0.11388172043010752,0.0935856992639327,10.591,113.169,93
+"fuel tank, compressed hydrogen gas, 700bar, with aluminium liner","market for sheet rolling, aluminium",GLO,kilogram,processing,0.3838709677419355,0.3154574132492114,35.7,113.169,93
+"fuel tank, compressed hydrogen gas, 700bar, with aluminium liner","market group for electricity, low voltage",ENTSO-E,kilowatt hour,energy,0.17658064516129032,0.04030844724851034,16.422,113.169,93

@@ -1,0 +1,157 @@
+{
+  "id": "hydrogen-tank-dry-mass-20261010",
+  "source": {
+    "citation": "Evangelisti et al. (2017), Life cycle assessment of a polymer electrolyte membrane fuel cell system for passenger vehicles, Journal of Cleaner Production 142, 4339–4355.",
+    "doi": "https://doi.org/10.1016/j.jclepro.2016.11.159",
+    "supplement_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0959652616320212-mmc1.docx",
+    "supplement_sha256": "ca9470c504f61ef58e2e5cc3cad8c06d6cecf17073074ac2ce19dca3678ac49d",
+    "retrieved": "2026-10-10"
+  },
+  "boundary": "One kilogram of dry tank assembly, including tank balance of plant, excluding stored hydrogen. Normalize the listed material inputs to their sum; processing services do not add material mass.",
+  "source_caveats": [
+    "Main text and supplementary recipe tables disagree on the tank masses and scenario labels. Identify recipes by their material contents.",
+    "The supplementary tables label the HDPE recipe 93 kg and the aluminium recipe 119 kg, but their listed materials sum to 87.71 and 113.169 kg. The difference is approximately stored hydrogen; its intended treatment is not explicit. Do not invent an unreported missing material.",
+    "Preserve source material ratios and existing supplier proxies, including AlLi for aluminium. This correction does not validate these as current vehicle designs.",
+    "Manufacturing electricity is listed in MJ, whereas the imported recipes treated those numbers as kWh. Convert MJ to kWh using 3.6 MJ/kWh.",
+    "Aluminium sheet and ingot masses both purchase aluminium; sheet rolling is a separate processing service. No fabrication yield losses are added."
+  ],
+  "suppliers": {
+    "carbon_fibre": [
+      "carbon fiber production, weaved, at factory",
+      "RER",
+      "kilogram",
+      "carbon fiber, weaved"
+    ],
+    "hdpe": [
+      "polyethylene production, high density, granulate",
+      "RER",
+      "kilogram",
+      "polyethylene, high density, granulate"
+    ],
+    "foam": [
+      "market for polyurethane, flexible foam",
+      "RER",
+      "kilogram",
+      "polyurethane, flexible foam"
+    ],
+    "electricity": [
+      "market group for electricity, low voltage",
+      "ENTSO-E",
+      "kilowatt hour",
+      "electricity, low voltage"
+    ],
+    "aluminium": [
+      "market for aluminium alloy, AlLi",
+      "GLO",
+      "kilogram",
+      "aluminium alloy, AlLi"
+    ],
+    "steel_working": [
+      "metal working, average for chromium steel product manufacturing",
+      "RER",
+      "kilogram",
+      "metal working, average for chromium steel product manufacturing"
+    ],
+    "steel": [
+      "market for steel, chromium steel 18/8",
+      "GLO",
+      "kilogram",
+      "steel, chromium steel 18/8"
+    ],
+    "epoxy": [
+      "epoxy resin production, liquid",
+      "RER",
+      "kilogram",
+      "epoxy resin, liquid"
+    ],
+    "glass_fibre": [
+      "market for glass fibre",
+      "GLO",
+      "kilogram",
+      "glass fibre"
+    ],
+    "aluminium_rolling": [
+      "market for sheet rolling, aluminium",
+      "GLO",
+      "kilogram",
+      "sheet rolling, aluminium"
+    ]
+  },
+  "recipes": [
+    {
+      "label": [
+        "fuel tank, compressed hydrogen gas, 700bar, with HDPE liner",
+        "RER",
+        "kilogram",
+        "hydrogen tank"
+      ],
+      "supplement_recipe_heading": "Hydrogen tank (Scenario S16)",
+      "dry_material_mass_kg": 87.71,
+      "legacy_denominator_kg": 119,
+      "materials_kg": {
+        "aluminium": [
+          7.09
+        ],
+        "carbon_fibre": [
+          19.78
+        ],
+        "epoxy": [
+          29.67
+        ],
+        "glass_fibre": [
+          5.6
+        ],
+        "hdpe": [
+          10.26
+        ],
+        "foam": [
+          4.67
+        ],
+        "steel": [
+          10.64
+        ]
+      },
+      "processing_kg": {
+        "steel_working": 10.64
+      },
+      "electricity_MJ": 12.87
+    },
+    {
+      "label": [
+        "fuel tank, compressed hydrogen gas, 700bar, with aluminium liner",
+        "RER",
+        "kilogram",
+        "hydrogen tank"
+      ],
+      "supplement_recipe_heading": "Hydrogen tank (Scenario S17)",
+      "dry_material_mass_kg": 113.169,
+      "legacy_denominator_kg": 93,
+      "materials_kg": {
+        "aluminium": [
+          35.7,
+          7.021
+        ],
+        "carbon_fibre": [
+          19.873
+        ],
+        "epoxy": [
+          29.75
+        ],
+        "glass_fibre": [
+          5.593
+        ],
+        "foam": [
+          4.641
+        ],
+        "steel": [
+          10.591
+        ]
+      },
+      "processing_kg": {
+        "steel_working": 10.591,
+        "aluminium_rolling": 35.7
+      },
+      "electricity_MJ": 16.422
+    }
+  ]
+}

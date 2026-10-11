@@ -28,7 +28,8 @@ The build plan contains thirteen databases:
 The prospective databases apply all default premise sectors. Historical B
 matrices use the same NPi background for all pathways. Vehicle years between
 the tabulated years, including 2025, retain the runtime's interpolation.
-Foreground recipes in A come from the static database; prospective changes
+Foreground recipes in A come from the static database, with the documented
+hydrogen tank corrections below; prospective changes
 enter through the background suppliers characterized in B. This is the
 existing carculator foreground/background boundary, not a claim that every
 foreground technology changes with the IAM scenario.
@@ -90,6 +91,41 @@ export linking are separate checks.
 Running a rebuild
 -----------------
 
+The compiler also imports the **full upstream PV impact coefficients** from
+premise's IEA PVPS 2026 country production mixes. It retains their identity
+columns in A and characterizes them in every B category/scenario/year.
+``dev/compile_photovoltaic.py`` supplies the country identities and fixed
+IRENA-2023 generation weights for GLO/EU27. The compiler checks the PV workbook
+hashes against each source database's build report. Configuration and source
+hashes are packaged in ``data/IAM/photovoltaic.json``.
+
+Run an independent full-inventory comparison for six representative country
+and aggregate demands across all thirteen databases and every impact category::
+
+   python dev/validate_photovoltaic.py --project YOUR_COPIED_PROJECT \
+       --iam-dir /tmp/carculator-iam-output/candidate \
+       --report /tmp/carculator-pv-parity.json
+
+The PV integration preserves every pre-existing A/B coefficient. See
+:doc:`electricity_scenarios` for geographic selection, the generation/delivery
+boundary and the requirement for premise PV suppliers in exported databases.
+
+``dev/correct_hydrogen_tanks.py`` applies the source-documented dry-mass and
+MJ/kWh corrections for the HDPE- and aluminium-lined hydrogen tanks. The full
+compiler applies the same correction after validating the unmodified source
+recipes against Brightway. It accepts the known legacy recipes or the corrected
+premise recipes, including float32 serialization; any different upstream recipe
+requires review. See :ref:`the tank inventory boundary <hydrogen-tank-materials>`.
+
+For an already verified bundle, apply only these foreground corrections with::
+
+   python dev/correct_hydrogen_tanks.py --iam-dir carculator_utils/data/IAM
+
+The command verifies existing resource hashes and zero tank coefficients in B,
+updates A and the manifest, and records the source A hash. It does not modify
+Brightway databases or regenerate B. The correction specification is packaged
+in ``data/IAM/hydrogen_tank_corrections.json``.
+
 Use Python 3.12 and a dedicated environment. The deterministic coefficient
 workflow disables uncertainty in both the source and imported inventories.
 Keep the licensed source data in a private Brightway project and copy that
@@ -140,8 +176,10 @@ Review and verification
 Before installing a candidate, require all databases and all 57 B matrices,
 a matching A/index, finite coefficients, and a complete build manifest. The
 compiler compares its adjoint LCIA calculations with forward Brightway runs,
-and compares every static expanded foreground unit demand with the full
-Brightway system. Review the changed supplier mappings and model-level changes
+and compares every unmodified static expanded foreground unit demand with the
+full Brightway system. The final tank recipes intentionally differ from legacy
+Brightway sources: check their dry material balance and manufacturing energy
+against the published supplementary quantities separately. Review the changed supplier mappings and model-level changes
 as well as these numerical checks.
 
 Run completed car, truck, bus and two-wheeler model/LCIA cases across static and

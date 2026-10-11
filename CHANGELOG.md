@@ -1,8 +1,8 @@
 # Changelog
 
-Notable user-facing changes to `carculator_utils`. The first entry is prepared for release and remains unpublished.
+Notable user-facing changes to `carculator_utils`.
 
-## [1.3.7] - Unreleased
+## [1.3.7] - 2026-10-11
 
 ### Migration to ecoinvent 3.12
 
@@ -22,6 +22,7 @@ Notable user-facing changes to `carculator_utils`. The first entry is prepared f
 
 ### LCA background refresh
 
+- Use premise's IEA PVPS 2026 upstream PV coefficients for all impact categories and background scenarios/years. Select country production mixes or generation-weighted GLO/EU27 aggregates; retain an explicit legacy solar option. Exports require the corresponding premise PV suppliers. See [electricity scenarios](docs/electricity_scenarios.rst).
 - Rebuild A, the aligned activity index and all 57 B coefficient matrices from 13 isolated premise 2.5.4 databases using ecoinvent 3.12 cutoff. Preserve signed/non-unit production, weighted migrations and custom noise factors; fail on missing or ambiguous suppliers.
 - Replace NMC-523 with NMC-532 and the actual ecoinvent 5:3:2 chemistry. Existing physical/cost assumptions carry forward as documented priors.
 - Add reproducible build, compilation, completed-model and destination-audit scripts with pinned dependencies, source hashes and full/reduced Brightway parity checks.
@@ -35,6 +36,7 @@ Notable user-facing changes to `carculator_utils`. The first entry is prepared f
 
 ### Model and inventory changes
 
+- Correct the HDPE- and aluminium-lined 700-bar hydrogen tank recipes to one kilogram of dry assembly, using the material totals in Evangelisti et al. (2017). Convert the source manufacturing electricity from MJ to kWh, preserve processing services separately, and retain the correction in future background builds. See [source and boundary](docs/validity.rst#hydrogen-tank-material-inventories).
 - Follow actual foreground links when replacing fuel-production electricity, including expanded upstream supply chains; preserve embedded electricity in suppliers represented only by background impact coefficients. Verify supplier order and completed fuel inventories.
 - Exclude aggregate hydrocarbon totals from inventories and physical carbon balances when the individual species are already counted, preventing duplicate pollutant burdens. Attribute rural exhaust to immediate non-urban air rather than a distant-air compartment.
 - Correct shifted LCIA metadata fields and the reported units for ReCiPe fossil resource scarcity (kg oil-equivalent), ReCiPe ionising radiation (kBq Co-60-equivalent), and EF freshwater ecotoxicity (CTUe). Preserve category identifiers, row order and verified coefficient values. Use `indicator` for assessment level and `method` for method group; coefficient builds now reject inconsistent units. See [LCIA metadata](docs/lcia_metadata.rst).

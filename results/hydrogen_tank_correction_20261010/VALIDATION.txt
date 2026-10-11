@@ -1,0 +1,87 @@
+Hydrogen tank correction — 10 October 2026
+
+Source: Evangelisti et al. (2017), doi:10.1016/j.jclepro.2016.11.159
+Supplement: https://ars.els-cdn.com/content/image/1-s2.0-S0959652616320212-mmc1.docx
+SHA256: ca9470c504f61ef58e2e5cc3cad8c06d6cecf17073074ac2ce19dca3678ac49d
+
+Scope and boundary
+------------------
+The two liner-specific 700-bar tank recipes are normalized to one kg of dry
+assembly, including tank balance of plant and excluding stored hydrogen.
+Their listed materials sum to 87.71 kg (HDPE) and 113.169 kg (aluminium).
+The paper has inconsistent nominal masses and scenario labels; this is an
+explicit dry-mass boundary choice, not evidence identifying a missing material.
+Material proportions and existing supplier proxies are preserved.
+Manufacturing electricity is converted from MJ to kWh. Processing services
+remain separate from material mass. Tank sizing and fuel-cell efficiency
+parameters are unchanged.
+
+exchange_changes.csv contains every changed exchange (positive purchase
+amounts). Electricity source quantities are MJ per assembly; the other source
+quantities are kg per assembly or kg processed per assembly. Corrected energy
+purchases are kWh per kg of dry assembly.
+
+Verification
+------------
+The focused carculator tests cover material/energy balance, build idempotence,
+upstream recipe guards, untouched matrix columns, aligned bundle hashes,
+zero foreground coefficients in B, and completed car/bus/truck FCEVs.
+Both tank options export with exactly one kg of materials and a source/boundary
+comment; export preserves the caller's matrix.
+The model comparison uses a 2025 Medium FCEV, GLO, WLTC, default fuel and input
+parameters, 200000 km, EF midpoint climate change and SSP2-NPi. The vehicle GWP
+difference equals the change in tank unit burden times tank mass / lifetime.
+See report.json. This is not a regenerated publication figure.
+
+Reproduce the model/export comparison from the carculator_utils root:
+  git show HEAD:carculator_utils/data/IAM/A_matrix.npz > /tmp/legacy-tank-A.npz
+  python dev/validate_hydrogen_tanks.py --old-a /tmp/legacy-tank-A.npz --output /tmp/tank-validation
+The git-show command is valid only while HEAD retains the legacy matrix; after
+committing, use the pre-correction revision. The old A SHA256 is recorded in
+report.json and the build manifest.
+
+Premise upstream
+----------------
+The matching workbook correction is committed and pushed at:
+https://github.com/polca/premise/commit/ff79a88d
+Branch: fix/hydrogen-tank-inventory-mass
+Workbook: premise/data/additional_inventories/lci-trucks.xlsx
+Only 42 cell values in the two target activity blocks change; all other XLSX
+ZIP members are retained. Existing workbook formulas/cached values remain.
+Eight focused import/migration/cache checks pass, plus two raw Excel checks
+with the legacy Brightway stack. Existing generated databases need rebuilding.
+
+Final artifact validation: wheel and sdist-built wheel resource hashes match
+the source for all five packages; eight offline model/LCIA smoke runs passed.
+Report: /private/tmp/carculator-tank-mass-final-artifacts-20261010/report.json
+Carculator focused checks: 35 passed. Documentation: Sphinx build passed.
+
+Broad installed-suite follow-up: nine existing hydrogen-export assertions
+expected the fuel market to contain only hydrogen. The previously implemented
+compression electricity is now checked as a separate kWh input; the hydrogen
+blend assertions remain in kg. All nine corrected cases pass against the
+installed wheel. No runtime model coefficients change in this test repair.
+
+Full installed shared suite: 1309 passed, nine stale compression-export
+assertions failed; all nine then passed after the test-only repair above.
+The two later-added export-provenance checks also passed in the 35-test
+focused run. Passenger-car installed suite: 77 passed.
+
+Remaining installed sibling suites passed: trucks 139, buses 43, two-wheelers 100.
+The publication figure was recalculated for all 162 cases and 18 pathways.
+All 27 FCEV changes equal independently solved tank-unit-factor differences
+multiplied by tank mass/lifetime; all 135 other cases are unchanged. The
+figure bundle has refreshed methods, caption, audits, PDF/SVG/PNG and hashes.
+Location: /Users/romain/Documents/carculator_lifecycle_GHG_2025
+
+Premise follow-up CI dependency fix: PyArrow 26 requires NumPy 2, conflicting
+with premise NumPy <2. Pushed commit 25609ce1 constrains PyArrow <26 across
+pip/extras/conda and adds a numerical import smoke check. A fresh environment
+with NumPy 1.26.4 and PyArrow 25.0.1 passes pip check, 63 affected tests, and
+full collection (1019 selected tests, 17 slow deselected) without errors.
+
+Premise GitHub Actions follow-up completed successfully:
+https://github.com/polca/premise/actions/runs/38045971493
+All six jobs succeeded. Publishing and package-install steps restricted to
+master/tags were skipped on this feature branch; this is not evidence of a
+newly published conda build or PyPI release.

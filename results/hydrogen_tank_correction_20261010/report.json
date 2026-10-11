@@ -1,0 +1,29 @@
+{
+  "old_A_sha256": "93fd3b51ebbbc039ad9de3ccc55138c4680b330f278a25d6855b858afc14a7f2",
+  "corrected_A_sha256": "f8bc1481c206b26128d6f775c31b76ac370a70b3a76e2235b1b204c6c05d762c",
+  "boundary": "2025 Medium FCEV, GLO, WLTC, default inputs; EF midpoint climate change; SSP2-NPi; per vkm",
+  "cases": [
+    {
+      "tank_type": "hdpe",
+      "tank_mass_kg": 94.20289611816406,
+      "lifetime_km": 200000.0,
+      "old_tank_kg_CO2eq_per_kg": 13.291027996850659,
+      "corrected_tank_kg_CO2eq_per_kg": 18.012155132708013,
+      "old_vehicle_kg_CO2eq_per_vkm": 0.18690516318168243,
+      "corrected_vehicle_kg_CO2eq_per_vkm": 0.18912888237120565,
+      "change_g_CO2eq_per_vkm": 2.223719189523216,
+      "exported_material_kg_per_kg_tank": 1.0
+    },
+    {
+      "tank_type": "aluminium",
+      "tank_mass_kg": 94.20289611816406,
+      "lifetime_km": 200000.0,
+      "old_tank_kg_CO2eq_per_kg": 20.9853606519685,
+      "corrected_tank_kg_CO2eq_per_kg": 17.225206883013676,
+      "old_vehicle_kg_CO2eq_per_vkm": 0.19052930518917224,
+      "corrected_vehicle_kg_CO2eq_per_vkm": 0.18875821835948778,
+      "change_g_CO2eq_per_vkm": -1.771086829684465,
+      "exported_material_kg_per_kg_tank": 1.0
+    }
+  ]
+}

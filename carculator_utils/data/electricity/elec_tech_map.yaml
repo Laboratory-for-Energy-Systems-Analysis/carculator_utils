@@ -17,10 +17,10 @@ Gas:
   - electricity, high voltage
 
 Solar:
-  - electricity production, photovoltaic, 3kWp slanted-roof installation, multi-Si, panel, mounted
-  - CH
+  - electricity production, photovoltaic, production mix
+  - GLO
   - kilowatt hour
-  - electricity, low voltage
+  - electricity, photovoltaic, at plant
 
 Wind:
   - electricity production, wind, 1-3MW turbine, onshore
