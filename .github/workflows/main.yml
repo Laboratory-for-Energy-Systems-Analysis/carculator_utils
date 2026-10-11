@@ -156,13 +156,14 @@ jobs:
         run: anaconda upload --user romainsacchi --skip-existing conda-dist/*
 
   family:
-    name: Vehicle family (Python ${{ matrix.python }})
+    name: Vehicle family (Python ${{ matrix.python }}, shard ${{ matrix.shard }})
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
         python: ['3.12']
+        shard: [0, 1, 2]
     env:
       CARCULATOR_REQUIRE_FAMILY: '1'
     steps:
@@ -203,10 +204,11 @@ jobs:
           python carculator_utils/scripts/verify_installation.py
           --repositories carculator_utils carculator carculator_truck carculator_bus carculator_two_wheeler
           --output verification-family --run-tests --test-timeout 2400
+          --test-shards 3 --test-shard-index ${{ matrix.shard }}
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: family-verification-${{ matrix.python }}
+          name: family-verification-${{ matrix.python }}-${{ matrix.shard }}
           path: |
             verification-family/report.json
             verification-family/installation.log

@@ -38,7 +38,13 @@ that Linux, Windows or hosted CI passed. Confirm the release commit's CI separat
 
 Each repository's test suite has a 30-minute subprocess limit by default.
 Use `--test-timeout SECONDS` to adjust it; the full family CI job uses 2400
-seconds per suite within its existing 60-minute job limit. Build, installation
+seconds per suite within its existing 60-minute job limit. The family matrix
+splits sorted `test_*.py` modules across three jobs using `--test-shards 3`
+and `--test-shard-index 0`, `1` or `2`. Each module runs exactly once across
+the jobs, with its parametrized cases and fixtures kept together. Each job
+builds all five packages and retains the resource and offline smoke checks.
+All three jobs must pass; sum their test XML counts for full-family coverage.
+The report records each job's selected test files. Build, installation
 and smoke commands keep their 900-second limits. The installation log records
 each command's limit, individual test names and the 20 slowest test durations,
 so a timeout can be traced to the active suite and test. Splitting or profiling

@@ -39,6 +39,18 @@ def run(args, cwd, log, env, *, timeout=900):
         )
 
 
+def test_paths(repository, shard_index, shard_count):
+    """Partition the family's test modules without splitting module fixtures."""
+    tests = repository.resolve() / "tests"
+    if shard_count == 1:
+        return [tests]
+    files = sorted(tests.rglob("test_*.py"))
+    selected = files[shard_index::shard_count]
+    if not selected:
+        raise ValueError(f"Test shard {shard_index}/{shard_count} is empty: {tests}")
+    return selected
+
+
 SMOKE = r"""
 import importlib, importlib.metadata, json, sys
 from pathlib import Path
@@ -92,9 +104,25 @@ def main():
         metavar="SECONDS",
         help="Time limit for each repository's pytest suite (default: 1800 seconds)",
     )
+    parser.add_argument("--test-shards", type=int, default=1)
+    parser.add_argument("--test-shard-index", type=int, default=0)
     args = parser.parse_args()
     if args.test_timeout <= 0:
         parser.error("--test-timeout must be greater than zero")
+    if args.test_shards <= 0 or not 0 <= args.test_shard_index < args.test_shards:
+        parser.error(
+            "Require --test-shards > 0 and 0 <= --test-shard-index < --test-shards"
+        )
+    selected_tests = (
+        {
+            repository.resolve().name: test_paths(
+                repository, args.test_shard_index, args.test_shards
+            )
+            for repository in args.repositories
+        }
+        if args.run_tests
+        else {}
+    )
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     env = os.environ.copy()
@@ -223,7 +251,7 @@ def main():
                     interpreter(tests_runtime),
                     "-m",
                     "pytest",
-                    repository.resolve() / "tests",
+                    *selected_tests[repository.resolve().name],
                     "--import-mode=importlib",
                     "-v",
                     "--tb=short",
@@ -278,7 +306,23 @@ def main():
             ), (first, second)
     (output / "report.json").write_text(
         json.dumps(
-            {"python": sys.version, "artifacts": artifacts, "results": results[0]},
+            {
+                "python": sys.version,
+                "artifacts": artifacts,
+                "results": results[0],
+                "test_partition": {
+                    "index": args.test_shard_index,
+                    "count": args.test_shards,
+                    "files": {
+                        repository.resolve().name: [
+                            str(path.relative_to(repository.resolve()))
+                            for path in selected_tests[repository.resolve().name]
+                        ]
+                        for repository in args.repositories
+                        if args.run_tests
+                    },
+                },
+            },
             indent=2,
         )
     )

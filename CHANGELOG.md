@@ -86,6 +86,7 @@ Notable user-facing changes to `carculator_utils`.
 
 ### Documentation and verification
 
+- Split the installed vehicle-family tests across three CI jobs while retaining every test module, packaged-resource check and offline smoke case. Keep the existing test-process and job limits; record each job's test selection for coverage auditing.
 - Make installed-test subprocess limits configurable with `--test-timeout` (1800 seconds by default, 2400 in the family workflow). Keep 900-second build/install limits and the 60-minute family job cap; log test names and the 20 slowest durations to diagnose slow suites.
 - Preserve electricity CSV/YAML bytes and their recorded hashes on Windows with explicit LF checkout attributes, including the hashed hydrogen recipe. Write temperature-test CSV fixtures without platform newline translation, preventing spurious blank rows and parsing failures.
 
