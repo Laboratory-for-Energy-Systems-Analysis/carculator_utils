@@ -217,6 +217,15 @@ builds and 121 focused tests verify this independent correction; see
 The user approved Premise's original-chemistry density projections for future
 BEV/PHEV mass; the high-power HEV specifications remain separate.
 
+The subsequent input audit found only 10 complete alias pairs among 30
+declared REMIND car mappings in the controlled scenario, passenger-km rather
+than vehicle-km in its car ES series, and zero-2020 activity for ten electric
+truck mappings. Correct/reconcile this boundary before sizing. Two scientific
+choices are pending: the fallback for unrecoverable technology-specific IAM
+signals and calibration of the native engineering projections to valid IAM
+targets. See ``../premise_vehicle_range_20261013/report.rst`` and its two
+native BEV probes; no future hardware changes are installed yet.
+
 **Approved policy; coupled implementation required.** The audit found all
 98 surviving production inventories retaining their 2020 battery quantities.
 The EUR 40 t BEV therefore gains implied range from 400 to about 500 km when

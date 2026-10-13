@@ -1,0 +1,922 @@
+[
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Van",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|BEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Electricity",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|FCEV",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Gases",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Gases",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Hybrid electric",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Liquids",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Liquids",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Large|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Medium|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Gases|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Gases|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Gases|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Liquids|Biomass",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Liquids|Fossil",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "FE|Transport|Pass|Road|LDV|Four Wheelers|Small|Liquids|Hydrogen",
+    "unit": "EJ/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Large Car and SUV|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Van|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Compact Car|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Midsize Car|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Mini Car|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Subcompact Car|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Large|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Medium|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Gases|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Gases|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Gases|Hydrogen",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Liquids|Biomass",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Liquids|Fossil",
+    "unit": "billion pkm/yr"
+  },
+  {
+    "variable": "ES|Transport|Pass|Road|LDV|Four Wheelers|Small|Liquids|Hydrogen",
+    "unit": "billion pkm/yr"
+  }
+]

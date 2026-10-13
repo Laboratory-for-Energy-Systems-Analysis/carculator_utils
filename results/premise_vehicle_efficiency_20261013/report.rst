@@ -8,11 +8,17 @@ Finding and correction
 ----------------------
 
 Premise derives its vehicle efficiency index from final energy divided by
-transport service, relative to 2020. The car mappings use vehicle-kilometres;
-truck mappings use tonne-kilometres. The default upper index bound of 1.25
-limits the corresponding energy reduction to 20%. This is an overall energy
-intensity, not an isolated motor/engine efficiency. Future native carculator
-improvements must not be applied in addition to the same IAM reduction.
+reported transport service, relative to 2020. Follow-up inspection of the
+actual encrypted scenario corrected the preliminary unit interpretation:
+car service is passenger-kilometres, despite the mapping comment saying
+vehicle-kilometres; truck service is tonne-kilometres. Premise applies the
+car intensity ratio to fixed-occupancy vehicle-kilometre inventories. The
+default upper index bound of 1.25 limits the corresponding energy reduction
+to 20%. This is an overall service energy intensity, not an isolated
+motor/engine efficiency. Missing alias pairs and zero-baseline backfilling
+need separate treatment before physical future sizing; see the range audit.
+Future native carculator improvements must not be applied in addition to the
+same IAM reduction.
 
 The old transport transformation multiplied every biosphere exchange by the
 energy-demand factor. The combustion-car energy floor additionally rescaled

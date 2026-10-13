@@ -1,0 +1,17 @@
+{
+  "car": {
+    "total": 35,
+    "declared_remind_mappings": 30,
+    "complete_pairs": 10
+  },
+  "truck": {
+    "total": 38,
+    "declared_remind_mappings": 20,
+    "complete_pairs": 20
+  },
+  "iam_sha256": "3a9f77641a1cf2874e2d92a3494c86e90259299ffde34915a01a8bd2ec7ff898",
+  "region": "EUR",
+  "model": "remind",
+  "pathway": "SSP2-NPi",
+  "script_sha256": "b300a9ca55210fb1999be7a51c20ec2c2f0c6409df113f6094859e43df958c05"
+}
