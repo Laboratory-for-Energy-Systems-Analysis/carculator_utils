@@ -84,6 +84,12 @@ def main():
             for p in sorted((SOURCE / "premise").rglob("*.py"))
         },
         "build_script_sha256": digest(Path(__file__).resolve()),
+        "transport_mapping_sources": {
+            str(p.relative_to(SOURCE)): digest(p)
+            for p in sorted(
+                (SOURCE / "premise/iam_variables_mapping").glob("transport_*.yaml")
+            )
+        },
         "fuel_properties_sha256": digest(
             SOURCE / "premise/iam_variables_mapping/fuels.yaml"
         ),

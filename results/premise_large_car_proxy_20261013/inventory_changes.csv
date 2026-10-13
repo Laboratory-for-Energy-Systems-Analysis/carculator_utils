@@ -1,0 +1,217 @@
+year,name,region,flow,before,after,ratio
+2050,"transport, passenger car, battery electric, Large",CHA,"maintenance, passenger car",5.01321775340471e-06,4.725376579553163e-06,0.942583548529074
+2050,"transport, passenger car, battery electric, Large",CHA,"treatment of brake wear emissions, passenger car",-8.547608973641565e-06,-8.167281382317649e-06,0.9555047975993357
+2050,"transport, passenger car, battery electric, Large",CHA,"treatment of road wear emissions, passenger car",-1.8953612643165653e-05,-1.8191160445019628e-05,0.9597727244668075
+2050,"transport, passenger car, battery electric, Large",CHA,"treatment of tyre wear emissions, passenger car",-2.1365381184545086e-05,-2.070116490122705e-05,0.9689115641054649
+2050,"transport, passenger car, battery electric, Large",CHA,market for road,0.0010766404825987167,0.0010191401754548485,0.9465928431326694
+2050,"transport, passenger car, battery electric, Large",CHA,"market group for electricity, low voltage",0.1887050867080688,0.15096406936645504,0.8
+2050,"transport, passenger car, battery electric, Large",EUR,"maintenance, passenger car",5.01321775340471e-06,4.725376579553163e-06,0.942583548529074
+2050,"transport, passenger car, battery electric, Large",EUR,"treatment of brake wear emissions, passenger car",-8.547608973641565e-06,-8.167281382317649e-06,0.9555047975993357
+2050,"transport, passenger car, battery electric, Large",EUR,"treatment of road wear emissions, passenger car",-1.8953612643165653e-05,-1.8191160445019628e-05,0.9597727244668075
+2050,"transport, passenger car, battery electric, Large",EUR,"treatment of tyre wear emissions, passenger car",-2.1365381184545086e-05,-2.070116490122705e-05,0.9689115641054649
+2050,"transport, passenger car, battery electric, Large",EUR,market for road,0.0010766404825987167,0.0010191401754548485,0.9465928431326694
+2050,"transport, passenger car, battery electric, Large",EUR,"market group for electricity, low voltage",0.1887050867080688,0.15096406936645504,0.8
+2050,"transport, passenger car, battery electric, Large",IND,"maintenance, passenger car",5.01321775340471e-06,4.725376579553163e-06,0.942583548529074
+2050,"transport, passenger car, battery electric, Large",IND,"treatment of brake wear emissions, passenger car",-8.547608973641565e-06,-8.167281382317649e-06,0.9555047975993357
+2050,"transport, passenger car, battery electric, Large",IND,"treatment of road wear emissions, passenger car",-1.8953612643165653e-05,-1.8191160445019628e-05,0.9597727244668075
+2050,"transport, passenger car, battery electric, Large",IND,"treatment of tyre wear emissions, passenger car",-2.1365381184545086e-05,-2.070116490122705e-05,0.9689115641054649
+2050,"transport, passenger car, battery electric, Large",IND,market for road,0.0010766404825987167,0.0010191401754548485,0.9465928431326694
+2050,"transport, passenger car, battery electric, Large",IND,"market group for electricity, low voltage",0.1887050867080688,0.15096406936645504,0.8
+2050,"transport, passenger car, battery electric, Large",JPN,"maintenance, passenger car",5.01321775340471e-06,4.725376579553163e-06,0.942583548529074
+2050,"transport, passenger car, battery electric, Large",JPN,"treatment of brake wear emissions, passenger car",-8.547608973641565e-06,-8.167281382317649e-06,0.9555047975993357
+2050,"transport, passenger car, battery electric, Large",JPN,"treatment of road wear emissions, passenger car",-1.8953612643165653e-05,-1.8191160445019628e-05,0.9597727244668075
+2050,"transport, passenger car, battery electric, Large",JPN,"treatment of tyre wear emissions, passenger car",-2.1365381184545086e-05,-2.070116490122705e-05,0.9689115641054649
+2050,"transport, passenger car, battery electric, Large",JPN,market for road,0.0010766404825987167,0.0010191401754548485,0.9465928431326694
+2050,"transport, passenger car, battery electric, Large",JPN,"market group for electricity, low voltage",0.1887050867080688,0.15096406936645504,0.8
+2050,"transport, passenger car, battery electric, Large",MEA,"maintenance, passenger car",5.01321775340471e-06,4.725376579553163e-06,0.942583548529074
+2050,"transport, passenger car, battery electric, Large",MEA,"treatment of brake wear emissions, passenger car",-8.547608973641565e-06,-8.167281382317649e-06,0.9555047975993357
+2050,"transport, passenger car, battery electric, Large",MEA,"treatment of road wear emissions, passenger car",-1.8953612643165653e-05,-1.8191160445019628e-05,0.9597727244668075
+2050,"transport, passenger car, battery electric, Large",MEA,"treatment of tyre wear emissions, passenger car",-2.1365381184545086e-05,-2.070116490122705e-05,0.9689115641054649
+2050,"transport, passenger car, battery electric, Large",MEA,market for road,0.0010766404825987167,0.0010191401754548485,0.9465928431326694
+2050,"transport, passenger car, battery electric, Large",MEA,"market group for electricity, low voltage",0.1887050867080688,0.15096406936645504,0.8
+2050,"transport, passenger car, battery electric, Large",NEU,"maintenance, passenger car",5.01321775340471e-06,4.725376579553163e-06,0.942583548529074
+2050,"transport, passenger car, battery electric, Large",NEU,"treatment of brake wear emissions, passenger car",-8.547608973641565e-06,-8.167281382317649e-06,0.9555047975993357
+2050,"transport, passenger car, battery electric, Large",NEU,"treatment of road wear emissions, passenger car",-1.8953612643165653e-05,-1.8191160445019628e-05,0.9597727244668075
+2050,"transport, passenger car, battery electric, Large",NEU,"treatment of tyre wear emissions, passenger car",-2.1365381184545086e-05,-2.070116490122705e-05,0.9689115641054649
+2050,"transport, passenger car, battery electric, Large",NEU,market for road,0.0010766404825987167,0.0010191401754548485,0.9465928431326694
+2050,"transport, passenger car, battery electric, Large",NEU,"market group for electricity, low voltage",0.1887050867080688,0.15096406936645504,0.8
+2050,"transport, passenger car, battery electric, Large",REF,"maintenance, passenger car",5.01321775340471e-06,4.725376579553163e-06,0.942583548529074
+2050,"transport, passenger car, battery electric, Large",REF,"treatment of brake wear emissions, passenger car",-8.547608973641565e-06,-8.167281382317649e-06,0.9555047975993357
+2050,"transport, passenger car, battery electric, Large",REF,"treatment of road wear emissions, passenger car",-1.8953612643165653e-05,-1.8191160445019628e-05,0.9597727244668075
+2050,"transport, passenger car, battery electric, Large",REF,"treatment of tyre wear emissions, passenger car",-2.1365381184545086e-05,-2.070116490122705e-05,0.9689115641054649
+2050,"transport, passenger car, battery electric, Large",REF,market for road,0.0010766404825987167,0.0010191401754548485,0.9465928431326694
+2050,"transport, passenger car, battery electric, Large",REF,"market group for electricity, low voltage",0.1887050867080688,0.15096406936645504,0.8
+2050,"transport, passenger car, battery electric, Large",SSA,"maintenance, passenger car",5.01321775340471e-06,4.725376579553163e-06,0.942583548529074
+2050,"transport, passenger car, battery electric, Large",SSA,"treatment of brake wear emissions, passenger car",-8.547608973641565e-06,-8.167281382317649e-06,0.9555047975993357
+2050,"transport, passenger car, battery electric, Large",SSA,"treatment of road wear emissions, passenger car",-1.8953612643165653e-05,-1.8191160445019628e-05,0.9597727244668075
+2050,"transport, passenger car, battery electric, Large",SSA,"treatment of tyre wear emissions, passenger car",-2.1365381184545086e-05,-2.070116490122705e-05,0.9689115641054649
+2050,"transport, passenger car, battery electric, Large",SSA,market for road,0.0010766404825987167,0.0010191401754548485,0.9465928431326694
+2050,"transport, passenger car, battery electric, Large",SSA,"market group for electricity, low voltage",0.1887050867080688,0.15096406936645504,0.8
+2050,"transport, passenger car, fuel cell electric, Large",CHA,"market group for electricity, low voltage",0.02357350745081066,0.01885880596064853,0.8
+2050,"transport, passenger car, fuel cell electric, Large",CHA,"market for hydrogen, gaseous, low pressure",0.009619408433960919,0.007695526747168735,0.8
+2050,"transport, passenger car, fuel cell electric, Large",EUR,"market group for electricity, low voltage",0.02357350745081066,0.01885880596064853,0.8
+2050,"transport, passenger car, fuel cell electric, Large",EUR,"market for hydrogen, gaseous, low pressure",0.009619408433960919,0.007695526747168735,0.8
+2050,"transport, passenger car, fuel cell electric, Large",IND,"market group for electricity, low voltage",0.02357350745081066,0.01885880596064853,0.8
+2050,"transport, passenger car, fuel cell electric, Large",IND,"market for hydrogen, gaseous, low pressure",0.009619408433960919,0.007695526747168735,0.8
+2050,"transport, passenger car, fuel cell electric, Large",JPN,"market group for electricity, low voltage",0.02357350745081066,0.01885880596064853,0.8
+2050,"transport, passenger car, fuel cell electric, Large",JPN,"market for hydrogen, gaseous, low pressure",0.009619408433960919,0.007695526747168735,0.8
+2050,"transport, passenger car, fuel cell electric, Large",MEA,"market group for electricity, low voltage",0.02357350745081066,0.01885880596064853,0.8
+2050,"transport, passenger car, fuel cell electric, Large",MEA,"market for hydrogen, gaseous, low pressure",0.009619408433960919,0.007695526747168735,0.8
+2050,"transport, passenger car, fuel cell electric, Large",NEU,"market group for electricity, low voltage",0.02357350745081066,0.01885880596064853,0.8
+2050,"transport, passenger car, fuel cell electric, Large",NEU,"market for hydrogen, gaseous, low pressure",0.009619408433960919,0.007695526747168735,0.8
+2050,"transport, passenger car, fuel cell electric, Large",REF,"market group for electricity, low voltage",0.02357350745081066,0.01885880596064853,0.8
+2050,"transport, passenger car, fuel cell electric, Large",REF,"market for hydrogen, gaseous, low pressure",0.009619408433960919,0.007695526747168735,0.8
+2050,"transport, passenger car, fuel cell electric, Large",SSA,"market group for electricity, low voltage",0.02357350745081066,0.01885880596064853,0.8
+2050,"transport, passenger car, fuel cell electric, Large",SSA,"market for hydrogen, gaseous, low pressure",0.009619408433960919,0.007695526747168735,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",CHA,"Carbon dioxide, fossil",0.14264377199387648,0.11411501759510119,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",CHA,"Carbon dioxide, non-fossil",0.0013558734231241272,0.0010846987384993017,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",0.05161277613512567,0.041290220908100535,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",EUR,"Carbon dioxide, fossil",0.11857381795957356,0.09485905436765886,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",EUR,"Carbon dioxide, non-fossil",0.025425827457427053,0.020340661965941642,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",0.05161277613512567,0.041290220908100535,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",IND,"Carbon dioxide, fossil",0.14188459550163332,0.11350767640130667,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",IND,"Carbon dioxide, non-fossil",0.0021150499153672724,0.0016920399322938179,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",0.05161277613512567,0.041290220908100535,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",JPN,"Carbon dioxide, fossil",0.14380938570842158,0.11783851173796389,0.8194076565828984
+2050,"transport, passenger car, compressed gas, Large, EURO-6",JPN,"Carbon dioxide, non-fossil",0.00019025970857902114,0.00015590026194888088,0.8194076565828984
+2050,"transport, passenger car, compressed gas, Large, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",0.05161277613512567,0.04229190394262106,0.8194076565828984
+2050,"transport, passenger car, compressed gas, Large, EURO-6",MEA,"Carbon dioxide, fossil",0.1439995251143442,0.1176965084743241,0.8173395598413681
+2050,"transport, passenger car, compressed gas, Large, EURO-6",MEA,"Carbon dioxide, non-fossil",1.2030265643536378e-07,9.832812025862755e-08,0.8173395598413681
+2050,"transport, passenger car, compressed gas, Large, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",0.05161277613512567,0.04218516372847468,0.8173395598413681
+2050,"transport, passenger car, compressed gas, Large, EURO-6",NEU,"Carbon dioxide, fossil",0.14397679586203826,0.11518143668963061,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",NEU,"Carbon dioxide, non-fossil",2.284955496234096e-05,1.8279643969872767e-05,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",0.05161277613512567,0.041290220908100535,0.8
+2050,"transport, passenger car, compressed gas, Large, EURO-6",REF,"Carbon dioxide, fossil",0.14399942372940677,0.1346302479514928,0.9349360189418546
+2050,"transport, passenger car, compressed gas, Large, EURO-6",REF,"Carbon dioxide, non-fossil",2.216875938041446e-07,2.0726371640004593e-07,0.9349360189418546
+2050,"transport, passenger car, compressed gas, Large, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",0.05161277613512567,0.04825464344631155,0.9349360189418546
+2050,"transport, passenger car, compressed gas, Large, EURO-6",SSA,"Carbon dioxide, fossil",0.14394264395746714,0.11895150502529825,0.8263812707264612
+2050,"transport, passenger car, compressed gas, Large, EURO-6",SSA,"Carbon dioxide, non-fossil",5.700145953347494e-05,4.710493856253598e-05,0.8263812707264612
+2050,"transport, passenger car, compressed gas, Large, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",0.05161277613512567,0.042651831528265516,0.8263812707264612
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,Sulfur dioxide,1.9169151731065946e-07,1.5335321384852758e-07,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"Carbon dioxide, fossil",0.03943465297281648,0.03154772237825319,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"Carbon dioxide, non-fossil",0.0007087169291478165,0.0005669735433182533,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"maintenance, passenger car",1.0817747051101045e-05,1.0567622990148343e-05,0.9768783592580634
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"treatment of brake wear emissions, passenger car",-9.498409128495466e-06,-9.329649031299253e-06,0.9822328039450388
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"treatment of road wear emissions, passenger car",-1.998630431681161e-05,-1.96617148624095e-05,0.9837594059783689
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"treatment of tyre wear emissions, passenger car",-2.2258956801725193e-05,-2.1978810695053923e-05,0.9874142301830804
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,market for road,0.0011556781499018356,0.0011306952569124361,0.9783824821889022
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"market for petrol, low-sulfur",0.01278545168318718,0.010228361346549746,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"market group for electricity, low voltage",0.1440417617559433,0.11523340940475464,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,Sulfur dioxide,2.05466166138649e-07,1.6437293291091922e-07,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"Carbon dioxide, fossil",0.029303108563684652,0.023442486850947727,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"Carbon dioxide, non-fossil",0.010850980081585204,0.008680784065268165,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"maintenance, passenger car",1.0817747051101045e-05,1.0567622990148343e-05,0.9768783592580634
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"treatment of brake wear emissions, passenger car",-9.498409128495466e-06,-9.329649031299253e-06,0.9822328039450388
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"treatment of road wear emissions, passenger car",-1.998630431681161e-05,-1.96617148624095e-05,0.9837594059783689
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"treatment of tyre wear emissions, passenger car",-2.2258956801725193e-05,-2.1978810695053923e-05,0.9874142301830804
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,market for road,0.0011556781499018356,0.0011306952569124361,0.9783824821889022
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"market for petrol, low-sulfur",0.01278545168318718,0.010228361346549746,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"market group for electricity, low voltage",0.1440417617559433,0.11523340940475464,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,Sulfur dioxide,2.05466166138649e-07,1.6437293291091922e-07,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"Carbon dioxide, fossil",0.04013916873340324,0.0321113349867226,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"Carbon dioxide, non-fossil",2.296127642089132e-06,1.8369021136713057e-06,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"maintenance, passenger car",1.0817747051101045e-05,1.0567622990148343e-05,0.9768783592580634
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"treatment of brake wear emissions, passenger car",-9.498409128495466e-06,-9.329649031299253e-06,0.9822328039450388
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"treatment of road wear emissions, passenger car",-1.998630431681161e-05,-1.96617148624095e-05,0.9837594059783689
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"treatment of tyre wear emissions, passenger car",-2.2258956801725193e-05,-2.1978810695053923e-05,0.9874142301830804
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,market for road,0.0011556781499018356,0.0011306952569124361,0.9783824821889022
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"market for petrol, low-sulfur",0.01278545168318718,0.010228361346549746,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"market group for electricity, low voltage",0.1440417617559433,0.11523340940475464,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,Sulfur dioxide,1.8811207110328016e-07,1.5048965688262412e-07,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"Carbon dioxide, fossil",0.04001836104779598,0.032014688838236785,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"Carbon dioxide, non-fossil",0.00012336294243972724,9.869035395178182e-05,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"maintenance, passenger car",1.0817747051101045e-05,1.0567622990148343e-05,0.9768783592580634
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"treatment of brake wear emissions, passenger car",-9.498409128495466e-06,-9.329649031299253e-06,0.9822328039450388
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"treatment of road wear emissions, passenger car",-1.998630431681161e-05,-1.96617148624095e-05,0.9837594059783689
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"treatment of tyre wear emissions, passenger car",-2.2258956801725193e-05,-2.1978810695053923e-05,0.9874142301830804
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,market for road,0.0011556781499018356,0.0011306952569124361,0.9783824821889022
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"market for petrol, low-sulfur",0.01278545168318718,0.010228361346549746,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"market group for electricity, low voltage",0.1440417617559433,0.11523340940475464,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,Sulfur dioxide,2.05466166138649e-07,1.6437293291091922e-07,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"Carbon dioxide, fossil",0.040139209698025126,0.032111367758420106,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"Carbon dioxide, non-fossil",2.2509212827322738e-06,1.8007370261858194e-06,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"maintenance, passenger car",1.0817747051101045e-05,1.0567622990148343e-05,0.9768783592580634
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"treatment of brake wear emissions, passenger car",-9.498409128495466e-06,-9.329649031299253e-06,0.9822328039450388
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"treatment of road wear emissions, passenger car",-1.998630431681161e-05,-1.96617148624095e-05,0.9837594059783689
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"treatment of tyre wear emissions, passenger car",-2.2258956801725193e-05,-2.1978810695053923e-05,0.9874142301830804
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,market for road,0.0011556781499018356,0.0011306952569124361,0.9783824821889022
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"market for petrol, low-sulfur",0.01278545168318718,0.010228361346549746,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"market group for electricity, low voltage",0.1440417617559433,0.11523340940475464,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,Sulfur dioxide,2.05466166138649e-07,1.6437293291091922e-07,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"Carbon dioxide, fossil",0.04004073632880698,0.03203258906304559,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"Carbon dioxide, non-fossil",0.00010098694392960089,8.078955514368073e-05,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"maintenance, passenger car",1.0817747051101045e-05,1.0567622990148343e-05,0.9768783592580634
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"treatment of brake wear emissions, passenger car",-9.498409128495466e-06,-9.329649031299253e-06,0.9822328039450388
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"treatment of road wear emissions, passenger car",-1.998630431681161e-05,-1.96617148624095e-05,0.9837594059783689
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"treatment of tyre wear emissions, passenger car",-2.2258956801725193e-05,-2.1978810695053923e-05,0.9874142301830804
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,market for road,0.0011556781499018356,0.0011306952569124361,0.9783824821889022
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"market for petrol, low-sulfur",0.01278545168318718,0.010228361346549746,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"market group for electricity, low voltage",0.1440417617559433,0.11523340940475464,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,Sulfur dioxide,2.05466166138649e-07,1.6437293291091922e-07,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"Carbon dioxide, fossil",0.04013783977628186,0.03211027182102549,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"Carbon dioxide, non-fossil",3.6217721117194744e-06,2.8974176893755804e-06,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"maintenance, passenger car",1.0817747051101045e-05,1.0567622990148343e-05,0.9768783592580634
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"treatment of brake wear emissions, passenger car",-9.498409128495466e-06,-9.329649031299253e-06,0.9822328039450388
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"treatment of road wear emissions, passenger car",-1.998630431681161e-05,-1.96617148624095e-05,0.9837594059783689
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"treatment of tyre wear emissions, passenger car",-2.2258956801725193e-05,-2.1978810695053923e-05,0.9874142301830804
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,market for road,0.0011556781499018356,0.0011306952569124361,0.9783824821889022
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"market for petrol, low-sulfur",0.01278545168318718,0.010228361346549746,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"market group for electricity, low voltage",0.1440417617559433,0.11523340940475464,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,Sulfur dioxide,2.05466166138649e-07,1.6437293291091922e-07,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"Carbon dioxide, fossil",0.04014094548017882,0.03211275638414306,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"Carbon dioxide, non-fossil",5.152121263828571e-07,4.1216970110628574e-07,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"maintenance, passenger car",1.0817747051101045e-05,1.0567622990148343e-05,0.9768783592580634
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"treatment of brake wear emissions, passenger car",-9.498409128495466e-06,-9.329649031299253e-06,0.9822328039450388
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"treatment of road wear emissions, passenger car",-1.998630431681161e-05,-1.96617148624095e-05,0.9837594059783689
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"treatment of tyre wear emissions, passenger car",-2.2258956801725193e-05,-2.1978810695053923e-05,0.9874142301830804
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,market for road,0.0011556781499018356,0.0011306952569124361,0.9783824821889022
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"market for petrol, low-sulfur",0.01278545168318718,0.010228361346549746,0.8
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"market group for electricity, low voltage",0.1440417617559433,0.11523340940475464,0.8
+2050,"transport, passenger car, gasoline, Large, EURO-6",CHA,Sulfur dioxide,1.0453149577786496e-06,8.555054433100477e-07,0.8184188286447587
+2050,"transport, passenger car, gasoline, Large, EURO-6",CHA,"Carbon dioxide, fossil",0.21504150557954835,0.1759940171064193,0.8184188286447587
+2050,"transport, passenger car, gasoline, Large, EURO-6",CHA,"Carbon dioxide, non-fossil",0.003864711465287067,0.0031629526304702096,0.8184188286447587
+2050,"transport, passenger car, gasoline, Large, EURO-6",CHA,"market for petrol, low-sulfur",0.0697204760838745,0.05706055036911947,0.8184188286447587
+2050,"transport, passenger car, gasoline, Large, EURO-6",EUR,Sulfur dioxide,1.120429635047913e-06,8.963437080383304e-07,0.8
+2050,"transport, passenger car, gasoline, Large, EURO-6",EUR,"Carbon dioxide, fossil",0.15979307813458996,0.127834462507672,0.8
+2050,"transport, passenger car, gasoline, Large, EURO-6",EUR,"Carbon dioxide, non-fossil",0.059171589397940545,0.047337271518352445,0.8
+2050,"transport, passenger car, gasoline, Large, EURO-6",EUR,"market for petrol, low-sulfur",0.0697204760838745,0.0557763808670996,0.8
+2050,"transport, passenger car, gasoline, Large, EURO-6",IND,Sulfur dioxide,1.120429635047913e-06,9.347506944107829e-07,0.83427880267627
+2050,"transport, passenger car, gasoline, Large, EURO-6",IND,"Carbon dioxide, fossil",0.21888330760999933,0.18260970379869193,0.83427880267627
+2050,"transport, passenger car, gasoline, Large, EURO-6",IND,"Carbon dioxide, non-fossil",1.2521036903710833e-05,1.0446035676293262e-05,0.83427880267627
+2050,"transport, passenger car, gasoline, Large, EURO-6",IND,"market for petrol, low-sulfur",0.0697204760838745,0.05816631530927433,0.83427880267627
+2050,"transport, passenger car, gasoline, Large, EURO-6",JPN,Sulfur dioxide,1.0257958433513072e-06,8.278455113002332e-07,0.8070275549134963
+2050,"transport, passenger car, gasoline, Large, EURO-6",JPN,"Carbon dioxide, fossil",0.21822452999589242,0.176113208864732,0.8070275549134963
+2050,"transport, passenger car, gasoline, Large, EURO-6",JPN,"Carbon dioxide, non-fossil",0.00067271171102352,0.0005428968873089858,0.8070275549134963
+2050,"transport, passenger car, gasoline, Large, EURO-6",JPN,"market for petrol, low-sulfur",0.0697204760838745,0.05626634534137413,0.8070275549134963
+2050,"transport, passenger car, gasoline, Large, EURO-6",MEA,Sulfur dioxide,1.120429635047913e-06,9.033366314051973e-07,0.8062412874027273
+2050,"transport, passenger car, gasoline, Large, EURO-6",MEA,"Carbon dioxide, fossil",0.21888353099459393,0.17647293982033616,0.8062412874027273
+2050,"transport, passenger car, gasoline, Large, EURO-6",MEA,"Carbon dioxide, non-fossil",1.2274521647583942e-05,9.896226135400722e-06,0.8062412874027273
+2050,"transport, passenger car, gasoline, Large, EURO-6",MEA,"market for petrol, low-sulfur",0.0697204760838745,0.05621152639619403,0.8062412874027273
+2050,"transport, passenger car, gasoline, Large, EURO-6",NEU,Sulfur dioxide,1.120429635047913e-06,8.963437080383304e-07,0.8
+2050,"transport, passenger car, gasoline, Large, EURO-6",NEU,"Carbon dioxide, fossil",0.21834654486742403,0.17467723589393924,0.8
+2050,"transport, passenger car, gasoline, Large, EURO-6",NEU,"Carbon dioxide, non-fossil",0.000550692926890179,0.0004405543415121433,0.8
+2050,"transport, passenger car, gasoline, Large, EURO-6",NEU,"market for petrol, low-sulfur",0.0697204760838745,0.0557763808670996,0.8
+2050,"transport, passenger car, gasoline, Large, EURO-6",REF,Sulfur dioxide,1.120429635047913e-06,9.419338334627904e-07,0.840689860387806
+2050,"transport, passenger car, gasoline, Large, EURO-6",REF,"Carbon dioxide, fossil",0.2188760606604591,0.18400688487887432,0.840689860387806
+2050,"transport, passenger car, gasoline, Large, EURO-6",REF,"Carbon dioxide, non-fossil",1.9749922189173274e-05,1.660355932788611e-05,0.840689860387806
+2050,"transport, passenger car, gasoline, Large, EURO-6",REF,"market for petrol, low-sulfur",0.0697204760838745,0.05861329730512382,0.840689860387806
+2050,"transport, passenger car, gasoline, Large, EURO-6",SSA,Sulfur dioxide,1.120429635047913e-06,9.363541950766668e-07,0.8357099507071012
+2050,"transport, passenger car, gasoline, Large, EURO-6",SSA,"Carbon dioxide, fossil",0.2188929964058388,0.18293105523645323,0.8357099507071012
+2050,"transport, passenger car, gasoline, Large, EURO-6",SSA,"Carbon dioxide, non-fossil",2.809508465221755e-06,2.347934180981656e-06,0.8357099507071012
+2050,"transport, passenger car, gasoline, Large, EURO-6",SSA,"market for petrol, low-sulfur",0.0697204760838745,0.05826609563133038,0.8357099507071012
+2050,"passenger car, battery electric, Large",CHA,market for battery capacity (MIX scenario),97.43999481201172,77.95199584960938,0.8
+2050,"passenger car, battery electric, Large",EUR,market for battery capacity (MIX scenario),97.43999481201172,77.95199584960938,0.8
+2050,"passenger car, battery electric, Large",IND,market for battery capacity (MIX scenario),97.43999481201172,77.95199584960938,0.8
+2050,"passenger car, battery electric, Large",JPN,market for battery capacity (MIX scenario),97.43999481201172,77.95199584960938,0.8
+2050,"passenger car, battery electric, Large",MEA,market for battery capacity (MIX scenario),97.43999481201172,77.95199584960938,0.8
+2050,"passenger car, battery electric, Large",NEU,market for battery capacity (MIX scenario),97.43999481201172,77.95199584960938,0.8
+2050,"passenger car, battery electric, Large",REF,market for battery capacity (MIX scenario),97.43999481201172,77.95199584960938,0.8
+2050,"passenger car, battery electric, Large",SSA,market for battery capacity (MIX scenario),97.43999481201172,77.95199584960938,0.8
+2050,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",CHA,market for battery capacity (MIX scenario),42.33599853515625,33.868798828125,0.8
+2050,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",EUR,market for battery capacity (MIX scenario),42.33599853515625,33.868798828125,0.8
+2050,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",IND,market for battery capacity (MIX scenario),42.33599853515625,33.868798828125,0.8
+2050,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",JPN,market for battery capacity (MIX scenario),42.33599853515625,33.868798828125,0.8
+2050,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",MEA,market for battery capacity (MIX scenario),42.33599853515625,33.868798828125,0.8
+2050,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",NEU,market for battery capacity (MIX scenario),42.33599853515625,33.868798828125,0.8
+2050,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",REF,market for battery capacity (MIX scenario),42.33599853515625,33.868798828125,0.8
+2050,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",SSA,market for battery capacity (MIX scenario),42.33599853515625,33.868798828125,0.8

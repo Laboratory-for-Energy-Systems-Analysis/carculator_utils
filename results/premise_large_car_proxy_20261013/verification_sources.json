@@ -1,0 +1,9 @@
+{
+  "audit_script_sha256": "aa35a5613538aa08dad6625ba24dabfa7b6f01a35fcbc6d3d5a5d402d244fb0c",
+  "tests_xml_sha256": "7c4b4db5723cc10cd824b2cebc3973aad8a02bfc74df114977daea45b822d033",
+  "baseline": "premise_vehicle_payload_20261013",
+  "tests": {
+    "test_vehicle_energy_intensities.py": "49e34392af234159a1f2110bb455d1f76f160cdfdf57ca5b705322c613174635",
+    "test_vehicle_emission_scaling.py": "3979d78af0991133d401c84a400529586a2ff5a06b2b01c124e919dca1b2ed9d"
+  }
+}

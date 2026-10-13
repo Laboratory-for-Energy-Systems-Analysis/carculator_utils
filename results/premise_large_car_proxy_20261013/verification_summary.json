@@ -1,0 +1,40 @@
+{
+  "2020": {
+    "activities": 42564,
+    "proxy_services": 40,
+    "changed_exchanges": 0,
+    "changed_activities": 0,
+    "all_inventory_differences_explained": true,
+    "fleet_market_exchanges_unchanged": true,
+    "carbon_checks": 495,
+    "hydrogen_checks": 147,
+    "validation_errors": 0,
+    "validation_warnings": 401,
+    "warning_identities_unchanged": true,
+    "build_seconds": 95.50774012506008
+  },
+  "2050": {
+    "activities": 42795,
+    "proxy_services": 40,
+    "changed_exchanges": 216,
+    "changed_activities": 56,
+    "all_inventory_differences_explained": true,
+    "fleet_market_exchanges_unchanged": true,
+    "carbon_checks": 495,
+    "hydrogen_checks": 147,
+    "validation_errors": 0,
+    "validation_warnings": 468,
+    "warning_identities_unchanged": false,
+    "build_seconds": 98.95013116695918
+  },
+  "tests": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "291",
+    "time": "4.231",
+    "timestamp": "2026-10-13T23:11:18.274174+02:00",
+    "hostname": "MacBook-Pro-2.local"
+  }
+}
