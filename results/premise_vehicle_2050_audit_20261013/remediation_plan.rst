@@ -208,6 +208,15 @@ power-battery logic, truck inventory assembly and the truck adapter.
 8. Implement constant-range future sizing and review efficiency scaling
 -----------------------------------------------------------------------
 
+**Emission-driver correction completed; hardware sizing in progress.** IAM
+energy scaling and the car energy floor now preserve HBEFA distance/start
+factors, refrigerants and unrelated burdens. Fuel-derived CO2, sulphur and
+generic-air methane leakage retain their fuel relationship. Full 2020/2050
+builds and 121 focused tests verify this independent correction; see
+``../premise_vehicle_efficiency_20261013/report.rst``. GAINS remains separate.
+The user approved Premise's original-chemistry density projections for future
+BEV/PHEV mass; the high-power HEV specifications remain separate.
+
 **Approved policy; coupled implementation required.** The audit found all
 98 surviving production inventories retaining their 2020 battery quantities.
 The EUR 40 t BEV therefore gains implied range from 400 to about 500 km when
