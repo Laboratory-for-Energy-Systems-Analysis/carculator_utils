@@ -1,0 +1,54 @@
+{
+  "2020": {
+    "checked_vehicles": 147,
+    "cars": 80,
+    "trucks": 67,
+    "locations": [
+      "CAZ",
+      "CHA",
+      "EUR",
+      "IND",
+      "JPN",
+      "LAM",
+      "MEA",
+      "NEU",
+      "OAS",
+      "REF",
+      "RER",
+      "SSA",
+      "USA",
+      "World"
+    ],
+    "matching_delivery_chains": 12,
+    "changes_outside_compression_electricity": 0,
+    "validation_errors": 0,
+    "validation_warnings": 401,
+    "warning_identities_unchanged": true
+  },
+  "2050": {
+    "checked_vehicles": 147,
+    "cars": 80,
+    "trucks": 67,
+    "locations": [
+      "CAZ",
+      "CHA",
+      "EUR",
+      "IND",
+      "JPN",
+      "LAM",
+      "MEA",
+      "NEU",
+      "OAS",
+      "REF",
+      "RER",
+      "SSA",
+      "USA",
+      "World"
+    ],
+    "matching_delivery_chains": 12,
+    "changes_outside_compression_electricity": 0,
+    "validation_errors": 0,
+    "validation_warnings": 398,
+    "warning_identities_unchanged": true
+  }
+}

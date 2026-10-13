@@ -25,6 +25,25 @@ COLD_START_SOURCE_NOTE = (
     "evaporative and running emissions from the HBEFA 5.1 emissions handbook. "
 )
 
+HYDROGEN_COMPRESSION_KEY = "hydrogen tank compression"
+
+
+def hydrogen_compression_specification():
+    """Adapt tank preparation to Premise's documented 30-bar pipeline delivery."""
+    from carculator_utils.inventory import hydrogen_compression_electricity
+
+    return {
+        "electricity kWh per kg H2": hydrogen_compression_electricity(30, 700),
+        "inlet pressure bar": 30,
+        "tank pressure bar": 700,
+        "hydrogen product": "hydrogen, gaseous, low pressure",
+        "electricity product": "electricity, low voltage",
+        "delivery source": "Premise hydrogen supply, distributed by pipeline: arrives at 30 bar",
+        "compression model": "carculator_utils.inventory.hydrogen_compression_electricity; default temperature, stages and efficiencies",
+        "boundary": "Tank compression after pipeline delivery; pipeline preparation remains in hydrogen supply",
+        "approved on": "2026-10-13",
+    }
+
 
 def clean(dataset):
     result = copy.deepcopy(dataset)
@@ -59,6 +78,18 @@ def write_workbook(path, datasets):
         sheet.append(["Activity", dataset["name"]])
         for key in ("reference product", "location", "unit", "comment"):
             sheet.append([key, dataset.get(key)])
+        if HYDROGEN_COMPRESSION_KEY in dataset:
+            specification = dataset[HYDROGEN_COMPRESSION_KEY]
+            sheet.append(
+                [
+                    HYDROGEN_COMPRESSION_KEY,
+                    (
+                        specification
+                        if isinstance(specification, str)
+                        else json.dumps(specification)
+                    ),
+                ]
+            )
         sheet.append(["production amount", 1])
         sheet.append(["type", "process"])
         sheet.append(["Exchanges"])
@@ -228,28 +259,6 @@ def main():
                 relabel(exc, production)
             elif exc["name"].startswith("fuel supply for "):
                 family = exc["name"].split()[3]
-                if family == "hydrogen":
-                    supply = raw_index[identity(exc)]
-                    compression = sum(
-                        e["amount"]
-                        for e in supply["exchanges"]
-                        if e["type"] == "technosphere"
-                        and e["name"].startswith(
-                            "electricity supply for fuel preparation"
-                        )
-                    )
-                    if compression:
-                        kept.append(
-                            {
-                                "name": "market group for electricity, low voltage",
-                                "reference product": "electricity, low voltage",
-                                "location": "RER",
-                                "unit": "kilowatt hour",
-                                "type": "technosphere",
-                                "amount": exc["amount"] * compression,
-                                "comment": f"Default model hydrogen tank compression retained: {compression:.12g} kWh/kg H2, purchased from premise regional electricity.",
-                            }
-                        )
                 fuel = "LPG" if proxy else family
                 lhv, co2 = fuels[fuel]
                 engine_energy = (
@@ -277,6 +286,21 @@ def main():
                         },
                     )
                 exc["amount"] = energy / lhv
+                if family == "hydrogen":
+                    specification = hydrogen_compression_specification()
+                    ds[HYDROGEN_COMPRESSION_KEY] = specification
+                    compression = specification["electricity kWh per kg H2"]
+                    kept.append(
+                        {
+                            "name": "market group for electricity, low voltage",
+                            "reference product": "electricity, low voltage",
+                            "location": "RER",
+                            "unit": "kilowatt hour",
+                            "type": "technosphere",
+                            "amount": exc["amount"] * compression,
+                            "comment": f"Hydrogen tank compression, 30 to 700 bar: {compression:.12g} kWh/kg H2, using the model's default compressor assumptions and Premise's documented delivery pressure.",
+                        }
+                    )
                 expected_co2 += energy * co2
                 exc["comment"] = (
                     f"Default carculator fuel energy preserved ({energy:.12g} MJ/vkm); premise reference LHV {lhv} MJ/kg. Regional scenario blend belongs to premise."
@@ -408,6 +432,7 @@ def main():
     write_csv(args.output / "noise_audit.csv", noise)
     write_csv(args.output / "vehicle_parameters.csv", balance)
     record = dict(
+        hydrogen_compression_adaptation=hydrogen_compression_specification(),
         cng_supply_basis={
             "delivered_LHV_MJ_per_kg": 46.5,
             "source": "ecoinvent vehicle-grade natural gas market comment",

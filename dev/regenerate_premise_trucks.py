@@ -18,7 +18,13 @@ import numpy as np
 import yaml
 
 from audit_premise_vehicle_workbooks import identity, read_workbook, write_csv
-from regenerate_premise_cars import clean, relabel, write_workbook
+from regenerate_premise_cars import (
+    HYDROGEN_COMPRESSION_KEY,
+    clean,
+    hydrogen_compression_specification,
+    relabel,
+    write_workbook,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 CYCLE = "Regional delivery"
@@ -247,24 +253,6 @@ def main():
                 )
             elif exc["name"].startswith("fuel supply for "):
                 family = exc["name"].split()[3]
-                if family == "hydrogen":
-                    supply = raw_index[identity(exc)]
-                    compression = sum(
-                        e["amount"]
-                        for e in supply["exchanges"]
-                        if e["type"] == "technosphere"
-                        and e["name"].startswith(
-                            "electricity supply for fuel preparation"
-                        )
-                    )
-                    h2_compression = exc["amount"] * compression
-                    if h2_compression:
-                        kept.append(
-                            electricity(
-                                h2_compression,
-                                f"Model hydrogen tank compression retained: {compression:.12g} kWh/kg H2.",
-                            )
-                        )
                 fuel = "LPG" if lpg else "petrol" if proxy else family
                 lhv, co2, product = FUELS[fuel]
                 purchased_energy = exc["amount"] * p["LHV fuel MJ per kg"]
@@ -299,6 +287,17 @@ def main():
                 exc["comment"] = (
                     f"Model fuel energy retained: {engine_energy:.12g} MJ/tkm; reference LHV {lhv} MJ/kg. Premise determines regional blends."
                 )
+                if family == "hydrogen":
+                    specification = hydrogen_compression_specification()
+                    ds[HYDROGEN_COMPRESSION_KEY] = specification
+                    compression = specification["electricity kWh per kg H2"]
+                    h2_compression = exc["amount"] * compression
+                    kept.append(
+                        electricity(
+                            h2_compression,
+                            f"Hydrogen tank compression, 30 to 700 bar: {compression:.12g} kWh/kg H2; model compressor assumptions and Premise delivery pressure.",
+                        )
+                    )
             elif exc["name"].startswith("electricity supply for electric vehicles"):
                 np.testing.assert_allclose(
                     exc["amount"], p["electricity consumption"] / load, rtol=1e-6
@@ -441,6 +440,7 @@ def main():
         Path(__file__),
     ]
     record = dict(
+        hydrogen_compression_adaptation=hydrogen_compression_specification(),
         cng_supply_basis={
             "delivered_LHV_MJ_per_kg": 46.5,
             "source": "ecoinvent vehicle-grade natural gas market comment",

@@ -375,4 +375,12 @@ is reused after final linking and efficiency scaling; transfer amounts now
 scale consistently. Repeating this dedicated carbon update on each completed
 inventory makes no changes. All numerical differences from step 2 are vehicle
 CO2 exchanges; validation has zero errors and unchanged warning identities.
-The next task is hydrogen compression electricity. Steps 4--12 remain open.
+Step 4, hydrogen compression electricity, was subsequently completed.
+The `hydrogen report <../premise_vehicle_hydrogen_20261013/report.html>`_
+records the source boundary investigation and approved 30-to-700-bar
+adaptation (2.450619 kWh/kg H2). Explicit metadata couple compression to final
+hydrogen use and preserve other electricity. Both builds pass all 147 marked
+hydrogen-vehicle checks; the expanded suite passes 365 tests. Numerical changes
+are confined to vehicle compression electricity, with zero validation errors
+and unchanged warning identities. The next task is PHEV physical-capacity
+aggregation. Steps 5--12 remain open.
