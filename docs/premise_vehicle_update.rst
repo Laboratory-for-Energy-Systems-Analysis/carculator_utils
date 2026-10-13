@@ -1,6 +1,27 @@
 Premise vehicle inventory update: audit and reproduction strategy
 =================================================================
 
+PHEV capacity correction, 13 October 2026
+----------------------------------------
+
+The shared model now retains the full electric-mode pack capacity when combining
+PHEV modes. Previously it preserved pack mass while usage-weighting stored
+energy. The regenerated Medium car therefore purchases 30.576 kWh instead of
+23.895 kWh. All 16 car PHEV production templates are corrected. Trucks now use
+the same model capacity directly, replacing the adapter's mass-derived workaround;
+their installed battery purchases are unchanged apart from floating-point rounding.
+
+The range calculation uses usable capacity (nominal kWh times depth of discharge).
+Car and truck purchase costs price the full pack before financing. Fuel demand,
+charging demand, emissions, physical masses and replacement counts are unchanged.
+Premise continues to purchase initial and replacement capacity through its kWh
+markets, which already include battery end of life. Replacement-count accounting
+and future range-preserving sizing remain separate open tasks.
+
+The supporting report is
+``results/premise_vehicle_phev_20261013/report.rst``. Earlier audit findings below
+describe their recorded baseline, not the corrected PHEV capacity.
+
 Audit date: 12 October 2026. The initial strategy and feasibility audit below
 is retained as a record of the original four workbooks. Passenger-car
 implementation followed this audit; see the implementation section at the end.

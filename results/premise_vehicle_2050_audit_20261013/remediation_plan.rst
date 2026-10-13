@@ -138,8 +138,9 @@ Main code: ``premise/premise/transport.py`` and hydrogen exchange metadata.
 5. Correct PHEV physical capacity aggregation
 ---------------------------------------------
 
-**Confirmed defect.** All 16 car PHEV variants undercount nominal capacity by
-16.0--26.5%. Mode averaging weights stored energy but retains full pack mass.
+**Completed 13 October 2026.** The former 16.0--26.5% capacity deficit in all
+16 car PHEV variants is corrected. The following records the original scope;
+the execution record and PHEV report below describe the implemented checks.
 
 Correct the shared PHEV aggregation contract: physical hardware belongs to
 the vehicle, while mode-specific operation is weighted by usage. Trace the
@@ -382,5 +383,12 @@ adaptation (2.450619 kWh/kg H2). Explicit metadata couple compression to final
 hydrogen use and preserve other electricity. Both builds pass all 147 marked
 hydrogen-vehicle checks; the expanded suite passes 365 tests. Numerical changes
 are confined to vehicle compression electricity, with zero validation errors
-and unchanged warning identities. The next task is PHEV physical-capacity
-aggregation. Steps 5--12 remain open.
+and unchanged warning identities.
+
+Step 5, PHEV physical-capacity aggregation, is now corrected. The shared model
+retains one full pack at every driving share and calculates electric range from
+usable capacity. Both car and truck cost models price the full installed pack;
+capacity-market purchases increase for 16 car templates. The truck adapter
+now consumes the corrected model field directly. See the
+`PHEV report <../premise_vehicle_phev_20261013/report.html>`_.
+The next task is the independent replacement-count review. Steps 6--12 remain open.

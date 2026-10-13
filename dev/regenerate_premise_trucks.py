@@ -23,6 +23,7 @@ from regenerate_premise_cars import (
     clean,
     hydrogen_compression_specification,
     relabel,
+    validate_phev_battery,
     write_workbook,
 )
 
@@ -111,6 +112,8 @@ def main():
             "lifetime kilometers",
             "kilometers per year",
             "energy battery mass",
+            "battery cell mass",
+            "battery BoP mass",
             "electric energy stored",
             "battery lifetime replacements",
             "fuel cell lifetime replacements",
@@ -135,20 +138,8 @@ def main():
                 p["battery chemistry"] = model.energy_storage["electric"][
                     (power, size, 2020)
                 ]
-                # PHEV mode averaging retains full battery mass but weights the
-                # reported stored energy. Preserve the physical exported pack.
-                p["nominal battery capacity kWh"] = (
-                    p["energy battery mass"]
-                    * p["battery cell mass share"]
-                    * p["battery cell energy density"]
-                )
-                if power != "PHEV-d":
-                    np.testing.assert_allclose(
-                        p["nominal battery capacity kWh"],
-                        p["electric energy stored"],
-                        rtol=1e-6,
-                        atol=1e-6,
-                    )
+                # The shared model now reports the full physical PHEV pack.
+                p["nominal battery capacity kWh"] = p["electric energy stored"]
                 parameters[f"{size}|{power}"] = p
         par_path.write_text(json.dumps(parameters, indent=2) + "\n")
         inventory = InventoryTruck(model, scenario="static", functional_unit="tkm")
@@ -166,6 +157,17 @@ def main():
     raw = json.loads(raw_path.read_text())
     parameters = json.loads(par_path.read_text())
     assert all(p["cycle"] == CYCLE for p in parameters.values())
+    for name, parameter in parameters.items():
+        if name.endswith("|PHEV-d"):
+            validate_phev_battery(parameter)
+        np.testing.assert_allclose(
+            parameter["nominal battery capacity kWh"],
+            parameter["energy battery mass"]
+            * parameter["battery cell mass share"]
+            * parameter["battery cell energy density"],
+            rtol=1e-6,
+            atol=1e-6,
+        )
     raw_index = {identity(d): d for d in raw}
     raw_names = {d["name"]: d for d in raw}
     powers = yaml.safe_load(
@@ -203,9 +205,9 @@ def main():
         if power == "PHEV-d":
             note += (
                 "PHEV electric mode is sized for 60 km, combustion mode for 400 km. "
-                "Nominal battery kWh derived from full exported pack mass and model "
-                "pack energy density, correcting the driving-share-weighted capacity "
-                "field; model replacement counts are retained. "
+                "Nominal battery kWh is the shared model's full physical pack capacity, "
+                "verified against cell mass and energy density; model replacement counts "
+                "are retained pending a separate lifetime-use review. "
             )
             for activity in (ds, production):
                 activity["comment"] = re.sub(
@@ -437,6 +439,7 @@ def main():
         ROOT / "carculator_truck/carculator_truck/data/default_parameters.json",
         ROOT / "carculator_truck/carculator_truck/data/payloads.yaml",
         ROOT / "carculator_utils/carculator_utils/hot_emissions.py",
+        ROOT / "carculator_utils/carculator_utils/model.py",
         Path(__file__),
     ]
     record = dict(

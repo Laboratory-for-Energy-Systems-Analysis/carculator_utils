@@ -1,0 +1,33 @@
+year,vehicle,location,before_kWh,after_kWh
+2020,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",RER,35.4886589050293,42.33599853515625
+2020,"Passenger car, plugin diesel hybrid, Large, EURO-6d",RER,35.4886589050293,42.33599853515625
+2020,"Passenger car, plugin gasoline hybrid, Large SUV, EURO-6d",RER,33.35420227050781,42.33599853515625
+2020,"Passenger car, plugin diesel hybrid, Large SUV, EURO-6d",RER,33.35420227050781,42.33599853515625
+2020,"Passenger car, plugin gasoline hybrid, Lower medium, EURO-6d",RER,19.00516700744629,25.87199783325195
+2020,"Passenger car, plugin diesel hybrid, Lower medium, EURO-6d",RER,19.00516700744629,25.87199783325195
+2020,"Passenger car, plugin gasoline hybrid, Medium, EURO-6d",RER,23.8947811126709,30.57600021362305
+2020,"Passenger car, plugin diesel hybrid, Medium, EURO-6d",RER,23.8947811126709,30.57600021362305
+2020,"Passenger car, plugin gasoline hybrid, Medium SUV, EURO-6d",RER,35.57072448730469,42.33599853515625
+2020,"Passenger car, plugin diesel hybrid, Medium SUV, EURO-6d",RER,35.57072448730469,42.33599853515625
+2020,"Passenger car, plugin gasoline hybrid, Mini, EURO-6d",RER,16.16787910461426,21.16799926757812
+2020,"Passenger car, plugin diesel hybrid, Mini, EURO-6d",RER,16.16787910461426,21.16799926757812
+2020,"Passenger car, plugin gasoline hybrid, Small, EURO-6d",RER,15.85033416748047,21.16799926757812
+2020,"Passenger car, plugin diesel hybrid, Small, EURO-6d",RER,15.85033416748047,21.16799926757812
+2020,"Passenger car, plugin gasoline hybrid, Van, EURO-6d",RER,32.1276969909668,42.33599853515625
+2020,"Passenger car, plugin diesel hybrid, Van, EURO-6d",RER,32.1276969909668,42.33599853515625
+2050,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",RER,35.4886589050293,42.33599853515625
+2050,"Passenger car, plugin diesel hybrid, Large, EURO-6d",RER,35.4886589050293,42.33599853515625
+2050,"Passenger car, plugin gasoline hybrid, Large SUV, EURO-6d",RER,33.35420227050781,42.33599853515625
+2050,"Passenger car, plugin diesel hybrid, Large SUV, EURO-6d",RER,33.35420227050781,42.33599853515625
+2050,"Passenger car, plugin gasoline hybrid, Lower medium, EURO-6d",RER,19.00516700744629,25.87199783325195
+2050,"Passenger car, plugin diesel hybrid, Lower medium, EURO-6d",RER,19.00516700744629,25.87199783325195
+2050,"Passenger car, plugin gasoline hybrid, Medium, EURO-6d",RER,23.8947811126709,30.57600021362305
+2050,"Passenger car, plugin diesel hybrid, Medium, EURO-6d",RER,23.8947811126709,30.57600021362305
+2050,"Passenger car, plugin gasoline hybrid, Medium SUV, EURO-6d",RER,35.57072448730469,42.33599853515625
+2050,"Passenger car, plugin diesel hybrid, Medium SUV, EURO-6d",RER,35.57072448730469,42.33599853515625
+2050,"Passenger car, plugin gasoline hybrid, Mini, EURO-6d",RER,16.16787910461426,21.16799926757812
+2050,"Passenger car, plugin diesel hybrid, Mini, EURO-6d",RER,16.16787910461426,21.16799926757812
+2050,"Passenger car, plugin gasoline hybrid, Small, EURO-6d",RER,15.85033416748047,21.16799926757812
+2050,"Passenger car, plugin diesel hybrid, Small, EURO-6d",RER,15.85033416748047,21.16799926757812
+2050,"Passenger car, plugin gasoline hybrid, Van, EURO-6d",RER,32.1276969909668,42.33599853515625
+2050,"Passenger car, plugin diesel hybrid, Van, EURO-6d",RER,32.1276969909668,42.33599853515625

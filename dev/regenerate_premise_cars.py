@@ -28,6 +28,25 @@ COLD_START_SOURCE_NOTE = (
 HYDROGEN_COMPRESSION_KEY = "hydrogen tank compression"
 
 
+def validate_phev_battery(parameters):
+    """Reject stale mode-weighted capacities before purchasing a physical pack."""
+    np.testing.assert_allclose(
+        parameters["electric energy stored"],
+        parameters["battery cell mass"] * parameters["battery cell energy density"],
+        rtol=1e-6,
+    )
+    np.testing.assert_allclose(
+        parameters["battery cell mass"],
+        parameters["energy battery mass"] * parameters["battery cell mass share"],
+        rtol=1e-6,
+    )
+    np.testing.assert_allclose(
+        parameters["energy battery mass"],
+        parameters["battery cell mass"] + parameters["battery BoP mass"],
+        rtol=1e-6,
+    )
+
+
 def hydrogen_compression_specification():
     """Adapt tank preparation to Premise's documented 30-bar pipeline delivery."""
     from carculator_utils.inventory import hydrogen_compression_electricity
@@ -157,6 +176,11 @@ def main():
             "kilometers per year",
             "energy battery mass",
             "electric energy stored",
+            "battery cell mass",
+            "battery BoP mass",
+            "battery cell mass share",
+            "battery cell energy density",
+            "battery DoD",
             "battery lifetime replacements",
             "fuel cell lifetime replacements",
             "range",
@@ -183,6 +207,9 @@ def main():
         raw_path.write_text(json.dumps(raw, indent=2) + "\n")
     raw = json.loads(raw_path.read_text())
     parameters = json.loads(parameter_path.read_text())
+    for recipe in native:
+        if recipe["model_powertrain"].startswith("PHEV-"):
+            validate_phev_battery(parameters[recipe["name"]])
     assert all(
         p.get("starts per day", 2.3) == args.starts_per_day for p in parameters.values()
     ), "Raw inventories use a different starts-per-day assumption"
@@ -469,6 +496,8 @@ def main():
             filename: hashlib.sha256((root / filename).read_bytes()).hexdigest()
             for filename in (
                 "carculator_utils/carculator_utils/hot_emissions.py",
+                "carculator_utils/carculator_utils/model.py",
+                "carculator/carculator/model.py",
                 "carculator_utils/carculator_utils/data/emission_factors/provenance.json",
                 "carculator_utils/dev/regenerate_premise_cars.py",
             )
