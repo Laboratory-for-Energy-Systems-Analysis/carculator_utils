@@ -180,9 +180,14 @@ Main code: shared and truck battery-lifetime calculations and PHEV aggregation.
 7. Resolve missing truck HEV traction storage
 ---------------------------------------------
 
-**Source-model issue to resolve.** Seven native diesel hybrids and two
-gasoline-hybrid proxies have zero energy-battery mass/capacity despite a
-modelled fuel-economy benefit. The component inventory has no hidden pack.
+**Implemented and scenario-verified, 13 October 2026.** The original issue
+affected seven native diesel hybrids and two gasoline-hybrid proxies with
+zero traction storage despite regenerative fuel savings. The approved
+power/energy-sized buffers now constrain fuel and brake-wear credits and
+update masses, cycling, manufacture, disposal and costs. The user retained
+the MIX capacity market and approved ordinary chemistry prices as documented
+proxies. See the ``premise_truck_hev_storage_20261013`` report and validation
+records. The original acceptance scope follows.
 
 Establish the intended hybrid architecture from model inputs and supporting
 documentation. Size the buffer against electric power, recuperation and usable
@@ -403,5 +408,18 @@ regenerative cycling remains open and is carried into the hybrid-storage
 investigation. Its two alternatives and verified builds are documented in the
 `replacement-accounting report <../premise_vehicle_replacements_20261013/report.html>`_.
 All 1,748 installed-family tests pass. The arithmetic portion is complete;
-the broader battery-use question in step 6 remains open. Step 7 is next, and
-steps 8--12 remain open.
+the broader PHEV battery-use question in step 6 remains open.
+
+Step 7 now supplies 3.75--13.01 kWh traction buffers to 2020 truck HEVs,
+limits regenerative fuel and brake-wear savings to energy the pack can accept
+and reuse, and separates the lead-acid starter. The 2020/2050 Premise builds
+pass with the same validation warning identities and changes confined to the
+nine HEV services and seven production recipes. The user explicitly retained
+the MIX capacity-market mass mismatch and approved chemistry-price proxies.
+The HEV services remain RER templates without their own IAM efficiency
+mapping, connected to EUR scenario fuel markets. See the
+`HEV storage report <../premise_truck_hev_storage_20261013/report.html>`_.
+The final installed-family check passes 1768 tests and both offline artifact
+routes; 70 focused Premise regressions pass. Source/inventory commits are
+``fb0106e`` and ``9372892``.
+Step 8, consistent future hardware sizing, is next; steps 8--12 remain open.

@@ -1,0 +1,15 @@
+{
+  "source_sha256": {
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/model.py": "56d7ce2a9f02ae5d517f3ccbe703e304074bd3282c24af17fc60144201dff3a0",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/energy_consumption.py": "2f0723c98e997ce8370731e24aae3ab2ce830c4283f30f8cbc7f1eb35263df43",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/inventory.py": "75f28dbd9904e63ff81073a28b96ce60000f87e19cf77a6ef8b7f28d30c33b2c",
+    "/Users/romain/GitHub/carculator_truck/carculator_truck/model.py": "a90ae9698cc00973e7e1a7fb95e6757b2390e02e7c4a286b3cb8f0659e16f4fc",
+    "/Users/romain/GitHub/carculator_truck/carculator_truck/inventory.py": "d5becabc2a14a40aa383538bee088d1ba77977ebd65e2b6a3cc5b70c85cb2685",
+    "/Users/romain/GitHub/carculator_truck/carculator_truck/data/default_parameters.json": "99fc8b91b93384eb397a1cb6826dceea4fff2f73ea98d689ccdcd67182569f33",
+    "/Users/romain/GitHub/carculator_utils/dev/audit_truck_hev_storage.py": "c37e054038c4be278649bae22cb6cfbd7b6d8de9df2346a7b1f48332585e60cc"
+  },
+  "cases": 14,
+  "settings": "Regional delivery, CH, native 2020/2050 defaults; no Premise transformation",
+  "screen_boundary": "Stored kWh per one-second interval; use recovered energy at first chance.\n\n    Warm up to a periodic cycle, so the last braking event can supply the next\n    cycle. Discharge is limited by wheel demand, electric motor power and energy\n    already in the buffer. Capacity clips charging. No engine charging, external\n    electricity or battery-specific current/temperature constraints are added.\n    ",
+  "no_model_or_inventory_changes": true
+}

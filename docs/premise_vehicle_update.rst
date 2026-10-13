@@ -1,6 +1,34 @@
 Premise vehicle inventory update: audit and reproduction strategy
 =================================================================
 
+Truck HEV traction storage, 13 October 2026
+---------------------------------------------
+
+Truck HEVs now have finite high-power traction buffers, separate from their
+lead-acid starters. Power/energy sizing is coupled to vehicle mass and fuel
+use; curtailed regeneration receives neither fuel nor brake-wear credit.
+The seven 2020 nominal packs are 3.75--13.01 kWh. The 40 t case uses 9.96 kWh,
+196 kg and 0.623 additional lifetime packs. Generic LFP cycle life and
+chemistry-specific prices remain documented proxies.
+
+The user retained Premise's MIX capacity market despite its physical
+mass/chemistry mismatch. Initial and replacement nominal kWh are supplied
+once, and the market includes manufacture and disposal. Comments disclose
+the A123 2014 cell source, 25-degree-C conditioning assumption, engineering
+SOC window, price proxy and mass mismatch. All vehicle identities are preserved.
+
+Only nine HEV services and seven production recipes change materially. Full
+2020/2050 REMIND SSP2-NPi builds pass with no new validation errors or warning
+identities; fuel-carbon and hydrogen checks also pass. HEVs remain RER
+templates connected to EUR scenario fuel markets, with unchanged 2020 fuel
+quantities in 2050 because they have no separate IAM efficiency mapping.
+Future hardware resizing and the PHEV cycling decision remain open.
+See ``results/premise_truck_hev_storage_20261013/report.rst``.
+The final installed-family qualification passes 1768 tests plus wheel/sdist
+resource and offline model/LCIA checks; 70 focused Premise tests also pass.
+The model correction is ``fb0106e`` and the Premise inventory update is
+``9372892``.
+
 PHEV replacement accounting, 13 October 2026
 --------------------------------------------
 

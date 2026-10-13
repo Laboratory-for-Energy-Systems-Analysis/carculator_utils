@@ -12,6 +12,7 @@ import json
 import re
 import subprocess
 import sys
+from dataclasses import asdict
 from pathlib import Path
 
 import numpy as np
@@ -125,6 +126,10 @@ def main():
             "battery cell mass share",
             "is_available",
             "is_compliant",
+            "starter battery mass",
+            "electric power",
+            "energy battery cost",
+            "energy battery cost per kWh",
         ]
         for size in scope["size"]:
             for power in scope["powertrain"]:
@@ -141,6 +146,23 @@ def main():
                 ]
                 # The shared model now reports the full physical PHEV pack.
                 p["nominal battery capacity kWh"] = p["electric energy stored"]
+                p["HEV discharged stored kWh per km"] = (
+                    model.hybrid_buffer_results[
+                        (size, 2020, model.array.value.values[0])
+                    ]["discharged_stored_kwh_per_km"]
+                    if power == "HEV-d"
+                    else 0
+                )
+                p["HEV regeneration reuse fraction"] = (
+                    model.hybrid_buffer_results[
+                        (size, 2020, model.array.value.values[0])
+                    ]["discharged_dc_kwh"]
+                    / model.hybrid_buffer_results[
+                        (size, 2020, model.array.value.values[0])
+                    ]["unconstrained_reusable_dc_kwh"]
+                    if power == "HEV-d"
+                    else 0
+                )
                 parameters[f"{size}|{power}"] = p
         par_path.write_text(json.dumps(parameters, indent=2) + "\n")
         inventory = InventoryTruck(model, scenario="static", functional_unit="tkm")
@@ -224,6 +246,28 @@ def main():
                     "PHEV mode ranges are recorded separately in the generation metadata.",
                     activity["comment"],
                 )
+        if power == "HEV-d":
+            from carculator_truck.hybrid_battery import PROFILE_SOURCE
+
+            note += (
+                "HEV traction battery sized from retained motor-power design and cycle energy, "
+                "with finite regenerative storage and continuous charging limits. "
+                f"Nominal capacity {p['electric energy stored']:.8g} kWh; "
+                f"physical pack {p['energy battery mass']:.8g} kg; "
+                f"fractional replacements {p['battery lifetime replacements']:.8g}. "
+                "High-power LFP cell profile: " + PROFILE_SOURCE + ". "
+                "Continuous current ratings at 25 degrees C multiplied by the 2 V cutoff; "
+                "conditioned pack assumed. 60% usable SOC window and 70% cell mass share. "
+                "Cycle life is the inherited generic LFP assumption, not a guarantee for "
+                "these high-rate operating conditions; no separate calendar-age correction. "
+                "Generic chemistry prices are a cost proxy, not a high-power pack quotation. "
+                "User-selected MIX capacity-market proxy: nominal kWh and replacements "
+                "are preserved, but manufacturing chemistry and mass differ from the "
+                "physical high-power LFP pack (19.7 kg/kWh versus 8.6 kg/kWh for Premise's "
+                "ordinary 2020 LFP capacity recipe; MIX mass depends on chemistry shares). "
+                "No mass-equivalence correction is applied to the MIX market. "
+                "The lead-acid starter is separate and includes at least its initial battery. "
+            )
         production["comment"] = note + production.get("comment", "")
         if proxy:
             note += (
@@ -440,13 +484,27 @@ def main():
     write_csv(args.output / "vehicle_parameters.csv", balance)
     source_files = [
         ROOT / "carculator_truck/carculator_truck/model.py",
+        ROOT / "carculator_truck/carculator_truck/hybrid_battery.py",
+        ROOT / "carculator_truck/carculator_truck/inventory.py",
+        ROOT / "carculator_truck/carculator_truck/data/extra_parameters.json",
         ROOT / "carculator_truck/carculator_truck/data/default_parameters.json",
         ROOT / "carculator_truck/carculator_truck/data/payloads.yaml",
         ROOT / "carculator_utils/carculator_utils/hot_emissions.py",
         ROOT / "carculator_utils/carculator_utils/model.py",
         Path(__file__),
     ]
+    from carculator_truck.hybrid_battery import HybridBatteryProfile, PROFILE_SOURCE
+
     record = dict(
+        hev_battery_policy={
+            "profile": asdict(HybridBatteryProfile()),
+            "source": PROFILE_SOURCE,
+            "power_boundary": "Full motor discharge rating; excess braking power is curtailed at the pack continuous charge limit",
+            "energy_boundary": "Periodic finite regenerative buffer, no grid or engine charging; actual stored discharge sets equivalent full cycles",
+            "cycle_life_and_cost": "Inherited generic chemistry assumptions, not qualified for this high-power cell",
+            "lca_proxy": "User explicitly retains MIX capacity market and documents physical mass/chemistry mismatch; no mass-equivalence correction",
+            "approved_on": "2026-10-13",
+        },
         phev_battery_replacement_policy={
             "formula": "clip(lifetime km * electric utility factor * electric-mode net stored kJ/km / 3600 / nominal kWh / cycle life - 1, 0, 3)",
             "cycle_basis": "equivalent full cycles of nominal capacity; no additional DoD divisor",
