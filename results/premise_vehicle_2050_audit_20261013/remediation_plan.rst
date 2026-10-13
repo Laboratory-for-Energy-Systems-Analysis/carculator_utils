@@ -239,6 +239,18 @@ new-vehicle specifications. See
 implementation requirements and remaining scope. No source inputs were changed
 by this read-only audit.
 
+**Intensity integration completed:** optional direct-intensity mappings now
+serve REMIND/REMIND-EU while preserving the other IAM calculation paths.
+Four local encrypted scenarios each regained 545 rows and the source filter
+was corrected. 223 focused tests, 51,120 independent intensity checks, ten
+other-model/family checks and full 2020/2050 builds pass. The 2020 inventory
+is unchanged; 2050 differences are explained by recovered operating-energy
+trends and correction of a diesel substring filter that had also scaled truck
+manufacture. Sixty-two manufacturing purchases now match their 2020 lifetime
+basis. See ``../premise_vehicle_intensity_20261013/report.rst``. This completes
+the IAM-input prerequisite; constant-range hardware calibration and the
+regional Large Car proxy remain open, alongside the original follow-up steps.
+
 **Approved policy; coupled implementation required.** The audit found all
 98 surviving production inventories retaining their 2020 battery quantities.
 The EUR 40 t BEV therefore gains implied range from 400 to about 500 km when

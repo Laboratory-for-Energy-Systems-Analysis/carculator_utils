@@ -1,0 +1,689 @@
+year,vehicle,location,flow,exchange_type,before,after,effective_energy_ratio,reason
+2050,"transport, passenger car, battery electric, Large",CAZ,"market group for electricity, low voltage",technosphere,0.1887050867080688,0.15096406936645504,0.8,operating energy
+2050,"transport, passenger car, battery electric, Large",LAM,"market group for electricity, low voltage",technosphere,0.1887050867080688,0.15096406936645504,0.8,operating energy
+2050,"transport, passenger car, battery electric, Large",OAS,"market group for electricity, low voltage",technosphere,0.1887050867080688,0.15096406936645504,0.8,operating energy
+2050,"transport, passenger car, battery electric, Large",USA,"market group for electricity, low voltage",technosphere,0.1887050867080688,0.15096406936645504,0.8,operating energy
+2050,"transport, passenger car, battery electric, Large",World,"market group for electricity, low voltage",technosphere,0.1887050867080688,0.15096406936645504,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",CAZ,"market for hydrogen, gaseous, low pressure",technosphere,0.009619408433960919,0.007695526747168735,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",CAZ,"market group for electricity, low voltage",technosphere,0.02357350745081066,0.01885880596064853,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",LAM,"market for hydrogen, gaseous, low pressure",technosphere,0.009619408433960919,0.007695526747168735,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",LAM,"market group for electricity, low voltage",technosphere,0.02357350745081066,0.01885880596064853,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",OAS,"market group for electricity, low voltage",technosphere,0.02357350745081066,0.01885880596064853,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",OAS,"market for hydrogen, gaseous, low pressure",technosphere,0.009619408433960919,0.007695526747168735,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",USA,"market for hydrogen, gaseous, low pressure",technosphere,0.009619408433960919,0.007695526747168735,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",USA,"market group for electricity, low voltage",technosphere,0.02357350745081066,0.01885880596064853,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",World,"market group for electricity, low voltage",technosphere,0.02357350745081066,0.01885880596064853,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Large",World,"market for hydrogen, gaseous, low pressure",technosphere,0.009619408433960919,0.007695526747168735,0.8,operating energy
+2050,"transport, passenger car, compressed gas, Large, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,9.337683448395218e-06,9.33768243513067e-06,0.9999998914865182,operating energy
+2050,"transport, passenger car, compressed gas, Large, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",technosphere,0.04358574077528884,0.043585736045648346,0.9999998914865182,operating energy
+2050,"transport, passenger car, compressed gas, Large, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.12159487907960745,0.12159486588492374,0.9999998914865182,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CAZ,"market for petrol, low-sulfur",technosphere,0.01278545168318718,0.010228361346549746,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CAZ,"market group for electricity, low voltage",technosphere,0.1440417617559433,0.11523340940475464,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CAZ,Sulfur dioxide,biosphere,2.05466166138649e-07,1.6437293291091922e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CAZ,"Carbon dioxide, fossil",biosphere,0.038904440497742665,0.03112355239819414,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CAZ,"Carbon dioxide, non-fossil",biosphere,0.0012403698988798816,0.0009922959191039054,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",LAM,"market for petrol, low-sulfur",technosphere,0.01278545168318718,0.010228361346549746,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",LAM,"market group for electricity, low voltage",technosphere,0.1440417617559433,0.11523340940475464,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",LAM,Sulfur dioxide,biosphere,2.05466166138649e-07,1.6437293291091922e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",LAM,"Carbon dioxide, fossil",biosphere,0.03301657450571596,0.026413259604572775,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",LAM,"Carbon dioxide, non-fossil",biosphere,0.007144217925550369,0.005715374340440295,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",OAS,"market group for electricity, low voltage",technosphere,0.1440417617559433,0.11523340940475464,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",OAS,Sulfur dioxide,biosphere,2.05466166138649e-07,1.6437293291091922e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.040137624625325566,0.03211009970026046,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,3.844333229825841e-06,3.075466583860673e-06,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",OAS,"market for petrol, low-sulfur",technosphere,0.01278545168318718,0.010228361346549746,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",USA,"market group for electricity, low voltage",technosphere,0.1440417617559433,0.11523340940475464,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",USA,Sulfur dioxide,biosphere,2.05466166138649e-07,1.6437293291091922e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",USA,"Carbon dioxide, fossil",biosphere,0.03688081008776751,0.02950464807021401,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",USA,"Carbon dioxide, non-fossil",biosphere,0.0032691273421331457,0.002615301873706517,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",USA,"market for petrol, low-sulfur",technosphere,0.01278545168318718,0.010228361346549746,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",World,"market group for electricity, low voltage",technosphere,0.1440417617559433,0.11523340940475464,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",World,Sulfur dioxide,biosphere,2.0394614132562895e-07,1.6315691306050318e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",World,"market for petrol, low-sulfur",technosphere,0.01278545168318718,0.010228361346549746,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.037917256343778384,0.03033380507502271,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.00222928575474863,0.0017834286037989044,0.8,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",CAZ,"market for petrol, low-sulfur",technosphere,0.05836598491437688,0.057275598479661835,0.981318118141677,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",CAZ,Sulfur dioxide,biosphere,9.379594467793996e-07,9.204365992067689e-07,0.981318118141677,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",CAZ,"Carbon dioxide, fossil",biosphere,0.17759998187467074,0.17428207999524784,0.981318118141677,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",CAZ,"Carbon dioxide, non-fossil",biosphere,0.005662327198144281,0.005556544270385382,0.981318118141677,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",LAM,"market for petrol, low-sulfur",technosphere,0.06665666579556476,0.05973204987654553,0.8961151771338677,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",LAM,Sulfur dioxide,biosphere,1.0711932552065414e-06,9.59912533634014e-07,0.8961151771338677,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",LAM,"Carbon dioxide, fossil",biosphere,0.17213117119951912,0.1542493549697172,0.8961151771338677,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",LAM,"Carbon dioxide, non-fossil",biosphere,0.037246220034627936,0.03337690306389763,0.8961151771338677,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",OAS,Sulfur dioxide,biosphere,9.481186086506738e-07,9.132380172669566e-07,0.9632107301075359,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.18521408862861938,0.17840019753417433,0.9632107301075359,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,1.7739581806185038e-05,1.7086955543337847e-05,0.9632107301075359,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",OAS,"market for petrol, low-sulfur",technosphere,0.05899815455727292,0.05682765552610809,0.9632107301075359,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",USA,Sulfur dioxide,biosphere,9.506985995202365e-07,9.217307781029503e-07,0.9695299630904004,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",USA,"Carbon dioxide, fossil",biosphere,0.17064870123481726,0.16544902900961717,0.9695299630904004,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",USA,"Carbon dioxide, non-fossil",biosphere,0.015126357956309762,0.014665457271073188,0.9695299630904004,operating energy
+2050,"transport, passenger car, gasoline, Large, EURO-6",USA,"market for petrol, low-sulfur",technosphere,0.05915869850049901,0.057356130773664936,0.9695299630904004,operating energy
+2050,"transport, passenger car, battery electric, Medium",CAZ,"market group for electricity, low voltage",technosphere,0.1761109828948975,0.140888786315918,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium",EUR,"market group for electricity, low voltage",technosphere,0.1761109828948975,0.14293574131765963,0.8116230968000631,operating energy
+2050,"transport, passenger car, battery electric, Medium",LAM,"market group for electricity, low voltage",technosphere,0.1761109828948975,0.140888786315918,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium",NEU,"market group for electricity, low voltage",technosphere,0.1761109828948975,0.14202397798270752,0.8064458879743293,operating energy
+2050,"transport, passenger car, battery electric, Medium",OAS,"market group for electricity, low voltage",technosphere,0.1761109828948975,0.14577794742368513,0.827761818300026,operating energy
+2050,"transport, passenger car, battery electric, Medium",REF,"market group for electricity, low voltage",technosphere,0.1761109828948975,0.140888786315918,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium",USA,"market group for electricity, low voltage",technosphere,0.1761109828948975,0.140888786315918,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium",World,"market group for electricity, low voltage",technosphere,0.1761109828948975,0.140888786315918,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",CAZ,"market for hydrogen, gaseous, low pressure",technosphere,0.008746450703344233,0.006997160562675387,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",CAZ,"market group for electricity, low voltage",technosphere,0.02143422043454435,0.017147376347635482,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",EUR,"market group for electricity, low voltage",technosphere,0.02143422043454435,0.017147376347635482,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",EUR,"market for hydrogen, gaseous, low pressure",technosphere,0.008746450703344233,0.006997160562675387,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",LAM,"market for hydrogen, gaseous, low pressure",technosphere,0.008746450703344233,0.006997160562675387,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",LAM,"market group for electricity, low voltage",technosphere,0.02143422043454435,0.017147376347635482,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",NEU,"market group for electricity, low voltage",technosphere,0.02143422043454435,0.017147376347635482,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",NEU,"market for hydrogen, gaseous, low pressure",technosphere,0.008746450703344233,0.006997160562675387,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",OAS,"market group for electricity, low voltage",technosphere,0.02143422043454435,0.017147376347635482,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",OAS,"market for hydrogen, gaseous, low pressure",technosphere,0.008746450703344233,0.006997160562675387,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",REF,"market group for electricity, low voltage",technosphere,0.02143422043454435,0.017147376347635482,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",REF,"market for hydrogen, gaseous, low pressure",technosphere,0.008746450703344233,0.006997160562675387,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",USA,"market for hydrogen, gaseous, low pressure",technosphere,0.008746450703344233,0.006997160562675387,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",USA,"market group for electricity, low voltage",technosphere,0.02143422043454435,0.017147376347635482,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",World,"market group for electricity, low voltage",technosphere,0.02143422043454435,0.017147376347635482,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium",World,"market for hydrogen, gaseous, low pressure",technosphere,0.008746450703344233,0.006997160562675387,0.8,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",CAZ,"Carbon dioxide, non-fossil",biosphere,0.0026115821261652322,0.0026085450533132066,0.9988370754947368,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03797508238512625,0.037930920231231194,0.9988370754947368,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",CAZ,"Carbon dioxide, fossil",biosphere,0.103338897728337,0.10321872239182182,0.9988370754947368,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",EUR,"Carbon dioxide, non-fossil",biosphere,0.020149148088575864,0.02049035762163675,1.01693419153807,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",technosphere,0.04090146019241486,0.04159409335349997,1.01693419153807,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",EUR,"Carbon dioxide, fossil",biosphere,0.0939659258482616,0.09555716283462817,1.01693419153807,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,8.564595698741385e-06,8.564761725749435e-06,1.0000193852709331,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03997717956852034,0.03997795453697741,1.0000193852709331,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.11152776640047299,0.11152992839644121,1.0000193852709331,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.0020963289545440334,0.002126850968770644,1.0145597446242633,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",technosphere,0.042546818407688154,0.043166289218279,1.0145597446242633,operating energy
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.11660929440290593,0.11830709595022779,1.0145597446242633,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",CAZ,"market group for electricity, low voltage",technosphere,0.1084895431995392,0.08679163455963136,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",CAZ,Sulfur dioxide,biosphere,2.743053436279297e-07,2.1944427490234375e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",EUR,"market group for electricity, low voltage",technosphere,0.1084895431995392,0.08679163455963136,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",EUR,Sulfur dioxide,biosphere,2.743053436279297e-07,2.1944427490234375e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",LAM,"market group for electricity, low voltage",technosphere,0.1084895431995392,0.08679163455963136,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",LAM,Sulfur dioxide,biosphere,2.743053436279297e-07,2.1944427490234375e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",NEU,"market group for electricity, low voltage",technosphere,0.1084895431995392,0.08679163455963136,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",NEU,Sulfur dioxide,biosphere,2.743053436279297e-07,2.1944427490234375e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",OAS,"market group for electricity, low voltage",technosphere,0.1084895431995392,0.08679163455963136,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",OAS,Sulfur dioxide,biosphere,2.743053436279297e-07,2.1944427490234375e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",REF,Sulfur dioxide,biosphere,2.743053436279297e-07,2.1944427490234375e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",REF,"market group for electricity, low voltage",technosphere,0.1084895431995392,0.08679163455963136,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",USA,"market group for electricity, low voltage",technosphere,0.1084895431995392,0.08679163455963136,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",USA,Sulfur dioxide,biosphere,2.743053436279297e-07,2.1944427490234375e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",World,"market group for electricity, low voltage",technosphere,0.1084895431995392,0.08679163455963136,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",World,Sulfur dioxide,biosphere,2.7227605123155e-07,2.1782084098523998e-07,0.8,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",CAZ,"market for petrol, low-sulfur",technosphere,0.05302860178726838,0.05189046187701907,0.9785372445833078,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",CAZ,Sulfur dioxide,biosphere,8.521860097495082e-07,8.338957498527277e-07,0.9785372445833078,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",CAZ,"Carbon dioxide, fossil",biosphere,0.1613590300938819,0.15789582069670222,0.9785372445833078,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",CAZ,"Carbon dioxide, non-fossil",biosphere,0.005144525439262311,0.005034109748024473,0.9785372445833078,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",EUR,Sulfur dioxide,biosphere,9.74429158912028e-07,8.167337417602536e-07,0.8381663605717169,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",EUR,"market for petrol, low-sulfur",technosphere,0.0606353721449117,0.0508225291926123,0.8381663605717169,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",EUR,"Carbon dioxide, fossil",biosphere,0.13897083472602378,0.11648067876792491,0.8381663605717169,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",EUR,"Carbon dioxide, non-fossil",biosphere,0.05146108496496444,0.043132950296156145,0.8381663605717169,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",LAM,"market for petrol, low-sulfur",technosphere,0.05979967296302397,0.054512703849779395,0.9115886617554969,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",LAM,Sulfur dioxide,biosphere,9.60999214935364e-07,8.760359882910117e-07,0.9115886617554969,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",LAM,"Carbon dioxide, fossil",biosphere,0.15442398178215572,0.1407711508957506,0.9115886617554969,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",LAM,"Carbon dioxide, non-fossil",biosphere,0.03341468929770238,0.03046045189986824,0.9115886617554969,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",OAS,Sulfur dioxide,biosphere,9.068064068293651e-07,8.762526160802717e-07,0.9663061591548252,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.1771437962741167,0.17117514139574658,0.9663061591548252,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,1.696661894746e-05,1.6394948388963556e-05,0.9663061591548252,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",OAS,"market for petrol, low-sulfur",technosphere,0.05642744107009301,0.05452618385137682,0.9663061591548252,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",REF,"market for petrol, low-sulfur",technosphere,0.05359120895060213,0.05287146157452297,0.9865696745758695,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",REF,Sulfur dioxide,biosphere,8.612272806376461e-07,8.496607179945435e-07,0.9865696745758695,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",REF,"Carbon dioxide, fossil",biosphere,0.16824085777940204,0.16598132830978982,0.9865696745758695,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",REF,"Carbon dioxide, non-fossil",biosphere,1.5180937742376069e-05,1.4977052808252492e-05,0.9865696745758695,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",USA,Sulfur dioxide,biosphere,8.644962245675744e-07,8.415528449185044e-07,0.9734604050346819,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",USA,"Carbon dioxide, fossil",biosphere,0.15517553572084725,0.1510572398542897,0.9734604050346819,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",USA,"Carbon dioxide, non-fossil",biosphere,0.013754811389661852,0.013389764266555883,0.9734604050346819,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",USA,"market for petrol, low-sulfur",technosphere,0.05379462407821733,0.052366936543869896,0.9734604050346819,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",World,Sulfur dioxide,biosphere,8.869767775646293e-07,8.748881714436148e-07,0.9863710004288881,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",World,"market for petrol, low-sulfur",technosphere,0.055604872593290736,0.054847033808565045,0.9863710004288881,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.16490494511472434,0.16265745568848153,0.9863710004288881,operating energy
+2050,"transport, passenger car, gasoline, Medium, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.009695328208845477,0.009563190584845333,0.9863710004288881,operating energy
+2050,"transport, passenger car, battery electric, Mini",CAZ,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",CHA,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",EUR,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",IND,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",JPN,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",LAM,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",MEA,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",NEU,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",OAS,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",REF,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",SSA,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, battery electric, Mini",World,"market group for electricity, low voltage",technosphere,0.1348303854465485,0.1078643083572388,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",CAZ,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",CAZ,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",CHA,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",CHA,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",EUR,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",EUR,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",IND,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",IND,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",JPN,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",JPN,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",LAM,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",LAM,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",MEA,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",MEA,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",NEU,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",NEU,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",OAS,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",OAS,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",REF,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",REF,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",SSA,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",SSA,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",World,"market group for electricity, low voltage",technosphere,0.01675329939859574,0.013402639518876592,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Mini",World,"market for hydrogen, gaseous, low pressure",technosphere,0.006836353472973844,0.005469082778379076,0.8,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",CHA,"Carbon dioxide, non-fossil",biosphere,0.0009118038505363771,0.0007886461500606915,0.8649296113377488,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03470879155404119,0.030020661588839787,0.8649296113377488,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",CHA,"Carbon dioxide, fossil",biosphere,0.09592572458523854,0.0829689996828023,0.8649296113377488,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03054223667521174,0.029089446371659625,0.9524334016856332,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",IND,"Carbon dioxide, non-fossil",biosphere,0.0012515962118741883,0.0011920620376121857,0.9524334016856332,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",IND,"Carbon dioxide, fossil",biosphere,0.08396124411196657,0.07996749333931816,0.9524334016856332,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",MEA,"Carbon dioxide, non-fossil",biosphere,7.753714235893829e-08,6.780370936805814e-08,0.8744674784915114,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",technosphere,0.033265326712709764,0.029089446371659625,0.8744674784915114,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",MEA,"Carbon dioxide, fossil",biosphere,0.09281018399131788,0.08115948757322099,0.8744674784915114,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,6.992285056071639e-06,6.232039127384229e-06,0.8912736076131136,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03263806548649295,0.029089446371659625,0.8912736076131136,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.09105321042225925,0.08115332333780297,0.8912736076131136,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",REF,"Carbon dioxide, non-fossil",biosphere,1.5618151778797517e-07,1.455929468333951e-07,0.9322034315932655,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03636180796457453,0.03389660216351171,0.9322034315932655,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",REF,"Carbon dioxide, fossil",biosphere,0.10144928803964513,0.09457137444325082,0.9322034315932655,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",SSA,"Carbon dioxide, non-fossil",biosphere,3.7935266622956455e-05,3.378053282588761e-05,0.8904783288235909,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",technosphere,0.034349022636641864,0.03058706027420054,0.8904783288235909,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",SSA,"Carbon dioxide, fossil",biosphere,0.09579583788960784,0.08530411763219362,0.8904783288235909,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.0017371240067391666,0.0017184168106678089,0.9892309380339093,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03525644174601535,0.034876762940148645,0.9892309380339093,operating energy
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.09662834846464367,0.09558775179234692,0.9892309380339093,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",CAZ,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",CAZ,Sulfur dioxide,biosphere,2.446719706058502e-07,1.9573757648468017e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",CHA,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",CHA,Sulfur dioxide,biosphere,2.2826892704648624e-07,1.82615141637189e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",EUR,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",EUR,Sulfur dioxide,biosphere,2.446719706058502e-07,1.9573757648468017e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",IND,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",IND,Sulfur dioxide,biosphere,2.446719706058502e-07,1.9573757648468017e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",JPN,Sulfur dioxide,biosphere,2.2400647267895722e-07,1.7920517814316578e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",JPN,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",LAM,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",LAM,Sulfur dioxide,biosphere,2.446719706058502e-07,1.9573757648468017e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",MEA,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",MEA,Sulfur dioxide,biosphere,2.446719706058502e-07,1.9573757648468017e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",NEU,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",NEU,Sulfur dioxide,biosphere,2.446719706058502e-07,1.9573757648468017e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",OAS,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",OAS,Sulfur dioxide,biosphere,2.446719706058502e-07,1.9573757648468017e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",REF,Sulfur dioxide,biosphere,2.446719706058502e-07,1.9573757648468017e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",REF,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",SSA,Sulfur dioxide,biosphere,2.446719706058502e-07,1.9573757648468017e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",SSA,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",World,"market group for electricity, low voltage",technosphere,0.07732376456260681,0.06185901165008545,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",World,Sulfur dioxide,biosphere,2.428619039006563e-07,1.9428952312052505e-07,0.8,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CAZ,"market for petrol, low-sulfur",technosphere,0.038192655378886824,0.035912582311970316,0.9403007451485829,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CAZ,Sulfur dioxide,biosphere,6.137678048300622e-07,5.771263242299175e-07,0.9403007451485829,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CAZ,"Carbon dioxide, fossil",biosphere,0.11621520502029656,0.10927724387818019,0.9403007451485829,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CAZ,"Carbon dioxide, non-fossil",biosphere,0.003705228510038433,0.0034840291289349127,0.9403007451485829,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CHA,Sulfur dioxide,biosphere,6.156005030142953e-07,5.234705455445774e-07,0.850341321979754,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CHA,"Carbon dioxide, fossil",biosphere,0.12664092871684204,0.10768801474182325,0.850341321979754,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CHA,"Carbon dioxide, non-fossil",biosphere,0.0022759822475551393,0.0019353617531884893,0.850341321979754,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CHA,"market for petrol, low-sulfur",technosphere,0.041059356509090456,0.034914467493577996,0.850341321979754,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",EUR,Sulfur dioxide,biosphere,6.660870480459479e-07,5.550379118012788e-07,0.8332813457783843,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",EUR,"market for petrol, low-sulfur",technosphere,0.04144830158597607,0.034538096525790485,0.8332813457783843,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",EUR,"Carbon dioxide, fossil",biosphere,0.09499578984380716,0.07915821960432819,0.8332813457783843,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",EUR,"Carbon dioxide, non-fossil",biosphere,0.03517706734728727,0.029312394019684395,0.8332813457783843,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",IND,"market for petrol, low-sulfur",technosphere,0.04134565291508268,0.03565869106467854,0.8624532097223317,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",IND,Sulfur dioxide,biosphere,6.644374521019647e-07,5.730462132250675e-07,0.8624532097223317,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",IND,"Carbon dioxide, fossil",biosphere,0.12980222989959522,0.11194834980602192,0.8624532097223317,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",IND,"Carbon dioxide, non-fossil",biosphere,7.425228211795088e-06,6.403911904183483e-06,0.8624532097223317,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",JPN,Sulfur dioxide,biosphere,5.073238886912353e-07,5.037925188201605e-07,0.9930392202106139,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",JPN,"Carbon dioxide, fossil",biosphere,0.10792646144250966,0.10717520911096066,0.9930392202106139,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",JPN,"Carbon dioxide, non-fossil",biosphere,0.0003327004280548626,0.0003303845736393382,0.9930392202106139,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",JPN,"market for petrol, low-sulfur",technosphere,0.034481386093311014,0.034241368757882674,0.9930392202106139,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",LAM,"market for petrol, low-sulfur",technosphere,0.03537938488903482,0.034918752658933135,0.9869802080633557,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",LAM,Sulfur dioxide,biosphere,5.685576764475202e-07,5.611551737961915e-07,0.9869802080633557,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",LAM,"Carbon dioxide, fossil",biosphere,0.09136212987228871,0.09017261395046286,0.9869802080633557,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",LAM,"Carbon dioxide, non-fossil",biosphere,0.01976919095095907,0.019511800198021793,0.9869802080633557,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",MEA,Sulfur dioxide,biosphere,6.310678269972485e-07,5.472598552703857e-07,0.867196570413614,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",MEA,"Carbon dioxide, fossil",biosphere,0.12328337979978743,0.10691092415137467,0.867196570413614,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",MEA,"market for petrol, low-sulfur",technosphere,0.039269176140449724,0.03405409487196612,0.867196570413614,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",MEA,"Carbon dioxide, non-fossil",biosphere,6.913469036540618e-06,5.995336638148736e-06,0.867196570413614,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",NEU,Sulfur dioxide,biosphere,5.86044939299229e-07,5.763105807200366e-07,0.9833897403997168,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",NEU,"market for petrol, low-sulfur",technosphere,0.03646755699314225,0.035861821404498034,0.9833897403997168,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",NEU,"Carbon dioxide, fossil",biosphere,0.11420698073876352,0.11230997314052812,0.9833897403997168,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",NEU,"Carbon dioxide, non-fossil",biosphere,0.0002880420046605611,0.00028325755218736325,0.9833897403997168,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",OAS,Sulfur dioxide,biosphere,6.375720674912043e-07,5.472598552703857e-07,0.8583497978884332,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.12454910872902791,0.10690670230474558,0.8583497978884332,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,1.1929163270167237e-05,1.0239394881926167e-05,0.8583497978884332,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",OAS,"market for petrol, low-sulfur",technosphere,0.03967391261201463,0.03405409487196612,0.8583497978884332,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",REF,"market for petrol, low-sulfur",technosphere,0.04256761858995765,0.03798402998221582,0.8923221744703574,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",REF,Sulfur dioxide,biosphere,6.840748190879821e-07,6.104151300690045e-07,0.8923221744703574,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",REF,"Carbon dioxide, fossil",biosphere,0.13363409420007924,0.11924466551999129,0.8923221744703574,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",REF,"Carbon dioxide, non-fossil",biosphere,1.205825321557887e-05,1.0759846729639516e-05,0.8923221744703574,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",SSA,Sulfur dioxide,biosphere,6.66982776572883e-07,5.774613260470948e-07,0.8657814659236468,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",SSA,"Carbon dioxide, fossil",biosphere,0.13030524345186,0.11281586469328904,0.8657814659236468,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",SSA,"market for petrol, low-sulfur",technosphere,0.041504039685421906,0.035933428320597795,0.8657814659236468,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",SSA,"Carbon dioxide, non-fossil",biosphere,1.6724778341561274e-06,1.448000310980498e-06,0.8657814659236468,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",World,Sulfur dioxide,biosphere,6.16196609126258e-07,5.452877223203696e-07,0.8849248993654243,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",World,"market for petrol, low-sulfur",technosphere,0.03862957045216399,0.03418426874491078,0.8849248993654243,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.11456203203292847,0.10137879466783772,0.8849248993654243,operating energy
+2050,"transport, passenger car, gasoline, Mini, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.006735495409545089,0.005960407597467965,0.8849248993654243,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",CAZ,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",CHA,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",EUR,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",IND,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",JPN,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",LAM,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",MEA,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",NEU,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",OAS,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",REF,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",SSA,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",USA,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, battery electric, Medium SUV",World,"market group for electricity, low voltage",technosphere,0.1943145394325256,0.15545163154602049,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",CAZ,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",CAZ,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",CHA,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",CHA,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",EUR,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",EUR,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",IND,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",IND,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",JPN,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",JPN,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",LAM,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",LAM,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",MEA,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",MEA,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",NEU,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",NEU,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",OAS,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",OAS,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",REF,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",REF,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",SSA,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",SSA,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",USA,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",USA,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",World,"market group for electricity, low voltage",technosphere,0.02318739901398321,0.018549919211186573,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Medium SUV",World,"market for hydrogen, gaseous, low pressure",technosphere,0.009461852976361262,0.00756948238108901,0.8,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",technosphere,0.04031584062959705,0.040329687121793925,1.000343450415039,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",LAM,"Carbon dioxide, non-fossil",biosphere,3.55339798459133e-07,3.5546184006039365e-07,1.000343450415039,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",LAM,"Carbon dioxide, fossil",biosphere,0.11248084001677729,0.11251947160796498,1.000343450415039,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",MEA,"Carbon dioxide, non-fossil",biosphere,9.596454319262875e-08,9.221974594754574e-08,0.9609772826452566,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",technosphere,0.04117113147349238,0.039564522046827304,0.9609772826452566,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",MEA,"Carbon dioxide, fossil",biosphere,0.11486736084650054,0.11038492429090223,0.9609772826452566,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",REF,"Carbon dioxide, non-fossil",biosphere,1.942999302612082e-07,1.9438800640429523e-07,1.000453299921254,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",technosphere,0.045236445718753515,0.04525695139603564,1.000453299921254,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",REF,"Carbon dioxide, fossil",biosphere,0.12620948925539202,0.12626670000693302,1.000453299921254,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",SSA,"Carbon dioxide, non-fossil",biosphere,4.4179787963826754e-05,4.4178668886235153e-05,0.999974669919364,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",technosphere,0.04000321262888373,0.04000219934428215,0.999974669919364,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",SSA,"Carbon dioxide, fossil",biosphere,0.11156478344662178,0.11156195750166095,0.999974669919364,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.002289872624699113,0.0023850404401705915,1.0415603097067392,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",technosphere,0.04647495543513133,0.04840646897662229,1.0415603097067392,operating energy
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.12737525303931732,0.1326690080046056,1.0415603097067392,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",CAZ,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",CAZ,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",CHA,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",CHA,Sulfur dioxide,biosphere,1.8391614313747727e-07,1.471329145099818e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",EUR,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",EUR,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",IND,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",IND,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",JPN,Sulfur dioxide,biosphere,1.8048188610688375e-07,1.44385508885507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",JPN,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",LAM,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",LAM,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",MEA,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",MEA,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",NEU,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",NEU,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",OAS,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",OAS,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",REF,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",REF,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",SSA,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",SSA,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",USA,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",USA,Sulfur dioxide,biosphere,1.971320658922195e-07,1.577056527137756e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",World,"market group for electricity, low voltage",technosphere,0.1439121961593628,0.11512975692749024,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",World,Sulfur dioxide,biosphere,1.9567369618965797e-07,1.5653895695172637e-07,0.8,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CAZ,"market for petrol, low-sulfur",technosphere,0.05047694014014918,0.04927831387693725,0.9762539833063584,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CAZ,Sulfur dioxide,biosphere,8.111800481853631e-07,7.919177532196045e-07,0.9762539833063584,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CAZ,"Carbon dioxide, fossil",biosphere,0.15359466077940068,0.1499473994004788,0.9762539833063584,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CAZ,"Carbon dioxide, non-fossil",biosphere,0.004896978119258367,0.00478069439509006,0.9762539833063584,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CHA,Sulfur dioxide,biosphere,7.898408716419663e-07,7.558372334826086e-07,0.9569487483109488,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CHA,"Carbon dioxide, fossil",biosphere,0.16248554596368792,0.15549033982857227,0.9569487483109488,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CHA,"Carbon dioxide, non-fossil",biosphere,0.0029201792962568235,0.0027944619223965145,0.9569487483109488,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CHA,"market for petrol, low-sulfur",technosphere,0.052680851497972414,0.05041287490093967,0.9569487483109488,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",EUR,Sulfur dioxide,biosphere,8.943140586264553e-07,7.919177532196045e-07,0.8855029679795958,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",EUR,"market for petrol, low-sulfur",technosphere,0.0556500832395547,0.04927831387693725,0.8855029679795958,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",EUR,"Carbon dioxide, fossil",biosphere,0.12754499967264749,0.11294147576108593,0.8855029679795958,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",EUR,"Carbon dioxide, non-fossil",biosphere,0.04723008304548501,0.041822378714699765,0.8855029679795958,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",IND,"market for petrol, low-sulfur",technosphere,0.0523447244476988,0.05138981587394578,0.9817573101429328,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",IND,Sulfur dioxide,biosphere,8.411959199951691e-07,8.258502437176668e-07,0.9817573101429328,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",IND,"Carbon dioxide, fossil",biosphere,0.1643331638938172,0.16133528495167168,0.9817573101429328,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",IND,"Carbon dioxide, non-fossil",biosphere,9.40054146698232e-06,9.229050304511661e-06,0.9817573101429328,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",JPN,Sulfur dioxide,biosphere,7.400127571872134e-07,7.31399742579306e-07,0.9883609917204057,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",JPN,"Carbon dioxide, fossil",biosphere,0.15742795071537327,0.15559564549355748,0.9883609917204057,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",JPN,"Carbon dioxide, non-fossil",biosphere,0.0004852966167032574,0.00047964824536338917,0.9883609917204057,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",JPN,"market for petrol, low-sulfur",technosphere,0.050296598979918304,0.0497111964479556,0.9883609917204057,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",LAM,"market for petrol, low-sulfur",technosphere,0.05352207798021128,0.05059643446779729,0.9453376321917902,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",LAM,Sulfur dioxide,biosphere,8.601163555957226e-07,8.131003590082923e-07,0.9453376321917902,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",LAM,"Carbon dioxide, fossil",biosphere,0.13821300327294156,0.1306579532521587,0.9453376321917902,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",LAM,"Carbon dioxide, non-fossil",biosphere,0.029906912825125267,0.028272130156270205,0.9453376321917902,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",MEA,Sulfur dioxide,biosphere,8.590273778510755e-07,7.980959860910614e-07,0.9290693249935309,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",MEA,"Carbon dioxide, fossil",biosphere,0.16781682790881366,0.15591346702779704,0.9290693249935309,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",MEA,"market for petrol, low-sulfur",technosphere,0.053454314646345424,0.049662764026471955,0.9290693249935309,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",MEA,"Carbon dioxide, non-fossil",biosphere,9.41080983861905e-06,8.74329474440828e-06,0.9290693249935309,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",OAS,Sulfur dioxide,biosphere,7.931183410725289e-07,8.057534110504119e-07,1.0159308760415207,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.15493493176670647,0.15740318095918332,1.0159308760415207,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,1.4839480716946331e-05,1.507588664476854e-05,1.0159308760415207,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",OAS,"market for petrol, low-sulfur",technosphere,0.04935302232337972,0.05013925920428788,1.0159308760415207,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",REF,"market for petrol, low-sulfur",technosphere,0.05260492963003934,0.051784723516686074,0.9844081891350938,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",REF,Sulfur dioxide,biosphere,8.453774977961023e-07,8.321965317410178e-07,0.9844081891350938,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",REF,"Carbon dioxide, fossil",biosphere,0.16514459475136475,0.16256969146463993,0.9844081891350938,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",REF,"Carbon dioxide, non-fossil",biosphere,1.4901551528568917e-05,1.466920935554182e-05,0.9844081891350938,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",SSA,Sulfur dioxide,biosphere,8.460708897987689e-07,8.272669331340424e-07,0.9777749631958159,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",SSA,"Carbon dioxide, fossil",biosphere,0.16529283766407044,0.16161919826351848,0.9777749631958159,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",SSA,"market for petrol, low-sulfur",technosphere,0.05264807702584938,0.05147797157628036,0.9777749631958159,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",SSA,"Carbon dioxide, non-fossil",biosphere,2.1215463001690807e-06,2.074394855566042e-06,0.9777749631958159,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",USA,Sulfur dioxide,biosphere,8.316200044444849e-07,8.11217611899868e-07,0.9754666885890443,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",USA,"Carbon dioxide, fossil",biosphere,0.14927430726328614,0.14561211419754125,0.9754666885890443,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",USA,"Carbon dioxide, non-fossil",biosphere,0.01323172452533113,0.012907106507047201,0.9754666885890443,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",USA,"market for petrol, low-sulfur",technosphere,0.05174884820897682,0.050479277600707716,0.9754666885890443,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",World,Sulfur dioxide,biosphere,7.860591991939621e-07,7.978996817927e-07,1.0150630927172908,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",World,"market for petrol, low-sulfur",technosphere,0.04927831387693725,0.05002059768781731,1.0150630927172908,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.14614254589988943,0.14834390461872038,1.0150630927172908,operating energy
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.008592222305946957,0.00872164774718901,1.0150630927172908,operating energy
+2050,"transport, passenger car, battery electric, Small",CAZ,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.12039710717222692,0.808379298153218,operating energy
+2050,"transport, passenger car, battery electric, Small",CHA,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.12133108028619022,0.8146502505713654,operating energy
+2050,"transport, passenger car, battery electric, Small",EUR,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, battery electric, Small",IND,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, battery electric, Small",JPN,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, battery electric, Small",LAM,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, battery electric, Small",MEA,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, battery electric, Small",NEU,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, battery electric, Small",OAS,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, battery electric, Small",REF,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, battery electric, Small",SSA,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, battery electric, Small",World,"market group for electricity, low voltage",technosphere,0.1489364057779312,0.11914912462234498,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",CAZ,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",CAZ,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",CHA,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",CHA,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",EUR,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",EUR,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",IND,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",IND,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",JPN,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",JPN,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",LAM,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",LAM,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",MEA,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",MEA,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",NEU,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",NEU,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",OAS,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",OAS,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",REF,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",REF,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",SSA,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",SSA,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",World,"market group for electricity, low voltage",technosphere,0.01807767123802436,0.01446213699041949,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Small",World,"market for hydrogen, gaseous, low pressure",technosphere,0.007376776813390329,0.005901421450712263,0.8,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",CHA,"Carbon dioxide, non-fossil",biosphere,0.0009542649635176789,0.0008354396678236689,0.8754797669024881,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03632511936265225,0.03180190703231985,0.8754797669024881,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",CHA,"Carbon dioxide, fossil",biosphere,0.1003928180582821,0.08789188095234872,0.8754797669024881,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",EUR,"Carbon dioxide, non-fossil",biosphere,0.015954122330476873,0.016197962381837884,1.0152838273588516,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",technosphere,0.032385830732709585,0.032880810178501314,1.0152838273588516,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",EUR,"Carbon dioxide, fossil",biosphere,0.07440234541378288,0.07553949801618079,1.0152838273588516,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",technosphere,0.032040571940238224,0.03599692584655147,1.1234795032277387,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",IND,"Carbon dioxide, non-fossil",biosphere,0.0013129967819033854,0.0014751249722724353,1.1234795032277387,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",IND,"Carbon dioxide, fossil",biosphere,0.08808019893136125,0.09895629813960616,1.1234795032277387,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",technosphere,0.0322613175082654,0.032262231537823136,1.000028332059207,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",LAM,"Carbon dioxide, non-fossil",biosphere,2.843480349755442e-07,2.843560911409064e-07,1.000028332059207,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",LAM,"Carbon dioxide, fossil",biosphere,0.09000879150002548,0.0900113416344354,1.000028332059207,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",MEA,"Carbon dioxide, non-fossil",biosphere,7.869295509378772e-08,7.599447760826048e-08,0.9657087793651774,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03376119858873906,0.032603485879036546,0.9657087793651774,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",MEA,"Carbon dioxide, fossil",biosphere,0.09419366536962688,0.09096364960803435,0.9657087793651774,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",REF,"Carbon dioxide, non-fossil",biosphere,1.5526345928042048e-07,1.5510626240821507e-07,0.9989875475341466,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03614806777543597,0.0361114695750809,0.9989875475341466,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",REF,"Carbon dioxide, fossil",biosphere,0.10085295383000706,0.10075084500821328,0.9989875475341466,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",SSA,"Carbon dioxide, non-fossil",biosphere,3.638328981602109e-05,3.90313219224473e-05,1.0727815466885067,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03294376332997058,0.03534146137886595,1.0727815466885067,operating energy
+2050,"transport, passenger car, compressed gas, Small, EURO-6",SSA,"Carbon dioxide, fossil",biosphere,0.09187671640080189,0.09856364592511355,1.0727815466885067,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",CAZ,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",CAZ,Sulfur dioxide,biosphere,2.822321951389313e-07,2.2578575611114507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",CHA,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",CHA,Sulfur dioxide,biosphere,2.633110781051516e-07,2.106488624841213e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",EUR,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",EUR,Sulfur dioxide,biosphere,2.822321951389313e-07,2.2578575611114507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",IND,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",IND,Sulfur dioxide,biosphere,2.822321951389313e-07,2.2578575611114507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",JPN,Sulfur dioxide,biosphere,2.583942833867031e-07,2.0671542670936248e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",JPN,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",LAM,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",LAM,Sulfur dioxide,biosphere,2.822321951389313e-07,2.2578575611114507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",MEA,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",MEA,Sulfur dioxide,biosphere,2.822321951389313e-07,2.2578575611114507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",NEU,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",NEU,Sulfur dioxide,biosphere,2.822321951389313e-07,2.2578575611114507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",OAS,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",OAS,Sulfur dioxide,biosphere,2.822321951389313e-07,2.2578575611114507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",REF,Sulfur dioxide,biosphere,2.822321951389313e-07,2.2578575611114507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",REF,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",SSA,Sulfur dioxide,biosphere,2.822321951389313e-07,2.2578575611114507e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",SSA,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",World,"market group for electricity, low voltage",technosphere,0.07859876751899719,0.06287901401519776,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",World,Sulfur dioxide,biosphere,2.8014426043071854e-07,2.2411540834457485e-07,0.8,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",CAZ,"market for petrol, low-sulfur",technosphere,0.04370464457875279,0.04141582021340016,0.9476297224834234,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",CAZ,Sulfur dioxide,biosphere,7.023471535170282e-07,6.655650381743638e-07,0.9476297224834234,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",CAZ,"Carbon dioxide, fossil",biosphere,0.13298746001480524,0.12602286982760524,0.9476297224834234,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",CAZ,"Carbon dioxide, non-fossil",biosphere,0.004239969530995499,0.004017921149995435,0.9476297224834234,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",CHA,Sulfur dioxide,biosphere,6.954888005706482e-07,6.041297939716918e-07,0.8686405783615834,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",CHA,"Carbon dioxide, fossil",biosphere,0.14307550169494046,0.12428118654166681,0.8686405783615834,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",CHA,"Carbon dioxide, non-fossil",biosphere,0.0025713432870176282,0.002233573120001168,0.8686405783615834,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",CHA,"market for petrol, low-sulfur",technosphere,0.046387752295662624,0.04029428398299825,0.8686405783615834,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",EUR,Sulfur dioxide,biosphere,7.288133123961644e-07,6.224086284637452e-07,0.8540028260699766,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",EUR,"market for petrol, low-sulfur",technosphere,0.04535154250008025,0.038730345461701184,0.8540028260699766,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",EUR,"Carbon dioxide, fossil",biosphere,0.10394166794732504,0.08876647817344269,0.8540028260699766,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",EUR,"Carbon dioxide, non-fossil",biosphere,0.03848973790927204,0.03287034494921103,0.8540028260699766,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",IND,"market for petrol, low-sulfur",technosphere,0.042360475664493163,0.045145940445193954,1.0657562205571638,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",IND,Sulfur dioxide,biosphere,6.807459433967819e-07,7.255092237941753e-07,1.0657562205571638,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",IND,"Carbon dioxide, fossil",biosphere,0.1329882058496392,0.1417330076449896,1.0657562205571638,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",IND,"Carbon dioxide, non-fossil",biosphere,7.607479306592657e-06,8.107718393761026e-06,1.0657562205571638,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",JPN,Sulfur dioxide,biosphere,5.792362940851312e-07,5.751658298564358e-07,0.9929727051459639,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",JPN,"Carbon dioxide, fossil",biosphere,0.12322488103090706,0.12235894345854936,0.9929727051459639,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",JPN,"Carbon dioxide, non-fossil",biosphere,0.00037986023184713224,0.00037719084199462,0.9929727051459639,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",JPN,"market for petrol, low-sulfur",technosphere,0.039369072629073125,0.03909241454757867,0.9929727051459639,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",LAM,"market for petrol, low-sulfur",technosphere,0.040228982597331965,0.039610346756171186,0.9846221355545339,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",LAM,Sulfur dioxide,biosphere,6.464921906688683e-07,6.3655052139571e-07,0.9846221355545339,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",LAM,"Carbon dioxide, fossil",biosphere,0.10388551254396197,0.10228797521421319,0.9846221355545339,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",LAM,"Carbon dioxide, non-fossil",biosphere,0.02247903521284655,0.022133355656478542,0.9846221355545339,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",MEA,Sulfur dioxide,biosphere,6.794228365368293e-07,6.492996654964893e-07,0.9556635876505352,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",MEA,"Carbon dioxide, fossil",biosphere,0.13272986366515901,0.1268450976986123,0.9556635876505352,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",MEA,"market for petrol, low-sulfur",technosphere,0.042278143281191866,0.04040368208730719,0.9556635876505352,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",MEA,"Carbon dioxide, non-fossil",biosphere,7.443207707020672e-06,7.113202580919491e-06,0.9556635876505352,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",OAS,Sulfur dioxide,biosphere,6.598505504557226e-07,7.090570058870671e-07,1.074572121516547,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.12890119427463173,0.1385136297977076,1.074572121516547,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,1.2346000769600444e-05,1.3266668239234471e-05,1.074572121516547,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",OAS,"market for petrol, low-sulfur",technosphere,0.041060227322559456,0.0441221755839544,1.074572121516547,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",REF,"market for petrol, low-sulfur",technosphere,0.040691889018983345,0.040307369741012566,0.9905504687238434,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",REF,Sulfur dioxide,biosphere,6.539312400130576e-07,6.477518963080983e-07,0.9905504687238434,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",REF,"Carbon dioxide, fossil",biosphere,0.127745547213319,0.126538411669537,0.9905504687238434,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",REF,"Carbon dioxide, non-fossil",biosphere,1.152690984049767e-05,1.141798594544245e-05,0.9905504687238434,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",SSA,Sulfur dioxide,biosphere,6.769647800953862e-07,7.282373805297848e-07,1.0757389482318036,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",SSA,"Carbon dioxide, fossil",biosphere,0.1322553846634626,0.14227226839586585,1.0757389482318036,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",SSA,"market for petrol, low-sulfur",technosphere,0.04212518689404082,0.04531570424346363,1.0757389482318036,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",SSA,"Carbon dioxide, non-fossil",biosphere,1.697508046782104e-06,1.826075520860404e-06,1.0757389482318036,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",World,Sulfur dioxide,biosphere,7.143569173463677e-07,7.722551143608962e-07,1.08104939646921,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",World,"market for petrol, low-sulfur",technosphere,0.04478327446021136,0.04841293182712648,1.08104939646921,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.13281180357941977,0.143576120103519,1.08104939646921,operating energy
+2050,"transport, passenger car, gasoline, Small, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.0078084621708304274,0.008441333317128893,1.08104939646921,operating energy
+2050,"transport, passenger car, battery electric, Van",CAZ,"market group for electricity, low voltage",technosphere,0.2550250887870789,0.20402007102966313,0.8,operating energy
+2050,"transport, passenger car, battery electric, Van",EUR,"market group for electricity, low voltage",technosphere,0.2550250887870789,0.20402007102966313,0.8,operating energy
+2050,"transport, passenger car, battery electric, Van",LAM,"market group for electricity, low voltage",technosphere,0.2550250887870789,0.20402007102966313,0.8,operating energy
+2050,"transport, passenger car, battery electric, Van",NEU,"market group for electricity, low voltage",technosphere,0.2550250887870789,0.20402007102966313,0.8,operating energy
+2050,"transport, passenger car, battery electric, Van",OAS,"market group for electricity, low voltage",technosphere,0.2550250887870789,0.20402007102966313,0.8,operating energy
+2050,"transport, passenger car, battery electric, Van",SSA,"market group for electricity, low voltage",technosphere,0.2550250887870789,0.20402007102966313,0.8,operating energy
+2050,"transport, passenger car, battery electric, Van",World,"market group for electricity, low voltage",technosphere,0.2550250887870789,0.20402007102966313,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",CAZ,"market for hydrogen, gaseous, low pressure",technosphere,0.01236146682179706,0.00988917345743765,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",CAZ,"market group for electricity, low voltage",technosphere,0.03029324851181027,0.02423459880944822,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",EUR,"market group for electricity, low voltage",technosphere,0.03029324851181027,0.02423459880944822,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",EUR,"market for hydrogen, gaseous, low pressure",technosphere,0.01236146682179706,0.00988917345743765,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",LAM,"market for hydrogen, gaseous, low pressure",technosphere,0.01236146682179706,0.00988917345743765,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",LAM,"market group for electricity, low voltage",technosphere,0.03029324851181027,0.02423459880944822,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",NEU,"market group for electricity, low voltage",technosphere,0.03029324851181027,0.02423459880944822,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",NEU,"market for hydrogen, gaseous, low pressure",technosphere,0.01236146682179706,0.00988917345743765,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",OAS,"market group for electricity, low voltage",technosphere,0.03029324851181027,0.02423459880944822,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",OAS,"market for hydrogen, gaseous, low pressure",technosphere,0.01236146682179706,0.00988917345743765,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",SSA,"market group for electricity, low voltage",technosphere,0.03029324851181027,0.02423459880944822,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",SSA,"market for hydrogen, gaseous, low pressure",technosphere,0.01236146682179706,0.00988917345743765,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",World,"market group for electricity, low voltage",technosphere,0.03029324851181027,0.02423459880944822,0.8,operating energy
+2050,"transport, passenger car, fuel cell electric, Van",World,"market for hydrogen, gaseous, low pressure",technosphere,0.01236146682179706,0.00988917345743765,0.8,operating energy
+2050,"transport, passenger car, compressed gas, Van, EURO-6",CAZ,"Carbon dioxide, non-fossil",biosphere,0.003676470909127069,0.0036765152593344103,1.000012063255344,operating energy
+2050,"transport, passenger car, compressed gas, Van, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",technosphere,0.053459657370846625,0.0534603022683441,1.000012063255344,operating energy
+2050,"transport, passenger car, compressed gas, Van, EURO-6",CAZ,"Carbon dioxide, fossil",biosphere,0.145475973155535,0.1454777280693456,1.000012063255344,operating energy
+2050,"transport, passenger car, compressed gas, Van, EURO-6",NEU,"Carbon dioxide, non-fossil",biosphere,2.475212342424103e-05,2.36857564179773e-05,0.9569181605962991,operating energy
+2050,"transport, passenger car, compressed gas, Van, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",technosphere,0.055910314545289025,0.05350159535303848,0.9569181605962991,operating energy
+2050,"transport, passenger car, compressed gas, Van, EURO-6",NEU,"Carbon dioxide, fossil",biosphere,0.15596502545793214,0.14924576527855937,0.9569181605962991,operating energy
+2050,"transport, passenger car, compressed gas, Van, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.0026334033559702154,0.0026335485625842412,1.0000551402859332,operating energy
+2050,"transport, passenger car, compressed gas, Van, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",technosphere,0.053447210247130075,0.05345015734158543,1.0000551402859332,operating energy
+2050,"transport, passenger car, compressed gas, Van, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.1464843132335227,0.14649239042043913,1.0000551402859332,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",CAZ,"market group for electricity, low voltage",technosphere,0.1508553028106689,0.12068424224853512,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",CAZ,Sulfur dioxide,biosphere,3.79527747631073e-07,3.0362219810485844e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",EUR,"market group for electricity, low voltage",technosphere,0.1508553028106689,0.12068424224853512,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",EUR,Sulfur dioxide,biosphere,3.79527747631073e-07,3.0362219810485844e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",LAM,"market group for electricity, low voltage",technosphere,0.1508553028106689,0.12068424224853512,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",LAM,Sulfur dioxide,biosphere,3.79527747631073e-07,3.0362219810485844e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",NEU,"market group for electricity, low voltage",technosphere,0.1508553028106689,0.12068424224853512,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",NEU,Sulfur dioxide,biosphere,3.79527747631073e-07,3.0362219810485844e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",OAS,"market group for electricity, low voltage",technosphere,0.1508553028106689,0.12068424224853512,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",OAS,Sulfur dioxide,biosphere,3.79527747631073e-07,3.0362219810485844e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",SSA,Sulfur dioxide,biosphere,3.79527747631073e-07,3.0362219810485844e-07,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",SSA,"market group for electricity, low voltage",technosphere,0.1508553028106689,0.12068424224853512,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",World,"market group for electricity, low voltage",technosphere,0.1508553028106689,0.12068424224853512,0.8,operating energy
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",World,Sulfur dioxide,biosphere,3.7672002700012705e-07,3.013760216001017e-07,0.8,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",CAZ,"market for petrol, low-sulfur",technosphere,0.0658647546298443,0.0630401395364735,0.9571149227041846,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",CAZ,Sulfur dioxide,biosphere,1.0584670146677412e-06,1.0130745749286441e-06,0.9571149227041846,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",CAZ,"Carbon dioxide, fossil",biosphere,0.2004177475219578,0.19182281692802536,0.9571149227041846,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",CAZ,"Carbon dioxide, non-fossil",biosphere,0.006389814068704274,0.006115786398462001,0.9571149227041846,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",EUR,Sulfur dioxide,biosphere,1.2000220375680397e-06,9.966511917745058e-07,0.8305274074752123,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",EUR,"market for petrol, low-sulfur",technosphere,0.07467323587748793,0.062018169001115064,0.8305274074752123,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",EUR,"Carbon dioxide, fossil",biosphere,0.17114435938130212,0.14214008110095888,0.8305274074752123,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",EUR,"Carbon dioxide, non-fossil",biosphere,0.06337498394363708,0.0526346611134921,0.8305274074752123,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",LAM,"market for petrol, low-sulfur",technosphere,0.06356896019893152,0.06188820360137063,0.9735601055562154,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",LAM,Sulfur dioxide,biosphere,1.0215728868259897e-06,9.945626075316783e-07,0.9735601055562154,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",LAM,"Carbon dioxide, fossil",biosphere,0.16415761935253861,0.15981730922471452,0.9735601055562154,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",LAM,"Carbon dioxide, non-fossil",biosphere,0.0355208807803803,0.034581712441996794,0.9735601055562154,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",OAS,Sulfur dioxide,biosphere,1.0607065276131622e-06,1.042752284006049e-06,0.9830733165680479,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",OAS,"Carbon dioxide, fossil",biosphere,0.20720803057316595,0.20370068583509568,0.9830733165680479,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",OAS,"Carbon dioxide, non-fossil",biosphere,1.9846135013096317e-05,1.9510205768381854e-05,0.9830733165680479,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",OAS,"market for petrol, low-sulfur",technosphere,0.06600411180262007,0.06488688109692994,0.9830733165680479,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",SSA,Sulfur dioxide,biosphere,1.047541300057553e-06,1.037147000117898e-06,0.9900774318501008,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",SSA,"Carbon dioxide, fossil",biosphere,0.2046531465792371,0.2026224617852133,0.9900774318501008,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",SSA,"market for petrol, low-sulfur",technosphere,0.06518488506189027,0.06453808359752031,0.9900774318501008,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",SSA,"Carbon dioxide, non-fossil",biosphere,2.6267388961253133e-06,2.6006749004165187e-06,0.9900774318501008,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",World,Sulfur dioxide,biosphere,1.0299377344328029e-06,9.887056517477465e-07,0.9599664316525276,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",World,"market for petrol, low-sulfur",technosphere,0.06456713917109322,0.0619822861920865,0.9599664316525276,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",World,"Carbon dioxide, fossil",biosphere,0.1914839481622805,0.18381816243608198,0.9599664316525276,operating energy
+2050,"transport, passenger car, gasoline, Van, EURO-6",World,"Carbon dioxide, non-fossil",biosphere,0.011257999102860723,0.010807301226320565,0.9599664316525276,operating energy
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",CAZ,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",CHA,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",EUR,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",IND,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",JPN,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",LAM,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",MEA,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",NEU,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",OAS,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",REF,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",SSA,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",USA,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",World,"lorry production, diesel, 3.5 metric ton",technosphere,3.921568713849411e-06,4.901960892311763e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",CAZ,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",CHA,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",EUR,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",IND,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",JPN,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",LAM,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",MEA,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",NEU,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",OAS,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",REF,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",SSA,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",USA,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",World,"lorry production, diesel, 7.5 metric ton",technosphere,1.151493363847424e-06,1.43936670480928e-06,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",EUR,"Carbon dioxide, non-fossil",biosphere,0.02352419781045349,0.02370989671097803,1.0078939525173531,operating energy
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",technosphere,0.04775259162685336,0.0481295483177363,1.0078939525173531,operating energy
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",EUR,"Carbon dioxide, fossil",biosphere,0.10970553282846739,0.11057154309550624,1.0078939525173531,operating energy
+2050,"transport, freight, lorry, battery electric, 18 metric ton",JPN,"market group for electricity, low voltage",technosphere,0.23486096061968345,0.18788876849578665,0.8000000000001699,operating energy
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"market group for electricity, low voltage",technosphere,0.029952812199087374,0.023962249759270884,0.8000000000000327,operating energy
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"market for hydrogen, gaseous, low pressure",technosphere,0.01222254833694,0.0097780386695524,0.8000000000000327,operating energy
+2050,"transport, freight, lorry, diesel, 18 metric ton",CAZ,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",CHA,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",EUR,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",IND,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",JPN,"Carbon dioxide, non-fossil",biosphere,0.03954559089841628,0.03163647271873389,0.8000000000000219,operating energy
+2050,"transport, freight, lorry, diesel, 18 metric ton",JPN,"market for diesel, low-sulfur",technosphere,0.05796533306320313,0.046372266450563776,0.8000000000000219,operating energy
+2050,"transport, freight, lorry, diesel, 18 metric ton",JPN,Sulfur dioxide,biosphere,1.1658237141992772e-06,9.326589713594472e-07,0.8000000000000219,operating energy
+2050,"transport, freight, lorry, diesel, 18 metric ton",JPN,"Carbon dioxide, fossil",biosphere,0.1429063506695135,0.11432508053561392,0.8000000000000219,operating energy
+2050,"transport, freight, lorry, diesel, 18 metric ton",LAM,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",MEA,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",NEU,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",OAS,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",REF,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",SSA,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",USA,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 18 metric ton",World,"lorry production, diesel, 18 metric ton",technosphere,7.936507581660644e-07,9.920634477075805e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",JPN,"Carbon dioxide, non-fossil",biosphere,0.00022379695729868453,0.00017903756583897596,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",technosphere,0.06071060627101644,0.048568485016820845,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",JPN,"Carbon dioxide, fossil",biosphere,0.1691587945388372,0.1353270356310912,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, battery electric, 26 metric ton",JPN,"market group for electricity, low voltage",technosphere,0.14527310960939588,0.11621848768753512,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"market group for electricity, low voltage",technosphere,0.018412136463888548,0.01472970917111317,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"market for hydrogen, gaseous, low pressure",technosphere,0.007513258735788092,0.006010606988631425,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 26 metric ton",CAZ,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",CHA,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",EUR,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",IND,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",JPN,"Carbon dioxide, non-fossil",biosphere,0.024719155166509094,0.01977532413321041,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 26 metric ton",JPN,"market for diesel, low-sulfur",technosphere,0.036232966298275264,0.028986373038624804,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 26 metric ton",JPN,Sulfur dioxide,biosphere,7.287330350047264e-07,5.829864280038736e-07,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 26 metric ton",JPN,"Carbon dioxide, fossil",biosphere,0.08932789158603102,0.07146231326883615,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 26 metric ton",LAM,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",MEA,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",NEU,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",OAS,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",REF,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",SSA,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",USA,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 26 metric ton",World,"lorry production, diesel, 26 metric ton",technosphere,2.1893814876512503e-07,2.736726859564063e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",JPN,"Carbon dioxide, non-fossil",biosphere,0.00013914183842006784,0.00011131347073607189,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",technosphere,0.03774575610906119,0.03019660488725373,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",JPN,"Carbon dioxide, fossil",biosphere,0.10517151770586065,0.08413721416470184,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, battery electric, 40 metric ton",JPN,"market group for electricity, low voltage",technosphere,0.120672853327744,0.09653828266221048,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"market group for electricity, low voltage",technosphere,0.015197640205628065,0.012158112164504378,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"market for hydrogen, gaseous, low pressure",technosphere,0.006201550985799308,0.004961240788640232,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 40 metric ton",CAZ,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",CHA,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",EUR,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",IND,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",JPN,"Carbon dioxide, non-fossil",biosphere,0.01925230165994943,0.015401841327961985,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 40 metric ton",JPN,"market for diesel, low-sulfur",technosphere,0.028219734554451162,0.022575787643564507,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 40 metric ton",JPN,Sulfur dioxide,biosphere,5.675674537071246e-07,4.540539629657716e-07,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 40 metric ton",JPN,"Carbon dioxide, fossil",biosphere,0.0695722610209416,0.05565780881676211,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, diesel, 40 metric ton",LAM,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",MEA,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",NEU,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",OAS,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",REF,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",SSA,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",USA,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",World,"Carbon dioxide, non-fossil",biosphere,0.0055850107049649,0.005658328038536741,1.0131275188974416,operating energy
+2050,"transport, freight, lorry, diesel, 40 metric ton",World,"market for diesel, low-sulfur",technosphere,0.022575787643564507,0.022872151722480027,1.0131275188974416,operating energy
+2050,"transport, freight, lorry, diesel, 40 metric ton",World,"lorry production, diesel, 40 metric ton",technosphere,1.0939422379454121e-07,1.367427797431765e-07,1.25,remove manufacture scaling
+2050,"transport, freight, lorry, diesel, 40 metric ton",World,Sulfur dioxide,biosphere,4.3406751148107664e-07,4.3976574094080996e-07,1.0131275188974416,operating energy
+2050,"transport, freight, lorry, diesel, 40 metric ton",World,"Carbon dioxide, fossil",biosphere,0.0654793872374993,0.06633896913085244,1.0131275188974416,operating energy
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",JPN,"Carbon dioxide, non-fossil",biosphere,0.00010826694193878155,8.661355355103896e-05,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",technosphere,0.029370156607803892,0.023496125286246835,0.8000000000001267,operating energy
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",JPN,"Carbon dioxide, fossil",biosphere,0.08183446999383408,0.06546757599507763,0.8000000000001267,operating energy

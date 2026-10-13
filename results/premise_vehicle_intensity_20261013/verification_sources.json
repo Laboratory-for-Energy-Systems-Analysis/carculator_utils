@@ -1,0 +1,22 @@
+{
+  "scripts": {
+    "dev/audit_premise_vehicle_intensity.py": "d64114a4dca49cce852d4bdf802487b421cbf5f57d82490b75a2d670e80f9cb8",
+    "dev/audit_premise_vehicle_intensity_builds.py": "7c82923c91a7e1a669d5df51282cad753e9f375210fc3c1dd52bfc4fc073de8f",
+    "dev/build_premise_vehicle_intensity.py": "02e9b1741c750941cac4fcef08fe4f39da2d550366405750964fb5e057273314",
+    "dev/install_premise_vehicle_intensities.py": "8b744aaea6b1e921bbcb391b8929e2937287d68dd35488ba6cd9d3101b3013f5"
+  },
+  "tests": {
+    "tests": 223,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "junit_sha256": "b11a8d9f7bad3470b104af7bf27789be4b1dbb48d85589da20787f204daaac6a",
+  "junit_private_path": "/private/tmp/premise-vehicle-intensity-20261013/tests.xml",
+  "final_runtime_sources_match_both_builds": true,
+  "premise_commits": [
+    "ae2f3c5",
+    "c88ab55",
+    "9e3671b"
+  ]
+}

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="Docutils 0.22.4: https://docutils.sourceforge.io/" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Direct vehicle energy intensities with cross-model compatibility</title>
+<style type="text/css">
+
+/* Minimal style sheet for the HTML output of Docutils.                    */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: minimal.css 10018 2025-03-06 16:19:15Z milde $                                                               */
+/* :Copyright: © 2015, 2021 Günter Milde.                                  */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+
+/* This CSS3 stylesheet defines rules for Docutils elements without        */
+/* HTML equivalent. It is required to make the document semantics visible. */
+/*                                                                         */
+/* .. _validates: http://jigsaw.w3.org/css-validator/validator$link        */
+
+/* titles */
+p.topic-title,
+p.admonition-title,
+p.system-message-title {
+  font-weight: bold;
+}
+p.sidebar-title,
+p.rubric {
+  font-weight: bold;
+  font-size: larger;
+}
+p.rubric {
+  color: maroon;
+}
+p.subtitle,
+p.section-subtitle,
+p.sidebar-subtitle {
+  font-weight: bold;
+  margin-top: -0.5em;
+}
+h1 + p.subtitle {
+  font-size: 1.6em;
+}
+a.toc-backref {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Warnings, Errors */
+.system-messages h2,
+.system-message-title,
+pre.problematic,
+span.problematic {
+  color: red;
+}
+
+/* Inline Literals */
+.docutils.literal {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+/* do not wrap at hyphens and similar: */
+.literal > span.pre { white-space: nowrap; }
+
+/* keep line-breaks (\n) visible */
+.pre-wrap { white-space: pre-wrap; }
+
+/* Lists */
+
+/* compact and simple lists: no margin between items */
+.simple  li, .simple  ul, .simple  ol, .simple  > li p,
+.compact li, .compact ul, .compact ol, .compact > li p,
+dl.simple  > dd, dl.compact > dd, dl.docinfo > dd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Nested Paragraphs */
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+details > p:last-child { margin-bottom: 1em; }
+
+/* Table of Contents */
+.contents ul.auto-toc { /* section numbers present */
+  list-style-type: none;
+}
+
+/* Enumerated Lists */
+ol.arabic     { list-style: decimal }
+ol.loweralpha { list-style: lower-alpha }
+ol.upperalpha { list-style: upper-alpha }
+ol.lowerroman { list-style: lower-roman }
+ol.upperroman { list-style: upper-roman }
+
+/* Definition Lists and Derivatives */
+dt .classifier { font-style: italic }
+dt .classifier:before {
+  font-style: normal;
+  margin: 0.5em;
+  content: ":";
+}
+/* Field Lists and similar */
+/* bold field name, content starts on the same line */
+dl.field-list,
+dl.option-list,
+dl.docinfo {
+  display: flow-root;
+}
+dl.field-list > dt,
+dl.option-list > dt,
+dl.docinfo > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.25em;
+}
+/* Offset for field content (corresponds to the --field-name-limit option) */
+dl.field-list > dd,
+dl.option-list > dd,
+dl.docinfo > dd {
+  margin-left:  9em; /* ca. 14 chars in the test examples, fit all Docinfo fields */
+}
+/* start nested lists on new line */
+dd > dl:first-child,
+dd > ul:first-child,
+dd > ol:first-child {
+  clear: left;
+}
+/* start field-body on a new line after long field names */
+dl.field-list > dd > *:first-child,
+dl.option-list > dd > *:first-child
+{
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+
+/* Bibliographic Fields (docinfo) */
+dl.docinfo pre.address {
+  font: inherit;
+  margin: 0;
+}
+dl.docinfo > dd.authors > p { margin: 0; }
+
+/* Option Lists */
+dl.option-list > dt { font-weight: normal; }
+span.option { white-space: nowrap; }
+
+/* Footnotes and Citations  */
+
+.footnote, .citation { margin: 1em 0; } /* default paragraph skip (Firefox) */
+/* hanging indent */
+.citation { padding-left: 2em; }
+.footnote { padding-left: 1.7em; }
+.footnote.superscript { padding-left: 1.0em; }
+.citation > .label { margin-left: -2em; }
+.footnote > .label { margin-left: -1.7em; }
+.footnote.superscript > .label { margin-left: -1.0em; }
+
+.footnote > .label + *,
+.citation > .label + * {
+  display: inline-block;
+  margin-top: 0;
+  vertical-align: top;
+}
+.footnote > .backrefs + *,
+.citation > .backrefs + * {
+  margin-top: 0;
+}
+.footnote > .label + p, .footnote > .backrefs + p,
+.citation > .label + p, .citation > .backrefs + p {
+  display: inline;
+  vertical-align: inherit;
+}
+
+.backrefs { user-select: none; }
+.backrefs > a { font-style: italic; }
+
+/* superscript footnotes */
+a[role="doc-noteref"].superscript,
+.footnote.superscript > .label,
+.footnote.superscript > .backrefs {
+  vertical-align: super;
+  font-size: smaller;
+  line-height: 1;
+}
+a[role="doc-noteref"].superscript > .fn-bracket,
+.footnote.superscript > .label > .fn-bracket {
+  /* hide brackets in display but leave for copy/paste */
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+}
+[role="doc-noteref"].superscript + [role="doc-noteref"].superscript {
+  padding-left: 0.15em; /* separate consecutive footnote references */
+  /* TODO: unfortunately, "+" also selects with text between the references. */
+}
+
+/* Alignment */
+.align-left   {
+  text-align: left;
+  margin-right: auto;
+}
+.align-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.align-right  {
+  text-align: right;
+  margin-left: auto;
+}
+.align-top    { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+
+/* reset inner alignment in figures and tables */
+figure.align-left, figure.align-right,
+table.align-left, table.align-center, table.align-right {
+  text-align: inherit;
+}
+
+/* Text Blocks */
+.topic { margin: 1em 2em; }
+.sidebar,
+.admonition,
+.system-message {
+  margin: 1em 2em;
+  border: thin solid;
+  padding: 0.5em 1em;
+}
+div.line-block { display: block; }
+div.line-block div.line-block, pre { margin-left: 2em; }
+
+/* Code line numbers: don't copy with drag-and-drop */
+pre.code .ln { display: none; }
+pre.code code:before {
+  content: attr(data-lineno);
+  font-size: small;
+  color: gray;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+td, th {
+  border: thin solid silver;
+  padding: 0 1ex;
+}
+.borderless td, .borderless th {
+  border: 0;
+  padding: 0;
+  padding-right: 0.5em /* separate table cells */
+}
+
+table > caption, figcaption {
+  text-align: left;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+table.captionbelow {
+  caption-side: bottom;
+}
+
+/* MathML (see "math.css" for --math-output=HTML) */
+math .boldsymbol { font-weight: bold; }
+math.boxed, math .boxed {padding: 0.25em; border: thin solid; }
+/* style table similar to AMS "align" or "aligned" environment: */
+mtable.cases > mtr > mtd { text-align: left; }
+mtable.ams-align > mtr > mtd { padding-left: 0; padding-right: 0; }
+mtable.ams-align > mtr > mtd:nth-child(2n) { text-align: left; }
+mtable.ams-align > mtr > mtd:nth-child(2n+1) { text-align: right; }
+mtable.ams-align > mtr > mtd:nth-child(2n+3) { padding-left: 2em; }
+.mathscr mi, mi.mathscr {
+  font-family: STIX, XITSMathJax_Script, rsfs10,
+               "Asana Math", Garamond, cursive;
+}
+
+/* Document Header and Footer */
+header { border-bottom: 1px solid black; }
+footer { border-top: 1px solid black; }
+
+/* Images are block-level by default in Docutils */
+/* New HTML5 block elements: set display for older browsers */
+img, svg, header, footer, main, aside, nav, section, figure, video, details {
+  display: block;
+}
+svg { width: auto; height: auto; }  /* enable scaling of SVG images */
+/* inline images */
+
+p img, p svg, p video,
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img,
+h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg {
+  display: inline;
+}
+
+</style>
+<style type="text/css">
+
+/* CSS31_ style sheet for the output of Docutils HTML writers.             */
+/* Rules for easy reading and pre-defined style variants.                  */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: plain.css 10079 2025-04-10 12:01:48Z milde $                                                               */
+/* :Copyright: © 2015 Günter Milde.                                        */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+/* .. _CSS3: https://www.w3.org/Style/CSS/                                 */
+
+
+/* Document Structure */
+/* ****************** */
+
+/* "page layout" */
+body {
+  margin: 0;
+  background-color: #dbdbdb;
+  --field-indent: 9em; /* default indent of fields in field lists */
+}
+main, footer, header {
+  line-height:1.6;
+  /* avoid long lines --> better reading */
+  /* optimum is 45…75 characters/line <http://webtypography.net/2.1.2> */
+  /* OTOH: lines should not be too short because of missing hyphenation, */
+  max-width: 50rem;
+  padding: 1px 2%; /* 1px on top avoids grey bar above title (mozilla) */
+  margin: auto;
+}
+main {
+  counter-reset: table figure;
+  background-color: white;
+}
+footer, header {
+  font-size: smaller;
+  padding: 0.5em 2%;
+  border: none;
+}
+
+/* Table of Contents */
+ul.auto-toc > li > p {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+nav.contents ul {
+  padding-left: 1em;
+}
+main > nav.contents ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B29\ ';
+}
+main > nav.contents ul ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B1D\ ';
+}
+
+/* Transitions */
+hr.docutils {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+/* Paragraphs */
+
+/* vertical space (parskip) */
+p, ol, ul, dl, li,
+.footnote, .citation,
+div > math,
+table {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h1, h2, h3, h4, h5, h6,
+dd, details > p:last-child {
+  margin-bottom: 0.5em;
+}
+
+/* Lists */
+/* ===== */
+
+/* Definition Lists */
+/* Indent lists nested in definition lists */
+dd > ul:only-child, dd > ol:only-child { padding-left: 1em; }
+
+/* Description Lists */
+/* styled like in most dictionaries, encyclopedias etc. */
+dl.description {
+  display: flow-root;
+}
+dl.description > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.3em;
+}
+dl.description > dd:after {
+  display: table;
+  content: "";
+  clear: left; /* clearfix for empty descriptions */
+}
+
+/* Field Lists */
+
+dl.field-list > dd,
+dl.docinfo > dd {
+  margin-left: var(--field-indent); /* adapted in media queries or HTML */
+}
+
+/* example for custom field-name width */
+dl.field-list.narrow > dd {
+  --field-indent: 5em;
+}
+/* run-in: start field-body on same line after long field names */
+dl.field-list.run-in > dd p {
+  display: block;
+}
+
+/* Bibliographic Fields */
+
+/* generally, bibliographic fields use dl.docinfo */
+/* but dedication and abstract are placed into divs */
+div.abstract p.topic-title {
+  text-align: center;
+}
+div.dedication {
+  margin: 2em 5em;
+  text-align: center;
+  font-style: italic;
+}
+div.dedication p.topic-title {
+  font-style: normal;
+}
+
+/* disclosures */
+details { padding-left: 1em; }
+summary { margin-left: -1em; }
+
+/* Text Blocks */
+/* =========== */
+
+/* Literal Blocks */
+pre.literal-block, pre.doctest-block,
+pre.math, pre.code {
+  font-family: monospace;
+}
+
+/* Block Quotes and Topics */
+bockquote { margin: 1em 2em; }
+blockquote p.attribution {
+  text-align: right;
+  margin-left: 20%;
+}
+
+/* Tables */
+/* ====== */
+
+/* th { vertical-align: bottom; } */
+
+table tr { text-align: left; }
+
+/* "booktabs" style (no vertical lines) */
+table.booktabs {
+  border: 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.booktabs * {
+  border: 0;
+}
+table.booktabs th {
+  border-bottom: thin solid;
+}
+
+/* numbered tables (counter defined in div.document) */
+table.numbered > caption:before {
+  counter-increment: table;
+  content: "Table " counter(table) ": ";
+  font-weight: bold;
+}
+
+/* Explicit Markup Blocks */
+/* ====================== */
+
+/* Footnotes and Citations */
+/* ----------------------- */
+
+/* line on the left */
+.footnote-list {
+  border-left: solid thin;
+  padding-left: 0.25em;
+}
+
+/* Directives */
+/* ---------- */
+
+/* Body Elements */
+/* ~~~~~~~~~~~~~ */
+
+/* Images and Figures */
+
+/* let content flow to the side of aligned images and figures */
+figure.align-left,
+img.align-left,
+svg.align-left,
+video.align-left,
+div.align-left,
+object.align-left {
+  clear: left;
+  float: left;
+  margin-right: 1em;
+}
+figure.align-right,
+img.align-right,
+svg.align-right,
+video.align-right,
+div.align-right,
+object.align-right {
+  clear: right;
+  float: right;
+  margin-left: 1em;
+}
+/* Stop floating sidebars, images and figures */
+h1, h2, h3, h4, footer, header { clear: both; }
+
+/* Numbered figures */
+figure.numbered > figcaption > p:before {
+  counter-increment: figure;
+  content: "Figure " counter(figure) ": ";
+  font-weight: bold;
+}
+
+/* Admonitions and System Messages */
+.caution p.admonition-title,
+.attention p.admonition-title,
+.danger p.admonition-title,
+.error p.admonition-title,
+.warning p.admonition-title,
+div.error {
+  color: red;
+}
+
+/* Sidebar */
+/* Move right. In a layout with fixed margins, */
+/* it can be moved into the margin.            */
+aside.sidebar {
+  width: 30%;
+  max-width: 26em;
+  float: right;
+  clear: right;
+  margin-left: 1em;
+  margin-right: -1%;
+  background-color: #fffffa;
+}
+
+
+/* Code */
+pre.code { padding: 0.7ex }
+pre.code, code { background-color: #eeeeee }
+/* basic highlighting: for a complete scheme, see */
+/* https://docutils.sourceforge.io/sandbox/stylesheets/ */
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+
+/* Epigraph           */
+/* Highlights         */
+/* Pull-Quote         */
+/* Compound Paragraph */
+/* Container          */
+
+/* Inline Markup */
+/* ============= */
+
+sup, sub { line-height: 0.8; } /* do not add leading for lines with sup/sub */
+
+/* Inline Literals                                          */
+/* possible values: normal, nowrap, pre, pre-wrap, pre-line */
+/*   span.docutils.literal { white-space: pre-wrap; }       */
+
+/* Hyperlink References */
+a { text-decoration: none; }
+
+/* External Targets       */
+/*   span.target.external */
+/* Internal Targets       */
+/*   span.target.internal */
+/* Footnote References    */
+/*   a[role="doc-noteref"] */
+/* Citation References    */
+/*   a.citation-reference */
+
+</style>
+</head>
+<body>
+<main id="direct-vehicle-energy-intensities-with-cross-model-compatibility">
+<h1 class="title">Direct vehicle energy intensities with cross-model compatibility</h1>
+
+<p>The REMIND car/truck intensity correction is implemented, tested and installed
+in the four local encrypted scenarios. Other IAMs retain their existing
+efficiency calculation. The controlled 2020 database has no material inventory
+changes. The 2050 differences are fully explained by recovered energy trends
+and a separately corrected vehicle-manufacturing selection bug.</p>
+<section id="implemented-changes">
+<h2>Implemented changes</h2>
+<p><span class="docutils literal">energy_intensity_aliases</span> are optional, model-specific mappings. The 30
+REMIND car entries and 20 truck entries now also name their direct
+<span class="docutils literal">Energy intensity</span> series, for both REMIND and REMIND-EU. All existing
+fleet-volume, energy-use and fuel mappings were checked to be unchanged.</p>
+<p>For direct series, the efficiency index is intensity(2020) / intensity(year).
+The direct input requires MJ/vehicle-km units and a finite positive 2020 value.
+It can be used even if 2020 fleet activity is zero. Existing monotonicity rules
+and the default 1.25 maximum efficiency index remain in force. The inverse is
+the multiplier applied to vehicle energy purchases, with a minimum of 0.8
+under that cap.</p>
+<p>Missing direct inputs can use an available energy/service pair from the same
+technology and region. Otherwise they return a neutral factor explicitly marked
+<span class="docutils literal">unavailable</span>. Direct-intensity processing never borrows another technology's
+or region's curve. Array attributes and each regionalized vehicle's
+<span class="docutils literal">log parameters / IAM efficiency source</span> record the source. The separate
+EUR Large Car class remains unavailable: no SUV fleet volume or intensity was
+assigned without an agreed proxy rule.</p>
+<p>Four locally installed encrypted files each gained 545 mapped rows:
+SSP1-PkBudg1000, SSP2-NPi, SSP2-PkBudg1000 and SSP3-rollBack. Every original
+plaintext byte is retained; only missing intensity rows are appended. The
+restoration helper checks model, scenario, units, unique identities and the
+existing transport values against the matching 3.5.2 original. It rejects
+another scenario version and conflicting existing data. Reapplying it is
+idempotent. Encrypted backups and candidates remain in the private workspace.</p>
+<p>The source filtering notebook's whitelist now includes <span class="docutils literal">Energy intensity</span>.
+Only that source-list entry was added. JSON and cell syntax were checked, the
+whitelist was evaluated in isolation, and unrelated cells/outputs were verified
+unchanged. The complete export notebook was not executed: it currently points
+at IMAGE files and would write unrelated exports. This change and its before/
+after hashes are in <span class="docutils literal">installation.json</span>. No remote scenario archive was
+republished; future downloads require the same data preparation for direct
+signals, with the documented fallback available for older archives.</p>
+</section>
+<section id="operating-energy-must-not-scale-vehicle-manufacture">
+<h2>Operating energy must not scale vehicle manufacture</h2>
+<p>The database comparison exposed an inherited bug in the substring fuel filter:
+<span class="docutils literal">diesel</span> also matched <span class="docutils literal">lorry production, diesel</span>. This reduced the number
+of trucks manufactured per tonne-kilometre when applying an efficiency trend.</p>
+<p>The car/truck selector now requires an energy product and its appropriate unit,
+in addition to the IAM fuel mapping. Fuel-labelled trucks, engines, fuel cells
+and electricity meters do not qualify. Direct energy suppliers and market
+groups remain supported. Regression fixtures include vehicle manufacture and
+diesel-engine purchases, which must remain unchanged when operating energy is
+scaled.</p>
+<p>In the final 2050 build, 62 previously scaled manufacturing exchanges return
+to their 2020 per-service quantities, each 25% above the incorrectly reduced
+value. The number of units inside each vehicle-production inventory, nominal
+battery capacities, replacement counts, physical masses and other hardware
+specifications are unchanged by this correction. Coupled constant-range
+hardware sizing remains a subsequent task.</p>
+</section>
+<section id="verification">
+<h2>Verification</h2>
+<ul class="simple">
+<li><p>223 focused tests pass, including direct-intensity normalization and units,
+missing regional/reference data, zero-fleet baselines, other IAM paths,
+encrypted data restoration, source logging and energy-product selection.
+Existing fuel-carbon, hydrogen compression, battery, emission-driver and
+CDR tests are included.</p></li>
+<li><p>Full IAMDataCollection runs cover the four restored REMIND scenarios and
+an isolated encrypted REMIND-EU SSP2-NPi original. An independent NumPy
+cumulative-maximum calculation verifies 51,120 direct-intensity year cells,
+including the cap and monotonicity policy. Every 2020 index is one.</p></li>
+<li><p>Ten real-file calculation checks cover cars and trucks in IMAGE, TIAM-UCL,
+MESSAGE, GCAM and WITCH. Outputs are identical to their existing calculation.
+These are efficiency-path checks, not full Brightway builds of those IAMs.</p></li>
+<li><p>Full REMIND SSP2-NPi / ecoinvent 3.12 cutoff builds for 2020 and 2050 each
+complete with zero validation errors. They use isolated project copies and
+do not write a database into the user's persistent Brightway project.</p></li>
+</ul>
+<table>
+<caption>Full database comparison against the previous emission-driver fix</caption>
+<thead>
+<tr><th class="head"><p>Check</p></th>
+<th class="head"><p>2020</p></th>
+<th class="head"><p>2050</p></th>
+</tr>
+</thead>
+<tbody>
+<tr><td><p>Activities</p></td>
+<td><p>42,564</p></td>
+<td><p>42,574</p></td>
+</tr>
+<tr><td><p>Materially changed exchanges</p></td>
+<td><p>0</p></td>
+<td><p>688 in 325 vehicle services</p></td>
+</tr>
+<tr><td><p>Corrected manufacturing purchases</p></td>
+<td><p>0</p></td>
+<td><p>62</p></td>
+</tr>
+<tr><td><p>Fuel/CO2 balances checked</p></td>
+<td><p>495 passed</p></td>
+<td><p>495 passed</p></td>
+</tr>
+<tr><td><p>Hydrogen/compression balances checked</p></td>
+<td><p>147 passed</p></td>
+<td><p>147 passed</p></td>
+</tr>
+<tr><td><p>Validation errors</p></td>
+<td><p>0</p></td>
+<td><p>0</p></td>
+</tr>
+<tr><td><p>Validation warnings</p></td>
+<td><p>401, unchanged</p></td>
+<td><p>460, previously 445</p></td>
+</tr>
+</tbody>
+</table>
+<p>Every material exchange difference has an independent expected ratio from the
+effective operating-energy change, or restores a manufacturing quantity checked
+against 2020. The other 626 changed exchanges are energy purchases and
+fuel-derived CO2 or sulphur. Generic-air methane leakage is also checked
+against its expected fuel-demand ratio. HBEFA emissions, refrigerants, wear
+and road infrastructure remain unchanged. All 15 additional
+2050 warnings are the existing hot-emission screening diagnostic: changing
+fuel demand while retaining distance/start-based factors changes its ratio.
+These warnings do not establish EURO-limit exceedances.</p>
+<table>
+<caption>EUR 2050 operating-energy multipliers, relative to 2020</caption>
+<thead>
+<tr><th class="head"><p>Vehicle</p></th>
+<th class="head"><p>Before</p></th>
+<th class="head"><p>After</p></th>
+</tr>
+</thead>
+<tbody>
+<tr><td><p>Medium BEV car</p></td>
+<td><p>1.0000</p></td>
+<td><p>0.8116</p></td>
+</tr>
+<tr><td><p>Medium FCEV car</p></td>
+<td><p>1.0000</p></td>
+<td><p>0.8000</p></td>
+</tr>
+<tr><td><p>Medium hybrid-electric car</p></td>
+<td><p>1.0000</p></td>
+<td><p>0.8000</p></td>
+</tr>
+<tr><td><p>40 t BEV truck</p></td>
+<td><p>0.8000</p></td>
+<td><p>0.8000</p></td>
+</tr>
+<tr><td><p>Separate Large BEV car</p></td>
+<td><p>1.0000</p></td>
+<td><p>1.0000, unavailable regional signal</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="remaining-boundaries">
+<h2>Remaining boundaries</h2>
+<p>The recovered direct series describe fleet-level technical energy trends,
+not specifications for newly manufactured vehicles. A hybrid's total intensity
+does not separately establish its electric/combustion mode engineering inputs.
+Constant-range hardware calibration, the EUR Large Car proxy and unmapped
+technologies remain explicit follow-up decisions.</p>
+<p>Compatibility preserves the other models' existing efficiency calculations;
+it does not certify all their input data. The inspected MESSAGE file has no
+detailed car/truck mappings. Fourteen IMAGE truck fleet entries lack an energy
+alias. One TIAM-UCL car energy alias and two GCAM truck aliases are absent from
+the inspected files. The WITCH source has missing car aliases and reports tkm
+for mapped car services and pkm for mapped truck services, requiring a separate
+source/unit review. None of these gaps was filled with an invented improvement.</p>
+</section>
+<section id="reproduction-and-commits">
+<h2>Reproduction and commits</h2>
+<p>Premise commits:</p>
+<ul class="simple">
+<li><p><span class="docutils literal">ae2f3c5</span>: exclude vehicle manufacture from operating-energy scaling.</p></li>
+<li><p><span class="docutils literal">c88ab55</span>: optional direct intensity mappings, calculations and source logs.</p></li>
+<li><p><span class="docutils literal">9e3671b</span>: verified encrypted-scenario restoration and regression tests.</p></li>
+</ul>
+<p><span class="docutils literal">dev/install_premise_vehicle_intensities.py</span> records the local installation
+and filtering edit. <span class="docutils literal">dev/audit_premise_vehicle_intensity.py</span> verifies IAM
+factors and cross-model calculations. <span class="docutils literal">dev/build_premise_vehicle_intensity.py</span>
+builds isolated databases; <span class="docutils literal">dev/audit_premise_vehicle_intensity_builds.py</span>
+checks complete inventories and fuel balances. Original source files, installed
+files and scripts are identified by hashes. The installer was formatted after
+execution; both hashes and verified AST equivalence are recorded.</p>
+<p>The report files contain hashes, coverage, normalized factors and changed-flow
+diagnostics. Complete inventories, validation dumps, backups and logs remain
+private under <span class="docutils literal"><span class="pre">/private/tmp/premise-vehicle-intensity-20261013</span></span> or untracked.</p>
+</section>
+</main>
+</body>
+</html>

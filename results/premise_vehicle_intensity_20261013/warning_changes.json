@@ -1,0 +1,167 @@
+[
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Mini, EURO-6",
+      "transport, passenger car, EURO-6",
+      "IND"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Mini, EURO-6",
+      "transport, passenger car, EURO-6",
+      "CHA"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Mini, EURO-6",
+      "transport, passenger car, EURO-6",
+      "World"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Small, EURO-6",
+      "transport, passenger car, EURO-6",
+      "LAM"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Mini, EURO-6",
+      "transport, passenger car, EURO-6",
+      "EUR"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Mini, EURO-6",
+      "transport, passenger car, EURO-6",
+      "OAS"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Mini, EURO-6",
+      "transport, passenger car, EURO-6",
+      "SSA"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Large, EURO-6",
+      "transport, passenger car, EURO-6",
+      "LAM"
+    ],
+    "before": 2,
+    "after": 3
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Small, EURO-6",
+      "transport, passenger car, EURO-6",
+      "EUR"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Medium, EURO-6",
+      "transport, passenger car, EURO-6",
+      "LAM"
+    ],
+    "before": 2,
+    "after": 3
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Mini, EURO-6",
+      "transport, passenger car, EURO-6",
+      "MEA"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Medium, EURO-6",
+      "transport, passenger car, EURO-6",
+      "EUR"
+    ],
+    "before": 2,
+    "after": 3
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Van, EURO-6",
+      "transport, passenger car, EURO-6",
+      "EUR"
+    ],
+    "before": 2,
+    "after": 3
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Mini, EURO-6",
+      "transport, passenger car, EURO-6",
+      "NEU"
+    ],
+    "before": 3,
+    "after": 4
+  },
+  {
+    "year": 2050,
+    "rule": "LEGACY.TRANSPORT_HOT_EMISSION_DIAGNOSTIC",
+    "activity": [
+      "transport, passenger car, gasoline, Mini, EURO-6",
+      "transport, passenger car, EURO-6",
+      "CAZ"
+    ],
+    "before": 3,
+    "after": 4
+  }
+]
