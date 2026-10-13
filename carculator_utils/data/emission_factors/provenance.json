@@ -2,7 +2,7 @@
   "schema_version": 1,
   "retrieved": "2026-10-09",
   "source_version": "unverified",
-  "version_note": "Filenames contain HBEFA42 while historical documentation cites 4.1. Neither proves the licensed extraction version.",
+  "version_note": "Default source-version status applies to tables without scoped attribution. Passenger-car cold-start, evaporative and running factors originate from HBEFA 5.1, as specified by the model author on 2026-10-13. Legacy HBEFA42 filenames and 4.1 documentation do not establish versions of other tables.",
   "source_extraction_available": true,
   "source_reference": "https://www.hbefa.net/",
   "manual_multipliers": {
@@ -44,7 +44,23 @@
       "sha256": "40c81cde13c3de92a7c129963bc9f8b3fff5f1b650c55b388ce517cf013eb87e"
     },
     "car/EF_HBEFA42_non_exhaust.csv": {
-      "sha256": "bd9da146593261bbf06a0513256d84db3016eefa346e82b9fc860983cb95c1f2"
+      "sha256": "bd9da146593261bbf06a0513256d84db3016eefa346e82b9fc860983cb95c1f2",
+      "scoped_sources": [
+        {
+          "types": [
+            "cold start",
+            "soak",
+            "diurnal",
+            "running losses"
+          ],
+          "database": "HBEFA",
+          "version": "5.1",
+          "model": "carculator",
+          "reference": "the original LCA model, carculator, uses emission factors for cold start, evaporative and running emissions from the HBEFA 5.1 emissions handbook.",
+          "confirmed_on": "2026-10-13",
+          "scope": "Passenger-car cold-start, evaporative and running emission factors; no coefficient changes."
+        }
+      ]
     },
     "car/NMHC_species.csv": {
       "sha256": "3ad04c77b303839d8830636212f5488f066c78784bffa3f52477a55686ac1e3d"
@@ -97,7 +113,7 @@
     "c5f0fae"
   ],
   "extraction_notebook": "carculator_truck/dev/HBEFA trucks.ipynb references the recovered EFA_HOT_Subsegm_HGV.XLSX; workbook properties have no version. Its polynomial-fit exploration is not a reproducible derivation of all shipped g/MJ coefficients.",
-  "extraction_status": "Local workbook artifacts recovered; extraction version and transformation to all shipped coefficients remain unverified.",
+  "extraction_status": "Passenger-car cold-start, evaporative and running factors: HBEFA 5.1 source attribution supplied by the model author on 2026-10-13. Local truck and bus workbooks recovered; their extraction version and transformation to all shipped coefficients remain unverified.",
   "local_workbooks": [
     {
       "path": "carculator_truck/dev/EFA_HOT_Subsegm_HGV.XLSX",
@@ -114,5 +130,36 @@
       "sha256": "95f2552bbee687a73a29e1613e66277b140448f9adef8975f0fb3f4c6464ce91",
       "packaged": false
     }
-  ]
+  ],
+  "evaporative_speciation": {
+    "policy_date": "2026-10-13",
+    "policy": "Separate soak, diurnal and running losses from exhaust speciation. Retain process-specific benzene and subtract it once from generic NMVOC; leave other evaporative NMHC unspecified.",
+    "scope": "The car family currently supplies the non-exhaust table. Hot and cold-start factors and exhaust profiles are unchanged.",
+    "qualification": "Cold-start, evaporative and running factors originate from HBEFA 5.1. No new complete evaporative species profile is introduced. This policy does not reconcile the separate directly tabulated exhaust-benzene factor with exhaust NMHC.",
+    "methodological_references": [
+      "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P1010TJM.TXT",
+      "https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=P10186EB.TXT"
+    ],
+    "references_accessed": "2026-10-13"
+  },
+  "cold_start_audit": {
+    "audit_date": "2026-10-13",
+    "policy": "Per-start g/start and hot-soak g/stop factors multiplied by starts_per_day * 365 / annual_km; diurnal and running losses unchanged.",
+    "library_default_starts_per_day": 2.3,
+    "premise_2020_cars_starts_per_day": 1.8,
+    "decision": "User selected revised Swiss 2020 start count on 2026-10-13; retain current annual mileage defaults (12000 km for combustion cars).",
+    "source": "https://www.bafu.admin.ch/dam/en/sd-web/rMTT3CcvG0fJ/Switzerland%27s%20National%20Inventory%20Document%202026%20%28GHG%20inventory%201990-2024%29.pdf",
+    "source_locator": "Table 3-90, p.167, passenger cars, 2020 column; 1.8 starts per vehicle per day.",
+    "speciation_reference": "https://www.eea.europa.eu/en/analysis/publications/emep-eea-guidebook-2023/part-b-sectoral-guidance-chapters/1-energy/1-a-combustion/1-a-3-b-i/@@download/file",
+    "speciation_locator": "Update June 2026, Table 3-86d, p.107: Euro 6 petrol formaldehyde fraction 1.70% of NMVOC; unchanged in this model.",
+    "qualification": "Cold-start, evaporative and running factor source attribution is specified by the model author. Detailed country, temperature, parking-time and trip-length settings are not separately recorded in this repository. CH thermal settings do not recompute this shared table. The confirmation does not cover every vehicle-family factor table, speciation fraction or manual multiplier.",
+    "factor_source": {
+      "database": "HBEFA",
+      "version": "5.1",
+      "model": "carculator",
+      "reference": "the original LCA model, carculator, uses emission factors for cold start, evaporative and running emissions from the HBEFA 5.1 emissions handbook.",
+      "confirmed_on": "2026-10-13",
+      "scope": "Passenger-car cold-start, evaporative and running emission factors; no coefficient changes."
+    }
+  }
 }

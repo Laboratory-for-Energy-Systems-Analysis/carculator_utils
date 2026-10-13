@@ -22,7 +22,7 @@ from .energy_consumption import (
     validate_hvac_indoor_temperature,
 )
 from .fuel_blends import select_fuel_blend
-from .hot_emissions import HotEmissionsModel
+from .hot_emissions import HotEmissionsModel, validate_starts_per_day
 from .noise_emissions import NoiseEmissionsModel
 from .numerical import capital_recovery_factor, iterate_until_converged
 from .particulates_emissions import ParticulatesEmissionsModel
@@ -115,6 +115,7 @@ class VehicleModel:
         max_iterations: int = 100,
         combustion_controls: dict = None,
         battery_costs: dict = None,
+        starts_per_day: float = 2.3,
     ) -> None:
         """
         :param array: multi-dimensional numpy-like array that contains parameters' value(s)
@@ -151,6 +152,10 @@ class VehicleModel:
             name and then ``(powertrain, size, year)``. Values are nonnegative
             scalars or one value per sample. Useful for arrays without input
             provenance, or to explicitly choose a value equal to a default.
+        :param starts_per_day: Finite nonnegative daily starts/stops used for
+            car cold-start and hot-soak emissions. Default 2.3; changing this
+            count leaves per-event factors, mileage and other emissions intact.
+            Other families currently have no bundled per-event factors.
 
         """
         if (
@@ -160,6 +165,7 @@ class VehicleModel:
         ):
             raise ValueError("max_iterations must be a positive integer.")
         self.max_iterations = max_iterations
+        self.starts_per_day = validate_starts_per_day(starts_per_day)
         validate_vehicle_array(array)
         self.array = array.transpose(*REQUIRED_ARRAY_DIMS).copy(deep=True)
         self._selection_stack = []
@@ -1916,6 +1922,7 @@ class VehicleModel:
             lifetime_km=self["lifetime kilometers"],
             energy_consumption=energy_consumption,
             yearly_km=self["kilometers per year"],
+            starts_per_day=self.starts_per_day,
         )
         aliases = {
             "Hydrocarbon": "Hydrocarbons",

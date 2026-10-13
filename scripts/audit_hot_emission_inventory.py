@@ -189,7 +189,7 @@ def audit(output):
 
         # Independently evaluate g/MJ * kJ / 1000, add the declared cold/evap
         # terms in grams, then divide by cycle km and 1000 g/kg.
-        def reference(pt, year_index, value, component):
+        def reference(pt, year_index, value, component, process="all"):
             year = int(hot.year.values[year_index])
             selection = dict(powertrain=pt, size=size, year=year, value=value)
             energy = arguments["energy_consumption"].sel(**selection).values
@@ -219,17 +219,20 @@ def audit(output):
             grams[0] += (
                 factor(extra, **keys, type="cold start") * distance * 2.3 * 365 / yearly
             )
-            grams[-1] += (
-                factor(extra, **keys, type="soak") * distance * 2.3 * 365 / yearly
-            )
-            grams += (
-                distance
-                / len(grams)
-                * (
-                    factor(extra, **keys, type="diurnal") * 365 / yearly
-                    + factor(extra, **keys, type="running losses")
+            if process == "evaporative":
+                grams[:] = 0
+            if process != "exhaust":
+                grams[-1] += (
+                    factor(extra, **keys, type="soak") * distance * 2.3 * 365 / yearly
                 )
-            )
+                grams += (
+                    distance
+                    / len(grams)
+                    * (
+                        factor(extra, **keys, type="diurnal") * 365 / yearly
+                        + factor(extra, **keys, type="running losses")
+                    )
+                )
             return (
                 np.array(
                     [
@@ -256,6 +259,7 @@ def audit(output):
                         "Ammonia",
                         "Dinitrogen oxide",
                         "Methane",
+                        "Benzene",
                     ]:
                         actual = [
                             float(hot.sel(**selection, component=f"{component}, {env}"))
@@ -281,9 +285,31 @@ def audit(output):
                         name,
                         "nmhc_mass_conservation",
                         f"{pt}/{year}/{value}",
-                        parent,
+                        # The species table excludes benzene. The existing
+                        # direct exhaust-benzene factor is outside this check;
+                        # evaporative benzene is subtracted from the NMHC
+                        # residual and must be counted once in that pool.
+                        parent
+                        - reference(
+                            pt, yi, value, "Benzene", process="evaporative"
+                        ).sum(),
                         total,
                     )
+                    for component in species.component.unique():
+                        expected = reference(
+                            pt, yi, value, "Non-methane hydrocarbon", process="exhaust"
+                        ) * factor(species, powertrain=MAP_PWT[pt], component=component)
+                        actual = [
+                            float(hot.sel(**selection, component=f"{component}, {env}"))
+                            for env in ENVIRONMENTS
+                        ]
+                        check(
+                            name,
+                            "exhaust_only_speciation",
+                            f"{pt}/{year}/{value}/{component}",
+                            expected,
+                            actual,
+                        )
 
         # Passenger-car documentation specifies the degradation factor at
         # half the vehicle lifetime, starting at unity for a new vehicle.

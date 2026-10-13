@@ -2,6 +2,21 @@
 
 Notable user-facing changes to `carculator_utils`.
 
+## [Unreleased]
+
+- Expose an optional `starts_per_day` model argument for car cold-start and
+  hot-soak emissions. The general default remains 2.3; the 2020 Premise car
+  regeneration explicitly uses the approved Swiss estimate of 1.8 starts/day.
+  Per-event factors and annual mileage are unchanged. See the
+  [cold-start audit](docs/hot_emission_audit.rst#cold-start-audit).
+
+- Separate evaporative fuel losses from exhaust NMHC speciation. Retain the
+  existing soak, diurnal and running-loss benzene factors, subtract that benzene
+  once from the generic NMVOC residual, and avoid assigning exhaust-derived
+  aldehydes to evaporated fuel. Hot exhaust and cold-start coefficients are
+  unchanged. Regenerate saved car inventories; see
+  [the emission audit](docs/hot_emission_audit.rst#evaporative-speciation).
+
 ## [1.3.7] - 2026-10-11
 
 ### Migration to ecoinvent 3.12

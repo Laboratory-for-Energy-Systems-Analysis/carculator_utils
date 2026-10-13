@@ -3,6 +3,7 @@ hot_emissions.py contains HotEmissionModel
 which calculates fuel-related exhaust emissions.
 """
 
+from numbers import Real
 from pathlib import Path
 from typing import Any, List, Union
 
@@ -37,6 +38,15 @@ MAP_PWT = {
 }
 
 
+def validate_starts_per_day(value: float) -> float:
+    """Validate the daily start/stop count used to allocate per-event emissions."""
+    if isinstance(value, (bool, np.bool_)) or not isinstance(value, Real):
+        raise ValueError("starts_per_day must be a finite nonnegative scalar.")
+    if not np.isfinite(value) or value < 0:
+        raise ValueError("starts_per_day must be a finite nonnegative scalar.")
+    return float(value)
+
+
 def _(obj: Union[np.ndarray, xr.DataArray]) -> Union[np.ndarray, xr.DataArray]:
     """Add a trailing dimension to make input arrays broadcast correctly"""
     if isinstance(obj, (np.ndarray, xr.DataArray)):
@@ -45,8 +55,9 @@ def _(obj: Union[np.ndarray, xr.DataArray]) -> Union[np.ndarray, xr.DataArray]:
 
 
 def get_emission_factors(filepath) -> [Any, None]:
-    """Load shipped emission coefficients; the exact HBEFA version is unverified.
-    detailed by size, powertrain and EURO class for each substance.
+    """Load coefficients by size, powertrain, EURO class and substance.
+
+    See ``get_emission_factor_provenance()`` for source-version attribution.
     """
 
     try:
@@ -160,15 +171,21 @@ class HotEmissionsModel:
         lifetime_km: xr.DataArray,
         energy_consumption: xr.DataArray,
         yearly_km: xr.DataArray,
+        starts_per_day: float = 2.3,
     ) -> DataArray:
         """
         Calculate hot pollutants emissions given a powertrain type (i.e., diesel, petrol, CNG)
         and a EURO pollution class, per air sub-compartment (i.e., urban, suburban and rural).
         Note that Nh3 and N2O emissions do not depend on the speed level. For those, average
         values observed across different traffic situations are used instead.
-        Also includes cold start emissions. Cold start emissions are also given by HBEFA 4.1
-        and expressed in given in g/start. Cold start emissions are divided by the average trip
-        length in Europe (20 km), to normalize them per km.
+        Cold-start factors in g/start use starts_per_day (default 2.3) and
+        the vehicle's annual mileage. The same daily count applies to hot-soak
+        events; diurnal and running losses are independent. Hot and cold-start NMHC use
+        the exhaust species profile. Evaporative losses retain their direct
+        benzene factors and leave the remaining NMHC unspecified; they do not
+        inherit the exhaust species profile. The exact source-table version
+        remains unverified. Daily starts are an explicit activity assumption;
+        changing them does not recalibrate the per-start factors.
 
         The emission sums are further divided into `air compartments`: urban, suburban and rural.
 
@@ -180,9 +197,12 @@ class HotEmissionsModel:
         :param euro_class: integer, corresponding to the EURO pollution class
         :param energy_consumption: tank-to-wheel energy consumption for each second of the driving_cycles
         :param yearly_km: annual mileage, to calculate cold start emissions
+        :param starts_per_day: Finite nonnegative daily starts/stops. Currently
+            affects cars, the only family with a bundled per-event table.
         :return: Pollutants emission per km driven, per air compartment.
         """
 
+        starts_per_day = validate_starts_per_day(starts_per_day)
         hot_emissions = self.exhaust.sel(
             powertrain=[
                 MAP_PWT[pt] if MAP_PWT[pt] in self.exhaust.powertrain.values else "BEV"
@@ -256,6 +276,7 @@ class HotEmissionsModel:
                 )
             ] *= degradation_correction.values
 
+        evaporative_emissions = None
         if self.non_exhaust is not None:
             non_exhaust = self.non_exhaust.sel(
                 powertrain=[
@@ -286,13 +307,18 @@ class HotEmissionsModel:
 
             non_exhaust = non_exhaust.sel(size=lifetime_km.coords["size"].values)
 
-            start_per_day = 2.3  # source for
-
             # Cold start and soak emissions are defined per start and stop
             # Therefore, we need to normalize per km
             # And add cold start emissions to the first second of the driving_cycles
 
             yearly_km = yearly_km.transpose("value", "year", "powertrain", "size")
+            # Aggregate PHEVs have zero-mileage placeholder cells here; their
+            # emissions are constructed later from PHEV-c and PHEV-e modes.
+            # Suppress per-start/day additions only for these placeholders.
+            placeholder = yearly_km.powertrain.isin(["PHEV-p", "PHEV-d"]) & (
+                yearly_km == 0
+            )
+            yearly_km = yearly_km.where(~placeholder, np.inf)
 
             emissions.loc[
                 dict(
@@ -300,18 +326,26 @@ class HotEmissionsModel:
                     component=non_exhaust.component.values,
                 )
             ] += (
-                _(distance / yearly_km * start_per_day * 365)
+                _(distance / yearly_km * starts_per_day * 365)
                 * non_exhaust.sel(type="cold start").values
             )
 
-            # And add soak emissions to the last second of the driving_cycles
-            emissions.loc[
+            # Evaporated fuel has a different composition from exhaust. Keep
+            # soak, diurnal and running losses separate until exhaust (including
+            # cold starts) has been speciated. Retain the process-specific
+            # benzene coefficient; the other evaporative NMHC stays unspecified.
+            evaporative_emissions = xr.zeros_like(
+                emissions.sel(component=non_exhaust.component.values)
+            )
+
+            # Add soak emissions to the last second of the driving cycle.
+            evaporative_emissions.loc[
                 dict(
                     second=emissions.second.values[-1],
                     component=non_exhaust.component.values,
                 )
             ] += (
-                _(distance / yearly_km * start_per_day * 365)
+                _(distance / yearly_km * starts_per_day * 365)
                 * non_exhaust.loc[dict(type="soak")].values
             )
 
@@ -321,7 +355,7 @@ class HotEmissionsModel:
 
             daily_km_to_year = distance / (yearly_km / 365)
 
-            emissions.loc[dict(component=non_exhaust.component.values)] += (
+            evaporative_emissions += (
                 _(daily_km_to_year)
                 * non_exhaust.sel(type="diurnal").values
                 / emissions.shape[0]
@@ -330,7 +364,7 @@ class HotEmissionsModel:
             # Running losses are in g/km (no conversion needed)
             # And need to be evenly distributed throughout the driving_cycles
 
-            emissions.loc[dict(component=non_exhaust.component.values)] += (
+            evaporative_emissions += (
                 _(distance)
                 * non_exhaust.sel(type="running losses").values
                 / emissions.shape[0]
@@ -381,6 +415,33 @@ class HotEmissionsModel:
         emissions.loc[dict(component="Non-methane hydrocarbon")] *= (
             1 - species_share
         ).values
+
+        if evaporative_emissions is not None:
+            # Benzene is part of NMHC, not an additional evaporative mass.
+            # Subtract it once from the generic residual before adding both
+            # flows. No exhaust-derived aldehydes or other species are assigned
+            # to evaporation in the absence of a verified evaporative profile.
+            if "Benzene" in evaporative_emissions.component.values:
+                parent = evaporative_emissions.sel(component="Non-methane hydrocarbon")
+                benzene = evaporative_emissions.sel(component="Benzene")
+                if bool(
+                    (
+                        ~np.isfinite(parent)
+                        | ~np.isfinite(benzene)
+                        | (benzene < 0)
+                        | (parent < benzene)
+                    ).any()
+                ):
+                    raise ValueError(
+                        "Evaporative benzene must be finite, nonnegative and no "
+                        "greater than total evaporative NMHC."
+                    )
+                evaporative_emissions.loc[dict(component="Non-methane hydrocarbon")] = (
+                    parent - benzene
+                )
+            emissions.loc[
+                dict(component=evaporative_emissions.component.values)
+            ] += evaporative_emissions.values
 
         # Heavy metals emissions are dependent of fuel consumption
         # given in grams of emission per kj
