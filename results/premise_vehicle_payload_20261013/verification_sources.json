@@ -1,0 +1,6 @@
+{
+  "audit_script_sha256": "52b1475aa236a02d581869236cfc781ff23a85db5dcaaee10790dc41943f3d4e",
+  "tests_xml_sha256": "9d334be6e915926e9c0dfd65bfa73eae00e1ee875adcbc73b8f5e0c4929e1fd6",
+  "premise_test_sha256": "aa789e658d1fbfcde70394c479cefdab8a7f991fba558ebcccd5ddd74839d8f6",
+  "baseline_audit": "premise_vehicle_battery_simple_20261013"
+}

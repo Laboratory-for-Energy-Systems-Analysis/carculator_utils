@@ -267,6 +267,18 @@ fuel-tank range accounting, the Large Car proxy and subsequent remediation steps
 remain separate; detailed engineering feasibility is not claimed by this
 accounting approximation.
 
+**BEV truck payload follow-up completed:** the user requested that battery mass
+savings increase carried cargo at fixed 2020 capacity utilization. Available
+payload is recalculated after subtracting curb and driver mass; all transport
+service inputs are normalized to the new cargo. Road and wear use the corrected
+loaded mass. IAM electricity per vehicle-km remains fixed, with no additional
+driving-energy calculation. The EUR 40 t truck carries 10.688 t instead of
+10.300 t in 2050, reducing truck manufacture per tkm by 3.63%. 276 tests and full
+2020/2030/2050 builds pass; all inventory differences are explained and 2020 is
+unchanged. Runtime remains about 0.05 seconds. See
+``../premise_vehicle_payload_20261013/report.rst``. This supersedes the fixed
+actual load assumption for BEV trucks in the preceding battery accounting step.
+
 **Approved policy; coupled implementation required.** The audit found all
 98 surviving production inventories retaining their 2020 battery quantities.
 The EUR 40 t BEV therefore gains implied range from 400 to about 500 km when
