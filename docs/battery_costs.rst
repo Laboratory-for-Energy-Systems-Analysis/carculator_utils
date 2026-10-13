@@ -97,8 +97,15 @@ Cars and trucks price this same nominal pack in both driving-mode cost
 calculations, before financing and other purchase-dependent costs are computed.
 This prevents a low electric driving share from reducing the price of installed
 hardware. Existing mode-specific unit prices, markup and explicit cost overrides
-retain their input convention. Battery lifetime replacement counts are unchanged
-by this capacity correction and remain subject to a separate throughput review.
+retain their input convention.
+
+Replacement counts also belong to the physical pack. The shared model carries
+the electric-mode pack's calculated count into both driving modes before cost
+calculations, and retains that count during PHEV assembly. Vehicle-specific
+lifetime calculations must account for the intended usage basis before this
+step. Passenger cars use total vehicle distance and the existing 18-year limit;
+the PHEV electric-mode distance default is now 200,000 vehicle-km. The count is
+fractional and excludes the initial pack, which is supplied once.
 
 Year and sample alignment
 ~~~~~~~~~~~~~~~~~~~~~~~~~

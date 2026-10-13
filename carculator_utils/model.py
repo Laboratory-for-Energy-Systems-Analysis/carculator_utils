@@ -1061,6 +1061,7 @@ class VehicleModel:
         self["battery lifetime replacements"] = np.maximum(
             battery_replacement_km, battery_replacement_years
         )
+        self.share_phev_battery_replacements()
 
         # The number of fuel cell replacements is based on the
         # average distance driven with a set of fuel cells given
@@ -1210,6 +1211,26 @@ class VehicleModel:
     def set_electric_utility_factor(self) -> None:
         pass
 
+    def share_phev_battery_replacements(self):
+        """Carry one physical pack's replacement count through both driving modes.
+
+        Calculate the count for the electric-mode pack first, using the vehicle
+        family's lifetime policy. Both mode costs then price that same count;
+        usage weighting must not reduce it again during PHEV assembly.
+        """
+        for combined, combustion in (("PHEV-d", "PHEV-c-d"), ("PHEV-p", "PHEV-c-p")):
+            if combined in self.array.powertrain.values:
+                self.array.loc[
+                    dict(
+                        powertrain=[combined, combustion],
+                        parameter="battery lifetime replacements",
+                    )
+                ] = self.array.sel(
+                    powertrain="PHEV-e",
+                    parameter="battery lifetime replacements",
+                    drop=True,
+                )
+
     def battery_capacity_for_purchase(self):
         """Return nominal kWh to price, including the full pack in both PHEV modes.
 
@@ -1318,6 +1339,7 @@ class VehicleModel:
                             "battery charge efficiency",
                             "battery discharge efficiency",
                             "battery lifetime kilometers",
+                            "battery lifetime replacements",
                             "charger efficiency",
                             "recuperation efficiency",
                             "charger mass",
@@ -1339,6 +1361,7 @@ class VehicleModel:
                             "battery charge efficiency",
                             "battery discharge efficiency",
                             "battery lifetime kilometers",
+                            "battery lifetime replacements",
                             "charger efficiency",
                             "recuperation efficiency",
                             "charger mass",
