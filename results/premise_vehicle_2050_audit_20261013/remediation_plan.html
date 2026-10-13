@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="Docutils 0.22.4: https://docutils.sourceforge.io/" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Car and truck inventory remediation plan</title>
+<style type="text/css">
+
+/* Minimal style sheet for the HTML output of Docutils.                    */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: minimal.css 10018 2025-03-06 16:19:15Z milde $                                                               */
+/* :Copyright: © 2015, 2021 Günter Milde.                                  */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+
+/* This CSS3 stylesheet defines rules for Docutils elements without        */
+/* HTML equivalent. It is required to make the document semantics visible. */
+/*                                                                         */
+/* .. _validates: http://jigsaw.w3.org/css-validator/validator$link        */
+
+/* titles */
+p.topic-title,
+p.admonition-title,
+p.system-message-title {
+  font-weight: bold;
+}
+p.sidebar-title,
+p.rubric {
+  font-weight: bold;
+  font-size: larger;
+}
+p.rubric {
+  color: maroon;
+}
+p.subtitle,
+p.section-subtitle,
+p.sidebar-subtitle {
+  font-weight: bold;
+  margin-top: -0.5em;
+}
+h1 + p.subtitle {
+  font-size: 1.6em;
+}
+a.toc-backref {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Warnings, Errors */
+.system-messages h2,
+.system-message-title,
+pre.problematic,
+span.problematic {
+  color: red;
+}
+
+/* Inline Literals */
+.docutils.literal {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+/* do not wrap at hyphens and similar: */
+.literal > span.pre { white-space: nowrap; }
+
+/* keep line-breaks (\n) visible */
+.pre-wrap { white-space: pre-wrap; }
+
+/* Lists */
+
+/* compact and simple lists: no margin between items */
+.simple  li, .simple  ul, .simple  ol, .simple  > li p,
+.compact li, .compact ul, .compact ol, .compact > li p,
+dl.simple  > dd, dl.compact > dd, dl.docinfo > dd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Nested Paragraphs */
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+details > p:last-child { margin-bottom: 1em; }
+
+/* Table of Contents */
+.contents ul.auto-toc { /* section numbers present */
+  list-style-type: none;
+}
+
+/* Enumerated Lists */
+ol.arabic     { list-style: decimal }
+ol.loweralpha { list-style: lower-alpha }
+ol.upperalpha { list-style: upper-alpha }
+ol.lowerroman { list-style: lower-roman }
+ol.upperroman { list-style: upper-roman }
+
+/* Definition Lists and Derivatives */
+dt .classifier { font-style: italic }
+dt .classifier:before {
+  font-style: normal;
+  margin: 0.5em;
+  content: ":";
+}
+/* Field Lists and similar */
+/* bold field name, content starts on the same line */
+dl.field-list,
+dl.option-list,
+dl.docinfo {
+  display: flow-root;
+}
+dl.field-list > dt,
+dl.option-list > dt,
+dl.docinfo > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.25em;
+}
+/* Offset for field content (corresponds to the --field-name-limit option) */
+dl.field-list > dd,
+dl.option-list > dd,
+dl.docinfo > dd {
+  margin-left:  9em; /* ca. 14 chars in the test examples, fit all Docinfo fields */
+}
+/* start nested lists on new line */
+dd > dl:first-child,
+dd > ul:first-child,
+dd > ol:first-child {
+  clear: left;
+}
+/* start field-body on a new line after long field names */
+dl.field-list > dd > *:first-child,
+dl.option-list > dd > *:first-child
+{
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+
+/* Bibliographic Fields (docinfo) */
+dl.docinfo pre.address {
+  font: inherit;
+  margin: 0;
+}
+dl.docinfo > dd.authors > p { margin: 0; }
+
+/* Option Lists */
+dl.option-list > dt { font-weight: normal; }
+span.option { white-space: nowrap; }
+
+/* Footnotes and Citations  */
+
+.footnote, .citation { margin: 1em 0; } /* default paragraph skip (Firefox) */
+/* hanging indent */
+.citation { padding-left: 2em; }
+.footnote { padding-left: 1.7em; }
+.footnote.superscript { padding-left: 1.0em; }
+.citation > .label { margin-left: -2em; }
+.footnote > .label { margin-left: -1.7em; }
+.footnote.superscript > .label { margin-left: -1.0em; }
+
+.footnote > .label + *,
+.citation > .label + * {
+  display: inline-block;
+  margin-top: 0;
+  vertical-align: top;
+}
+.footnote > .backrefs + *,
+.citation > .backrefs + * {
+  margin-top: 0;
+}
+.footnote > .label + p, .footnote > .backrefs + p,
+.citation > .label + p, .citation > .backrefs + p {
+  display: inline;
+  vertical-align: inherit;
+}
+
+.backrefs { user-select: none; }
+.backrefs > a { font-style: italic; }
+
+/* superscript footnotes */
+a[role="doc-noteref"].superscript,
+.footnote.superscript > .label,
+.footnote.superscript > .backrefs {
+  vertical-align: super;
+  font-size: smaller;
+  line-height: 1;
+}
+a[role="doc-noteref"].superscript > .fn-bracket,
+.footnote.superscript > .label > .fn-bracket {
+  /* hide brackets in display but leave for copy/paste */
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+}
+[role="doc-noteref"].superscript + [role="doc-noteref"].superscript {
+  padding-left: 0.15em; /* separate consecutive footnote references */
+  /* TODO: unfortunately, "+" also selects with text between the references. */
+}
+
+/* Alignment */
+.align-left   {
+  text-align: left;
+  margin-right: auto;
+}
+.align-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.align-right  {
+  text-align: right;
+  margin-left: auto;
+}
+.align-top    { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+
+/* reset inner alignment in figures and tables */
+figure.align-left, figure.align-right,
+table.align-left, table.align-center, table.align-right {
+  text-align: inherit;
+}
+
+/* Text Blocks */
+.topic { margin: 1em 2em; }
+.sidebar,
+.admonition,
+.system-message {
+  margin: 1em 2em;
+  border: thin solid;
+  padding: 0.5em 1em;
+}
+div.line-block { display: block; }
+div.line-block div.line-block, pre { margin-left: 2em; }
+
+/* Code line numbers: don't copy with drag-and-drop */
+pre.code .ln { display: none; }
+pre.code code:before {
+  content: attr(data-lineno);
+  font-size: small;
+  color: gray;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+td, th {
+  border: thin solid silver;
+  padding: 0 1ex;
+}
+.borderless td, .borderless th {
+  border: 0;
+  padding: 0;
+  padding-right: 0.5em /* separate table cells */
+}
+
+table > caption, figcaption {
+  text-align: left;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+table.captionbelow {
+  caption-side: bottom;
+}
+
+/* MathML (see "math.css" for --math-output=HTML) */
+math .boldsymbol { font-weight: bold; }
+math.boxed, math .boxed {padding: 0.25em; border: thin solid; }
+/* style table similar to AMS "align" or "aligned" environment: */
+mtable.cases > mtr > mtd { text-align: left; }
+mtable.ams-align > mtr > mtd { padding-left: 0; padding-right: 0; }
+mtable.ams-align > mtr > mtd:nth-child(2n) { text-align: left; }
+mtable.ams-align > mtr > mtd:nth-child(2n+1) { text-align: right; }
+mtable.ams-align > mtr > mtd:nth-child(2n+3) { padding-left: 2em; }
+.mathscr mi, mi.mathscr {
+  font-family: STIX, XITSMathJax_Script, rsfs10,
+               "Asana Math", Garamond, cursive;
+}
+
+/* Document Header and Footer */
+header { border-bottom: 1px solid black; }
+footer { border-top: 1px solid black; }
+
+/* Images are block-level by default in Docutils */
+/* New HTML5 block elements: set display for older browsers */
+img, svg, header, footer, main, aside, nav, section, figure, video, details {
+  display: block;
+}
+svg { width: auto; height: auto; }  /* enable scaling of SVG images */
+/* inline images */
+
+p img, p svg, p video,
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img,
+h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg {
+  display: inline;
+}
+
+</style>
+<style type="text/css">
+
+/* CSS31_ style sheet for the output of Docutils HTML writers.             */
+/* Rules for easy reading and pre-defined style variants.                  */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: plain.css 10079 2025-04-10 12:01:48Z milde $                                                               */
+/* :Copyright: © 2015 Günter Milde.                                        */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+/* .. _CSS3: https://www.w3.org/Style/CSS/                                 */
+
+
+/* Document Structure */
+/* ****************** */
+
+/* "page layout" */
+body {
+  margin: 0;
+  background-color: #dbdbdb;
+  --field-indent: 9em; /* default indent of fields in field lists */
+}
+main, footer, header {
+  line-height:1.6;
+  /* avoid long lines --> better reading */
+  /* optimum is 45…75 characters/line <http://webtypography.net/2.1.2> */
+  /* OTOH: lines should not be too short because of missing hyphenation, */
+  max-width: 50rem;
+  padding: 1px 2%; /* 1px on top avoids grey bar above title (mozilla) */
+  margin: auto;
+}
+main {
+  counter-reset: table figure;
+  background-color: white;
+}
+footer, header {
+  font-size: smaller;
+  padding: 0.5em 2%;
+  border: none;
+}
+
+/* Table of Contents */
+ul.auto-toc > li > p {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+nav.contents ul {
+  padding-left: 1em;
+}
+main > nav.contents ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B29\ ';
+}
+main > nav.contents ul ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B1D\ ';
+}
+
+/* Transitions */
+hr.docutils {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+/* Paragraphs */
+
+/* vertical space (parskip) */
+p, ol, ul, dl, li,
+.footnote, .citation,
+div > math,
+table {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h1, h2, h3, h4, h5, h6,
+dd, details > p:last-child {
+  margin-bottom: 0.5em;
+}
+
+/* Lists */
+/* ===== */
+
+/* Definition Lists */
+/* Indent lists nested in definition lists */
+dd > ul:only-child, dd > ol:only-child { padding-left: 1em; }
+
+/* Description Lists */
+/* styled like in most dictionaries, encyclopedias etc. */
+dl.description {
+  display: flow-root;
+}
+dl.description > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.3em;
+}
+dl.description > dd:after {
+  display: table;
+  content: "";
+  clear: left; /* clearfix for empty descriptions */
+}
+
+/* Field Lists */
+
+dl.field-list > dd,
+dl.docinfo > dd {
+  margin-left: var(--field-indent); /* adapted in media queries or HTML */
+}
+
+/* example for custom field-name width */
+dl.field-list.narrow > dd {
+  --field-indent: 5em;
+}
+/* run-in: start field-body on same line after long field names */
+dl.field-list.run-in > dd p {
+  display: block;
+}
+
+/* Bibliographic Fields */
+
+/* generally, bibliographic fields use dl.docinfo */
+/* but dedication and abstract are placed into divs */
+div.abstract p.topic-title {
+  text-align: center;
+}
+div.dedication {
+  margin: 2em 5em;
+  text-align: center;
+  font-style: italic;
+}
+div.dedication p.topic-title {
+  font-style: normal;
+}
+
+/* disclosures */
+details { padding-left: 1em; }
+summary { margin-left: -1em; }
+
+/* Text Blocks */
+/* =========== */
+
+/* Literal Blocks */
+pre.literal-block, pre.doctest-block,
+pre.math, pre.code {
+  font-family: monospace;
+}
+
+/* Block Quotes and Topics */
+bockquote { margin: 1em 2em; }
+blockquote p.attribution {
+  text-align: right;
+  margin-left: 20%;
+}
+
+/* Tables */
+/* ====== */
+
+/* th { vertical-align: bottom; } */
+
+table tr { text-align: left; }
+
+/* "booktabs" style (no vertical lines) */
+table.booktabs {
+  border: 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.booktabs * {
+  border: 0;
+}
+table.booktabs th {
+  border-bottom: thin solid;
+}
+
+/* numbered tables (counter defined in div.document) */
+table.numbered > caption:before {
+  counter-increment: table;
+  content: "Table " counter(table) ": ";
+  font-weight: bold;
+}
+
+/* Explicit Markup Blocks */
+/* ====================== */
+
+/* Footnotes and Citations */
+/* ----------------------- */
+
+/* line on the left */
+.footnote-list {
+  border-left: solid thin;
+  padding-left: 0.25em;
+}
+
+/* Directives */
+/* ---------- */
+
+/* Body Elements */
+/* ~~~~~~~~~~~~~ */
+
+/* Images and Figures */
+
+/* let content flow to the side of aligned images and figures */
+figure.align-left,
+img.align-left,
+svg.align-left,
+video.align-left,
+div.align-left,
+object.align-left {
+  clear: left;
+  float: left;
+  margin-right: 1em;
+}
+figure.align-right,
+img.align-right,
+svg.align-right,
+video.align-right,
+div.align-right,
+object.align-right {
+  clear: right;
+  float: right;
+  margin-left: 1em;
+}
+/* Stop floating sidebars, images and figures */
+h1, h2, h3, h4, footer, header { clear: both; }
+
+/* Numbered figures */
+figure.numbered > figcaption > p:before {
+  counter-increment: figure;
+  content: "Figure " counter(figure) ": ";
+  font-weight: bold;
+}
+
+/* Admonitions and System Messages */
+.caution p.admonition-title,
+.attention p.admonition-title,
+.danger p.admonition-title,
+.error p.admonition-title,
+.warning p.admonition-title,
+div.error {
+  color: red;
+}
+
+/* Sidebar */
+/* Move right. In a layout with fixed margins, */
+/* it can be moved into the margin.            */
+aside.sidebar {
+  width: 30%;
+  max-width: 26em;
+  float: right;
+  clear: right;
+  margin-left: 1em;
+  margin-right: -1%;
+  background-color: #fffffa;
+}
+
+
+/* Code */
+pre.code { padding: 0.7ex }
+pre.code, code { background-color: #eeeeee }
+/* basic highlighting: for a complete scheme, see */
+/* https://docutils.sourceforge.io/sandbox/stylesheets/ */
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+
+/* Epigraph           */
+/* Highlights         */
+/* Pull-Quote         */
+/* Compound Paragraph */
+/* Container          */
+
+/* Inline Markup */
+/* ============= */
+
+sup, sub { line-height: 0.8; } /* do not add leading for lines with sup/sub */
+
+/* Inline Literals                                          */
+/* possible values: normal, nowrap, pre, pre-wrap, pre-line */
+/*   span.docutils.literal { white-space: pre-wrap; }       */
+
+/* Hyperlink References */
+a { text-decoration: none; }
+
+/* External Targets       */
+/*   span.target.external */
+/* Internal Targets       */
+/*   span.target.internal */
+/* Footnote References    */
+/*   a[role="doc-noteref"] */
+/* Citation References    */
+/*   a.citation-reference */
+
+</style>
+</head>
+<body>
+<main id="car-and-truck-inventory-remediation-plan">
+<h1 class="title">Car and truck inventory remediation plan</h1>
+
+<p>Prepared 13 October 2026 from the <a class="reference external" href="report.html">2020/2050 audit</a> and its
+<a class="reference external" href="verification_summary.json">verification summary</a>. This is an implementation
+plan; the corrections below have not been applied by writing this document.
+Work proceeds one issue at a time, with a reviewable change and focused checks
+before moving to the next. A successful database import is not scientific
+sign-off.</p>
+<section id="scope-and-decisions">
+<h2>Scope and decisions</h2>
+<p>The immediate scope is the installed passenger-car and Regional-delivery truck
+updates, their shared carculator machinery, and Premise transformations.
+Buses and two-wheelers still use their original workbooks. Shared-code changes
+must be checked against those models, but refreshing their inventories is a
+subsequent exercise.</p>
+<p>Keep the accepted 2020 model baseline, Swiss climate, 2020 emission classes,
+default usage assumptions, the selected car catalogue and all 52 truck service
+identities. Trucks use Regional delivery and a 400 km design range. Preserve
+the approved energy-preserving gasoline/LPG proxies, Premise battery-capacity
+markets, and the companion noise audit. Retain the car cold-start assumption
+of 1.8 starts/day and the agreed HBEFA provenance wording. Preserve existing
+service/production names, products, locations and units; do not reinstate the
+historical car classes removed under the agreed scope.</p>
+<p>Two additional decisions were confirmed for this plan:</p>
+<ul class="simple">
+<li><p><strong>Future vehicles retain their baseline range through consistent resizing.</strong>
+This means 400 km for the selected trucks and the relevant baseline range
+for each car. Batteries, mass and affected inventories must change together.</p></li>
+<li><p><strong>LPG retains a documented fossil supply where the IAM has no LPG pathway.</strong>
+Do not substitute a petrol or CNG scenario blend implicitly.</p></li>
+</ul>
+<p>Premise continues to own scenario energy supply and efficiency projections.
+The future resizing implementation must assign each improvement once and
+distinguish physical battery assumptions from the upstream battery-market mix.
+Any new unsupported assumption about hybrid architecture, battery technology
+or fuel carbon origin must be resolved from evidence or brought back for review.</p>
+</section>
+<section id="freeze-the-comparison-inputs">
+<h2>0. Freeze the comparison inputs</h2>
+<p>Retain three identifiable states: the original inventories, the current
+pre-remediation candidates, and each corrected candidate. Record hashes of
+workbooks, sidecars, source revisions, IAM input and model parameters. Preserve
+the existing Brightway databases and isolate experimental builds.</p>
+<p>Acceptance: every later score can be tied to an exact inventory and Premise
+implementation. Old and corrected inventories can be built with the same
+Premise code. Store aggregate diagnostics and provenance in the repository;
+keep the complete proprietary background inventory in the private workspace.</p>
+</section>
+<section id="repair-the-actual-regional-cng-supply-chain">
+<h2>1. Repair the actual regional CNG supply chain</h2>
+<p><strong>Confirmed defect.</strong> The regional vehicle-grade market currently points to
+RoW compression, which purchases World gas and electricity.</p>
+<p>In Premise's gas transformation, regionalize the compression provider and
+relink its gas and electricity inputs. Preserve pressure, compression demand,
+losses and the documented mass/volume conversion. Keep gas-production and
+vehicle leakage boundaries explicit. Inspect the provider chain beyond the
+market name and handle mixed kg/m3 suppliers on a consistent basis.</p>
+<p>Acceptance: cars and trucks in EUR, USA, IND, CHA and World reach the intended
+regional gas and electricity chains in both 2020 and 2050. No unintended
+RoW/World fallback remains where a regional supplier exists. Repeated
+transformation does not duplicate compression activities or consumption.</p>
+<p>Main code: <span class="docutils literal">premise/premise/fuels/biogas.py</span> and its transformation helpers.</p>
+</section>
+<section id="make-blend-energy-and-carbon-properties-explicit">
+<h2>2. Make blend energy and carbon properties explicit</h2>
+<p><strong>Accounting gap requiring verification.</strong> Current adapters preserve energy
+using reference-fuel properties; the delivered market can contain fuels with
+different heating values and carbon contents.</p>
+<p>Trace the final supplier mix and derive delivered heating value, carbon
+content and carbon origin on explicit mass, volume or energy bases. Adjust
+purchased blend quantity to preserve the intended operating energy. Keep
+compression electricity separate from fuel chemical energy. Document how
+biogenic carbon, direct-air-capture carbon and recycled fossil carbon are
+represented; an electrofuel label alone does not determine carbon origin.</p>
+<p>Acceptance: independently calculated examples for pure fossil fuel, pure
+biofuel and mixed petrol/diesel/gas markets preserve energy and yield the
+expected carbon amounts. Unknown properties remain visible diagnostics.
+Fuel-mass shares are not used directly as carbon shares. Document the
+full-oxidation CO2 convention and any separate CO/CH4/NMVOC treatment; do not
+claim elemental carbon closure without checking those flows.</p>
+<p>Main code: Premise fuel-market properties, carbon helpers, and the two vehicle
+generation adapters. This supplies the accounting contract for step 3.</p>
+</section>
+<section id="recalculate-fossil-non-fossil-co2-after-final-vehicle-linking">
+<h2>3. Recalculate fossil/non-fossil CO2 after final vehicle linking</h2>
+<p><strong>Confirmed defect.</strong> Regional clones inherit the EUR template's split even
+when their actual fuel blend differs. The audit found 348 resolved mismatches;
+unresolved gas/synthetic routes make this a lower bound.</p>
+<p>Calculate tailpipe CO2 from the final linked supplier and final fuel quantity,
+after regionalization and efficiency adjustment. Use the carbon properties
+from step 2. Update the reclassification bookkeeping so scaling and repeated
+updates cannot double-transfer CO2 or reuse a stale transfer amount.</p>
+<p>Acceptance: all mapped vehicle regions pass in 2020 and 2050, including
+non-European cases, pure fossil/pure non-fossil boundaries and mixed markets.
+Transfers preserve total CO2 when only its classification changes; changes in
+total CO2 caused by changed blend properties are explained separately. Both
+CO2 flows remain nonnegative, and rerunning the transformation is idempotent.
+Check PHEVs and forwarding activities as well as single-fuel vehicles.</p>
+<p>Main code: <span class="docutils literal">premise/premise/fuels/carbon.py</span>, liquid/gas fuel transformations,
+<span class="docutils literal">premise/premise/transport.py</span> and transformation sequencing.</p>
+</section>
+<section id="couple-hydrogen-compression-electricity-to-hydrogen-demand">
+<h2>4. Couple hydrogen compression electricity to hydrogen demand</h2>
+<p><strong>Confirmed defect.</strong> The 40 t EUR FCEV's hydrogen demand falls 20% by 2050,
+but its compression electricity remains unchanged.</p>
+<p>Identify compression electricity explicitly and scale it with delivered
+hydrogen, retaining its specific kWh/kg unless a separate, documented
+compression-efficiency projection exists. Check whether upstream hydrogen
+supply already includes the same preparation stage.</p>
+<p>Acceptance: the intended kWh/kg ratio holds before and after transformation
+for cars and trucks, with factors of one and below one. Compression is counted
+once. Unrelated electricity exchanges are unaffected.</p>
+<p>Main code: <span class="docutils literal">premise/premise/transport.py</span> and hydrogen exchange metadata.</p>
+</section>
+<section id="correct-phev-physical-capacity-aggregation">
+<h2>5. Correct PHEV physical capacity aggregation</h2>
+<p><strong>Confirmed defect.</strong> All 16 car PHEV variants undercount nominal capacity by
+16.0--26.5%. Mode averaging weights stored energy but retains full pack mass.</p>
+<p>Correct the shared PHEV aggregation contract: physical hardware belongs to
+the vehicle, while mode-specific operation is weighted by usage. Trace the
+truck override and other subclasses before changing inherited behavior.
+Make both adapters consume the same coherent physical capacity, avoiding
+separate patches that diverge. Reconcile battery manufacture, replacements
+and end-of-life with Premise's capacity-market boundary.</p>
+<p>Acceptance: nominal capacity agrees with cell mass times cell energy density;
+pack mass and cell share agree. Test zero, intermediate and full electric
+driving shares without deleting hardware from an unchanged architecture.
+Operating energy still follows usage. The Medium car's current physical
+30.576 kWh is a diagnostic reference, not a hard-coded replacement value.</p>
+<p>Main code: <span class="docutils literal">carculator_utils/model.py:create_PHEV</span>, subclass overrides and
+<span class="docutils literal">dev/regenerate_premise_cars.py</span> / <span class="docutils literal">dev/regenerate_premise_trucks.py</span>.</p>
+</section>
+<section id="derive-phev-replacement-counts-from-actual-battery-use">
+<h2>6. Derive PHEV replacement counts from actual battery use</h2>
+<p><strong>Unresolved model question.</strong> Truck pack capacity is already recovered from
+physical mass, but replacement counts are still mode-averaged.</p>
+<p>Trace lifetime battery throughput, electric driving share, usable capacity,
+cycle life and any calendar-life limit. Establish whether usage weighting is
+already present before aggregating modes. Correct the source calculation if
+necessary and document the fractional-replacement convention.</p>
+<p>Acceptance: independent throughput/lifetime examples reproduce the count;
+electric driving share is applied once; limiting cases remain finite and
+physically interpretable. Purchased lifetime capacity equals the initial pack
+plus justified replacements, with disposal counted once. Do not correct the
+count by an unexplained multiplication or division by the utility factor.</p>
+<p>Main code: shared and truck battery-lifetime calculations and PHEV aggregation.</p>
+</section>
+<section id="resolve-missing-truck-hev-traction-storage">
+<h2>7. Resolve missing truck HEV traction storage</h2>
+<p><strong>Source-model issue to resolve.</strong> Seven native diesel hybrids and two
+gasoline-hybrid proxies have zero energy-battery mass/capacity despite a
+modelled fuel-economy benefit. The component inventory has no hidden pack.</p>
+<p>Establish the intended hybrid architecture from model inputs and supporting
+documentation. Size the buffer against electric power, recuperation and usable
+energy requirements. Trace the distinction between starter/power batteries
+and traction storage. Add the justified hardware consistently to mass,
+operational calculations, replacements, manufacture and disposal. Seek a
+modelling decision if the evidence cannot establish the architecture.</p>
+<p>Acceptance: the hybrid can deliver its modelled electric power and recuperation
+within battery constraints, with an explicit energy balance. Recalculate fuel
+consumption after correcting mass and storage. A 400 km BEV range battery is
+not the sizing rule for an HEV buffer. The nine affected services retain their
+identities and documented proxy relationships.</p>
+<p>Main code: <span class="docutils literal">carculator_truck/model.py:set_energy_stored_properties</span>, shared
+power-battery logic, truck inventory assembly and the truck adapter.</p>
+</section>
+<section id="implement-constant-range-future-sizing-and-review-efficiency-scaling">
+<h2>8. Implement constant-range future sizing and review efficiency scaling</h2>
+<p><strong>Approved policy; coupled implementation required.</strong> The audit found all
+98 surviving production inventories retaining their 2020 battery quantities.
+The EUR 40 t BEV therefore gains implied range from 400 to about 500 km when
+electricity use falls 20%. The approved policy instead preserves baseline range.</p>
+<p>First establish the meaning and boundary of each IAM efficiency indicator.
+Assign efficiency changes once: do not combine a native future carculator
+efficiency improvement with the same Premise improvement. Define the target
+energy/range constraints, then solve the coupled sizing problem with bounded
+convergence. Calibrate consistently if mass feedback affects energy demand.</p>
+<p>Propagate changes to nominal/usable capacity, pack mass, curb/driving mass,
+payload feasibility, battery lifetime, vehicle manufacture and affected
+operation/maintenance exchanges. Preserve each car's own design range and
+the truck 400 km target. Distinguish combustion range from electric-only range
+for PHEVs. Verify chemistry/density assumptions and compatibility with the
+capacity-market representation; bring unsupported new assumptions for review.</p>
+<p>Replace or retire the ineffective legacy truck-capacity override. Merely
+matching <span class="docutils literal">lorry production</span> to the old override would risk importing an
+unrelated battery/range assumption. Ensure regional production suppliers
+remain distinct when regional efficiency implies different hardware.</p>
+<p>Also classify exchanges by physical driver: fuel-related exhaust, distance
+and wear, start/soak events, and time/refrigerant losses. Remove blanket
+efficiency scaling where its proportionality is unsupported. Preserve the
+previous evaporation/PAH corrections and the agreed cold-start assumptions;
+do not clip emissions to EURO limits to conceal a model discrepancy.</p>
+<p>Acceptance: 2020 reproduces the corrected baseline; 2030/2050 retain design
+range within solver tolerance, close mass/energy balances and respect payload
+and power constraints. Year/region metadata report the actual resulting
+hardware. Cases with no IAM efficiency signal are explicit. Focused tests show
+which emissions scale and why, with no duplicate application of efficiency.</p>
+<p>Main code: <span class="docutils literal">premise/premise/transport.py</span>, vehicle-model sizing and the
+interface carrying baseline specifications into Premise transformations.</p>
+</section>
+<section id="implement-and-document-the-lpg-fallback">
+<h2>9. Implement and document the LPG fallback</h2>
+<p><strong>Policy approved.</strong> The one LPG car and four LPG truck templates retain fossil
+LPG supply where REMIND has no usable LPG pathway.</p>
+<p>Make the fallback explicit in mappings, validation and comments. Preserve the
+approved energy-preserving proxy conversion and remove CNG-specific leakage.
+Use available geographic suppliers only where justified; do not imply a
+scenario LPG blend or efficiency projection that the IAM does not provide.</p>
+<p>Acceptance: all five services link, use LPG-specific energy/carbon properties
+and report fossil combustion CO2 consistently. Metadata identify the actual
+supplier geography and absence of a scenario-specific LPG blend. The fallback
+remains visible in coverage reports rather than silently passing as full IAM
+coverage.</p>
+</section>
+<section id="complete-provenance-and-preserve-dataset-identity">
+<h2>10. Complete provenance and preserve dataset identity</h2>
+<p><strong>Confirmed defects.</strong> All 289 installed car/truck datasets lack structured
+publication/source fields or DOI comments; 34 car service/production datasets
+lack the model name. Truck writers also inherit a car database header.</p>
+<p>Make the Excel writer accept an explicit database label and preserve supported
+metadata fields. Add the original model, shared-library version and source
+revision, appropriate publication/DOI, baseline year, climate, driving cycle,
+usage assumptions, proxy decisions, regeneration date and noise boundary.
+Distinguish model-publication references from sources for individual factors
+and legacy components. Retain this approved wording on applicable car datasets:</p>
+<blockquote>
+<p>the original LCA model, carculator, uses emission factors for cold start,
+evaporative and running emissions from the HBEFA 5.1 emissions handbook.</p>
+</blockquote>
+<p>For transformed datasets, separately record scenario, year, region, actual
+fuel supplier, efficiency factor and resized specifications. Clearly label
+raw 2020 specifications as baseline. Keep detailed parameters and noise in
+the companion audits, with reproducible provenance linking them to the workbook.</p>
+<p>Acceptance: Excel -&gt; importer -&gt; Premise -&gt; saved Brightway readback retains
+the intended metadata. Retained service/production identities and auxiliary
+supplier links are unchanged; workbook database headers are correct. Legacy
+components retain truthful original provenance rather than acquiring an
+unrelated current-model citation.</p>
+</section>
+<section id="repeat-physical-and-emissions-plausibility-checks">
+<h2>11. Repeat physical and emissions plausibility checks</h2>
+<p>Regenerate the candidates from corrected matching source checkouts. Do not
+reuse a raw export produced before a model correction. Check the complete car
+and truck grids for finite positive active-vehicle quantities, units, functional
+units, lifetime allocation, fuel demand, battery energy/mass, payload and range.</p>
+<p>Investigate the most demanding cases explicitly: the 3.5 t BEV's current
+133.8 kWh / 796 kg pack, large-car batteries, all hybrids and hydrogen trucks.
+Separate an internally feasible vehicle from a commercially representative
+one. Compare outliers with documented model assumptions and suitable primary
+technical evidence; ask before changing an accepted range or payload.</p>
+<p>Repeat the EURO-class emissions screen using comparable test boundaries and
+units. Retain cold-start versus hot-emission distinctions and describe the
+limits of comparing inventory averages with regulatory tests. Check PAH,
+evaporative speciation and the approved pollutant-normalization corrections
+as regressions, including applicable shared-utils paths.</p>
+<p>Acceptance: all material outliers are explained or fixed. A finite number,
+an exact supplier link or a passed regulatory screen alone is insufficient.
+Preserve companion noise records and exact names for the retained catalogue.</p>
+</section>
+<section id="rebuild-compare-ef-3-1-and-close-the-findings">
+<h2>12. Rebuild, compare EF 3.1 and close the findings</h2>
+<p>Run focused tests after each correction. Shared-model changes also require
+affected sibling tests and small deterministic real model/inventory cases,
+including bus/two-wheeler smoke checks where inherited behavior changes.
+Run full integration builds after coherent groups of changes and at completion.</p>
+<p>The final controlled comparison uses REMIND SSP2-NPi, ecoinvent 3.12 cutoff
+and both 2020 and 2050. It includes the complete retained RER catalogues and
+EUR regionalized subsets; fuel, carbon and physical checks cover all mapped
+regions. Add a 2030 sizing check and a second, fuel-transition-sensitive
+pathway check to exercise the new contracts beyond the original two builds.</p>
+<p>Build old and corrected inventories with the <strong>same corrected Premise code</strong>
+for the inventory comparison. Separately quantify transformation-code effects
+with fixed inventory inputs where compatible. Record any required baseline
+compatibility adaptation. Where useful, retain intermediate car-only and
+truck-only comparisons so their effects can be distinguished.</p>
+<p>Calculate the 16 EF 3.1 headline categories without combining them into a
+single weighted score. Report absolute and relative differences, manufacturing
+and operation contributions, and the largest changes. For trucks, show per-vkm
+and per-tkm results with their payloads. Trace RER forwarding suppliers so they
+are not mistaken for untouched templates. Independently verify representative
+matrix solves and saved-database readback. Each large unexplained change remains
+an open finding, not an accepted consequence of updating the model.</p>
+<p>Acceptance: zero unresolved validation errors; relevant warnings investigated;
+all confirmed defects have focused regression checks; the revised workbooks,
+sidecars, build hashes, paired scores and explanations agree. Keep the original
+databases and an explicit rollback manifest. Record each finding as fixed,
+justified, or awaiting a named modelling decision. Close the car/truck update
+only once the remaining scientific questions are resolved.</p>
+</section>
+<section id="execution-dependencies">
+<h2>Execution dependencies</h2>
+<p>Steps 1 -&gt; 2 -&gt; 3 establish supplier and carbon consistency. Step 4 fixes the
+independent hydrogen-energy defect. Steps 5 -&gt; 6 -&gt; 7 establish hybrid hardware
+and lifetime accounting. These results feed step 8's future sizing. Step 9
+applies the approved LPG exception; steps 10 -&gt; 11 -&gt; 12 produce a traceable,
+validated release and LCIA comparison. Implementation remains sequential and
+reviewable even where tasks are technically independent.</p>
+<p>Step 1, the regional CNG provider chain, was completed on 13 October 2026.
+The <a class="reference external" href="../premise_cng_routing_20261013/report.html">correction report</a> records
+nine new regression cases, 45 passing focused tests, and full 2020/2050 checks
+of all 13 regional chains.</p>
+<p>Step 2, explicit fuel energy/carbon properties, was completed on the same day.
+The <a class="reference external" href="../premise_fuel_basis_20261013/report.html">fuel-accounting report</a> records
+288 passing tests, the approved 46.5 MJ/kg delivered-CNG correction, corrected
+energy-equivalent fuel markets and full 2020/2050 builds with zero validation
+errors. Each build passes 185 property checks and 147 CNG service-energy checks.
+The source compression recipe is preserved; its upstream/delivered energy
+boundary difference remains explicit.</p>
+<p>Step 3, final regional tailpipe CO2 accounting, was completed on the same day.
+The <a class="reference external" href="../premise_vehicle_carbon_20261013/report.html">vehicle-carbon report</a>
+records 342 passing tests and zero remaining mismatches across 495 direct-fuel
+car/truck services in each full 2020/2050 build. The existing fuel reclassifier
+is reused after final linking and efficiency scaling; transfer amounts now
+scale consistently. Repeating this dedicated carbon update on each completed
+inventory makes no changes. All numerical differences from step 2 are vehicle
+CO2 exchanges; validation has zero errors and unchanged warning identities.
+The next task is hydrogen compression electricity. Steps 4--12 remain open.</p>
+</section>
+</main>
+</body>
+</html>

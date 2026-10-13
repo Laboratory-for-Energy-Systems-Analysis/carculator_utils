@@ -1,0 +1,287 @@
+year,family,name,region,fuel_kg_per_service,market_location,compression_location
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",CAZ,0.05052619137438619,CAZ,CAZ
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",CHA,0.05052619137438619,CHA,CHA
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",EUR,0.05052619137438619,EUR,EUR
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",IND,0.05052619137438619,IND,IND
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",JPN,0.05052619137438619,JPN,JPN
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",LAM,0.05052619137438619,LAM,LAM
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",MEA,0.05052619137438619,MEA,MEA
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",NEU,0.05052619137438619,NEU,NEU
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",OAS,0.05052619137438619,OAS,OAS
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",REF,0.05052619137438619,REF,REF
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",SSA,0.05052619137438619,SSA,SSA
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",USA,0.05052619137438619,USA,USA
+2020,car,"transport, passenger car, compressed gas, Large, EURO-6",World,0.05052619137438619,World,World
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",CAZ,0.04550806123173512,CAZ,CAZ
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",CHA,0.04550806123173512,CHA,CHA
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",EUR,0.04550806123173512,EUR,EUR
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",IND,0.04550806123173512,IND,IND
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",JPN,0.04550806123173512,JPN,JPN
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",LAM,0.04550806123173512,LAM,LAM
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",MEA,0.04550806123173512,MEA,MEA
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",NEU,0.04550806123173512,NEU,NEU
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",OAS,0.04550806123173512,OAS,OAS
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",REF,0.04550806123173512,REF,REF
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",SSA,0.04550806123173512,SSA,SSA
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",USA,0.04550806123173512,USA,USA
+2020,car,"transport, passenger car, compressed gas, Medium, EURO-6",World,0.04550806123173512,World,World
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",CAZ,0.03559629621795191,CAZ,CAZ
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",CHA,0.03559629621795191,CHA,CHA
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",EUR,0.03559629621795191,EUR,EUR
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",IND,0.03559629621795191,IND,IND
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",JPN,0.03559629621795191,JPN,JPN
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",LAM,0.03559629621795191,LAM,LAM
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",MEA,0.03559629621795191,MEA,MEA
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",NEU,0.03559629621795191,NEU,NEU
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",OAS,0.03559629621795191,OAS,OAS
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",REF,0.03559629621795191,REF,REF
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",SSA,0.03559629621795191,SSA,SSA
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",USA,0.03559629621795191,USA,USA
+2020,car,"transport, passenger car, compressed gas, Mini, EURO-6",World,0.03559629621795191,World,World
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",CAZ,0.04738738541921972,CAZ,CAZ
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",CHA,0.04738738541921972,CHA,CHA
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",EUR,0.04738738541921972,EUR,EUR
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",IND,0.04738738541921972,IND,IND
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",JPN,0.04738738541921972,JPN,JPN
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",LAM,0.04738738541921972,LAM,LAM
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",MEA,0.04738738541921972,MEA,MEA
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",NEU,0.04738738541921972,NEU,NEU
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",OAS,0.04738738541921972,OAS,OAS
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",REF,0.04738738541921972,REF,REF
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",SSA,0.04738738541921972,SSA,SSA
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",USA,0.04738738541921972,USA,USA
+2020,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",World,0.04738738541921972,World,World
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",CAZ,0.03796459468242741,CAZ,CAZ
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",CHA,0.03796459468242741,CHA,CHA
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",EUR,0.03796459468242741,EUR,EUR
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",IND,0.03796459468242741,IND,IND
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",JPN,0.03796459468242741,JPN,JPN
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",LAM,0.03796459468242741,LAM,LAM
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",MEA,0.03796459468242741,MEA,MEA
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",NEU,0.03796459468242741,NEU,NEU
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",OAS,0.03796459468242741,OAS,OAS
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",REF,0.03796459468242741,REF,REF
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",SSA,0.03796459468242741,SSA,SSA
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",USA,0.03796459468242741,USA,USA
+2020,car,"transport, passenger car, compressed gas, Small, EURO-6",World,0.03796459468242741,World,World
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",CAZ,0.06258918883910525,CAZ,CAZ
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",CHA,0.06258918883910525,CHA,CHA
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",EUR,0.06258918883910525,EUR,EUR
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",IND,0.06258918883910525,IND,IND
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",JPN,0.06258918883910525,JPN,JPN
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",LAM,0.06258918883910525,LAM,LAM
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",MEA,0.06258918883910525,MEA,MEA
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",NEU,0.06258918883910525,NEU,NEU
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",OAS,0.06258918883910525,OAS,OAS
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",REF,0.06258918883910525,REF,REF
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",SSA,0.06258918883910525,SSA,SSA
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",USA,0.06258918883910525,USA,USA
+2020,car,"transport, passenger car, compressed gas, Van, EURO-6",World,0.06258918883910525,World,World
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",CAZ,0.0982920013554865,CAZ,CAZ
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",CHA,0.0982920013554865,CHA,CHA
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",EUR,0.0982920013554865,EUR,EUR
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",IND,0.0982920013554865,IND,IND
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",JPN,0.0982920013554865,JPN,JPN
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",LAM,0.0982920013554865,LAM,LAM
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",MEA,0.0982920013554865,MEA,MEA
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",NEU,0.0982920013554865,NEU,NEU
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",OAS,0.0982920013554865,OAS,OAS
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",REF,0.0982920013554865,REF,REF
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",SSA,0.0982920013554865,SSA,SSA
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",USA,0.0982920013554865,USA,USA
+2020,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",World,0.0982920013554865,World,World
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",CAZ,0.0584340923854916,CAZ,CAZ
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",CHA,0.0584340923854916,CHA,CHA
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",EUR,0.0584340923854916,EUR,EUR
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",IND,0.0584340923854916,IND,IND
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",JPN,0.0584340923854916,JPN,JPN
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",LAM,0.0584340923854916,LAM,LAM
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",MEA,0.0584340923854916,MEA,MEA
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",NEU,0.0584340923854916,NEU,NEU
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",OAS,0.0584340923854916,OAS,OAS
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",REF,0.0584340923854916,REF,REF
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",SSA,0.0584340923854916,SSA,SSA
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",USA,0.0584340923854916,USA,USA
+2020,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",World,0.0584340923854916,World,World
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",CAZ,0.0594324882442676,CAZ,CAZ
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",CHA,0.0594324882442676,CHA,CHA
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",EUR,0.0594324882442676,EUR,EUR
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",IND,0.0594324882442676,IND,IND
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",JPN,0.0594324882442676,JPN,JPN
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",LAM,0.0594324882442676,LAM,LAM
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",MEA,0.0594324882442676,MEA,MEA
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",NEU,0.0594324882442676,NEU,NEU
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",OAS,0.0594324882442676,OAS,OAS
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",REF,0.0594324882442676,REF,REF
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",SSA,0.0594324882442676,SSA,SSA
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",USA,0.0594324882442676,USA,USA
+2020,truck,"transport, freight, lorry, compressed gas, 18 metric ton",World,0.0594324882442676,World,World
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",CAZ,0.03695110861203417,CAZ,CAZ
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",CHA,0.03695110861203417,CHA,CHA
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",EUR,0.03695110861203417,EUR,EUR
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",IND,0.03695110861203417,IND,IND
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",JPN,0.03695110861203417,JPN,JPN
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",LAM,0.03695110861203417,LAM,LAM
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",MEA,0.03695110861203417,MEA,MEA
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",NEU,0.03695110861203417,NEU,NEU
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",OAS,0.03695110861203417,OAS,OAS
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",REF,0.03695110861203417,REF,REF
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",SSA,0.03695110861203417,SSA,SSA
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",USA,0.03695110861203417,USA,USA
+2020,truck,"transport, freight, lorry, compressed gas, 26 metric ton",World,0.03695110861203417,World,World
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",CAZ,0.02875183752132836,CAZ,CAZ
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",CHA,0.02875183752132836,CHA,CHA
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",EUR,0.02875183752132836,EUR,EUR
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",IND,0.02875183752132836,IND,IND
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",JPN,0.02875183752132836,JPN,JPN
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",LAM,0.02875183752132836,LAM,LAM
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",MEA,0.02875183752132836,MEA,MEA
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",NEU,0.02875183752132836,NEU,NEU
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",OAS,0.02875183752132836,OAS,OAS
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",REF,0.02875183752132836,REF,REF
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",SSA,0.02875183752132836,SSA,SSA
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",USA,0.02875183752132836,USA,USA
+2020,truck,"transport, freight, lorry, compressed gas, 40 metric ton",World,0.02875183752132836,World,World
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",CAZ,0.04042095309950895,CAZ,CAZ
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",CHA,0.05052619137438619,CHA,CHA
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",EUR,0.05052619137438619,EUR,EUR
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",IND,0.05052619137438619,IND,IND
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",JPN,0.05052619137438619,JPN,JPN
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",LAM,0.04060336504919606,LAM,LAM
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",MEA,0.05052619137438619,MEA,MEA
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",NEU,0.05052619137438619,NEU,NEU
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",OAS,0.04266814623265118,OAS,OAS
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",REF,0.05052619137438619,REF,REF
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",SSA,0.05052619137438619,SSA,SSA
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",USA,0.04120198127678074,USA,USA
+2050,car,"transport, passenger car, compressed gas, Large, EURO-6",World,0.05052619137438619,World,World
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",CAZ,0.037175606966492004,CAZ,CAZ
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",CHA,0.04550806123173512,CHA,CHA
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",EUR,0.04004037681994296,EUR,EUR
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",IND,0.04550806123173512,IND,IND
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",JPN,0.04550806123173512,JPN,JPN
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",LAM,0.03667110229534538,LAM,LAM
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",MEA,0.04550806123173512,MEA,MEA
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",NEU,0.0364064489853881,NEU,NEU
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",OAS,0.039135554735498845,OAS,OAS
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",REF,0.04237690949842294,REF,REF
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",SSA,0.04550806123173512,SSA,SSA
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",USA,0.03717242596998691,USA,USA
+2050,car,"transport, passenger car, compressed gas, Medium, EURO-6",World,0.04165109591489471,World,World
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",CAZ,0.02944502322968534,CAZ,CAZ
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",CHA,0.03397808015290349,CHA,CHA
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",EUR,0.029544411744826617,EUR,EUR
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",IND,0.0298992422188915,IND,IND
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",JPN,0.029052838763830482,JPN,JPN
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",LAM,0.02960740364686514,LAM,LAM
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",MEA,0.03256500404507377,MEA,MEA
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",NEU,0.030172449850032524,NEU,NEU
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",OAS,0.031950948318356265,OAS,OAS
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",REF,0.03559629621795191,REF,REF
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",SSA,0.03362588531797572,SSA,SSA
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",USA,0.03559629621795191,USA,USA
+2050,car,"transport, passenger car, compressed gas, Mini, EURO-6",World,0.03451420086715188,World,World
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",CAZ,0.037909908335375775,CAZ,CAZ
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",CHA,0.037909908335375775,CHA,CHA
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",EUR,0.037909908335375775,EUR,EUR
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",IND,0.037909908335375775,IND,IND
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",JPN,0.03882958643795449,JPN,JPN
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",LAM,0.03946708609002659,LAM,LAM
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",MEA,0.04030437081089254,MEA,MEA
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",NEU,0.037909908335375775,NEU,NEU
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",OAS,0.037909908335375775,OAS,OAS
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",REF,0.04428409949309555,REF,REF
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",SSA,0.039161039731433554,SSA,SSA
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",USA,0.03839227317441209,USA,USA
+2050,car,"transport, passenger car, compressed gas, Medium SUV, EURO-6",World,0.045496535320707514,World,World
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",CAZ,0.03075145159617077,CAZ,CAZ
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",CHA,0.035560380007649044,CHA,CHA
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",EUR,0.0317040237699157,EUR,EUR
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",IND,0.03136603358360163,IND,IND
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",JPN,0.031106177084685424,JPN,JPN
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",LAM,0.031582131876512445,LAM,LAM
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",MEA,0.033050436513186655,MEA,MEA
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",NEU,0.03037167574594193,NEU,NEU
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",OAS,0.03037167574594193,OAS,OAS
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",REF,0.03538705582226889,REF,REF
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",SSA,0.03225021041776067,SSA,SSA
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",USA,0.03796459468242741,USA,USA
+2050,car,"transport, passenger car, compressed gas, Small, EURO-6",World,0.03796459468242741,World,World
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",CAZ,0.05233419089988143,CAZ,CAZ
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",CHA,0.06258918883910525,CHA,CHA
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",EUR,0.05167123509566292,EUR,EUR
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",IND,0.06258918883910525,IND,IND
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",JPN,0.06258918883910525,JPN,JPN
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",LAM,0.051393918289709545,LAM,LAM
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",MEA,0.06258918883910525,MEA,MEA
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",NEU,0.05473325529170399,NEU,NEU
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",OAS,0.05356777658092328,OAS,OAS
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",REF,0.06258918883910525,REF,REF
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",SSA,0.05327874390580684,SSA,SSA
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",USA,0.06258918883910525,USA,USA
+2050,car,"transport, passenger car, compressed gas, Van, EURO-6",World,0.0523220058208747,World,World
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",CAZ,0.07863360108438922,CAZ,CAZ
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",CHA,0.07863360108438922,CHA,CHA
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",EUR,0.09628083598997399,EUR,EUR
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",IND,0.07863360108438922,IND,IND
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",JPN,0.07863360108438922,JPN,JPN
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",LAM,0.07863360108438922,LAM,LAM
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",MEA,0.07863360108438922,MEA,MEA
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",NEU,0.07863360108438922,NEU,NEU
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",OAS,0.07863360108438922,OAS,OAS
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",REF,0.07863360108438922,REF,REF
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",SSA,0.07863360108438922,SSA,SSA
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",USA,0.07863360108438922,USA,USA
+2050,truck,"transport, freight, lorry, compressed gas, 3.5 metric ton",World,0.07863360108438922,World,World
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",CAZ,0.04674727390839328,CAZ,CAZ
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",CHA,0.04674727390839328,CHA,CHA
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",EUR,0.04674727390839328,EUR,EUR
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",IND,0.04674727390839328,IND,IND
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",JPN,0.04674727390839328,JPN,JPN
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",LAM,0.04674727390839328,LAM,LAM
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",MEA,0.04674727390839328,MEA,MEA
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",NEU,0.04674727390839328,NEU,NEU
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",OAS,0.04674727390839328,OAS,OAS
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",REF,0.04674727390839328,REF,REF
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",SSA,0.04674727390839328,SSA,SSA
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",USA,0.04674727390839328,USA,USA
+2050,truck,"transport, freight, lorry, compressed gas, 7.5 metric ton",World,0.04674727390839328,World,World
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",CAZ,0.04754599059541408,CAZ,CAZ
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",CHA,0.04754599059541408,CHA,CHA
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",EUR,0.04754599059541408,EUR,EUR
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",IND,0.04754599059541408,IND,IND
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",JPN,0.05943248824425819,JPN,JPN
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",LAM,0.04754599059541408,LAM,LAM
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",MEA,0.04754599059541408,MEA,MEA
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",NEU,0.04754599059541408,NEU,NEU
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",OAS,0.04754599059541408,OAS,OAS
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",REF,0.04754599059541408,REF,REF
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",SSA,0.04754599059541408,SSA,SSA
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",USA,0.04754599059541408,USA,USA
+2050,truck,"transport, freight, lorry, compressed gas, 18 metric ton",World,0.04754599059541408,World,World
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",CAZ,0.02956088688962734,CAZ,CAZ
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",CHA,0.02956088688962734,CHA,CHA
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",EUR,0.02956088688962734,EUR,EUR
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",IND,0.02956088688962734,IND,IND
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",JPN,0.03695110861202832,JPN,JPN
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",LAM,0.02956088688962734,LAM,LAM
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",MEA,0.02956088688962734,MEA,MEA
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",NEU,0.02956088688962734,NEU,NEU
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",OAS,0.02956088688962734,OAS,OAS
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",REF,0.02956088688962734,REF,REF
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",SSA,0.02956088688962734,SSA,SSA
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",USA,0.02956088688962734,USA,USA
+2050,truck,"transport, freight, lorry, compressed gas, 26 metric ton",World,0.02956088688962734,World,World
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",CAZ,0.02300147001706269,CAZ,CAZ
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",CHA,0.02300147001706269,CHA,CHA
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",EUR,0.02300147001706269,EUR,EUR
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",IND,0.02300147001706269,IND,IND
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",JPN,0.02875183752132381,JPN,JPN
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",LAM,0.02300147001706269,LAM,LAM
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",MEA,0.02300147001706269,MEA,MEA
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",NEU,0.02300147001706269,NEU,NEU
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",OAS,0.02300147001706269,OAS,OAS
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",REF,0.02300147001706269,REF,REF
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",SSA,0.02300147001706269,SSA,SSA
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",USA,0.02300147001706269,USA,USA
+2050,truck,"transport, freight, lorry, compressed gas, 40 metric ton",World,0.02300147001706269,World,World
