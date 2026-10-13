@@ -794,6 +794,34 @@ power-battery logic, truck inventory assembly and the truck adapter.</p>
 </section>
 <section id="implement-constant-range-future-sizing-and-review-efficiency-scaling">
 <h2>8. Implement constant-range future sizing and review efficiency scaling</h2>
+<p><strong>Emission-driver correction completed; hardware sizing in progress.</strong> IAM
+energy scaling and the car energy floor now preserve HBEFA distance/start
+factors, refrigerants and unrelated burdens. Fuel-derived CO2, sulphur and
+generic-air methane leakage retain their fuel relationship. Full 2020/2050
+builds and 121 focused tests verify this independent correction; see
+<span class="docutils literal"><span class="pre">../premise_vehicle_efficiency_20261013/report.rst</span></span>. GAINS remains separate.
+The user approved Premise's original-chemistry density projections for future
+BEV/PHEV mass; the high-power HEV specifications remain separate.</p>
+<p>The subsequent input audit found only 10 complete alias pairs among 30
+declared REMIND car mappings in the controlled scenario, passenger-km rather
+than vehicle-km in its car ES series, and zero-2020 activity for ten electric
+truck mappings. Correct/reconcile this boundary before sizing. Two scientific
+choices are pending: the fallback for unrecoverable technology-specific IAM
+signals and calibration of the native engineering projections to valid IAM
+targets. See <span class="docutils literal"><span class="pre">../premise_vehicle_range_20261013/report.rst</span></span> and its two
+native BEV probes; no future hardware changes are installed yet.</p>
+<p><strong>Original-source follow-up:</strong> the user's original REMIND 3.5.2 files recover
+positive direct MJ/vehicle-km intensities for 25 car and all 20 declared truck
+mappings in EUR. These were removed by the scenario filtering whitelist.
+The final filtered NPi file matches every row/value in the installed input.
+Restore the direct intensity series and handle their inverse explicitly
+before future sizing; the general fallback question is superseded for these
+represented classes. The separate Large Car category is still absent in EUR,
+although present in other regions. These are fleet intensity trends, not
+new-vehicle specifications. See
+<span class="docutils literal"><span class="pre">../premise_original_vehicle_iam_20261013/report.rst</span></span> for coverage, provenance,
+implementation requirements and remaining scope. No source inputs were changed
+by this read-only audit.</p>
 <p><strong>Approved policy; coupled implementation required.</strong> The audit found all
 98 surviving production inventories retaining their 2020 battery quantities.
 The EUR 40 t BEV therefore gains implied range from 400 to about 500 km when

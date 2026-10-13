@@ -627,6 +627,12 @@ range, with consistently resized hardware. The user has also approved
 Premise's density projection for the original BEV/PHEV chemistry, retaining
 the high-power HEV specifications separately. This audit changes no installed
 inventory or modelling parameter.</p>
+<p><strong>Follow-up:</strong> the original-source audit in
+<span class="docutils literal"><span class="pre">../premise_original_vehicle_iam_20261013/report.rst</span></span> recovered direct
+MJ/vehicle-km intensities for 25 car and all 20 declared truck mappings in
+EUR. They were omitted during filtering. The fallback question below is
+superseded for these represented mappings; the regional Large Car gap and
+the future hardware calibration choice remain separate.</p>
 <p>The preceding emission-driver correction is committed and validated in
 <span class="docutils literal"><span class="pre">../premise_vehicle_efficiency_20261013/report.rst</span></span>. It removes blanket
 IAM energy scaling of HBEFA and refrigerant emissions. Constant-range
@@ -645,7 +651,7 @@ entries have no declared REMIND mapping and are not unexpected missing data.</p>
 Hybrid electric that are absent. Carrier-level Electricity and Hydrogen
 labels are present, but their existence alone does not establish a matching
 technology-specific numerator, especially for BEV/PHEV electricity.</p></li>
-<li><p>The requested Large Car class is absent: the file uses Large Car and SUV.
+<li><p>The requested Large Car class is absent in EUR: that region uses Large Car and SUV.
 Sharing this signal between templates or splitting fleet volumes needs an
 explicit rule; duplicating a combined fleet total would overcount service.</p></li>
 <li><p>All 25 available car service aliases use billion passenger-km/year.

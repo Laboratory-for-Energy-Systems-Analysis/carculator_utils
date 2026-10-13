@@ -1,0 +1,730 @@
+{
+  "script_sha256": "d58a841c8f82613bde71c7126a04098fca8130785c8c1df4a29bbf88e2c3b40d",
+  "installed_scenario_sha256": "3a9f77641a1cf2874e2d92a3494c86e90259299ffde34915a01a8bd2ec7ff898",
+  "installed_intensity_rows": 0,
+  "lineage": [
+    {
+      "source": "remind 3.5/REMIND_generic_SSP2-NPi2025.mif",
+      "sha256": "7f3c89753bc3810652811114680bc00a784fe15b43b954f9207fc0b7df7ffbba",
+      "rows": 75506,
+      "duplicate_identity_rows_excluded": 0,
+      "intensity_rows": 2681,
+      "packaged_rows": 32992,
+      "common_unique_rows": 30491,
+      "years_compared": [
+        "2005",
+        "2010",
+        "2015",
+        "2020",
+        "2025",
+        "2030",
+        "2035",
+        "2040",
+        "2045",
+        "2050",
+        "2055",
+        "2060",
+        "2070",
+        "2080",
+        "2090",
+        "2100",
+        "2110",
+        "2130",
+        "2150"
+      ],
+      "cells_compared": 579329,
+      "exactly_equal_cells": 143094,
+      "numerically_equal_cells": 143712,
+      "all_packaged_rows_and_values_match": false,
+      "nonmatching_variable_count": 2191,
+      "nonmatching_variable_examples": [
+        "Carbon Management|Carbon Capture|Industrial Processes|Industry|+|Cement",
+        "ES|Buildings|Floor Space",
+        "ES|Transport",
+        "ES|Transport with bunkers",
+        "ES|Transport with bunkers|BEV",
+        "ES|Transport with bunkers|Electric",
+        "ES|Transport with bunkers|FCEV",
+        "ES|Transport with bunkers|Gases",
+        "ES|Transport with bunkers|Hybrid electric",
+        "ES|Transport with bunkers|Hydrogen"
+      ]
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP2-NPi2025.mif",
+      "sha256": "b19b71690d672b5e5cc2e908eeb5486fe723103f6ab6c852cdffc45486feb6dd",
+      "rows": 81321,
+      "duplicate_identity_rows_excluded": 0,
+      "intensity_rows": 2702,
+      "packaged_rows": 32992,
+      "common_unique_rows": 32966,
+      "years_compared": [
+        "2005",
+        "2010",
+        "2015",
+        "2020",
+        "2025",
+        "2030",
+        "2035",
+        "2040",
+        "2045",
+        "2050",
+        "2055",
+        "2060",
+        "2070",
+        "2080",
+        "2090",
+        "2100",
+        "2110",
+        "2130",
+        "2150"
+      ],
+      "cells_compared": 626354,
+      "exactly_equal_cells": 626066,
+      "numerically_equal_cells": 626302,
+      "all_packaged_rows_and_values_match": false,
+      "nonmatching_variable_count": 2,
+      "nonmatching_variable_examples": [
+        "FE|Industry|+++|Cement",
+        "Production|Industry|Cement"
+      ]
+    },
+    {
+      "source": "remind 3.5.2/allocated/REMIND_generic_SSP2-NPi2025_feedstock.mif",
+      "sha256": "86fd6ea1ee7fc03c37d1ddf436a611f2c3bbb41de723461ba4af219a6a2cbb2d",
+      "rows": 84429,
+      "duplicate_identity_rows_excluded": 0,
+      "intensity_rows": 2702,
+      "packaged_rows": 32992,
+      "common_unique_rows": 32966,
+      "years_compared": [
+        "2005",
+        "2010",
+        "2015",
+        "2020",
+        "2025",
+        "2030",
+        "2035",
+        "2040",
+        "2045",
+        "2050",
+        "2055",
+        "2060",
+        "2070",
+        "2080",
+        "2090",
+        "2100",
+        "2110",
+        "2130",
+        "2150"
+      ],
+      "cells_compared": 626354,
+      "exactly_equal_cells": 626302,
+      "numerically_equal_cells": 626302,
+      "all_packaged_rows_and_values_match": false,
+      "nonmatching_variable_count": 2,
+      "nonmatching_variable_examples": [
+        "FE|Industry|+++|Cement",
+        "Production|Industry|Cement"
+      ]
+    },
+    {
+      "source": "remind 3.5.2/allocated/REMIND_generic_SSP2-NPi2025_feedstock_filtered.csv",
+      "sha256": "8df5e350a36ca5c0d43389748db918795cc79913f07853817bca038e01c37788",
+      "rows": 36126,
+      "duplicate_identity_rows_excluded": 52,
+      "intensity_rows": 0,
+      "packaged_rows": 32992,
+      "common_unique_rows": 32966,
+      "years_compared": [
+        "2005",
+        "2010",
+        "2015",
+        "2020",
+        "2025",
+        "2030",
+        "2035",
+        "2040",
+        "2045",
+        "2050",
+        "2055",
+        "2060",
+        "2070",
+        "2080",
+        "2090",
+        "2100",
+        "2110",
+        "2130",
+        "2150"
+      ],
+      "cells_compared": 626354,
+      "exactly_equal_cells": 626287,
+      "numerically_equal_cells": 626302,
+      "all_packaged_rows_and_values_match": false,
+      "nonmatching_variable_count": 2,
+      "nonmatching_variable_examples": [
+        "FE|Industry|+++|Cement",
+        "Production|Industry|Cement"
+      ]
+    },
+    {
+      "source": "remind 3.5.2/allocated/REMIND_generic_SSP2-NPi2025_feedstock_filtered_filtered.csv",
+      "sha256": "73f4740ef314ea105a83b0a3954df191ce6792a3ccb8b59d307c8733ad0369e6",
+      "rows": 36100,
+      "duplicate_identity_rows_excluded": 0,
+      "intensity_rows": 0,
+      "packaged_rows": 32992,
+      "common_unique_rows": 32992,
+      "years_compared": [
+        "2005",
+        "2010",
+        "2015",
+        "2020",
+        "2025",
+        "2030",
+        "2035",
+        "2040",
+        "2045",
+        "2050",
+        "2055",
+        "2060",
+        "2070",
+        "2080",
+        "2090",
+        "2100",
+        "2110",
+        "2130",
+        "2150"
+      ],
+      "cells_compared": 626848,
+      "exactly_equal_cells": 626642,
+      "numerically_equal_cells": 626848,
+      "all_packaged_rows_and_values_match": true,
+      "nonmatching_variable_count": 0,
+      "nonmatching_variable_examples": []
+    }
+  ],
+  "filter_evidence": {
+    "source": "encryption/encryption.ipynb",
+    "sha256": "b050ac13471cc790e9753f9ee4cf92afe9da09e7715cfcdd6aa44b13e30442a0",
+    "matching_cells": [
+      {
+        "cell_index_zero_based": 6,
+        "kept_prefixes": [
+          "Distance",
+          "Energy Service",
+          "ES",
+          "FE",
+          "SE",
+          "PE",
+          "Final Energy",
+          "Production",
+          "Efficiency",
+          "Emi|CO2",
+          "Emissions|CO2",
+          "Emissions|Kyoto Gases",
+          "Emission Factor|CO2",
+          "Carbon Capture",
+          "Energy Service",
+          "Land Use",
+          "Temperature",
+          "AR6",
+          "Secondary Energy",
+          "Primary Energy",
+          "Population",
+          "Tech",
+          "GDP",
+          "Population",
+          "MAGICC7 AR6|Raw Surface Temperature (GMST)|50.0th Percentile",
+          "Carbon Management|Carbon Capture|Industrial Processes|Industry|+|Cement",
+          "New",
+          "Sales"
+        ],
+        "keeps_energy_intensity": false
+      }
+    ]
+  },
+  "originals": [
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP1-NPi2025.mif",
+      "sha256": "4d0dd2dd4e3920b2390407d920416f7640b99bc7b84c6e5d4fbdf3119b915633",
+      "rows": 81327,
+      "scenarios": [
+        "SSP1-NPi2025"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2702,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP1-PkBudg1000.mif",
+      "sha256": "e1330643c95c5b4ad585088e1422104ae4b896859e6624899984dc9c360549fc",
+      "rows": 81331,
+      "scenarios": [
+        "SSP1-PkBudg1000"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2702,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP1-PkBudg650.mif",
+      "sha256": "fa8bc02b1edcc9e4e6c27d2a05cd657911b0693af143887b5a402269d8edf7b5",
+      "rows": 81335,
+      "scenarios": [
+        "SSP1-PkBudg650"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2702,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP2-EU21-NDC.mif",
+      "sha256": "8e0b481b799dce06b5c881d0ada5d64ec66c4fe238ea4645b3d2be5188fcca46",
+      "rows": 155461,
+      "scenarios": [
+        "SSP2-EU21-NDC"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "DEU",
+        "ECE",
+        "ECS",
+        "ENC",
+        "ESC",
+        "ESW",
+        "EU27",
+        "EUR",
+        "EWN",
+        "FRA",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEN",
+        "NES",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "UKI",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 5162,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP2-EU21-NPi2025.mif",
+      "sha256": "4380e95c615aabecadf5bb2b256faa00d2d49fc6119627a558fc71fba58ee5bb",
+      "rows": 155457,
+      "scenarios": [
+        "SSP2-EU21-NPi2025"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "DEU",
+        "ECE",
+        "ECS",
+        "ENC",
+        "ESC",
+        "ESW",
+        "EU27",
+        "EUR",
+        "EWN",
+        "FRA",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEN",
+        "NES",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "UKI",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 5162,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP2-EU21-PkBudg1000.mif",
+      "sha256": "64b3080f6fb66e564dce860974ce3a50a46adc4fd8beeb449693872442f4e833",
+      "rows": 155457,
+      "scenarios": [
+        "SSP2-EU21-PkBudg1000"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "DEU",
+        "ECE",
+        "ECS",
+        "ENC",
+        "ESC",
+        "ESW",
+        "EU27",
+        "EUR",
+        "EWN",
+        "FRA",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEN",
+        "NES",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "UKI",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 5162,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP2-EU21-PkBudg650.mif",
+      "sha256": "0531a1b9715254a1fcd5f24cd2360759891decf9c657b5e5175c3295c057749c",
+      "rows": 155461,
+      "scenarios": [
+        "SSP2-EU21-PkBudg650"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "DEU",
+        "ECE",
+        "ECS",
+        "ENC",
+        "ESC",
+        "ESW",
+        "EU27",
+        "EUR",
+        "EWN",
+        "FRA",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEN",
+        "NES",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "UKI",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 5162,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP2-NDC.mif",
+      "sha256": "a5e090d6e29968db67ccfe208178b9f56083e7a33ef8a4ca4be59e144bcd2658",
+      "rows": 81325,
+      "scenarios": [
+        "SSP2-NDC"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2702,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP2-NPi2025.mif",
+      "sha256": "b19b71690d672b5e5cc2e908eeb5486fe723103f6ab6c852cdffc45486feb6dd",
+      "rows": 81321,
+      "scenarios": [
+        "SSP2-NPi2025"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2702,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP2-PkBudg1000.mif",
+      "sha256": "4a1873be2dfdf4ee8b71ab7cf7fcb4f1e7b605d2cd0115f2c216f77d3d515e2e",
+      "rows": 81325,
+      "scenarios": [
+        "SSP2-PkBudg1000"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2702,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP2-PkBudg650.mif",
+      "sha256": "07601d6c5a5ccec828ef6666bce0b27be4b3e7d5526f0b1beb83d8644891bf90",
+      "rows": 81325,
+      "scenarios": [
+        "SSP2-PkBudg650"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2702,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5.2/REMIND_generic_SSP3-rollBack.mif",
+      "sha256": "ce87d8f4ab3bf50a68d9da26028a913612c20d1837aede9a45101949a3ed857e",
+      "rows": 81241,
+      "scenarios": [
+        "SSP3-rollBack"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2702,
+      "eur_intensity_rows": 212,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3.5/REMIND_generic_SSP2-NPi2025.mif",
+      "sha256": "7f3c89753bc3810652811114680bc00a784fe15b43b954f9207fc0b7df7ffbba",
+      "rows": 75506,
+      "scenarios": [
+        "SSP2-NPi2025"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2681,
+      "eur_intensity_rows": 200,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "old/remind 3.2/remind_SSP2-NPi.mif",
+      "sha256": "6cf34e5b791635c12b962196155c8fde16751f2c7c462461b5e04066b6d8f4c2",
+      "rows": 37598,
+      "scenarios": [
+        "SSP2EU-NPi"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 0,
+      "eur_intensity_rows": 0,
+      "intensity_units": [],
+      "extended_intensity_or_load_variables": []
+    },
+    {
+      "source": "remind 3-5-MagPie/REMIND_generic_C_SMIPv06-M-SSP2-NPi2025-def-rem-3.mif",
+      "sha256": "0238bfc5c38a2bb25f679d56a35d6fd9b9432776f5bb1c627cf5196c41fb399e",
+      "rows": 116771,
+      "scenarios": [
+        "C_SMIPv06-M-SSP2-NPi2025-def-rem-3"
+      ],
+      "regions": [
+        "CAZ",
+        "CHA",
+        "EUR",
+        "IND",
+        "JPN",
+        "LAM",
+        "MEA",
+        "NEU",
+        "OAS",
+        "REF",
+        "SSA",
+        "USA",
+        "World"
+      ],
+      "intensity_rows": 2681,
+      "eur_intensity_rows": 200,
+      "intensity_units": [
+        "MJ/vehkm"
+      ],
+      "extended_intensity_or_load_variables": []
+    }
+  ]
+}

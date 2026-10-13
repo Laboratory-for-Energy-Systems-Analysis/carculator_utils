@@ -226,6 +226,19 @@ signals and calibration of the native engineering projections to valid IAM
 targets. See ``../premise_vehicle_range_20261013/report.rst`` and its two
 native BEV probes; no future hardware changes are installed yet.
 
+**Original-source follow-up:** the user's original REMIND 3.5.2 files recover
+positive direct MJ/vehicle-km intensities for 25 car and all 20 declared truck
+mappings in EUR. These were removed by the scenario filtering whitelist.
+The final filtered NPi file matches every row/value in the installed input.
+Restore the direct intensity series and handle their inverse explicitly
+before future sizing; the general fallback question is superseded for these
+represented classes. The separate Large Car category is still absent in EUR,
+although present in other regions. These are fleet intensity trends, not
+new-vehicle specifications. See
+``../premise_original_vehicle_iam_20261013/report.rst`` for coverage, provenance,
+implementation requirements and remaining scope. No source inputs were changed
+by this read-only audit.
+
 **Approved policy; coupled implementation required.** The audit found all
 98 surviving production inventories retaining their 2020 battery quantities.
 The EUR 40 t BEV therefore gains implied range from 400 to about 500 km when
