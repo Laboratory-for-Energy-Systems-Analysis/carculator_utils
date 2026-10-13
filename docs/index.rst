@@ -76,6 +76,7 @@ statement of current behaviour.
    approved_fixes
    energy_validation_2025
    documentation_review
+   premise_vehicle_update
    release
    api
 

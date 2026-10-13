@@ -1,0 +1,32 @@
+{
+  "baseline_year": 2020,
+  "historical_classes": "exclude",
+  "classes": {
+    "car": "EURO-6",
+    "bus": "EURO-VI",
+    "truck": "EURO-VI",
+    "two-wheeler": "EURO-5"
+  },
+  "electric_and_human_powered": "retain",
+  "fuel_and_electricity": "premise regional scenario markets",
+  "batteries": "premise capacity markets with updated capacities and replacement counts",
+  "unsupported_vehicles": "documented proxies; corrections reviewed",
+  "tram": "retain separately",
+  "noise": "companion audit file; omit from premise imports",
+  "status": "passenger-car update installed and paired 2020 EF 3.1 comparison completed; other vehicle workbooks unchanged",
+  "vehicle_and_use_parameters": "latest 2020 defaults",
+  "climate": "Swiss (CH)",
+  "LPG": "CNG efficiency and vehicle manufacture including tank; LPG LHV and CO2; CNG combustion emission proxy without CNG pump-to-tank methane leakage",
+  "comparison": {
+    "year": 2020,
+    "model": "remind",
+    "pathway": "SSP2-NPi",
+    "source": "ecoinvent 3.12 cutoff",
+    "regions": [
+      "RER",
+      "EUR"
+    ],
+    "method": "16 EF 3.1 headline indicators",
+    "functional_unit": "1 vehicle-kilometre"
+  }
+}

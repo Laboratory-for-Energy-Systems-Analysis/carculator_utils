@@ -1,0 +1,26 @@
+{
+  "carculator_utils": {
+    "head": "9bafa0d25d883a9cc10ce3400ec1c27a8b9cc930",
+    "status": "?? dev/analyze_lcia_indicators.py\n?? dev/audit_fcev_component_sources.py\n?? dev/audit_fcev_specs.py\n?? dev/audit_lcia_coefficients.py\n?? dev/audit_lcia_indicators.py\n?? dev/audit_premise_vehicle_workbooks.py\n?? dev/audit_truck_replacement_lcia.py\n?? dev/plot_lcia_audit.py\n?? dev/probe_premise_vehicle_regeneration.py\n?? results/fcev_specs_audit_20261010/\n?? results/lcia_inventory_audit_20261010/\n"
+  },
+  "carculator": {
+    "head": "ddcac198bb0831dc4001e1f63a97d84ec65481f8",
+    "status": "?? dev/B_matrix_gwp.xlsx\n?? dev/carculator_lci_car_20250411_2020_bw2.xlsx\n?? dev/test.ipynb\n"
+  },
+  "carculator_bus": {
+    "head": "010b8e7db5a8ff262c3f51c23160194befc36060",
+    "status": "A  dev/SSP2-PkBudg500.xlsx\nA  dev/SSP2-PkBudg500_30pctfull.xlsx\nA  dev/SSP2-PkBudg500_50pctfull.xlsx\nA  dev/bus_lcia_results.html\nA  dev/carculator_lci_2020_bw2.xlsx\nA  dev/carculator_lci_2030_bw2.xlsx\nA  dev/gwp2020.xlsx\n M dev/test.ipynb\nA  directory/carculator_lci_bus_20240123_2000_bw2.xlsx\nA  directory/carculator_lci_bus_20240123_2000_simapro.csv\nA  directory/carculator_lci_bus_20240123_2010_bw2.xlsx\nA  directory/carculator_lci_bus_20240123_2020_bw2.xlsx\nA  directory/carculator_lci_bus_20240123_2030_bw2.xlsx\nA  directory/carculator_lci_bus_20240123_2040_bw2.xlsx\nA  directory/carculator_lci_bus_20240123_2050_bw2.xlsx\nA  directory/carculator_lci_bus_20240124_2000_bw2.xlsx\nA  directory/carculator_lci_bus_20240124_2000_simapro.csv\nA  directory/carculator_lci_bus_20240124_2010_bw2.xlsx\nA  directory/carculator_lci_bus_20240124_2020_bw2.xlsx\nA  directory/carculator_lci_bus_20240124_2030_bw2.xlsx\nA  directory/carculator_lci_bus_20240124_2040_bw2.xlsx\nA  directory/carculator_lci_bus_20240124_2050_bw2.xlsx\nA  directory/carculator_lci_bus_20240829_2000_bw2.xlsx\nA  directory/carculator_lci_bus_20240829_2000_simapro.csv\nA  directory/carculator_lci_bus_20240829_2010_bw2.xlsx\nA  directory/carculator_lci_bus_20240829_2020_bw2.xlsx\nA  directory/carculator_lci_bus_20240829_2030_bw2.xlsx\nA  directory/carculator_lci_bus_20240829_2040_bw2.xlsx\nA  directory/carculator_lci_bus_20240829_2050_bw2.xlsx\n?? dev/EFA_ColdStart_Subsegm_buses_w_extra.XLSX\n?? dev/EFA_ColdStart_Subsegm_coaches_w_extra.XLSX\n?? dev/EFA_HOT_Subsegm_buses_w_extra.XLSX\n?? dev/EFA_HOT_Subsegm_coaches_w_extra.XLSX\n?? dev/SSP2-NPi.xlsx\n?? dev/SSP2-PkBudg1150.xlsx\n"
+  },
+  "carculator_truck": {
+    "head": "6ec213d3def0381d7e2fe587bc888a3a9d18ba2f",
+    "status": "D  carculator_lci_bw2.xlsx\nD  carculator_lci_simapro.csv\nA  dev/carculator_lci_2000_bw2.xlsx\nA  dev/carculator_lci_2010_bw2.xlsx\nA  dev/carculator_lci_2020_bw2.xlsx\nA  dev/carculator_lci_2030_bw2.xlsx\nA  dev/carculator_lci_2040_bw2.xlsx\nA  dev/carculator_lci_2050_bw2.xlsx\nA  dev/carculator_lci_truck_20240117_2000_bw2.xlsx\nA  dev/carculator_lci_truck_20240117_2010_bw2.xlsx\nA  dev/carculator_lci_truck_20240117_2020_bw2.xlsx\nA  dev/carculator_lci_truck_20240117_2030_bw2.xlsx\nA  dev/carculator_lci_truck_20240117_2040_bw2.xlsx\nA  dev/carculator_lci_truck_20240117_2050_bw2.xlsx\n?? carculator_lci_truck_20240829_2000_bw2.xlsx\n?? carculator_lci_truck_20240829_2000_simapro.csv\n?? carculator_lci_truck_20240829_2010_bw2.xlsx\n?? carculator_lci_truck_20240829_2020_bw2.xlsx\n?? carculator_lci_truck_20240829_2030_bw2.xlsx\n?? carculator_lci_truck_20240829_2040_bw2.xlsx\n?? carculator_lci_truck_20240829_2050_bw2.xlsx\n?? dev/B_factors.xlsx\n?? dev/carculator_lci_truck_20250526_2030_bw2.xlsx\n?? dev/carculator_lci_truck_20250526_2050_bw2.xlsx\n?? dev/carculator_lci_truck_20250912_2020_bw2.xlsx\n?? dev/test2.ipynb\n"
+  },
+  "carculator_two_wheeler": {
+    "head": "a3c6e4959e894ee2fe30925ac549a32556bdde2e",
+    "status": " M examples/Examples.ipynb\n?? dev/carculator_lci_two-wheeler_20240831_2000_bw2.xlsx\n?? dev/carculator_lci_two-wheeler_20240831_2010_bw2.xlsx\n?? dev/carculator_lci_two-wheeler_20240831_2020_bw2.xlsx\n?? dev/carculator_lci_two-wheeler_20240831_2030_bw2.xlsx\n?? dev/carculator_lci_two-wheeler_20240831_2040_bw2.xlsx\n?? dev/carculator_lci_two-wheeler_20240831_2050_bw2.xlsx\n?? dev/test.ipynb\n"
+  },
+  "premise": {
+    "head": "a7c19af5251532ccccbc3d36f88504c0bbd2cc46",
+    "status": ""
+  }
+}
