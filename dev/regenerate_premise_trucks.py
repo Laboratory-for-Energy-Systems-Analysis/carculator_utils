@@ -27,6 +27,7 @@ from regenerate_premise_cars import (
     validate_phev_battery,
     write_workbook,
 )
+from premise_vehicle_battery_metadata import attach_specification, model_specification
 
 ROOT = Path(__file__).resolve().parents[2]
 CYCLE = "Regional delivery"
@@ -96,7 +97,7 @@ def main():
             "year": [2020],
         }
         _, array = fill_xarray_from_input_parameters(inputs, scope=scope)
-        model = TruckModel(array, country="CH", cycle=CYCLE)
+        model = TruckModel(array, country="CH", cycle=CYCLE, drop_hybrids=False)
         model.set_all()
         parameters = {}
         labels = [
@@ -165,6 +166,15 @@ def main():
                 )
                 parameters[f"{size}|{power}"] = p
         par_path.write_text(json.dumps(parameters, indent=2) + "\n")
+        sizing = {
+            f"{size}|{power}": model_specification(model, size, power)
+            for size in scope["size"]
+            for power in scope["powertrain"]
+        }
+        (args.output / "battery_sizing.json").write_text(
+            json.dumps(sizing, indent=2) + "\n"
+        )
+        model.drop_hybrid()
         inventory = InventoryTruck(model, scenario="static", functional_unit="tkm")
         paths = inventory.export_lci(
             ecoinvent_version="3.12",
@@ -179,6 +189,7 @@ def main():
         raw_path.write_text(json.dumps(raw, indent=2) + "\n")
     raw = json.loads(raw_path.read_text())
     parameters = json.loads(par_path.read_text())
+    sizing = json.loads((args.output / "battery_sizing.json").read_text())
     assert all(p["cycle"] == CYCLE for p in parameters.values())
     for name, parameter in parameters.items():
         if name.endswith("|PHEV-d"):
@@ -414,6 +425,7 @@ def main():
             assert production == productions[key], key
         productions[key] = production
         datasets.append(ds)
+        attach_specification(ds, production, sizing.get(f"{size}|{power}"))
         balance.append(
             dict(
                 name=ds["name"],
@@ -492,6 +504,7 @@ def main():
         ROOT / "carculator_utils/carculator_utils/hot_emissions.py",
         ROOT / "carculator_utils/carculator_utils/model.py",
         Path(__file__),
+        Path(__file__).with_name("premise_vehicle_battery_metadata.py"),
     ]
     from carculator_truck.hybrid_battery import HybridBatteryProfile, PROFILE_SOURCE
 

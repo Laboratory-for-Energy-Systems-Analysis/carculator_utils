@@ -833,6 +833,21 @@ manufacture. Sixty-two manufacturing purchases now match their 2020 lifetime
 basis. See <span class="docutils literal"><span class="pre">../premise_vehicle_intensity_20261013/report.rst</span></span>. This completes
 the IAM-input prerequisite; constant-range hardware calibration and the
 regional Large Car proxy remain open, alongside the original follow-up steps.</p>
+<p><strong>BEV/PHEV battery accounting completed:</strong> the user subsequently requested a
+practical implementation without runtime engineering calculations. The new
+closed-form rule scales nominal capacity by the final electricity ratio and
+physical pack mass by capacity and the approved original-chemistry density.
+It updates vehicle mass, corresponding inventory burdens and regional production
+links while preserving the IAM energy target. Replacement counts remain
+applicable at unchanged range and usage. All existing workbook data are unchanged;
+only the sizing metadata was added. 260 tests and full 2020/2030/2050 builds pass.
+2020 exchanges are unchanged and every 2050 difference is explained. The new
+step takes about 0.05 seconds per build. See
+<span class="docutils literal"><span class="pre">../premise_vehicle_battery_simple_20261013/report.rst</span></span>. This supersedes the
+earlier proposed runtime calibration/solver for battery sizing. HEV/FCEV buffers,
+fuel-tank range accounting, the Large Car proxy and subsequent remediation steps
+remain separate; detailed engineering feasibility is not claimed by this
+accounting approximation.</p>
 <p><strong>Approved policy; coupled implementation required.</strong> The audit found all
 98 surviving production inventories retaining their 2020 battery quantities.
 The EUR 40 t BEV therefore gains implied range from 400 to about 500 km when

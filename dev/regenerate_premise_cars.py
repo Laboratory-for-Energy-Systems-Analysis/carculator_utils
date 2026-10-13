@@ -19,6 +19,11 @@ import openpyxl
 import yaml
 
 from audit_premise_vehicle_workbooks import identity, read_workbook, write_csv
+from premise_vehicle_battery_metadata import (
+    SPEC_KEY as BATTERY_SIZING_KEY,
+    attach_specification,
+    model_specification,
+)
 
 COLD_START_SOURCE_NOTE = (
     "the original LCA model, carculator, uses emission factors for cold start, "
@@ -97,11 +102,13 @@ def write_workbook(path, datasets):
         sheet.append(["Activity", dataset["name"]])
         for key in ("reference product", "location", "unit", "comment"):
             sheet.append([key, dataset.get(key)])
-        if HYDROGEN_COMPRESSION_KEY in dataset:
-            specification = dataset[HYDROGEN_COMPRESSION_KEY]
+        for metadata_key in (HYDROGEN_COMPRESSION_KEY, BATTERY_SIZING_KEY):
+            if metadata_key not in dataset:
+                continue
+            specification = dataset[metadata_key]
             sheet.append(
                 [
-                    HYDROGEN_COMPRESSION_KEY,
+                    metadata_key,
                     (
                         specification
                         if isinstance(specification, str)
@@ -161,7 +168,9 @@ def main():
             "year": [2020],
         }
         _, array = fill_xarray_from_input_parameters(inputs, scope=scope)
-        model = CarModel(array, country="CH", starts_per_day=args.starts_per_day)
+        model = CarModel(
+            array, country="CH", starts_per_day=args.starts_per_day, drop_hybrids=False
+        )
         model.set_all()
         params = [
             "TtW energy",
@@ -195,6 +204,16 @@ def main():
             parameters[r["name"]] = {p: float(cell.sel(parameter=p)) for p in params}
             parameters[r["name"]]["starts per day"] = model.starts_per_day
         parameter_path.write_text(json.dumps(parameters, indent=2) + "\n")
+        sizing = {
+            r["name"]: model_specification(
+                model, r["model_size"], r["model_powertrain"]
+            )
+            for r in native
+        }
+        (args.output / "battery_sizing.json").write_text(
+            json.dumps(sizing, indent=2) + "\n"
+        )
+        model.drop_hybrid()
         inventory = InventoryCar(model, scenario="static", functional_unit="vkm")
         paths = inventory.export_lci(
             ecoinvent_version="3.12",
@@ -209,6 +228,7 @@ def main():
         raw_path.write_text(json.dumps(raw, indent=2) + "\n")
     raw = json.loads(raw_path.read_text())
     parameters = json.loads(parameter_path.read_text())
+    sizing = json.loads((args.output / "battery_sizing.json").read_text())
     for recipe in native:
         if recipe["model_powertrain"].startswith("PHEV-"):
             validate_phev_battery(parameters[recipe["name"]])
@@ -413,6 +433,7 @@ def main():
             if e["type"] == "production":
                 relabel(e, production)
         production["comment"] = note + production.get("comment", "")
+        attach_specification(ds, production, sizing.get(param_name))
         productions.setdefault(identity(production), production)
         balance.append(
             dict(
@@ -516,6 +537,7 @@ def main():
                 "carculator/carculator/data/default_parameters.json",
                 "carculator_utils/carculator_utils/data/emission_factors/provenance.json",
                 "carculator_utils/dev/regenerate_premise_cars.py",
+                "carculator_utils/dev/premise_vehicle_battery_metadata.py",
             )
         },
     )

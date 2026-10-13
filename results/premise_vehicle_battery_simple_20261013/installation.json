@@ -1,0 +1,28 @@
+{
+  "script_sha256": "40464c437fb7bbd41e981e95a2d42427dd87358d0ee9daa8a830ca35e533f03e",
+  "files": [
+    {
+      "family": "cars",
+      "filename": "lci-pass_cars.xlsx",
+      "before_sha256": "7dee87a677840c5883e289dd086a790d0817893f1fe6ce6446a067b637fc2b56",
+      "after_sha256": "3b7a4eb9d2a49f5f91c6afd29a6e96dfe28f6d646f5d370296cfa44f7ac1d0d0",
+      "activities": 162,
+      "sizing_contracts": 50,
+      "all_existing_fields_and_exchanges_identical": true
+    },
+    {
+      "family": "trucks",
+      "filename": "lci-trucks.xlsx",
+      "before_sha256": "cdb52b3375b51be507bfe7093216ddabbe8f5bf4e40da685da3ddc48db376b18",
+      "after_sha256": "897ca96d6544bf21fe2686eed9adca5d32a2b5639b78131b7d167a1c359afb61",
+      "activities": 127,
+      "sizing_contracts": 28,
+      "all_existing_fields_and_exchanges_identical": true
+    }
+  ],
+  "generation_scripts": {
+    "premise_vehicle_battery_metadata.py": "2eb650f0aa3e8673dea98a3e02e7ac2cdc59e12a4e325deab16b100ccd1d8f38",
+    "regenerate_premise_cars.py": "4fb31dfeeb2454179dcfb6c7cd618165391f19eeeb32331ec45cf54fc887f457",
+    "regenerate_premise_trucks.py": "7a417481441c2543570a72e93f4ed2d5d46200bc176a24ee9e5e5924ae59b2ae"
+  }
+}
