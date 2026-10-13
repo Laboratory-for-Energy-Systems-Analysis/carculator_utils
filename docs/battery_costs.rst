@@ -84,6 +84,22 @@ effective projected default. Custom definitions instead retain their own perturb
 prices. A constructor override is an absolute amount and takes precedence over
 these generated perturbations.
 
+Installed PHEV capacity
+~~~~~~~~~~~~~~~~~~~~~~
+
+The combined PHEV retains the electric-mode pack's full nominal capacity, cell
+and balance-of-pack masses, cell mass share and energy density. Driving share
+weights operating quantities, not installed storage. Full-tank plus battery
+range uses nominal capacity multiplied by depth of discharge for its electric
+term.
+
+Cars and trucks price this same nominal pack in both driving-mode cost
+calculations, before financing and other purchase-dependent costs are computed.
+This prevents a low electric driving share from reducing the price of installed
+hardware. Existing mode-specific unit prices, markup and explicit cost overrides
+retain their input convention. Battery lifetime replacement counts are unchanged
+by this capacity correction and remain subject to a separate throughput review.
+
 Year and sample alignment
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

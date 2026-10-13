@@ -1210,11 +1210,31 @@ class VehicleModel:
     def set_electric_utility_factor(self) -> None:
         pass
 
+    def battery_capacity_for_purchase(self):
+        """Return nominal kWh to price, including the full pack in both PHEV modes.
+
+        A combustion-mode intermediate may have smaller or zero energy storage
+        for its operational calculation. It still represents driving the same
+        plug-in vehicle. Price its installed electric-mode pack before the
+        subclass computes purchase, financing, insurance and residual costs.
+        This private copy leaves sizing, energy demand and replacement counts
+        untouched; existing unit-price and explicit cost overrides still apply.
+        """
+        capacity = self["electric energy stored"].copy(deep=True)
+        for combined, combustion in (("PHEV-d", "PHEV-c-d"), ("PHEV-p", "PHEV-c-p")):
+            if combined in capacity.powertrain.values:
+                capacity.loc[dict(powertrain=combustion)] = capacity.sel(
+                    powertrain="PHEV-e", drop=True
+                )
+        return capacity
+
     def create_PHEV(self):
         """
-        Function to create plugin-hybrid vehicles.
-        PHEV-p/d is the range-weighted average
-        between PHEV-c-p/PHEV-c-d and PHEV-e.
+        Combine plug-in-hybrid driving modes by their electric utility factor.
+
+        Operating quantities are usage-weighted. The installed battery capacity,
+        masses and physical properties belong to the electric-mode design and
+        do not shrink when the vehicle is driven less often in electric mode.
         """
         _ = lambda array: np.where(array == 0, 1, array)
 
@@ -1284,13 +1304,15 @@ class VehicleModel:
                     )
                 ]
 
-                # we need to preserve the battery mass from PHEV-e as well
+                # Keep one complete physical pack, including nominal capacity.
                 self.array.loc[
                     dict(
                         parameter=[
                             "energy battery mass",
+                            "electric energy stored",
                             "battery BoP mass",
                             "battery cell mass",
+                            "battery cell mass share",
                             "battery DoD",
                             "battery cell energy density",
                             "battery charge efficiency",
@@ -1308,8 +1330,10 @@ class VehicleModel:
                     dict(
                         parameter=[
                             "energy battery mass",
+                            "electric energy stored",
                             "battery BoP mass",
                             "battery cell mass",
+                            "battery cell mass share",
                             "battery DoD",
                             "battery cell energy density",
                             "battery charge efficiency",
@@ -1397,6 +1421,7 @@ class VehicleModel:
                     self.array.loc[
                         dict(parameter="electric energy stored", powertrain=pwt)
                     ]
+                    * self.array.loc[dict(parameter="battery DoD", powertrain=pwt)]
                     * 3600
                     / self.array.loc[
                         dict(parameter="TtW energy, electric mode", powertrain="PHEV-e")
