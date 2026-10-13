@@ -1,0 +1,157 @@
+{
+  "cars": {
+    "phev_battery_replacement_policy": {
+      "distance_km": 200000,
+      "distance_basis": "total vehicle distance, not electric-mode distance",
+      "calendar_years": 18,
+      "formula": "max(0, lifetime km / battery lifetime km - 1, lifetime km / annual km / 18 - 1)",
+      "approved_on": "2026-10-13"
+    },
+    "hydrogen_compression_adaptation": {
+      "electricity kWh per kg H2": 2.450619246770454,
+      "inlet pressure bar": 30,
+      "tank pressure bar": 700,
+      "hydrogen product": "hydrogen, gaseous, low pressure",
+      "electricity product": "electricity, low voltage",
+      "delivery source": "Premise hydrogen supply, distributed by pipeline: arrives at 30 bar",
+      "compression model": "carculator_utils.inventory.hydrogen_compression_electricity; default temperature, stages and efficiencies",
+      "boundary": "Tank compression after pipeline delivery; pipeline preparation remains in hydrogen supply",
+      "approved on": "2026-10-13"
+    },
+    "cng_supply_basis": {
+      "delivered_LHV_MJ_per_kg": 46.5,
+      "source": "ecoinvent vehicle-grade natural gas market comment",
+      "policy": "Preserve model energy and source compression recipe; upstream gas energy is not delivered LHV",
+      "approved_on": "2026-10-13"
+    },
+    "year": 2020,
+    "country": "CH",
+    "starts_per_day": 1.8,
+    "annual_mileage_policy": "Unchanged 2020 defaults: combustion cars 12000 km/year; BEV Micro 6000 km/year.",
+    "starts_source": "https://www.bafu.admin.ch/dam/en/sd-web/rMTT3CcvG0fJ/Switzerland%27s%20National%20Inventory%20Document%202026%20%28GHG%20inventory%201990-2024%29.pdf#page=167",
+    "starts_source_locator": "Table 3-90, passenger cars, 2020 column; selected by user 2026-10-13",
+    "cold_start_factors_source": {
+      "database": "HBEFA",
+      "version": "5.1",
+      "model": "carculator",
+      "reference": "the original LCA model, carculator, uses emission factors for cold start, evaporative and running emissions from the HBEFA 5.1 emissions handbook.",
+      "confirmed_on": "2026-10-13",
+      "scope": "Passenger-car cold-start, evaporative and running emission factors; no coefficient changes."
+    },
+    "transport_count": 74,
+    "production_count": 73,
+    "auxiliaries": [
+      "glider lightweighting, carculator passenger car 2020",
+      "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020",
+      "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020",
+      "fuel tank, compressed hydrogen gas, 700bar, with HDPE liner, carculator passenger car 2020",
+      "carbon fiber production, weaved, at factory, carculator passenger car 2020",
+      "carbon fiber production, fiber drying and sizing, carculator passenger car 2020",
+      "carbon fiber production, fiber stabilization, carbonization, electrolysis and washing, carculator passenger car 2020",
+      "carbon fiber production, exhaust gas treatment 2, carculator passenger car 2020",
+      "carbon fiber production, fiber winding and unwinding, carculator passenger car 2020",
+      "carbon fiber production, exhaust gas treatment 1, carculator passenger car 2020",
+      "carbon fiber production, fiber relaxation, carculator passenger car 2020",
+      "carbon fiber production, fiber coagulation, stretching, washing, sizing and drying, carculator passenger car 2020",
+      "polyacrylonitrile production (PAN) by polymerisation, carculator passenger car 2020",
+      "polymer electrolyte membrane (Nafion) production, carculator passenger car 2020",
+      "fuel tank assembly, compressed natural gas, 200 bar, carculator passenger car 2020"
+    ],
+    "noise_exchanges": 1776,
+    "sha256": "7dee87a677840c5883e289dd086a790d0817893f1fe6ce6446a067b637fc2b56",
+    "export_version": "3.12",
+    "commits": {
+      "carculator": "198412e5b9ab5ac43cd439a2bcfd9416b0c5070a",
+      "carculator_utils": "02fc553e469646a33c578bba1250604515a444d1",
+      "premise": "b37eb82571d3cb1cc390531bcc290790dc921819"
+    },
+    "source_sha256": {
+      "carculator_utils/carculator_utils/hot_emissions.py": "ad1785e64e83d050d33212faa52a1b5e119247ad8cede7eda13df1e2cce9262b",
+      "carculator_utils/carculator_utils/model.py": "56d7ce2a9f02ae5d517f3ccbe703e304074bd3282c24af17fc60144201dff3a0",
+      "carculator/carculator/model.py": "c964cf4be3daa0320e973e9dc50b2628724cf2d8136df3a3d6865436003402d9",
+      "carculator/carculator/data/default_parameters.json": "0b08285b9e8f8293b4245c9a37587b01d98438b43f09ae99672396ced230933b",
+      "carculator_utils/carculator_utils/data/emission_factors/provenance.json": "a39f3be05bddb6c07e97da0b8f96edcefa4751c2a1e36cfd72760aab2155c095",
+      "carculator_utils/dev/regenerate_premise_cars.py": "bf039fec395bd12814997db8e59ac7fc3b455f91f3da5463bea0106a8941cad9"
+    },
+    "phev_replacement_correction": {
+      "before sha256": "78119c1fca07aeb5967c348286f1823424f301d88f8e72dbe5f753f561b81773",
+      "after sha256": "7dee87a677840c5883e289dd086a790d0817893f1fe6ce6446a067b637fc2b56",
+      "datasets": 162,
+      "material exchange changes": 0,
+      "float-rounding exchange changes": 0,
+      "maximum rounding absolute difference": 0,
+      "raw model inventory sha256": "bab9ac274f3583b12af76b820010ff519eaba2ed848d7ec6bf5f4fdab64e6c47",
+      "model parameters sha256": "33e217cda9b56682290ce029b5716892018a55deced31b453e839dc35cc861d4",
+      "installer sha256": "7e9c179ac8cebfb88c85318a8e52d7f0d2002341b16f3ac2529811960c61bc9c",
+      "policy": "Truck net lifetime electric energy is weighted before subtracting the first pack; cars use the approved 200000 vehicle-km and 18-year limits; each count belongs to the physical pack",
+      "prior provenance sha256": "a71881727d8a4793eff8c1812d0bf15f2792fa6b98a94d1573a29f5c696f9e96"
+    }
+  },
+  "trucks": {
+    "phev_battery_replacement_policy": {
+      "formula": "clip(lifetime km * electric utility factor * electric-mode net stored kJ/km / 3600 / nominal kWh / cycle life - 1, 0, 3)",
+      "cycle_basis": "equivalent full cycles of nominal capacity; no additional DoD divisor",
+      "energy_boundary": "inherited net stored-energy approximation; not gross charge/discharge throughput",
+      "calendar_ageing": "no separate truck calendar-age model",
+      "explicit_inputs": "nonzero counts retained for the whole pack; conflicting PHEV inputs rejected"
+    },
+    "hydrogen_compression_adaptation": {
+      "electricity kWh per kg H2": 2.450619246770454,
+      "inlet pressure bar": 30,
+      "tank pressure bar": 700,
+      "hydrogen product": "hydrogen, gaseous, low pressure",
+      "electricity product": "electricity, low voltage",
+      "delivery source": "Premise hydrogen supply, distributed by pipeline: arrives at 30 bar",
+      "compression model": "carculator_utils.inventory.hydrogen_compression_electricity; default temperature, stages and efficiencies",
+      "boundary": "Tank compression after pipeline delivery; pipeline preparation remains in hydrogen supply",
+      "approved on": "2026-10-13"
+    },
+    "cng_supply_basis": {
+      "delivered_LHV_MJ_per_kg": 46.5,
+      "source": "ecoinvent vehicle-grade natural gas market comment",
+      "policy": "Preserve model energy and source compression recipe; upstream gas energy is not delivered LHV",
+      "approved_on": "2026-10-13"
+    },
+    "year": 2020,
+    "country": "CH",
+    "cycle": "Regional delivery",
+    "target_range_km": 400,
+    "defaults": "Current 2020 cycle-specific load/mileage, sizing, lifetime and replacement values",
+    "proxy_policy": "Energy-preserving gasoline/LPG conversions approved by user 2026-10-13; retained diesel/diesel-hybrid/CNG manufacture and non-CO2 factors explicitly documented",
+    "transport_count": 52,
+    "production_count": 42,
+    "auxiliary_count": 33,
+    "retained_legacy_components": 26,
+    "legacy_components_version": "3.7",
+    "legacy_components_sha256": "bef560656f6e669eb4c331f8fc5ddbe5b7dc5b5ef7bf1a080daf612dbf24b469",
+    "noise_exchanges": 1248,
+    "sha256": "066298016513965491102cf2698e59e69fa26719f0a4db0c5a1df4143218d65d",
+    "export_version": "3.12",
+    "commits": {
+      "carculator_truck": "05733a7bba77e9f536ac44a38ac13d5b7dae83db",
+      "carculator_utils": "02fc553e469646a33c578bba1250604515a444d1",
+      "premise": "b37eb82571d3cb1cc390531bcc290790dc921819"
+    },
+    "source_sha256": {
+      "/Users/romain/GitHub/carculator_truck/carculator_truck/model.py": "a90ae9698cc00973e7e1a7fb95e6757b2390e02e7c4a286b3cb8f0659e16f4fc",
+      "/Users/romain/GitHub/carculator_truck/carculator_truck/data/default_parameters.json": "99fc8b91b93384eb397a1cb6826dceea4fff2f73ea98d689ccdcd67182569f33",
+      "/Users/romain/GitHub/carculator_truck/carculator_truck/data/payloads.yaml": "3e08a544e63a48f1a7af2d00b48d44136cbc5b94297344ab9db1bd80ce37b5bb",
+      "/Users/romain/GitHub/carculator_utils/carculator_utils/hot_emissions.py": "ad1785e64e83d050d33212faa52a1b5e119247ad8cede7eda13df1e2cce9262b",
+      "/Users/romain/GitHub/carculator_utils/carculator_utils/model.py": "56d7ce2a9f02ae5d517f3ccbe703e304074bd3282c24af17fc60144201dff3a0",
+      "/Users/romain/GitHub/carculator_utils/dev/regenerate_premise_trucks.py": "7a7036ddbd2bab437ab99dccc1920fd67e67aaed69b410d76928678860ae6f37"
+    },
+    "phev_replacement_correction": {
+      "before sha256": "d832e963158dcc5f0922d4cc4464eaea9d756d3acb0b2d9b6b14179a45bb28d6",
+      "after sha256": "066298016513965491102cf2698e59e69fa26719f0a4db0c5a1df4143218d65d",
+      "datasets": 127,
+      "material exchange changes": 7,
+      "float-rounding exchange changes": 0,
+      "maximum rounding absolute difference": 0,
+      "raw model inventory sha256": "249cdf1345645024e0a180c8c886827e700aacd185bab30c3fe21a01c7515310",
+      "model parameters sha256": "7ebc7451c6432d556152ea6fdb4fcb6cd5ec637e127368dff4ba2335637d8a02",
+      "installer sha256": "7e9c179ac8cebfb88c85318a8e52d7f0d2002341b16f3ac2529811960c61bc9c",
+      "policy": "Truck net lifetime electric energy is weighted before subtracting the first pack; cars use the approved 200000 vehicle-km and 18-year limits; each count belongs to the physical pack",
+      "prior provenance sha256": "dc63adc760ca02018bbd2aae7642aaeab7c12c379cdd3ab1595d39ac44e38ab2"
+    }
+  }
+}

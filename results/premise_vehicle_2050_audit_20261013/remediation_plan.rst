@@ -391,4 +391,17 @@ usable capacity. Both car and truck cost models price the full installed pack;
 capacity-market purchases increase for 16 car templates. The truck adapter
 now consumes the corrected model field directly. See the
 `PHEV report <../premise_vehicle_phev_20261013/report.html>`_.
-The next task is the independent replacement-count review. Steps 6--12 remain open.
+Step 6 is in progress. The missing car PHEV lifetime input now uses the approved
+200,000 vehicle-km and existing 18-year limit. The shared physical replacement
+count is retained through both mode costs and final aggregation. These changes
+are committed as ``1e97290`` (utils) and ``dc0fc4c`` (carculator).
+
+The truck arithmetic defect is corrected and its 2020/2050 builds verified;
+the user requested committing the work and proceeding to the next issue.
+The existing net-energy boundary is retained. The choice of including
+regenerative cycling remains open and is carried into the hybrid-storage
+investigation. Its two alternatives and verified builds are documented in the
+`replacement-accounting report <../premise_vehicle_replacements_20261013/report.html>`_.
+All 1,748 installed-family tests pass. The arithmetic portion is complete;
+the broader battery-use question in step 6 remains open. Step 7 is next, and
+steps 8--12 remain open.

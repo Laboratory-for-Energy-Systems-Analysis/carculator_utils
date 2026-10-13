@@ -1,0 +1,151 @@
+{
+  "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 17:06:14) [Clang 19.1.7 ]",
+  "artifacts": [
+    {
+      "name": "carculator_utils-1.3.7-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "d82391e94149abb45d0ffaa507f7cfc4acfb2a6e6c260683aa9dcf5164f5aef0",
+      "resources": 139
+    },
+    {
+      "name": "carculator_utils-1.3.7-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "7294a8a4c1f515d1d2fa2a8dcf5559199eb81da0645f6ec61628d0f4870a20e8",
+      "resources": 139
+    },
+    {
+      "name": "carculator-1.9.7-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "7d5c4ba27742424620ff3c72f03bc01bb06d6ee1dae32116937cd296b8157356",
+      "resources": 7
+    },
+    {
+      "name": "carculator-1.9.7-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "86c6578327eb78e7cd8668327ebf79620355a520e5d54675533db1fae10d5912",
+      "resources": 7
+    },
+    {
+      "name": "carculator_truck-0.5.2-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "8a153bfe0e88b0074e001136e584cdfc6809780ac0e4ccdf80de86aa22976292",
+      "resources": 7
+    },
+    {
+      "name": "carculator_truck-0.5.2-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "8a153bfe0e88b0074e001136e584cdfc6809780ac0e4ccdf80de86aa22976292",
+      "resources": 7
+    },
+    {
+      "name": "carculator_bus-0.1.2-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "6bee5bc0b3c17abd7886e22d4d7c745872f67ef679b81c32b6344c1c4fa76c98",
+      "resources": 8
+    },
+    {
+      "name": "carculator_bus-0.1.2-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "a81aba8c73df607b5d52ff124f047c8d95ed1e349f643d52112e99845cfff5db",
+      "resources": 8
+    },
+    {
+      "name": "carculator_two_wheeler-0.1.1-py3-none-any.whl",
+      "source": "wheels",
+      "sha256": "872f365787c9248400b52f5deb91921a71d40f396dead3a16adc13979d561017",
+      "resources": 12
+    },
+    {
+      "name": "carculator_two_wheeler-0.1.1-py3-none-any.whl",
+      "source": "rebuilt",
+      "sha256": "aa63c15ce4c00fbc6d3161ef3c42471c27d3a2858af2abf5a565129fccb52dc0",
+      "resources": 12
+    }
+  ],
+  "results": [
+    {
+      "package": "carculator",
+      "version": "1.9.7",
+      "ttw_energy": 561.8109741210938,
+      "climate_change": 0.1493438660910136
+    },
+    {
+      "package": "carculator_truck",
+      "version": "0.5.2",
+      "ttw_energy": 4523.498046875,
+      "climate_change": 0.721125064804456
+    },
+    {
+      "package": "carculator_bus",
+      "version": "0.1.2",
+      "ttw_energy": 4063.597900390625,
+      "climate_change": 0.5230309810610596
+    },
+    {
+      "package": "carculator_two_wheeler",
+      "version": "0.1.1",
+      "ttw_energy": 21.53740882873535,
+      "climate_change": 0.021559789401964836
+    }
+  ],
+  "test_partition": {
+    "index": 0,
+    "count": 1,
+    "files": {
+      "carculator_utils": [
+        "tests"
+      ],
+      "carculator": [
+        "tests"
+      ],
+      "carculator_truck": [
+        "tests"
+      ],
+      "carculator_bus": [
+        "tests"
+      ],
+      "carculator_two_wheeler": [
+        "tests"
+      ]
+    }
+  },
+  "test_suites": {
+    "carculator": {
+      "tests": 77,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "carculator_bus": {
+      "tests": 43,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "carculator_truck": {
+      "tests": 151,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "carculator_two_wheeler": {
+      "tests": 100,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "carculator_utils": {
+      "tests": 1377,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "verified_source_sha256": {
+    "carculator_utils/carculator_utils/model.py": "56d7ce2a9f02ae5d517f3ccbe703e304074bd3282c24af17fc60144201dff3a0",
+    "carculator/carculator/data/default_parameters.json": "0b08285b9e8f8293b4245c9a37587b01d98438b43f09ae99672396ced230933b",
+    "carculator_truck/carculator_truck/model.py": "a90ae9698cc00973e7e1a7fb95e6757b2390e02e7c4a286b3cb8f0659e16f4fc"
+  },
+  "private_output": "/private/tmp/carculator-phev-replacements-verification-20261013",
+  "limitation": "Current net-energy replacement candidate; does not verify a future regenerative-cycling model."
+}

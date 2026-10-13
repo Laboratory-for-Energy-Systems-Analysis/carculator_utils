@@ -1,0 +1,68 @@
+{
+  "lci-pass_cars.xlsx": {
+    "before sha256": "78119c1fca07aeb5967c348286f1823424f301d88f8e72dbe5f753f561b81773",
+    "after sha256": "7dee87a677840c5883e289dd086a790d0817893f1fe6ce6446a067b637fc2b56",
+    "datasets": 162,
+    "material exchange changes": 0,
+    "float-rounding exchange changes": 0,
+    "maximum rounding absolute difference": 0,
+    "raw model inventory sha256": "bab9ac274f3583b12af76b820010ff519eaba2ed848d7ec6bf5f4fdab64e6c47",
+    "model parameters sha256": "33e217cda9b56682290ce029b5716892018a55deced31b453e839dc35cc861d4",
+    "installer sha256": "7e9c179ac8cebfb88c85318a8e52d7f0d2002341b16f3ac2529811960c61bc9c",
+    "files": {
+      "lci-pass_cars.xlsx": {
+        "before sha256": "78119c1fca07aeb5967c348286f1823424f301d88f8e72dbe5f753f561b81773",
+        "after sha256": "7dee87a677840c5883e289dd086a790d0817893f1fe6ce6446a067b637fc2b56",
+        "private backup": "/private/tmp/premise-vehicle-replacements-20261013/baseline/lci-pass_cars.xlsx"
+      },
+      "lci-pass_cars.parameters.csv": {
+        "before sha256": "b576aaef562fd0be33e69aa625faad3bd749800597281a73047bda5287862482",
+        "after sha256": "739f36dbbefc75b5a8b42df7803e06b47fdffc73bf3dc9a4ce07141ec73d8b28",
+        "private backup": "/private/tmp/premise-vehicle-replacements-20261013/baseline/lci-pass_cars.parameters.csv"
+      },
+      "lci-pass_cars.noise.csv": {
+        "before sha256": "61d819ec7b1ab1a0623948132808961709209106806fd612a99b45eafbbdb4a3",
+        "after sha256": "61d819ec7b1ab1a0623948132808961709209106806fd612a99b45eafbbdb4a3",
+        "private backup": "/private/tmp/premise-vehicle-replacements-20261013/baseline/lci-pass_cars.noise.csv"
+      },
+      "lci-pass_cars.provenance.json": {
+        "before sha256": "a71881727d8a4793eff8c1812d0bf15f2792fa6b98a94d1573a29f5c696f9e96",
+        "after sha256": "81cc9a70ab40f79038e11d62f665449aca45973d09dc589cb85f2ca918feb36b",
+        "private backup": "/private/tmp/premise-vehicle-replacements-20261013/baseline/lci-pass_cars.provenance.json"
+      }
+    }
+  },
+  "lci-trucks.xlsx": {
+    "before sha256": "d832e963158dcc5f0922d4cc4464eaea9d756d3acb0b2d9b6b14179a45bb28d6",
+    "after sha256": "066298016513965491102cf2698e59e69fa26719f0a4db0c5a1df4143218d65d",
+    "datasets": 127,
+    "material exchange changes": 7,
+    "float-rounding exchange changes": 0,
+    "maximum rounding absolute difference": 0,
+    "raw model inventory sha256": "249cdf1345645024e0a180c8c886827e700aacd185bab30c3fe21a01c7515310",
+    "model parameters sha256": "7ebc7451c6432d556152ea6fdb4fcb6cd5ec637e127368dff4ba2335637d8a02",
+    "installer sha256": "7e9c179ac8cebfb88c85318a8e52d7f0d2002341b16f3ac2529811960c61bc9c",
+    "files": {
+      "lci-trucks.xlsx": {
+        "before sha256": "d832e963158dcc5f0922d4cc4464eaea9d756d3acb0b2d9b6b14179a45bb28d6",
+        "after sha256": "066298016513965491102cf2698e59e69fa26719f0a4db0c5a1df4143218d65d",
+        "private backup": "/private/tmp/premise-vehicle-replacements-20261013/baseline/lci-trucks.xlsx"
+      },
+      "lci-trucks.parameters.csv": {
+        "before sha256": "5e88b90ef6d9ed75ac33ea4a3bdd69a15f46cb8f0ae82aa548206bbc4725716f",
+        "after sha256": "520762a8ff82546ee18e90a4e8e235f4f2a4e51bfc0829de5d70aa829102c12d",
+        "private backup": "/private/tmp/premise-vehicle-replacements-20261013/baseline/lci-trucks.parameters.csv"
+      },
+      "lci-trucks.noise.csv": {
+        "before sha256": "2d0d601d9d6902e6cfc399c8651e31ff28ce54f7f55719b53c0172ec3691a050",
+        "after sha256": "2d0d601d9d6902e6cfc399c8651e31ff28ce54f7f55719b53c0172ec3691a050",
+        "private backup": "/private/tmp/premise-vehicle-replacements-20261013/baseline/lci-trucks.noise.csv"
+      },
+      "lci-trucks.provenance.json": {
+        "before sha256": "dc63adc760ca02018bbd2aae7642aaeab7c12c379cdd3ab1595d39ac44e38ab2",
+        "after sha256": "c673960548e128f89164d51dac8833ac2fa3182e6d89caaaa1635e0fbc39fc62",
+        "private backup": "/private/tmp/premise-vehicle-replacements-20261013/baseline/lci-trucks.provenance.json"
+      }
+    }
+  }
+}

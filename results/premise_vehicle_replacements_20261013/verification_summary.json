@@ -1,0 +1,26 @@
+{
+  "2020": {
+    "activities": 42564,
+    "changed_battery_purchases": 7,
+    "rounding_differences": 3450,
+    "maximum_rounding_absolute_difference": 7.105427357601002e-15,
+    "maximum_rounding_relative_difference": 7.354966377797145e-16,
+    "carbon_checks": 495,
+    "hydrogen_checks": 147,
+    "validation_errors": 0,
+    "validation_warnings": 401,
+    "warning_identities_unchanged": true
+  },
+  "2050": {
+    "activities": 42574,
+    "changed_battery_purchases": 7,
+    "rounding_differences": 3911,
+    "maximum_rounding_absolute_difference": 7.105427357601002e-15,
+    "maximum_rounding_relative_difference": 7.218474335980537e-13,
+    "carbon_checks": 495,
+    "hydrogen_checks": 147,
+    "validation_errors": 0,
+    "validation_warnings": 398,
+    "warning_identities_unchanged": true
+  }
+}

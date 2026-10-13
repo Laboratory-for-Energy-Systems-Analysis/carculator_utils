@@ -182,6 +182,8 @@ def main():
             "battery cell energy density",
             "battery DoD",
             "battery lifetime replacements",
+            "battery lifetime kilometers",
+            "electric utility factor",
             "fuel cell lifetime replacements",
             "range",
         ]
@@ -366,6 +368,12 @@ def main():
             note += COLD_START_SOURCE_NOTE
         if proxy:
             note += "LPG proxy: CNG vehicle manufacture INCLUDING CNG tank, efficiency, maintenance and non-CO2 combustion emissions; CNG pump-to-tank methane leakage excluded. LPG-specific LHV and CO2. Raw model fuel commentary describes the CNG proxy. "
+        if power.startswith("PHEV-"):
+            note += (
+                f"PHEV battery lifetime: {par['battery lifetime kilometers']:g} vehicle-km "
+                "and an 18-year calendar limit; fractional replacements are the larger "
+                "excess over the initial pack, without electric-driving-share weighting. "
+            )
         ds["comment"] = note + ds.get("comment", "")
         datasets.append(ds)
         capacity = par["electric energy stored"] * (
@@ -459,6 +467,13 @@ def main():
     write_csv(args.output / "noise_audit.csv", noise)
     write_csv(args.output / "vehicle_parameters.csv", balance)
     record = dict(
+        phev_battery_replacement_policy={
+            "distance_km": 200000,
+            "distance_basis": "total vehicle distance, not electric-mode distance",
+            "calendar_years": 18,
+            "formula": "max(0, lifetime km / battery lifetime km - 1, lifetime km / annual km / 18 - 1)",
+            "approved_on": "2026-10-13",
+        },
         hydrogen_compression_adaptation=hydrogen_compression_specification(),
         cng_supply_basis={
             "delivered_LHV_MJ_per_kg": 46.5,
@@ -498,6 +513,7 @@ def main():
                 "carculator_utils/carculator_utils/hot_emissions.py",
                 "carculator_utils/carculator_utils/model.py",
                 "carculator/carculator/model.py",
+                "carculator/carculator/data/default_parameters.json",
                 "carculator_utils/carculator_utils/data/emission_factors/provenance.json",
                 "carculator_utils/dev/regenerate_premise_cars.py",
             )

@@ -120,6 +120,7 @@ def main():
             "target range",
             "battery DoD",
             "battery cycle life",
+            "electric utility factor",
             "battery cell energy density",
             "battery cell mass share",
             "is_available",
@@ -206,8 +207,11 @@ def main():
             note += (
                 "PHEV electric mode is sized for 60 km, combustion mode for 400 km. "
                 "Nominal battery kWh is the shared model's full physical pack capacity, "
-                "verified against cell mass and energy density; model replacement counts "
-                "are retained pending a separate lifetime-use review. "
+                "verified against cell mass and energy density. Fractional replacement "
+                "demand uses electric-share-weighted lifetime net stored energy, nominal "
+                "capacity and cycle life; the initial pack is subtracted once before "
+                "clipping to 0-3 replacements. No separate calendar-age or combustion-mode "
+                "cycling correction is included in this inherited approximation. "
             )
             for activity in (ds, production):
                 activity["comment"] = re.sub(
@@ -443,6 +447,13 @@ def main():
         Path(__file__),
     ]
     record = dict(
+        phev_battery_replacement_policy={
+            "formula": "clip(lifetime km * electric utility factor * electric-mode net stored kJ/km / 3600 / nominal kWh / cycle life - 1, 0, 3)",
+            "cycle_basis": "equivalent full cycles of nominal capacity; no additional DoD divisor",
+            "energy_boundary": "inherited net stored-energy approximation; not gross charge/discharge throughput",
+            "calendar_ageing": "no separate truck calendar-age model",
+            "explicit_inputs": "nonzero counts retained for the whole pack; conflicting PHEV inputs rejected",
+        },
         hydrogen_compression_adaptation=hydrogen_compression_specification(),
         cng_supply_basis={
             "delivered_LHV_MJ_per_kg": 46.5,

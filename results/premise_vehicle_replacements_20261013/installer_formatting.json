@@ -1,0 +1,7 @@
+{
+  "executed_script": "/private/tmp/premise-vehicle-replacements-20261013/executed_installer.py",
+  "executed_sha256": "7e9c179ac8cebfb88c85318a8e52d7f0d2002341b16f3ac2529811960c61bc9c",
+  "formatted_script": "dev/install_premise_phev_replacements.py",
+  "formatted_sha256": "8f485f5be69f63fa5181e356053e20386ba3147c7a2a4d89e5b66ccfd7b4584f",
+  "identical_python_ast": true
+}

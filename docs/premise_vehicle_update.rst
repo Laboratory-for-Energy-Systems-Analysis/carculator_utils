@@ -1,6 +1,28 @@
 Premise vehicle inventory update: audit and reproduction strategy
 =================================================================
 
+PHEV replacement accounting, 13 October 2026
+--------------------------------------------
+
+Car PHEVs now use the approved 200,000 vehicle-km battery distance life and
+existing 18-year calendar limit. Both driving-mode costs and final assembly
+retain one physical pack's replacement count. The default 2020 cars still have
+zero replacements and unchanged inventory coefficients.
+
+Truck electric lifetime use is now weighted before subtracting the initial
+pack and clipping the replacement count. Under the existing net-energy
+approximation, the seven Regional-delivery PHEVs now require zero replacements.
+This approximation excludes regenerative cycling and has no separate calendar
+limit; the wider cycling question remains open with the hybrid-storage review.
+The modelled physical packs are unchanged. The 40 t lifetime purchase changes
+from 102.324451 to 77.323265 kWh. Names and operating inventories are preserved.
+
+The report and verified 2020/2050 builds are recorded in
+``results/premise_vehicle_replacements_20261013/report.rst``. The five-package
+installed-artifact check passes 1,748 tests plus wheel/sdist resource checks and
+offline model/LCIA smoke tests. These results verify the current net-energy
+arithmetic, not an unimplemented regenerative-cycling model.
+
 PHEV capacity correction, 13 October 2026
 ----------------------------------------
 
