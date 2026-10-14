@@ -1088,14 +1088,25 @@ corrected missing petrol in five gasoline PHEV mappings, and added the petrol
 alias to the gasoline HEV mapping. The correction changes 52 regional PHEVs in
 the controlled 2050 build; all 2020 coefficients remain unchanged. The focused
 suite passes 209 Premise tests and 61 shared emissions tests.</p>
-<p>Step 11 remains open for the FCEV battery power/cell-share inconsistencies,
-hybrid deterioration lookup, car PHEV capacity calibration, and the high truck
+<p>The FCEV battery power/cell-share arithmetic is corrected and regression-tested
+in the shared library and native car, truck and bus pipelines. Refreshed car
+coefficients and truck power metadata are installed; vehicle identities and
+all truck coefficients are preserved. The correction retains the original
+heavy-vehicle energy-sizing rule. Traction-cell peak-power capability remains
+unverified, and the inherited truck lead-acid specific-power input is not a
+validation basis. See the
+<a class="reference external" href="../premise_vehicle_fcev_20261014/report.html">FCEV accounting report</a>.
+Full 2020/2050 builds pass with unchanged warning identities and numerical
+changes confined to 88 FCEV car activities in each year. Accounting and
+Brightway metadata readback pass; 93 model/adapter and 184 Premise tests pass.</p>
+<p>Step 11 remains open for FCEV peak-power validation, hybrid deterioration
+lookup, car PHEV capacity calibration, and the high truck
 NOx coefficients. The user confirmed that the original truck hot-factor
 derivation is no longer available; no guessed correction has been applied.
 The agreed 400 km small-BEV-truck design is feasible by gross mass but requires
 an explicit commercial-representativeness qualification. See the
 <a class="reference external" href="../premise_vehicle_plausibility_20261014/report.html">plausibility audit</a>.
-The next concrete model issue is FCEV battery accounting. Step 12 and the
+The next concrete implementation issue is hybrid deterioration lookup. Step 12 and the
 previously identified broader PHEV battery-use question remain open.</p>
 </section>
 </main>

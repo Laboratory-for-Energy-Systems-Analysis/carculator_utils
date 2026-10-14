@@ -1,0 +1,65 @@
+{
+  "files": [
+    {
+      "filename": "lci-pass_cars.xlsx",
+      "family": "cars",
+      "before_sha256": "3560f079391323e72f0be1ba21cdfd20e4d55781f6e3ea93a03b4b0423ecfcb0",
+      "after_sha256": "ae683f05f62b2d207e470a934f18b67f47729682e24bd958110bc9eb3defadd5",
+      "activities": 162,
+      "changed_activities": 16
+    },
+    {
+      "filename": "lci-trucks.xlsx",
+      "family": "trucks",
+      "before_sha256": "68a01680b40b18f55efddc96f1df6167de55d794958e2f695d59701c69fc0331",
+      "after_sha256": "33ec7051102722bde5ef6d30d541705c288388b3d91272561b970e051a554513",
+      "activities": 127,
+      "changed_activities": 0
+    }
+  ],
+  "sidecars": [
+    {
+      "filename": "lci-pass_cars.parameters.csv",
+      "family": "cars",
+      "source": "vehicle_parameters.csv",
+      "before_sha256": "739f36dbbefc75b5a8b42df7803e06b47fdffc73bf3dc9a4ce07141ec73d8b28",
+      "after_sha256": "bfb3840a17abd1a0cae3192e2de8ad2d908a598e9e4c16ba030c38c5ed1bf56f"
+    },
+    {
+      "filename": "lci-pass_cars.noise.csv",
+      "family": "cars",
+      "source": "noise_audit.csv",
+      "before_sha256": "61d819ec7b1ab1a0623948132808961709209106806fd612a99b45eafbbdb4a3",
+      "after_sha256": "61d819ec7b1ab1a0623948132808961709209106806fd612a99b45eafbbdb4a3"
+    },
+    {
+      "filename": "lci-pass_cars.provenance.json",
+      "family": "cars",
+      "source": "lci-pass_cars.provenance.json",
+      "before_sha256": "b47a0a222f270b7d907d26965c0c2c5e57fd38457b379edf3a71a55e5fe475a4",
+      "after_sha256": "090fd9aa5b4ce20ca14d996953b03f69dc2bca581f5824bc2781b38b68cb07b3"
+    },
+    {
+      "filename": "lci-trucks.parameters.csv",
+      "family": "trucks",
+      "source": "vehicle_parameters.csv",
+      "before_sha256": "e7a9ffd853ec52988ed288e84192aff6ec477cf08e215cf59a2b69758b1411c7",
+      "after_sha256": "f17aa0ca08b2c2fb2398e5695a1d89891251f3bc9f21446571bafd86c32bff9f"
+    },
+    {
+      "filename": "lci-trucks.noise.csv",
+      "family": "trucks",
+      "source": "noise_audit.csv",
+      "before_sha256": "2d0d601d9d6902e6cfc399c8651e31ff28ce54f7f55719b53c0172ec3691a050",
+      "after_sha256": "2d0d601d9d6902e6cfc399c8651e31ff28ce54f7f55719b53c0172ec3691a050"
+    },
+    {
+      "filename": "lci-trucks.provenance.json",
+      "family": "trucks",
+      "source": "lci-trucks.provenance.json",
+      "before_sha256": "11533bfe880f1036aa3f6d166b28dbc9c490b8e702ab6ab7623174fcf74d4d51",
+      "after_sha256": "700dd2ecf593ed4c49d4a3c3facea6bc50329829c520756c0d9842621e3b5d82"
+    }
+  ],
+  "script_sha256": "7d4fd0e7ec31e43485c2a05a5000e81de56e2e44974ad84a0a3669c28c7f54c5"
+}

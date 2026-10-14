@@ -103,6 +103,12 @@ def main():
         model.set_all()
         parameters = {}
         labels = [
+            "power",
+            "fuel cell power",
+            "fuel cell power share",
+            "fuel cell own consumption",
+            "battery power",
+            "battery cell power density",
             "TtW energy",
             "electricity consumption",
             "fuel consumption",
@@ -497,7 +503,9 @@ def main():
     attach_legacy_provenance(
         legacy_components, {identity(d): d for d in old.values()}, original_hash
     )
-    write_workbook(legacy_path, legacy_components, database_name="lci-truck-legacy-components")
+    write_workbook(
+        legacy_path, legacy_components, database_name="lci-truck-legacy-components"
+    )
     write_csv(args.output / "noise_audit.csv", noise)
     write_csv(args.output / "vehicle_parameters.csv", balance)
     source_files = [

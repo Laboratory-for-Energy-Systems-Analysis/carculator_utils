@@ -131,6 +131,12 @@ def main():
         )
         model.set_all()
         params = [
+            "power",
+            "fuel cell power",
+            "fuel cell power share",
+            "fuel cell own consumption",
+            "battery power",
+            "battery cell power density",
             "TtW energy",
             "electricity consumption",
             "fuel consumption",

@@ -1,6 +1,36 @@
 Premise vehicle inventory update: audit and reproduction strategy
 =================================================================
 
+FCEV power and pack accounting, 14 October 2026
+----------------------------------------------
+
+The power buffer now supplies the complement of the net fuel-cell share of
+vehicle power. The fuel-cell rating includes its own consumption and must not
+be multiplied by the complementary share. Complete car pack mass now equals
+cell mass divided by the declared cell fraction. Starter-battery sizing also
+preserves FCEV traction power in trucks and buses.
+
+The 2020 Medium car buffer changes from 3.366 to 3.928 kWh and 18.232 to
+23.380 kg; the coupled mass correction increases hydrogen demand by 0.175%.
+The 40 t truck retains 71.101 kWh and 423.219 kg, with 218.016 kW now recorded
+instead of zero. Eight car services and eight production templates change
+coefficients; all truck coefficients and all vehicle identities are preserved.
+Power requirements and limitations are recorded in dataset comments and
+baseline provenance. See ``results/premise_vehicle_fcev_20261014/report.rst``.
+
+Full 2020/2050 REMIND SSP2-NPi builds pass with zero validation errors and
+unchanged warning identities. Numerical changes are confined to 88 FCEV car
+activities per year after regionalization. Fuel-energy/carbon, pack allocation,
+scenario battery/payload and Brightway metadata checks pass; the focused suites
+pass 93 model/adapter checks and 184 Premise tests.
+
+The heavy-vehicle buffer remains an energy-based assumption, 20 kWh plus 6%
+of hydrogen chemical energy. The truck's inherited lead-acid specific-power
+input is not a valid verification of its lithium-ion traction pack. This fix
+closes the model's nominal power and mass accounting; it does not independently
+validate cell peak power, motor/inverter peak losses or sustained power delivery.
+Buses inherit the shared correction, but their Premise workbook is not refreshed.
+
 Truck HEV traction storage, 13 October 2026
 ---------------------------------------------
 

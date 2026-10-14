@@ -26,6 +26,11 @@ PUBLICATIONS = {
 }
 MODELS = {"car": "carculator", "truck": "carculator_truck"}
 BASELINE_FIELDS = (
+    "power",
+    "fuel cell power",
+    "fuel cell power share",
+    "fuel cell own consumption",
+    "battery power",
     "kilometers per year",
     "lifetime kilometers",
     "average passengers",
@@ -156,7 +161,7 @@ def attach_provenance(datasets, family, generation, parameters):
             spec["model powertrain"] = native["powertrain"]
             spec["service templates"] = users
             spec["parameter units"] = (
-                "km/year, lifetime km, persons, masses kg, ranges km, stored energy kWh, replacements per vehicle, starts/day; all describe the 2020 baseline."
+                "km/year, lifetime km, persons, masses kg, ranges km, stored energy kWh, power kW, power shares and gross/net multiplier dimensionless, replacements per vehicle, starts/day; all describe the 2020 baseline."
             )
             spec["proxy"] = bool(service and str(native["proxy"]).lower() == "true")
             spec["proxy boundary"] = (
@@ -170,6 +175,17 @@ def attach_provenance(datasets, family, generation, parameters):
                 "Scenario-adjusted fuel purchases, efficiency and hardware are recorded separately by Premise. "
                 "Original-model fuel volumes use model fuel densities; final purchases use the units of the linked suppliers. "
             )
+            if native["powertrain"] == "FCEV":
+                note += (
+                    "FCEV buffer power is the complement of net fuel-cell power in the model's nominal vehicle-power allocation; fuel-cell stack power includes own consumption. "
+                    "Complete pack mass equals cell mass divided by cell mass share. This accounting does not independently validate motor/inverter peak losses or sustained power delivery. "
+                )
+                if family == "truck":
+                    note += (
+                        "The traction buffer retains the original energy-sizing assumption: 20 kWh plus 6% of hydrogen chemical energy. "
+                        "The inherited lead-acid starter cell power-density input is not a validated lithium-ion traction rating and does not determine this final energy-sized pack. "
+                        "Traction-cell peak-power capability remains unverified; battery power records the model requirement. "
+                    )
         else:
             spec["component source boundary"] = (
                 "Bundled component recipe exported with the model; model year and climate do not date or parameterize this component. Its literature source is recorded separately."

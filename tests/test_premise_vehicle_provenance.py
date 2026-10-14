@@ -154,3 +154,46 @@ def test_shared_cng_production_remains_native_while_lpg_service_is_a_proxy():
     assert not production[module.KEY]["proxy"]
     assert production[module.KEY]["service templates"] == ["LPG service", "CNG service"]
     assert [d["exchanges"] for d in services + [production]] == before
+
+
+@pytest.mark.parametrize(
+    "family,model", [("car", "carculator"), ("truck", "carculator_truck")]
+)
+def test_fcev_metadata_distinguishes_power_requirement_from_validation(family, model):
+    module = load("premise_vehicle_provenance")
+    ds = dict(
+        name="FCEV service",
+        unit="kilometer",
+        location="RER",
+        exchanges=[],
+        **{"reference product": "transport"},
+    )
+    parameters = [
+        dict(
+            name=ds["name"],
+            size="Medium",
+            powertrain="FCEV",
+            proxy=False,
+            **{
+                "battery power": 50,
+                "fuel cell power": 165,
+                "fuel cell own consumption": 1.1,
+            },
+        )
+    ]
+    generation = {
+        "libraries": {
+            model: {"version": "test"},
+            "carculator_utils": {"version": "test"},
+        }
+    }
+    module.attach_provenance([ds], family, generation, parameters)
+    baseline = ds[module.KEY]["baseline vehicle parameters"]
+    assert baseline["battery power"] + baseline["fuel cell power"] / baseline[
+        "fuel cell own consumption"
+    ] == pytest.approx(200)
+    assert "complement of net fuel-cell power" in ds["comment"]
+    assert "does not independently validate" in ds["comment"]
+    assert ("peak-power capability remains unverified" in ds["comment"]) == (
+        family == "truck"
+    )
