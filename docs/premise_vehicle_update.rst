@@ -1,6 +1,27 @@
 Premise vehicle inventory update: audit and reproduction strategy
 =================================================================
 
+Hybrid deterioration lookup, 14 October 2026
+-------------------------------------------
+
+HEV/PHEV hot-exhaust ageing now selects the same petrol/diesel engine alias as
+hot-factor lookup. Previously the literal hybrid label gave unity. The existing
+endpoint coefficients and vehicle-lifetime averaging formula are retained as
+an explicitly documented hybrid ageing proxy; cold starts and evaporation are
+unaffected and PHEV mode emissions are weighted once.
+
+Only CO/NOx in 32 car services and NOx in 16 truck services change. Production,
+energy use, batteries and identities are preserved. The 40 t diesel HEV's
+NOx rises 63.82%, from 1.710 to 2.802 g/km. This follows the retained ageing
+formula but does not validate the underlying truck factor whose derivation
+is unavailable. No regulatory clipping is applied. See
+``results/premise_vehicle_deterioration_20261014/report.rst``.
+
+The 38 shared emissions/provenance checks and 181 focused Premise tests pass.
+Full 2020/2050 builds have zero errors and unchanged warning identities;
+coefficient changes are confined to 104 car and 16 truck operating services
+per year. Fuel/carbon, battery/payload and Brightway metadata checks pass.
+
 FCEV power and pack accounting, 14 October 2026
 ----------------------------------------------
 

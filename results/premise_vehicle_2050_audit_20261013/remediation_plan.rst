@@ -553,12 +553,23 @@ Full 2020/2050 builds pass with unchanged warning identities and numerical
 changes confined to 88 FCEV car activities in each year. Accounting and
 Brightway metadata readback pass; 93 model/adapter and 184 Premise tests pass.
 
-Step 11 remains open for FCEV peak-power validation, hybrid deterioration
-lookup, car PHEV capacity calibration, and the high truck
+The hybrid deterioration lookup is corrected: HEV/PHEV combustion modes select
+the same petrol/diesel engine alias as hot factors, with the existing vehicle-
+lifetime averaging rule. The ageing proxy is disclosed in comments. Cold
+starts, evaporation, energy use and PHEV mode weighting are preserved. Only
+32 car and 16 truck service templates change pollutant coefficients. See the
+`hybrid deterioration report <../premise_vehicle_deterioration_20261014/report.html>`_.
+The 38 model/provenance checks and 181 Premise tests pass. Both full builds
+have zero errors and unchanged warning identities, with changes confined to
+104 car and 16 truck operating services per year. Fuel/carbon, battery and
+metadata readback checks pass.
+
+Step 11 remains open for FCEV peak-power validation, car PHEV capacity
+calibration, and the high truck
 NOx coefficients. The user confirmed that the original truck hot-factor
 derivation is no longer available; no guessed correction has been applied.
 The agreed 400 km small-BEV-truck design is feasible by gross mass but requires
 an explicit commercial-representativeness qualification. See the
 `plausibility audit <../premise_vehicle_plausibility_20261014/report.html>`_.
-The next concrete implementation issue is hybrid deterioration lookup. Step 12 and the
+The next specification review is car PHEV capacity plausibility. Step 12 and the
 previously identified broader PHEV battery-use question remain open.

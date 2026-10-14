@@ -1,0 +1,48 @@
+{
+  "metadata_activities": 1186,
+  "metadata_fields": [
+    "source",
+    "model",
+    "model version",
+    "model publication",
+    "vehicle inventory provenance",
+    "inventory provenance",
+    "premise vehicle provenance",
+    "premise vehicle battery sizing",
+    "vehicle battery sizing",
+    "vehicle lpg policy"
+  ],
+  "operating_energy_links_checked": 968,
+  "metadata_exactly_preserved": true,
+  "smoke_scores": [
+    {
+      "name": "transport, freight, lorry, battery electric, 40 metric ton",
+      "location": "EUR",
+      "unit": "ton kilometer",
+      "year": 2050,
+      "score": 0.032825099900436826,
+      "method": [
+        "ecoinvent-3.12",
+        "EF v3.1",
+        "climate change",
+        "global warming potential (GWP100)"
+      ]
+    },
+    {
+      "name": "transport, passenger car, battery electric, Medium",
+      "location": "EUR",
+      "unit": "kilometer",
+      "year": 2050,
+      "score": 0.06958468181586827,
+      "method": [
+        "ecoinvent-3.12",
+        "EF v3.1",
+        "climate change",
+        "global warming potential (GWP100)"
+      ]
+    }
+  ],
+  "persistent_user_database_written": false,
+  "database": "premise-remind-SSP2-NPi-2050-premise-vehicle-deterioration-20261014",
+  "brightway_directory": "/private/tmp/premise-vehicle-deterioration-20261014/brightway/ecoinvent-312-cutoff.da91bd11"
+}

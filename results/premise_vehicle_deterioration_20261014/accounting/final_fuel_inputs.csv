@@ -1,0 +1,1157 @@
+year,name,location,supplier,supplier_location,unit,amount_per_service,delivered_MJ_per_unit
+2020,"transport, freight, lorry, plugin diesel hybrid, 18 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04395020432030611,43.000000000000014
+2020,"transport, freight, lorry, diesel hybrid, 26 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.0308310951923244,43.000000000000014
+2020,"transport, freight, lorry, plugin diesel hybrid, 26 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02664135142369565,43.000000000000014
+2020,"transport, freight, lorry, diesel hybrid, 3.5 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.07744285393011532,43.000000000000014
+2020,"transport, freight, lorry, gasoline, 3.5 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.093686030192707,42.60000000000001
+2020,"transport, freight, lorry, plugin diesel hybrid, 3.5 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.07530553099579271,43.000000000000014
+2020,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.005842607725940726,120.0
+2020,"transport, freight, lorry, diesel hybrid, 32 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02290826066409074,43.000000000000014
+2020,"transport, freight, lorry, diesel, 32 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02571632807515188,43.000000000000014
+2020,"transport, freight, lorry, compressed gas, 32 metric ton",RER,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.02670571450457507,46.5
+2020,"transport, freight, lorry, plugin diesel hybrid, 32 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01860414943171272,43.000000000000014
+2020,"transport, freight, lorry, plugin diesel hybrid, 40 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02047177542195651,43.000000000000014
+2020,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.004440374209758994,120.0
+2020,"transport, freight, lorry, diesel hybrid, 60 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01820304411448299,43.000000000000014
+2020,"transport, freight, lorry, diesel, 60 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02068445409293912,43.000000000000014
+2020,"transport, freight, lorry, compressed gas, 60 metric ton",RER,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.02143685141542332,46.5
+2020,"transport, freight, lorry, plugin diesel hybrid, 60 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01473706263459777,43.000000000000014
+2020,"transport, freight, lorry, diesel hybrid, 7.5 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04898031783215599,43.000000000000014
+2020,"transport, freight, lorry, plugin diesel hybrid, 7.5 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04380024714452718,43.000000000000014
+2020,"transport, freight, lorry, liquefied petroleum gas, 3.5 metric ton",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.1026125288875958,45.5
+2020,"transport, freight, lorry, gasoline, 7.5 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.05726230028613237,42.60000000000001
+2020,"transport, freight, lorry, liquefied petroleum gas, 7.5 metric ton",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.06100262391891981,45.5
+2020,"transport, freight, lorry, diesel hybrid, 18 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04747892515699465,43.000000000000014
+2020,"transport, freight, lorry, gasoline hybrid, 18 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.0479247366608162,42.60000000000001
+2020,"transport, freight, lorry, gasoline, 18 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.05850960849102823,42.60000000000001
+2020,"transport, freight, lorry, liquefied petroleum gas, 18 metric ton",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.0620449053099497,45.5
+2020,"transport, freight, lorry, diesel hybrid, 40 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02456320949707638,43.000000000000014
+2020,"transport, freight, lorry, gasoline hybrid, 40 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.02479384996183766,42.60000000000001
+2020,"transport, freight, lorry, gasoline, 40 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.0284847085878308,42.60000000000001
+2020,"transport, freight, lorry, liquefied petroleum gas, 40 metric ton",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.0300156545552329,45.5
+2020,"transport, passenger car, diesel, Large, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04737917903174087,43.000000000000014
+2020,"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01201937302250227,43.000000000000014
+2020,"transport, passenger car, gasoline hybrid, Large, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.04403403733605518,42.60000000000001
+2020,"transport, passenger car, diesel hybrid, Large, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.041102226566651,43.000000000000014
+2020,"transport, passenger car, gasoline, Large SUV, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.08080033363698233,42.60000000000001
+2020,"transport, passenger car, diesel, Large SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.05566157671749801,43.000000000000014
+2020,"transport, passenger car, compressed gas, Large SUV, EURO-6",RER,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.06057423457491529,46.5
+2020,"transport, passenger car, plugin gasoline hybrid, Large SUV, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.01941407014757511,42.60000000000001
+2020,"transport, passenger car, plugin diesel hybrid, Large SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01833367526999848,43.000000000000014
+2020,"transport, passenger car, fuel cell electric, Large SUV",RER,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.01130446964979104,120.0
+2020,"transport, passenger car, gasoline hybrid, Large SUV, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.0515069154598511,42.60000000000001
+2020,"transport, passenger car, diesel hybrid, Large SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04861654617556339,43.000000000000014
+2020,"transport, passenger car, gasoline, Lower medium, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.05500849585044362,42.60000000000001
+2020,"transport, passenger car, diesel, Lower medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03944761972139826,43.000000000000014
+2020,"transport, passenger car, compressed gas, Lower medium, EURO-6",RER,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.04255114871083585,46.5
+2020,"transport, passenger car, plugin gasoline hybrid, Lower medium, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.01746782554794434,42.60000000000001
+2020,"transport, passenger car, plugin diesel hybrid, Lower medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01595306271149896,43.000000000000014
+2020,"transport, passenger car, fuel cell electric, Lower medium",RER,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.008100463862006135,120.0
+2020,"transport, passenger car, gasoline hybrid, Lower medium, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.03778079057619973,42.60000000000001
+2020,"transport, passenger car, diesel hybrid, Lower medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03557030271407508,43.000000000000014
+2020,"transport, passenger car, diesel, Medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04339709117143607,43.000000000000014
+2020,"transport, passenger car, liquefied petroleum gas, Medium, EURO-6",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.04750841557159161,45.5
+2020,"transport, passenger car, plugin diesel hybrid, Medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01594147631677514,43.000000000000014
+2020,"transport, passenger car, gasoline hybrid, Medium, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.04015823886917285,42.60000000000001
+2020,"transport, passenger car, diesel hybrid, Medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03739869314767347,43.000000000000014
+2020,"transport, passenger car, diesel, Medium SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04438532616367306,43.000000000000014
+2020,"transport, passenger car, plugin diesel hybrid, Medium SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01120773497283804,43.000000000000014
+2020,"transport, passenger car, gasoline hybrid, Medium SUV, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.04334060795932056,42.60000000000001
+2020,"transport, passenger car, diesel hybrid, Medium SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04083421025655472,43.000000000000014
+2020,"transport, passenger car, diesel, Mini, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03357724550139084,43.000000000000014
+2020,"transport, passenger car, plugin diesel hybrid, Mini, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.0141542101849393,43.000000000000014
+2020,"transport, passenger car, gasoline hybrid, Mini, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.03171404194640893,42.60000000000001
+2020,"transport, passenger car, diesel hybrid, Mini, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03251430323652136,43.000000000000014
+2020,"transport, passenger car, diesel, Small, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03583008398949671,43.000000000000014
+2020,"transport, passenger car, plugin diesel hybrid, Small, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01600182546268362,43.000000000000014
+2020,"transport, passenger car, gasoline hybrid, Small, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.03426614315400468,42.60000000000001
+2020,"transport, passenger car, diesel hybrid, Small, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03293925384087981,43.000000000000014
+2020,"transport, passenger car, diesel, Van, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.05871500794949427,43.000000000000014
+2020,"transport, passenger car, plugin diesel hybrid, Van, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02215395903549127,43.000000000000014
+2020,"transport, passenger car, gasoline hybrid, Van, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.05676461583605272,42.60000000000001
+2020,"transport, passenger car, diesel hybrid, Van, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.05690225822383466,43.000000000000014
+2020,"transport, passenger car, fuel cell electric, Large",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.009636887465450217,120.0
+2020,"transport, passenger car, fuel cell electric, Large",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.009636887465450217,120.0
+2020,"transport, passenger car, fuel cell electric, Large",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.009636887465450217,120.0
+2020,"transport, passenger car, fuel cell electric, Large",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.009636887465450217,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Large",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.009636887465450217,120.0
+2020,"transport, passenger car, fuel cell electric, Large",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.009636887465450217,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Large",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.009636887465450217,119.99999999999999
+2020,"transport, passenger car, fuel cell electric, Large",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.009636887465450217,120.0
+2020,"transport, passenger car, fuel cell electric, Large",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.009636887465450217,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Large",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.009636887465450217,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Large",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.009636887465450217,120.0
+2020,"transport, passenger car, fuel cell electric, Large",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.009636887465450217,120.0
+2020,"transport, passenger car, fuel cell electric, Large",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.009636887465450217,120.0
+2020,"transport, passenger car, compressed gas, Large, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, compressed gas, Large, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.05161277613512567,46.5
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.01278545168318718,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.01278545168318718,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.01278545168318718,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.01278545168318718,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.01278545168318718,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.01278545168318718,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.01278545168318718,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.01278545168318718,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.01278545168318718,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.01278545168318718,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.01278545168318718,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.01278545168318718,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.01278545168318718,42.599999999999994
+2020,"transport, passenger car, gasoline, Large, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.0697204760838745,42.6
+2020,"transport, passenger car, gasoline, Large, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.0697204760838745,42.6
+2020,"transport, passenger car, gasoline, Large, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.0697204760838745,42.60000000000001
+2020,"transport, passenger car, gasoline, Large, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.0697204760838745,42.6
+2020,"transport, passenger car, gasoline, Large, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.0697204760838745,42.60000000000001
+2020,"transport, passenger car, gasoline, Large, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.0697204760838745,42.6
+2020,"transport, passenger car, gasoline, Large, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.0697204760838745,42.60000000000001
+2020,"transport, passenger car, gasoline, Large, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.0697204760838745,42.6
+2020,"transport, passenger car, gasoline, Large, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.0697204760838745,42.60000000000001
+2020,"transport, passenger car, gasoline, Large, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.0697204760838745,42.60000000000001
+2020,"transport, passenger car, gasoline, Large, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.0697204760838745,42.60000000000001
+2020,"transport, passenger car, gasoline, Large, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.0697204760838745,42.6
+2020,"transport, passenger car, gasoline, Large, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.0697204760838745,42.599999999999994
+2020,"transport, passenger car, fuel cell electric, Medium",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.00876176234590298,120.0
+2020,"transport, passenger car, fuel cell electric, Medium",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.00876176234590298,120.0
+2020,"transport, passenger car, fuel cell electric, Medium",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.00876176234590298,120.0
+2020,"transport, passenger car, fuel cell electric, Medium",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.00876176234590298,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Medium",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.00876176234590298,120.0
+2020,"transport, passenger car, fuel cell electric, Medium",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.00876176234590298,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Medium",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.00876176234590298,119.99999999999999
+2020,"transport, passenger car, fuel cell electric, Medium",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.00876176234590298,120.0
+2020,"transport, passenger car, fuel cell electric, Medium",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.00876176234590298,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Medium",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.00876176234590298,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Medium",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.00876176234590298,120.0
+2020,"transport, passenger car, fuel cell electric, Medium",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.00876176234590298,120.0
+2020,"transport, passenger car, fuel cell electric, Medium",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.00876176234590298,120.0
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, compressed gas, Medium, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.0464867292152133,46.5
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.01706907652031381,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.01706907652031381,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.01706907652031381,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.01706907652031381,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.01706907652031381,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.01706907652031381,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.01706907652031381,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.01706907652031381,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.01706907652031381,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.01706907652031381,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.01706907652031381,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.01706907652031381,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.01706907652031381,42.599999999999994
+2020,"transport, passenger car, gasoline, Medium, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.06352816149076537,42.6
+2020,"transport, passenger car, gasoline, Medium, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.06352816149076537,42.6
+2020,"transport, passenger car, gasoline, Medium, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.06352816149076537,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.06352816149076537,42.6
+2020,"transport, passenger car, gasoline, Medium, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.06352816149076537,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.06352816149076537,42.6
+2020,"transport, passenger car, gasoline, Medium, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.06352816149076537,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.06352816149076537,42.6
+2020,"transport, passenger car, gasoline, Medium, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.06352816149076537,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.06352816149076537,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.06352816149076537,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.06352816149076537,42.6
+2020,"transport, passenger car, gasoline, Medium, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.06352816149076537,42.599999999999994
+2020,"transport, passenger car, fuel cell electric, Mini",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.006842369349021271,120.0
+2020,"transport, passenger car, fuel cell electric, Mini",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.006842369349021271,120.0
+2020,"transport, passenger car, fuel cell electric, Mini",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.006842369349021271,120.0
+2020,"transport, passenger car, fuel cell electric, Mini",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.006842369349021271,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Mini",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.006842369349021271,120.0
+2020,"transport, passenger car, fuel cell electric, Mini",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.006842369349021271,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Mini",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.006842369349021271,119.99999999999999
+2020,"transport, passenger car, fuel cell electric, Mini",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.006842369349021271,120.0
+2020,"transport, passenger car, fuel cell electric, Mini",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.006842369349021271,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Mini",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.006842369349021271,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Mini",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.006842369349021271,120.0
+2020,"transport, passenger car, fuel cell electric, Mini",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.006842369349021271,120.0
+2020,"transport, passenger car, fuel cell electric, Mini",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.006842369349021271,120.0
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, compressed gas, Mini, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.03636180796457453,46.5
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.01522509431518178,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.01522509431518178,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.01522509431518178,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.01522509431518178,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.01522509431518178,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.01522509431518178,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.01522509431518178,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.01522509431518178,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.01522509431518178,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.01522509431518178,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.01522509431518178,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.01522509431518178,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.01522509431518178,42.599999999999994
+2020,"transport, passenger car, gasoline, Mini, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.04256761858995765,42.6
+2020,"transport, passenger car, gasoline, Mini, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.04256761858995765,42.6
+2020,"transport, passenger car, gasoline, Mini, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.04256761858995765,42.60000000000001
+2020,"transport, passenger car, gasoline, Mini, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.04256761858995765,42.6
+2020,"transport, passenger car, gasoline, Mini, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.04256761858995765,42.60000000000001
+2020,"transport, passenger car, gasoline, Mini, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.04256761858995765,42.6
+2020,"transport, passenger car, gasoline, Mini, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.04256761858995765,42.60000000000001
+2020,"transport, passenger car, gasoline, Mini, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.04256761858995765,42.6
+2020,"transport, passenger car, gasoline, Mini, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.04256761858995765,42.60000000000001
+2020,"transport, passenger car, gasoline, Mini, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.04256761858995765,42.60000000000001
+2020,"transport, passenger car, gasoline, Mini, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.04256761858995765,42.60000000000001
+2020,"transport, passenger car, gasoline, Mini, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.04256761858995765,42.6
+2020,"transport, passenger car, gasoline, Mini, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.04256761858995765,42.599999999999994
+2020,"transport, passenger car, fuel cell electric, Medium SUV",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.009474316834477081,120.0
+2020,"transport, passenger car, fuel cell electric, Medium SUV",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.009474316834477081,120.0
+2020,"transport, passenger car, fuel cell electric, Medium SUV",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.009474316834477081,120.0
+2020,"transport, passenger car, fuel cell electric, Medium SUV",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.009474316834477081,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Medium SUV",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.009474316834477081,120.0
+2020,"transport, passenger car, fuel cell electric, Medium SUV",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.009474316834477081,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Medium SUV",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.009474316834477081,119.99999999999999
+2020,"transport, passenger car, fuel cell electric, Medium SUV",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.009474316834477081,120.0
+2020,"transport, passenger car, fuel cell electric, Medium SUV",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.009474316834477081,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Medium SUV",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.009474316834477081,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Medium SUV",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.009474316834477081,120.0
+2020,"transport, passenger car, fuel cell electric, Medium SUV",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.009474316834477081,120.0
+2020,"transport, passenger car, fuel cell electric, Medium SUV",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.009474316834477081,120.0
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, compressed gas, Medium SUV, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.04840646897662229,46.5
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.01226684916984519,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.01226684916984519,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.01226684916984519,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.01226684916984519,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.01226684916984519,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.01226684916984519,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.01226684916984519,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.01226684916984519,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.01226684916984519,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.01226684916984519,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.01226684916984519,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.01226684916984519,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.01226684916984519,42.599999999999994
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.06159789234617156,42.6
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.06159789234617156,42.6
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.06159789234617156,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.06159789234617156,42.6
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.06159789234617156,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.06159789234617156,42.6
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.06159789234617156,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.06159789234617156,42.6
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.06159789234617156,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.06159789234617156,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.06159789234617156,42.60000000000001
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.06159789234617156,42.6
+2020,"transport, passenger car, gasoline, Medium SUV, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.06159789234617156,42.599999999999994
+2020,"transport, passenger car, fuel cell electric, Small",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.00738557943033169,120.0
+2020,"transport, passenger car, fuel cell electric, Small",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.00738557943033169,120.0
+2020,"transport, passenger car, fuel cell electric, Small",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.00738557943033169,120.0
+2020,"transport, passenger car, fuel cell electric, Small",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.00738557943033169,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Small",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.00738557943033169,120.0
+2020,"transport, passenger car, fuel cell electric, Small",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.00738557943033169,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Small",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.00738557943033169,119.99999999999999
+2020,"transport, passenger car, fuel cell electric, Small",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.00738557943033169,120.0
+2020,"transport, passenger car, fuel cell electric, Small",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.00738557943033169,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Small",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.00738557943033169,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Small",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.00738557943033169,120.0
+2020,"transport, passenger car, fuel cell electric, Small",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.00738557943033169,120.0
+2020,"transport, passenger car, fuel cell electric, Small",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.00738557943033169,120.0
+2020,"transport, passenger car, compressed gas, Small, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, compressed gas, Small, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.0387810375788237,46.5
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.01756233678525181,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.01756233678525181,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.01756233678525181,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.01756233678525181,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.01756233678525181,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.01756233678525181,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.01756233678525181,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.01756233678525181,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.01756233678525181,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.01756233678525181,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.01756233678525181,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.01756233678525181,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.01756233678525181,42.599999999999994
+2020,"transport, passenger car, gasoline, Small, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.04841293182712648,42.6
+2020,"transport, passenger car, gasoline, Small, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.04841293182712648,42.6
+2020,"transport, passenger car, gasoline, Small, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.04841293182712648,42.60000000000001
+2020,"transport, passenger car, gasoline, Small, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.04841293182712648,42.6
+2020,"transport, passenger car, gasoline, Small, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.04841293182712648,42.60000000000001
+2020,"transport, passenger car, gasoline, Small, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.04841293182712648,42.6
+2020,"transport, passenger car, gasoline, Small, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.04841293182712648,42.60000000000001
+2020,"transport, passenger car, gasoline, Small, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.04841293182712648,42.6
+2020,"transport, passenger car, gasoline, Small, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.04841293182712648,42.60000000000001
+2020,"transport, passenger car, gasoline, Small, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.04841293182712648,42.60000000000001
+2020,"transport, passenger car, gasoline, Small, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.04841293182712648,42.60000000000001
+2020,"transport, passenger car, gasoline, Small, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.04841293182712648,42.6
+2020,"transport, passenger car, gasoline, Small, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.04841293182712648,42.599999999999994
+2020,"transport, passenger car, fuel cell electric, Van",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.01237327223264284,120.0
+2020,"transport, passenger car, fuel cell electric, Van",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.01237327223264284,120.0
+2020,"transport, passenger car, fuel cell electric, Van",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.01237327223264284,120.0
+2020,"transport, passenger car, fuel cell electric, Van",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.01237327223264284,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Van",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.01237327223264284,120.0
+2020,"transport, passenger car, fuel cell electric, Van",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.01237327223264284,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Van",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.01237327223264284,119.99999999999999
+2020,"transport, passenger car, fuel cell electric, Van",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.01237327223264284,120.0
+2020,"transport, passenger car, fuel cell electric, Van",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.01237327223264284,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Van",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.01237327223264284,120.00000000000001
+2020,"transport, passenger car, fuel cell electric, Van",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.01237327223264284,120.0
+2020,"transport, passenger car, fuel cell electric, Van",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.01237327223264284,120.0
+2020,"transport, passenger car, fuel cell electric, Van",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.01237327223264284,120.0
+2020,"transport, passenger car, compressed gas, Van, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, compressed gas, Van, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.06393519290016128,46.5
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.02361670443738896,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.02361670443738896,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.02361670443738896,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.02361670443738896,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.02361670443738896,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.02361670443738896,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.02361670443738896,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.02361670443738896,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.02361670443738896,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.02361670443738896,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.02361670443738896,42.60000000000001
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.02361670443738896,42.6
+2020,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.02361670443738896,42.599999999999994
+2020,"transport, passenger car, gasoline, Van, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.07627516075465107,42.6
+2020,"transport, passenger car, gasoline, Van, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.07627516075465107,42.6
+2020,"transport, passenger car, gasoline, Van, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.07627516075465107,42.60000000000001
+2020,"transport, passenger car, gasoline, Van, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.07627516075465107,42.6
+2020,"transport, passenger car, gasoline, Van, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.07627516075465107,42.60000000000001
+2020,"transport, passenger car, gasoline, Van, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.07627516075465107,42.6
+2020,"transport, passenger car, gasoline, Van, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.07627516075465107,42.60000000000001
+2020,"transport, passenger car, gasoline, Van, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.07627516075465107,42.6
+2020,"transport, passenger car, gasoline, Van, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.07627516075465107,42.60000000000001
+2020,"transport, passenger car, gasoline, Van, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.07627516075465107,42.60000000000001
+2020,"transport, passenger car, gasoline, Van, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.07627516075465107,42.60000000000001
+2020,"transport, passenger car, gasoline, Van, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.07627516075465107,42.6
+2020,"transport, passenger car, gasoline, Van, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.07627516075465107,42.599999999999994
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.02119995176368376,120.0
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.02119995176368376,120.0
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.02119995176368376,120.0
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.02119995176368376,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.02119995176368376,120.0
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.02119995176368376,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.02119995176368376,119.99999999999999
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.02119995176368376,120.0
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.02119995176368376,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.02119995176368376,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.02119995176368376,120.0
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.02119995176368376,120.0
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.02119995176368376,120.0
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.09281453223742601,43.0
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.09281453223742601,43.00000000000001
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.09281453223742601,43.000000000000014
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.09281453223742601,43.00000000000001
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.09281453223742601,42.99999999999999
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.09281453223742601,43.0
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.09281453223742601,43.0
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.09281453223742601,43.0
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.09281453223742601,43.0
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.09281453223742601,43.0
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.09281453223742601,42.999999999999986
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.09281453223742601,43.0
+2020,"transport, freight, lorry, diesel, 3.5 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.09281453223742601,43.00000000000001
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, compressed gas, 3.5 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.1004058078362497,46.5
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.01364962915299855,120.0
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.01364962915299855,120.0
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.01364962915299855,120.0
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.01364962915299855,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.01364962915299855,120.0
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.01364962915299855,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.01364962915299855,119.99999999999999
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.01364962915299855,120.0
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.01364962915299855,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.01364962915299855,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.01364962915299855,120.0
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.01364962915299855,120.0
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.01364962915299855,120.0
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.05672962772533114,43.0
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.05672962772533114,43.00000000000001
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.05672962772533114,43.000000000000014
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.05672962772533114,43.00000000000001
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.05672962772533114,42.99999999999999
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.05672962772533114,43.0
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.05672962772533114,43.0
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.05672962772533114,43.0
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.05672962772533114,43.0
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.05672962772533114,43.0
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.05672962772533114,42.999999999999986
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.05672962772533114,43.0
+2020,"transport, freight, lorry, diesel, 7.5 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.05672962772533114,43.00000000000001
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, compressed gas, 7.5 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.0596907395335667,46.5
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.0122225483369405,120.0
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.0122225483369405,120.0
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.0122225483369405,120.0
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.0122225483369405,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.0122225483369405,120.0
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.0122225483369405,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.0122225483369405,119.99999999999999
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.0122225483369405,120.0
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.0122225483369405,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.0122225483369405,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.0122225483369405,120.0
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.0122225483369405,120.0
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.0122225483369405,120.0
+2020,"transport, freight, lorry, diesel, 18 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.05796533306320471,43.0
+2020,"transport, freight, lorry, diesel, 18 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.05796533306320471,43.00000000000001
+2020,"transport, freight, lorry, diesel, 18 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.05796533306320471,43.000000000000014
+2020,"transport, freight, lorry, diesel, 18 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.05796533306320471,43.00000000000001
+2020,"transport, freight, lorry, diesel, 18 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.05796533306320471,42.99999999999999
+2020,"transport, freight, lorry, diesel, 18 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.05796533306320471,43.0
+2020,"transport, freight, lorry, diesel, 18 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.05796533306320471,43.0
+2020,"transport, freight, lorry, diesel, 18 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.05796533306320471,43.0
+2020,"transport, freight, lorry, diesel, 18 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.05796533306320471,43.0
+2020,"transport, freight, lorry, diesel, 18 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.05796533306320471,43.0
+2020,"transport, freight, lorry, diesel, 18 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.05796533306320471,42.999999999999986
+2020,"transport, freight, lorry, diesel, 18 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.05796533306320471,43.0
+2020,"transport, freight, lorry, diesel, 18 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.05796533306320471,43.00000000000001
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, compressed gas, 18 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.06071060627102605,46.5
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.007513258735789281,120.0
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.007513258735789281,120.0
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.007513258735789281,120.0
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.007513258735789281,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.007513258735789281,120.0
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.007513258735789281,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.007513258735789281,119.99999999999999
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.007513258735789281,120.0
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.007513258735789281,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.007513258735789281,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.007513258735789281,120.0
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.007513258735789281,120.0
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.007513258735789281,120.0
+2020,"transport, freight, lorry, diesel, 26 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.036232966298281,43.0
+2020,"transport, freight, lorry, diesel, 26 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.036232966298281,43.00000000000001
+2020,"transport, freight, lorry, diesel, 26 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.036232966298281,43.000000000000014
+2020,"transport, freight, lorry, diesel, 26 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.036232966298281,43.00000000000001
+2020,"transport, freight, lorry, diesel, 26 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.036232966298281,42.99999999999999
+2020,"transport, freight, lorry, diesel, 26 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.036232966298281,43.0
+2020,"transport, freight, lorry, diesel, 26 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.036232966298281,43.0
+2020,"transport, freight, lorry, diesel, 26 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.036232966298281,43.0
+2020,"transport, freight, lorry, diesel, 26 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.036232966298281,43.0
+2020,"transport, freight, lorry, diesel, 26 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.036232966298281,43.0
+2020,"transport, freight, lorry, diesel, 26 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.036232966298281,42.999999999999986
+2020,"transport, freight, lorry, diesel, 26 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.036232966298281,43.0
+2020,"transport, freight, lorry, diesel, 26 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.036232966298281,43.00000000000001
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, compressed gas, 26 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.03774575610906716,46.5
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.00620155098580029,120.0
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.00620155098580029,120.0
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.00620155098580029,120.0
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.00620155098580029,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.00620155098580029,120.0
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.00620155098580029,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.00620155098580029,119.99999999999999
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.00620155098580029,120.0
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.00620155098580029,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.00620155098580029,120.00000000000001
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.00620155098580029,120.0
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.00620155098580029,120.0
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.00620155098580029,120.0
+2020,"transport, freight, lorry, diesel, 40 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.02821973455445563,43.0
+2020,"transport, freight, lorry, diesel, 40 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.02821973455445563,43.00000000000001
+2020,"transport, freight, lorry, diesel, 40 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.02821973455445563,43.000000000000014
+2020,"transport, freight, lorry, diesel, 40 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.02821973455445563,43.00000000000001
+2020,"transport, freight, lorry, diesel, 40 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.02821973455445563,42.99999999999999
+2020,"transport, freight, lorry, diesel, 40 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.02821973455445563,43.0
+2020,"transport, freight, lorry, diesel, 40 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.02821973455445563,43.0
+2020,"transport, freight, lorry, diesel, 40 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.02821973455445563,43.0
+2020,"transport, freight, lorry, diesel, 40 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.02821973455445563,43.0
+2020,"transport, freight, lorry, diesel, 40 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.02821973455445563,43.0
+2020,"transport, freight, lorry, diesel, 40 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.02821973455445563,42.999999999999986
+2020,"transport, freight, lorry, diesel, 40 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.02821973455445563,43.0
+2020,"transport, freight, lorry, diesel, 40 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.02821973455445563,43.00000000000001
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.02937015660780854,46.5
+2020,"transport, freight, lorry, compressed gas, 40 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.02937015660780854,46.5
+2050,"transport, freight, lorry, plugin diesel hybrid, 18 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04395020432030611,43.0
+2050,"transport, freight, lorry, diesel hybrid, 26 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.0308310951923244,43.0
+2050,"transport, freight, lorry, plugin diesel hybrid, 26 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02664135142369565,43.0
+2050,"transport, freight, lorry, diesel hybrid, 3.5 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.07744285393011532,43.0
+2050,"transport, freight, lorry, gasoline, 3.5 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.093686030192707,42.6
+2050,"transport, freight, lorry, plugin diesel hybrid, 3.5 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.07530553099579271,43.0
+2050,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.005842607725940726,119.99999999999999
+2050,"transport, freight, lorry, diesel hybrid, 32 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02290826066409074,43.0
+2050,"transport, freight, lorry, diesel, 32 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02571632807515188,43.0
+2050,"transport, freight, lorry, compressed gas, 32 metric ton",RER,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.02670571450457507,46.5
+2050,"transport, freight, lorry, plugin diesel hybrid, 32 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01860414943171272,43.0
+2050,"transport, freight, lorry, plugin diesel hybrid, 40 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02047177542195651,43.0
+2050,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.004440374209758994,119.99999999999999
+2050,"transport, freight, lorry, diesel hybrid, 60 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01820304411448299,43.0
+2050,"transport, freight, lorry, diesel, 60 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02068445409293912,43.0
+2050,"transport, freight, lorry, compressed gas, 60 metric ton",RER,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.02143685141542332,46.5
+2050,"transport, freight, lorry, plugin diesel hybrid, 60 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01473706263459777,43.0
+2050,"transport, freight, lorry, diesel hybrid, 7.5 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04898031783215599,43.0
+2050,"transport, freight, lorry, plugin diesel hybrid, 7.5 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04380024714452718,43.0
+2050,"transport, freight, lorry, liquefied petroleum gas, 3.5 metric ton",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.1026125288875958,45.5
+2050,"transport, freight, lorry, gasoline, 7.5 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.05726230028613237,42.6
+2050,"transport, freight, lorry, liquefied petroleum gas, 7.5 metric ton",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.06100262391891981,45.5
+2050,"transport, freight, lorry, diesel hybrid, 18 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04747892515699465,43.0
+2050,"transport, freight, lorry, gasoline hybrid, 18 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.0479247366608162,42.6
+2050,"transport, freight, lorry, gasoline, 18 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.05850960849102823,42.6
+2050,"transport, freight, lorry, liquefied petroleum gas, 18 metric ton",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.0620449053099497,45.5
+2050,"transport, freight, lorry, diesel hybrid, 40 metric ton",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02456320949707638,43.0
+2050,"transport, freight, lorry, gasoline hybrid, 40 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.02479384996183766,42.6
+2050,"transport, freight, lorry, gasoline, 40 metric ton",RER,"market for petrol, low-sulfur",EUR,kilogram,0.0284847085878308,42.6
+2050,"transport, freight, lorry, liquefied petroleum gas, 40 metric ton",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.0300156545552329,45.5
+2050,"transport, passenger car, diesel, Large, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04737917903174087,43.0
+2050,"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01201937302250227,43.0
+2050,"transport, passenger car, gasoline hybrid, Large, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.04403403733605518,42.6
+2050,"transport, passenger car, diesel hybrid, Large, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.041102226566651,43.0
+2050,"transport, passenger car, gasoline, Large SUV, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.08080033363698233,42.6
+2050,"transport, passenger car, diesel, Large SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.05566157671749801,43.0
+2050,"transport, passenger car, compressed gas, Large SUV, EURO-6",RER,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.06057423457491529,46.5
+2050,"transport, passenger car, plugin gasoline hybrid, Large SUV, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.01941407014757511,42.6
+2050,"transport, passenger car, plugin diesel hybrid, Large SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01833367526999848,43.0
+2050,"transport, passenger car, fuel cell electric, Large SUV",RER,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.01130446964979104,119.99999999999999
+2050,"transport, passenger car, gasoline hybrid, Large SUV, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.0515069154598511,42.6
+2050,"transport, passenger car, diesel hybrid, Large SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04861654617556339,43.0
+2050,"transport, passenger car, gasoline, Lower medium, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.05500849585044362,42.6
+2050,"transport, passenger car, diesel, Lower medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03944761972139826,43.0
+2050,"transport, passenger car, compressed gas, Lower medium, EURO-6",RER,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.04255114871083585,46.5
+2050,"transport, passenger car, plugin gasoline hybrid, Lower medium, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.01746782554794434,42.6
+2050,"transport, passenger car, plugin diesel hybrid, Lower medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01595306271149896,43.0
+2050,"transport, passenger car, fuel cell electric, Lower medium",RER,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.008100463862006135,119.99999999999999
+2050,"transport, passenger car, gasoline hybrid, Lower medium, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.03778079057619973,42.6
+2050,"transport, passenger car, diesel hybrid, Lower medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03557030271407508,43.0
+2050,"transport, passenger car, diesel, Medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04339709117143607,43.0
+2050,"transport, passenger car, liquefied petroleum gas, Medium, EURO-6",RER,market for liquefied petroleum gas,Europe without Switzerland,kilogram,0.04750841557159161,45.5
+2050,"transport, passenger car, plugin diesel hybrid, Medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01594147631677514,43.0
+2050,"transport, passenger car, gasoline hybrid, Medium, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.04015823886917285,42.6
+2050,"transport, passenger car, diesel hybrid, Medium, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03739869314767347,43.0
+2050,"transport, passenger car, diesel, Medium SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04438532616367306,43.0
+2050,"transport, passenger car, plugin diesel hybrid, Medium SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01120773497283804,43.0
+2050,"transport, passenger car, gasoline hybrid, Medium SUV, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.04334060795932056,42.6
+2050,"transport, passenger car, diesel hybrid, Medium SUV, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.04083421025655472,43.0
+2050,"transport, passenger car, diesel, Mini, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03357724550139084,43.0
+2050,"transport, passenger car, plugin diesel hybrid, Mini, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.0141542101849393,43.0
+2050,"transport, passenger car, gasoline hybrid, Mini, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.03171404194640893,42.6
+2050,"transport, passenger car, diesel hybrid, Mini, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03251430323652136,43.0
+2050,"transport, passenger car, diesel, Small, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03583008398949671,43.0
+2050,"transport, passenger car, plugin diesel hybrid, Small, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.01600182546268362,43.0
+2050,"transport, passenger car, gasoline hybrid, Small, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.03426614315400468,42.6
+2050,"transport, passenger car, diesel hybrid, Small, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.03293925384087981,43.0
+2050,"transport, passenger car, diesel, Van, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.05871500794949427,43.0
+2050,"transport, passenger car, plugin diesel hybrid, Van, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.02215395903549127,43.0
+2050,"transport, passenger car, gasoline hybrid, Van, EURO-6",RER,"market for petrol, low-sulfur",EUR,kilogram,0.05676461583605272,42.6
+2050,"transport, passenger car, diesel hybrid, Van, EURO-6",RER,"market for diesel, low-sulfur",EUR,kilogram,0.05690225822383466,43.0
+2050,"transport, passenger car, fuel cell electric, Large",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.007709509972360174,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Large",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.007709509972360174,120.0
+2050,"transport, passenger car, fuel cell electric, Large",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.007709509972360174,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Large",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.007709509972360174,120.0
+2050,"transport, passenger car, fuel cell electric, Large",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.007709509972360174,120.0
+2050,"transport, passenger car, fuel cell electric, Large",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.007709509972360174,120.0
+2050,"transport, passenger car, fuel cell electric, Large",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.007709509972360174,120.0
+2050,"transport, passenger car, fuel cell electric, Large",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.007709509972360174,120.0
+2050,"transport, passenger car, fuel cell electric, Large",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.007709509972360174,120.0
+2050,"transport, passenger car, fuel cell electric, Large",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.007709509972360174,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Large",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.007709509972360174,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Large",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.007709509972360174,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Large",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.007709509972360174,120.0
+2050,"transport, passenger car, compressed gas, Large, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.041290220908100535,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.041290220908100535,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.041290220908100535,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.041290220908100535,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.04229190394262106,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.04147655569541535,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.04218516372847468,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.041290220908100535,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.043585736045648346,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.04825464344631155,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.042651831528265516,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.04208804539025985,46.5
+2050,"transport, passenger car, compressed gas, Large, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.05161277613512567,46.5
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.010228361346549746,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.010228361346549746,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.010228361346549746,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.010228361346549746,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.010228361346549746,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.010228361346549746,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.010228361346549746,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.010228361346549746,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.010228361346549746,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.010228361346549746,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.010228361346549746,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.010228361346549746,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.010228361346549746,42.6
+2050,"transport, passenger car, gasoline, Large, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.057275598479661835,42.6
+2050,"transport, passenger car, gasoline, Large, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.05706055036911947,42.6
+2050,"transport, passenger car, gasoline, Large, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.0557763808670996,42.6
+2050,"transport, passenger car, gasoline, Large, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.05816631530927433,42.599999999999994
+2050,"transport, passenger car, gasoline, Large, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.05626634534137413,42.6
+2050,"transport, passenger car, gasoline, Large, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.05973204987654553,42.599999999999994
+2050,"transport, passenger car, gasoline, Large, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.05621152639619403,42.6
+2050,"transport, passenger car, gasoline, Large, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.0557763808670996,42.599999999999994
+2050,"transport, passenger car, gasoline, Large, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.05682765552610809,42.6
+2050,"transport, passenger car, gasoline, Large, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.05861329730512382,42.599999999999994
+2050,"transport, passenger car, gasoline, Large, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.05826609563133038,42.6
+2050,"transport, passenger car, gasoline, Large, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.057356130773664936,42.6
+2050,"transport, passenger car, gasoline, Large, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.0557763808670996,42.6
+2050,"transport, passenger car, fuel cell electric, Medium",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.007009409876722383,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Medium",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.00876176234590298,120.0
+2050,"transport, passenger car, fuel cell electric, Medium",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.007009409876722383,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Medium",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.00876176234590298,120.0
+2050,"transport, passenger car, fuel cell electric, Medium",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.00876176234590298,120.0
+2050,"transport, passenger car, fuel cell electric, Medium",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.007009409876722383,120.0
+2050,"transport, passenger car, fuel cell electric, Medium",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.00876176234590298,120.0
+2050,"transport, passenger car, fuel cell electric, Medium",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.007009409876722383,120.0
+2050,"transport, passenger car, fuel cell electric, Medium",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.007009409876722383,120.0
+2050,"transport, passenger car, fuel cell electric, Medium",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.007009409876722383,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Medium",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.00876176234590298,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Medium",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.007009409876722383,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Medium",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.007009409876722383,120.0
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.037930920231231194,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.0464867292152133,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.04159409335349997,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.0464867292152133,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.0464867292152133,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.037459728151172315,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.0464867292152133,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.03718938337217064,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.03997795453697741,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.043288240885462195,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.0464867292152133,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.03797183298009422,46.5
+2050,"transport, passenger car, compressed gas, Medium, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.043166289218279,46.5
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.013655261216251047,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.01706907652031381,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.013655261216251047,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.01706907652031381,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.01706907652031381,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.013655261216251047,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.01706907652031381,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.013655261216251047,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.013655261216251047,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.013655261216251047,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.01706907652031381,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.013655261216251047,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.013655261216251047,42.6
+2050,"transport, passenger car, gasoline, Medium, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.05189046187701907,42.6
+2050,"transport, passenger car, gasoline, Medium, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.06352816149076537,42.6
+2050,"transport, passenger car, gasoline, Medium, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.0508225291926123,42.6
+2050,"transport, passenger car, gasoline, Medium, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.06352816149076537,42.599999999999994
+2050,"transport, passenger car, gasoline, Medium, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.06352816149076537,42.6
+2050,"transport, passenger car, gasoline, Medium, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.054512703849779395,42.599999999999994
+2050,"transport, passenger car, gasoline, Medium, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.06352816149076537,42.6
+2050,"transport, passenger car, gasoline, Medium, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.0508225291926123,42.599999999999994
+2050,"transport, passenger car, gasoline, Medium, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.05452618385137682,42.6
+2050,"transport, passenger car, gasoline, Medium, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.05287146157452297,42.599999999999994
+2050,"transport, passenger car, gasoline, Medium, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.06352816149076537,42.6
+2050,"transport, passenger car, gasoline, Medium, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.052366936543869896,42.6
+2050,"transport, passenger car, gasoline, Medium, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.054847033808565045,42.6
+2050,"transport, passenger car, fuel cell electric, Mini",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.005473895479217017,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Mini",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.005473895479217017,120.0
+2050,"transport, passenger car, fuel cell electric, Mini",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.005473895479217017,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Mini",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.005473895479217017,120.0
+2050,"transport, passenger car, fuel cell electric, Mini",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.005473895479217017,120.0
+2050,"transport, passenger car, fuel cell electric, Mini",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.005473895479217017,120.0
+2050,"transport, passenger car, fuel cell electric, Mini",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.005473895479217017,120.0
+2050,"transport, passenger car, fuel cell electric, Mini",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.005473895479217017,120.0
+2050,"transport, passenger car, fuel cell electric, Mini",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.005473895479217017,120.0
+2050,"transport, passenger car, fuel cell electric, Mini",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.005473895479217017,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Mini",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.005473895479217017,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Mini",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.006842369349021271,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Mini",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.005473895479217017,120.0
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.030078249535700142,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.030020661588839787,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.03017977543826355,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.029089446371659625,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.029677630995312097,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.030244122004862827,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.029089446371659625,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.03082131973928058,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.029089446371659625,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.03389660216351171,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.03058706027420054,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.03636180796457453,46.5
+2050,"transport, passenger car, compressed gas, Mini, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.034876762940148645,46.5
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.012180075452145424,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.012180075452145424,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.012180075452145424,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.012180075452145424,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.012180075452145424,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.012180075452145424,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.012180075452145424,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.012180075452145424,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.012180075452145424,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.012180075452145424,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.012180075452145424,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.01522509431518178,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Mini, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.012180075452145424,42.6
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.035912582311970316,42.6
+2050,"transport, passenger car, gasoline, Mini, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.034914467493577996,42.6
+2050,"transport, passenger car, gasoline, Mini, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.034538096525790485,42.6
+2050,"transport, passenger car, gasoline, Mini, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.03565869106467854,42.599999999999994
+2050,"transport, passenger car, gasoline, Mini, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.034241368757882674,42.6
+2050,"transport, passenger car, gasoline, Mini, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.034918752658933135,42.599999999999994
+2050,"transport, passenger car, gasoline, Mini, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.03405409487196612,42.6
+2050,"transport, passenger car, gasoline, Mini, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.035861821404498034,42.599999999999994
+2050,"transport, passenger car, gasoline, Mini, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.03405409487196612,42.6
+2050,"transport, passenger car, gasoline, Mini, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.03798402998221582,42.599999999999994
+2050,"transport, passenger car, gasoline, Mini, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.035933428320597795,42.6
+2050,"transport, passenger car, gasoline, Mini, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.04256761858995765,42.6
+2050,"transport, passenger car, gasoline, Mini, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.03418426874491078,42.6
+2050,"transport, passenger car, fuel cell electric, Medium SUV",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.007579453467581665,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Medium SUV",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.007579453467581665,120.0
+2050,"transport, passenger car, fuel cell electric, Medium SUV",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.007579453467581665,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Medium SUV",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.007579453467581665,120.0
+2050,"transport, passenger car, fuel cell electric, Medium SUV",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.007579453467581665,120.0
+2050,"transport, passenger car, fuel cell electric, Medium SUV",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.007579453467581665,120.0
+2050,"transport, passenger car, fuel cell electric, Medium SUV",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.007579453467581665,120.0
+2050,"transport, passenger car, fuel cell electric, Medium SUV",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.007579453467581665,120.0
+2050,"transport, passenger car, fuel cell electric, Medium SUV",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.007579453467581665,120.0
+2050,"transport, passenger car, fuel cell electric, Medium SUV",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.007579453467581665,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Medium SUV",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.007579453467581665,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Medium SUV",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.007579453467581665,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Medium SUV",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.007579453467581665,120.0
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.03872517518129784,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.03872517518129784,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.03872517518129784,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.03872517518129784,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.039664631307586844,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.040329687121793925,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.039564522046827304,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.03872517518129784,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.03872517518129784,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.04525695139603564,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.04000219934428215,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.03921791345773293,46.5
+2050,"transport, passenger car, compressed gas, Medium SUV, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.04840646897662229,46.5
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.009813479335876153,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.009813479335876153,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.009813479335876153,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.009813479335876153,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.009813479335876153,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.009813479335876153,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.009813479335876153,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.009813479335876153,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.009813479335876153,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.009813479335876153,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.009813479335876153,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.009813479335876153,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Medium SUV, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.009813479335876153,42.6
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.04927831387693725,42.6
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.05041287490093967,42.6
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.04927831387693725,42.6
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.05138981587394578,42.599999999999994
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.0497111964479556,42.6
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.05059643446779729,42.599999999999994
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.049662764026471955,42.6
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.04927831387693725,42.599999999999994
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.05013925920428788,42.6
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.051784723516686074,42.599999999999994
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.05147797157628036,42.6
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.050479277600707716,42.6
+2050,"transport, passenger car, gasoline, Medium SUV, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.05002059768781731,42.6
+2050,"transport, passenger car, fuel cell electric, Small",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.0059084635442653525,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Small",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.0059084635442653525,120.0
+2050,"transport, passenger car, fuel cell electric, Small",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.0059084635442653525,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Small",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.0059084635442653525,120.0
+2050,"transport, passenger car, fuel cell electric, Small",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.0059084635442653525,120.0
+2050,"transport, passenger car, fuel cell electric, Small",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.0059084635442653525,120.0
+2050,"transport, passenger car, fuel cell electric, Small",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.0059084635442653525,120.0
+2050,"transport, passenger car, fuel cell electric, Small",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.0059084635442653525,120.0
+2050,"transport, passenger car, fuel cell electric, Small",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.0059084635442653525,120.0
+2050,"transport, passenger car, fuel cell electric, Small",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.0059084635442653525,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Small",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.0059084635442653525,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Small",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.00738557943033169,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Small",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.0059084635442653525,120.0
+2050,"transport, passenger car, compressed gas, Small, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.03141277313587383,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.03180190703231985,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.032880810178501314,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.03599692584655147,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.03177512712951787,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.032262231537823136,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.032603485879036546,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.031024830063058964,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.031024830063058964,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.0361114695750809,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.03534146137886595,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.0387810375788237,46.5
+2050,"transport, passenger car, compressed gas, Small, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.0387810375788237,46.5
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.014049869428201448,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.014049869428201448,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.014049869428201448,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.014049869428201448,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.014049869428201448,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.014049869428201448,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.014049869428201448,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.014049869428201448,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.014049869428201448,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.014049869428201448,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.014049869428201448,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.01756233678525181,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Small, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.014049869428201448,42.6
+2050,"transport, passenger car, gasoline, Small, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.04141582021340016,42.6
+2050,"transport, passenger car, gasoline, Small, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.04029428398299825,42.6
+2050,"transport, passenger car, gasoline, Small, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.038730345461701184,42.6
+2050,"transport, passenger car, gasoline, Small, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.045145940445193954,42.599999999999994
+2050,"transport, passenger car, gasoline, Small, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.03909241454757867,42.6
+2050,"transport, passenger car, gasoline, Small, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.039610346756171186,42.599999999999994
+2050,"transport, passenger car, gasoline, Small, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.04040368208730719,42.6
+2050,"transport, passenger car, gasoline, Small, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.038730345461701184,42.599999999999994
+2050,"transport, passenger car, gasoline, Small, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.0441221755839544,42.6
+2050,"transport, passenger car, gasoline, Small, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.040307369741012566,42.599999999999994
+2050,"transport, passenger car, gasoline, Small, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.04531570424346363,42.6
+2050,"transport, passenger car, gasoline, Small, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.04841293182712648,42.6
+2050,"transport, passenger car, gasoline, Small, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.04841293182712648,42.6
+2050,"transport, passenger car, fuel cell electric, Van",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.009898617786114273,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Van",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.01237327223264284,120.0
+2050,"transport, passenger car, fuel cell electric, Van",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.009898617786114273,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Van",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.01237327223264284,120.0
+2050,"transport, passenger car, fuel cell electric, Van",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.01237327223264284,120.0
+2050,"transport, passenger car, fuel cell electric, Van",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.009898617786114273,120.0
+2050,"transport, passenger car, fuel cell electric, Van",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.01237327223264284,120.0
+2050,"transport, passenger car, fuel cell electric, Van",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.009898617786114273,120.0
+2050,"transport, passenger car, fuel cell electric, Van",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.009898617786114273,120.0
+2050,"transport, passenger car, fuel cell electric, Van",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.01237327223264284,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Van",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.009898617786114273,119.99999999999999
+2050,"transport, passenger car, fuel cell electric, Van",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.01237327223264284,120.00000000000001
+2050,"transport, passenger car, fuel cell electric, Van",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.009898617786114273,120.0
+2050,"transport, passenger car, compressed gas, Van, EURO-6",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.0534603022683441,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.06393519290016128,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.052782444452560896,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.06393519290016128,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.06393519290016128,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.052499163844329906,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.06393519290016128,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.05350159535303848,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.05471977177617962,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.06393519290016128,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.05442452334464131,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.06393519290016128,46.5
+2050,"transport, passenger car, compressed gas, Van, EURO-6",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.05345015734158543,46.5
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.01889336354991117,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.02361670443738896,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.01889336354991117,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.02361670443738896,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.02361670443738896,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.01889336354991117,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.02361670443738896,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.01889336354991117,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.01889336354991117,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.02361670443738896,42.599999999999994
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.01889336354991117,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.02361670443738896,42.6
+2050,"transport, passenger car, plugin gasoline hybrid, Van, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.01889336354991117,42.6
+2050,"transport, passenger car, gasoline, Van, EURO-6",CAZ,"market for petrol, low-sulfur",CAZ,kilogram,0.0630401395364735,42.6
+2050,"transport, passenger car, gasoline, Van, EURO-6",CHA,"market for petrol, low-sulfur",CHA,kilogram,0.07627516075465107,42.6
+2050,"transport, passenger car, gasoline, Van, EURO-6",EUR,"market for petrol, low-sulfur",EUR,kilogram,0.062018169001115064,42.6
+2050,"transport, passenger car, gasoline, Van, EURO-6",IND,"market for petrol, low-sulfur",IND,kilogram,0.07627516075465107,42.599999999999994
+2050,"transport, passenger car, gasoline, Van, EURO-6",JPN,"market for petrol, low-sulfur",JPN,kilogram,0.07627516075465107,42.6
+2050,"transport, passenger car, gasoline, Van, EURO-6",LAM,"market for petrol, low-sulfur",LAM,kilogram,0.06188820360137063,42.599999999999994
+2050,"transport, passenger car, gasoline, Van, EURO-6",MEA,"market for petrol, low-sulfur",MEA,kilogram,0.07627516075465107,42.6
+2050,"transport, passenger car, gasoline, Van, EURO-6",NEU,"market for petrol, low-sulfur",NEU,kilogram,0.06102012860372086,42.599999999999994
+2050,"transport, passenger car, gasoline, Van, EURO-6",OAS,"market for petrol, low-sulfur",OAS,kilogram,0.06488688109692994,42.6
+2050,"transport, passenger car, gasoline, Van, EURO-6",REF,"market for petrol, low-sulfur",REF,kilogram,0.07627516075465107,42.599999999999994
+2050,"transport, passenger car, gasoline, Van, EURO-6",SSA,"market for petrol, low-sulfur",SSA,kilogram,0.06453808359752031,42.6
+2050,"transport, passenger car, gasoline, Van, EURO-6",USA,"market for petrol, low-sulfur",USA,kilogram,0.07627516075465107,42.6
+2050,"transport, passenger car, gasoline, Van, EURO-6",World,"market for petrol, low-sulfur",World,kilogram,0.0619822861920865,42.6
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.016959961410947008,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.016959961410947008,120.0
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.016959961410947008,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.016959961410947008,120.0
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.016959961410947008,120.0
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.016959961410947008,120.0
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.016959961410947008,120.0
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.016959961410947008,120.0
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.016959961410947008,120.0
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.016959961410947008,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.016959961410947008,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.016959961410947008,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.016959961410947008,120.0
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.07425162578994081,43.0
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.07425162578994081,42.99999999999999
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.07425162578994081,43.0
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.07425162578994081,43.000000000000014
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.07425162578994081,43.00000000000001
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.07425162578994081,42.99999999999999
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.07425162578994081,43.0
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.07425162578994081,43.0
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.07425162578994081,43.00000000000002
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.07425162578994081,43.0
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.07425162578994081,43.00000000000001
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.07425162578994081,43.0
+2050,"transport, freight, lorry, diesel, 3.5 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.07425162578994081,43.0
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.09835139160265068,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, compressed gas, 3.5 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.08032464626899977,46.5
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.01091970332239884,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.01091970332239884,120.0
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.01091970332239884,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.01091970332239884,120.0
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.01091970332239884,120.0
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.01091970332239884,120.0
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.01091970332239884,120.0
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.01091970332239884,120.0
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.01091970332239884,120.0
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.01091970332239884,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.01091970332239884,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.01091970332239884,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.01091970332239884,120.0
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.04538370218026491,43.0
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.04538370218026491,42.99999999999999
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.04538370218026491,43.0
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.04538370218026491,43.000000000000014
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.04538370218026491,43.00000000000001
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.04538370218026491,42.99999999999999
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.04538370218026491,43.0
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.04538370218026491,43.0
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.04538370218026491,43.00000000000002
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.04538370218026491,43.0
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.04538370218026491,43.00000000000001
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.04538370218026491,43.0
+2050,"transport, freight, lorry, diesel, 7.5 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.04538370218026491,43.0
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.0481295483177363,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, compressed gas, 7.5 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.04775259162685336,46.5
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.0097780386695524,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.0097780386695524,120.0
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.0097780386695524,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.0097780386695524,120.0
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.0097780386695524,120.0
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.0097780386695524,120.0
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.0097780386695524,120.0
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.0097780386695524,120.0
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.0097780386695524,120.0
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.0097780386695524,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.0097780386695524,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.0097780386695524,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.0122225483369405,120.0
+2050,"transport, freight, lorry, diesel, 18 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.046372266450563776,43.0
+2050,"transport, freight, lorry, diesel, 18 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.046372266450563776,42.99999999999999
+2050,"transport, freight, lorry, diesel, 18 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.046372266450563776,43.0
+2050,"transport, freight, lorry, diesel, 18 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.046372266450563776,43.000000000000014
+2050,"transport, freight, lorry, diesel, 18 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.046372266450563776,43.00000000000001
+2050,"transport, freight, lorry, diesel, 18 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.046372266450563776,42.99999999999999
+2050,"transport, freight, lorry, diesel, 18 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.046372266450563776,43.0
+2050,"transport, freight, lorry, diesel, 18 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.046372266450563776,43.0
+2050,"transport, freight, lorry, diesel, 18 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.046372266450563776,43.00000000000002
+2050,"transport, freight, lorry, diesel, 18 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.046372266450563776,43.0
+2050,"transport, freight, lorry, diesel, 18 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.046372266450563776,43.00000000000001
+2050,"transport, freight, lorry, diesel, 18 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.046372266450563776,43.0
+2050,"transport, freight, lorry, diesel, 18 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.046372266450563776,43.0
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, compressed gas, 18 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.048568485016820845,46.5
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.006010606988631425,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.006010606988631425,120.0
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.006010606988631425,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.006010606988631425,120.0
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.006010606988631425,120.0
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.006010606988631425,120.0
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.006010606988631425,120.0
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.006010606988631425,120.0
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.006010606988631425,120.0
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.006010606988631425,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.006010606988631425,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.006010606988631425,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.006010606988631425,120.0
+2050,"transport, freight, lorry, diesel, 26 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.028986373038624804,43.0
+2050,"transport, freight, lorry, diesel, 26 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.028986373038624804,42.99999999999999
+2050,"transport, freight, lorry, diesel, 26 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.028986373038624804,43.0
+2050,"transport, freight, lorry, diesel, 26 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.028986373038624804,43.000000000000014
+2050,"transport, freight, lorry, diesel, 26 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.028986373038624804,43.00000000000001
+2050,"transport, freight, lorry, diesel, 26 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.028986373038624804,42.99999999999999
+2050,"transport, freight, lorry, diesel, 26 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.028986373038624804,43.0
+2050,"transport, freight, lorry, diesel, 26 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.028986373038624804,43.0
+2050,"transport, freight, lorry, diesel, 26 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.028986373038624804,43.00000000000002
+2050,"transport, freight, lorry, diesel, 26 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.028986373038624804,43.0
+2050,"transport, freight, lorry, diesel, 26 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.028986373038624804,43.00000000000001
+2050,"transport, freight, lorry, diesel, 26 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.028986373038624804,43.0
+2050,"transport, freight, lorry, diesel, 26 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.028986373038624804,43.0
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, compressed gas, 26 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.03019660488725373,46.5
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",CAZ,kilogram,0.004961240788640232,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"market for hydrogen, gaseous, low pressure",CHA,kilogram,0.004961240788640232,120.0
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"market for hydrogen, gaseous, low pressure",EUR,kilogram,0.004961240788640232,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"market for hydrogen, gaseous, low pressure",IND,kilogram,0.004961240788640232,120.0
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"market for hydrogen, gaseous, low pressure",JPN,kilogram,0.004961240788640232,120.0
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"market for hydrogen, gaseous, low pressure",LAM,kilogram,0.004961240788640232,120.0
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"market for hydrogen, gaseous, low pressure",MEA,kilogram,0.004961240788640232,120.0
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"market for hydrogen, gaseous, low pressure",NEU,kilogram,0.004961240788640232,120.0
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"market for hydrogen, gaseous, low pressure",OAS,kilogram,0.004961240788640232,120.0
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"market for hydrogen, gaseous, low pressure",REF,kilogram,0.004961240788640232,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"market for hydrogen, gaseous, low pressure",SSA,kilogram,0.004961240788640232,119.99999999999999
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"market for hydrogen, gaseous, low pressure",USA,kilogram,0.004961240788640232,120.00000000000001
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"market for hydrogen, gaseous, low pressure",World,kilogram,0.004961240788640232,120.0
+2050,"transport, freight, lorry, diesel, 40 metric ton",CAZ,"market for diesel, low-sulfur",CAZ,kilogram,0.022575787643564507,43.0
+2050,"transport, freight, lorry, diesel, 40 metric ton",CHA,"market for diesel, low-sulfur",CHA,kilogram,0.022575787643564507,42.99999999999999
+2050,"transport, freight, lorry, diesel, 40 metric ton",EUR,"market for diesel, low-sulfur",EUR,kilogram,0.022575787643564507,43.0
+2050,"transport, freight, lorry, diesel, 40 metric ton",IND,"market for diesel, low-sulfur",IND,kilogram,0.022575787643564507,43.000000000000014
+2050,"transport, freight, lorry, diesel, 40 metric ton",JPN,"market for diesel, low-sulfur",JPN,kilogram,0.022575787643564507,43.00000000000001
+2050,"transport, freight, lorry, diesel, 40 metric ton",LAM,"market for diesel, low-sulfur",LAM,kilogram,0.022575787643564507,42.99999999999999
+2050,"transport, freight, lorry, diesel, 40 metric ton",MEA,"market for diesel, low-sulfur",MEA,kilogram,0.022575787643564507,43.0
+2050,"transport, freight, lorry, diesel, 40 metric ton",NEU,"market for diesel, low-sulfur",NEU,kilogram,0.022575787643564507,43.0
+2050,"transport, freight, lorry, diesel, 40 metric ton",OAS,"market for diesel, low-sulfur",OAS,kilogram,0.022575787643564507,43.00000000000002
+2050,"transport, freight, lorry, diesel, 40 metric ton",REF,"market for diesel, low-sulfur",REF,kilogram,0.022575787643564507,43.0
+2050,"transport, freight, lorry, diesel, 40 metric ton",SSA,"market for diesel, low-sulfur",SSA,kilogram,0.022575787643564507,43.00000000000001
+2050,"transport, freight, lorry, diesel, 40 metric ton",USA,"market for diesel, low-sulfur",USA,kilogram,0.022575787643564507,43.0
+2050,"transport, freight, lorry, diesel, 40 metric ton",World,"market for diesel, low-sulfur",World,kilogram,0.022872151722480027,43.0
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",CAZ,"market for natural gas, medium pressure, vehicle grade",CAZ,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",CHA,"market for natural gas, medium pressure, vehicle grade",CHA,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",EUR,"market for natural gas, medium pressure, vehicle grade",EUR,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",IND,"market for natural gas, medium pressure, vehicle grade",IND,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",JPN,"market for natural gas, medium pressure, vehicle grade",JPN,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",LAM,"market for natural gas, medium pressure, vehicle grade",LAM,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",MEA,"market for natural gas, medium pressure, vehicle grade",MEA,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",NEU,"market for natural gas, medium pressure, vehicle grade",NEU,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",OAS,"market for natural gas, medium pressure, vehicle grade",OAS,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",REF,"market for natural gas, medium pressure, vehicle grade",REF,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",SSA,"market for natural gas, medium pressure, vehicle grade",SSA,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",USA,"market for natural gas, medium pressure, vehicle grade",USA,kilogram,0.023496125286246835,46.5
+2050,"transport, freight, lorry, compressed gas, 40 metric ton",World,"market for natural gas, medium pressure, vehicle grade",World,kilogram,0.023496125286246835,46.5
