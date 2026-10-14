@@ -631,16 +631,33 @@ the unreconstructable truck NOx factors, and the final legacy-versus-refreshed
 comparison remain distinct outstanding items. The skipped PHEV cycling review
 remains skipped.
 
-The subsequent FCEV traction-buffer audit confirms that final truck pack
-sizing does not validate charge/discharge capability and that shared
-regeneration has no pack charging-power constraint. All seven current 2020
-Regional-delivery templates reproduce the installed parameter companion.
-A documented AKASOL OEM 37 PRC pack is proposed as an explicit proxy; its
-separate charge/discharge specification is dated May 2021 and its adoption
-awaits the user's decision. At the current capacities, 26 t, 40 t and 60 t
-charging peaks exceed that reference's 10-second charge rating. A continuous-
-charging-limit sensitivity increases 40 t hydrogen use by 5.82% at fixed
-mass; this is not a regenerated vehicle prediction. The reference is heavier
-than the current generic pack, requiring mass/power/payload recalculation if
-approved. No defaults, inventories or databases have changed at this stage.
-See the `buffer-envelope audit <../premise_fcev_buffer_audit_20261014/report.html>`_.
+The subsequent `FCEV traction-buffer audit
+<../premise_fcev_buffer_audit_20261014/report.html>`_ identified missing pack
+power constraints. The user approved the AKASOL OEM 37 PRC specification as
+an explicit 2020 proxy. Shared regeneration now limits charging after direct
+auxiliary use; truck sizing applies paired pack mass/energy/power specifications
+and a conservative continuous-discharge requirement for the selected cycle.
+Explicit battery capacities are retained and checked at the final vehicle mass.
+
+This truck-buffer correction is complete: all seven selected Regional-delivery
+templates meet the motor and battery power checks at 400 km. Packs range from
+32.86 to 95.57 kWh and 313 to 910 kg. The 40 t pack is 74.31 kWh/707 kg and uses
+6.20% more hydrogen than the immediately preceding motor update. MIX capacity
+markets, their disclosed physical mass mismatch, and fixed 2020 FCEV hardware
+in future Premise scenarios are retained. Cars/buses/two-wheelers do not opt
+into the new charging constraint by default; no new runtime solver is added
+to Premise.
+
+Both full builds pass with zero errors and unchanged warning identities.
+Changes are confined to 74 FCEV activities per year. Fuel/carbon, capacity,
+future hardware and saved metadata checks pass. Focused model/adapter and
+Premise regressions, wheel/sdist resource checks and offline LCIA smoke tests
+pass. The 192 paired incremental EF 3.1 scores increase by 0.17--6.94%; exchange
+contributions explain the largest changes through hydrogen, compression,
+battery manufacture, roads and brake wear. EUR 40 t climate impact rises 4.00%.
+See the `implemented buffer correction <../premise_fcev_buffer_20261014/report.html>`_.
+Source commits are ``f55b6ec`` (utils), ``2dbccc9`` (truck) and ``93d918f``
+(Premise). Conditioned-pack ratings remain proxies, with no SOC, FC-ramp,
+thermal or ageing certification. The passenger-car FCEV buffer review and the
+final broader legacy-vehicle EF comparison remain separate outstanding items;
+the previously skipped PHEV cycling review remains skipped.

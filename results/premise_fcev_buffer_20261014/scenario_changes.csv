@@ -1,0 +1,871 @@
+year,name,location,flow,unit,before,after,percent
+2020,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,market for road,meter-year,0.001154714468641847,0.001178257579534816,2.038868614910494
+2020,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"treatment of brake wear emissions, lorry",kilogram,-6.084401472780399e-06,-6.417602885946245e-06,5.476321946480334
+2020,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"treatment of road wear emissions, lorry",kilogram,-1.156011047090299e-05,-1.174411025231091e-05,1.5916784002285356
+2020,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"treatment of tyre wear emissions, lorry",kilogram,-9.443451084502297e-06,-9.580167031944757e-06,1.4477328914937138
+2020,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"market group for electricity, low voltage",kilowatt hour,0.01432842356486715,0.01483358852830767,3.5256143926340133
+2020,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"market for hydrogen, gaseous, low pressure",kilogram,0.005846858333357925,0.006052996012275713,3.5256143926340133
+2020,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,market for road,meter-year,0.001149805588016583,0.001160765469715997,0.953194332471452
+2020,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"treatment of brake wear emissions, lorry",kilogram,-5.736243064169319e-06,-6.433753333914906e-06,12.159705611195104
+2020,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"treatment of road wear emissions, lorry",kilogram,-1.007783277967629e-05,-1.015378699430367e-05,0.753676075877685
+2020,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"treatment of tyre wear emissions, lorry",kilogram,-8.019846559789702e-06,-8.076475377838722e-06,0.7061084975484189
+2020,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"market group for electricity, low voltage",kilowatt hour,0.01089022849355335,0.01199409078249167,10.13626380375554
+2020,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"market for hydrogen, gaseous, low pressure",kilogram,0.004443868017402143,0.004894310202736746,10.13626380375554
+2020,"lorry production, fuel cell electric, 18 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,9047.40234375,9248.0390625,2.2176168487588077
+2020,"lorry production, fuel cell electric, 18 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,28.71610832214355,29.34149169921875,2.1778138251169477
+2020,"lorry production, fuel cell electric, 18 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,135.3759307861328,138.3241729736328,2.177818590335412
+2020,"lorry production, fuel cell electric, 18 metric ton",RER,"market for electric motor, electric passenger car",kilogram,124.4897155761719,129.05224609375,3.66498589579185
+2020,"lorry production, fuel cell electric, 18 metric ton",RER,"market for inverter, for electric passenger car",kilogram,15.1287841796875,15.37335968017578,1.6166236333561734
+2020,"lorry production, fuel cell electric, 18 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,51.32119369506836,52.11944198608398,1.5553969686646685
+2020,"lorry production, fuel cell electric, 26 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,12156.169921875,12397.0498046875,1.9815442228973579
+2020,"lorry production, fuel cell electric, 26 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,55.19296646118164,56.27023315429688,1.9518187953765809
+2020,"lorry production, fuel cell electric, 26 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,260.1954040527344,265.2739562988281,1.9518224253739946
+2020,"lorry production, fuel cell electric, 26 metric ton",RER,"market for electric motor, electric passenger car",kilogram,197.7725982666016,206.1188507080078,4.220125798294516
+2020,"lorry production, fuel cell electric, 26 metric ton",RER,"market for inverter, for electric passenger car",kilogram,18.27409553527832,18.55496025085449,1.536955495465997
+2020,"lorry production, fuel cell electric, 26 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,57.90571212768555,59.92440032958984,3.486164193012531
+2020,"lorry production, fuel cell electric, 3.5 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,2055.095703125,2173.107421875,5.7423952845869985
+2020,"lorry production, fuel cell electric, 3.5 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,32.73416137695312,32.85678863525391,0.37461554884108406
+2020,"lorry production, fuel cell electric, 32 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,11773.154296875,12224.7255859375,3.8356015531229692
+2020,"lorry production, fuel cell electric, 32 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,48.78038024902344,50.61631011962891,3.7636645332264074
+2020,"lorry production, fuel cell electric, 32 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,229.9646301269531,238.6197509765625,3.763674807222017
+2020,"lorry production, fuel cell electric, 32 metric ton",RER,"market for electric motor, electric passenger car",kilogram,154.1199188232422,165.3684844970703,7.298580066557747
+2020,"lorry production, fuel cell electric, 32 metric ton",RER,"market for inverter, for electric passenger car",kilogram,16.57954406738281,17.0582103729248,2.8870896786822975
+2020,"lorry production, fuel cell electric, 32 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,68.17811584472656,87.76744842529297,28.732581324453843
+2020,"lorry production, fuel cell electric, 40 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,14571.7822265625,14875.4716796875,2.0840927238907847
+2020,"lorry production, fuel cell electric, 40 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,60.2501220703125,61.48481369018555,2.049276544920775
+2020,"lorry production, fuel cell electric, 40 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,284.0362548828125,289.8569641113281,2.049283895436904
+2020,"lorry production, fuel cell electric, 40 metric ton",RER,"market for electric motor, electric passenger car",kilogram,238.4875793457031,250.0579528808594,4.851562319052394
+2020,"lorry production, fuel cell electric, 40 metric ton",RER,"market for inverter, for electric passenger car",kilogram,19.54609107971191,19.86800003051758,1.6469223922720877
+2020,"lorry production, fuel cell electric, 40 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,71.14384460449219,74.3123779296875,4.453699884803863
+2020,"lorry production, fuel cell electric, 60 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,21949.48046875,22343.384765625,1.7945950813542444
+2020,"lorry production, fuel cell electric, 60 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,85.8199462890625,87.34134674072266,1.772781873500251
+2020,"lorry production, fuel cell electric, 60 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,404.5797119140625,411.7520751953125,1.7727936102672093
+2020,"lorry production, fuel cell electric, 60 metric ton",RER,"market for inverter, for electric passenger car",kilogram,26.20312690734863,26.59978866577148,1.5137955093123212
+2020,"lorry production, fuel cell electric, 60 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,88.61332702636719,95.56815338134766,7.848510589057378
+2020,"lorry production, fuel cell electric, 7.5 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,3963.27783203125,4199.26513671875,5.954346747539341
+2020,"lorry production, fuel cell electric, 7.5 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,39.17655944824219,49.2697868347168,25.763434892257962
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.05201096956586405,0.05251181866200223,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.02122360282381959,0.02142797936937975,0.9629681975144466
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.03356745662357348,0.03403164426279741,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.0136975405982836,0.01388695706509527,1.3828501945480909
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.01843104508012896,0.01941259841386906,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.007520974588124326,0.0079215073657207,5.325543556932333
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.01521044720470361,0.01615278515210165,6.195333606671571
+2020,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.006206777011462995,0.006591307553545326,6.195333606671549
+2050,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,market for road,meter-year,0.001154714468641847,0.001178257579534816,2.038868614910494
+2050,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"treatment of brake wear emissions, lorry",kilogram,-6.084401472780399e-06,-6.417602885946245e-06,5.476321946480334
+2050,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"treatment of road wear emissions, lorry",kilogram,-1.156011047090299e-05,-1.174411025231091e-05,1.5916784002285356
+2050,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"treatment of tyre wear emissions, lorry",kilogram,-9.443451084502297e-06,-9.580167031944757e-06,1.4477328914937138
+2050,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"market group for electricity, low voltage",kilowatt hour,0.01432842356486715,0.01483358852830767,3.5256143926340133
+2050,"transport, freight, lorry, fuel cell electric, 32 metric ton",RER,"market for hydrogen, gaseous, low pressure",kilogram,0.005846858333357925,0.006052996012275713,3.5256143926340133
+2050,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,market for road,meter-year,0.001149805588016583,0.001160765469715997,0.953194332471452
+2050,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"treatment of brake wear emissions, lorry",kilogram,-5.736243064169319e-06,-6.433753333914906e-06,12.159705611195104
+2050,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"treatment of road wear emissions, lorry",kilogram,-1.007783277967629e-05,-1.015378699430367e-05,0.753676075877685
+2050,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"treatment of tyre wear emissions, lorry",kilogram,-8.019846559789702e-06,-8.076475377838722e-06,0.7061084975484189
+2050,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"market group for electricity, low voltage",kilowatt hour,0.01089022849355335,0.01199409078249167,10.13626380375554
+2050,"transport, freight, lorry, fuel cell electric, 60 metric ton",RER,"market for hydrogen, gaseous, low pressure",kilogram,0.004443868017402143,0.004894310202736746,10.13626380375554
+2050,"lorry production, fuel cell electric, 18 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,9047.40234375,9248.0390625,2.2176168487588077
+2050,"lorry production, fuel cell electric, 18 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,28.71610832214355,29.34149169921875,2.1778138251169477
+2050,"lorry production, fuel cell electric, 18 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,135.3759307861328,138.3241729736328,2.177818590335412
+2050,"lorry production, fuel cell electric, 18 metric ton",RER,"market for electric motor, electric passenger car",kilogram,124.4897155761719,129.05224609375,3.66498589579185
+2050,"lorry production, fuel cell electric, 18 metric ton",RER,"market for inverter, for electric passenger car",kilogram,15.1287841796875,15.37335968017578,1.6166236333561734
+2050,"lorry production, fuel cell electric, 18 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,51.32119369506836,52.11944198608398,1.5553969686646685
+2050,"lorry production, fuel cell electric, 26 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,12156.169921875,12397.0498046875,1.9815442228973579
+2050,"lorry production, fuel cell electric, 26 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,55.19296646118164,56.27023315429688,1.9518187953765809
+2050,"lorry production, fuel cell electric, 26 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,260.1954040527344,265.2739562988281,1.9518224253739946
+2050,"lorry production, fuel cell electric, 26 metric ton",RER,"market for electric motor, electric passenger car",kilogram,197.7725982666016,206.1188507080078,4.220125798294516
+2050,"lorry production, fuel cell electric, 26 metric ton",RER,"market for inverter, for electric passenger car",kilogram,18.27409553527832,18.55496025085449,1.536955495465997
+2050,"lorry production, fuel cell electric, 26 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,57.90571212768555,59.92440032958984,3.486164193012531
+2050,"lorry production, fuel cell electric, 3.5 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,2055.095703125,2173.107421875,5.7423952845869985
+2050,"lorry production, fuel cell electric, 3.5 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,32.73416137695312,32.85678863525391,0.37461554884108406
+2050,"lorry production, fuel cell electric, 32 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,11773.154296875,12224.7255859375,3.8356015531229692
+2050,"lorry production, fuel cell electric, 32 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,48.78038024902344,50.61631011962891,3.7636645332264074
+2050,"lorry production, fuel cell electric, 32 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,229.9646301269531,238.6197509765625,3.763674807222017
+2050,"lorry production, fuel cell electric, 32 metric ton",RER,"market for electric motor, electric passenger car",kilogram,154.1199188232422,165.3684844970703,7.298580066557747
+2050,"lorry production, fuel cell electric, 32 metric ton",RER,"market for inverter, for electric passenger car",kilogram,16.57954406738281,17.0582103729248,2.8870896786822975
+2050,"lorry production, fuel cell electric, 32 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,68.17811584472656,87.76744842529297,28.732581324453843
+2050,"lorry production, fuel cell electric, 40 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,14571.7822265625,14875.4716796875,2.0840927238907847
+2050,"lorry production, fuel cell electric, 40 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,60.2501220703125,61.48481369018555,2.049276544920775
+2050,"lorry production, fuel cell electric, 40 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,284.0362548828125,289.8569641113281,2.049283895436904
+2050,"lorry production, fuel cell electric, 40 metric ton",RER,"market for electric motor, electric passenger car",kilogram,238.4875793457031,250.0579528808594,4.851562319052394
+2050,"lorry production, fuel cell electric, 40 metric ton",RER,"market for inverter, for electric passenger car",kilogram,19.54609107971191,19.86800003051758,1.6469223922720877
+2050,"lorry production, fuel cell electric, 40 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,71.14384460449219,74.3123779296875,4.453699884803863
+2050,"lorry production, fuel cell electric, 60 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,21949.48046875,22343.384765625,1.7945950813542444
+2050,"lorry production, fuel cell electric, 60 metric ton",RER,"fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,85.8199462890625,87.34134674072266,1.772781873500251
+2050,"lorry production, fuel cell electric, 60 metric ton",RER,"fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator regional truck 2020",unit,404.5797119140625,411.7520751953125,1.7727936102672093
+2050,"lorry production, fuel cell electric, 60 metric ton",RER,"market for inverter, for electric passenger car",kilogram,26.20312690734863,26.59978866577148,1.5137955093123212
+2050,"lorry production, fuel cell electric, 60 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,88.61332702636719,95.56815338134766,7.848510589057378
+2050,"lorry production, fuel cell electric, 7.5 metric ton",RER,"assembly operation, for lorry, carculator regional truck 2020",kilogram,3963.27783203125,4199.26513671875,5.954346747539341
+2050,"lorry production, fuel cell electric, 7.5 metric ton",RER,market for battery capacity (MIX scenario),kilowatt hour,39.17655944824219,49.2697868347168,25.763434892257962
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,market for road,meter-year,0.002062148569772641,0.002146644983440638,4.097493987899847
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-1.371382071132151e-05,-1.420224725734442e-05,3.561564324810562
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-3.316992660984397e-05,-3.418898268137127e-05,3.072228900334295
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-3.382697468623519e-05,-3.465461001421014e-05,2.4466726204508404
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.04160877565269124,0.042009454929601786,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.016978882259055673,0.0171423834955038,0.9629681975144244
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,market for road,meter-year,0.00177617437605347,0.001848588830658368,4.076990163871064
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-1.082556783720585e-05,-1.122970258750554e-05,3.7331505965972456
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-2.413017292773085e-05,-2.487739714394723e-05,3.096638463612744
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-2.234469034842083e-05,-2.292276933855776e-05,2.5870977897788805
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.026853965298858785,0.027225315410237934,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.01095803247862688,0.011109565652076216,1.3828501945480909
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.02398635128150598,0.024597663306702565,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.009787873539766064,0.010037325602138545,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,market for road,meter-year,0.002067853171065775,0.002101522518904544,1.628227202486321
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-1.160576044626507e-05,-1.225644136792695e-05,5.606534140305119
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-2.358029370376286e-05,-2.387684581554073e-05,1.2576268790517542
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-2.024117945290392e-05,-2.046443311402138e-05,1.1029676488808926
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.02998293910188247,0.0307470791333782,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 18 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.01223484192470758,0.01254665700267318,2.5485828087072226
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,market for road,meter-year,0.001579561622089836,0.001600093884171943,1.2998709132310937
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-8.542471748318729e-06,-9.33803994364821e-06,9.313091324955902
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-1.64432363920838e-05,-1.660965832613201e-05,1.0120996261315796
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-1.375285759766524e-05,-1.387764373171225e-05,0.9073469507034915
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.01474483606410317,0.015530078731095251,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 26 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.006016779670499461,0.00633720589257656,5.325543556932333
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CAZ,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",CHA,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",EUR,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",IND,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",JPN,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",LAM,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",MEA,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",NEU,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",OAS,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",REF,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",SSA,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",USA,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,market for road,meter-year,0.001300623417409908,0.001316456714662177,1.217362154204471
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"treatment of brake wear emissions, lorry",kilogram,-6.768002402101861e-06,-7.388943209452503e-06,9.174654062737964
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"treatment of road wear emissions, lorry",kilogram,-1.268910172009063e-05,-1.281005921515915e-05,0.9532392263591705
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"treatment of tyre wear emissions, lorry",kilogram,-1.031679273760406e-05,-1.040674193854464e-05,0.8718717456901226
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"market group for electricity, low voltage",kilowatt hour,0.012168357763762891,0.012922228121681322,6.195333606671571
+2050,"transport, freight, lorry, fuel cell electric, 40 metric ton",World,"market for hydrogen, gaseous, low pressure",kilogram,0.004965421609170396,0.005273046042836261,6.195333606671571

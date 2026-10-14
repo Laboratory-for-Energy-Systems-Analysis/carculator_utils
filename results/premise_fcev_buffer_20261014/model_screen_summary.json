@@ -1,0 +1,14 @@
+{
+  "checked": 7,
+  "year": 2020,
+  "cycle": "Regional delivery",
+  "range_km": 400,
+  "installed_parameters_match": true,
+  "continuous_cycle_power_pass": true,
+  "regenerated_dc_balance_pass": true,
+  "fuel_energy_balance_pass": true,
+  "pack_mass_pass": true,
+  "payload_pass": true,
+  "motor_cycle_pass": true,
+  "boundary": "Conditioned-pack proxy; not SOC, thermal, ageing or FC-ramp validation. Full motor requirement is checked against the 10-second rating, not indefinite power."
+}

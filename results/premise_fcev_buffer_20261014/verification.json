@@ -1,0 +1,25 @@
+{
+  "model_and_sibling_checks": {
+    "passed": 159,
+    "log": "/private/tmp/fcev-buffer-focused-20261014.log"
+  },
+  "shared_energy_and_adapter_checks": {
+    "passed": 91,
+    "overlaps_previous_run": true,
+    "log": "/private/tmp/fcev-buffer-adapter-tests-20261014.log"
+  },
+  "premise_checks": {
+    "passed": 115,
+    "skipped": 1,
+    "skip_reason": "Passenger-car calibration case does not apply to the truck fixture",
+    "log": "/private/tmp/premise-fcev-buffer-20261014/premise-tests.log"
+  },
+  "artifact_verification": "Installed wheels and sdist-built wheels; all five packages; core-only offline model/LCIA smoke cases. Full installed suites were not rerun.",
+  "historical_unavailable_fcev_check": "40t FCEV + diesel, 2000/2020; unavailable historical FCEV masked, all final values finite",
+  "source_commits": {
+    "carculator_utils": "f55b6ec",
+    "carculator_truck": "2dbccc9",
+    "premise": "93d918f"
+  },
+  "persistent_user_project_modified": false
+}

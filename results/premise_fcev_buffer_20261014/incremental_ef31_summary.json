@@ -1,0 +1,80 @@
+{
+  "comparison": "FCEV pack envelope versus preceding small-motor correction",
+  "legacy_workbook_comparison": false,
+  "year": 2020,
+  "scenario": "REMIND SSP2-NPi",
+  "source": "ecoinvent 3.12 cutoff",
+  "selected_counts": {
+    "before": 12,
+    "after": 12
+  },
+  "categories": 16,
+  "paired_scores": 192,
+  "persistent_user_project_modified": false,
+  "category_ranges": {
+    "acidification": {
+      "min_percent": 0.7036856490891585,
+      "max_percent": 3.3420521502780742
+    },
+    "climate change": {
+      "min_percent": 0.9625712174566425,
+      "max_percent": 5.89359177751585
+    },
+    "ecotoxicity: freshwater": {
+      "min_percent": 0.35464276053700505,
+      "max_percent": 2.722789762851563
+    },
+    "energy resources: non-renewable": {
+      "min_percent": 1.0732653445692186,
+      "max_percent": 6.243433278444788
+    },
+    "eutrophication: freshwater": {
+      "min_percent": 0.5361641658205851,
+      "max_percent": 3.9872320446433296
+    },
+    "eutrophication: marine": {
+      "min_percent": 1.1850691991274642,
+      "max_percent": 3.0388443445882984
+    },
+    "eutrophication: terrestrial": {
+      "min_percent": 1.2280662072019943,
+      "max_percent": 3.6072708096966055
+    },
+    "human toxicity: carcinogenic": {
+      "min_percent": 0.48546253745671564,
+      "max_percent": 5.110083579277136
+    },
+    "human toxicity: non-carcinogenic": {
+      "min_percent": 0.5841911804121525,
+      "max_percent": 4.42151340068575
+    },
+    "ionising radiation: human health": {
+      "min_percent": 0.7265194547545262,
+      "max_percent": 6.939505846035976
+    },
+    "land use": {
+      "min_percent": 1.024564359653879,
+      "max_percent": 3.67452937067152
+    },
+    "material resources: metals/minerals": {
+      "min_percent": 0.16832444292254056,
+      "max_percent": 2.2602536526058703
+    },
+    "ozone depletion": {
+      "min_percent": 0.5954308483813842,
+      "max_percent": 6.917914945621595
+    },
+    "particulate matter formation": {
+      "min_percent": 1.557947790295966,
+      "max_percent": 3.8427851577909955
+    },
+    "photochemical oxidant formation: human health": {
+      "min_percent": 1.3133688936235455,
+      "max_percent": 2.982613137997281
+    },
+    "water use": {
+      "min_percent": 0.7741246430816418,
+      "max_percent": 4.699934995319599
+    }
+  }
+}

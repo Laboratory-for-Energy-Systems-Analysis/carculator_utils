@@ -1,0 +1,17 @@
+{
+  "2020": {
+    "forwarders_excluded_from_direct_checks": 50,
+    "operating_services": 726,
+    "battery_allocation": 415,
+    "fuel_energy_and_carbon": 578,
+    "resized_battery": 221
+  },
+  "2050": {
+    "forwarders_excluded_from_direct_checks": 50,
+    "operating_services": 726,
+    "battery_allocation": 415,
+    "fuel_energy_and_carbon": 578,
+    "resized_battery": 221
+  },
+  "fuel_energy_failures": 0
+}

@@ -1,0 +1,52 @@
+{
+  "2020": {
+    "activities": 42564,
+    "exchanges": 1358553,
+    "changed_activities": 74,
+    "changed_locations": {
+      "MEA": 5,
+      "CAZ": 5,
+      "REF": 5,
+      "LAM": 5,
+      "NEU": 5,
+      "CHA": 5,
+      "RER": 9,
+      "EUR": 5,
+      "USA": 5,
+      "SSA": 5,
+      "World": 5,
+      "OAS": 5,
+      "JPN": 5,
+      "IND": 5
+    },
+    "validation_errors": 0,
+    "validation_warnings": 401,
+    "warning_identities_unchanged": true,
+    "all_other_coefficients_unchanged": true
+  },
+  "2050": {
+    "activities": 42795,
+    "exchanges": 1363087,
+    "changed_activities": 74,
+    "changed_locations": {
+      "MEA": 5,
+      "CAZ": 5,
+      "REF": 5,
+      "LAM": 5,
+      "NEU": 5,
+      "CHA": 5,
+      "RER": 9,
+      "EUR": 5,
+      "USA": 5,
+      "SSA": 5,
+      "World": 5,
+      "OAS": 5,
+      "JPN": 5,
+      "IND": 5
+    },
+    "validation_errors": 0,
+    "validation_warnings": 468,
+    "warning_identities_unchanged": true,
+    "all_other_coefficients_unchanged": true
+  }
+}
