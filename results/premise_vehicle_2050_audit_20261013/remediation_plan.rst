@@ -505,19 +505,19 @@ usable capacity. Both car and truck cost models price the full installed pack;
 capacity-market purchases increase for 16 car templates. The truck adapter
 now consumes the corrected model field directly. See the
 `PHEV report <../premise_vehicle_phev_20261013/report.html>`_.
-Step 6 is in progress. The missing car PHEV lifetime input now uses the approved
+Step 6's arithmetic corrections are complete. The missing car PHEV lifetime input uses the approved
 200,000 vehicle-km and existing 18-year limit. The shared physical replacement
 count is retained through both mode costs and final aggregation. These changes
 are committed as ``1e97290`` (utils) and ``dc0fc4c`` (carculator).
 
 The truck arithmetic defect is corrected and its 2020/2050 builds verified;
 the user requested committing the work and proceeding to the next issue.
-The existing net-energy boundary is retained. The choice of including
-regenerative cycling remains open and is carried into the hybrid-storage
-investigation. Its two alternatives and verified builds are documented in the
+The existing net-energy boundary is retained. The separate review of
+regenerative cycling was skipped at the user's request on 14 October 2026.
+Its two alternatives and verified builds are documented in the
 `replacement-accounting report <../premise_vehicle_replacements_20261013/report.html>`_.
-All 1,748 installed-family tests pass. The arithmetic portion is complete;
-the broader PHEV battery-use question in step 6 remains open.
+All 1,748 installed-family tests passed for that correction. The arithmetic
+portion is complete; the broader PHEV battery-use review is skipped.
 
 Step 7 now supplies 3.75--13.01 kWh traction buffers to 2020 truck HEVs,
 limits regenerative fuel and brake-wear savings to energy the pack can accept
@@ -581,5 +581,11 @@ mismatch are retained. See the historical
 `PHEV calibration review <../premise_car_phev_calibration_20261014/report.html>`_
 and the implemented
 `PHEV calibration report <../premise_vehicle_phev_calibration_20261014/report.html>`_.
-Step 12 and the previously identified broader PHEV battery-use question
-remain open.
+Step 12 remains open. On 14 October 2026, the user explicitly skipped the
+remaining PHEV battery-cycling and replacement-demand review for both cars
+and trucks. Cars retain the approved 200,000 vehicle-km / 18-year policy;
+trucks retain the corrected net stored-energy replacement calculation.
+Regenerative throughput is not added to that truck calculation. This is a
+retained modelling limitation, not a validation of the omitted cycling.
+The decision does not change vehicle specifications, inventories or results,
+and the skipped review is removed from the remaining implementation queue.
