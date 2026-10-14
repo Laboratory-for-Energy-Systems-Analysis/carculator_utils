@@ -1,0 +1,7 @@
+{
+  "selected_vehicle_indicator_pairs": 17,
+  "databases": 2,
+  "forward_and_adjoint_scores_agree": true,
+  "root_and_nested_manufacture_contributions_reconcile": true,
+  "matrix_factorization_reused_per_database": true
+}

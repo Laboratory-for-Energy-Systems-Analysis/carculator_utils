@@ -1,0 +1,38 @@
+{
+  "files": [
+    {
+      "filename": "lci-pass_cars.xlsx",
+      "family": "cars",
+      "before_sha256": "ff2f0e3b266063ab013fad173baf874b6c0f92310fb02022fd7794802ee55db5",
+      "after_sha256": "42fe53b06180d288649f9c7e2109d034d8c88171a406465b5201a99fe71f62cc",
+      "activities": 162,
+      "changed_activities": 16
+    }
+  ],
+  "sidecars": [
+    {
+      "filename": "lci-pass_cars.parameters.csv",
+      "family": "cars",
+      "source": "vehicle_parameters.csv",
+      "before_sha256": "b36411835cc1179af1357ebac839a85e60a80a91f0cba94b6cd3ce3e221e5af8",
+      "after_sha256": "165fe31f2ccf91ae08193337a78aa80b01200a81bcabb4ac1e444bc6af51bda9"
+    },
+    {
+      "filename": "lci-pass_cars.noise.csv",
+      "family": "cars",
+      "source": "noise_audit.csv",
+      "before_sha256": "89e49cd51ab0372fb3b27fe2d337c00ab65eb81f1008e7d54b58d61f597ba165",
+      "after_sha256": "89e49cd51ab0372fb3b27fe2d337c00ab65eb81f1008e7d54b58d61f597ba165"
+    },
+    {
+      "filename": "lci-pass_cars.provenance.json",
+      "family": "cars",
+      "source": "lci-pass_cars.provenance.json",
+      "before_sha256": "25773f1c5d6b489db4107a3c779f07c75816bc7c6a1c094ab458ae9912d299c8",
+      "after_sha256": "11f0e1b4ab1fbad50693c9debd70d2f5499114a492d9502894c5d428513a223b"
+    }
+  ],
+  "script_sha256": "6495d86f5a1eee6ba07226c60954ccd39ae6bc3f6b3a48e142377fce8ecdfc85",
+  "non_fcev_roundoff_exchanges": 185,
+  "max_non_fcev_roundoff_relative": 2.3215580835511673e-07
+}

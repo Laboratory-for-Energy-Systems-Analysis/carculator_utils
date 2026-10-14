@@ -1,0 +1,18 @@
+{
+  "carculator": {
+    "commit": "ead57b3f40eca0a1dc7d6b1bbe9286acb452b5a4",
+    "branch": "master"
+  },
+  "carculator_utils": {
+    "commit": "201fbf7011cd232f3cb484bb1a3b8a866132c490",
+    "branch": "master"
+  },
+  "premise": {
+    "commit": "93925f9260901d7481cafb82ea0908e7b8bcfafb",
+    "branch": "trals"
+  },
+  "carculator_truck": {
+    "commit": "2dbccc9343625e47def61df903b66a0a58e50365",
+    "branch": "master"
+  }
+}

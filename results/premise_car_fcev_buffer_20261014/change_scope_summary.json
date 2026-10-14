@@ -1,0 +1,56 @@
+{
+  "2020": {
+    "activities": 42564,
+    "exchanges": 1358553,
+    "changed_activities": 88,
+    "changed_locations": {
+      "SSA": 6,
+      "OAS": 6,
+      "RER": 10,
+      "IND": 6,
+      "LAM": 6,
+      "JPN": 6,
+      "USA": 6,
+      "CAZ": 6,
+      "World": 6,
+      "MEA": 6,
+      "EUR": 6,
+      "CHA": 6,
+      "NEU": 6,
+      "REF": 6
+    },
+    "validation_errors": 0,
+    "validation_warnings": 401,
+    "warning_identities_unchanged": true,
+    "non_fcev_roundoff_exchanges": 700,
+    "max_non_fcev_roundoff_relative": 2.3215580835511673e-07,
+    "all_other_coefficients_unchanged_within_float32_roundoff": true
+  },
+  "2050": {
+    "activities": 42795,
+    "exchanges": 1363087,
+    "changed_activities": 88,
+    "changed_locations": {
+      "SSA": 6,
+      "OAS": 6,
+      "RER": 10,
+      "IND": 6,
+      "LAM": 6,
+      "JPN": 6,
+      "USA": 6,
+      "CAZ": 6,
+      "World": 6,
+      "MEA": 6,
+      "EUR": 6,
+      "CHA": 6,
+      "NEU": 6,
+      "REF": 6
+    },
+    "validation_errors": 0,
+    "validation_warnings": 468,
+    "warning_identities_unchanged": true,
+    "non_fcev_roundoff_exchanges": 705,
+    "max_non_fcev_roundoff_relative": 2.3215580813307213e-07,
+    "all_other_coefficients_unchanged_within_float32_roundoff": true
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "installed_sizes_checked": 8,
+  "dc_energy_and_fuel_balances_pass": true,
+  "reference_pack_pairs_pass": true,
+  "native_EF_finite": true,
+  "native_EF_shape": [
+    25,
+    1,
+    1,
+    1,
+    10,
+    1
+  ],
+  "non_FCEV_float32_roundoff": {
+    "old_iterations": 9,
+    "new_iterations": 10,
+    "max_non_fcev_relative_difference": 1.97727970885353e-07,
+    "fields": [
+      "TtW energy",
+      "electric energy stored",
+      "curb mass",
+      "driving mass",
+      "range",
+      "fuel consumption",
+      "battery power"
+    ]
+  },
+  "native_EF_boundary": "Bundled static background; separate from full Premise EF 3.1 comparison.",
+  "parameters_sha256": "165fe31f2ccf91ae08193337a78aa80b01200a81bcabb4ac1e444bc6af51bda9",
+  "script_sha256": "858d76d196a6225201768b16aa0c896a2eb1e29fb7743c3bc34c084a41a6b309"
+}

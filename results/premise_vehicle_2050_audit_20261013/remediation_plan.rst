@@ -674,5 +674,15 @@ energy/mass checks and 89 existing diagnostic/physics tests pass. No defaults,
 installed workbooks or scenario databases changed. See the
 `car FCEV buffer audit <../premise_car_fcev_buffer_audit_20261014/report.html>`_.
 The user subsequently approved the scaled Mirai pack proxy, retaining the MIX
-capacity market and its disclosed physical-mass mismatch. Implementation is
-the next step; no charging limit is inferred from the discharge rating.
+capacity market and its disclosed physical-mass mismatch. The calibration is
+now implemented in carculator (``ead57b3``), the adapter (``201fbf7``), and
+Premise inventories/tests (``93925f9``). All eight car sizes are regenerated;
+Medium is 1.60 kWh/57.3 kg with 1.05% higher hydrogen demand. No charging limit
+is inferred from the discharge rating. The shared runtime and truck model are
+unchanged. Targeted tests, native energy/mass balances, wheel/sdist smoke cases,
+full 2020/2050 builds, fuel/carbon/capacity accounting and saved metadata pass.
+The eight production recipes preserve their corrected hardware in 2050.
+See the `implemented car-buffer correction
+<../premise_car_fcev_buffer_20261014/report.html>`_ for the incremental EF 3.1
+results and limitations. Charging/continuous-output evidence remains unresolved,
+and the final original-legacy-versus-refreshed comparison remains separate.

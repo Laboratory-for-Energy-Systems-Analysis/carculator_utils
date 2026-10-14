@@ -1,0 +1,129 @@
+family,name,parameter,before,after,percent
+cars,"transport, passenger car, fuel cell electric, Large",TtW energy,1167.8875732421875,1180.629150390625,1.0909934689231626
+cars,"transport, passenger car, fuel cell electric, Large",battery BoP mass,9.118318557739258,19.672996520996094,115.75245914498629
+cars,"transport, passenger car, fuel cell electric, Large",power,162.8059539794922,166.36293029785156,2.18479498532802
+cars,"transport, passenger car, fuel cell electric, Large",battery cell mass,21.27607536315918,45.903648376464844,115.75242422740146
+cars,"transport, passenger car, fuel cell electric, Large",driving mass,2175.077392578125,2219.5380859375,2.0440970749401988
+cars,"transport, passenger car, fuel cell electric, Large",curb mass,2035.077392578125,2079.5380859375,2.184717570030603
+cars,"transport, passenger car, fuel cell electric, Large",energy battery mass,30.394393920898438,65.57664489746094,115.75243470267735
+cars,"transport, passenger car, fuel cell electric, Large",battery cell energy density,0.23999999463558197,0.03982062637805939,-83.40807197161678
+cars,"transport, passenger car, fuel cell electric, Large",electric energy stored,5.106257915496826,1.8279119729995728,-64.20251379288737
+cars,"transport, passenger car, fuel cell electric, Large",fuel consumption,108.25802612304688,109.43910217285156,1.09098243529977
+cars,"transport, passenger car, fuel cell electric, Large",fuel cell power,155.93572998046875,159.33482360839844,2.1798042234165482
+cars,"transport, passenger car, fuel cell electric, Large",battery cell power density,2.13043475151062,1.0089685916900635,-52.640249086500425
+cars,"transport, passenger car, fuel cell electric, Large",battery_capacity_with_replacements_kWh,5.106257915496826,1.8279119729995728,-64.20251379288737
+cars,"transport, passenger car, fuel cell electric, Large",fuel_energy_MJ_per_vkm,1.167887593648178,1.180629042158925,1.09098243529977
+cars,"transport, passenger car, fuel cell electric, Large",battery power,45.32728958129883,46.315338134765625,2.1798094759110542
+cars,"transport, passenger car, fuel cell electric, Large",range,616.4976806640625,609.8443603515625,-1.0792125455092338
+cars,"transport, passenger car, fuel cell electric, Large SUV",TtW energy,1368.791259765625,1382.401123046875,0.9942979387215223
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery BoP mass,10.057218551635742,21.66135025024414,115.38112291217
+cars,"transport, passenger car, fuel cell electric, Large SUV",power,179.60621643066406,183.21295166015625,2.008134963905639
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery cell mass,23.46684455871582,50.543155670166016,115.38113291586014
+cars,"transport, passenger car, fuel cell electric, Large SUV",driving mass,2534.75146484375,2582.840087890625,1.8971731041031115
+cars,"transport, passenger car, fuel cell electric, Large SUV",curb mass,2394.75146484375,2442.840087890625,2.0080840852523485
+cars,"transport, passenger car, fuel cell electric, Large SUV",energy battery mass,33.52406311035156,72.20450592041016,115.38112991475322
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery cell energy density,0.23999999463558197,0.03982062637805939,-83.40807197161678
+cars,"transport, passenger car, fuel cell electric, Large SUV",electric energy stored,5.632042407989502,2.012660026550293,-64.2641180454328
+cars,"transport, passenger car, fuel cell electric, Large SUV",fuel consumption,126.88091278076172,128.14248657226562,0.9942975376318275
+cars,"transport, passenger car, fuel cell electric, Large SUV",fuel cell power,171.9922332763672,175.4388885498047,2.003959834569513
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery cell power density,2.13043475151062,1.0089685916900635,-52.640249086500425
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery_capacity_with_replacements_kWh,5.632042407989502,2.012660026550293,-64.2641180454328
+cars,"transport, passenger car, fuel cell electric, Large SUV",fuel_energy_MJ_per_vkm,1.3687912962590199,1.3824011544130421,0.9942975376318275
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery power,49.99458312988281,50.996456146240234,2.003963136875475
+cars,"transport, passenger car, fuel cell electric, Large SUV",range,526.0115356445312,520.8328857421875,-0.9845126107354774
+cars,"transport, passenger car, fuel cell electric, Lower medium",TtW energy,979.21630859375,987.07373046875,0.8024194252119754
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery BoP mass,5.9006452560424805,12.687801361083984,115.0239645078003
+cars,"transport, passenger car, fuel cell electric, Lower medium",power,105.26715087890625,107.20462799072266,1.840533438627201
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery cell mass,13.768172264099121,29.60486602783203,115.02393680116505
+cars,"transport, passenger car, fuel cell electric, Lower medium",driving mass,1643.8172607421875,1671.4951171875,1.683755068541859
+cars,"transport, passenger car, fuel cell electric, Lower medium",curb mass,1503.8172607421875,1531.4951171875,1.8405066338746723
+cars,"transport, passenger car, fuel cell electric, Lower medium",energy battery mass,19.6688175201416,42.292667388916016,115.0239451131556
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery cell energy density,0.23999999463558197,0.03982062637805939,-83.40807197161678
+cars,"transport, passenger car, fuel cell electric, Lower medium",electric energy stored,3.304361343383789,1.1788842678070068,-64.32338520823558
+cars,"transport, passenger car, fuel cell electric, Lower medium",fuel consumption,90.76902770996094,91.49737548828125,0.8024188389982978
+cars,"transport, passenger car, fuel cell electric, Lower medium",fuel cell power,100.90912628173828,102.76060485839844,1.8347979463134267
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery cell power density,2.13043475151062,1.0089685916900635,-52.640249086500425
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery_capacity_with_replacements_kWh,3.304361343383789,1.1788842678070068,-64.32338520823558
+cars,"transport, passenger car, fuel cell electric, Lower medium",fuel_energy_MJ_per_vkm,0.9792162775024327,0.98707369338765,0.8024188389982978
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery power,29.33219337463379,29.870380401611328,1.8347998054688786
+cars,"transport, passenger car, fuel cell electric, Lower medium",range,551.46142578125,547.0715942382812,-0.7960360122650001
+cars,"transport, passenger car, fuel cell electric, Medium",TtW energy,1061.467041015625,1072.6336669921875,1.051999312750973
+cars,"transport, passenger car, fuel cell electric, Medium",battery BoP mass,7.969295501708984,17.193950653076172,115.75245452234762
+cars,"transport, passenger car, fuel cell electric, Medium",power,142.26956176757812,145.3783416748047,2.1851335370704827
+cars,"transport, passenger car, fuel cell electric, Medium",battery cell mass,18.595020294189453,40.11921310424805,115.75245667671817
+cars,"transport, passenger car, fuel cell electric, Medium",driving mass,1918.372314453125,1957.23046875,2.0255793937451916
+cars,"transport, passenger car, fuel cell electric, Medium",curb mass,1778.372314453125,1817.23046875,2.185040442941477
+cars,"transport, passenger car, fuel cell electric, Medium",energy battery mass,26.564315795898438,57.31316375732422,115.75245603040693
+cars,"transport, passenger car, fuel cell electric, Medium",battery cell energy density,0.23999999463558197,0.03982062637805939,-83.40807197161678
+cars,"transport, passenger car, fuel cell electric, Medium",electric energy stored,4.462804794311523,1.5975722074508667,-64.20250759147703
+cars,"transport, passenger car, fuel cell electric, Medium",fuel consumption,98.393310546875,99.42839813232422,1.0519897945258094
+cars,"transport, passenger car, fuel cell electric, Medium",fuel cell power,136.28585815429688,139.25665283203125,2.1798260787784463
+cars,"transport, passenger car, fuel cell electric, Medium",battery cell power density,2.13043475151062,1.0089685916900635,-52.640249086500425
+cars,"transport, passenger car, fuel cell electric, Medium",battery_capacity_with_replacements_kWh,4.462804794311523,1.5975722074508667,-64.20250759147703
+cars,"transport, passenger car, fuel cell electric, Medium",fuel_energy_MJ_per_vkm,1.0614670412986982,1.0726335662454156,1.0519897945258094
+cars,"transport, passenger car, fuel cell electric, Medium",battery power,39.615478515625,40.479026794433594,2.179825439866878
+cars,"transport, passenger car, fuel cell electric, Medium",range,565.2554321289062,559.370849609375,-1.0410483800869064
+cars,"transport, passenger car, fuel cell electric, Medium SUV",TtW energy,1145.1419677734375,1154.1905517578125,0.7901713708011737
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery BoP mass,6.740796089172363,14.518402099609375,115.38111978984293
+cars,"transport, passenger car, fuel cell electric, Medium SUV",power,120.25863647460938,122.67603302001953,2.0101646054506483
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery cell mass,15.728522300720215,33.87626647949219,115.38111357060532
+cars,"transport, passenger car, fuel cell electric, Medium SUV",driving mass,1743.449951171875,1775.68115234375,1.8487024046896616
+cars,"transport, passenger car, fuel cell electric, Medium SUV",curb mass,1603.449951171875,1635.68115234375,2.0101158223441162
+cars,"transport, passenger car, fuel cell electric, Medium SUV",energy battery mass,22.469318389892578,48.39466857910156,115.38111543637672
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery cell energy density,0.23999999463558197,0.03982062637805939,-83.40807197161678
+cars,"transport, passenger car, fuel cell electric, Medium SUV",electric energy stored,3.7748453617095947,1.3489741086959839,-64.26412264779384
+cars,"transport, passenger car, fuel cell electric, Medium SUV",fuel consumption,106.14960479736328,106.9883804321289,0.7901825318773703
+cars,"transport, passenger car, fuel cell electric, Medium SUV",fuel cell power,115.2768325805664,117.5869369506836,2.0039623907107895
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery cell power density,2.13043475151062,1.0089685916900635,-52.640249086500425
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery_capacity_with_replacements_kWh,3.7748453617095947,1.3489741086959839,-64.26412264779384
+cars,"transport, passenger car, fuel cell electric, Medium SUV",fuel_energy_MJ_per_vkm,1.1451419442341537,1.1541906558426929,0.7901825318773703
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery power,33.50859069824219,34.18008804321289,2.00395579455368
+cars,"transport, passenger car, fuel cell electric, Medium SUV",range,628.7429809570312,623.8137817382812,-0.7839768185160634
+cars,"transport, passenger car, fuel cell electric, Mini",TtW energy,825.0721435546875,829.3817749023438,0.5223338809002609
+cars,"transport, passenger car, fuel cell electric, Mini",battery BoP mass,3.293454170227051,7.059482574462891,114.34889358051126
+cars,"transport, passenger car, fuel cell electric, Mini",power,58.696842193603516,59.58981704711914,1.521333721105922
+cars,"transport, passenger car, fuel cell electric, Mini",battery cell mass,7.684725761413574,16.472124099731445,114.34888649431083
+cars,"transport, passenger car, fuel cell electric, Mini",driving mass,1118.281005859375,1133.1636962890625,1.3308542621852437
+cars,"transport, passenger car, fuel cell electric, Mini",curb mass,978.2809448242188,993.1636962890625,1.5213167080053713
+cars,"transport, passenger car, fuel cell electric, Mini",energy battery mass,10.978179931640625,23.531606674194336,114.34888862017107
+cars,"transport, passenger car, fuel cell electric, Mini",battery cell energy density,0.23999999463558197,0.03982062637805939,-83.40807197161678
+cars,"transport, passenger car, fuel cell electric, Mini",electric energy stored,1.8443341255187988,0.6559302806854248,-64.43538773101018
+cars,"transport, passenger car, fuel cell electric, Mini",fuel consumption,76.48053741455078,76.8800277709961,0.5223425069307952
+cars,"transport, passenger car, fuel cell electric, Mini",fuel cell power,56.322574615478516,57.1759147644043,1.5150943555965801
+cars,"transport, passenger car, fuel cell electric, Mini",battery cell power density,2.13043475151062,1.0089685916900635,-52.640249086500425
+cars,"transport, passenger car, fuel cell electric, Mini",battery_capacity_with_replacements_kWh,1.8443341255187988,0.6559302806854248,-64.43538773101018
+cars,"transport, passenger car, fuel cell electric, Mini",fuel_energy_MJ_per_vkm,0.8250720431617387,0.8293817451559748,0.5223425069307952
+cars,"transport, passenger car, fuel cell electric, Mini",battery power,16.371807098388672,16.619855880737305,1.515097147541189
+cars,"transport, passenger car, fuel cell electric, Mini",range,581.767333984375,578.7443237304688,-0.5196252998947881
+cars,"transport, passenger car, fuel cell electric, Small",TtW energy,892.0758056640625,898.4086303710938,0.7098975969107357
+cars,"transport, passenger car, fuel cell electric, Small",battery BoP mass,4.682868003845215,10.053186416625977,114.68011501436864
+cars,"transport, passenger car, fuel cell electric, Small",power,83.51776885986328,84.91891479492188,1.6776620762099403
+cars,"transport, passenger car, fuel cell electric, Small",battery cell mass,10.926691055297852,23.457429885864258,114.68008720252803
+cars,"transport, passenger car, fuel cell electric, Small",driving mass,1424.8890380859375,1446.4449462890625,1.5128131122463584
+cars,"transport, passenger car, fuel cell electric, Small",curb mass,1284.8890380859375,1306.4449462890625,1.6776474515835416
+cars,"transport, passenger car, fuel cell electric, Small",energy battery mass,15.609559059143066,33.510616302490234,114.68009554608072
+cars,"transport, passenger car, fuel cell electric, Small",battery cell energy density,0.23999999463558197,0.03982062637805939,-83.40807197161678
+cars,"transport, passenger car, fuel cell electric, Small",electric energy stored,2.622405767440796,0.9340895414352417,-64.38043444562666
+cars,"transport, passenger car, fuel cell electric, Small",fuel consumption,82.69149017333984,83.27851867675781,0.7099019526524808
+cars,"transport, passenger car, fuel cell electric, Small",fuel cell power,80.08345031738281,81.42241668701172,1.6719638880722254
+cars,"transport, passenger car, fuel cell electric, Small",battery cell power density,2.13043475151062,1.0089685916900635,-52.640249086500425
+cars,"transport, passenger car, fuel cell electric, Small",battery_capacity_with_replacements_kWh,2.622405767440796,0.9340895414352417,-64.38043444562666
+cars,"transport, passenger car, fuel cell electric, Small",fuel_energy_MJ_per_vkm,0.8920758019729336,0.8984086655102796,0.7099019526524808
+cars,"transport, passenger car, fuel cell electric, Small",battery power,23.278602600097656,23.667810440063477,1.671955343076248
+cars,"transport, passenger car, fuel cell electric, Small",range,564.974365234375,560.9918823242188,-0.7048962139201032
+cars,"transport, passenger car, fuel cell electric, Van",TtW energy,1492.557373046875,1501.0491943359375,0.56894437978805
+cars,"transport, passenger car, fuel cell electric, Van",battery BoP mass,6.637316703796387,14.249000549316406,114.6801363443501
+cars,"transport, passenger car, fuel cell electric, Van",power,118.40682983398438,120.39277648925781,1.677223060576738
+cars,"transport, passenger car, fuel cell electric, Van",battery cell mass,15.487072944641113,33.24766540527344,114.68011111020111
+cars,"transport, passenger car, fuel cell electric, Van",driving mass,1961.64404296875,1992.1966552734375,1.5575003229663098
+cars,"transport, passenger car, fuel cell electric, Van",curb mass,1821.64404296875,1852.1966552734375,1.6771999130464454
+cars,"transport, passenger car, fuel cell electric, Van",energy battery mass,22.1243896484375,47.496665954589844,114.68011868044559
+cars,"transport, passenger car, fuel cell electric, Van",battery cell energy density,0.23999999463558197,0.03982062637805939,-83.40807197161678
+cars,"transport, passenger car, fuel cell electric, Van",electric energy stored,3.716897487640381,1.3239428997039795,-64.38043007356478
+cars,"transport, passenger car, fuel cell electric, Van",fuel consumption,138.35348510742188,139.14064025878906,0.5689449389410184
+cars,"transport, passenger car, fuel cell electric, Van",fuel cell power,113.50720977783203,115.4050064086914,1.6719613093951757
+cars,"transport, passenger car, fuel cell electric, Van",battery cell power density,2.13043475151062,1.0089685916900635,-52.640249086500425
+cars,"transport, passenger car, fuel cell electric, Van",battery_capacity_with_replacements_kWh,3.716897487640381,1.3239428997039795,-64.38043007356478
+cars,"transport, passenger car, fuel cell electric, Van",fuel_energy_MJ_per_vkm,1.4925574073491,1.5010492371790018,0.5689449389410184
+cars,"transport, passenger car, fuel cell electric, Van",battery power,32.994197845458984,33.54584884643555,1.6719636693713014
+cars,"transport, passenger car, fuel cell electric, Van",range,482.3935241699219,479.66448974609375,-0.565727831550833

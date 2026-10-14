@@ -1,0 +1,23 @@
+{
+  "car_model_inventory_export": {
+    "passed": 57,
+    "warnings": 7,
+    "log": "/private/tmp/car-fcev-calibration-tests-20261014.log"
+  },
+  "adapter_provenance": {
+    "passed": 13,
+    "log": "/private/tmp/car-fcev-adapter-tests-20261014.log"
+  },
+  "premise_fcev_battery_hydrogen": {
+    "passed": 91,
+    "skipped": 1,
+    "warnings": 2,
+    "log": "/private/tmp/premise-car-fcev-tests-20261014.log"
+  },
+  "full_installed_suites_run": false,
+  "source_commits": {
+    "carculator": "ead57b3",
+    "carculator_utils_adapter": "201fbf7",
+    "premise": "93925f9"
+  }
+}

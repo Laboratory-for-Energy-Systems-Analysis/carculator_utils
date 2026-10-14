@@ -1,0 +1,206 @@
+{
+  "largest_decrease": {
+    "score": {
+      "name": "transport, passenger car, fuel cell electric, Large",
+      "location": "EUR",
+      "functional_unit": "one kilometer",
+      "category": "human toxicity: carcinogenic",
+      "method": "[\"ecoinvent-3.12\", \"EF v3.1\", \"human toxicity: carcinogenic\", \"comparative toxic unit for human (CTUh)\"]",
+      "unit": "CTUh",
+      "before": "1.0914739588416202e-10",
+      "after": "1.0636801580401877e-10",
+      "absolute_change": "-2.779380080143248e-12",
+      "percent_change": "-2.5464465346411003"
+    },
+    "root_components": [
+      {
+        "supplier": "passenger car, fuel cell electric, Large",
+        "delta": -3.087495637562867e-12,
+        "share_of_net_delta_percent": 111.08576547773698
+      },
+      {
+        "supplier": "maintenance, passenger car",
+        "delta": 1.283935774816029e-13,
+        "share_of_net_delta_percent": -4.619504126077839
+      },
+      {
+        "supplier": "market for road",
+        "delta": 9.265138784320564e-14,
+        "share_of_net_delta_percent": -3.3335270877536987
+      },
+      {
+        "supplier": "market for hydrogen, gaseous, low pressure",
+        "delta": 5.288614030061139e-14,
+        "share_of_net_delta_percent": -1.9028034588880576
+      },
+      {
+        "supplier": "market group for electricity, low voltage",
+        "delta": 2.3505424540499506e-14,
+        "share_of_net_delta_percent": -0.8457074549979521
+      }
+    ],
+    "manufacturing_components": [
+      {
+        "supplier": "market for battery capacity (MIX scenario)",
+        "delta": -3.641802313196938e-12,
+        "share_of_net_delta_percent": 131.02930179341433
+      },
+      {
+        "supplier": "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020",
+        "delta": 1.7296073468463235e-13,
+        "share_of_net_delta_percent": -6.222996844523618
+      },
+      {
+        "supplier": "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020",
+        "delta": 1.608913204595209e-13,
+        "share_of_net_delta_percent": -5.788748419439943
+      },
+      {
+        "supplier": "market for electric motor, electric passenger car",
+        "delta": 1.3184334337299556e-13,
+        "share_of_net_delta_percent": -4.7436241021847
+      },
+      {
+        "supplier": "market for internal combustion engine, passenger car",
+        "delta": 8.811610271798827e-14,
+        "share_of_net_delta_percent": -3.170350947951199
+      }
+    ]
+  },
+  "largest_increase": {
+    "score": {
+      "name": "transport, passenger car, fuel cell electric, Large",
+      "location": "EUR",
+      "functional_unit": "one kilometer",
+      "category": "land use",
+      "method": "[\"ecoinvent-3.12\", \"EF v3.1\", \"land use\", \"soil quality index\"]",
+      "unit": "dimensionless",
+      "before": "2.313467734384907",
+      "after": "2.341696091724243",
+      "absolute_change": "0.028228357339336263",
+      "percent_change": "1.2201751042290487"
+    },
+    "root_components": [
+      {
+        "supplier": "market for road",
+        "delta": 0.033350625452318816,
+        "share_of_net_delta_percent": 118.14582425540101
+      },
+      {
+        "supplier": "passenger car, fuel cell electric, Large",
+        "delta": -0.00695541171556302,
+        "share_of_net_delta_percent": -24.6398032728268
+      },
+      {
+        "supplier": "maintenance, passenger car",
+        "delta": 0.0013001066539772566,
+        "share_of_net_delta_percent": 4.605675910746516
+      },
+      {
+        "supplier": "market for hydrogen, gaseous, low pressure",
+        "delta": 0.00037566175986965267,
+        "share_of_net_delta_percent": 1.3307956795139737
+      },
+      {
+        "supplier": "market group for electricity, low voltage",
+        "delta": 0.00015736681526734922,
+        "share_of_net_delta_percent": 0.5574777638515235
+      }
+    ],
+    "manufacturing_components": [
+      {
+        "supplier": "market for battery capacity (MIX scenario)",
+        "delta": -0.012356142445645299,
+        "share_of_net_delta_percent": -43.772091649226056
+      },
+      {
+        "supplier": "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020",
+        "delta": 0.004019697403545741,
+        "share_of_net_delta_percent": 14.23992673475295
+      },
+      {
+        "supplier": "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020",
+        "delta": 0.0007902620458750675,
+        "share_of_net_delta_percent": 2.79953252814267
+      },
+      {
+        "supplier": "market for electric motor, electric passenger car",
+        "delta": 0.00038266734203760283,
+        "share_of_net_delta_percent": 1.355613213470113
+      },
+      {
+        "supplier": "market for internal combustion engine, passenger car",
+        "delta": 0.00019283650323495723,
+        "share_of_net_delta_percent": 0.6831304454483408
+      }
+    ]
+  },
+  "medium_climate": {
+    "score": {
+      "name": "transport, passenger car, fuel cell electric, Medium",
+      "location": "EUR",
+      "functional_unit": "one kilometer",
+      "category": "climate change",
+      "method": "[\"ecoinvent-3.12\", \"EF v3.1\", \"climate change\", \"global warming potential (GWP100)\"]",
+      "unit": "kg CO2-Eq",
+      "before": "0.23246415036492124",
+      "after": "0.23281365001583287",
+      "absolute_change": "0.00034949965091163326",
+      "percent_change": "0.15034561258713275"
+    },
+    "root_components": [
+      {
+        "supplier": "passenger car, fuel cell electric, Medium",
+        "delta": -0.001118819029362672,
+        "share_of_net_delta_percent": -320.1202136953069
+      },
+      {
+        "supplier": "market for hydrogen, gaseous, low pressure",
+        "delta": 0.0008062810237082912,
+        "share_of_net_delta_percent": 230.69580230057213
+      },
+      {
+        "supplier": "market for road",
+        "delta": 0.0003705436719746019,
+        "share_of_net_delta_percent": 106.02118514512891
+      },
+      {
+        "supplier": "maintenance, passenger car",
+        "delta": 0.0002145585877530113,
+        "share_of_net_delta_percent": 61.3902151814337
+      },
+      {
+        "supplier": "market group for electricity, low voltage",
+        "delta": 7.69296121615852e-05,
+        "share_of_net_delta_percent": 22.0113559372441
+      }
+    ],
+    "manufacturing_components": [
+      {
+        "supplier": "market for battery capacity (MIX scenario)",
+        "delta": -0.0018760974525713979,
+        "share_of_net_delta_percent": -536.7952293164797
+      },
+      {
+        "supplier": "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020",
+        "delta": 0.00044052757262817016,
+        "share_of_net_delta_percent": 126.04521105503255
+      },
+      {
+        "supplier": "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020",
+        "delta": 0.0002026242992540922,
+        "share_of_net_delta_percent": 57.975536949913376
+      },
+      {
+        "supplier": "market for electric motor, electric passenger car",
+        "delta": 6.207944137262165e-05,
+        "share_of_net_delta_percent": 17.76237578798546
+      },
+      {
+        "supplier": "market for internal combustion engine, passenger car",
+        "delta": 5.0197271485887245e-05,
+        "share_of_net_delta_percent": 14.362609906748952
+      }
+    ]
+  }
+}

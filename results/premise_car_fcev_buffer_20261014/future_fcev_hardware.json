@@ -1,0 +1,214 @@
+{
+  "unchanged_2020_hardware_in_2050": true,
+  "production_datasets_checked": [
+    {
+      "year": 2020,
+      "size": "Large",
+      "motor_kw": 166.36293029785156,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 32.53873062133789,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 159.3348236083984,
+        "market for electric motor, electric passenger car": 102.5292892456055,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.827911972999573
+      }
+    },
+    {
+      "year": 2020,
+      "size": "Large SUV",
+      "motor_kw": 183.21295166015625,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 35.82744216918945,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 175.4388885498047,
+        "market for electric motor, electric passenger car": 110.9542999267578,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 2.012660026550293
+      }
+    },
+    {
+      "year": 2020,
+      "size": "Lower medium",
+      "motor_kw": 107.20462799072266,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 20.98536682128906,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 102.7606048583984,
+        "market for electric motor, electric passenger car": 72.95014190673828,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.178884267807007
+      }
+    },
+    {
+      "year": 2020,
+      "size": "Medium",
+      "motor_kw": 145.3783416748047,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 28.43844795227051,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 139.2566528320312,
+        "market for electric motor, electric passenger car": 92.03699493408203,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.597572207450867
+      }
+    },
+    {
+      "year": 2020,
+      "size": "Medium SUV",
+      "motor_kw": 122.67603302001953,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 24.01314353942871,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 117.5869369506836,
+        "market for electric motor, electric passenger car": 80.68584442138672,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.348974108695984
+      }
+    },
+    {
+      "year": 2020,
+      "size": "Mini",
+      "motor_kw": 59.58981704711914,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 11.67624092102051,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 57.1759147644043,
+        "market for electric motor, electric passenger car": 49.14273452758789,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 0.6559302806854248
+      }
+    },
+    {
+      "year": 2020,
+      "size": "Small",
+      "motor_kw": 84.91891479492188,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 16.62776565551758,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 81.42241668701172,
+        "market for electric motor, electric passenger car": 61.80728149414062,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 0.9340895414352417
+      }
+    },
+    {
+      "year": 2020,
+      "size": "Van",
+      "motor_kw": 120.39277648925781,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 23.56755828857422,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 115.4050064086914,
+        "market for electric motor, electric passenger car": 79.5442123413086,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.323942899703979
+      }
+    },
+    {
+      "year": 2050,
+      "size": "Large",
+      "motor_kw": 166.36293029785156,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 32.53873062133789,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 159.3348236083984,
+        "market for electric motor, electric passenger car": 102.5292892456055,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.827911972999573
+      }
+    },
+    {
+      "year": 2050,
+      "size": "Large SUV",
+      "motor_kw": 183.21295166015625,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 35.82744216918945,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 175.4388885498047,
+        "market for electric motor, electric passenger car": 110.9542999267578,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 2.012660026550293
+      }
+    },
+    {
+      "year": 2050,
+      "size": "Lower medium",
+      "motor_kw": 107.20462799072266,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 20.98536682128906,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 102.7606048583984,
+        "market for electric motor, electric passenger car": 72.95014190673828,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.178884267807007
+      }
+    },
+    {
+      "year": 2050,
+      "size": "Medium",
+      "motor_kw": 145.3783416748047,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 28.43844795227051,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 139.2566528320312,
+        "market for electric motor, electric passenger car": 92.03699493408203,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.597572207450867
+      }
+    },
+    {
+      "year": 2050,
+      "size": "Medium SUV",
+      "motor_kw": 122.67603302001953,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 24.01314353942871,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 117.5869369506836,
+        "market for electric motor, electric passenger car": 80.68584442138672,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.348974108695984
+      }
+    },
+    {
+      "year": 2050,
+      "size": "Mini",
+      "motor_kw": 59.58981704711914,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 11.67624092102051,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 57.1759147644043,
+        "market for electric motor, electric passenger car": 49.14273452758789,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 0.6559302806854248
+      }
+    },
+    {
+      "year": 2050,
+      "size": "Small",
+      "motor_kw": 84.91891479492188,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 16.62776565551758,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 81.42241668701172,
+        "market for electric motor, electric passenger car": 61.80728149414062,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 0.9340895414352417
+      }
+    },
+    {
+      "year": 2050,
+      "size": "Van",
+      "motor_kw": 120.39277648925781,
+      "location": "RER",
+      "components": {
+        "fuel cell Balance of Plant production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 23.56755828857422,
+        "fuel cell stack production, 1 kWe, proton exchange membrane (PEM), carculator passenger car 2020": 115.4050064086914,
+        "market for electric motor, electric passenger car": 79.5442123413086,
+        "market for inverter, for electric passenger car": 8.941304206848145,
+        "market for battery capacity (MIX scenario)": 1.323942899703979
+      }
+    }
+  ],
+  "script_sha256": "8a5520fff2ffedb3310a1fe34c8354c9dee93ff024e06e31bc9286e3e4be4f87"
+}
