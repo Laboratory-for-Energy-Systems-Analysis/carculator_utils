@@ -8,11 +8,21 @@ Notable user-facing changes to `carculator_utils`.
   deterioration, preserving hybrid coordinates and the lifetime-average
   mileage formula. Cold starts, evaporation and electric modes are unchanged.
   This retains combustion-engine ageing as a documented proxy for hybrids.
-- Size the FCEV power buffer from the complement of net fuel-cell power,
-  and derive complete pack mass from its declared cell mass share. Preserve
-  FCEV traction-battery power when sizing combustion starter batteries.
-  Truck and bus energy-based buffer capacities retain their existing rule;
-  their peak-power capability is not independently validated by this fix.
+- Size FCEV electrical supply from motor shaft power divided by motor/inverter
+  efficiency, plus auxiliary DC demand. Apply stack own consumption once, retain
+  complementary buffer power and complete-pack mass, and preserve traction
+  power when sizing starter batteries.
+- Support optional battery-terminal charging limits. Regeneration supplies DC
+  auxiliaries first; only energy entering storage incurs storage losses, and
+  curtailed braking receives no fuel or brake-wear credit. Truck pack-specific
+  constraints are opt-in; car charging remains unconstrained without evidence.
+- Preserve full physical PHEV pack capacity and its replacement count across
+  driving modes, independently of electric driving share.
+- Close the 2020 Premise car/truck inventory campaign. Retain the generators,
+  regressions and final scientific reports; remove superseded diagnostic runs
+  and one-off patch scripts. Recover original vehicle identities from hash-checked
+  Premise Git history instead of disposable audit JSON. See
+  [the completed campaign guide](docs/premise_vehicle_update.rst).
 - Expose an optional `starts_per_day` model argument for car cold-start and
   hot-soak emissions. The general default remains 2.3; the 2020 Premise car
   regeneration explicitly uses the approved Swiss estimate of 1.8 starts/day.

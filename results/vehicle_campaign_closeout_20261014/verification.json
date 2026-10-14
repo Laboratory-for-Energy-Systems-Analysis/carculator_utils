@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-14",
+  "status": "campaign closed at user request",
+  "scope": "2020 Premise passenger cars and trucks; bus and two-wheeler workbooks not refreshed",
+  "cleanup": {
+    "pre_cleanup_utils_revision": "862bc96ea39a397baf9a4dae5e96e2381c359258",
+    "tracked_files_removed": 323,
+    "untracked_files_removed": 417,
+    "bytes_removed_from_working_tree": 141821640,
+    "tracked_recovery": "Git history at pre_cleanup_utils_revision",
+    "untracked_temporary_recovery_archive": "/private/tmp/vehicle-campaign-closeout-20261014/removed-untracked.tar.gz",
+    "archive_sha256": "b9b3699c9051061a06fadc419878aa5d58d6e2ff0226c593ff06b34f2d8c1e73",
+    "manifest_sha256": "32f281c17fbfcf162515c37bf633e8126a0268a68113220332bda6d1827a6795",
+    "retained_evidence_policy": "results/README.rst"
+  },
+  "checks": {
+    "focused_tests": {
+      "passed": 15,
+      "command": "python -m pytest tests/test_premise_vehicle_baseline.py tests/test_premise_vehicle_provenance.py tests/test_premise_car_fcev_adapter.py -q"
+    },
+    "workbook_regeneration": {
+      "mode": "reuse existing model exports; exercise revised baseline reader and adapters, not a fresh native model run",
+      "comparison": "activity/exchange identities and coefficients; relative tolerance 1e-12, absolute tolerance 1e-18",
+      "results": [
+        {
+          "workbook": "lci-pass_cars.xlsx",
+          "activities": 162,
+          "exchange_coefficients": 5451,
+          "identities_and_coefficients_unchanged": true
+        },
+        {
+          "workbook": "lci-trucks.xlsx",
+          "activities": 127,
+          "exchange_coefficients": 3563,
+          "identities_and_coefficients_unchanged": true
+        },
+        {
+          "workbook": "lci-truck-legacy-components.xlsx",
+          "activities": 26,
+          "exchange_coefficients": 256,
+          "identities_and_coefficients_unchanged": true
+        }
+      ]
+    },
+    "sphinx": {
+      "repositories": [
+        "carculator_utils",
+        "carculator",
+        "carculator_truck",
+        "premise"
+      ],
+      "result": "all four HTML builds pass with -W --keep-going",
+      "outputs": "temporary directories outside repositories"
+    },
+    "removed_module_static_import_references": [],
+    "car_model_docstring_edit": "Executable AST unchanged after stripping docstrings",
+    "installed_inventory_change": false,
+    "full_family_tests_rerun": false,
+    "fresh_LCIA_run": false
+  },
+  "comparison_boundary": "Retained incremental EF 3.1 comparisons are not a completed original-legacy-versus-final catalogue comparison.",
+  "release": "No version increment, release tag or package publication."
+}

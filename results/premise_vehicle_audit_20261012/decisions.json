@@ -13,7 +13,7 @@
   "unsupported_vehicles": "documented proxies; corrections reviewed",
   "tram": "retain separately",
   "noise": "companion audit file; omit from premise imports",
-  "status": "passenger-car update installed and paired 2020 EF 3.1 comparison completed; other vehicle workbooks unchanged",
+  "status": "closed by user request on 2026-10-14; passenger cars and Regional-delivery trucks updated; buses and two-wheelers retain legacy workbooks",
   "vehicle_and_use_parameters": "latest 2020 defaults",
   "climate": "Swiss (CH)",
   "LPG": "CNG efficiency and vehicle manufacture including tank; LPG LHV and CO2; CNG combustion emission proxy without CNG pump-to-tank methane leakage",
@@ -28,5 +28,23 @@
     ],
     "method": "16 EF 3.1 headline indicators",
     "functional_unit": "1 vehicle-kilometre"
+  },
+  "closure": {
+    "date": "2026-10-14",
+    "implemented_families": [
+      "car",
+      "truck"
+    ],
+    "unrefreshed_families": [
+      "bus",
+      "two-wheeler"
+    ],
+    "final_legacy_comparison": "not completed; incremental comparisons retained; no further comparison claimed at closure",
+    "accepted_limits": [
+      "MIX capacity-market physical mass/chemistry mismatch",
+      "unverified car FCEV charging/continuous power",
+      "unreconstructable truck hot-NOx factor derivation",
+      "PHEV cycling and future FCEV tank reviews skipped"
+    ]
   }
 }

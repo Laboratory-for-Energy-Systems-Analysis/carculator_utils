@@ -85,7 +85,7 @@ prices. A constructor override is an absolute amount and takes precedence over
 these generated perturbations.
 
 Installed PHEV capacity
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The combined PHEV retains the electric-mode pack's full nominal capacity, cell
 and balance-of-pack masses, cell mass share and energy density. Driving share

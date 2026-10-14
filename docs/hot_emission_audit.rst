@@ -123,7 +123,7 @@ Implemented repairs and limits
 .. _evaporative-speciation:
 
 Evaporative NMHC correction, October 13
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Soak, diurnal and running-loss emissions are now kept separate while hot
 exhaust and cold-start NMHC are speciated. Their existing process-specific
@@ -160,7 +160,7 @@ Only the car family currently ships the non-exhaust factor table.
 .. _cold-start-audit:
 
 Cold-start audit and daily start count, October 13
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Cold-start allocation is dimensionally correct: a coefficient in g/start is
 multiplied by starts/day times 365 divided by annual kilometres. Hot-soak
@@ -208,11 +208,12 @@ and accounts for these conditions. It provides methodological context, not the
 source of the retained HBEFA 5.1 factors. The separate exhaust-benzene mass
 boundary and speciation questions are not resolved by the start-count change.
 
-The reproducible audit is ``dev/audit_car_cold_start.py``. It decomposes hot,
-cold, soak, diurnal and running emissions and verifies the saved EF 3.1 scores.
-The regeneration, full Premise build and inventory/LCIA checks are recorded in
-``results/premise_cars_cold_start_20261013``. No clamp or arbitrary formaldehyde
-reduction is introduced.
+The historical ``dev/audit_car_cold_start.py`` audit decomposed hot, cold, soak,
+diurnal and running emissions and verified the saved EF 3.1 scores. The script
+is available at pre-cleanup Git revision ``862bc96``; its private intermediate
+run files were archived during campaign closeout. The retained conclusions and
+source boundaries are summarized here and in :doc:`premise_vehicle_update`.
+No clamp or arbitrary formaldehyde reduction is introduced.
 
 Earlier accounting repairs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
