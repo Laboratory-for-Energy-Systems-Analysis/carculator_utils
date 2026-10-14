@@ -564,22 +564,22 @@ have zero errors and unchanged warning identities, with changes confined to
 104 car and 16 truck operating services per year. Fuel/carbon, battery and
 metadata readback checks pass.
 
-Step 11 remains open for FCEV peak-power validation, car PHEV capacity
-calibration, and the high truck
+Step 11 remains open for FCEV peak-power validation and the high truck
 NOx coefficients. The user confirmed that the original truck hot-factor
 derivation is no longer available; no guessed correction has been applied.
 The agreed 400 km small-BEV-truck design is feasible by gross mass but requires
 an explicit commercial-representativeness qualification. See the
 `plausibility audit <../premise_vehicle_plausibility_20261014/report.html>`_.
-The car PHEV capacity review confirms the 21.17--42.34 kWh arithmetic and
-installed-template values, but identifies a source-calibration discrepancy
-against contemporary manufacturer examples. Electric and combustion modes
-also use different physical pack masses (Medium: 182 versus 80 kg). Capacity
-and mass must be calibrated together and represented consistently across
-modes. A choice between separate sourced 2020 calibrations, a common Prius
-pack-density proxy and retaining the current defaults is pending; no new
-parameters have been adopted. All 16 PHEV templates pass the arithmetic audit
-and nine existing PHEV tests pass. See the
-`PHEV calibration review <../premise_car_phev_calibration_20261014/report.html>`_.
+The car PHEV capacity review identified a source-calibration discrepancy in
+the former 21.17--42.34 kWh packs and inconsistent mode masses. The user
+subsequently approved paired capacity/mass references and explicit class
+proxies. The 16 templates now use 8.8--24 kWh packs, with the same physical
+pack in both modes. Combustion operation retains charge-sustaining fuel
+accounting. Future mass uses the relative NMC-622 density trend from the
+calibrated baseline. The MIX capacity market and documented physical-mass
+mismatch are retained. See the historical
+`PHEV calibration review <../premise_car_phev_calibration_20261014/report.html>`_
+and the implemented
+`PHEV calibration report <../premise_vehicle_phev_calibration_20261014/report.html>`_.
 Step 12 and the previously identified broader PHEV battery-use question
 remain open.

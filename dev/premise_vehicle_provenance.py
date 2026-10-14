@@ -78,7 +78,7 @@ def generation_manifest(family, root, output, record, generated_on):
             "version": ast.literal_eval(assignment.value),
             "recorded git revision": revision,
         }
-    return {
+    manifest = {
         "schema version": 1,
         "family": family,
         "original model": MODELS[family],
@@ -104,6 +104,11 @@ def generation_manifest(family, root, output, record, generated_on):
         "driving cycle": "WLTC" if family == "car" else "Regional delivery",
         "noise boundary": "Direct noise flows omitted from Premise imports; retained in noise_audit.csv identified by SHA-256.",
     }
+    if family == "car":
+        calibration = root / "carculator/carculator/data/phev_2020_calibration.json"
+        if calibration.exists():
+            manifest["PHEV battery calibration"] = json.loads(calibration.read_text())
+    return manifest
 
 
 def attach_provenance(datasets, family, generation, parameters):
@@ -192,6 +197,21 @@ def attach_provenance(datasets, family, generation, parameters):
                     "This is an uncalibrated hybrid ageing proxy: the existing lifetime-average formula uses vehicle lifetime kilometres, without an extra PHEV utility-factor adjustment. "
                     "PHEV combustion emissions are weighted once when combining driving modes; cold-start and evaporative factors are not multiplied by hot-exhaust deterioration. "
                 )
+            if family == "car" and native["powertrain"].startswith("PHEV-"):
+                calibration = generation.get("PHEV battery calibration")
+                if calibration:
+                    pack = calibration["sizes"][native["size"]]
+                    spec["PHEV battery calibration"] = copy.deepcopy(pack)
+                    note += (
+                        f"2020 PHEV battery calibration: {pack['capacity kWh']:g} kWh nominal, "
+                        f"{pack['pack mass kg']:g} kg complete pack. {pack['boundary']} "
+                        f"Capacity source: {pack['capacity source']}; mass source: {pack['mass source']}. "
+                        "Petrol and diesel variants share the class-specific battery proxy. "
+                        "Electric and combustion modes carry the same physical pack. "
+                        "The 80% usable-energy window, 70% cell mass fraction and NMC-622 chemistry remain model assumptions. "
+                        "Premise retains the MIX capacity market per nominal kWh; its manufacturing mass/chemistry need not equal this calibrated physical pack. "
+                        "Future pack mass follows the relative chemistry-density trend from the calibrated baseline. "
+                    )
         else:
             spec["component source boundary"] = (
                 "Bundled component recipe exported with the model; model year and climate do not date or parameterize this component. Its literature source is recorded separately."

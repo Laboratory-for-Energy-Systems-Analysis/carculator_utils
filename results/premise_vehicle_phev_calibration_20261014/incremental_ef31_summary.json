@@ -1,0 +1,80 @@
+{
+  "comparison": "Approved PHEV calibration versus preceding deterioration-corrected vehicles",
+  "legacy_workbook_comparison": false,
+  "year": 2020,
+  "scenario": "REMIND SSP2-NPi",
+  "source": "ecoinvent 3.12 cutoff",
+  "selected_counts": {
+    "before": 22,
+    "after": 22
+  },
+  "categories": 16,
+  "paired_scores": 352,
+  "persistent_user_project_modified": false,
+  "category_ranges": {
+    "acidification": {
+      "min_percent": -16.862110619502822,
+      "max_percent": -5.343269093450287
+    },
+    "climate change": {
+      "min_percent": 6.573793396610306,
+      "max_percent": 15.342071116336609
+    },
+    "ecotoxicity: freshwater": {
+      "min_percent": -11.31321697477734,
+      "max_percent": 0.766782421357548
+    },
+    "energy resources: non-renewable": {
+      "min_percent": 1.2128346448945004,
+      "max_percent": 5.290079788875834
+    },
+    "eutrophication: freshwater": {
+      "min_percent": -30.021116888498668,
+      "max_percent": -14.750511577213443
+    },
+    "eutrophication: marine": {
+      "min_percent": -9.678458669780776,
+      "max_percent": 26.669153152831605
+    },
+    "eutrophication: terrestrial": {
+      "min_percent": -9.99393482601314,
+      "max_percent": 6.456230724898093
+    },
+    "human toxicity: carcinogenic": {
+      "min_percent": -21.319101562388287,
+      "max_percent": -7.295162629946839
+    },
+    "human toxicity: non-carcinogenic": {
+      "min_percent": -25.40189623996304,
+      "max_percent": -10.641380553168588
+    },
+    "ionising radiation: human health": {
+      "min_percent": -43.947619897486454,
+      "max_percent": -22.48820615276188
+    },
+    "land use": {
+      "min_percent": -4.701783156625461,
+      "max_percent": 34.89915536272796
+    },
+    "material resources: metals/minerals": {
+      "min_percent": -12.165316035043416,
+      "max_percent": -5.20765530718641
+    },
+    "ozone depletion": {
+      "min_percent": -7.4230210274401465,
+      "max_percent": -2.556776887022638
+    },
+    "particulate matter formation": {
+      "min_percent": -7.7567878006847835,
+      "max_percent": -1.7989970086305207
+    },
+    "photochemical oxidant formation: human health": {
+      "min_percent": 4.8415694757487415,
+      "max_percent": 14.134886563660466
+    },
+    "water use": {
+      "min_percent": -27.653675189683703,
+      "max_percent": -0.5243957627423579
+    }
+  }
+}

@@ -1,0 +1,353 @@
+vehicle,location,category,exchange_type,supplier,supplier_location,categories,before,after,delta
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,"maintenance, passenger car",RER,,0.011216999767707321,0.011090317901036494,-0.00012668186667082713
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,"treatment of brake wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,"treatment of road wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,"treatment of tyre wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,"market for tetrafluoroethane, R134a",GLO,,0.00012862014933858495,0.00012862014934641902,7.834065427619885e-15
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,market for road,GLO,,0.020706771044954168,0.02048799276081243,-0.00021877828414173725
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,market for road maintenance,RER,,0.009489468969058014,0.009489468969033946,-2.4067553505702222e-14
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,"market for petrol, low-sulfur",EUR,,0.013205182385387872,0.034961500431339214,0.021756318045951344
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",RER,,0.10700824200696893,0.08860502399552361,-0.018403218011445316
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,technosphere,"market group for electricity, low voltage",EUR,,0.0485925076415156,0.018835145852199843,-0.029757361789315755
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Toluene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"NMVOC, non-methane volatile organic compounds",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Dinitrogen monoxide,,"('air', 'non-urban air or from high stacks')",7.886742000806635e-06,2.086120155553317e-05,1.2974459554726536e-05
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Ethane,,"('air', 'urban air close to ground')",1.9365080857958037e-07,5.098274026590297e-07,3.161765940794493e-07
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Pentane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Selenium IV,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Arsenic ion,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Arsenic ion,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Propylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"Particulate Matter, < 2.5 um",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Nickel II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"Methane, fossil",,"('air', 'non-urban air or from high stacks')",9.470825593461247e-06,2.5051257223199013e-05,1.5580431629737767e-05
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Mercury II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Ammonia,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Ethane,,"('air', 'non-urban air or from high stacks')",6.666446323468666e-09,1.763340156597914e-08,1.0966955242510473e-08
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Nickel II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Cadmium II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Ammonia,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Butane,,"('air', 'non-urban air or from high stacks')",1.4873651240034122e-10,3.9342259925440057e-10,2.446860868540593e-10
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"PAH, polycyclic aromatic hydrocarbons",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Copper ion,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Nitrogen oxides,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Hexane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Butane,,"('air', 'urban air close to ground')",4.320584290592946e-09,1.1374867525513221e-08,7.054283234920276e-09
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Copper ion,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Chromium III,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Propane,,"('air', 'urban air close to ground')",1.93872376926622e-09,5.104106889631536e-09,3.165383120365316e-09
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Toluene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Dinitrogen monoxide,,"('air', 'urban air close to ground')",4.342377785349071e-06,1.151611423821919e-05,7.173736452870119e-06
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Zinc II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Chromium VI,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Benzene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"Carbon monoxide, fossil",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Chromium VI,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"Methane, fossil",,"('air', 'urban air close to ground')",2.864126033160332e-05,7.549625968277136e-05,4.6854999351168044e-05
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Sulfur dioxide,,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"NMVOC, non-methane volatile organic compounds",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Formaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Nitrogen oxides,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Formaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Zinc II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"Carbon monoxide, fossil",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,m-Xylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"PAH, polycyclic aromatic hydrocarbons",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"Particulate Matter, < 2.5 um",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Pentane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"1,1,1,2-Tetrafluoroethane",,"('air',)",0.005722499855437491,0.005722499855437491,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Acetaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Benzene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Mercury II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Cadmium II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Propane,,"('air', 'non-urban air or from high stacks')",6.674074477112248e-11,1.765357598391866e-10,1.0979501506806413e-10
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Chromium III,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,1-Pentene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Acetone,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Acrolein,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Benzaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Cyclohexane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Heptane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Methyl ethyl ketone,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,o-Xylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Propylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Selenium IV,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Styrene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,1-Pentene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Acetaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Acetone,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Acrolein,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Benzaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Cyclohexane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Heptane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Hexane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Methyl ethyl ketone,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,m-Xylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,o-Xylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Styrene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Ethylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,Ethylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"Carbon dioxide, fossil",,"('air',)",0.04003927284458487,0.10600634008553156,0.0659670672409467
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,climate change,biosphere,"Carbon dioxide, non-fossil",,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,"maintenance, passenger car",RER,,0.059014726550656926,0.05771261573577746,-0.0013021108148794647
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,"treatment of brake wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,"treatment of road wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,"treatment of tyre wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,"market for tetrafluoroethane, R134a",GLO,,0.00014176399392007416,0.0001417639937934249,-1.2664926074025529e-13
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,market for road,GLO,,1.6188775558059678,1.5854753885105397,-0.03340216729542811
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,market for road maintenance,RER,,0.02097637363048553,0.020976373514955175,-1.155303561151122e-10
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,"market for diesel, low-sulfur",EUR,,0.7610101721306947,2.01736719881065,1.256357026679955
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,"Passenger car, plugin diesel hybrid, Large, EURO-6d",RER,,0.47503913972576123,0.3614469310318795,-0.1135922086938817
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,technosphere,"market group for electricity, low voltage",EUR,,0.08711404437163138,0.03376664043032266,-0.05334740394130872
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Toluene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"NMVOC, non-methane volatile organic compounds",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Dinitrogen monoxide,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Ethane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Pentane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Selenium IV,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Arsenic ion,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Arsenic ion,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Propylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"Particulate Matter, < 2.5 um",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Nickel II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"Methane, fossil",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Mercury II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Ammonia,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Ethane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Nickel II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Cadmium II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Ammonia,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Butane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"PAH, polycyclic aromatic hydrocarbons",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Copper ion,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Nitrogen oxides,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Butane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Copper ion,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Chromium III,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Propane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Toluene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Dinitrogen monoxide,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Zinc II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Chromium VI,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Benzene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"Carbon monoxide, fossil",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Chromium VI,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"Methane, fossil",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Sulfur dioxide,,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"NMVOC, non-methane volatile organic compounds",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Formaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Nitrogen oxides,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Formaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Zinc II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"Carbon monoxide, fossil",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,m-Xylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"PAH, polycyclic aromatic hydrocarbons",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"Particulate Matter, < 2.5 um",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Pentane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"1,1,1,2-Tetrafluoroethane",,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Acetaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Benzene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Mercury II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Cadmium II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Propane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Chromium III,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Acetone,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Acrolein,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Benzaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Cyclohexane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Heptane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Methyl ethyl ketone,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,o-Xylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Propylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Selenium IV,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Styrene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Acetaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Acetone,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Acrolein,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Benzaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Cyclohexane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Heptane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Methyl ethyl ketone,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,m-Xylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,o-Xylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Styrene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Ethylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,Ethylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"Carbon dioxide, fossil",,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,land use,biosphere,"Carbon dioxide, non-fossil",,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,"maintenance, passenger car",RER,,9.344613454718883e-06,9.138432351604132e-06,-2.0618110311475135e-07
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,"treatment of brake wear emissions, passenger car",RER,,6.744225313216379e-10,6.629529510368702e-10,-1.1469580284767734e-11
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,"treatment of road wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,"treatment of tyre wear emissions, passenger car",RER,,6.455904203539242e-09,6.377854692626017e-09,-7.804951091322543e-11
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,"market for tetrafluoroethane, R134a",GLO,,6.107597745683575e-08,6.107597746777707e-08,1.094132310303081e-17
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,market for road,GLO,,3.847040104715808e-05,3.7676644461169e-05,-7.937565859890807e-07
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,market for road maintenance,RER,,8.31618058757762e-06,8.316180587626744e-06,4.91245228089604e-17
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,"market for diesel, low-sulfur",EUR,,6.691193030990131e-05,0.00017737730499481702,0.00011046537468491571
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,"Passenger car, plugin diesel hybrid, Large, EURO-6d",RER,,0.00010587572403333281,8.3649042661384e-05,-2.2226681371948813e-05
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,technosphere,"market group for electricity, low voltage",EUR,,3.8879713712636115e-05,1.5070329028092591e-05,-2.3809384684543526e-05
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Toluene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"NMVOC, non-methane volatile organic compounds",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Dinitrogen monoxide,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Ethane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Pentane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Selenium IV,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Arsenic ion,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Arsenic ion,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Propylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"Particulate Matter, < 2.5 um",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Nickel II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"Methane, fossil",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Mercury II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Ammonia,,"('air', 'non-urban air or from high stacks')",3.9477278355084e-08,1.0447051201777688e-07,6.499323366269288e-08
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Ethane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Nickel II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Cadmium II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Ammonia,,"('air', 'urban air close to ground')",2.6441373899166467e-08,7.027369647419432e-08,4.3832322575027846e-08
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Butane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"PAH, polycyclic aromatic hydrocarbons",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Copper ion,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Nitrogen oxides,,"('air', 'non-urban air or from high stacks')",2.3923498104767415e-06,6.330983559020391e-06,3.938633748543649e-06
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Butane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Copper ion,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Chromium III,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Propane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Toluene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Dinitrogen monoxide,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Zinc II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Chromium VI,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Benzene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"Carbon monoxide, fossil",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Chromium VI,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"Methane, fossil",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Sulfur dioxide,,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"NMVOC, non-methane volatile organic compounds",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Formaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Nitrogen oxides,,"('air', 'urban air close to ground')",3.3507843704242975e-06,8.861070107897442e-06,5.510285737473145e-06
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Formaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Zinc II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"Carbon monoxide, fossil",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,m-Xylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"PAH, polycyclic aromatic hydrocarbons",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"Particulate Matter, < 2.5 um",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Pentane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"1,1,1,2-Tetrafluoroethane",,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Acetaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Benzene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Mercury II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Cadmium II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Propane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Chromium III,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Acetone,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Acrolein,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Benzaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Cyclohexane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Heptane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Methyl ethyl ketone,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,o-Xylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Propylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Selenium IV,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Styrene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Acetaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Acetone,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Acrolein,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Benzaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Cyclohexane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Heptane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Methyl ethyl ketone,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,m-Xylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,o-Xylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Styrene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Ethylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,Ethylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"Carbon dioxide, fossil",,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin diesel hybrid, Large, EURO-6",RER,eutrophication: marine,biosphere,"Carbon dioxide, non-fossil",,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,"maintenance, passenger car",RER,,0.001751503199006642,0.0017317221792387811,-1.9781019767860925e-05
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,"treatment of brake wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,"treatment of road wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,"treatment of tyre wear emissions, passenger car",RER,,0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,"market for tetrafluoroethane, R134a",GLO,,4.322593441375777e-06,4.3225934416381065e-06,2.6232949189644583e-16
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,market for road,GLO,,0.0007494976070439803,0.000741578757722944,-7.91884932103634e-06
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,market for road maintenance,RER,,0.0034619251154483447,0.0034619251154487654,4.206704429243757e-16
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,"market for petrol, low-sulfur",EUR,,0.00022649349827332137,0.0005996549162616077,0.00037316141798828634
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,"Passenger car, plugin gasoline hybrid, Large, EURO-6d",RER,,0.0074992396449025936,0.006078601966677815,-0.0014206376782247782
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,technosphere,"market group for electricity, low voltage",EUR,,0.028584666646493666,0.011079822622295468,-0.017504844024198198
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Toluene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"NMVOC, non-methane volatile organic compounds",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Dinitrogen monoxide,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Ethane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Pentane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Selenium IV,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Arsenic ion,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Arsenic ion,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Propylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"Particulate Matter, < 2.5 um",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Nickel II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"Methane, fossil",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Mercury II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Ammonia,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Ethane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Nickel II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Cadmium II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Ammonia,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Butane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"PAH, polycyclic aromatic hydrocarbons",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Copper ion,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Nitrogen oxides,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Hexane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Butane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Copper ion,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Chromium III,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Propane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Toluene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Dinitrogen monoxide,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Zinc II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Chromium VI,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Benzene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"Carbon monoxide, fossil",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Chromium VI,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"Methane, fossil",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Sulfur dioxide,,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"NMVOC, non-methane volatile organic compounds",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Formaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Nitrogen oxides,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Formaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Zinc II,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"Carbon monoxide, fossil",,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,m-Xylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"PAH, polycyclic aromatic hydrocarbons",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"Particulate Matter, < 2.5 um",,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Pentane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"1,1,1,2-Tetrafluoroethane",,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Acetaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Benzene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Mercury II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Cadmium II,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Propane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Chromium III,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,1-Pentene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Acetone,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Acrolein,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Benzaldehyde,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Cyclohexane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Heptane,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Methyl ethyl ketone,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,o-Xylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Propylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Selenium IV,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Styrene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,1-Pentene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Acetaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Acetone,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Acrolein,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Benzaldehyde,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Cyclohexane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Heptane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Hexane,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Methyl ethyl ketone,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,m-Xylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,o-Xylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Styrene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Ethylene,,"('air', 'urban air close to ground')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,Ethylene,,"('air', 'non-urban air or from high stacks')",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"Carbon dioxide, fossil",,"('air',)",0.0,0.0,0.0
+"transport, passenger car, plugin gasoline hybrid, Large, EURO-6",EUR,ionising radiation: human health,biosphere,"Carbon dioxide, non-fossil",,"('air',)",0.0,0.0,0.0

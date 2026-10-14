@@ -94,6 +94,36 @@ def test_component_source_is_not_replaced_by_vehicle_publication():
     assert "10.1016/j.rser.2022.112475" in ds["model publication"]
 
 
+def test_phev_pack_calibration_retains_sources_and_proxy_boundary():
+    module = load("premise_vehicle_provenance")
+    ds = dict(name="PHEV service", unit="kilometer", location="RER", exchanges=[])
+    pack = {
+        "capacity kWh": 12,
+        "pack mass kg": 118.5,
+        "capacity source": "Manufacturer capacity reference",
+        "mass source": "Manufacturer mass reference",
+        "boundary": "Pack mass excludes retaining brackets.",
+    }
+    generation = {
+        "libraries": {
+            "carculator": {"version": "1.9.7"},
+            "carculator_utils": {"version": "1.3.7"},
+        },
+        "PHEV battery calibration": {"sizes": {"Medium": pack}},
+    }
+    parameters = [
+        dict(name=ds["name"], size="Medium", powertrain="PHEV-p", proxy=False)
+    ]
+    module.attach_provenance([ds], "car", generation, parameters)
+    assert ds[module.KEY]["PHEV battery calibration"] == pack
+    assert pack["capacity source"] in ds["comment"]
+    assert pack["mass source"] in ds["comment"]
+    assert pack["boundary"] in ds["comment"]
+    assert "same physical pack" in ds["comment"]
+    assert "MIX capacity market" in ds["comment"]
+    assert "relative chemistry-density trend" in ds["comment"]
+
+
 def test_legacy_metadata_does_not_claim_current_model_generation():
     module = load("premise_vehicle_provenance")
     ds = dict(

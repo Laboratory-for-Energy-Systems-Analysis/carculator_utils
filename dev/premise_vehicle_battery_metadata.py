@@ -51,6 +51,10 @@ def model_specification(model, size, powertrain):
     if model.vehicle_type == "truck":
         spec["gross mass kg"] = value("gross mass")
         spec["cargo mass kg"] = value("cargo mass")
+    elif powertrain.startswith("PHEV"):
+        # Calibrated PHEV pack density differs from the generic BEV chemistry
+        # assumption. Apply the existing projection as a relative improvement.
+        spec["density projection basis"] = "relative chemistry trend"
     modes = [(mode, share)]
     if powertrain.startswith("PHEV"):
         modes.append(("PHEV-c-" + powertrain[-1], 1 - share))

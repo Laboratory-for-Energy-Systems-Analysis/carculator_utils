@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "calibrated_services": 16,
+    "capacity_and_mass_match_approved_sources": true,
+    "fuel_plus_grid_equals_model_energy": true,
+    "all_other_vehicle_parameters_unchanged": true
+  },
+  "2020": {
+    "activities": 42564,
+    "exchanges": 1358553,
+    "changed_activities": 104,
+    "changed_roles": {
+      "vehicle production": 16,
+      "transport service": 88
+    },
+    "validation_errors": 0,
+    "validation_warnings": 401,
+    "warning_identities_unchanged": true,
+    "all_other_coefficients_unchanged": true,
+    "relative_density_trend_and_range_preserved": true,
+    "scenario_phev_designs_checked": 78
+  },
+  "2050": {
+    "activities": 42795,
+    "exchanges": 1363087,
+    "changed_activities": 182,
+    "changed_roles": {
+      "vehicle production": 94,
+      "transport service": 88
+    },
+    "validation_errors": 0,
+    "validation_warnings": 468,
+    "warning_identities_unchanged": true,
+    "all_other_coefficients_unchanged": true,
+    "relative_density_trend_and_range_preserved": true,
+    "scenario_phev_designs_checked": 78
+  }
+}

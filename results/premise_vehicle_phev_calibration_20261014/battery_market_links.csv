@@ -1,0 +1,8 @@
+family,supplier,unit,exchanges
+pass_cars,market for battery capacity (MIX scenario),kilowatt hour,49
+trucks,"lead acid battery, for lorry, carculator regional truck 2020",kilogram,28
+trucks,market for battery capacity (MIX scenario),kilowatt hour,28
+trucks,"market for battery capacity, stationary (CONT scenario)",kilowatt hour,1
+buses,market for battery capacity (MIX scenario),kilowatt hour,16
+buses,"market for battery capacity, Li-ion, LTO",kilowatt hour,6
+two_wheelers,market for battery capacity (MIX scenario),kilowatt hour,10

@@ -498,6 +498,7 @@ def main():
                 "carculator_utils/carculator_utils/model.py",
                 "carculator/carculator/model.py",
                 "carculator/carculator/data/default_parameters.json",
+                "carculator/carculator/data/phev_2020_calibration.json",
                 "carculator_utils/carculator_utils/data/emission_factors/provenance.json",
                 "carculator_utils/dev/regenerate_premise_cars.py",
                 "carculator_utils/dev/premise_vehicle_battery_metadata.py",
