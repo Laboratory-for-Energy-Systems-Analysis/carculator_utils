@@ -1,0 +1,29 @@
+{
+  "model_adapter_tests": 102,
+  "premise_tests": 119,
+  "premise_skipped": 1,
+  "model_smoke_families": [
+    "car",
+    "truck",
+    "bus"
+  ],
+  "native_smoke_years": [
+    2020,
+    2050
+  ],
+  "templates_checked": 15,
+  "full_scenario_years": [
+    2020,
+    2050
+  ],
+  "changed_fcev_activities_per_year": 162,
+  "private_workspace": "/private/tmp/premise-vehicle-fcev-dc-20261014",
+  "persistent_user_project_modified": false,
+  "commits": {
+    "carculator_utils": "0160a64",
+    "carculator": "c6e0010",
+    "carculator_truck": "3624270",
+    "carculator_bus": "9d175a0",
+    "premise": "8fc0975"
+  }
+}

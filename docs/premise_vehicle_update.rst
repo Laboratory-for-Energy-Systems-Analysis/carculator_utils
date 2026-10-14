@@ -22,6 +22,14 @@ dynamics. The small-truck motor-rating and paired buffer-calibration findings
 remain separate follow-ups. FCEV baseline hardware is retained in future
 Premise scenarios under the existing policy.
 
+Regenerated inventories retain all names, with coefficient changes confined to
+the fifteen FCEV services and fifteen production templates. Full 2020/2050
+REMIND SSP2-NPi builds pass with zero errors and unchanged warning identities;
+numerical changes are confined to 162 FCEV activities per year. Independent
+fuel/carbon, battery and saved-metadata checks pass. The incremental 2020 EF
+3.1 comparison covers 26 RER/EUR services and all 16 headline indicators.
+See ``results/premise_vehicle_fcev_dc_20261014/report.rst``.
+
 Car PHEV calibration review, 14 October 2026
 --------------------------------------------
 

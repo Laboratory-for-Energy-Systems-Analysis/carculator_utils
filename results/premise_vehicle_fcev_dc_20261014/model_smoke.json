@@ -1,0 +1,80 @@
+[
+  {
+    "family": "car",
+    "year": 2020,
+    "finite_lcia": true,
+    "power": 142.26956176757812,
+    "fuel cell power": 136.28585815429688,
+    "fuel cell own consumption": 1.14673912525177,
+    "battery power": 39.615478515625,
+    "electric energy stored": 4.462804794311523,
+    "energy battery mass": 26.564315795898438,
+    "curb mass": 1778.372314453125,
+    "TtW energy": 1061.467041015625
+  },
+  {
+    "family": "car",
+    "year": 2050,
+    "finite_lcia": true,
+    "power": 125.77159881591797,
+    "fuel cell power": 118.17619323730469,
+    "fuel cell own consumption": 1.125,
+    "battery power": 35.015167236328125,
+    "electric energy stored": 4.4352545738220215,
+    "energy battery mass": 14.589653015136719,
+    "curb mass": 1572.145263671875,
+    "TtW energy": 698.377685546875
+  },
+  {
+    "family": "truck",
+    "year": 2020,
+    "finite_lcia": true,
+    "power": 291.43560791015625,
+    "fuel cell power": 94.6787338256836,
+    "fuel cell own consumption": 1.149999976158142,
+    "battery power": 246.98800659179688,
+    "electric energy stored": 71.14384460449219,
+    "energy battery mass": 423.4752502441406,
+    "curb mass": 14571.78125,
+    "TtW energy": 7671.576171875
+  },
+  {
+    "family": "truck",
+    "year": 2050,
+    "finite_lcia": true,
+    "power": 200.7206573486328,
+    "fuel cell power": 61.191646575927734,
+    "fuel cell own consumption": 1.0750000476837158,
+    "battery power": 170.7673797607422,
+    "electric energy stored": 48.09034729003906,
+    "energy battery mass": 158.1919403076172,
+    "curb mass": 10036.033203125,
+    "TtW energy": 4213.55224609375
+  },
+  {
+    "family": "bus",
+    "year": 2020,
+    "finite_lcia": true,
+    "power": 175.23236083984375,
+    "fuel cell power": 57.93159484863281,
+    "fuel cell own consumption": 1.149999976158142,
+    "battery power": 151.1259002685547,
+    "electric energy stored": 55.281646728515625,
+    "energy battery mass": 329.05743408203125,
+    "curb mass": 12086.43359375,
+    "TtW energy": 6771.0380859375
+  },
+  {
+    "family": "bus",
+    "year": 2050,
+    "finite_lcia": true,
+    "power": 131.34925842285156,
+    "fuel cell power": 42.958744049072266,
+    "fuel cell own consumption": 1.125,
+    "battery power": 114.55665588378906,
+    "electric energy stored": 42.588653564453125,
+    "energy battery mass": 204.75314331054688,
+    "curb mass": 9058.9541015625,
+    "TtW energy": 4335.07568359375
+  }
+]

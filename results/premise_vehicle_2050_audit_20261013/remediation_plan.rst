@@ -593,9 +593,14 @@ and the skipped review is removed from the remaining implementation queue.
 The subsequent FCEV peak-power audit identifies a further power-boundary defect:
 the corrected nominal fuel-cell/buffer sum equals mechanical motor output,
 without covering motor/inverter losses and auxiliary DC demand. All fifteen
-car/truck templates have this discrepancy. The user has been asked whether
-to retain the split on the electrical side or retain the fuel-cell rating.
-No sizing adaptation has yet been installed. The same audit flags brief
+car/truck templates had this discrepancy. The user approved retaining the
+split on the electrical side. The shared correction now includes motor/inverter
+losses and auxiliary DC demand, with truck ordering and bus HVAC integration.
+Refreshed car/truck templates and full 2020/2050 builds pass: zero errors,
+unchanged warning identities, and numerical changes restricted to 162 FCEV
+activities per year. Fuel/carbon, battery and saved metadata checks pass. See
+the `implemented correction <../premise_vehicle_fcev_dc_20261014/report.html>`_.
+The original diagnostic also flags brief
 mechanical motor shortfalls for 3.5 t and 7.5 t trucks and unverified paired
 energy/power specifications for the traction buffers. Current car WLTC traces
 cannot establish their peak capability. See the

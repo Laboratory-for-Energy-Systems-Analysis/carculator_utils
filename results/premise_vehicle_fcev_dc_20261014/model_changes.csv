@@ -1,0 +1,232 @@
+family,name,parameter,before,after,percent
+cars,"transport, passenger car, fuel cell electric, Large",fuel cell power,137.2701873779297,155.93572998046875,13.597666732361514
+cars,"transport, passenger car, fuel cell electric, Large",fuel consumption,107.19563293457031,108.25802612304688,0.9910787962090106
+cars,"transport, passenger car, fuel cell electric, Large",fuel_energy_MJ_per_vkm,1.156426495854026,1.167887593648178,0.9910787962090106
+cars,"transport, passenger car, fuel cell electric, Large",curb mass,1995.0816650390625,2035.077392578125,2.0047163101105214
+cars,"transport, passenger car, fuel cell electric, Large",range,622.607666015625,616.4976806640625,-0.9813540187616598
+cars,"transport, passenger car, fuel cell electric, Large",power,159.6063995361328,162.8059539794922,2.0046529792403733
+cars,"transport, passenger car, fuel cell electric, Large",battery BoP mass,8.026853561401367,9.118318557739258,13.59766922354737
+cars,"transport, passenger car, fuel cell electric, Large",battery_capacity_with_replacements_kWh,4.495037078857422,5.106257915496826,13.597681752488878
+cars,"transport, passenger car, fuel cell electric, Large",energy battery mass,26.756175994873047,30.394393920898438,13.597675268403586
+cars,"transport, passenger car, fuel cell electric, Large",driving mass,2135.08154296875,2175.077392578125,1.8732703554620311
+cars,"transport, passenger car, fuel cell electric, Large",TtW energy,1156.426513671875,1167.8875732421875,0.9910754755978024
+cars,"transport, passenger car, fuel cell electric, Large",electric energy stored,4.495037078857422,5.106257915496826,13.597681752488878
+cars,"transport, passenger car, fuel cell electric, Large",battery cell mass,18.72932243347168,21.27607536315918,13.597677859056612
+cars,"transport, passenger car, fuel cell electric, Large",battery power,39.9015998840332,45.32728958129883,13.597674562008578
+cars,"transport, passenger car, fuel cell electric, Large SUV",fuel cell power,151.67665100097656,171.9922332763672,13.39400767443093
+cars,"transport, passenger car, fuel cell electric, Large SUV",fuel consumption,125.74493408203125,126.88091278076172,0.9033991762955607
+cars,"transport, passenger car, fuel cell electric, Large SUV",fuel_energy_MJ_per_vkm,1.3565363579749246,1.3687912962590199,0.9033991762955607
+cars,"transport, passenger car, fuel cell electric, Large SUV",curb mass,2351.428466796875,2394.75146484375,1.8424119065756583
+cars,"transport, passenger car, fuel cell electric, Large SUV",range,530.7634887695312,526.0115356445312,-0.8953052019490704
+cars,"transport, passenger car, fuel cell electric, Large SUV",power,176.3570556640625,179.60621643066406,1.842376396207701
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery BoP mass,8.869270324707031,10.057218551635742,13.39397925012451
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery_capacity_with_replacements_kWh,4.966790676116943,5.632042407989502,13.39399574601472
+cars,"transport, passenger car, fuel cell electric, Large SUV",energy battery mass,29.564231872558594,33.52406311035156,13.393993305364615
+cars,"transport, passenger car, fuel cell electric, Large SUV",driving mass,2491.428466796875,2534.75146484375,1.7388818753674151
+cars,"transport, passenger car, fuel cell electric, Large SUV",TtW energy,1356.536376953125,1368.791259765625,0.9033950744487429
+cars,"transport, passenger car, fuel cell electric, Large SUV",electric energy stored,4.966790676116943,5.632042407989502,13.39399574601472
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery cell mass,20.694961547851562,23.46684455871582,13.393999329039685
+cars,"transport, passenger car, fuel cell electric, Large SUV",battery power,44.089263916015625,49.99458312988281,13.394007269243735
+cars,"transport, passenger car, fuel cell electric, Lower medium",fuel cell power,89.015869140625,100.90912628173828,13.360827969139555
+cars,"transport, passenger car, fuel cell electric, Lower medium",fuel consumption,90.10527038574219,90.76902770996094,0.7366465040026915
+cars,"transport, passenger car, fuel cell electric, Lower medium",fuel_energy_MJ_per_vkm,0.9720556634407362,0.9792162775024327,0.7366465040026915
+cars,"transport, passenger car, fuel cell electric, Lower medium",curb mass,1478.5758056640625,1503.8172607421875,1.7071464974221184
+cars,"transport, passenger car, fuel cell electric, Lower medium",range,555.5237426757812,551.46142578125,-0.7312589152291382
+cars,"transport, passenger car, fuel cell electric, Lower medium",power,103.50028228759766,105.26715087890625,1.7071147558795685
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery BoP mass,5.205188751220703,5.9006452560424805,13.360831625148673
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery_capacity_with_replacements_kWh,2.9149057865142822,3.304361343383789,13.36082828718892
+cars,"transport, passenger car, fuel cell electric, Lower medium",energy battery mass,17.350629806518555,19.6688175201416,13.36082747124323
+cars,"transport, passenger car, fuel cell electric, Lower medium",driving mass,1618.5758056640625,1643.8172607421875,1.5594855050838463
+cars,"transport, passenger car, fuel cell electric, Lower medium",TtW energy,972.0556640625,979.21630859375,0.7366496380797338
+cars,"transport, passenger car, fuel cell electric, Lower medium",electric energy stored,2.9149057865142822,3.304361343383789,13.36082828718892
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery cell mass,12.145441055297852,13.768172264099121,13.360825690998123
+cars,"transport, passenger car, fuel cell electric, Lower medium",battery power,25.875070571899414,29.33219337463379,13.360824632837321
+cars,"transport, passenger car, fuel cell electric, Medium",fuel cell power,119.95145416259766,136.28585815429688,13.61751227255441
+cars,"transport, passenger car, fuel cell electric, Medium",fuel consumption,97.4612045288086,98.393310546875,0.9563867208217003
+cars,"transport, passenger car, fuel cell electric, Medium",fuel_energy_MJ_per_vkm,1.0514114815083575,1.0614670412986982,0.9563867208217003
+cars,"transport, passenger car, fuel cell electric, Medium",curb mass,1743.3717041015625,1778.372314453125,2.007639006025963
+cars,"transport, passenger car, fuel cell electric, Medium",range,570.6614379882812,565.2554321289062,-0.9473227906256376
+cars,"transport, passenger car, fuel cell electric, Medium",power,139.46961975097656,142.26956176757812,2.007564100053383
+cars,"transport, passenger car, fuel cell electric, Medium",battery BoP mass,7.014142990112305,7.969295501708984,13.617522667318571
+cars,"transport, passenger car, fuel cell electric, Medium",battery_capacity_with_replacements_kWh,3.927919864654541,4.462804794311523,13.617511255006853
+cars,"transport, passenger car, fuel cell electric, Medium",energy battery mass,23.380475997924805,26.564315795898438,13.617514879749336
+cars,"transport, passenger car, fuel cell electric, Medium",driving mass,1883.3717041015625,1918.372314453125,1.858401624880468
+cars,"transport, passenger car, fuel cell electric, Medium",TtW energy,1051.4114990234375,1061.467041015625,0.9563850121029782
+cars,"transport, passenger car, fuel cell electric, Medium",electric energy stored,3.927919864654541,4.462804794311523,13.617511255006853
+cars,"transport, passenger car, fuel cell electric, Medium",battery cell mass,16.3663330078125,18.595020294189453,13.617511542219528
+cars,"transport, passenger car, fuel cell electric, Medium",battery power,34.86740493774414,39.615478515625,13.617513509705015
+cars,"transport, passenger car, fuel cell electric, Medium SUV",fuel cell power,101.53935241699219,115.2768325805664,13.529217822030649
+cars,"transport, passenger car, fuel cell electric, Medium SUV",fuel consumption,105.38728332519531,106.14960479736328,0.723352427460977
+cars,"transport, passenger car, fuel cell electric, Medium SUV",fuel_energy_MJ_per_vkm,1.1369180201372497,1.1451419442341537,0.723352427460977
+cars,"transport, passenger car, fuel cell electric, Medium SUV",curb mass,1574.15478515625,1603.449951171875,1.861009240760092
+cars,"transport, passenger car, fuel cell electric, Medium SUV",range,633.2910766601562,628.7429809570312,-0.7181682911293619
+cars,"transport, passenger car, fuel cell electric, Medium SUV",power,118.06155395507812,120.25863647460938,1.8609635786830614
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery BoP mass,5.937498092651367,6.740796089172363,13.529233761189907
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery_capacity_with_replacements_kWh,3.3249988555908203,3.7748453617095947,13.529222885667469
+cars,"transport, passenger car, fuel cell electric, Medium SUV",energy battery mass,19.79166030883789,22.469318389892578,13.529224124056881
+cars,"transport, passenger car, fuel cell electric, Medium SUV",driving mass,1714.15478515625,1743.449951171875,1.7090152108378387
+cars,"transport, passenger car, fuel cell electric, Medium SUV",TtW energy,1136.91796875,1145.1419677734375,0.7233590504756915
+cars,"transport, passenger car, fuel cell electric, Medium SUV",electric energy stored,3.3249988555908203,3.7748453617095947,13.529222885667469
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery cell mass,13.854162216186523,15.728522300720215,13.529219993857012
+cars,"transport, passenger car, fuel cell electric, Medium SUV",battery power,29.51538848876953,33.50859069824219,13.529221243325495
+cars,"transport, passenger car, fuel cell electric, Mini",fuel cell power,49.771820068359375,56.322574615478516,13.161573231844791
+cars,"transport, passenger car, fuel cell electric, Mini",fuel consumption,76.11089324951172,76.48053741455078,0.4856652566502806
+cars,"transport, passenger car, fuel cell electric, Mini",fuel_energy_MJ_per_vkm,0.8210843218825525,0.8250720431617387,0.4856652566502806
+cars,"transport, passenger car, fuel cell electric, Mini",curb mass,964.50927734375,978.2809448242188,1.4278418885089295
+cars,"transport, passenger car, fuel cell electric, Mini",range,584.5928344726562,581.767333984375,-0.4833279372693733
+cars,"transport, passenger car, fuel cell electric, Mini",power,57.87055206298828,58.696842193603516,1.4278248628350143
+cars,"transport, passenger car, fuel cell electric, Mini",battery BoP mass,2.910399913787842,3.293454170227051,13.161567749659175
+cars,"transport, passenger car, fuel cell electric, Mini",battery_capacity_with_replacements_kWh,1.6298236846923828,1.8443341255187988,13.16157341687565
+cars,"transport, passenger car, fuel cell electric, Mini",energy battery mass,9.701332092285156,10.978179931640625,13.16157232026789
+cars,"transport, passenger car, fuel cell electric, Mini",driving mass,1104.50927734375,1118.281005859375,1.2468639963572725
+cars,"transport, passenger car, fuel cell electric, Mini",TtW energy,821.0842895507812,825.0721435546875,0.4856814403412901
+cars,"transport, passenger car, fuel cell electric, Mini",electric energy stored,1.6298236846923828,1.8443341255187988,13.16157341687565
+cars,"transport, passenger car, fuel cell electric, Mini",battery cell mass,6.7909321784973145,7.684725761413574,13.161574279100474
+cars,"transport, passenger car, fuel cell electric, Mini",battery power,14.46763801574707,16.371807098388672,13.16157537649918
+cars,"transport, passenger car, fuel cell electric, Small",fuel cell power,70.7247085571289,80.08345031738281,13.23263390006655
+cars,"transport, passenger car, fuel cell electric, Small",fuel consumption,82.15327453613281,82.69149017333984,0.6551359519702649
+cars,"transport, passenger car, fuel cell electric, Small",fuel_energy_MJ_per_vkm,0.8862695316398028,0.8920758019729336,0.6551359519702649
+cars,"transport, passenger car, fuel cell electric, Small",curb mass,1265.120849609375,1284.8890380859375,1.5625533705073469
+cars,"transport, passenger car, fuel cell electric, Small",range,568.6757202148438,564.974365234375,-0.6508726940320897
+cars,"transport, passenger car, fuel cell electric, Small",power,82.23283386230469,83.51776885986328,1.56255711643134
+cars,"transport, passenger car, fuel cell electric, Small",battery BoP mass,4.135616302490234,4.682868003845215,13.23265170962442
+cars,"transport, passenger car, fuel cell electric, Small",battery_capacity_with_replacements_kWh,2.3159451484680176,2.622405767440796,13.232637188125974
+cars,"transport, passenger car, fuel cell electric, Small",energy battery mass,13.785387992858887,15.609559059143066,13.232642180467735
+cars,"transport, passenger car, fuel cell electric, Small",driving mass,1405.120849609375,1424.8890380859375,1.406867493430064
+cars,"transport, passenger car, fuel cell electric, Small",TtW energy,886.26953125,892.0758056640625,0.6551364127201031
+cars,"transport, passenger car, fuel cell electric, Small",electric energy stored,2.3159451484680176,2.622405767440796,13.232637188125974
+cars,"transport, passenger car, fuel cell electric, Small",battery cell mass,9.649771690368652,10.926691055297852,13.232638096543582
+cars,"transport, passenger car, fuel cell electric, Small",battery power,20.558208465576172,23.278602600097656,13.232642032386565
+cars,"transport, passenger car, fuel cell electric, Van",fuel cell power,100.27365112304688,113.50720977783203,13.197443701881472
+cars,"transport, passenger car, fuel cell electric, Van",fuel consumption,137.63372802734375,138.35348510742188,0.5229510893834943
+cars,"transport, passenger car, fuel cell electric, Van",fuel_energy_MJ_per_vkm,1.4847926679171408,1.4925574073491,0.5229510893834943
+cars,"transport, passenger car, fuel cell electric, Van",curb mass,1793.6912841796875,1821.64404296875,1.558392965144284
+cars,"transport, passenger car, fuel cell electric, Van",range,484.91619873046875,482.3935241699219,-0.5202289729960285
+cars,"transport, passenger car, fuel cell electric, Van",power,116.58990478515625,118.40682983398438,1.5583896840607459
+cars,"transport, passenger car, fuel cell electric, Van",battery BoP mass,5.863487243652344,6.637316703796387,13.197427196277612
+cars,"transport, passenger car, fuel cell electric, Van",battery_capacity_with_replacements_kWh,3.283552408218384,3.716897487640381,13.197446714642957
+cars,"transport, passenger car, fuel cell electric, Van",energy battery mass,19.54495620727539,22.1243896484375,13.197437813659274
+cars,"transport, passenger car, fuel cell electric, Van",driving mass,1933.6912841796875,1961.64404296875,1.4455647092043833
+cars,"transport, passenger car, fuel cell electric, Van",TtW energy,1484.7926025390625,1492.557373046875,0.5229532053523389
+cars,"transport, passenger car, fuel cell electric, Van",electric energy stored,3.283552408218384,3.716897487640381,13.197446714642957
+cars,"transport, passenger car, fuel cell electric, Van",battery cell mass,13.681468963623047,15.487072944641113,13.19744236396614
+cars,"transport, passenger car, fuel cell electric, Van",battery power,29.147476196289062,32.994197845458984,13.197443316411972
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",fuel cell power,59.64966583251953,67.6879653930664,13.475850113085786
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",fuel consumption,435.0628967285156,435.50048828125,0.10058121619307414
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",curb mass,9020.7431640625,9047.40234375,0.2955319667420131
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",power,207.4770965576172,208.0902557373047,0.29553101998283093
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",battery BoP mass,91.58879089355469,91.64498901367188,0.06135916804765884
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",nominal battery capacity kWh,51.28971862792969,51.32119369506836,0.06136720571037202
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",battery_capacity_with_replacements_kWh,51.28971862792969,51.32119369506836,0.06136720571037202
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",energy battery mass,305.29595947265625,305.4833068847656,0.061365834134519126
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",driving mass,12295.7431640625,12322.40234375,0.21681633498509267
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",electric power,207.4770965576172,208.0902557373047,0.29553101998283093
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",TtW energy,4693.4580078125,4698.17919921875,0.10059089478144934
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",electric energy stored,51.28971862792969,51.32119369506836,0.06136720571037202
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",fuel_energy_MJ_per_tkm,1.4667058004328604,1.4681810309649101,0.10058121619307414
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",available payload,8904.2568359375,8877.59765625,-0.29939814381705343
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",battery cell mass,213.70716857910156,213.83831787109375,0.061368691029017874
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",battery power,155.60781860351562,176.57730102539062,13.47585398347153
+trucks,"transport, freight, lorry, fuel cell electric, 18 metric ton",h2_compression_kWh_per_tkm,0.0299528121990886,0.02998293910188247,0.10058121619307414
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",fuel cell power,76.67430114746094,86.73180389404297,13.117175632601219
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",fuel consumption,526.5131225585938,527.0538330078125,0.10269648106606688
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",curb mass,12122.419921875,12156.169921875,0.2784097582620326
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",power,266.6932373046875,267.4357604980469,0.2784184559247338
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",battery BoP mass,103.33363342285156,103.403076171875,0.06720246518310269
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",nominal battery capacity kWh,57.866825103759766,57.90571212768555,0.06720089421885511
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",battery_capacity_with_replacements_kWh,57.866825103759766,57.90571212768555,0.06720089421885511
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",energy battery mass,344.4454040527344,344.6768798828125,0.06720247312188565
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",driving mass,18497.419921875,18531.169921875,0.18245787868007568
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",electric power,266.6932373046875,267.4357604980469,0.2784184559247338
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",TtW energy,5680.02392578125,5685.85693359375,0.10269336694206377
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",electric energy stored,57.866825103759766,57.90571212768555,0.06720089421885511
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",fuel_energy_MJ_per_tkm,0.9015910482947137,0.9025169505749191,0.10269648106606688
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",available payload,13802.580078125,13768.830078125,-0.24451950149152468
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",battery cell mass,241.1117706298828,241.2738037109375,0.06720247652423073
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",battery power,200.01992797851562,226.2568817138672,13.117169874278577
+trucks,"transport, freight, lorry, fuel cell electric, 26 metric ton",h2_compression_kWh_per_tkm,0.018412136463891463,0.01843104508012896,0.10269648106604468
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",fuel cell power,11.743642807006836,13.55636215209961,15.435750004344605
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",fuel consumption,176.86277770996094,176.9545440673828,0.05188562489522042
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",curb mass,2042.372802734375,2048.290283203125,0.28973556937439415
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",power,51.05931854248047,51.20725631713867,0.28973707225474765
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",battery BoP mass,58.42852783203125,58.4403076171875,0.020161016533082332
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",nominal battery capacity kWh,32.719970703125,32.72657012939453,0.020169413748583054
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",battery_capacity_with_replacements_kWh,32.719970703125,32.72657012939453,0.020169413748583054
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",energy battery mass,194.76174926757812,194.801025390625,0.020166240647645495
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",driving mass,2867.372802734375,2873.290283203125,0.20637290216001247
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",electric power,51.05931854248047,51.20725631713867,0.28973707225474765
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",TtW energy,1907.99560546875,1908.985595703125,0.05188640013307211
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",electric energy stored,32.719970703125,32.72657012939453,0.020169413748583054
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",fuel_energy_MJ_per_tkm,2.543994211642051,2.54531417893606,0.05188562489522042
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",available payload,1382.627197265625,1376.709716796875,-0.4279881431851429
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",battery cell mass,136.33322143554688,136.3607177734375,0.020168479554061314
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",battery power,40.84745407104492,47.152565002441406,15.435750097007684
+trucks,"transport, freight, lorry, fuel cell electric, 3.5 metric ton",h2_compression_kWh_per_tkm,0.051953009822688655,0.05197996596648703,0.05188562489522042
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",fuel cell power,67.52120971679688,76.65487670898438,13.527108045748438
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",fuel consumption,669.3977661132812,669.884765625,0.07275188779705122
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",curb mass,11742.8193359375,11773.154296875,0.25832774966283445
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",power,234.85638427734375,235.4630889892578,0.25833009129425655
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",battery BoP mass,121.68411254882812,121.74664306640625,0.051387577448158694
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",nominal battery capacity kWh,68.14309692382812,68.17811584472656,0.05139026912379663
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",battery_capacity_with_replacements_kWh,68.14309692382812,68.17811584472656,0.05139026912379663
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",energy battery mass,405.6136779785156,405.8221435546875,0.051395105118445805
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",driving mass,22117.8203125,22148.154296875,0.13714725929776517
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",electric power,234.85638427734375,235.4630889892578,0.25833009129425655
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",TtW energy,7221.4638671875,7226.716796875,0.07274051056833652
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",electric energy stored,68.14309692382812,68.17811584472656,0.05139026912379663
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",fuel_energy_MJ_per_tkm,0.7011129271128872,0.7016230000029511,0.07275188779707342
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",available payload,20182.1796875,20151.845703125,-0.15030083392720828
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",battery cell mass,283.9295654296875,284.07550048828125,0.051398331263219355
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",battery power,176.1422882080078,199.96925354003906,13.527112412604625
+trucks,"transport, freight, lorry, fuel cell electric, 32 metric ton",h2_compression_kWh_per_tkm,0.014318006944520099,0.014328423564867151,0.07275188779705122
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",fuel cell power,83.5727310180664,94.67875671386719,13.28905440866821
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",fuel consumption,710.5225219726562,711.1212768554688,0.08426965568242295
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",curb mass,14534.3896484375,14571.7822265625,0.25726968265928907
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",power,290.6877746582031,291.4356689453125,0.2572843966309746
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",battery BoP mass,126.96566772460938,127.04257202148438,0.06057093878464315
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",nominal battery capacity kWh,71.10077667236328,71.14384460449219,0.060573082523940336
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",battery_capacity_with_replacements_kWh,71.10077667236328,71.14384460449219,0.060573082523940336
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",energy battery mass,423.2189025878906,423.4752502441406,0.060570937328763286
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",driving mass,24909.390625,24946.78125,0.1501065423996195
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",electric power,290.6877746582031,291.4356689453125,0.2572843966309746
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",TtW energy,7665.11669921875,7671.576171875,0.08427102821420007
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",electric energy stored,71.10077667236328,71.14384460449219,0.060573082523940336
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",fuel_energy_MJ_per_tkm,0.7441861182960348,0.7448132413755594,0.08426965568244515
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",available payload,25390.609375,25353.21875,-0.14726162908408336
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",battery cell mass,296.25323486328125,296.43267822265625,0.060570936704817946
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",battery power,218.01583862304688,246.98806762695312,13.289047798953613
+trucks,"transport, freight, lorry, fuel cell electric, 40 metric ton",h2_compression_kWh_per_tkm,0.015197640205630471,0.015210447204703614,0.08426965568244515
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",fuel cell power,119.62953186035156,134.8599090576172,12.731285461389795
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",fuel consumption,953.2727661132812,954.0228271484375,0.07868272983548863
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",curb mass,21900.142578125,21949.48046875,0.22528570509985357
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",power,416.10272216796875,417.0401306152344,0.22528294032337914
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",battery BoP mass,158.14178466796875,158.23806762695312,0.060883946128797994
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",nominal battery capacity kWh,88.55937957763672,88.61332702636719,0.060916696783297475
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",battery_capacity_with_replacements_kWh,88.55937957763672,88.61332702636719,0.060916696783297475
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",energy battery mass,527.1392211914062,527.4602661132812,0.06090325078627057
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",driving mass,41275.140625,41324.48046875,0.11953888709494986
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",electric power,416.10272216796875,417.0401306152344,0.22528294032337914
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",TtW energy,10283.9072265625,10291.9990234375,0.07868407110966924
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",electric energy stored,88.55937957763672,88.61332702636719,0.060916696783297475
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",fuel_energy_MJ_per_tkm,0.5328449051710793,0.5332641620882572,0.07868272983548863
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",available payload,38024.859375,37975.51953125,-0.12975680794349298
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",battery cell mass,368.9974365234375,369.2221984863281,0.060911524212259316
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",battery power,312.0770263671875,351.8084716796875,12.731294506040403
+trucks,"transport, freight, lorry, fuel cell electric, 60 metric ton",h2_compression_kWh_per_tkm,0.010881666501298537,0.010890228493553351,0.07868272983546643
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",fuel cell power,21.560489654541016,24.731325149536133,14.706695190140472
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",fuel consumption,265.7046813964844,265.87335205078125,0.06348049775051212
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",curb mass,3905.88623046875,3916.265869140625,0.26574349736319114
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",power,93.74126434326172,93.9903793334961,0.26574741868443663
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",battery BoP mass,69.83836364746094,69.86003112792969,0.031025183491029118
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",nominal battery capacity kWh,39.10948181152344,39.121612548828125,0.03101738182864633
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",battery_capacity_with_replacements_kWh,39.10948181152344,39.121612548828125,0.03101738182864633
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",energy battery mass,232.79454040527344,232.86676025390625,0.031022999296759224
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",driving mass,5730.88623046875,5741.265625,0.18111325393386224
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",electric power,93.74126434326172,93.9903793334961,0.26574741868443663
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",TtW energy,2866.422119140625,2868.241943359375,0.0634876561479869
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",electric energy stored,39.10948181152344,39.121612548828125,0.03101738182864633
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",fuel_energy_MJ_per_tkm,1.6379554983598257,1.638995280663116,0.06348049775048992
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",available payload,3519.11376953125,3508.734130859375,-0.29495035829028016
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",battery cell mass,162.9561767578125,163.00672912597656,0.03102206321345946
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",battery power,74.99301147460938,86.02200317382812,14.70669264022404
+trucks,"transport, freight, lorry, fuel cell electric, 7.5 metric ton",h2_compression_kWh_per_tkm,0.03345004391361733,0.03347127816799145,0.06348049775046771
