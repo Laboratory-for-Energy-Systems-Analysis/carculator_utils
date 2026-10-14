@@ -1151,6 +1151,28 @@ cannot establish their peak capability. See the
 <a class="reference external" href="../premise_vehicle_fcev_power_20261014/report.html">FCEV power report</a>.
 Nine diagnostic tests and fresh checks of all fifteen templates pass; these
 verify the diagnostic arithmetic, not the feasibility of the current designs.</p>
+<p>The small-FCEV motor shortfalls are now corrected for the selected Regional-
+delivery templates. The user approved motor-only 2020 electric-commercial-
+vehicle proxies: Renault Master Z.E. 57 kW for 3.5 t and FUSO eCanter 129 kW
+for 7.5 t. Truck defaults accept a declared shaft rating, retain it after 2020
+without assuming downsizing, and preserve explicit user power overrides.
+Shared energy equations required no correction; four additional tests protect
+the mechanical/electrical boundary. Component mass, storage and consumption
+are recalculated in the native model, without added Premise runtime work.
+Full 2020/2050 builds pass with zero errors and unchanged warnings; changes are
+confined to two RER production datasets and 26 regional operating services.
+Fuel/carbon, capacity allocations and saved metadata pass. The approved FCEV
+hardware stays fixed in 2050. Model/Premise tests total 200 passes; wheel and
+sdist checks and native LCIA smoke cases pass. Incremental 2020 EF 3.1 climate
+scores rise 0.264% and 0.920%; the largest acidification increases, 1.812% and
+6.026%, are explained predominantly by larger fuel-cell stack/BoP manufacture.
+See the <a class="reference external" href="../premise_small_fcev_motors_20261014/report.html">small-FCEV motor report</a>.
+This resolves the selected duty-cycle motor shortfall, not buffer-cell power
+capability or every possible duty cycle. The 3.5 t Long-haul design still exceeds
+57 kW; Long haul is not the selected Premise template. Traction-buffer capability,
+the unreconstructable truck NOx factors, and the final legacy-versus-refreshed
+comparison remain distinct outstanding items. The skipped PHEV cycling review
+remains skipped.</p>
 </section>
 </main>
 </body>
