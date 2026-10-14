@@ -1,0 +1,13 @@
+{
+  "name": "AKASOL AKASYSTEM 15 OEM 37 PRC",
+  "edition": "May 2021; unapproved candidate proxy for model year 2020",
+  "url": "https://www.act-news.com/wp-content/uploads/2020/11/210525_LowRes_AK_Datenblatt_AKASystem_15-OEM-37-PRC_2021_2159x2794mm_EN.pdf",
+  "earlier_brochure_url": "https://bus-news.com/wp-content/uploads/sites/4/2020/07/AKASOL-Bus-Applications-Brochure.pdf",
+  "nominal_kwh": 25.0,
+  "pack_kg": 238.0,
+  "charge_continuous_kw": 36.0,
+  "charge_10s_kw": 86.0,
+  "discharge_rms_kw": 50.0,
+  "discharge_10s_kw": 150.0,
+  "qualification": "Ratings depend on SOC, temperature and integration. RMS rating has no averaging/recovery interval in this sheet. NMC stoichiometry and internal cell mass fraction are not specified. The earlier brochure reports the same product, 24.5 kWh, about 238 kg, 37-50 kW continuous and 75-150 kW peak, without separate charge limits."
+}

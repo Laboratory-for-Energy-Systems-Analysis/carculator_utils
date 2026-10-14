@@ -1,0 +1,20 @@
+{
+  "interpreter": "/private/tmp/carculator-release-20261011-t7nvnm72/verification-network/tests/bin/python",
+  "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 17:06:14) [Clang 19.1.7 ]",
+  "numpy": "1.26.4",
+  "installed_parameters": "/Users/romain/GitHub/premise/premise/data/additional_inventories/lci-trucks.parameters.csv",
+  "installed_parameters_sha256": "68af6a3122d84e2394fcd95c7a391bf7807eaa0d50a2c8c5ca4987ce31029ecd",
+  "sources": {
+    "carculator_utils/dev/audit_fcev_battery_envelope.py": "de2299831aead82d1035725760162959e30c718e0ec747b923b52530cc386412",
+    "carculator_utils/carculator_utils/model.py": "105b6465c7008de25994b04945049e1f91f00cf0a49495d82de5362670300b48",
+    "carculator_utils/carculator_utils/energy_consumption.py": "2f0723c98e997ce8370731e24aae3ab2ce830c4283f30f8cbc7f1eb35263df43",
+    "carculator_truck/carculator_truck/model.py": "5786d62fd4de3ad6c6f3346318beac22b79ccbcd27723cd8fbff5da105a42d8c",
+    "carculator_truck/carculator_truck/data/default_parameters.json": "a1da127f70f6c8eeed62e0c284356a04148e1a24f858b7af3aaba6cf698fbc4e"
+  },
+  "commits": {
+    "carculator_utils": "c065f20f59ed6e6383516487ab671f6ddeeaea8a",
+    "carculator_truck": "4d28ac63a31057dec6879c863370eacae52b1c18",
+    "premise": "d8dec84438cdffc8858811c0ec0588eda16dfaa8"
+  },
+  "scope": "Read-only reference screening. No model defaults, inventories or databases changed."
+}
