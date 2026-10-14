@@ -738,12 +738,11 @@ class VehicleModel:
         )
 
         if "FCEV" in self.array.powertrain.values:
-            # The share refers to total vehicle power. Fuel-cell power is the
-            # gross stack rating (including its own consumption), so using it
-            # here would apply the share twice and leave a gap in net power.
+            # Allocate the net DC requirement, including motor losses and
+            # auxiliaries. Gross stack power includes its own consumption.
             self.array.loc[
                 dict(parameter="battery power", powertrain="FCEV")
-            ] = self.array.loc[dict(parameter="power", powertrain="FCEV")] * (
+            ] = self.get_fuel_cell_electrical_power().sel(powertrain="FCEV") * (
                 np.array(1)
                 - self.array.loc[
                     dict(parameter="fuel cell power share", powertrain="FCEV")
@@ -794,10 +793,66 @@ class VehicleModel:
         )
 
         self["fuel cell power"] = (
-            self["power"]
+            self.get_fuel_cell_electrical_power()
             * self["fuel cell power share"]
             * self["fuel cell own consumption"]
         )
+
+    def get_fuel_cell_auxiliary_power(self):
+        """Auxiliary DC demand in kW; buses override this to include HVAC.
+
+        Cars and trucks call ``set_auxiliaries`` before fuel-cell sizing.
+        A partial model without an auxiliary input represents zero such load.
+        """
+        if "auxiliary power demand" not in self.array.parameter.values:
+            return xr.zeros_like(self["power"])
+        return self["auxiliary power demand"] / 1000
+
+    def get_fuel_cell_electrical_power(self):
+        """Convert FCEV shaft ratings to net DC kW at the existing design point.
+
+        Preserve the declared fuel-cell/buffer split on the electrical side.
+        Motor/inverter efficiency follows cycle-model overrides and component
+        inputs; legacy arrays without fixed inputs use the map at rated load.
+        Transmission and stack own-consumption losses do not belong here.
+        This sizes required output, not a certified battery power capability.
+        Non-FCEV cells retain their previous power allocation.
+        """
+        power = self["power"].copy(deep=True)
+        if "FCEV" not in power.powertrain.values:
+            return power
+        efficiency = self.get_energy_efficiency_override("engine efficiency")
+        mask = np.ma.getmaskarray(efficiency)
+        index = list(power.powertrain.values).index("FCEV")
+        if mask[:, index].any():
+            if not hasattr(self, "ecm"):
+                raise ValueError(
+                    "FCEV sizing needs a fixed motor efficiency or an initialized "
+                    "energy model for the rated-load efficiency map."
+                )
+            shape = (1, *power.shape[::-1])  # second, value, year, powertrain, size
+            mapped = self.ecm.calculate_efficiency(
+                np.zeros(shape), np.ones(shape), "engine"
+            )[0].T
+            values = np.where(mask, mapped, efficiency.data)
+        else:
+            values = efficiency.data
+        eta = xr.DataArray(values, dims=power.dims, coords=power.coords).sel(
+            powertrain="FCEV"
+        )
+        shaft = power.sel(powertrain="FCEV")
+        auxiliary = self.get_fuel_cell_auxiliary_power().sel(powertrain="FCEV")
+        active = shaft > 0
+        if bool((~np.isfinite(shaft) | (shaft < 0)).any()) or bool(
+            (active & (~np.isfinite(eta) | (eta <= 0) | (eta > 1))).any()
+        ):
+            raise ValueError("Active FCEV power and motor efficiency must be valid.")
+        if bool((active & (~np.isfinite(auxiliary) | (auxiliary < 0))).any()):
+            raise ValueError("FCEV auxiliary demand must be finite and nonnegative.")
+        power.loc[dict(powertrain="FCEV")] = xr.where(
+            active, shaft / eta.where(active, 1) + auxiliary, 0
+        )
+        return power
 
     def set_auxiliaries(self) -> None:
         """

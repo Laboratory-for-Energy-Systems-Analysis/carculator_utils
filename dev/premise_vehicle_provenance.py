@@ -27,6 +27,8 @@ PUBLICATIONS = {
 MODELS = {"car": "carculator", "truck": "carculator_truck"}
 BASELINE_FIELDS = (
     "power",
+    "electric motor efficiency",
+    "auxiliary power demand",
     "fuel cell power",
     "fuel cell power share",
     "fuel cell own consumption",
@@ -166,7 +168,7 @@ def attach_provenance(datasets, family, generation, parameters):
             spec["model powertrain"] = native["powertrain"]
             spec["service templates"] = users
             spec["parameter units"] = (
-                "km/year, lifetime km, persons, masses kg, ranges km, stored energy kWh, power kW, power shares and gross/net multiplier dimensionless, replacements per vehicle, starts/day; all describe the 2020 baseline."
+                "km/year, lifetime km, persons, masses kg, ranges km, stored energy kWh, motor/stack/battery power kW, auxiliary power demand W, efficiencies/power shares/gross-net multiplier dimensionless, replacements per vehicle, starts/day; all describe the 2020 baseline."
             )
             spec["proxy"] = bool(service and str(native["proxy"]).lower() == "true")
             spec["proxy boundary"] = (
@@ -182,8 +184,9 @@ def attach_provenance(datasets, family, generation, parameters):
             )
             if native["powertrain"] == "FCEV":
                 note += (
-                    "FCEV buffer power is the complement of net fuel-cell power in the model's nominal vehicle-power allocation; fuel-cell stack power includes own consumption. "
-                    "Complete pack mass equals cell mass divided by cell mass share. This accounting does not independently validate motor/inverter peak losses or sustained power delivery. "
+                    "FCEV buffer power is the complement of net fuel-cell power in the electrical supply allocation: motor shaft power divided by motor/inverter efficiency, plus auxiliary DC demand. "
+                    "The original fuel-cell/battery percentage split is retained on this electrical boundary; gross fuel-cell stack power includes its own consumption once. "
+                    "Complete pack mass equals cell mass divided by cell mass share. This accounting does not independently validate traction-cell charge/discharge limits, fuel-cell dynamics or sustained power delivery. "
                 )
                 if family == "truck":
                     note += (

@@ -1,6 +1,27 @@
 Premise vehicle inventory update: audit and reproduction strategy
 =================================================================
 
+FCEV electrical allocation, 14 October 2026
+-------------------------------------------
+
+The earlier nominal allocation is superseded by electrical sizing. The shared
+model now divides motor shaft power by the same motor/inverter efficiency
+used for driving-cycle energy, adds auxiliary DC demand, and preserves the
+fuel-cell/battery percentage split on that sum. Stack own consumption is
+applied once to obtain the gross stack rating. Cars and trucks use their
+existing annual-average auxiliary assumptions; buses include the same HVAC
+and battery-conditioning demand as their cycle model. Explicit motor-efficiency
+overrides are respected; legacy inputs without a fixed component prior use the
+existing efficiency map at rated load.
+
+Sizing remains inside the native model's existing mass-convergence loop, with
+no new Premise runtime solver. Car buffer power affects pack capacity and mass;
+heavy vehicles retain their existing energy-sizing rule. This corrects the
+electrical requirement without certifying cell power limits or fuel-cell
+dynamics. The small-truck motor-rating and paired buffer-calibration findings
+remain separate follow-ups. FCEV baseline hardware is retained in future
+Premise scenarios under the existing policy.
+
 Car PHEV calibration review, 14 October 2026
 --------------------------------------------
 

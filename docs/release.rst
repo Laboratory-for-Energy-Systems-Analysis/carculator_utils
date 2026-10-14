@@ -11,7 +11,9 @@ Recent inventory corrections in this release:
   vehicle-mileage basis and PHEV mode weighting. See :doc:`hot_emission_audit`
   for the limits of this combustion-engine ageing proxy.
 * Correct FCEV buffer power and car pack mass accounting. The net fuel-cell
-  contribution plus battery power now equals the model's vehicle power.
+  contribution plus battery power covers motor shaft output divided by the
+  motor/inverter efficiency, plus auxiliary DC loads. The original split is
+  retained on this electrical boundary, including bus HVAC demand.
   Starter sizing preserves this power in trucks and buses. Their existing
   energy-based capacities are retained; this is not a validation of cell
   peak-power capability or a new powertrain calibration.

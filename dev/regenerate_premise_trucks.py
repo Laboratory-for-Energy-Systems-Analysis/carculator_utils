@@ -104,6 +104,8 @@ def main():
         parameters = {}
         labels = [
             "power",
+            "electric motor efficiency",
+            "auxiliary power demand",
             "fuel cell power",
             "fuel cell power share",
             "fuel cell own consumption",

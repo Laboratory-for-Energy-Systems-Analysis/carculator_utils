@@ -223,6 +223,8 @@ def test_fcev_metadata_distinguishes_power_requirement_from_validation(family, m
         "fuel cell own consumption"
     ] == pytest.approx(200)
     assert "complement of net fuel-cell power" in ds["comment"]
+    assert "motor shaft power divided by motor/inverter efficiency" in ds["comment"]
+    assert "percentage split is retained on this electrical boundary" in ds["comment"]
     assert "does not independently validate" in ds["comment"]
     assert ("peak-power capability remains unverified" in ds["comment"]) == (
         family == "truck"

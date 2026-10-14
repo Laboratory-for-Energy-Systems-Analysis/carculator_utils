@@ -132,6 +132,8 @@ def main():
         model.set_all()
         params = [
             "power",
+            "electric motor efficiency",
+            "auxiliary power demand",
             "fuel cell power",
             "fuel cell power share",
             "fuel cell own consumption",
