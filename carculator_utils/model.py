@@ -738,9 +738,12 @@ class VehicleModel:
         )
 
         if "FCEV" in self.array.powertrain.values:
+            # The share refers to total vehicle power. Fuel-cell power is the
+            # gross stack rating (including its own consumption), so using it
+            # here would apply the share twice and leave a gap in net power.
             self.array.loc[
                 dict(parameter="battery power", powertrain="FCEV")
-            ] = self.array.loc[dict(parameter="fuel cell power", powertrain="FCEV")] * (
+            ] = self.array.loc[dict(parameter="power", powertrain="FCEV")] * (
                 np.array(1)
                 - self.array.loc[
                     dict(parameter="fuel cell power share", powertrain="FCEV")
@@ -754,20 +757,17 @@ class VehicleModel:
                 ]
             )
 
-            self.array.loc[
-                dict(parameter="battery BoP mass", powertrain="FCEV")
-            ] = self.array.loc[
-                dict(parameter="battery cell mass", powertrain="FCEV")
-            ] * (
-                np.array(1)
-                - self.array.loc[
+            # Cell mass share is cell mass / complete pack mass.
+            self.array.loc[dict(parameter="energy battery mass", powertrain="FCEV")] = (
+                self.array.loc[dict(parameter="battery cell mass", powertrain="FCEV")]
+                / self.array.loc[
                     dict(parameter="battery cell mass share", powertrain="FCEV")
                 ]
             )
 
-            self.array.loc[dict(parameter="energy battery mass", powertrain="FCEV")] = (
-                self.array.loc[dict(parameter="battery cell mass", powertrain="FCEV")]
-                + self.array.loc[dict(parameter="battery BoP mass", powertrain="FCEV")]
+            self.array.loc[dict(parameter="battery BoP mass", powertrain="FCEV")] = (
+                self.array.loc[dict(parameter="energy battery mass", powertrain="FCEV")]
+                - self.array.loc[dict(parameter="battery cell mass", powertrain="FCEV")]
             )
 
             self.array.loc[
@@ -1758,10 +1758,15 @@ class VehicleModel:
         # of the engine rated shaft power to start it
         # for cars, it's more 2-5%, while for trucks, it's 1-3%
 
-        self["battery power"] = 0.03 * self["combustion power"]
+        starter_power = 0.03 * self["combustion power"]
+        # Trucks and buses call this after sizing the FCEV traction buffer.
+        # A zero combustion rating must not erase that buffer's power rating.
+        self["battery power"] = xr.where(
+            self.array.powertrain == "FCEV", self["battery power"], starter_power
+        )
 
         self["battery cell mass"] += (
-            self["battery power"]
+            starter_power
             / _(self["battery cell power density"])
             * (self["combustion power share"] > 0)
         )

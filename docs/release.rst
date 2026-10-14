@@ -6,6 +6,11 @@ Release notes
 
 Recent inventory corrections in this release:
 
+* Correct FCEV buffer power and car pack mass accounting. The net fuel-cell
+  contribution plus battery power now equals the model's vehicle power.
+  Starter sizing preserves this power in trucks and buses. Their existing
+  energy-based capacities are retained; this is not a validation of cell
+  peak-power capability or a new powertrain calibration.
 * Follow actual inventory links when replacing fuel-production electricity,
   including expanded upstream supply chains. Preserve embedded electricity in
   suppliers characterized only through background coefficients.

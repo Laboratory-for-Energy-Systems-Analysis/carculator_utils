@@ -4,6 +4,11 @@ Notable user-facing changes to `carculator_utils`.
 
 ## [Unreleased]
 
+- Size the FCEV power buffer from the complement of net fuel-cell power,
+  and derive complete pack mass from its declared cell mass share. Preserve
+  FCEV traction-battery power when sizing combustion starter batteries.
+  Truck and bus energy-based buffer capacities retain their existing rule;
+  their peak-power capability is not independently validated by this fix.
 - Expose an optional `starts_per_day` model argument for car cold-start and
   hot-soak emissions. The general default remains 2.3; the 2020 Premise car
   regeneration explicitly uses the approved Swiss estimate of 1.8 starts/day.
