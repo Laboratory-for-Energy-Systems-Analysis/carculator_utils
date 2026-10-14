@@ -1,0 +1,73 @@
+{
+  "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 17:06:14) [Clang 19.1.7 ]",
+  "executable": "/private/tmp/carculator-release-20261011-t7nvnm72/verification-network/tests/bin/python",
+  "numpy": "1.26.4",
+  "model_path": "/Users/romain/GitHub/carculator/carculator/model.py",
+  "year": 2020,
+  "country": "CH",
+  "cycle": "WLTC",
+  "sizes": [
+    "Large",
+    "Large SUV",
+    "Lower medium",
+    "Medium",
+    "Medium SUV",
+    "Mini",
+    "Small",
+    "Van"
+  ],
+  "variants": [
+    [
+      "installed_baseline",
+      null,
+      null
+    ],
+    [
+      "mirai_pack_only",
+      "mirai",
+      null
+    ],
+    [
+      "nexo_pack_only",
+      "nexo",
+      null
+    ],
+    [
+      "mirai_charge_0.5_diagnostic",
+      "mirai",
+      0.5
+    ],
+    [
+      "mirai_charge_1.0_diagnostic",
+      "mirai",
+      1.0
+    ],
+    [
+      "mirai_direct_aux_only_diagnostic",
+      "mirai",
+      1000000.0
+    ]
+  ],
+  "installed_hashes": {
+    "/Users/romain/GitHub/premise/premise/data/additional_inventories/lci-pass_cars.parameters.csv": "b36411835cc1179af1357ebac839a85e60a80a91f0cba94b6cd3ce3e221e5af8",
+    "/Users/romain/GitHub/premise/premise/data/additional_inventories/lci-pass_cars.xlsx": "ff2f0e3b266063ab013fad173baf874b6c0f92310fb02022fd7794802ee55db5"
+  },
+  "source_hashes": {
+    "/Users/romain/GitHub/carculator_utils/dev/audit_car_fcev_buffer.py": "49dc65a40b33242e4c6265071d24d20c72ce3a304210c08de4f097ac4532fb9a",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/model.py": "105b6465c7008de25994b04945049e1f91f00cf0a49495d82de5362670300b48",
+    "/Users/romain/GitHub/carculator_utils/carculator_utils/energy_consumption.py": "92f955dfcd14d5a8733500d92c8477e1b60e59e0d244ec16409d79f417fab19f",
+    "/Users/romain/GitHub/carculator/carculator/model.py": "3ed26b20542f996e04181c1524ea180ea20bd729d467bcf5a0b00aa336d87200",
+    "/Users/romain/GitHub/carculator/carculator/data/default_parameters.json": "2b5290b70a7f47ee91926370c713a82b4c4f88373975bf051ee20a22810ca609"
+  },
+  "commits": {
+    "carculator": "c6e00104b22c03f46e61b51d33acfe374da6a122",
+    "carculator_utils": "6df503fede146b6f10a05c380c18cae150ceeb5a",
+    "premise": "31a5d6611b62fd652cf7bff55074c02c6d4cf44c"
+  },
+  "templates_verified": 8,
+  "independent_model_checks": 48,
+  "inventories_changed": false,
+  "runtime_changed": false,
+  "databases_rebuilt": false,
+  "qualification": "Power-scaled manufacturer packs are unapproved sensitivities. Charging ratios are arbitrary diagnostics, not published limits. No SOC, thermal, ramp, calendar or cycling certification."
+}

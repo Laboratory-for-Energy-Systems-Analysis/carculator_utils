@@ -661,3 +661,18 @@ Source commits are ``f55b6ec`` (utils), ``2dbccc9`` (truck) and ``93d918f``
 thermal or ageing certification. The passenger-car FCEV buffer review and the
 final broader legacy-vehicle EF comparison remain separate outstanding items;
 the previously skipped PHEV cycling review remains skipped.
+
+The passenger-car FCEV buffer audit now reproduces all eight installed packs
+and verifies their capacity-market purchases. Their joint mass/energy/power
+calibration still lacks a matched source. An offline, power-scaled late-2020
+Mirai reference gives the Medium car 1.60 kWh/57.3 kg versus 4.46 kWh/26.6 kg,
+with 1.05% higher hydrogen demand; the Nexo cross-check is similar. Adoption
+of the reference awaits the user's scientific-assumption decision. A separate
+manufacturer charging limit has not been established; arbitrary charge/discharge
+ratios were tested only as sensitivities. All 48 model cases pass independent
+energy/mass checks and 89 existing diagnostic/physics tests pass. No defaults,
+installed workbooks or scenario databases changed. See the
+`car FCEV buffer audit <../premise_car_fcev_buffer_audit_20261014/report.html>`_.
+The user subsequently approved the scaled Mirai pack proxy, retaining the MIX
+capacity market and its disclosed physical-mass mismatch. Implementation is
+the next step; no charging limit is inferred from the discharge rating.

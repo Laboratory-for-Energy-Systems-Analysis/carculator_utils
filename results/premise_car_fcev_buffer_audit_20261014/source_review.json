@@ -1,0 +1,40 @@
+{
+  "review_date": "2026-10-14",
+  "sources": [
+    {
+      "file": "mirai_2020.html",
+      "url": "https://newsroom.toyota.eu/introducing-the-all-new-toyota-mirai/",
+      "date": "2020-11-30",
+      "facts": {
+        "nominal_voltage_V": 310.8,
+        "capacity_Ah": 4.0,
+        "nominal_energy_kWh_derived": 1.2432,
+        "complete_pack_kg": 44.6,
+        "discharge_kW": 31.5,
+        "discharge_seconds": 10
+      },
+      "limits": "No separate charge-power, continuous-discharge or SOC/temperature envelope in this announcement.",
+      "sha256": "396ee77b8d2ed02d08b43b419b143dbd73ce06d65f7b09a4ae68d3eb63562a26"
+    },
+    {
+      "file": "nexo_2020.pdf",
+      "url": "https://www.hyundai.com/content/dam/hyundai/au/en/documents/NEXO_Emergency_Response_Guide_Australia_2020.pdf",
+      "page": "Printed 9; PDF page 12",
+      "facts": {
+        "nominal_voltage_V": 240,
+        "capacity_Ah": 6.5,
+        "nominal_energy_kWh": 1.56,
+        "complete_pack_kg": 51.2
+      },
+      "limits": "Australian variant has a 113 kW motor; no charge-power limit. The 40 kW battery output comes separately from Hyundai's 2018 launch specification, which lists a 120 kW motor and warns of market differences.",
+      "sha256": "6b1a065699249241b0ef65362847e007aac4c46332982012600354e051491fbd"
+    },
+    {
+      "file": "mirai_2024_tests.pdf",
+      "url": "https://uwaterloo.ca/waterloo-institute-sustainable-energy/sites/default/files/uploads/documents/machine-learning-modeling-for-fuel-cell-battery-hybrid-power-system-dynamics.pdf",
+      "doi": "10.1016/j.egyai.2024.100415",
+      "limits": "Measured 2021 Mirai operating traces and SOC/thermal dependence, not a manufacturer charge-acceptance envelope. Not used to invent a continuous charging rating.",
+      "sha256": "23ea445229f23532a0fe24c3245e652e9cc0a2e862b3e1fc0b7fd2651f8d7adb"
+    }
+  ]
+}

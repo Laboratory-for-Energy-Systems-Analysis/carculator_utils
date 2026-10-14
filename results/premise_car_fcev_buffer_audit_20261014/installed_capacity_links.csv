@@ -1,0 +1,9 @@
+size,name,lifetime_capacity_kwh,capacity_link_pass
+Large,"Passenger car, fuel cell electric, Large",5.106257915496826,True
+Large SUV,"Passenger car, fuel cell electric, Large SUV",5.632042407989502,True
+Lower medium,"Passenger car, fuel cell electric, Lower medium",3.304361343383789,True
+Medium,"Passenger car, fuel cell electric, Medium",4.462804794311523,True
+Medium SUV,"Passenger car, fuel cell electric, Medium SUV",3.7748453617095947,True
+Mini,"Passenger car, fuel cell electric, Mini",1.8443341255187988,True
+Small,"Passenger car, fuel cell electric, Small",2.622405767440796,True
+Van,"Passenger car, fuel cell electric, Van",3.716897487640381,True

@@ -1,0 +1,21 @@
+{
+  "mirai": {
+    "nominal_kwh": 1.2432,
+    "pack_kg": 44.6,
+    "discharge_kw": 31.5,
+    "duration_seconds": 10,
+    "source": "Toyota second-generation Mirai announcement, 30 November 2020",
+    "url": "https://newsroom.toyota.eu/introducing-the-all-new-toyota-mirai/",
+    "qualification": "Late-2020 launch; charging and continuous output unspecified."
+  },
+  "nexo": {
+    "nominal_kwh": 1.56,
+    "pack_kg": 51.2,
+    "discharge_kw": 40,
+    "duration_seconds": null,
+    "source": "Hyundai 2020 Australian emergency guide and 2018 launch specification",
+    "url": "https://www.hyundai.com/content/dam/hyundai/au/en/documents/NEXO_Emergency_Response_Guide_Australia_2020.pdf",
+    "power_url": "https://www.hyundai.news/uk/articles/press-releases/nexo-the-next-generation-fuel-cell-vehicle-from-hyundai.html",
+    "qualification": "Power duration and charge limit unspecified; market variants differ."
+  }
+}
