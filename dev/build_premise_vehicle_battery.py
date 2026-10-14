@@ -38,6 +38,7 @@ def main():
     parser.add_argument(
         "--inventory-installation", type=Path, action="append", default=[]
     )
+    parser.add_argument("--write-brightway", action="store_true")
     args = parser.parse_args()
     work = args.workspace.resolve()
     output = args.output.resolve()
@@ -195,6 +196,23 @@ def main():
     assert meta["iam_files"] == expected_iam, "Restored IAM provenance mismatch."
     (output / f"build_{args.year}.json").write_text(json.dumps(meta, indent=2) + "\n")
     report.raise_for_errors()
+    if args.write_brightway:
+        from verify_premise_vehicle_provenance import verify_saved
+
+        name = f"premise-remind-SSP2-NPi-{args.year}-{work.name}"
+        if name in bd.databases:
+            raise ValueError(f"Refusing to overwrite {name}")
+        expected = {
+            (d["name"], d["reference product"], d["location"], d["unit"]): d
+            for d in data
+            if "vehicle inventory provenance" in d or "inventory provenance" in d
+        }
+        ndb.write_db_to_brightway(name=name)
+        saved = verify_saved(name, expected, args.year)
+        saved.update(database=name, brightway_directory=str(bd.projects.dir))
+        (output / f"saved_{args.year}.json").write_text(
+            json.dumps(saved, indent=2) + "\n"
+        )
     print("BUILD COMPLETE", args.year, meta["activities"], flush=True)
 
 

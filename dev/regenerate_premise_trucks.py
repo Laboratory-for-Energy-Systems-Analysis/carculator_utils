@@ -29,6 +29,7 @@ from regenerate_premise_cars import (
 )
 from premise_vehicle_battery_metadata import attach_specification, model_specification
 from premise_vehicle_lpg_metadata import attach_lpg_policy
+from premise_vehicle_provenance import attach_legacy_provenance, enrich_export
 
 ROOT = Path(__file__).resolve().parents[2]
 CYCLE = "Regional delivery"
@@ -482,7 +483,6 @@ def main():
         assert identity(prod[0]) == identity(ds)
     assert len({identity(d) for d in datasets}) == len(datasets)
     path = args.output / "lci-trucks.xlsx"
-    write_workbook(path, datasets)
     # Other supplementary inventories consume original truck component names.
     # Keep those recipes, with their original 3.7 import version, in a separate
     # compatibility workbook. New trucks use their own qualified components.
@@ -492,8 +492,12 @@ def main():
         if not d["name"].startswith(("transport,", "lorry production,"))
     ]
     legacy_path = args.output / "lci-truck-legacy-components.xlsx"
-    write_workbook(legacy_path, legacy_components)
-    (args.output / "adapted.json").write_text(json.dumps(datasets, indent=2) + "\n")
+    original_summary = json.loads((audit / "summary.json").read_text())
+    original_hash = original_summary["truck"]["sha256"]
+    attach_legacy_provenance(
+        legacy_components, {identity(d): d for d in old.values()}, original_hash
+    )
+    write_workbook(legacy_path, legacy_components, database_name="lci-truck-legacy-components")
     write_csv(args.output / "noise_audit.csv", noise)
     write_csv(args.output / "vehicle_parameters.csv", balance)
     source_files = [
@@ -547,7 +551,7 @@ def main():
         legacy_components_version="3.7",
         legacy_components_sha256=hashlib.sha256(legacy_path.read_bytes()).hexdigest(),
         noise_exchanges=len(noise),
-        sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+        sha256=None,
         export_version="3.12",
         commits={
             p: subprocess.check_output(
@@ -559,6 +563,10 @@ def main():
             str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in source_files
         },
     )
+    enrich_export(datasets, "truck", ROOT, args.output, record, balance, args.reuse_raw)
+    write_workbook(path, datasets, database_name="lci-trucks")
+    record["sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+    (args.output / "adapted.json").write_text(json.dumps(datasets, indent=2) + "\n")
     (args.output / "provenance.json").write_text(json.dumps(record, indent=2) + "\n")
     print(json.dumps(record, indent=2), flush=True)
 

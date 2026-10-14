@@ -365,6 +365,16 @@ coverage.
 10. Complete provenance and preserve dataset identity
 -----------------------------------------------------
 
+**Completed 14 October 2026.** The 289 current datasets now carry model,
+publication and source-version metadata; the 26 legacy components recover their
+own original references. Truck/legacy database headers are corrected, companion
+parameter/noise hashes match, and baseline comments are distinguished from final
+scenario specifications. 328 Premise and four adapter tests pass. Full encrypted
+2020/2050 builds and actual isolated Brightway readback preserve metadata on
+965/1,186 activities and verify 968 operating-energy links per build. Both have
+zero errors and unchanged warnings; car/truck EF 3.1 smoke checks pass. See the
+`provenance report <../premise_vehicle_provenance_20261014/report.html>`_.
+
 **Confirmed defects.** All 289 installed car/truck datasets lack structured
 publication/source fields or DOI comments; 34 car service/production datasets
 lack the model name. Truck writers also inherit a car database header.
@@ -524,5 +534,6 @@ routes; 70 focused Premise regressions pass. Source/inventory commits are
 Step 8's battery sizing, fixed-utilization BEV truck payload and Large Car
 efficiency follow-ups are complete, as recorded above. Future fuel-tank sizing
 was skipped by the user. Step 9's explicit LPG fallback is now complete.
-Step 10, general dataset provenance and identity, is next; steps 10--12 and
-the previously identified broader PHEV battery-use question remain open.
+Step 10, general dataset provenance and identity, is complete. Step 11, the
+physical/emissions plausibility review, is next. Steps 11--12 and the previously
+identified broader PHEV battery-use question remain open.

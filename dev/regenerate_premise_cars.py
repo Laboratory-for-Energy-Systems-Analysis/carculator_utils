@@ -15,7 +15,6 @@ import sys
 from pathlib import Path
 
 import numpy as np
-import openpyxl
 import yaml
 
 from audit_premise_vehicle_workbooks import identity, read_workbook, write_csv
@@ -24,7 +23,9 @@ from premise_vehicle_battery_metadata import (
     attach_specification,
     model_specification,
 )
-from premise_vehicle_lpg_metadata import SPEC_KEY as LPG_POLICY_KEY, attach_lpg_policy
+from premise_vehicle_lpg_metadata import attach_lpg_policy
+from premise_vehicle_excel import write_workbook
+from premise_vehicle_provenance import enrich_export
 
 COLD_START_SOURCE_NOTE = (
     "the original LCA model, carculator, uses emission factors for cold start, "
@@ -81,50 +82,6 @@ def clean(dataset):
 def relabel(item, target):
     for field in ("name", "reference product", "location", "unit"):
         item[field] = target[field]
-
-
-def write_workbook(path, datasets):
-    workbook = openpyxl.Workbook()
-    sheet = workbook.active
-    sheet.title = "test"
-    sheet.append(["Database", "lci-pass_cars"])
-    sheet.append([])
-    fields = [
-        "name",
-        "amount",
-        "location",
-        "unit",
-        "categories",
-        "type",
-        "reference product",
-        "comment",
-    ]
-    for dataset in datasets:
-        sheet.append(["Activity", dataset["name"]])
-        for key in ("reference product", "location", "unit", "comment"):
-            sheet.append([key, dataset.get(key)])
-        for metadata_key in (HYDROGEN_COMPRESSION_KEY, BATTERY_SIZING_KEY, LPG_POLICY_KEY):
-            if metadata_key not in dataset:
-                continue
-            specification = dataset[metadata_key]
-            sheet.append(
-                [
-                    metadata_key,
-                    (
-                        specification
-                        if isinstance(specification, str)
-                        else json.dumps(specification)
-                    ),
-                ]
-            )
-        sheet.append(["production amount", 1])
-        sheet.append(["type", "process"])
-        sheet.append(["Exchanges"])
-        sheet.append(fields)
-        for exchange in dataset["exchanges"]:
-            sheet.append([exchange.get(field) for field in fields])
-        sheet.append([])
-    workbook.save(path)
 
 
 def main():
@@ -485,8 +442,6 @@ def main():
         ) == identity(ds)
     assert len({identity(d) for d in datasets}) == len(datasets)
     path = args.output / "lci-pass_cars.xlsx"
-    write_workbook(path, datasets)
-    (args.output / "adapted.json").write_text(json.dumps(datasets, indent=2) + "\n")
     write_csv(args.output / "noise_audit.csv", noise)
     write_csv(args.output / "vehicle_parameters.csv", balance)
     record = dict(
@@ -522,7 +477,7 @@ def main():
         production_count=len(productions),
         auxiliaries=[d["name"] for d in auxiliaries.values()],
         noise_exchanges=len(noise),
-        sha256=hashlib.sha256(path.read_bytes()).hexdigest(),
+        sha256=None,
         export_version="3.12",
         commits={
             p: subprocess.check_output(
@@ -543,6 +498,10 @@ def main():
             )
         },
     )
+    enrich_export(datasets, "car", root, args.output, record, balance, args.reuse_raw)
+    write_workbook(path, datasets, database_name="lci-pass_cars")
+    record["sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+    (args.output / "adapted.json").write_text(json.dumps(datasets, indent=2) + "\n")
     (args.output / "provenance.json").write_text(json.dumps(record, indent=2) + "\n")
     print(json.dumps(record, indent=2))
 
