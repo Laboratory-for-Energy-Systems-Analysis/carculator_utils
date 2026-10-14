@@ -158,6 +158,17 @@ def main():
                 ]
                 # The shared model now reports the full physical PHEV pack.
                 p["nominal battery capacity kWh"] = p["electric energy stored"]
+                if power == "FCEV":
+                    profile = model.fuel_cell_battery_profile
+                    scale = p["electric energy stored"] / profile.nominal_kwh
+                    p["FCEV continuous charge kW"] = scale * profile.charge_kw
+                    p["FCEV continuous discharge kW"] = scale * profile.discharge_kw
+                    p["FCEV 10s discharge kW"] = scale * profile.discharge_10s_kw
+                    p["FCEV power minimum capacity kWh"] = float(
+                        model.fuel_cell_battery_capacity_requirement().sel(
+                            size=size, year=2020, value=0
+                        )
+                    )
                 p["HEV discharged stored kWh per km"] = (
                     model.hybrid_buffer_results[
                         (size, 2020, model.array.value.values[0])
@@ -535,18 +546,35 @@ def main():
     source_files = [
         ROOT / "carculator_truck/carculator_truck/model.py",
         ROOT / "carculator_truck/carculator_truck/hybrid_battery.py",
+        ROOT / "carculator_truck/carculator_truck/fuel_cell_battery.py",
         ROOT / "carculator_truck/carculator_truck/inventory.py",
         ROOT / "carculator_truck/carculator_truck/data/extra_parameters.json",
         ROOT / "carculator_truck/carculator_truck/data/default_parameters.json",
         ROOT / "carculator_truck/carculator_truck/data/payloads.yaml",
         ROOT / "carculator_utils/carculator_utils/hot_emissions.py",
         ROOT / "carculator_utils/carculator_utils/model.py",
+        ROOT / "carculator_utils/carculator_utils/energy_consumption.py",
         Path(__file__),
         Path(__file__).with_name("premise_vehicle_battery_metadata.py"),
     ]
     from carculator_truck.hybrid_battery import HybridBatteryProfile, PROFILE_SOURCE
+    from carculator_truck.fuel_cell_battery import (
+        FuelCellBatteryProfile,
+        PROFILE_SOURCE as FCEV_PROFILE_SOURCE,
+    )
 
     record = dict(
+        fcev_battery_policy={
+            "profile": asdict(FuelCellBatteryProfile()),
+            "source": FCEV_PROFILE_SOURCE,
+            "power_boundary": "Continuous charging cap after direct auxiliary use; instantaneous cycle discharge bounded by the continuous RMS rating, without repeated pulse assumptions. Rated motor buffer also bounded by the 10-second discharge rating.",
+            "sizing": "Maximum of inherited 20 kWh + 6% H2 energy floor, cycle continuous-discharge requirement and rated short-pulse requirement. Explicit capacity retained and validated.",
+            "mass_boundary": "Complete pack 238 kg per 25 kWh; 70% cell allocation and NMC-622 manufacture are retained proxies, not measured AKASOL cell specifications.",
+            "limits": "Conditioned-pack proxy; no electrothermal, ageing, SOC-window or fuel-cell ramp validation. Generic chemistry costs and replacement assumptions retained.",
+            "lca_proxy": "MIX capacity market per nominal kWh including replacements; physical mass mismatch documented without mass-equivalence correction.",
+            "future_hardware": "Premise retains the regenerated 2020 FCEV hardware; no runtime cycle simulation.",
+            "approved_on": "2026-10-14",
+        },
         hev_battery_policy={
             "profile": asdict(HybridBatteryProfile()),
             "source": PROFILE_SOURCE,

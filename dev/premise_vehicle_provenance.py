@@ -34,6 +34,10 @@ BASELINE_FIELDS = (
     "fuel cell power share",
     "fuel cell own consumption",
     "battery power",
+    "FCEV continuous charge kW",
+    "FCEV continuous discharge kW",
+    "FCEV 10s discharge kW",
+    "FCEV power minimum capacity kWh",
     "kilometers per year",
     "lifetime kilometers",
     "average passengers",
@@ -111,6 +115,8 @@ def generation_manifest(family, root, output, record, generated_on):
         calibration = root / "carculator/carculator/data/phev_2020_calibration.json"
         if calibration.exists():
             manifest["PHEV battery calibration"] = json.loads(calibration.read_text())
+    if family == "truck" and record.get("fcev_battery_policy"):
+        manifest["FCEV battery profile"] = copy.deepcopy(record["fcev_battery_policy"])
     return manifest
 
 
@@ -189,7 +195,28 @@ def attach_provenance(datasets, family, generation, parameters):
                     "The original fuel-cell/battery percentage split is retained on this electrical boundary; gross fuel-cell stack power includes its own consumption once. "
                     "Complete pack mass equals cell mass divided by cell mass share. This accounting does not independently validate traction-cell charge/discharge limits, fuel-cell dynamics or sustained power delivery. "
                 )
-                if family == "truck":
+                if family == "truck" and generation.get("FCEV battery profile"):
+                    profile = generation["FCEV battery profile"]
+                    spec["FCEV battery profile"] = copy.deepcopy(profile)
+                    note += (
+                        "Documented FCEV traction-pack proxy: "
+                        + profile["source"]
+                        + ". "
+                        + profile["sizing"]
+                        + " "
+                        + profile["power_boundary"]
+                        + " "
+                        + profile["mass_boundary"]
+                        + " "
+                        + profile["limits"]
+                        + " "
+                        + profile["lca_proxy"]
+                        + " "
+                        + profile["future_hardware"]
+                        + " "
+                        "Battery power records the required DC buffer, not a measured cell capability. "
+                    )
+                elif family == "truck":
                     note += (
                         "The traction buffer retains the original energy-sizing assumption: 20 kWh plus 6% of hydrogen chemical energy. "
                         "The inherited lead-acid starter cell power-density input is not a validated lithium-ion traction rating and does not determine this final energy-sized pack. "
