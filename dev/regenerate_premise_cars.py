@@ -16,15 +16,14 @@ from pathlib import Path
 
 import numpy as np
 import yaml
-
 from audit_premise_vehicle_workbooks import identity, read_workbook, write_csv
+from premise_vehicle_battery_metadata import SPEC_KEY as BATTERY_SIZING_KEY
 from premise_vehicle_battery_metadata import (
-    SPEC_KEY as BATTERY_SIZING_KEY,
     attach_specification,
     model_specification,
 )
-from premise_vehicle_lpg_metadata import attach_lpg_policy
 from premise_vehicle_excel import write_workbook
+from premise_vehicle_lpg_metadata import attach_lpg_policy
 from premise_vehicle_provenance import enrich_export
 
 COLD_START_SOURCE_NOTE = (
@@ -33,6 +32,36 @@ COLD_START_SOURCE_NOTE = (
 )
 
 HYDROGEN_COMPRESSION_KEY = "hydrogen tank compression"
+
+
+def fcev_battery_policy():
+    """Record the approved pack reference and its unverified charging boundary."""
+    from dataclasses import asdict
+
+    from carculator.fuel_cell_battery import PROFILE_SOURCE, FuelCellBatteryProfile
+
+    return {
+        "source": PROFILE_SOURCE,
+        "reference": asdict(FuelCellBatteryProfile()),
+        "sizing": "Nominal energy and complete pack mass scale together with the required DC buffer power divided by 31.5 kW, inside native mass/power sizing.",
+        "power_boundary": "Manufacturer discharge rating is for 10 seconds; no continuous discharge or charging limit is inferred.",
+        "mass_boundary": "Complete pack 44.6 kg per 1.2432 kWh; the existing cell fraction and NMC-622 manufacture are retained allocation proxies, not measured Mirai cell specifications.",
+        "limits": "Regenerative charging remains unconstrained by a battery-specific rating. SOC, fuel-cell ramp response, thermal limits and battery ageing are not certified by this calibration.",
+        "lca_proxy": "Approved MIX capacity market uses nominal kWh, including replacements and end of life, with a documented physical mass mismatch: a smaller kWh purchase does not establish less material in the heavier high-power pack.",
+        "future_hardware": "Premise retains complete 2020 FCEV hardware in future scenarios; fuel demand follows the scenario efficiency trend.",
+        "approved_on": "2026-10-14",
+    }
+
+
+def validate_fcev_battery(parameters):
+    """Reject stale generic-density FCEV exports before attaching new provenance."""
+    reference = fcev_battery_policy()["reference"]
+    scale = parameters["battery power"] / reference["discharge_10s_kw"]
+    np.testing.assert_allclose(
+        [parameters["electric energy stored"], parameters["energy battery mass"]],
+        [scale * reference["nominal_kwh"], scale * reference["pack_kg"]],
+        rtol=3e-6,
+    )
 
 
 def validate_phev_battery(parameters):
@@ -198,6 +227,8 @@ def main():
     for recipe in native:
         if recipe["model_powertrain"].startswith("PHEV-"):
             validate_phev_battery(parameters[recipe["name"]])
+        if recipe["model_powertrain"] == "FCEV":
+            validate_fcev_battery(parameters[recipe["name"]])
     assert all(
         p.get("starts per day", 2.3) == args.starts_per_day for p in parameters.values()
     ), "Raw inventories use a different starts-per-day assumption"
@@ -453,6 +484,7 @@ def main():
     write_csv(args.output / "noise_audit.csv", noise)
     write_csv(args.output / "vehicle_parameters.csv", balance)
     record = dict(
+        fcev_battery_policy=fcev_battery_policy(),
         phev_battery_replacement_policy={
             "distance_km": 200000,
             "distance_basis": "total vehicle distance, not electric-mode distance",
@@ -499,6 +531,7 @@ def main():
                 "carculator_utils/carculator_utils/hot_emissions.py",
                 "carculator_utils/carculator_utils/model.py",
                 "carculator/carculator/model.py",
+                "carculator/carculator/fuel_cell_battery.py",
                 "carculator/carculator/data/default_parameters.json",
                 "carculator/carculator/data/phev_2020_calibration.json",
                 "carculator_utils/carculator_utils/data/emission_factors/provenance.json",

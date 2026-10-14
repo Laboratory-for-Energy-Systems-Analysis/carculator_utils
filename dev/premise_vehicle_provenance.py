@@ -115,7 +115,7 @@ def generation_manifest(family, root, output, record, generated_on):
         calibration = root / "carculator/carculator/data/phev_2020_calibration.json"
         if calibration.exists():
             manifest["PHEV battery calibration"] = json.loads(calibration.read_text())
-    if family == "truck" and record.get("fcev_battery_policy"):
+    if record.get("fcev_battery_policy"):
         manifest["FCEV battery profile"] = copy.deepcopy(record["fcev_battery_policy"])
     return manifest
 
@@ -195,7 +195,7 @@ def attach_provenance(datasets, family, generation, parameters):
                     "The original fuel-cell/battery percentage split is retained on this electrical boundary; gross fuel-cell stack power includes its own consumption once. "
                     "Complete pack mass equals cell mass divided by cell mass share. This accounting does not independently validate traction-cell charge/discharge limits, fuel-cell dynamics or sustained power delivery. "
                 )
-                if family == "truck" and generation.get("FCEV battery profile"):
+                if generation.get("FCEV battery profile"):
                     profile = generation["FCEV battery profile"]
                     spec["FCEV battery profile"] = copy.deepcopy(profile)
                     note += (

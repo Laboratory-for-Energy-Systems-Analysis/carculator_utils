@@ -94,6 +94,38 @@ def test_component_source_is_not_replaced_by_vehicle_publication():
     assert "10.1016/j.rser.2022.112475" in ds["model publication"]
 
 
+def test_car_fcev_profile_preserves_reference_and_unverified_charging():
+    module = load("premise_vehicle_provenance")
+    ds = dict(name="FCEV service", unit="kilometer", location="RER", exchanges=[])
+    profile = {
+        "source": "Toyota 2020: 1.2432 kWh, 44.6 kg, 31.5 kW for 10 seconds",
+        "sizing": "Scale the paired pack with buffer power.",
+        "power_boundary": "Discharge for 10 seconds only.",
+        "mass_boundary": "Complete pack mass.",
+        "limits": "Charging remains unconstrained.",
+        "lca_proxy": "MIX capacity market; physical mass mismatch.",
+        "future_hardware": "Retain the 2020 hardware.",
+    }
+    generation = {
+        "libraries": {
+            "carculator": {"version": "1.9.7"},
+            "carculator_utils": {"version": "1.3.7"},
+        },
+        "FCEV battery profile": profile,
+    }
+    module.attach_provenance(
+        [ds],
+        "car",
+        generation,
+        [dict(name=ds["name"], size="Medium", powertrain="FCEV", proxy=False)],
+    )
+    assert ds[module.KEY]["FCEV battery profile"] == profile
+    for value in profile.values():
+        assert value in ds["comment"]
+    profile["source"] = "modified caller dictionary"
+    assert ds[module.KEY]["FCEV battery profile"]["source"] != profile["source"]
+
+
 def test_phev_pack_calibration_retains_sources_and_proxy_boundary():
     module = load("premise_vehicle_provenance")
     ds = dict(name="PHEV service", unit="kilometer", location="RER", exchanges=[])
