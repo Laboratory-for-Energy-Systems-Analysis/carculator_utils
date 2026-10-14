@@ -1,0 +1,256 @@
+{
+  "184-2020-battery cell mass share, NMC-622": {
+    "name": "battery cell mass share, NMC-622",
+    "year": 2020,
+    "powertrain": [
+      "ICEV-g",
+      "PHEV-d",
+      "PHEV-e",
+      "HEV-p",
+      "PHEV-c-p",
+      "BEV",
+      "PHEV-c-d",
+      "ICEV-d",
+      "ICEV-p",
+      "FCEV",
+      "HEV-d",
+      "PHEV-p"
+    ],
+    "sizes": [
+      "Small",
+      "Micro",
+      "Medium",
+      "Large",
+      "Large SUV",
+      "Lower medium",
+      "Van",
+      "Medium SUV",
+      "Mini"
+    ],
+    "amount": 0.7,
+    "loc": 0.7,
+    "kind": "distribution",
+    "uncertainty_type": 5,
+    "category": "Energy Storage",
+    "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
+    "comment": "",
+    "minimum": 0.65,
+    "maximum": 0.73
+  },
+  "224-2020-battery cell energy density, NMC-622": {
+    "name": "battery cell energy density, NMC-622",
+    "year": 2020,
+    "powertrain": [
+      "ICEV-g",
+      "PHEV-d",
+      "PHEV-e",
+      "HEV-p",
+      "PHEV-c-p",
+      "BEV",
+      "PHEV-c-d",
+      "ICEV-d",
+      "ICEV-p",
+      "FCEV",
+      "HEV-d",
+      "PHEV-p"
+    ],
+    "sizes": [
+      "Small",
+      "Micro",
+      "Medium",
+      "Large",
+      "Large SUV",
+      "Lower medium",
+      "Van",
+      "Medium SUV",
+      "Mini"
+    ],
+    "amount": 0.24,
+    "loc": 0.24,
+    "kind": "distribution",
+    "uncertainty_type": 5,
+    "category": "Energy Storage",
+    "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+    "comment": "",
+    "minimum": 0.22799999999999998,
+    "maximum": 0.252
+  },
+  "235-2020-battery cell mass share": {
+    "name": "battery cell mass share",
+    "year": 2020,
+    "powertrain": [
+      "ICEV-g",
+      "PHEV-d",
+      "PHEV-e",
+      "HEV-p",
+      "PHEV-c-p",
+      "BEV",
+      "PHEV-c-d",
+      "ICEV-d",
+      "ICEV-p",
+      "FCEV",
+      "HEV-d",
+      "PHEV-p"
+    ],
+    "sizes": [
+      "Small",
+      "Micro",
+      "Medium",
+      "Large",
+      "Large SUV",
+      "Lower medium",
+      "Van",
+      "Medium SUV",
+      "Mini"
+    ],
+    "amount": 0.7,
+    "loc": 0.7,
+    "kind": "distribution",
+    "uncertainty_type": 5,
+    "category": "Energy Storage",
+    "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
+    "comment": "",
+    "minimum": 0.65,
+    "maximum": 0.73
+  },
+  "819-2020-energy battery mass": {
+    "name": "energy battery mass",
+    "year": 2020,
+    "powertrain": [
+      "PHEV-e"
+    ],
+    "sizes": [
+      "Small",
+      "Micro",
+      "Mini"
+    ],
+    "amount": 125.99999999999999,
+    "loc": 125.99999999999999,
+    "kind": "distribution",
+    "uncertainty_type": 5,
+    "category": "Energy Storage",
+    "source": "Manufacturers' data (Toyota) and https://theicct.org/sites/default/files/publications/PHEV-white%20paper-sept2020-0.pdf",
+    "comment": "",
+    "minimum": 100.8,
+    "maximum": 151.2
+  },
+  "822-2020-battery DoD": {
+    "name": "battery DoD",
+    "year": 2020,
+    "powertrain": [
+      "PHEV-e",
+      "BEV"
+    ],
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "Large SUV",
+      "Lower medium",
+      "Van",
+      "Medium SUV",
+      "Mini",
+      "Micro"
+    ],
+    "amount": 0.8,
+    "loc": 0.8,
+    "kind": "distribution",
+    "uncertainty_type": 5,
+    "category": "Energy Storage",
+    "source": "Own assumption",
+    "comment": "",
+    "minimum": 0.75,
+    "maximum": 0.85
+  },
+  "848-2020-battery cell energy density": {
+    "name": "battery cell energy density",
+    "year": 2020,
+    "powertrain": [
+      "PHEV-e",
+      "PHEV-c-p",
+      "BEV",
+      "PHEV-c-d",
+      "FCEV"
+    ],
+    "sizes": [
+      "Small",
+      "Medium",
+      "Large",
+      "Large SUV",
+      "Lower medium",
+      "Van",
+      "Medium SUV",
+      "Mini",
+      "Micro"
+    ],
+    "amount": 0.2,
+    "loc": 0.2,
+    "kind": "distribution",
+    "uncertainty_type": 5,
+    "category": "Energy Storage",
+    "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+    "comment": "",
+    "minimum": 0.18000000000000002,
+    "maximum": 0.22000000000000003
+  },
+  "949-2020-energy battery mass": {
+    "name": "energy battery mass",
+    "year": 2020,
+    "powertrain": [
+      "PHEV-e"
+    ],
+    "sizes": [
+      "Medium"
+    ],
+    "amount": 182,
+    "loc": 182,
+    "kind": "distribution",
+    "uncertainty_type": 5,
+    "category": "Energy Storage",
+    "source": "Manufacturers' data (Toyota) and https://theicct.org/sites/default/files/publications/PHEV-white%20paper-sept2020-0.pdf",
+    "comment": "",
+    "minimum": 145.6,
+    "maximum": 218.39999999999998
+  },
+  "956-2020-energy battery mass": {
+    "name": "energy battery mass",
+    "year": 2020,
+    "powertrain": [
+      "PHEV-e"
+    ],
+    "sizes": [
+      "Large",
+      "Large SUV",
+      "Van",
+      "Medium SUV"
+    ],
+    "amount": 251.99999999999997,
+    "loc": 251.99999999999997,
+    "kind": "distribution",
+    "uncertainty_type": 5,
+    "category": "Energy Storage",
+    "source": "Manufacturers' data (Toyota) and https://theicct.org/sites/default/files/publications/PHEV-white%20paper-sept2020-0.pdf",
+    "comment": "",
+    "minimum": 201.6,
+    "maximum": 302.4
+  },
+  "969-2020-energy battery mass": {
+    "name": "energy battery mass",
+    "year": 2020,
+    "powertrain": [
+      "PHEV-e"
+    ],
+    "sizes": [
+      "Lower medium"
+    ],
+    "amount": 154,
+    "loc": 154,
+    "kind": "distribution",
+    "uncertainty_type": 5,
+    "category": "Energy Storage",
+    "source": "Manufacturers' data (Toyota) and https://theicct.org/sites/default/files/publications/PHEV-white%20paper-sept2020-0.pdf",
+    "comment": "",
+    "minimum": 123.19999999999999,
+    "maximum": 184.79999999999998
+  }
+}

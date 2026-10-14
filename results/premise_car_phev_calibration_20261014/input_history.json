@@ -1,0 +1,142 @@
+[
+  {
+    "revision": "bf2abf2",
+    "commit": "bf2abf25ca8578501d6abe3055a33e56cbfda5bf",
+    "mass inputs": [
+      {
+        "sizes": [
+          "Mini",
+          "Small",
+          "Micro"
+        ],
+        "mass kg": 125.99999999999999
+      },
+      {
+        "sizes": [
+          "Lower medium"
+        ],
+        "mass kg": 154
+      },
+      {
+        "sizes": [
+          "Medium"
+        ],
+        "mass kg": 182
+      },
+      {
+        "sizes": [
+          "Large",
+          "Van",
+          "Medium SUV",
+          "Large SUV"
+        ],
+        "mass kg": 251.99999999999997
+      }
+    ]
+  },
+  {
+    "revision": "463c8be",
+    "commit": "463c8be453736e6a47fcb1bd51d63e8009a1d924",
+    "mass inputs": [
+      {
+        "sizes": [
+          "Medium SUV",
+          "Large",
+          "Large SUV",
+          "Van"
+        ],
+        "mass kg": 251.99999999999997
+      },
+      {
+        "sizes": [
+          "Lower medium"
+        ],
+        "mass kg": 154
+      },
+      {
+        "sizes": [
+          "Small",
+          "Micro",
+          "Mini"
+        ],
+        "mass kg": 125.99999999999999
+      },
+      {
+        "sizes": [
+          "Medium"
+        ],
+        "mass kg": 182
+      }
+    ]
+  },
+  {
+    "revision": "1a773dd",
+    "commit": "1a773ddde948e4a9efa3411f7f4ce45b47de137d",
+    "mass inputs": [
+      {
+        "sizes": [
+          "Mini",
+          "Micro",
+          "Small"
+        ],
+        "mass kg": 125.99999999999999
+      },
+      {
+        "sizes": [
+          "Lower medium"
+        ],
+        "mass kg": 154
+      },
+      {
+        "sizes": [
+          "Large",
+          "Van",
+          "Large SUV",
+          "Medium SUV"
+        ],
+        "mass kg": 251.99999999999997
+      },
+      {
+        "sizes": [
+          "Medium"
+        ],
+        "mass kg": 182
+      }
+    ]
+  },
+  {
+    "revision": "HEAD",
+    "commit": "dc7d1ab5a05c215526e5c5b7c40ea0773add0e33",
+    "mass inputs": [
+      {
+        "sizes": [
+          "Small",
+          "Micro",
+          "Mini"
+        ],
+        "mass kg": 125.99999999999999
+      },
+      {
+        "sizes": [
+          "Medium"
+        ],
+        "mass kg": 182
+      },
+      {
+        "sizes": [
+          "Large",
+          "Large SUV",
+          "Van",
+          "Medium SUV"
+        ],
+        "mass kg": 251.99999999999997
+      },
+      {
+        "sizes": [
+          "Lower medium"
+        ],
+        "mass kg": 154
+      }
+    ]
+  }
+]

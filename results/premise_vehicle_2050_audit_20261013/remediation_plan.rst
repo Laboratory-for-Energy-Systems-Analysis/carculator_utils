@@ -571,5 +571,15 @@ derivation is no longer available; no guessed correction has been applied.
 The agreed 400 km small-BEV-truck design is feasible by gross mass but requires
 an explicit commercial-representativeness qualification. See the
 `plausibility audit <../premise_vehicle_plausibility_20261014/report.html>`_.
-The next specification review is car PHEV capacity plausibility. Step 12 and the
-previously identified broader PHEV battery-use question remain open.
+The car PHEV capacity review confirms the 21.17--42.34 kWh arithmetic and
+installed-template values, but identifies a source-calibration discrepancy
+against contemporary manufacturer examples. Electric and combustion modes
+also use different physical pack masses (Medium: 182 versus 80 kg). Capacity
+and mass must be calibrated together and represented consistently across
+modes. A choice between separate sourced 2020 calibrations, a common Prius
+pack-density proxy and retaining the current defaults is pending; no new
+parameters have been adopted. All 16 PHEV templates pass the arithmetic audit
+and nine existing PHEV tests pass. See the
+`PHEV calibration review <../premise_car_phev_calibration_20261014/report.html>`_.
+Step 12 and the previously identified broader PHEV battery-use question
+remain open.

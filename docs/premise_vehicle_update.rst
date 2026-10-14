@@ -1,6 +1,24 @@
 Premise vehicle inventory update: audit and reproduction strategy
 =================================================================
 
+Car PHEV calibration review, 14 October 2026
+--------------------------------------------
+
+The 21.17--42.34 kWh 2020 packs follow unchanged historical mass inputs and
+the selected 168 Wh/kg pack density. Arithmetic and installed metadata agree,
+but contemporary manufacturer examples support substantially lower capacities.
+Capacity and pack mass need joint calibration; a capacity-only override would
+make the Prius reference pack 52.38 kg instead of its documented 120 kg.
+
+The electric and combustion intermediates also use different packs, although
+final assembly retains one full electric-mode pack. A Medium car uses 182 kg
+in electric mode and 80 kg in combustion mode. This consistency issue must be
+addressed with the selected calibration. The user has been asked to choose
+between separate sourced 2020 calibrations, an explicit common Prius-density
+proxy, and retaining the documented discrepancy. No defaults or inventories
+have changed. All 16 templates pass the numerical audit and nine existing
+PHEV tests pass. See ``results/premise_car_phev_calibration_20261014/report.rst``.
+
 Hybrid deterioration lookup, 14 October 2026
 -------------------------------------------
 

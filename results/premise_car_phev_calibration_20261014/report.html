@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="Docutils 0.22.4: https://docutils.sourceforge.io/" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>2020 passenger-car PHEV battery calibration review</title>
+<style type="text/css">
+
+/* Minimal style sheet for the HTML output of Docutils.                    */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: minimal.css 10018 2025-03-06 16:19:15Z milde $                                                               */
+/* :Copyright: © 2015, 2021 Günter Milde.                                  */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+
+/* This CSS3 stylesheet defines rules for Docutils elements without        */
+/* HTML equivalent. It is required to make the document semantics visible. */
+/*                                                                         */
+/* .. _validates: http://jigsaw.w3.org/css-validator/validator$link        */
+
+/* titles */
+p.topic-title,
+p.admonition-title,
+p.system-message-title {
+  font-weight: bold;
+}
+p.sidebar-title,
+p.rubric {
+  font-weight: bold;
+  font-size: larger;
+}
+p.rubric {
+  color: maroon;
+}
+p.subtitle,
+p.section-subtitle,
+p.sidebar-subtitle {
+  font-weight: bold;
+  margin-top: -0.5em;
+}
+h1 + p.subtitle {
+  font-size: 1.6em;
+}
+a.toc-backref {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Warnings, Errors */
+.system-messages h2,
+.system-message-title,
+pre.problematic,
+span.problematic {
+  color: red;
+}
+
+/* Inline Literals */
+.docutils.literal {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+/* do not wrap at hyphens and similar: */
+.literal > span.pre { white-space: nowrap; }
+
+/* keep line-breaks (\n) visible */
+.pre-wrap { white-space: pre-wrap; }
+
+/* Lists */
+
+/* compact and simple lists: no margin between items */
+.simple  li, .simple  ul, .simple  ol, .simple  > li p,
+.compact li, .compact ul, .compact ol, .compact > li p,
+dl.simple  > dd, dl.compact > dd, dl.docinfo > dd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Nested Paragraphs */
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+details > p:last-child { margin-bottom: 1em; }
+
+/* Table of Contents */
+.contents ul.auto-toc { /* section numbers present */
+  list-style-type: none;
+}
+
+/* Enumerated Lists */
+ol.arabic     { list-style: decimal }
+ol.loweralpha { list-style: lower-alpha }
+ol.upperalpha { list-style: upper-alpha }
+ol.lowerroman { list-style: lower-roman }
+ol.upperroman { list-style: upper-roman }
+
+/* Definition Lists and Derivatives */
+dt .classifier { font-style: italic }
+dt .classifier:before {
+  font-style: normal;
+  margin: 0.5em;
+  content: ":";
+}
+/* Field Lists and similar */
+/* bold field name, content starts on the same line */
+dl.field-list,
+dl.option-list,
+dl.docinfo {
+  display: flow-root;
+}
+dl.field-list > dt,
+dl.option-list > dt,
+dl.docinfo > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.25em;
+}
+/* Offset for field content (corresponds to the --field-name-limit option) */
+dl.field-list > dd,
+dl.option-list > dd,
+dl.docinfo > dd {
+  margin-left:  9em; /* ca. 14 chars in the test examples, fit all Docinfo fields */
+}
+/* start nested lists on new line */
+dd > dl:first-child,
+dd > ul:first-child,
+dd > ol:first-child {
+  clear: left;
+}
+/* start field-body on a new line after long field names */
+dl.field-list > dd > *:first-child,
+dl.option-list > dd > *:first-child
+{
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+
+/* Bibliographic Fields (docinfo) */
+dl.docinfo pre.address {
+  font: inherit;
+  margin: 0;
+}
+dl.docinfo > dd.authors > p { margin: 0; }
+
+/* Option Lists */
+dl.option-list > dt { font-weight: normal; }
+span.option { white-space: nowrap; }
+
+/* Footnotes and Citations  */
+
+.footnote, .citation { margin: 1em 0; } /* default paragraph skip (Firefox) */
+/* hanging indent */
+.citation { padding-left: 2em; }
+.footnote { padding-left: 1.7em; }
+.footnote.superscript { padding-left: 1.0em; }
+.citation > .label { margin-left: -2em; }
+.footnote > .label { margin-left: -1.7em; }
+.footnote.superscript > .label { margin-left: -1.0em; }
+
+.footnote > .label + *,
+.citation > .label + * {
+  display: inline-block;
+  margin-top: 0;
+  vertical-align: top;
+}
+.footnote > .backrefs + *,
+.citation > .backrefs + * {
+  margin-top: 0;
+}
+.footnote > .label + p, .footnote > .backrefs + p,
+.citation > .label + p, .citation > .backrefs + p {
+  display: inline;
+  vertical-align: inherit;
+}
+
+.backrefs { user-select: none; }
+.backrefs > a { font-style: italic; }
+
+/* superscript footnotes */
+a[role="doc-noteref"].superscript,
+.footnote.superscript > .label,
+.footnote.superscript > .backrefs {
+  vertical-align: super;
+  font-size: smaller;
+  line-height: 1;
+}
+a[role="doc-noteref"].superscript > .fn-bracket,
+.footnote.superscript > .label > .fn-bracket {
+  /* hide brackets in display but leave for copy/paste */
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+}
+[role="doc-noteref"].superscript + [role="doc-noteref"].superscript {
+  padding-left: 0.15em; /* separate consecutive footnote references */
+  /* TODO: unfortunately, "+" also selects with text between the references. */
+}
+
+/* Alignment */
+.align-left   {
+  text-align: left;
+  margin-right: auto;
+}
+.align-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.align-right  {
+  text-align: right;
+  margin-left: auto;
+}
+.align-top    { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+
+/* reset inner alignment in figures and tables */
+figure.align-left, figure.align-right,
+table.align-left, table.align-center, table.align-right {
+  text-align: inherit;
+}
+
+/* Text Blocks */
+.topic { margin: 1em 2em; }
+.sidebar,
+.admonition,
+.system-message {
+  margin: 1em 2em;
+  border: thin solid;
+  padding: 0.5em 1em;
+}
+div.line-block { display: block; }
+div.line-block div.line-block, pre { margin-left: 2em; }
+
+/* Code line numbers: don't copy with drag-and-drop */
+pre.code .ln { display: none; }
+pre.code code:before {
+  content: attr(data-lineno);
+  font-size: small;
+  color: gray;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+td, th {
+  border: thin solid silver;
+  padding: 0 1ex;
+}
+.borderless td, .borderless th {
+  border: 0;
+  padding: 0;
+  padding-right: 0.5em /* separate table cells */
+}
+
+table > caption, figcaption {
+  text-align: left;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+table.captionbelow {
+  caption-side: bottom;
+}
+
+/* MathML (see "math.css" for --math-output=HTML) */
+math .boldsymbol { font-weight: bold; }
+math.boxed, math .boxed {padding: 0.25em; border: thin solid; }
+/* style table similar to AMS "align" or "aligned" environment: */
+mtable.cases > mtr > mtd { text-align: left; }
+mtable.ams-align > mtr > mtd { padding-left: 0; padding-right: 0; }
+mtable.ams-align > mtr > mtd:nth-child(2n) { text-align: left; }
+mtable.ams-align > mtr > mtd:nth-child(2n+1) { text-align: right; }
+mtable.ams-align > mtr > mtd:nth-child(2n+3) { padding-left: 2em; }
+.mathscr mi, mi.mathscr {
+  font-family: STIX, XITSMathJax_Script, rsfs10,
+               "Asana Math", Garamond, cursive;
+}
+
+/* Document Header and Footer */
+header { border-bottom: 1px solid black; }
+footer { border-top: 1px solid black; }
+
+/* Images are block-level by default in Docutils */
+/* New HTML5 block elements: set display for older browsers */
+img, svg, header, footer, main, aside, nav, section, figure, video, details {
+  display: block;
+}
+svg { width: auto; height: auto; }  /* enable scaling of SVG images */
+/* inline images */
+
+p img, p svg, p video,
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img,
+h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg {
+  display: inline;
+}
+
+</style>
+<style type="text/css">
+
+/* CSS31_ style sheet for the output of Docutils HTML writers.             */
+/* Rules for easy reading and pre-defined style variants.                  */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: plain.css 10079 2025-04-10 12:01:48Z milde $                                                               */
+/* :Copyright: © 2015 Günter Milde.                                        */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+/* .. _CSS3: https://www.w3.org/Style/CSS/                                 */
+
+
+/* Document Structure */
+/* ****************** */
+
+/* "page layout" */
+body {
+  margin: 0;
+  background-color: #dbdbdb;
+  --field-indent: 9em; /* default indent of fields in field lists */
+}
+main, footer, header {
+  line-height:1.6;
+  /* avoid long lines --> better reading */
+  /* optimum is 45…75 characters/line <http://webtypography.net/2.1.2> */
+  /* OTOH: lines should not be too short because of missing hyphenation, */
+  max-width: 50rem;
+  padding: 1px 2%; /* 1px on top avoids grey bar above title (mozilla) */
+  margin: auto;
+}
+main {
+  counter-reset: table figure;
+  background-color: white;
+}
+footer, header {
+  font-size: smaller;
+  padding: 0.5em 2%;
+  border: none;
+}
+
+/* Table of Contents */
+ul.auto-toc > li > p {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+nav.contents ul {
+  padding-left: 1em;
+}
+main > nav.contents ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B29\ ';
+}
+main > nav.contents ul ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B1D\ ';
+}
+
+/* Transitions */
+hr.docutils {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+/* Paragraphs */
+
+/* vertical space (parskip) */
+p, ol, ul, dl, li,
+.footnote, .citation,
+div > math,
+table {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h1, h2, h3, h4, h5, h6,
+dd, details > p:last-child {
+  margin-bottom: 0.5em;
+}
+
+/* Lists */
+/* ===== */
+
+/* Definition Lists */
+/* Indent lists nested in definition lists */
+dd > ul:only-child, dd > ol:only-child { padding-left: 1em; }
+
+/* Description Lists */
+/* styled like in most dictionaries, encyclopedias etc. */
+dl.description {
+  display: flow-root;
+}
+dl.description > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.3em;
+}
+dl.description > dd:after {
+  display: table;
+  content: "";
+  clear: left; /* clearfix for empty descriptions */
+}
+
+/* Field Lists */
+
+dl.field-list > dd,
+dl.docinfo > dd {
+  margin-left: var(--field-indent); /* adapted in media queries or HTML */
+}
+
+/* example for custom field-name width */
+dl.field-list.narrow > dd {
+  --field-indent: 5em;
+}
+/* run-in: start field-body on same line after long field names */
+dl.field-list.run-in > dd p {
+  display: block;
+}
+
+/* Bibliographic Fields */
+
+/* generally, bibliographic fields use dl.docinfo */
+/* but dedication and abstract are placed into divs */
+div.abstract p.topic-title {
+  text-align: center;
+}
+div.dedication {
+  margin: 2em 5em;
+  text-align: center;
+  font-style: italic;
+}
+div.dedication p.topic-title {
+  font-style: normal;
+}
+
+/* disclosures */
+details { padding-left: 1em; }
+summary { margin-left: -1em; }
+
+/* Text Blocks */
+/* =========== */
+
+/* Literal Blocks */
+pre.literal-block, pre.doctest-block,
+pre.math, pre.code {
+  font-family: monospace;
+}
+
+/* Block Quotes and Topics */
+bockquote { margin: 1em 2em; }
+blockquote p.attribution {
+  text-align: right;
+  margin-left: 20%;
+}
+
+/* Tables */
+/* ====== */
+
+/* th { vertical-align: bottom; } */
+
+table tr { text-align: left; }
+
+/* "booktabs" style (no vertical lines) */
+table.booktabs {
+  border: 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.booktabs * {
+  border: 0;
+}
+table.booktabs th {
+  border-bottom: thin solid;
+}
+
+/* numbered tables (counter defined in div.document) */
+table.numbered > caption:before {
+  counter-increment: table;
+  content: "Table " counter(table) ": ";
+  font-weight: bold;
+}
+
+/* Explicit Markup Blocks */
+/* ====================== */
+
+/* Footnotes and Citations */
+/* ----------------------- */
+
+/* line on the left */
+.footnote-list {
+  border-left: solid thin;
+  padding-left: 0.25em;
+}
+
+/* Directives */
+/* ---------- */
+
+/* Body Elements */
+/* ~~~~~~~~~~~~~ */
+
+/* Images and Figures */
+
+/* let content flow to the side of aligned images and figures */
+figure.align-left,
+img.align-left,
+svg.align-left,
+video.align-left,
+div.align-left,
+object.align-left {
+  clear: left;
+  float: left;
+  margin-right: 1em;
+}
+figure.align-right,
+img.align-right,
+svg.align-right,
+video.align-right,
+div.align-right,
+object.align-right {
+  clear: right;
+  float: right;
+  margin-left: 1em;
+}
+/* Stop floating sidebars, images and figures */
+h1, h2, h3, h4, footer, header { clear: both; }
+
+/* Numbered figures */
+figure.numbered > figcaption > p:before {
+  counter-increment: figure;
+  content: "Figure " counter(figure) ": ";
+  font-weight: bold;
+}
+
+/* Admonitions and System Messages */
+.caution p.admonition-title,
+.attention p.admonition-title,
+.danger p.admonition-title,
+.error p.admonition-title,
+.warning p.admonition-title,
+div.error {
+  color: red;
+}
+
+/* Sidebar */
+/* Move right. In a layout with fixed margins, */
+/* it can be moved into the margin.            */
+aside.sidebar {
+  width: 30%;
+  max-width: 26em;
+  float: right;
+  clear: right;
+  margin-left: 1em;
+  margin-right: -1%;
+  background-color: #fffffa;
+}
+
+
+/* Code */
+pre.code { padding: 0.7ex }
+pre.code, code { background-color: #eeeeee }
+/* basic highlighting: for a complete scheme, see */
+/* https://docutils.sourceforge.io/sandbox/stylesheets/ */
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+
+/* Epigraph           */
+/* Highlights         */
+/* Pull-Quote         */
+/* Compound Paragraph */
+/* Container          */
+
+/* Inline Markup */
+/* ============= */
+
+sup, sub { line-height: 0.8; } /* do not add leading for lines with sup/sub */
+
+/* Inline Literals                                          */
+/* possible values: normal, nowrap, pre, pre-wrap, pre-line */
+/*   span.docutils.literal { white-space: pre-wrap; }       */
+
+/* Hyperlink References */
+a { text-decoration: none; }
+
+/* External Targets       */
+/*   span.target.external */
+/* Internal Targets       */
+/*   span.target.internal */
+/* Footnote References    */
+/*   a[role="doc-noteref"] */
+/* Citation References    */
+/*   a.citation-reference */
+
+</style>
+</head>
+<body>
+<main id="passenger-car-phev-battery-calibration-review">
+<h1 class="title">2020 passenger-car PHEV battery calibration review</h1>
+
+<p>14 October 2026. This is an investigation and a calibration decision record.
+Model defaults, inventories and Brightway databases are unchanged. The latest
+installed baseline remains the hybrid-deterioration update.</p>
+<section id="finding">
+<h2>Finding</h2>
+<p>The 2020 PHEV capacities are arithmetically consistent but poorly supported as
+representative contemporary specifications. The model multiplies a pack mass
+of 126--252 kg by a 0.7 cell fraction and 0.24 kWh/kg NMC-622 cell density:
+the resulting nominal pack density is 168 Wh/kg. It retains that full capacity
+in both final petrol and diesel PHEV inventories, as intended.</p>
+<p>The source pack masses were already present in the inspected December 2023
+revision <span class="docutils literal">bf2abf2</span> and remain unchanged in the inspected 2024 revisions and
+current source. They were not introduced by the recent accounting repairs.
+The generic 2020 cell-density input is 0.20 kWh/kg, but the chemistry selection
+deliberately replaces it with 0.24 kWh/kg. Reverting that selection alone would
+only reduce capacity by one sixth, to 17.64--35.28 kWh; it would not resolve
+the source-calibration concern and would change the established chemistry
+contract.</p>
+<table>
+<caption>Fresh model outputs, common to petrol and diesel PHEVs</caption>
+<thead>
+<tr><th class="head"><p>Size</p></th>
+<th class="head"><p>Nominal kWh</p></th>
+<th class="head"><p>Pack kg</p></th>
+<th class="head"><p>Electric range km</p></th>
+<th class="head"><p>Electric distance share</p></th>
+</tr>
+</thead>
+<tbody>
+<tr><td><p>Mini</p></td>
+<td><p>21.168</p></td>
+<td><p>126</p></td>
+<td><p>135.70</p></td>
+<td><p>0.549</p></td>
+</tr>
+<tr><td><p>Small</p></td>
+<td><p>21.168</p></td>
+<td><p>126</p></td>
+<td><p>126.53</p></td>
+<td><p>0.520</p></td>
+</tr>
+<tr><td><p>Lower medium</p></td>
+<td><p>25.872</p></td>
+<td><p>154</p></td>
+<td><p>140.85</p></td>
+<td><p>0.565</p></td>
+</tr>
+<tr><td><p>Medium</p></td>
+<td><p>30.576</p></td>
+<td><p>182</p></td>
+<td><p>155.23</p></td>
+<td><p>0.610</p></td>
+</tr>
+<tr><td><p>Large</p></td>
+<td><p>42.336</p></td>
+<td><p>252</p></td>
+<td><p>194.19</p></td>
+<td><p>0.732</p></td>
+</tr>
+<tr><td><p>Medium SUV</p></td>
+<td><p>42.336</p></td>
+<td><p>252</p></td>
+<td><p>195.22</p></td>
+<td><p>0.735</p></td>
+</tr>
+<tr><td><p>Large SUV</p></td>
+<td><p>42.336</p></td>
+<td><p>252</p></td>
+<td><p>167.45</p></td>
+<td><p>0.648</p></td>
+</tr>
+<tr><td><p>Van</p></td>
+<td><p>42.336</p></td>
+<td><p>252</p></td>
+<td><p>152.08</p></td>
+<td><p>0.600</p></td>
+</tr>
+</tbody>
+</table>
+<p>Ranges are modelled electric-mode distances with an 80% usable-energy window,
+the default car cycle and Swiss climate. They are not manufacturer test
+results. Changing capacity changes the electric distance share selected by the
+existing utility-factor relationship and therefore changes both electricity
+and combustion-fuel purchases. The existing Premise future-year rule preserves
+the baseline electric range; it cannot repair an inappropriate 2020 baseline.</p>
+</section>
+<section id="source-checks">
+<h2>Source checks</h2>
+<p>The input records cite Toyota manufacturer data and the ICCT September 2020
+report, without a per-size derivation. The ICCT full-text endpoints returned
+HTTP 403 during this review; the cited report was not independently verified
+as a source of these pack masses. No missing derivation has been reconstructed
+by assumption.</p>
+<p>The following primary manufacturer examples establish useful benchmarks, but
+not sales-weighted fleet averages or a complete segment calibration. Nominal
+or gross capacities are compared with model nominal capacity; range and
+weighted official fuel consumption are not used to infer battery capacity.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://newsroom.toyota.eu/toyota-prius-plug-in-hybrid/">Toyota Prius Plug-in, 2017 generation</a>:
+8.8 kWh and 120 kg, equivalent to 73.33 Wh/kg at pack level. This is a
+contemporary reference, not a native Mini or Small segment vehicle.</p></li>
+<li><p><a class="reference external" href="https://www.volkswagen-newsroom.com/en/golf-etsi-golf-ehybrid-and-golf-gte-international-media-drive-6336/the-new-golf-hybrid-models-6337">Volkswagen Golf Mk8 eHybrid/GTE, 2020</a>:
+13 kWh; the Lower medium template has 25.87 kWh.</p></li>
+<li><p><a class="reference external" href="https://www.press.bmwgroup.com/global/article/detail/T0298940EN/sportier-and-more-efficient-than-ever-thanks-to-the-latest-bmw-edrive-technology%3A-the-new-bmw-330e-sedan-celebrates-its-market-launch?language=en">BMW 330e, 2019 introduction</a>:
+12 kWh gross; the Medium template has 30.58 kWh.</p></li>
+<li><p><a class="reference external" href="https://www.press.bmwgroup.com/global/article/detail/T0299399EN/more-variety-more-electric-range-less-co2%3A-bmw-530e-sedan-with-the-latest-battery-cell-technology-and-also-with-optional-intelligent-all-wheel-drive">BMW 530e, 2019 battery update</a>:
+12 kWh gross; the Large template has 42.34 kWh.</p></li>
+<li><p><a class="reference external" href="https://newsroom.toyota.eu/the-new-toyota-rav4-plug-in-hybrid/">Toyota RAV4 Plug-in, September 2020</a>:
+18.1 kWh; the Medium SUV template has 42.34 kWh. Its late-2020 introduction
+must be disclosed if used to represent a whole year.</p></li>
+<li><p><a class="reference external" href="https://www.press.bmwgroup.com/slovenia/article/detail/T0300315EN/electrifying-power-for-supreme-driving-pleasure-market-launch-of-the-new-bmw-x5-xdrive45e">BMW X5 xDrive45e, February 2020</a>:
+24 kWh gross; the Large SUV template has 42.34 kWh.</p></li>
+<li><p><a class="reference external" href="https://media.ford.com/content/fordmedia/feu/gb/en/news/2019/09/23/New-Ford-Transit-and-Tourneo-Custom-Plug-In-Hybrids-Deliver-Zero-Emission-Driving.html">Ford Tourneo Custom PHEV, 2019 introduction</a>:
+13.6 kWh; the passenger Van template has 42.34 kWh. This is a series hybrid,
+so using its battery as a proxy would not make the model a vehicle replica.</p></li>
+</ul>
+<p>Mass must be calibrated together with capacity. For example, applying an
+8.8 kWh override while retaining the present 168 Wh/kg pack density produces
+52.38 kg, less than half the documented Prius pack mass. A capacity-only
+correction would consequently introduce another physical discrepancy.</p>
+</section>
+<section id="driving-mode-consistency">
+<h2>Driving-mode consistency</h2>
+<p>The same nominal PHEV currently uses different packs in its electric and
+combustion intermediates. The electric-mode pack is 126--252 kg; the
+combustion-mode pack is 60--100 kg. For Medium, these are 182 kg/30.576 kWh and
+80 kg/13.440 kWh respectively. Final assembly retains the full electric-mode
+pack, but the mode-specific energy simulations and the utility-weighted curb
+mass were calculated with different packs.</p>
+<p>The battery term in the weighted mode masses is 29.76--60.76 kg below the
+full pack retained in final assembly. This is a battery-component comparison,
+not a complete corrected curb-mass estimate: other mode-specific components
+also require a consistent accounting boundary. The review records this as
+an additional implementation concern to resolve when applying the selected
+pack calibration. It does not justify changing battery capacity independently
+of mass and rerunning neither mode.</p>
+</section>
+<section id="calibration-choice-pending">
+<h2>Calibration choice pending</h2>
+<p>The recommended approach is to establish capacity and pack mass together from
+documented vehicles available around 2020, by size. Mini/Small and any missing
+diesel-PHEV equivalents require explicit proxies. The examples above are
+candidate anchors, not approved class averages or adopted parameter values.
+Matched mass evidence is still needed for most examples. Documented gross
+and usable capacity must remain separate, and absent mass data must not be
+filled with an unlabelled BEV-density assumption.</p>
+<p>A simpler alternative is the explicitly common Prius pack-density proxy:
+retain the existing size-dependent pack masses and apply 8.8/120 kWh/kg.
+This gives 9.24, 11.29, 13.35 and 18.48 kWh for the four mass groups.
+At unchanged electric-mode energy demand the resulting ranges are 55.23--85.22
+km. These are arithmetic sensitivities only. They are not completed model
+runs, revised utility factors, evidence for all sizes, or a validation of the
+existing pack masses. The capacity-and-mass choice has been sent to the user;
+neither alternative has been installed.</p>
+<p>Implementation after the choice should preserve one physical pack across
+driving modes; recompute vehicle mass, energy, utility factor, costs and
+replacement accounting; disclose any physical-pack/MIX-market mismatch; and
+regenerate the car workbook and provenance. The agreed Premise future rule
+remains simple and adds no model execution at runtime. Density projections
+must represent relative improvements from the selected PHEV baseline, without
+resetting it to an incompatible absolute BEV pack density.</p>
+</section>
+<section id="verification-and-reproduction">
+<h2>Verification and reproduction</h2>
+<p>The audit ran with Python 3.12.13, NumPy 1.26.4 and matching local car/shared
+sources. All 16 petrol/diesel templates satisfy capacity = pack mass times
+cell fraction times cell density, retain the full electric-mode capacity,
+and agree with the installed parameter companions. This verifies accounting,
+not source representativeness. Nine existing PHEV capacity/replacement tests
+passed; no new test locks the questionable defaults in place.</p>
+<p>Run from the shared repository with the matched model environment:</p>
+<pre class="literal-block">python dev/audit_premise_car_phev_calibration.py \
+  --output results/premise_car_phev_calibration_20261014
+PYTHONPATH=../carculator:../carculator_truck:. python -m pytest \
+  tests/test_phev_capacity.py tests/test_phev_replacements.py -q</pre>
+<p><span class="docutils literal">current_specs.csv</span> records the numerical audit and labelled sensitivity;
+<span class="docutils literal">manufacturer_benchmarks.csv</span> records source URLs and comparison boundaries;
+<span class="docutils literal">input_records.json</span> preserves the relevant parameter provenance;
+<span class="docutils literal">input_history.json</span> records the inspected historical masses; and
+<span class="docutils literal">checks.json</span> records input/script hashes and current verification status.
+Full scenario builds and EF 3.1 comparisons were not repeated because no
+model or inventory coefficients changed. Calibration and driving-mode mass
+consistency remain open.</p>
+</section>
+</main>
+</body>
+</html>

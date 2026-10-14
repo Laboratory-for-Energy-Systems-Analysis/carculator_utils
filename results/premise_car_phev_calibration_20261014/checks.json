@@ -1,0 +1,13 @@
+{
+  "vehicles checked": 16,
+  "mass-capacity arithmetic": "passed",
+  "full physical capacity retained in combined PHEV": "passed",
+  "installed parameter comparison": "passed",
+  "source calibration": "unresolved; manufacturer examples are not fleet averages",
+  "driving-mode battery consistency": "unresolved; mode packs differ",
+  "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 17:06:14) [Clang 19.1.7 ]",
+  "numpy": "1.26.4",
+  "defaults sha256": "0b08285b9e8f8293b4245c9a37587b01d98438b43f09ae99672396ced230933b",
+  "installed parameters sha256": "bfb3840a17abd1a0cae3192e2de8ad2d908a598e9e4c16ba030c38c5ed1bf56f",
+  "audit script sha256": "962f189a2207c9f726be32cc721019224009f95b5130fb26bba25ba71f1a4773"
+}
