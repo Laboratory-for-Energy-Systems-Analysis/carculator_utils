@@ -121,6 +121,118 @@ def test_disabled_regeneration_does_not_recover_braking_energy():
     assert (result.sel(parameter="recuperated energy") == 0).all()
 
 
+@pytest.mark.parametrize("limit", [0, 2, 100])
+def test_battery_charge_limit_preserves_generator_energy_and_auxiliary_bypass(limit):
+    model, result = calculate(
+        speed=[36, 36, 18, 0, 0],
+        powertrain="FCEV",
+        eta=0.8,
+        transmission=1,
+        rr_coef=0,
+        drag_coef=0,
+        engine_power=100,
+        electric_motor_power=100,
+        recuperation_efficiency=0.9,
+        electric_motor_efficiency=0.8,
+        aux_power=1000,
+        fuel_cell_system_efficiency=0.5,
+        battery_charge_eff=0.8,
+        battery_discharge_eff=0.9,
+        battery_charge_power=limit,
+    )
+    generator = model.regenerative_generator_dc_kw.squeeze()
+    auxiliary_dc = model.auxiliary_dc_demand_kw.squeeze()
+    direct = np.minimum(generator, auxiliary_dc)
+    charged = np.minimum(generator - direct, limit)
+    curtailed = generator - direct - charged
+    np.testing.assert_allclose(model.regenerative_auxiliary_dc_kw.squeeze(), direct)
+    np.testing.assert_allclose(model.regenerative_charge_dc_kw.squeeze(), charged)
+    np.testing.assert_allclose(model.regenerative_curtailed_dc_kw.squeeze(), curtailed)
+    np.testing.assert_allclose(
+        result.sel(parameter="recuperated energy"), -charged * 0.72
+    )
+    np.testing.assert_allclose(
+        result.sel(parameter="auxiliary energy"), (auxiliary_dc - direct) / 0.5
+    )
+    # Losses still avoid friction braking, but earn no reusable-energy credit.
+    available_wheels = -result.sel(parameter="negative motive energy").values
+    accepted_wheels = model.accepted_regenerative_wheel_kw.squeeze()
+    np.testing.assert_allclose(accepted_wheels * 0.9 * 0.8, direct + charged)
+    assert np.all(accepted_wheels <= available_wheels + 1e-6)
+    assert np.all(charged <= limit)
+
+
+@pytest.mark.parametrize("invalid", [-1, np.nan, -np.inf])
+def test_invalid_battery_charge_limits_raise(invalid):
+    with pytest.raises(ValueError, match="Battery charging power"):
+        calculate(powertrain="FCEV", battery_charge_power=invalid)
+
+
+def test_unconstrained_charging_retains_existing_energy_convention():
+    args = dict(
+        speed=[36, 36, 18, 0, 0],
+        powertrain="FCEV",
+        electric_motor_power=30,
+        recuperation_efficiency=0.9,
+        aux_power=500,
+    )
+    _, before = calculate(**args)
+    _, after = calculate(**args, battery_charge_power=np.inf)
+    xr.testing.assert_equal(before, after)
+
+
+def test_charge_limits_broadcast_per_powertrain_and_named_sample():
+    mass = xr.DataArray(
+        np.full((1, 2, 1, 2), 1500.0),
+        dims=("size", "powertrain", "year", "value"),
+        coords={
+            "size": ["Medium"],
+            "powertrain": ["FCEV", "ICEV-p"],
+            "year": [2020],
+            "value": ["zero", "limited"],
+        },
+    )
+
+    def run(limit=None):
+        ecm = EnergyConsumptionModel(
+            "car",
+            ["Medium"],
+            ["FCEV", "ICEV-p"],
+            np.array([36.0, 36.0, 18.0, 0.0, 0.0]),
+            None,
+        )
+        ecm.efficiency_coefficients = None
+        values = dict(
+            rr_coef=0,
+            drag_coef=0,
+            frontal_area=2,
+            electric_motor_power=30,
+            engine_power=100,
+            recuperation_efficiency=0.9,
+            aux_power=0,
+            battery_charge_eff=0.8,
+            battery_discharge_eff=0.9,
+        )
+        args = {k: xr.full_like(mass, v) for k, v in values.items()}
+        result = ecm.motive_energy_per_km(
+            driving_mass=mass,
+            **args,
+            engine_efficiency=np.full_like(ecm.velocity, 0.8),
+            transmission_efficiency=np.ones_like(ecm.velocity),
+            battery_charge_power=limit,
+        )
+        return ecm, result
+
+    limit = xr.full_like(mass, np.inf)
+    limit.loc[dict(powertrain="FCEV", value="zero")] = 0
+    limit.loc[dict(powertrain="FCEV", value="limited")] = 2
+    _, before = run()
+    ecm, after = run(limit)
+    np.testing.assert_allclose(ecm.regenerative_charge_dc_kw[:, 0, :, 0, :], 0)
+    assert np.max(ecm.regenerative_charge_dc_kw[:, 1, :, 0, :]) == pytest.approx(2)
+    xr.testing.assert_equal(before.isel(powertrain=1), after.isel(powertrain=1))
+
+
 @pytest.mark.parametrize("mass", [np.nan, np.inf, -1])
 def test_invalid_mass_is_rejected(mass):
     with pytest.raises(ValueError, match="Driving mass"):

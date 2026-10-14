@@ -494,6 +494,24 @@ energy remain unchanged and direct fossil/non-fossil CO2 emissions remain zero.
 The default's natural-gas production route still has upstream emissions.
 Recalculate affected FCEV studies to apply the corrected supply assumption.
 
+Optional battery charging limits
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``EnergyConsumptionModel.motive_energy_per_km`` accepts ``battery_charge_power``
+in kW at battery terminals. Omission or positive infinity retains the previous
+unconstrained calculation. Finite values apply to electric propulsion, including
+FCEVs; zero disables battery charging while still allowing regenerated DC power
+to serve simultaneous auxiliaries. Remaining generator output is limited before
+charge/discharge losses. Curtailed energy receives no fuel credit. Negative,
+NaN or combustion-powertrain limits raise an error.
+
+The shared model exposes generator, direct auxiliary, charging and curtailed
+DC power traces for independent accounting. This hook does not introduce SOC
+or thermal dynamics, and does not change car, bus or two-wheeler defaults.
+Truck FCEVs opt in using their documented pack profile and final energy-sized
+capacity. Regressions check energy conservation, losses, auxiliary bypass,
+binding/nonbinding/zero limits and unchanged unconstrained results.
+
 ``tests/test_hydrogen_defaults.py`` checks country and regional defaults,
 unknown-country handling, individual and reordered years, and independence
 from biofuel tables. Completed model/LCIA checks cover Medium cars in Brazil,

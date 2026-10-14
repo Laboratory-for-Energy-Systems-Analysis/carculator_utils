@@ -580,6 +580,7 @@ class EnergyConsumptionModel:
         combustion_engine_power: Union[xr.DataArray, np.array, None] = None,
         engine_efficiency_factor: Union[xr.DataArray, np.array, float] = 1.0,
         combustion_controls: dict = None,
+        battery_charge_power: Union[xr.DataArray, np.array, float, None] = None,
     ) -> DataArray:
         r"""
         Calculate energy used and recuperated for a given vehicle per km driven.
@@ -594,6 +595,11 @@ class EnergyConsumptionModel:
             controls keyed by (powertrain, size, year). Control fuel is returned
             separately as ``combustion control energy`` (kJ per sample).
             Applies before fuel conversion; explicit efficiency overrides take precedence.
+        :param battery_charge_power: Optional continuous battery-terminal charging
+            limit in kW, with positive infinity meaning unconstrained. Finite
+            limits apply to electric propulsion (including FCEV) only. Generator
+            output first supplies simultaneous DC auxiliaries; remaining output
+            is limited before battery losses. No SOC controller is implied.
         :returns: Labelled per-second energy components and operating traces.
             Energy components are kJ per one-second sample; the vehicle model
             integrates them to obtain consumption per kilometre.
@@ -944,6 +950,62 @@ class EnergyConsumptionModel:
             auxiliary_energy = np.resize(
                 auxiliary_energy, (self.velocity.shape[0], *auxiliary_energy.shape[1:])
             )
+
+        generator_dc = (
+            regenerative_shaft_power * np.asarray(_c(electric_motor_efficiency)).T
+        )
+        self.auxiliary_dc_demand_kw = auxiliary_energy * auxiliary_efficiency / 1000
+        direct_dc = np.zeros_like(generator_dc)
+        charge_dc = generator_dc.copy()
+        if battery_charge_power is not None:
+            limit = np.asarray(_c(battery_charge_power), dtype=float).T * 1000
+            if np.any(np.isnan(limit)) or np.any(limit < 0):
+                raise ValueError("Battery charging power must be nonnegative or +inf.")
+            constrained = np.isfinite(limit)
+            if np.any(constrained & combustion):
+                raise ValueError("Battery charging limits require electric propulsion.")
+            active = constrained & (np.asarray(_c(electric_motor_power)).T > 0)
+            if np.any(
+                active
+                & (
+                    (np.asarray(_c(battery_charge_eff)).T <= 0)
+                    | (np.asarray(_c(battery_discharge_eff)).T <= 0)
+                )
+            ):
+                raise ValueError("Constrained batteries require positive efficiencies.")
+            direct_dc = np.where(
+                constrained,
+                np.minimum(generator_dc, self.auxiliary_dc_demand_kw * 1000),
+                0,
+            )
+            charge_dc = np.minimum(generator_dc - direct_dc, limit)
+            recuperated_energy = (
+                -charge_dc * _c(battery_charge_eff).T * _c(battery_discharge_eff).T
+            )
+            auxiliary_energy = auxiliary_energy - np.divide(
+                direct_dc,
+                auxiliary_efficiency,
+                out=np.zeros_like(auxiliary_energy),
+                where=auxiliary_efficiency > 0,
+            )
+        self.regenerative_generator_dc_kw = generator_dc / 1000
+        self.regenerative_auxiliary_dc_kw = direct_dc / 1000
+        self.regenerative_charge_dc_kw = charge_dc / 1000
+        self.regenerative_curtailed_dc_kw = (
+            generator_dc - direct_dc - charge_dc
+        ) / 1000
+        # Accepted braking at the wheel includes conversion losses: these
+        # losses still avoid friction braking, although they earn no fuel credit.
+        conversion = (
+            np.asarray(_c(electric_motor_efficiency)).T
+            * np.asarray(_c(recuperation_efficiency)).T
+        )
+        self.accepted_regenerative_wheel_kw = np.divide(
+            (direct_dc + charge_dc) / 1000,
+            conversion,
+            out=np.zeros_like(generator_dc),
+            where=conversion > 0,
+        )
         if transmission_efficiency.shape[0] != self.velocity.shape[0]:
             transmission_efficiency = transmission_efficiency.T.values[None, ...]
             transmission_efficiency = np.resize(
