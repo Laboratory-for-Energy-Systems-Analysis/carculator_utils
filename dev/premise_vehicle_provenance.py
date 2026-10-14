@@ -27,6 +27,7 @@ PUBLICATIONS = {
 MODELS = {"car": "carculator", "truck": "carculator_truck"}
 BASELINE_FIELDS = (
     "power",
+    "rated power",
     "electric motor efficiency",
     "auxiliary power demand",
     "fuel cell power",

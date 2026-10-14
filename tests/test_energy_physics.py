@@ -73,6 +73,32 @@ def test_infeasible_trace_reports_deficit_without_erasing_energy():
     )
 
 
+@pytest.mark.parametrize("motor_efficiency", [0.8, 0.95])
+@pytest.mark.parametrize("fuel_cell_efficiency", [0.5, 0.7])
+def test_fcev_motor_shortfall_uses_shaft_output_not_hydrogen_or_dc_input(
+    motor_efficiency, fuel_cell_efficiency
+):
+    model, result = calculate(
+        powertrain="FCEV",
+        engine_power=5,
+        electric_motor_power=5,
+        eta=motor_efficiency,
+        transmission=0.85,
+        aux_power=1000,
+        fuel_cell_system_efficiency=fuel_cell_efficiency,
+    )
+    shaft_kw = wheel_power_kw() / 0.85
+    np.testing.assert_allclose(model.shaft_power_demand_kw, shaft_kw)
+    np.testing.assert_allclose(model.power_deficit_kw, shaft_kw - 5)
+    # Auxiliaries bypass the motor. Neither conversion loss belongs in its
+    # shaft rating; unmet cycle demand still appears in the energy balance.
+    np.testing.assert_allclose(
+        result.sel(parameter="motive energy")
+        + result.sel(parameter="auxiliary energy"),
+        (shaft_kw / motor_efficiency + 1) / fuel_cell_efficiency,
+    )
+
+
 @pytest.mark.parametrize("eta", [0.2, 0.4, 0.9])
 def test_engine_load_uses_mechanical_output_not_fuel_input(eta):
     _, result = calculate(eta=eta, transmission=0.8)

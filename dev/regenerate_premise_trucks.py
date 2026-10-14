@@ -104,6 +104,7 @@ def main():
         parameters = {}
         labels = [
             "power",
+            "rated power",
             "electric motor efficiency",
             "auxiliary power demand",
             "fuel cell power",
@@ -267,6 +268,27 @@ def main():
                     "PHEV mode ranges are recorded separately in the generation metadata.",
                     activity["comment"],
                 )
+        if power == "FCEV" and size in {"3.5t", "7.5t"}:
+            reference, url = {
+                "3.5t": (
+                    "Renault Master Z.E. (1 July 2020)",
+                    "https://www.renaultgroup.com/magazine/energies-et-motorisations/master-z-e/",
+                ),
+                "7.5t": (
+                    "FUSO eCanter (31 March 2020)",
+                    "https://www.daimlertruck.com/newsroom/pressemitteilung/hello-dublin-der-fuso-ecanter-liefert-post-in-irland-45975414",
+                ),
+            }[size]
+            note += (
+                f"Documented motor-only proxy: {reference}, {p['rated power']:g} kW "
+                f"mechanical shaft output; source: {url}. "
+                "This electric-commercial-vehicle motor is transferred to the FCEV; "
+                "it is not a complete FCEV calibration. The original fuel-cell/battery "
+                "DC shares are retained and component mass, storage and consumption "
+                "are recalculated together. Regional-delivery shaft-power feasibility "
+                "is checked at the stated payload; other loads and cycles may exceed "
+                "the rating. Future Premise scenarios retain this baseline FCEV hardware. "
+            )
         if power == "HEV-d":
             from carculator_truck.hybrid_battery import PROFILE_SOURCE
 
