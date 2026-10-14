@@ -17,6 +17,7 @@ from pathlib import Path
 import numpy as np
 import yaml
 from audit_premise_vehicle_workbooks import identity, read_workbook, write_csv
+from premise_vehicle_baseline import load_baseline
 from premise_vehicle_battery_metadata import SPEC_KEY as BATTERY_SIZING_KEY
 from premise_vehicle_battery_metadata import (
     attach_specification,
@@ -131,11 +132,8 @@ def main():
         for r in csv.DictReader((args.audit / "candidate_recipes.csv").open())
         if r["family"] == "car" and r["selected_for_2020_update"] == "True"
     ]
-    old = {
-        d["name"]: d
-        for d in json.loads((args.audit / "parsed_inventories.json").read_text())
-        if d["workbook"] == "lci-pass_cars.xlsx"
-    }
+    baseline, baseline_hash = load_baseline("car", root / "premise")
+    old = {d["name"]: d for d in baseline}
     native = [r for r in recipes if r["status"].startswith("native")]
     raw_path = args.output / "raw.json"
     parameter_path = args.output / "model_parameters.json"
@@ -484,6 +482,7 @@ def main():
     write_csv(args.output / "noise_audit.csv", noise)
     write_csv(args.output / "vehicle_parameters.csv", balance)
     record = dict(
+        original_workbook_sha256=baseline_hash,
         fcev_battery_policy=fcev_battery_policy(),
         phev_battery_replacement_policy={
             "distance_km": 200000,
@@ -536,6 +535,7 @@ def main():
                 "carculator/carculator/data/phev_2020_calibration.json",
                 "carculator_utils/carculator_utils/data/emission_factors/provenance.json",
                 "carculator_utils/dev/regenerate_premise_cars.py",
+                "carculator_utils/dev/premise_vehicle_baseline.py",
                 "carculator_utils/dev/premise_vehicle_battery_metadata.py",
             )
         },

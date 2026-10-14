@@ -17,8 +17,11 @@ from pathlib import Path
 
 import numpy as np
 import yaml
-
 from audit_premise_vehicle_workbooks import identity, read_workbook, write_csv
+from premise_vehicle_baseline import load_baseline
+from premise_vehicle_battery_metadata import attach_specification, model_specification
+from premise_vehicle_lpg_metadata import attach_lpg_policy
+from premise_vehicle_provenance import attach_legacy_provenance, enrich_export
 from regenerate_premise_cars import (
     HYDROGEN_COMPRESSION_KEY,
     clean,
@@ -27,9 +30,6 @@ from regenerate_premise_cars import (
     validate_phev_battery,
     write_workbook,
 )
-from premise_vehicle_battery_metadata import attach_specification, model_specification
-from premise_vehicle_lpg_metadata import attach_lpg_policy
-from premise_vehicle_provenance import attach_legacy_provenance, enrich_export
 
 ROOT = Path(__file__).resolve().parents[2]
 CYCLE = "Regional delivery"
@@ -75,19 +75,16 @@ def main():
         if r["family"] == "truck" and r["selected_for_2020_update"] == "True"
     ]
     assert len(recipes) == 52
-    old = {
-        d["name"]: d
-        for d in json.loads((audit / "parsed_inventories.json").read_text())
-        if d["workbook"] == "lci-trucks.xlsx"
-    }
+    baseline, original_hash = load_baseline("truck", ROOT / "premise")
+    old = {d["name"]: d for d in baseline}
     raw_path, par_path = args.output / "raw.json", args.output / "model_parameters.json"
     for package in ("carculator_utils", "carculator_truck"):
         sys.path.insert(0, str(ROOT / package))
     if not args.reuse_raw:
         from carculator_truck import (
+            InventoryTruck,
             TruckInputParameters,
             TruckModel,
-            InventoryTruck,
             fill_xarray_from_input_parameters,
         )
 
@@ -533,8 +530,6 @@ def main():
         if not d["name"].startswith(("transport,", "lorry production,"))
     ]
     legacy_path = args.output / "lci-truck-legacy-components.xlsx"
-    original_summary = json.loads((audit / "summary.json").read_text())
-    original_hash = original_summary["truck"]["sha256"]
     attach_legacy_provenance(
         legacy_components, {identity(d): d for d in old.values()}, original_hash
     )
@@ -544,6 +539,7 @@ def main():
     write_csv(args.output / "noise_audit.csv", noise)
     write_csv(args.output / "vehicle_parameters.csv", balance)
     source_files = [
+        Path(__file__).with_name("premise_vehicle_baseline.py"),
         ROOT / "carculator_truck/carculator_truck/model.py",
         ROOT / "carculator_truck/carculator_truck/hybrid_battery.py",
         ROOT / "carculator_truck/carculator_truck/fuel_cell_battery.py",
@@ -557,11 +553,11 @@ def main():
         Path(__file__),
         Path(__file__).with_name("premise_vehicle_battery_metadata.py"),
     ]
-    from carculator_truck.hybrid_battery import HybridBatteryProfile, PROFILE_SOURCE
+    from carculator_truck.fuel_cell_battery import PROFILE_SOURCE as FCEV_PROFILE_SOURCE
     from carculator_truck.fuel_cell_battery import (
         FuelCellBatteryProfile,
-        PROFILE_SOURCE as FCEV_PROFILE_SOURCE,
     )
+    from carculator_truck.hybrid_battery import PROFILE_SOURCE, HybridBatteryProfile
 
     record = dict(
         fcev_battery_policy={
