@@ -87,9 +87,11 @@ def get_mileage_degradation_factor(
     vehicle_type: str,
 ) -> [DataArray, None]:
     """
-    Catalyst degrade overtime, leading to increased emissions
-    of CO, HC and NOX. We apply a correction factor from HBEFA 4.1
-    to reflect this.
+    Apply the bundled lifetime-average catalyst deterioration factors.
+
+    Hybrid combustion modes use the same engine aliases as hot factors.
+    Lifetime remains vehicle distance, without an additional utility-factor
+    adjustment; this is an ICE-engine ageing proxy, not a hybrid calibration.
     :return:
     """
 
@@ -103,7 +105,11 @@ def get_mileage_degradation_factor(
     # Tables contain endpoint factors at the reference mileage. Linear
     # deterioration from unity has its lifetime mean at half the lifetime.
     reference_km = 890000 if vehicle_type in ("bus", "truck") else 200000
-    corr = corr.reindex(powertrain=lifetime_km.powertrain, fill_value=1.0)
+    mapped = [MAP_PWT.get(str(pt), str(pt)) for pt in lifetime_km.powertrain.values]
+    # Select before restoring caller labels: repeated engine aliases must not
+    # collapse HEV/PHEV coordinates or align an ICEV factor to the wrong mode.
+    corr = corr.reindex(powertrain=list(dict.fromkeys(mapped)), fill_value=1.0)
+    corr = corr.sel(powertrain=mapped).assign_coords(powertrain=lifetime_km.powertrain)
     corr = corr.sel(
         euro_class=xr.DataArray(
             euro_class, dims="year", coords={"year": lifetime_km.year}

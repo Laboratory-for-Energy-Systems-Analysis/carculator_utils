@@ -197,3 +197,29 @@ def test_fcev_metadata_distinguishes_power_requirement_from_validation(family, m
     assert ("peak-power capability remains unverified" in ds["comment"]) == (
         family == "truck"
     )
+
+
+@pytest.mark.parametrize("powertrain", ["HEV-p", "HEV-d", "PHEV-p", "PHEV-d"])
+def test_hybrid_metadata_discloses_engine_ageing_proxy_and_mode_weighting(powertrain):
+    module = load("premise_vehicle_provenance")
+    ds = dict(
+        name="hybrid service",
+        unit="kilometer",
+        location="RER",
+        exchanges=[],
+        **{"reference product": "transport"},
+    )
+    parameters = [
+        dict(name=ds["name"], size="Medium", powertrain=powertrain, proxy=False)
+    ]
+    generation = {
+        "libraries": {
+            "carculator": {"version": "test"},
+            "carculator_utils": {"version": "test"},
+        }
+    }
+    module.attach_provenance([ds], "car", generation, parameters)
+    assert "uncalibrated hybrid ageing proxy" in ds["comment"]
+    assert "vehicle lifetime kilometres" in ds["comment"]
+    assert "weighted once" in ds["comment"]
+    assert "not multiplied by hot-exhaust deterioration" in ds["comment"]

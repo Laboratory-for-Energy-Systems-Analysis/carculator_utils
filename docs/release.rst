@@ -6,6 +6,10 @@ Release notes
 
 Recent inventory corrections in this release:
 
+* Use the corresponding petrol/diesel engine's existing deterioration factors
+  for hybrid hot exhaust, consistently with hot-factor lookup. Preserve the
+  vehicle-mileage basis and PHEV mode weighting. See :doc:`hot_emission_audit`
+  for the limits of this combustion-engine ageing proxy.
 * Correct FCEV buffer power and car pack mass accounting. The net fuel-cell
   contribution plus battery power now equals the model's vehicle power.
   Starter sizing preserves this power in trucks and buses. Their existing

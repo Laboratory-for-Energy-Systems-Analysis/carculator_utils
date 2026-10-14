@@ -269,7 +269,17 @@ downstream substring-based normalization and validation, which matched
   vehicles. This implements linear deterioration from unity and the documented
   half-lifetime averaging convention, with linear extrapolation beyond the
   reference mileage. The original powertrain-specific endpoint tables are
-  retained, including any unity factors for hybrid powertrains.
+  retained. As corrected on 14 October 2026, HEVs and PHEV combustion modes
+  select the corresponding ICEV petrol/diesel endpoint, consistently with hot
+  factor lookup. Hybrid labels previously selected unity placeholders or a
+  missing-row fallback instead. This is an ICE-engine ageing proxy, retaining
+  vehicle lifetime kilometres without a second PHEV utility-factor adjustment.
+  PHEV mode weighting still occurs once when assembling the final vehicle.
+  Cold-start and evaporative factors are added after hot-exhaust deterioration
+  and are unaffected. Electric modes and absent source factors retain unity;
+  two-wheelers still have no deterioration table. This correction does not
+  establish hybrid-specific ageing behaviour or validate the high truck NOx
+  coefficients whose derivation is no longer available.
 
 These repairs change pollutant inventories and their LCIA results, particularly
 toxicity and NMVOC-related impacts. They do not recalibrate HBEFA-derived

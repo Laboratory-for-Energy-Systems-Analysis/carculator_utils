@@ -186,6 +186,12 @@ def attach_provenance(datasets, family, generation, parameters):
                         "The inherited lead-acid starter cell power-density input is not a validated lithium-ion traction rating and does not determine this final energy-sized pack. "
                         "Traction-cell peak-power capability remains unverified; battery power records the model requirement. "
                     )
+            if native["powertrain"].startswith(("HEV-", "PHEV-")):
+                note += (
+                    "Hybrid hot-exhaust deterioration uses the corresponding petrol/diesel ICEV engine's bundled endpoint factors, as for hot emission factors. "
+                    "This is an uncalibrated hybrid ageing proxy: the existing lifetime-average formula uses vehicle lifetime kilometres, without an extra PHEV utility-factor adjustment. "
+                    "PHEV combustion emissions are weighted once when combining driving modes; cold-start and evaporative factors are not multiplied by hot-exhaust deterioration. "
+                )
         else:
             spec["component source boundary"] = (
                 "Bundled component recipe exported with the model; model year and climate do not date or parameterize this component. Its literature source is recorded separately."

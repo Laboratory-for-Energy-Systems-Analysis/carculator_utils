@@ -4,6 +4,10 @@ Notable user-facing changes to `carculator_utils`.
 
 ## [Unreleased]
 
+- Apply the existing petrol/diesel engine aliases to HEV and PHEV hot-emission
+  deterioration, preserving hybrid coordinates and the lifetime-average
+  mileage formula. Cold starts, evaporation and electric modes are unchanged.
+  This retains combustion-engine ageing as a documented proxy for hybrids.
 - Size the FCEV power buffer from the complement of net fuel-cell power,
   and derive complete pack mass from its declared cell mass share. Preserve
   FCEV traction-battery power when sizing combustion starter batteries.

@@ -209,7 +209,10 @@ def audit(output):
             endpoint = max(
                 1,
                 factor(
-                    degradation, powertrain=pt, component=component, euro_class=euro
+                    degradation,
+                    powertrain=MAP_PWT[pt],
+                    component=component,
+                    euro_class=euro,
                 ),
             )
             reference_km = 890000 if model.vehicle_type in ("bus", "truck") else 200000
@@ -326,7 +329,7 @@ def audit(output):
                         1,
                         factor(
                             degradation,
-                            powertrain=pt,
+                            powertrain=MAP_PWT[pt],
                             component="Nitrogen oxides",
                             euro_class=euro,
                         ),

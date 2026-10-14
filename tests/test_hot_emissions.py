@@ -114,6 +114,77 @@ def test_deterioration_uses_each_year_size_and_sample(monkeypatch):
     )
 
 
+@pytest.mark.parametrize(
+    "family,reference", [("car", 200000), ("truck", 890000), ("bus", 890000)]
+)
+def test_hybrid_deterioration_uses_engine_aliases_without_collapsing_labels(
+    family, reference, monkeypatch
+):
+    endpoints = xr.DataArray(
+        [[[3.0], [5.0]], [[2.0], [4.0]]],
+        dims=("powertrain", "euro_class", "component"),
+        coords={
+            "powertrain": ["ICEV-p", "ICEV-d"],
+            "euro_class": [6, 7],
+            "component": ["Nitrogen oxides"],
+        },
+    )
+    monkeypatch.setattr(hot_emissions, "get_emission_factors", lambda **kw: endpoints)
+    labels = [
+        "PHEV-c-d",
+        "HEV-p",
+        "BEV",
+        "ICEV-p",
+        "PHEV-e",
+        "FCEV",
+        "HEV-d",
+        "PHEV-c-p",
+        "ICEV-g",
+        "unmapped",
+    ]
+    lifetime = (
+        xr.DataArray(
+            [reference, 2 * reference],
+            dims="value",
+            coords={"value": ["short", "long"]},
+        )
+        .expand_dims(size=["Medium"], powertrain=labels, year=[2030, 2020])
+        .copy()
+    )
+    before = lifetime.copy(deep=True)
+    result = hot_emissions.get_mileage_degradation_factor(
+        lifetime, [7, 6], labels, family
+    )
+    assert list(result.powertrain.values) == labels
+    for pt in ("HEV-p", "PHEV-c-p", "ICEV-p"):
+        np.testing.assert_allclose(
+            result.sel(powertrain=pt, year=2020).values.ravel(), [2, 3]
+        )
+        np.testing.assert_allclose(
+            result.sel(powertrain=pt, year=2030).values.ravel(), [3, 5]
+        )
+    for pt in ("HEV-d", "PHEV-c-d"):
+        np.testing.assert_allclose(
+            result.sel(powertrain=pt, year=2020).values.ravel(), [1.5, 2]
+        )
+        np.testing.assert_allclose(
+            result.sel(powertrain=pt, year=2030).values.ravel(), [2.5, 4]
+        )
+    for pt in ("BEV", "PHEV-e", "FCEV", "ICEV-g", "unmapped"):
+        np.testing.assert_allclose(result.sel(powertrain=pt), 1)
+    xr.testing.assert_identical(lifetime, before)
+
+
+def test_missing_deterioration_table_retains_no_correction(monkeypatch):
+    monkeypatch.setattr(hot_emissions, "get_emission_factors", lambda **kw: None)
+    assert (
+        hot_emissions.get_mileage_degradation_factor(
+            None, [5], ["ICEV-p"], "two-wheeler"
+        )
+        is None
+    )
+
+
 def test_ethane_and_ethene_are_retained_without_chemical_misidentification():
     mapping = get_exhaust_emission_flows()
     for environments, compartment in (
@@ -176,6 +247,28 @@ def isolated_car_emissions():
     annual.loc[dict(year=2030)] *= 2
     energy = xr.zeros_like(velocity)
     return hem, lifetime, annual, energy
+
+
+def test_hybrid_ageing_scales_hot_exhaust_once_and_leaves_cold_starts_separate(
+    isolated_car_emissions,
+):
+    hem, lifetime, annual, energy = isolated_car_emissions
+    energy[:] = 1000  # Four MJ along a 0.055 km trace.
+    hem.exhaust.loc[dict(powertrain="ICEV-p", component="Carbon monoxide")] = 1
+    hem.non_exhaust.loc[
+        dict(powertrain="ICEV-p", type="cold start", component="Carbon monoxide")
+    ] = 2
+    result = hem.get_hot_emissions(
+        [6.2, 6.3], lifetime, energy, annual, starts_per_day=1.8
+    )
+    actual = sum(
+        result.sel(component=f"Carbon monoxide, {env}", drop=True)
+        for env in ("urban", "suburban", "rural")
+    )
+    # The shipped Euro-6 petrol endpoint is 1.3 at 200,000 km: lifetime mean
+    # 1.15. Cold-start g/event is added afterwards, with no second ageing factor.
+    expected = (4 * 1.15 / 0.055 + 2 * 1.8 * 365 / annual) / 1000
+    xr.testing.assert_allclose(actual, expected.transpose(*actual.dims))
 
 
 @pytest.mark.parametrize("process", ["soak", "diurnal", "running losses"])
