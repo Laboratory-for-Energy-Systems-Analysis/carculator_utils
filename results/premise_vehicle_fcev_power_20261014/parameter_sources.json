@@ -1,0 +1,372 @@
+{
+  "car": {
+    "224-2020-battery cell energy density, NMC-622": {
+      "name": "battery cell energy density, NMC-622",
+      "year": 2020,
+      "powertrain": [
+        "ICEV-g",
+        "HEV-p",
+        "BEV",
+        "ICEV-d",
+        "ICEV-p",
+        "FCEV",
+        "HEV-d"
+      ],
+      "sizes": [
+        "Small",
+        "Micro",
+        "Medium",
+        "Large",
+        "Large SUV",
+        "Lower medium",
+        "Van",
+        "Medium SUV",
+        "Mini"
+      ],
+      "amount": 0.24,
+      "loc": 0.24,
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "category": "Energy Storage",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "minimum": 0.22799999999999998,
+      "maximum": 0.252
+    },
+    "235-2020-battery cell mass share": {
+      "name": "battery cell mass share",
+      "year": 2020,
+      "powertrain": [
+        "ICEV-g",
+        "PHEV-d",
+        "PHEV-e",
+        "HEV-p",
+        "PHEV-c-p",
+        "BEV",
+        "PHEV-c-d",
+        "ICEV-d",
+        "ICEV-p",
+        "FCEV",
+        "HEV-d",
+        "PHEV-p"
+      ],
+      "sizes": [
+        "Small",
+        "Micro",
+        "Medium",
+        "Large",
+        "Large SUV",
+        "Lower medium",
+        "Van",
+        "Medium SUV",
+        "Mini"
+      ],
+      "amount": 0.7,
+      "loc": 0.7,
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "category": "Energy Storage",
+      "source": "For LFP :Yang, X.-G., Liu, T., & Wang, C.-Y. (2021). Thermally modulated lithium iron phosphate batteries for mass-market electric vehicles. Nature Energy 2021 6:2, 6(2), 176\u2013185. https://doi.org/10.1038/s41560-020-00757-7\nFor NMC/NCA: Towards more flexibility and transparency in life cycle inventories for Lithium-ion batteries. EleonorCrenna, Marcel Gauch, Rolf Widmer, Patrick W\u00e4ger, Roland Hischier",
+      "comment": "",
+      "minimum": 0.65,
+      "maximum": 0.73
+    },
+    "238-2020-battery cell power density": {
+      "name": "battery cell power density",
+      "year": 2020,
+      "powertrain": [
+        "ICEV-g",
+        "HEV-p",
+        "ICEV-d",
+        "ICEV-p",
+        "FCEV",
+        "HEV-d"
+      ],
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large",
+        "Large SUV",
+        "Lower medium",
+        "Van",
+        "Medium SUV",
+        "Mini"
+      ],
+      "amount": 2.130434782608695,
+      "loc": 2.130434782608695,
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "category": "Energy Storage",
+      "source": "Konecky, Anderman (2016), Grunditz, Thiringer (2016), Hirschberg et al. (2016), DOE (2013), DOE (2017c), Dai (2018),Own assumption",
+      "comment": "",
+      "minimum": 1.3,
+      "maximum": 2.3
+    },
+    "1389-2020-fuel cell own consumption": {
+      "name": "fuel cell own consumption",
+      "year": 2020,
+      "powertrain": [
+        "FCEV"
+      ],
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large",
+        "Large SUV",
+        "Lower medium",
+        "Van",
+        "Medium SUV",
+        "Mini"
+      ],
+      "amount": 1.146739130434782,
+      "loc": 1.146739130434782,
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "category": "Powertrain",
+      "source": "Hirschberg et al. (2016), Miotti et al (2015), Simons and Bauer (2015), DOE (2017a), DOE (2017b), Calibration result",
+      "comment": "",
+      "minimum": 1.1,
+      "maximum": 1.2
+    },
+    "1394-2020-fuel cell power share": {
+      "name": "fuel cell power share",
+      "year": 2020,
+      "powertrain": [
+        "FCEV"
+      ],
+      "sizes": [
+        "Small",
+        "Medium",
+        "Large",
+        "Large SUV",
+        "Lower medium",
+        "Van",
+        "Medium SUV",
+        "Mini"
+      ],
+      "amount": 0.75,
+      "loc": 0.75,
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "category": "Powertrain",
+      "source": "Simons (2013), Hirschberg et al. (2016), Own assumption",
+      "comment": "Share of total vehicle power provided by fuel cell (versus battery)",
+      "minimum": 0.6000000000000001,
+      "maximum": 0.9
+    },
+    "temporal-0008-2020-electric motor efficiency": {
+      "amount": 0.9,
+      "category": "Efficiency",
+      "comment": "Cycle-average motor/inverter efficiency used for electric traction, regenerative storage and subsequent electric propulsion in hybrids. Excludes battery and transmission losses. Aggregate consumption does not identify this component uniquely; retained as an explicit, adjustable assumption. Temporal extension: constant 2025 component or architecture prior. See temporal_energy_provenance.json.",
+      "kind": "distribution",
+      "loc": 0.9,
+      "name": "electric motor efficiency",
+      "source": "Engineering assumption; not measurement-fitted",
+      "uncertainty_type": 1,
+      "unit": "unitless",
+      "year": 2020,
+      "sizes": [
+        "Large",
+        "Large SUV",
+        "Lower medium",
+        "Medium",
+        "Medium SUV",
+        "Micro",
+        "Mini",
+        "Small",
+        "Van"
+      ],
+      "powertrain": [
+        "BEV",
+        "FCEV",
+        "HEV-d",
+        "HEV-p",
+        "ICEV-d",
+        "ICEV-g",
+        "ICEV-p",
+        "PHEV-c-d",
+        "PHEV-c-p",
+        "PHEV-d",
+        "PHEV-e",
+        "PHEV-p"
+      ]
+    }
+  },
+  "truck": {
+    "900-2020-battery cell power density": {
+      "amount": 0.15,
+      "category": "Energy Storage",
+      "powertrain": [
+        "ICEV-d",
+        "ICEV-g",
+        "FCEV",
+        "HEV-d",
+        "PHEV-c-d"
+      ],
+      "sizes": [
+        "3.5t",
+        "7.5t",
+        "18t",
+        "26t",
+        "32t",
+        "40t",
+        "60t"
+      ],
+      "year": 2020,
+      "name": "battery cell power density",
+      "unit": "kW/kg",
+      "importance": "Critical",
+      "source": "",
+      "comment": "Conventional lead\u2013acid (SLI/AGM/EFB) 10-s pulse specific power: roughly 150\u2013350 W/kg\nTrucks often use two 12 V batteries totaling ~50\u201370 kg",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.15,
+      "minimum": 0.1,
+      "maximum": 0.35
+    },
+    "1650-2020-fuel cell power share": {
+      "amount": 0.25,
+      "category": "Powertrain",
+      "powertrain": [
+        "FCEV"
+      ],
+      "sizes": [
+        "18t",
+        "26t",
+        "32t",
+        "40t",
+        "60t"
+      ],
+      "year": 2020,
+      "name": "fuel cell power share",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox et al. 2020",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Good",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.25,
+      "minimum": 0.2,
+      "maximum": 0.3
+    },
+    "1656-2020-fuel cell power share": {
+      "amount": 0.2,
+      "category": "Powertrain",
+      "powertrain": [
+        "FCEV"
+      ],
+      "sizes": [
+        "3.5t",
+        "7.5t"
+      ],
+      "year": 2020,
+      "name": "fuel cell power share",
+      "unit": "unitless",
+      "importance": "Critical",
+      "source": "Cox et al. 2020",
+      "comment": "Same as for passenger vehicles.",
+      "status": "Good",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.2,
+      "minimum": 0.15000000000000002,
+      "maximum": 0.25
+    },
+    "1668-2020-fuel cell own consumption": {
+      "amount": 1.15,
+      "category": "Powertrain",
+      "powertrain": [
+        "FCEV"
+      ],
+      "sizes": [
+        "3.5t",
+        "7.5t",
+        "18t",
+        "26t",
+        "32t",
+        "40t",
+        "60t"
+      ],
+      "year": 2020,
+      "name": "fuel cell own consumption",
+      "unit": "kW/kW",
+      "importance": "",
+      "source": "",
+      "comment": "",
+      "status": "",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 1.15,
+      "minimum": 1.125,
+      "maximum": 1.175
+    },
+    "1944-2020-battery cell energy density, NMC-622": {
+      "amount": 0.24,
+      "category": "Energy Storage",
+      "powertrain": [
+        "PHEV-c-d",
+        "PHEV-e",
+        "ICEV-d",
+        "ICEV-g",
+        "BEV",
+        "FCEV",
+        "HEV-d",
+        "PHEV-d"
+      ],
+      "sizes": [
+        "3.5t",
+        "7.5t",
+        "18t",
+        "26t",
+        "32t",
+        "40t",
+        "60t"
+      ],
+      "year": 2020,
+      "name": "battery cell energy density, NMC-622",
+      "unit": "kWh/kg",
+      "importance": "Critical",
+      "source": "https://pubs.acs.org/doi/pdf/10.1021/acsenergylett.7b00432",
+      "comment": "",
+      "status": "Acceptable",
+      "kind": "distribution",
+      "uncertainty_type": 5,
+      "loc": 0.24,
+      "minimum": 0.22799999999999998,
+      "maximum": 0.252
+    },
+    "temporal-0014-2020-electric motor efficiency": {
+      "amount": 0.9,
+      "category": "Efficiency",
+      "comment": "Cycle-average motor/inverter efficiency used for electric traction, regenerative storage and subsequent electric propulsion in hybrids. Excludes battery and transmission losses. Aggregate consumption does not identify this component uniquely; retained as an explicit, adjustable assumption. Temporal extension: constant 2025 component or architecture prior. See temporal_energy_provenance.json.",
+      "kind": "distribution",
+      "loc": 0.9,
+      "name": "electric motor efficiency",
+      "source": "Engineering assumption; not measurement-fitted",
+      "uncertainty_type": 1,
+      "unit": "unitless",
+      "year": 2020,
+      "sizes": [
+        "18t",
+        "26t",
+        "3.5t",
+        "32t",
+        "40t",
+        "60t",
+        "7.5t"
+      ],
+      "powertrain": [
+        "BEV",
+        "FCEV",
+        "HEV-d",
+        "ICEV-d",
+        "ICEV-g",
+        "PHEV-c-d",
+        "PHEV-d",
+        "PHEV-e"
+      ]
+    }
+  }
+}

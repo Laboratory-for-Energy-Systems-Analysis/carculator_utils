@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="Docutils 0.22.4: https://docutils.sourceforge.io/" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FCEV electrical power and buffer plausibility</title>
+<style type="text/css">
+
+/* Minimal style sheet for the HTML output of Docutils.                    */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: minimal.css 10018 2025-03-06 16:19:15Z milde $                                                               */
+/* :Copyright: © 2015, 2021 Günter Milde.                                  */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+
+/* This CSS3 stylesheet defines rules for Docutils elements without        */
+/* HTML equivalent. It is required to make the document semantics visible. */
+/*                                                                         */
+/* .. _validates: http://jigsaw.w3.org/css-validator/validator$link        */
+
+/* titles */
+p.topic-title,
+p.admonition-title,
+p.system-message-title {
+  font-weight: bold;
+}
+p.sidebar-title,
+p.rubric {
+  font-weight: bold;
+  font-size: larger;
+}
+p.rubric {
+  color: maroon;
+}
+p.subtitle,
+p.section-subtitle,
+p.sidebar-subtitle {
+  font-weight: bold;
+  margin-top: -0.5em;
+}
+h1 + p.subtitle {
+  font-size: 1.6em;
+}
+a.toc-backref {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Warnings, Errors */
+.system-messages h2,
+.system-message-title,
+pre.problematic,
+span.problematic {
+  color: red;
+}
+
+/* Inline Literals */
+.docutils.literal {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+/* do not wrap at hyphens and similar: */
+.literal > span.pre { white-space: nowrap; }
+
+/* keep line-breaks (\n) visible */
+.pre-wrap { white-space: pre-wrap; }
+
+/* Lists */
+
+/* compact and simple lists: no margin between items */
+.simple  li, .simple  ul, .simple  ol, .simple  > li p,
+.compact li, .compact ul, .compact ol, .compact > li p,
+dl.simple  > dd, dl.compact > dd, dl.docinfo > dd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Nested Paragraphs */
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+details > p:last-child { margin-bottom: 1em; }
+
+/* Table of Contents */
+.contents ul.auto-toc { /* section numbers present */
+  list-style-type: none;
+}
+
+/* Enumerated Lists */
+ol.arabic     { list-style: decimal }
+ol.loweralpha { list-style: lower-alpha }
+ol.upperalpha { list-style: upper-alpha }
+ol.lowerroman { list-style: lower-roman }
+ol.upperroman { list-style: upper-roman }
+
+/* Definition Lists and Derivatives */
+dt .classifier { font-style: italic }
+dt .classifier:before {
+  font-style: normal;
+  margin: 0.5em;
+  content: ":";
+}
+/* Field Lists and similar */
+/* bold field name, content starts on the same line */
+dl.field-list,
+dl.option-list,
+dl.docinfo {
+  display: flow-root;
+}
+dl.field-list > dt,
+dl.option-list > dt,
+dl.docinfo > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.25em;
+}
+/* Offset for field content (corresponds to the --field-name-limit option) */
+dl.field-list > dd,
+dl.option-list > dd,
+dl.docinfo > dd {
+  margin-left:  9em; /* ca. 14 chars in the test examples, fit all Docinfo fields */
+}
+/* start nested lists on new line */
+dd > dl:first-child,
+dd > ul:first-child,
+dd > ol:first-child {
+  clear: left;
+}
+/* start field-body on a new line after long field names */
+dl.field-list > dd > *:first-child,
+dl.option-list > dd > *:first-child
+{
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+
+/* Bibliographic Fields (docinfo) */
+dl.docinfo pre.address {
+  font: inherit;
+  margin: 0;
+}
+dl.docinfo > dd.authors > p { margin: 0; }
+
+/* Option Lists */
+dl.option-list > dt { font-weight: normal; }
+span.option { white-space: nowrap; }
+
+/* Footnotes and Citations  */
+
+.footnote, .citation { margin: 1em 0; } /* default paragraph skip (Firefox) */
+/* hanging indent */
+.citation { padding-left: 2em; }
+.footnote { padding-left: 1.7em; }
+.footnote.superscript { padding-left: 1.0em; }
+.citation > .label { margin-left: -2em; }
+.footnote > .label { margin-left: -1.7em; }
+.footnote.superscript > .label { margin-left: -1.0em; }
+
+.footnote > .label + *,
+.citation > .label + * {
+  display: inline-block;
+  margin-top: 0;
+  vertical-align: top;
+}
+.footnote > .backrefs + *,
+.citation > .backrefs + * {
+  margin-top: 0;
+}
+.footnote > .label + p, .footnote > .backrefs + p,
+.citation > .label + p, .citation > .backrefs + p {
+  display: inline;
+  vertical-align: inherit;
+}
+
+.backrefs { user-select: none; }
+.backrefs > a { font-style: italic; }
+
+/* superscript footnotes */
+a[role="doc-noteref"].superscript,
+.footnote.superscript > .label,
+.footnote.superscript > .backrefs {
+  vertical-align: super;
+  font-size: smaller;
+  line-height: 1;
+}
+a[role="doc-noteref"].superscript > .fn-bracket,
+.footnote.superscript > .label > .fn-bracket {
+  /* hide brackets in display but leave for copy/paste */
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+}
+[role="doc-noteref"].superscript + [role="doc-noteref"].superscript {
+  padding-left: 0.15em; /* separate consecutive footnote references */
+  /* TODO: unfortunately, "+" also selects with text between the references. */
+}
+
+/* Alignment */
+.align-left   {
+  text-align: left;
+  margin-right: auto;
+}
+.align-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.align-right  {
+  text-align: right;
+  margin-left: auto;
+}
+.align-top    { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+
+/* reset inner alignment in figures and tables */
+figure.align-left, figure.align-right,
+table.align-left, table.align-center, table.align-right {
+  text-align: inherit;
+}
+
+/* Text Blocks */
+.topic { margin: 1em 2em; }
+.sidebar,
+.admonition,
+.system-message {
+  margin: 1em 2em;
+  border: thin solid;
+  padding: 0.5em 1em;
+}
+div.line-block { display: block; }
+div.line-block div.line-block, pre { margin-left: 2em; }
+
+/* Code line numbers: don't copy with drag-and-drop */
+pre.code .ln { display: none; }
+pre.code code:before {
+  content: attr(data-lineno);
+  font-size: small;
+  color: gray;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+td, th {
+  border: thin solid silver;
+  padding: 0 1ex;
+}
+.borderless td, .borderless th {
+  border: 0;
+  padding: 0;
+  padding-right: 0.5em /* separate table cells */
+}
+
+table > caption, figcaption {
+  text-align: left;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+table.captionbelow {
+  caption-side: bottom;
+}
+
+/* MathML (see "math.css" for --math-output=HTML) */
+math .boldsymbol { font-weight: bold; }
+math.boxed, math .boxed {padding: 0.25em; border: thin solid; }
+/* style table similar to AMS "align" or "aligned" environment: */
+mtable.cases > mtr > mtd { text-align: left; }
+mtable.ams-align > mtr > mtd { padding-left: 0; padding-right: 0; }
+mtable.ams-align > mtr > mtd:nth-child(2n) { text-align: left; }
+mtable.ams-align > mtr > mtd:nth-child(2n+1) { text-align: right; }
+mtable.ams-align > mtr > mtd:nth-child(2n+3) { padding-left: 2em; }
+.mathscr mi, mi.mathscr {
+  font-family: STIX, XITSMathJax_Script, rsfs10,
+               "Asana Math", Garamond, cursive;
+}
+
+/* Document Header and Footer */
+header { border-bottom: 1px solid black; }
+footer { border-top: 1px solid black; }
+
+/* Images are block-level by default in Docutils */
+/* New HTML5 block elements: set display for older browsers */
+img, svg, header, footer, main, aside, nav, section, figure, video, details {
+  display: block;
+}
+svg { width: auto; height: auto; }  /* enable scaling of SVG images */
+/* inline images */
+
+p img, p svg, p video,
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img,
+h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg {
+  display: inline;
+}
+
+</style>
+<style type="text/css">
+
+/* CSS31_ style sheet for the output of Docutils HTML writers.             */
+/* Rules for easy reading and pre-defined style variants.                  */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: plain.css 10079 2025-04-10 12:01:48Z milde $                                                               */
+/* :Copyright: © 2015 Günter Milde.                                        */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+/* .. _CSS3: https://www.w3.org/Style/CSS/                                 */
+
+
+/* Document Structure */
+/* ****************** */
+
+/* "page layout" */
+body {
+  margin: 0;
+  background-color: #dbdbdb;
+  --field-indent: 9em; /* default indent of fields in field lists */
+}
+main, footer, header {
+  line-height:1.6;
+  /* avoid long lines --> better reading */
+  /* optimum is 45…75 characters/line <http://webtypography.net/2.1.2> */
+  /* OTOH: lines should not be too short because of missing hyphenation, */
+  max-width: 50rem;
+  padding: 1px 2%; /* 1px on top avoids grey bar above title (mozilla) */
+  margin: auto;
+}
+main {
+  counter-reset: table figure;
+  background-color: white;
+}
+footer, header {
+  font-size: smaller;
+  padding: 0.5em 2%;
+  border: none;
+}
+
+/* Table of Contents */
+ul.auto-toc > li > p {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+nav.contents ul {
+  padding-left: 1em;
+}
+main > nav.contents ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B29\ ';
+}
+main > nav.contents ul ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B1D\ ';
+}
+
+/* Transitions */
+hr.docutils {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+/* Paragraphs */
+
+/* vertical space (parskip) */
+p, ol, ul, dl, li,
+.footnote, .citation,
+div > math,
+table {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h1, h2, h3, h4, h5, h6,
+dd, details > p:last-child {
+  margin-bottom: 0.5em;
+}
+
+/* Lists */
+/* ===== */
+
+/* Definition Lists */
+/* Indent lists nested in definition lists */
+dd > ul:only-child, dd > ol:only-child { padding-left: 1em; }
+
+/* Description Lists */
+/* styled like in most dictionaries, encyclopedias etc. */
+dl.description {
+  display: flow-root;
+}
+dl.description > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.3em;
+}
+dl.description > dd:after {
+  display: table;
+  content: "";
+  clear: left; /* clearfix for empty descriptions */
+}
+
+/* Field Lists */
+
+dl.field-list > dd,
+dl.docinfo > dd {
+  margin-left: var(--field-indent); /* adapted in media queries or HTML */
+}
+
+/* example for custom field-name width */
+dl.field-list.narrow > dd {
+  --field-indent: 5em;
+}
+/* run-in: start field-body on same line after long field names */
+dl.field-list.run-in > dd p {
+  display: block;
+}
+
+/* Bibliographic Fields */
+
+/* generally, bibliographic fields use dl.docinfo */
+/* but dedication and abstract are placed into divs */
+div.abstract p.topic-title {
+  text-align: center;
+}
+div.dedication {
+  margin: 2em 5em;
+  text-align: center;
+  font-style: italic;
+}
+div.dedication p.topic-title {
+  font-style: normal;
+}
+
+/* disclosures */
+details { padding-left: 1em; }
+summary { margin-left: -1em; }
+
+/* Text Blocks */
+/* =========== */
+
+/* Literal Blocks */
+pre.literal-block, pre.doctest-block,
+pre.math, pre.code {
+  font-family: monospace;
+}
+
+/* Block Quotes and Topics */
+bockquote { margin: 1em 2em; }
+blockquote p.attribution {
+  text-align: right;
+  margin-left: 20%;
+}
+
+/* Tables */
+/* ====== */
+
+/* th { vertical-align: bottom; } */
+
+table tr { text-align: left; }
+
+/* "booktabs" style (no vertical lines) */
+table.booktabs {
+  border: 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.booktabs * {
+  border: 0;
+}
+table.booktabs th {
+  border-bottom: thin solid;
+}
+
+/* numbered tables (counter defined in div.document) */
+table.numbered > caption:before {
+  counter-increment: table;
+  content: "Table " counter(table) ": ";
+  font-weight: bold;
+}
+
+/* Explicit Markup Blocks */
+/* ====================== */
+
+/* Footnotes and Citations */
+/* ----------------------- */
+
+/* line on the left */
+.footnote-list {
+  border-left: solid thin;
+  padding-left: 0.25em;
+}
+
+/* Directives */
+/* ---------- */
+
+/* Body Elements */
+/* ~~~~~~~~~~~~~ */
+
+/* Images and Figures */
+
+/* let content flow to the side of aligned images and figures */
+figure.align-left,
+img.align-left,
+svg.align-left,
+video.align-left,
+div.align-left,
+object.align-left {
+  clear: left;
+  float: left;
+  margin-right: 1em;
+}
+figure.align-right,
+img.align-right,
+svg.align-right,
+video.align-right,
+div.align-right,
+object.align-right {
+  clear: right;
+  float: right;
+  margin-left: 1em;
+}
+/* Stop floating sidebars, images and figures */
+h1, h2, h3, h4, footer, header { clear: both; }
+
+/* Numbered figures */
+figure.numbered > figcaption > p:before {
+  counter-increment: figure;
+  content: "Figure " counter(figure) ": ";
+  font-weight: bold;
+}
+
+/* Admonitions and System Messages */
+.caution p.admonition-title,
+.attention p.admonition-title,
+.danger p.admonition-title,
+.error p.admonition-title,
+.warning p.admonition-title,
+div.error {
+  color: red;
+}
+
+/* Sidebar */
+/* Move right. In a layout with fixed margins, */
+/* it can be moved into the margin.            */
+aside.sidebar {
+  width: 30%;
+  max-width: 26em;
+  float: right;
+  clear: right;
+  margin-left: 1em;
+  margin-right: -1%;
+  background-color: #fffffa;
+}
+
+
+/* Code */
+pre.code { padding: 0.7ex }
+pre.code, code { background-color: #eeeeee }
+/* basic highlighting: for a complete scheme, see */
+/* https://docutils.sourceforge.io/sandbox/stylesheets/ */
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+
+/* Epigraph           */
+/* Highlights         */
+/* Pull-Quote         */
+/* Compound Paragraph */
+/* Container          */
+
+/* Inline Markup */
+/* ============= */
+
+sup, sub { line-height: 0.8; } /* do not add leading for lines with sup/sub */
+
+/* Inline Literals                                          */
+/* possible values: normal, nowrap, pre, pre-wrap, pre-line */
+/*   span.docutils.literal { white-space: pre-wrap; }       */
+
+/* Hyperlink References */
+a { text-decoration: none; }
+
+/* External Targets       */
+/*   span.target.external */
+/* Internal Targets       */
+/*   span.target.internal */
+/* Footnote References    */
+/*   a[role="doc-noteref"] */
+/* Citation References    */
+/*   a.citation-reference */
+
+</style>
+</head>
+<body>
+<main id="fcev-electrical-power-and-buffer-plausibility">
+<h1 class="title">FCEV electrical power and buffer plausibility</h1>
+
+<p>14 October 2026. This is a diagnostic follow-up to the earlier
+<a class="reference external" href="../premise_vehicle_fcev_20261014/report.html">FCEV accounting correction</a>.
+Fresh runs cover all eight installed 2020 FCEV car sizes and seven FCEV truck
+sizes, Swiss climate, WLTC for cars and Regional delivery for trucks. The
+physical specifications agree with the installed Premise parameter companions.</p>
+<section id="finding-mechanical-and-electrical-power-are-mixed">
+<h2>Finding: mechanical and electrical power are mixed</h2>
+<p>The previous correction closes the declared nominal allocation, but that is
+not an electrical feasibility test. <span class="docutils literal">power</span> and <span class="docutils literal">electric power</span> are
+mechanical motor-shaft ratings in the driving-cycle calculation. The fuel-cell
+rating divided by its own-consumption multiplier is net electrical output.
+Adding battery electrical power to this output must cover motor conversion
+losses and auxiliary electricity. Currently the sum merely equals shaft power.</p>
+<p>With the existing 2020 motor/inverter efficiency of 0.9, the appropriate
+boundary is:</p>
+<pre class="literal-block">required DC kW = motor shaft kW / 0.9 + auxiliary DC kW
+net fuel-cell kW = gross stack kW / gross-to-net multiplier
+required buffer kW = max(required DC kW - net fuel-cell kW, 0)</pre>
+<p>The 0.9 input already describes motor/inverter conversion; no separate inverter
+loss is added. Stack own consumption is included once. Auxiliaries bypass the
+motor. The current Swiss-climate auxiliary demand is used here, not an extreme
+temperature design envelope. Battery internal losses enter stored-energy
+calculations, not this terminal-output sum.</p>
+<table>
+<caption>Ratings at current vehicle masses, before resizing feedback</caption>
+<thead>
+<tr><th class="head"><p>Quantity</p></th>
+<th class="head"><p>Medium car</p></th>
+<th class="head"><p>40 t truck</p></th>
+</tr>
+</thead>
+<tbody>
+<tr><td><p>Motor shaft rating, kW</p></td>
+<td><p>139.47</p></td>
+<td><p>290.69</p></td>
+</tr>
+<tr><td><p>Net fuel-cell rating, kW</p></td>
+<td><p>104.60</p></td>
+<td><p>72.67</p></td>
+</tr>
+<tr><td><p>Recorded buffer power, kW</p></td>
+<td><p>34.87</p></td>
+<td><p>218.02</p></td>
+</tr>
+<tr><td><p>Motor plus auxiliaries, required DC kW</p></td>
+<td><p>155.35</p></td>
+<td><p>328.49</p></td>
+</tr>
+<tr><td><p>Uncovered DC power, kW</p></td>
+<td><p>15.88</p></td>
+<td><p>37.80</p></td>
+</tr>
+<tr><td><p>Buffer required if fuel-cell rating is retained, kW</p></td>
+<td><p>50.75</p></td>
+<td><p>255.81</p></td>
+</tr>
+<tr><td><p>Net fuel cell if the electrical split is retained, kW</p></td>
+<td><p>116.51</p></td>
+<td><p>82.12</p></td>
+</tr>
+<tr><td><p>Buffer if the electrical split is retained, kW</p></td>
+<td><p>38.84</p></td>
+<td><p>246.36</p></td>
+</tr>
+</tbody>
+</table>
+<p>All fifteen templates have this boundary mismatch. Preserving the existing
+fuel-cell/battery shares on the electrical side is the proposed correction;
+retaining fuel-cell ratings and increasing only the buffer is an alternative.
+The user has been asked to choose the allocation. Neither has been installed.
+Both require consistent source-model mass feedback; neither requires a solver
+in Premise. The existing share parameters do not establish which design choice
+was intended.</p>
+</section>
+<section id="cycle-screening-does-not-certify-the-batteries">
+<h2>Cycle screening does not certify the batteries</h2>
+<p>The audit independently recovers DC demand from wheel energy, transmission and
+motor efficiencies and checks it against the hydrogen-input trace multiplied
+by fuel-cell efficiency. Every cell passes this energy identity.</p>
+<p>All car WLTC traces remain below their net fuel-cell rating. Under an
+instantaneously responding fuel cell they therefore need no battery discharge
+assistance. This does not validate acceleration at rated motor output, startup,
+fuel-cell ramping or regenerative charge acceptance.</p>
+<p>The 40 t truck needs up to 150.29 kW of battery assistance on Regional delivery,
+while its current trace assumes regenerative DC recovery reaching 261.62 kW.
+These are different charge and discharge requirements. The model has no
+validated FCEV-specific battery charge-power limit or SOC controller.</p>
+<p>The 3.5 t and 7.5 t trucks exceed their motor shaft ratings for ten seconds
+each, with peaks of 53.87 versus 51.06 kW and 107.01 versus 93.74 kW,
+respectively. Correcting the electrical allocation alone does not resolve
+these mechanical shortfalls. The 32 t truck exceeds its recorded buffer
+requirement for three seconds even though its motor rating is sufficient.
+These counts describe the selected traces, not measured road-test performance.</p>
+<p>An optimistic periodic energy calculation gives minimum usable storage of
+1.71--6.42 kWh for trucks, below their 32.72--88.56 kWh nominal capacities.
+It allows instantaneous full fuel-cell power, unrestricted charging and
+discharging, freely chosen initial SOC and curtailment. This establishes only
+a lower bound. FCEV <span class="docutils literal">battery DoD</span> defaults are zero, so no operating SOC
+window is available to test usable capacity. The lower-bound controller is
+not used to revise hydrogen consumption or replacement counts.</p>
+</section>
+<section id="battery-specification-evidence">
+<h2>Battery specification evidence</h2>
+<p>Car buffers combine 0.24 kWh/kg cell energy density, 2.1304 kW/kg cell power
+density and a 70% cell mass fraction. Their implied pack energy density is
+168 Wh/kg; their declared output corresponds to 1.491 kW/kg of complete pack.
+The power source lists several references together and supplies no common
+duration, SOC or temperature for the paired energy/power assumptions. The
+Medium car consequently has 3.93 kWh in 23.38 kg. This is not a validated
+dedicated FCEV buffer specification.</p>
+<p>For comparison, Toyota's second-generation Mirai announcement of
+<a class="reference external" href="https://newsroom.toyota.eu/introducing-the-all-new-toyota-mirai/">30 November 2020</a>
+gives 310.8 V, 4 Ah, 44.6 kg and 31.5 kW for ten seconds. Nominal energy
+calculated from voltage and charge is 1.2432 kWh, or 27.9 Wh/kg of pack.
+This is a late-2020 launch reference, not an all-class fleet average or a
+continuous-power rating.</p>
+<p>Hyundai's <a class="reference external" href="https://www.hyundai.com/content/dam/hyundai/au/en/documents/NEXO_Emergency_Response_Guide_Australia_2020.pdf">2020 Nexo emergency guide, printed page 9</a>
+gives a lithium-ion-polymer pack of 1.56 kWh and 51.2 kg, or 30.5 Wh/kg.
+Its <a class="reference external" href="https://www.hyundai.news/uk/articles/press-releases/nexo-the-next-generation-fuel-cell-vehicle-from-hyundai.html">2018 launch specification</a>
+reports 40 kW from the battery, 95 kW from the fuel cell and a 120 kW motor.
+The battery power duration is unspecified. Market variants differ: the
+Australian emergency guide lists a 113 kW motor, so these two motor ratings
+are not merged into one calibration.</p>
+<p>These references support reviewing the car pack's joint mass/energy/power
+calibration. Their different chemistry and architecture prevent declaring the
+generic model pack physically impossible solely from the comparison.</p>
+<p>The truck's inherited 0.15 kW/kg parameter explicitly describes a lead-acid
+starter. It cannot validate the final lithium-ion traction buffer, which is
+instead energy-sized at 20 kWh plus 6% of hydrogen chemical energy. The 40 t
+pack is 71.10 kWh and 423.22 kg. Hyundai's <a class="reference external" href="https://www.hyundai.com/worldwide/en/newsroom/detail/0000000134">retrospective on the Swiss XCIENT
+fleet introduced in 2020</a> reports
+72 kWh total across three batteries, a 180 kW fuel-cell system and a 350 kW
+motor. Its similar capacity supports only an order-of-magnitude comparison:
+it does not validate the model's pack mass, power limits or smaller fuel-cell
+rating. No matched continuous/pulse power source has been established for the
+model's NMC-622 pack.</p>
+</section>
+<section id="implementation-status-and-reproducibility">
+<h2>Implementation status and reproducibility</h2>
+<p><span class="docutils literal">dev/audit_premise_fcev_power.py</span> produces <span class="docutils literal">power_screen.csv</span>, the complete
+model snapshot, extracted parameter sources and a run manifest with package
+paths, source hashes and installed-parameter hashes. Nine focused unit tests
+pass for electrical/mechanical boundaries, repeated-cycle storage, charge and
+discharge losses, regeneration and invalid inputs. Full-catalogue trace and
+installed-template comparisons pass in the recorded Python 3.12 environment.</p>
+<p>No model default, vehicle workbook, Premise runtime or LCIA score changes in
+this diagnostic step. The current future-year policy retains FCEV hardware;
+the range-preserving battery-resizing contract is restricted to BEV/PHEV.
+IAM hydrogen-efficiency scaling does not repair these baseline power ratings.
+The full legacy-versus-new EF 3.1 comparison remains a later step.</p>
+<p>Next actions, one issue at a time: settle the electrical allocation and correct
+it with native-model regressions; address the two undersized truck motors;
+then agree paired buffer specifications and explicit charge/discharge limits.
+The unrelated PHEV cycling review remains skipped as requested.</p>
+</section>
+</main>
+</body>
+</html>

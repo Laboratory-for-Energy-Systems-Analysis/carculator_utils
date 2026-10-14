@@ -1134,6 +1134,18 @@ Regenerative throughput is not added to that truck calculation. This is a
 retained modelling limitation, not a validation of the omitted cycling.
 The decision does not change vehicle specifications, inventories or results,
 and the skipped review is removed from the remaining implementation queue.</p>
+<p>The subsequent FCEV peak-power audit identifies a further power-boundary defect:
+the corrected nominal fuel-cell/buffer sum equals mechanical motor output,
+without covering motor/inverter losses and auxiliary DC demand. All fifteen
+car/truck templates have this discrepancy. The user has been asked whether
+to retain the split on the electrical side or retain the fuel-cell rating.
+No sizing adaptation has yet been installed. The same audit flags brief
+mechanical motor shortfalls for 3.5 t and 7.5 t trucks and unverified paired
+energy/power specifications for the traction buffers. Current car WLTC traces
+cannot establish their peak capability. See the
+<a class="reference external" href="../premise_vehicle_fcev_power_20261014/report.html">FCEV power report</a>.
+Nine diagnostic tests and fresh checks of all fifteen templates pass; these
+verify the diagnostic arithmetic, not the feasibility of the current designs.</p>
 </section>
 </main>
 </body>
