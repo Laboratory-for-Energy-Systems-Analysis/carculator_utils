@@ -28,6 +28,7 @@ from regenerate_premise_cars import (
     write_workbook,
 )
 from premise_vehicle_battery_metadata import attach_specification, model_specification
+from premise_vehicle_lpg_metadata import attach_lpg_policy
 
 ROOT = Path(__file__).resolve().parents[2]
 CYCLE = "Regional delivery"
@@ -426,6 +427,7 @@ def main():
         productions[key] = production
         datasets.append(ds)
         attach_specification(ds, production, sizing.get(f"{size}|{power}"))
+        attach_lpg_policy(ds)
         balance.append(
             dict(
                 name=ds["name"],

@@ -24,6 +24,7 @@ from premise_vehicle_battery_metadata import (
     attach_specification,
     model_specification,
 )
+from premise_vehicle_lpg_metadata import SPEC_KEY as LPG_POLICY_KEY, attach_lpg_policy
 
 COLD_START_SOURCE_NOTE = (
     "the original LCA model, carculator, uses emission factors for cold start, "
@@ -102,7 +103,7 @@ def write_workbook(path, datasets):
         sheet.append(["Activity", dataset["name"]])
         for key in ("reference product", "location", "unit", "comment"):
             sheet.append([key, dataset.get(key)])
-        for metadata_key in (HYDROGEN_COMPRESSION_KEY, BATTERY_SIZING_KEY):
+        for metadata_key in (HYDROGEN_COMPRESSION_KEY, BATTERY_SIZING_KEY, LPG_POLICY_KEY):
             if metadata_key not in dataset:
                 continue
             specification = dataset[metadata_key]
@@ -434,6 +435,7 @@ def main():
                 relabel(e, production)
         production["comment"] = note + production.get("comment", "")
         attach_specification(ds, production, sizing.get(param_name))
+        attach_lpg_policy(ds)
         productions.setdefault(identity(production), production)
         balance.append(
             dict(

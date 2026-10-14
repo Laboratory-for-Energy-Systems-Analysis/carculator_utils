@@ -336,6 +336,18 @@ interface carrying baseline specifications into Premise transformations.
 9. Implement and document the LPG fallback
 ------------------------------------------
 
+**Completed 14 October 2026.** Both full REMIND SSP2-NPi builds explicitly
+record the actual Europe-without-Switzerland fossil LPG supplier, zero biogenic
+tailpipe CO2 and absent REMIND LPG efficiency mapping for all five services.
+The misleading generic truck scenario-fuel comment is corrected. New validation
+recomputes final fuel identity, energy and carbon while retaining supported
+TIAM-UCL mappings and linked supplier properties. All 314 tests pass; 2020/2050
+builds have zero errors and unchanged warning identities. LPG service and
+production coefficients are exactly unchanged; the complete inventories agree
+within floating-point precision. See the
+`LPG report <../premise_vehicle_lpg_20261014/report.html>`_. The approved policy
+and original acceptance criteria are retained below for traceability.
+
 **Policy approved.** The one LPG car and four LPG truck templates retain fossil
 LPG supply where REMIND has no usable LPG pathway.
 
@@ -509,4 +521,8 @@ mapping, connected to EUR scenario fuel markets. See the
 The final installed-family check passes 1768 tests and both offline artifact
 routes; 70 focused Premise regressions pass. Source/inventory commits are
 ``fb0106e`` and ``9372892``.
-Step 8, consistent future hardware sizing, is next; steps 8--12 remain open.
+Step 8's battery sizing, fixed-utilization BEV truck payload and Large Car
+efficiency follow-ups are complete, as recorded above. Future fuel-tank sizing
+was skipped by the user. Step 9's explicit LPG fallback is now complete.
+Step 10, general dataset provenance and identity, is next; steps 10--12 and
+the previously identified broader PHEV battery-use question remain open.

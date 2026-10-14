@@ -1,0 +1,7 @@
+{
+  "baseline": "premise_large_car_proxy_20261013",
+  "audit_script_sha256": "88b511f9ddef7466889bddf2a746033b6531e4eb0241fc2e3a15a0bd8a347341",
+  "tests_xml_sha256": "9ce7332648094a980938c0323b23bab2e175297a99374574ac62a86c137c51cc",
+  "test_lpg_sha256": "58260a30ca844e5ad545ec362f7cc0750a6c711a180b95183dcf6cc734a7280e",
+  "installation_sha256": "133b26721faaa503243aba838ec8a8860c806c2eaea5c21efa416b629fbd6090"
+}

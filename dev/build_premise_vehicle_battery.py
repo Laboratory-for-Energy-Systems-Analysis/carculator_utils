@@ -35,9 +35,13 @@ def main():
     parser.add_argument("--year", type=int, choices=(2020, 2030, 2050), required=True)
     parser.add_argument("--workspace", type=Path, default=DEFAULT_WORK)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument(
+        "--inventory-installation", type=Path, action="append", default=[]
+    )
     args = parser.parse_args()
     work = args.workspace.resolve()
     output = args.output.resolve()
+    installations = [p.resolve() for p in args.inventory_installation]
     if not (work / "brightway").is_dir():
         parser.error("Copy the isolated Brightway directory into WORKSPACE/brightway.")
     if (output / f"build_{args.year}.json").exists():
@@ -104,6 +108,13 @@ def main():
     for record in installed["files"]:
         assert expected_workbooks[record["filename"]] == record["before_sha256"]
         expected_workbooks[record["filename"]] = record["after_sha256"]
+    for manifest in installations:
+        for record in json.loads(manifest.read_text())["files"]:
+            assert expected_workbooks[record["filename"]] == record["before_sha256"]
+            expected_workbooks[record["filename"]] = record["after_sha256"]
+    meta["additional_inventory_installations"] = [
+        {"path": str(p), "sha256": digest(p)} for p in installations
+    ]
     assert meta["workbooks"] == expected_workbooks, "Unrecorded workbook changes."
     meta["baseline_audit"] = "premise_vehicle_intensity_20261013"
     assert meta["fuel_properties_sha256"] == baseline["fuel_properties_sha256"]
