@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="generator" content="Docutils 0.22.4: https://docutils.sourceforge.io/" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Car/truck plausibility review and hybrid fuel-mapping correction</title>
+<style type="text/css">
+
+/* Minimal style sheet for the HTML output of Docutils.                    */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: minimal.css 10018 2025-03-06 16:19:15Z milde $                                                               */
+/* :Copyright: © 2015, 2021 Günter Milde.                                  */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+
+/* This CSS3 stylesheet defines rules for Docutils elements without        */
+/* HTML equivalent. It is required to make the document semantics visible. */
+/*                                                                         */
+/* .. _validates: http://jigsaw.w3.org/css-validator/validator$link        */
+
+/* titles */
+p.topic-title,
+p.admonition-title,
+p.system-message-title {
+  font-weight: bold;
+}
+p.sidebar-title,
+p.rubric {
+  font-weight: bold;
+  font-size: larger;
+}
+p.rubric {
+  color: maroon;
+}
+p.subtitle,
+p.section-subtitle,
+p.sidebar-subtitle {
+  font-weight: bold;
+  margin-top: -0.5em;
+}
+h1 + p.subtitle {
+  font-size: 1.6em;
+}
+a.toc-backref {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Warnings, Errors */
+.system-messages h2,
+.system-message-title,
+pre.problematic,
+span.problematic {
+  color: red;
+}
+
+/* Inline Literals */
+.docutils.literal {
+  font-family: monospace;
+  white-space: pre-wrap;
+}
+/* do not wrap at hyphens and similar: */
+.literal > span.pre { white-space: nowrap; }
+
+/* keep line-breaks (\n) visible */
+.pre-wrap { white-space: pre-wrap; }
+
+/* Lists */
+
+/* compact and simple lists: no margin between items */
+.simple  li, .simple  ul, .simple  ol, .simple  > li p,
+.compact li, .compact ul, .compact ol, .compact > li p,
+dl.simple  > dd, dl.compact > dd, dl.docinfo > dd {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+/* Nested Paragraphs */
+p:first-child { margin-top: 0; }
+p:last-child { margin-bottom: 0; }
+details > p:last-child { margin-bottom: 1em; }
+
+/* Table of Contents */
+.contents ul.auto-toc { /* section numbers present */
+  list-style-type: none;
+}
+
+/* Enumerated Lists */
+ol.arabic     { list-style: decimal }
+ol.loweralpha { list-style: lower-alpha }
+ol.upperalpha { list-style: upper-alpha }
+ol.lowerroman { list-style: lower-roman }
+ol.upperroman { list-style: upper-roman }
+
+/* Definition Lists and Derivatives */
+dt .classifier { font-style: italic }
+dt .classifier:before {
+  font-style: normal;
+  margin: 0.5em;
+  content: ":";
+}
+/* Field Lists and similar */
+/* bold field name, content starts on the same line */
+dl.field-list,
+dl.option-list,
+dl.docinfo {
+  display: flow-root;
+}
+dl.field-list > dt,
+dl.option-list > dt,
+dl.docinfo > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.25em;
+}
+/* Offset for field content (corresponds to the --field-name-limit option) */
+dl.field-list > dd,
+dl.option-list > dd,
+dl.docinfo > dd {
+  margin-left:  9em; /* ca. 14 chars in the test examples, fit all Docinfo fields */
+}
+/* start nested lists on new line */
+dd > dl:first-child,
+dd > ul:first-child,
+dd > ol:first-child {
+  clear: left;
+}
+/* start field-body on a new line after long field names */
+dl.field-list > dd > *:first-child,
+dl.option-list > dd > *:first-child
+{
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}
+
+/* Bibliographic Fields (docinfo) */
+dl.docinfo pre.address {
+  font: inherit;
+  margin: 0;
+}
+dl.docinfo > dd.authors > p { margin: 0; }
+
+/* Option Lists */
+dl.option-list > dt { font-weight: normal; }
+span.option { white-space: nowrap; }
+
+/* Footnotes and Citations  */
+
+.footnote, .citation { margin: 1em 0; } /* default paragraph skip (Firefox) */
+/* hanging indent */
+.citation { padding-left: 2em; }
+.footnote { padding-left: 1.7em; }
+.footnote.superscript { padding-left: 1.0em; }
+.citation > .label { margin-left: -2em; }
+.footnote > .label { margin-left: -1.7em; }
+.footnote.superscript > .label { margin-left: -1.0em; }
+
+.footnote > .label + *,
+.citation > .label + * {
+  display: inline-block;
+  margin-top: 0;
+  vertical-align: top;
+}
+.footnote > .backrefs + *,
+.citation > .backrefs + * {
+  margin-top: 0;
+}
+.footnote > .label + p, .footnote > .backrefs + p,
+.citation > .label + p, .citation > .backrefs + p {
+  display: inline;
+  vertical-align: inherit;
+}
+
+.backrefs { user-select: none; }
+.backrefs > a { font-style: italic; }
+
+/* superscript footnotes */
+a[role="doc-noteref"].superscript,
+.footnote.superscript > .label,
+.footnote.superscript > .backrefs {
+  vertical-align: super;
+  font-size: smaller;
+  line-height: 1;
+}
+a[role="doc-noteref"].superscript > .fn-bracket,
+.footnote.superscript > .label > .fn-bracket {
+  /* hide brackets in display but leave for copy/paste */
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+}
+[role="doc-noteref"].superscript + [role="doc-noteref"].superscript {
+  padding-left: 0.15em; /* separate consecutive footnote references */
+  /* TODO: unfortunately, "+" also selects with text between the references. */
+}
+
+/* Alignment */
+.align-left   {
+  text-align: left;
+  margin-right: auto;
+}
+.align-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.align-right  {
+  text-align: right;
+  margin-left: auto;
+}
+.align-top    { vertical-align: top; }
+.align-middle { vertical-align: middle; }
+.align-bottom { vertical-align: bottom; }
+
+/* reset inner alignment in figures and tables */
+figure.align-left, figure.align-right,
+table.align-left, table.align-center, table.align-right {
+  text-align: inherit;
+}
+
+/* Text Blocks */
+.topic { margin: 1em 2em; }
+.sidebar,
+.admonition,
+.system-message {
+  margin: 1em 2em;
+  border: thin solid;
+  padding: 0.5em 1em;
+}
+div.line-block { display: block; }
+div.line-block div.line-block, pre { margin-left: 2em; }
+
+/* Code line numbers: don't copy with drag-and-drop */
+pre.code .ln { display: none; }
+pre.code code:before {
+  content: attr(data-lineno);
+  font-size: small;
+  color: gray;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+td, th {
+  border: thin solid silver;
+  padding: 0 1ex;
+}
+.borderless td, .borderless th {
+  border: 0;
+  padding: 0;
+  padding-right: 0.5em /* separate table cells */
+}
+
+table > caption, figcaption {
+  text-align: left;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+table.captionbelow {
+  caption-side: bottom;
+}
+
+/* MathML (see "math.css" for --math-output=HTML) */
+math .boldsymbol { font-weight: bold; }
+math.boxed, math .boxed {padding: 0.25em; border: thin solid; }
+/* style table similar to AMS "align" or "aligned" environment: */
+mtable.cases > mtr > mtd { text-align: left; }
+mtable.ams-align > mtr > mtd { padding-left: 0; padding-right: 0; }
+mtable.ams-align > mtr > mtd:nth-child(2n) { text-align: left; }
+mtable.ams-align > mtr > mtd:nth-child(2n+1) { text-align: right; }
+mtable.ams-align > mtr > mtd:nth-child(2n+3) { padding-left: 2em; }
+.mathscr mi, mi.mathscr {
+  font-family: STIX, XITSMathJax_Script, rsfs10,
+               "Asana Math", Garamond, cursive;
+}
+
+/* Document Header and Footer */
+header { border-bottom: 1px solid black; }
+footer { border-top: 1px solid black; }
+
+/* Images are block-level by default in Docutils */
+/* New HTML5 block elements: set display for older browsers */
+img, svg, header, footer, main, aside, nav, section, figure, video, details {
+  display: block;
+}
+svg { width: auto; height: auto; }  /* enable scaling of SVG images */
+/* inline images */
+
+p img, p svg, p video,
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img,
+h1 svg, h2 svg, h3 svg, h4 svg, h5 svg, h6 svg {
+  display: inline;
+}
+
+</style>
+<style type="text/css">
+
+/* CSS31_ style sheet for the output of Docutils HTML writers.             */
+/* Rules for easy reading and pre-defined style variants.                  */
+/*                                                                         */
+/* :Author: Günter Milde, based on html4css1.css by David Goodger          */
+/* :Id: $Id: plain.css 10079 2025-04-10 12:01:48Z milde $                                                               */
+/* :Copyright: © 2015 Günter Milde.                                        */
+/* :License: Released under the terms of the `2-Clause BSD license`_,      */
+/*    in short:                                                            */
+/*                                                                         */
+/*    Copying and distribution of this file, with or without modification, */
+/*    are permitted in any medium without royalty provided the copyright   */
+/*    notice and this notice are preserved.                                */
+/*                                                                         */
+/*    This file is offered as-is, without any warranty.                    */
+/*                                                                         */
+/* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause     */
+/* .. _CSS3: https://www.w3.org/Style/CSS/                                 */
+
+
+/* Document Structure */
+/* ****************** */
+
+/* "page layout" */
+body {
+  margin: 0;
+  background-color: #dbdbdb;
+  --field-indent: 9em; /* default indent of fields in field lists */
+}
+main, footer, header {
+  line-height:1.6;
+  /* avoid long lines --> better reading */
+  /* optimum is 45…75 characters/line <http://webtypography.net/2.1.2> */
+  /* OTOH: lines should not be too short because of missing hyphenation, */
+  max-width: 50rem;
+  padding: 1px 2%; /* 1px on top avoids grey bar above title (mozilla) */
+  margin: auto;
+}
+main {
+  counter-reset: table figure;
+  background-color: white;
+}
+footer, header {
+  font-size: smaller;
+  padding: 0.5em 2%;
+  border: none;
+}
+
+/* Table of Contents */
+ul.auto-toc > li > p {
+  padding-left: 1em;
+  text-indent: -1em;
+}
+nav.contents ul {
+  padding-left: 1em;
+}
+main > nav.contents ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B29\ ';
+}
+main > nav.contents ul ul ul ul ul:not(.auto-toc) {
+  list-style-type: '\2B1D\ ';
+}
+
+/* Transitions */
+hr.docutils {
+  width: 80%;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  clear: both;
+}
+
+/* Paragraphs */
+
+/* vertical space (parskip) */
+p, ol, ul, dl, li,
+.footnote, .citation,
+div > math,
+table {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+h1, h2, h3, h4, h5, h6,
+dd, details > p:last-child {
+  margin-bottom: 0.5em;
+}
+
+/* Lists */
+/* ===== */
+
+/* Definition Lists */
+/* Indent lists nested in definition lists */
+dd > ul:only-child, dd > ol:only-child { padding-left: 1em; }
+
+/* Description Lists */
+/* styled like in most dictionaries, encyclopedias etc. */
+dl.description {
+  display: flow-root;
+}
+dl.description > dt {
+  font-weight: bold;
+  clear: left;
+  float: left;
+  margin: 0;
+  padding: 0;
+  padding-right: 0.3em;
+}
+dl.description > dd:after {
+  display: table;
+  content: "";
+  clear: left; /* clearfix for empty descriptions */
+}
+
+/* Field Lists */
+
+dl.field-list > dd,
+dl.docinfo > dd {
+  margin-left: var(--field-indent); /* adapted in media queries or HTML */
+}
+
+/* example for custom field-name width */
+dl.field-list.narrow > dd {
+  --field-indent: 5em;
+}
+/* run-in: start field-body on same line after long field names */
+dl.field-list.run-in > dd p {
+  display: block;
+}
+
+/* Bibliographic Fields */
+
+/* generally, bibliographic fields use dl.docinfo */
+/* but dedication and abstract are placed into divs */
+div.abstract p.topic-title {
+  text-align: center;
+}
+div.dedication {
+  margin: 2em 5em;
+  text-align: center;
+  font-style: italic;
+}
+div.dedication p.topic-title {
+  font-style: normal;
+}
+
+/* disclosures */
+details { padding-left: 1em; }
+summary { margin-left: -1em; }
+
+/* Text Blocks */
+/* =========== */
+
+/* Literal Blocks */
+pre.literal-block, pre.doctest-block,
+pre.math, pre.code {
+  font-family: monospace;
+}
+
+/* Block Quotes and Topics */
+bockquote { margin: 1em 2em; }
+blockquote p.attribution {
+  text-align: right;
+  margin-left: 20%;
+}
+
+/* Tables */
+/* ====== */
+
+/* th { vertical-align: bottom; } */
+
+table tr { text-align: left; }
+
+/* "booktabs" style (no vertical lines) */
+table.booktabs {
+  border: 0;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.booktabs * {
+  border: 0;
+}
+table.booktabs th {
+  border-bottom: thin solid;
+}
+
+/* numbered tables (counter defined in div.document) */
+table.numbered > caption:before {
+  counter-increment: table;
+  content: "Table " counter(table) ": ";
+  font-weight: bold;
+}
+
+/* Explicit Markup Blocks */
+/* ====================== */
+
+/* Footnotes and Citations */
+/* ----------------------- */
+
+/* line on the left */
+.footnote-list {
+  border-left: solid thin;
+  padding-left: 0.25em;
+}
+
+/* Directives */
+/* ---------- */
+
+/* Body Elements */
+/* ~~~~~~~~~~~~~ */
+
+/* Images and Figures */
+
+/* let content flow to the side of aligned images and figures */
+figure.align-left,
+img.align-left,
+svg.align-left,
+video.align-left,
+div.align-left,
+object.align-left {
+  clear: left;
+  float: left;
+  margin-right: 1em;
+}
+figure.align-right,
+img.align-right,
+svg.align-right,
+video.align-right,
+div.align-right,
+object.align-right {
+  clear: right;
+  float: right;
+  margin-left: 1em;
+}
+/* Stop floating sidebars, images and figures */
+h1, h2, h3, h4, footer, header { clear: both; }
+
+/* Numbered figures */
+figure.numbered > figcaption > p:before {
+  counter-increment: figure;
+  content: "Figure " counter(figure) ": ";
+  font-weight: bold;
+}
+
+/* Admonitions and System Messages */
+.caution p.admonition-title,
+.attention p.admonition-title,
+.danger p.admonition-title,
+.error p.admonition-title,
+.warning p.admonition-title,
+div.error {
+  color: red;
+}
+
+/* Sidebar */
+/* Move right. In a layout with fixed margins, */
+/* it can be moved into the margin.            */
+aside.sidebar {
+  width: 30%;
+  max-width: 26em;
+  float: right;
+  clear: right;
+  margin-left: 1em;
+  margin-right: -1%;
+  background-color: #fffffa;
+}
+
+
+/* Code */
+pre.code { padding: 0.7ex }
+pre.code, code { background-color: #eeeeee }
+/* basic highlighting: for a complete scheme, see */
+/* https://docutils.sourceforge.io/sandbox/stylesheets/ */
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+
+/* Epigraph           */
+/* Highlights         */
+/* Pull-Quote         */
+/* Compound Paragraph */
+/* Container          */
+
+/* Inline Markup */
+/* ============= */
+
+sup, sub { line-height: 0.8; } /* do not add leading for lines with sup/sub */
+
+/* Inline Literals                                          */
+/* possible values: normal, nowrap, pre, pre-wrap, pre-line */
+/*   span.docutils.literal { white-space: pre-wrap; }       */
+
+/* Hyperlink References */
+a { text-decoration: none; }
+
+/* External Targets       */
+/*   span.target.external */
+/* Internal Targets       */
+/*   span.target.internal */
+/* Footnote References    */
+/*   a[role="doc-noteref"] */
+/* Citation References    */
+/*   a.citation-reference */
+
+</style>
+</head>
+<body>
+<main id="car-truck-plausibility-review-and-hybrid-fuel-mapping-correction">
+<h1 class="title">Car/truck plausibility review and hybrid fuel-mapping correction</h1>
+
+<p>The review found a genuine Premise fuel-mapping defect and several unresolved
+model issues. The fuel mapping is corrected in this step. This is not an
+unqualified sign-off of the vehicle specifications or emission factors.</p>
+<section id="correction-made">
+<h2>Correction made</h2>
+<p>Five gasoline PHEV mappings (Mini, Small, Medium, Medium SUV and Van) selected
+electricity alone. The Large mapping already included petrol. Consequently,
+the IAM efficiency multiplier reduced electricity and the associated battery
+capacity but left petrol unchanged. This was an omission in the mappings,
+not a deliberate difference between electric and combustion-mode efficiency.</p>
+<p>The five mappings now include <span class="docutils literal">petrol, <span class="pre">low-sulfur</span></span>. The gasoline HEV mapping
+also accepts petrol while retaining its gasoline alias; its original alias
+could miss the actual provider. These six data edits use the existing runtime
+algorithm. No vehicle solver, additional runtime scan or new calibration was
+introduced. The fuel module's existing final-supplier CO2 refresh performs the
+carbon correction after the fuel purchases change.</p>
+<p>In the controlled 2050 REMIND SSP2-NPi build, 52 regional PHEV datasets had
+missed a 20% petrol reduction. This correction therefore reduces their petrol,
+fossil CO2 and non-fossil CO2 by 20% relative to the preceding build. Electricity,
+physical battery specifications and other exchanges remain unchanged. The
+2020 baseline is unchanged. The mapping also applies to other IAM models when
+they provide a usable efficiency trend; it does not supply missing IAM data.</p>
+</section>
+<section id="scope-and-verification">
+<h2>Scope and verification</h2>
+<p>The 74 car and 52 truck service templates were regenerated from the matching
+current source checkouts, without reusing raw exports. The fresh workbooks
+reproduce the installed scientific exchange coefficients. Generation remains
+2020, Swiss climate, 1.8 starts/day for cars, and Regional delivery with a
+400 km design range for trucks. Names, fuel proxies, approved MIX battery
+markets and noise companion boundaries remain as agreed.</p>
+<p>The audit checks all 726 operating car/truck services in each complete 2020
+and 2050 database, covering all scenario regions and retained templates. Fifty
+forwarding activities are identified separately. Checks include positive and
+finite quantities, vehicle allocation per lifetime distance and cargo, 415
+battery allocations, 221 scenario battery designs, and 578 fuel-energy/carbon
+balances per year. Fuel units come from the delivered supplier. The model's
+gas consumption field is a volume: treating its large numerical value as kg/km
+would be an error.</p>
+<p>For future batteries, independently reconstructed range uses nominal capacity,
+depth of discharge, charging losses, electric driving share and final grid
+purchases per vehicle-km. BEV truck cargo uses the retained capacity utilization
+and the remaining payload after battery mass changes. Fuel and hydrogen tanks
+retain their baseline design, as requested. Non-CO2 comparisons account for
+the GAINS module's separate pollutant projection; they do not attribute those
+reductions to vehicle efficiency.</p>
+<p>The regression reproduces the missing-PHEV-petrol failure before the mapping
+change. Forty-two new cases cover the six gasoline PHEV classes and gasoline
+HEV, both inventory representations, and efficiency multipliers 1, 0.8 and 1.2.
+The focused Premise suite passes 209 tests. The existing shared emissions suite
+passes 61 tests, including PAH identity, evaporation and pollutant integration.
+These passing tests do not resolve the new scientific concerns below.</p>
+<p>Both full builds use ecoinvent 3.12 cutoff and encrypted REMIND SSP2-NPi input,
+and are written/read back in a private Brightway copy. The persistent user
+project is untouched. See <span class="docutils literal"><span class="pre">after/build_*.json</span></span>, <span class="docutils literal"><span class="pre">after/saved_*.json</span></span>,
+<span class="docutils literal">after/accounting_summary.json</span> and <span class="docutils literal">change_scope_summary.json</span> for actual
+completed-build counts and the numerical change boundary. No final old/new
+EF 3.1 comparison is claimed here; that remains step 12.</p>
+</section>
+<section id="outstanding-issues-in-suggested-order">
+<h2>Outstanding issues, in suggested order</h2>
+<section id="fuel-cell-battery-power-and-mass-accounting">
+<h3>1. Fuel-cell battery power and mass accounting</h3>
+<p>All eight native FCEV car sizes report a 70% cell-mass share, but their actual
+cell/pack mass ratio is 76.923%. The shared method calculates balance-of-pack
+mass as <span class="docutils literal">cell_mass * (1 - cell_share)</span>. The stated share instead requires
+<span class="docutils literal">cell_mass / cell_share - cell_mass</span>. For the Medium car, 14.024 kg of cells
+are combined into an 18.232 kg pack; a 70% share would require 20.035 kg before
+any power-sizing correction.</p>
+<p>The same method derives battery power from gross fuel-cell power multiplied by
+the remaining share, instead of closing the stated total-power budget. For the
+Medium car, net fuel-cell power is 104.218 kW and recorded battery power is
+29.878 kW, against 138.958 kW total power. The electrical/mechanical boundary
+must be made consistent before recalculating the pack.</p>
+<p>All seven FCEV truck sizes finish with <span class="docutils literal">battery power = 0</span> despite 32.72--88.56
+kWh traction batteries. Their inherited cell-power-density input is 0.15 kW/kg,
+described in the parameter source as a lead-acid starter-battery value. Truck
+energy-pack sizing follows its separate rule, 20 kWh plus 6% of tank energy;
+therefore zero recorded battery power does not mean no physical pack exists.
+It does mean the exported specs do not establish a consistent traction-power
+design. These are concrete accounting/parameter concerns, not a request to
+resize future hydrogen tanks.</p>
+<p>The truck capacities themselves are not automatically implausible: Hyundai's
+2020 XCIENT specifications give a 73.2 kWh battery, 190 kW fuel-cell system and
+350 kW motor for its particular design. This supports checking architecture
+and power together rather than rejecting a large buffer by capacity alone.
+<a class="reference external" href="https://www.hyundai.news/uk/articles/press-releases/hyundai-today-delivered-the-first-seven-units-of-its-xcient-fuel-cell.html">Hyundai's 2020 technical announcement</a>.</p>
+</section>
+<section id="truck-nox-factors-and-hybrid-deterioration">
+<h3>2. Truck NOx factors and hybrid deterioration</h3>
+<p>The 40 t diesel template emits 3.21875 g NOx/vehicle-km at 12.4985 MJ fuel/km.
+Its bundled hot coefficient is 0.157203 g/MJ and the lifetime-average
+deterioration multiplier is about 1.638. Even without deterioration, converting
+that coefficient to engine-work units would exceed 0.46 g/kWh at a hypothetical
+100% conversion efficiency. The screen flags NOx for 21 native diesel/diesel-
+hybrid/PHEV templates and six gasoline proxies. No other screened truck
+pollutant exceeds its benchmark on this conservative fuel-energy lower bound.
+Passing that lower-bound screen does not establish compliance either.</p>
+<p>Euro VI regulates heavy-duty engine emissions in mg/kWh of engine work,
+not mg/km or mg/kWh of fuel. WHTC and the model's Regional delivery cycle are
+different tests. The 3.5 t class additionally needs its actual homologation
+category before choosing a regulatory benchmark. The values are therefore
+plausibility flags, not type-approval verdicts.
+<a class="reference external" href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=oj%3AJOL_2014_047_R">Euro VI limit table</a>.</p>
+<p>High real-world emissions at low load are documented, but they do not establish
+the validity of these particular coefficients. The JRC describes how earlier
+Euro VI test exclusions affected low-load and urban operation; its 2020 tests
+of other vehicles generally found NOx below the certification limit.
+<a class="reference external" href="https://publications.jrc.ec.europa.eu/repository/bitstream/JRC117559/JRC117559_01.pdf">JRC review of test boundaries</a>;
+<a class="reference external" href="https://publications.jrc.ec.europa.eu/repository/handle/JRC122045">JRC 2020 measurements</a>.</p>
+<p>The available <span class="docutils literal">carculator_truck/dev/EFA_HOT_Subsegm_HGV.XLSX</span> contains emission
+rates, subsegments, speed and mileage, but no fuel-energy column. The notebook
+fits speed polynomials and cannot reproduce the shipped g/MJ coefficients.
+The user confirmed on 2026-10-14 that the original derivation is no longer
+available. The conversion remains unverified; no guessed replacement or
+regulatory clipping has been applied. Resolving it requires a new traceable
+factor derivation or an explicitly selected alternative source/boundary.</p>
+<p>A separate implementation concern is that deterioration-table lookup reindexes
+the literal powertrain label. The tables contain ICEV labels; HEV and PHEV
+combustion modes consequently receive unity rather than the corresponding
+combustion-vehicle correction. Hot-factor lookup already uses the combustion
+alias. That inconsistent treatment should be addressed with focused tests,
+without using it to conceal the larger uncertainty in the truck factors.</p>
+</section>
+<section id="car-phev-capacity-calibration">
+<h3>3. Car PHEV capacity calibration</h3>
+<p>The default PHEV packs are 21.17--42.34 kWh. Their electric-mode ranges reach
+about 194 km for Large cars, and Premise deliberately preserves those ranges
+in 2050. Arithmetic consistency therefore does not establish a representative
+2020 design.</p>
+<p>The parameter mass sources cite Toyota and a 2020 ICCT report, while the model
+combines those pack masses with chemistry-specific cell densities and a 70%
+cell share. Toyota documents 8.8 kWh and 120 kg for the contemporary Prius
+Plug-in; BMW documents 24 kWh and 67--87 km WLTP range for the X5 xDrive45e.
+These examples are not fleet averages, but show why the 21--42 kWh defaults
+need an explicit calibration review. No new mass, capacity or range target has
+been substituted for the user's approved defaults.
+<a class="reference external" href="https://newsroom.toyota.eu/toyota-prius-plug-in-hybrid/">Toyota specifications</a>;
+<a class="reference external" href="https://www.press.bmwgroup.com/slovenia/article/detail/T0300315EN/electrifying-power-for-supreme-driving-pleasure-market-launch-of-the-new-bmw-x5-xdrive45e">BMW specifications</a>.</p>
+</section>
+<section id="long-range-small-bev-truck-representativeness">
+<h3>4. Long-range small BEV truck representativeness</h3>
+<p>The 3.5 t BEV has 133.804 kWh nominal capacity, a 796.450 kg pack, 2459.401 kg
+curb mass, 750 kg cargo, a 75 kg driver and 3284.401 kg driving mass. It fits
+the gross-mass constraint with 215.599 kg remaining and uses 30.190 kWh/100 km
+at the grid. The capacity follows the agreed 400 km range and 80% depth of
+discharge. It is not an unexplained numerical explosion.</p>
+<p>It is nevertheless a demanding counterfactual for 2020. Fiat's August 2020
+E-Ducato offering used 47 or 79 kWh packs with different ranges and operating
+conditions. The agreed range should therefore be described as a common design
+requirement, not a claim that this was a typical commercially sold 2020 van.
+<a class="reference external" href="https://www.media.stellantis.com/uk-en/fiat-professional/press/fiat-professional-confirms-pricing-and-specification-of-fiat-e-ducato-for-uk-market">Fiat 2020 announcement</a>.</p>
+<p>The EUR 2050 accounting gives 107.043 kWh, 588.148 kg pack mass and 911.793 kg
+cargo at the same utilization and 400 km range. This remains a simple IAM
+accounting construction, without a driving-cycle re-simulation.</p>
+</section>
+</section>
+<section id="other-reviewed-boundaries">
+<h2>Other reviewed boundaries</h2>
+<p>Car BEVs span 10.08--110.88 kWh and 7.92--25.50 kWh/100 km at the grid. The
+largest packs are demanding but in the same order of magnitude as premium
+vehicles available around 2020; Audi's first e-tron had a 95 kWh pack of about
+700 kg. This comparison is not a validation of every model size.
+<a class="reference external" href="https://www.audi-mediacenter.com/system/production/uploaded_files/13470/file/8b75eb8e68ef933faa9eea2518c934c0f68e5c5e/en_Press_Information_Audi_e-tron_WorldPremiere.pdf">Audi technical specifications</a>.</p>
+<p>Native hydrogen consumption is 0.684--1.236 kg/100 km for cars and
+1.590--8.570 kg/100 km across the seven truck sizes. Truck BEV grid consumption
+is 30.19--163.63 kWh/100 km. The review found no factor-of-100 or gas-volume/mass
+error in the imported energy purchases. It does not independently validate every
+physical-model efficiency assumption.</p>
+<p>The car exhaust screen covers 57 combustion/proxy templates. CO, exhaust PM
+and the relevant hydrocarbon benchmarks show no exceedance. Gasoline Large SUV
+NOx is 64.60 mg/km against a 60 mg/km M-category benchmark; gasoline Van is
+61.72 mg/km under that same provisional classification. Their hot-only values
+are below 60 mg/km; lifetime-average cold starts explain the excess. No clipping
+is justified from this comparison alone. Brake, tyre and road wear are outside
+the exhaust-PM benchmark, and particle number is not represented by PM mass.
+<a class="reference external" href="https://eur-lex.europa.eu/legal-content/en/TXT/?uri=CELEX%3A32012R0459">Euro 6 limit table</a>.</p>
+<p>The approved high-power truck HEV MIX-market mass mismatch remains documented.
+The broader PHEV gross-versus-net battery-cycling question remains open. Buses
+and two-wheelers have not been refreshed in this work. The next concrete model
+correction should address FCEV battery power and mass accounting; the final
+controlled EF 3.1 comparison follows resolution of the remaining agreed issues.</p>
+</section>
+<section id="reproduction">
+<h2>Reproduction</h2>
+<p>Scripts are in <span class="docutils literal">dev/</span> of this repository:</p>
+<ul class="simple">
+<li><p><span class="docutils literal">regenerate_premise_cars.py</span> and <span class="docutils literal">regenerate_premise_trucks.py</span>: fresh
+exports using the matched carculator Python 3.12 environment.</p></li>
+<li><p><span class="docutils literal">probe_premise_vehicle_plausibility.py</span>: physical parameters and separated
+hot/cold/evaporative emissions from fresh models.</p></li>
+<li><p><span class="docutils literal">screen_premise_vehicle_plausibility.py</span>: explicit regulatory screening
+boundaries; no coefficients are modified.</p></li>
+<li><p><span class="docutils literal">build_premise_vehicle_battery.py</span>: complete isolated 2020/2050 builds with
+the existing LPG and provenance installation manifests.</p></li>
+<li><p><span class="docutils literal">audit_premise_vehicle_plausibility.py</span>: complete catalogue accounting.</p></li>
+<li><p><span class="docutils literal">verify_premise_hybrid_fuel_mapping.py</span>: whole-database numerical diff and
+restriction of changes to the previously failing petrol/CO2 exchanges.</p></li>
+</ul>
+<p>The <span class="docutils literal">before</span> directory contains the audit of the preceding provenance builds;
+<span class="docutils literal">after</span> contains the corrected builds and checks. Raw model exports and
+licensed full inventories remain in the private temporary workspace identified
+by the build manifests. No licensed database contents are committed.</p>
+</section>
+</main>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "2020": {
+    "activities": 42564,
+    "changed_activities": 0,
+    "validation_errors": 0,
+    "validation_warnings": 401,
+    "added_warning_instances": 0,
+    "removed_warning_instances": 0
+  },
+  "2050": {
+    "activities": 42795,
+    "changed_activities": 52,
+    "validation_errors": 0,
+    "validation_warnings": 468,
+    "added_warning_instances": 0,
+    "removed_warning_instances": 0
+  }
+}
